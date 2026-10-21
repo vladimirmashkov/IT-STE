@@ -198,7 +198,7 @@ def candidate_domains(block_id: str) -> list[str]:
     return ["general"]
 
 
-def initial_records() -> list[dict[str, object]]:
+def initial_records() -> list[dict[str, Any]]:
     records = []
     for block in source_blocks():
         records.append(
