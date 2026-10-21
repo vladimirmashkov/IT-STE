@@ -9,11 +9,13 @@ The authoritative source remains the PDF obtained from ASD. The published databa
 ## Published artifacts
 
 ```text
-standards/asd-ste100/versions/issue-9/revisions/r0001/derived/
+standards/asd-ste100/versions/issue-9/revisions/r0001/reference/
   reference.sqlite3  # Queryable page, rule, guidance, dictionary, and FTS data
   manifest.json      # Source/database hashes, counts, generator, and rights state
   NOTICE.md          # Ownership, permission, attribution, and review notice
 ```
+
+The `reference/` directory is a versioned, tracked publication artifact. Preserve it with its revision; do not treat it as disposable build output or add it to ignore rules.
 
 The index contains:
 

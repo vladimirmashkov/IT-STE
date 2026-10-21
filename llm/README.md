@@ -25,7 +25,7 @@ Source metadata for restricted material is not permission to export the source t
 
 ## Authorized derivative retrieval
 
-Issue 9 has an authorized machine-readable derivative under its versioned `derived/` directory. The source PDF remains private and is not part of the repository. See the [ASD-STE100 derivative-reference guide](../docs/asd-ste100-local-reference.md) and [permission record](../docs/permissions/asd-ste100-issue-9-derivatives.md).
+Issue 9 has an authorized machine-readable derivative under its versioned, Git-tracked `reference/` directory. It is a preserved publication artifact, not disposable build output. The source PDF remains private and is not part of the repository. See the [ASD-STE100 derivative-reference guide](../docs/asd-ste100-local-reference.md) and [permission record](../docs/permissions/asd-ste100-issue-9-derivatives.md).
 
 The index uses compact discovery results and explicit `--full` retrieval instead of loading the complete standard into an LLM context. It preserves source hash, edition, physical page citations, raw-page fallback, extraction warnings, rights state, and the boundary between ASD source-derived content and project-owned metadata. Regenerate it only through the authenticated `build` and `publish` workflow.
 

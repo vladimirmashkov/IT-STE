@@ -29,7 +29,7 @@ from typing import cast
 ROOT = Path(__file__).resolve().parents[1]
 LOCAL_ROOT = (ROOT / ".local").resolve()
 PUBLISHED_ROOT = (
-    ROOT / "standards/asd-ste100/versions/issue-9/revisions/r0001/derived"
+    ROOT / "standards/asd-ste100/versions/issue-9/revisions/r0001/reference"
 ).resolve()
 DEFAULT_SOURCE = LOCAL_ROOT / "sources/ASD-STE100-issue-9.pdf"
 PRIVATE_DATABASE = LOCAL_ROOT / "derived/asd-ste100/issue-9/reference.sqlite3"
