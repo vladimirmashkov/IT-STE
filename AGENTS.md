@@ -1,0 +1,24 @@
+# Agent instructions
+
+[Русский](AGENTS.ru.md)
+
+These instructions apply to the entire repository. This English document is authoritative; the Russian version is an optional translation.
+
+## Review all changes and propose terminal commands
+
+After every change, before reporting completion:
+
+1. Inspect the entire worktree and index with `git --no-pager --no-optional-locks status --short --untracked-files=all`. Review both unstaged and staged changes with `git --no-pager diff --find-renames`, `git --no-pager diff --cached --find-renames`, and the corresponding `--name-status` views.
+2. Review every change, not only line diffs: added, modified, deleted, renamed or moved, and untracked files, plus file type/mode, binary, and submodule changes when present. Read added/untracked content, inspect deleted content from Git, and compare both paths of a rename, including deletion-plus-untracked pairs. If content cannot be inspected, explicitly report the limitation.
+3. Analyze the complete pending change set for intended behavior, consistency, errors, and accidental or unrelated edits. Distinguish your changes from pre-existing user work. Do not overwrite or revert unrelated changes. Reviewing a change does not authorize modifying it or including it in a commit proposal.
+4. Run relevant checks and briefly report the complete change inventory, analysis, and validation results. If a check cannot be run, say why.
+5. At the end, propose one or more commits for independent logical changes. For each proposal, list the exact files it includes (both old and new paths for renames) and give a very short, one-line English imperative message, preferably no more than 50 characters. Identify reviewed changes left out of the proposals and explain why. Do not include unrelated pending work without the user's request.
+6. Provide copy-ready terminal commands in fenced `sh` blocks, to be run from the repository root, not just commit messages. Follow the safety rules below.
+
+### Safe command proposals
+
+- Stage only explicit, reviewed paths with `git add -A -- ...`; include deletions and both paths of renames. Do not use blanket `git add .` or pathless `git add -A`.
+- Prefix commit commands with `GIT_EDITOR=true` and supply the proposed message with `-m`.
+- Check for unrelated staged changes before proposing a commit. Preserve them: use `git commit --only` with explicit paths only when each entire listed file belongs to the proposal. If a file mixes unrelated changes, explain the required selective staging instead of proposing unsafe whole-file staging or committing. Do not unstage someone else's work to make a command convenient.
+
+A command proposal is not permission to execute it. Do not stage files, create commits, or rewrite Git history unless the user explicitly requests that action.
