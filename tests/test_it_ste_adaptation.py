@@ -286,6 +286,73 @@ class AdaptationPlanTests(unittest.TestCase):
             all(targets[target_id]["status"] == "planned" for target_id in groups)
         )
 
+    def test_section_five_decisions_create_procedure_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("5.")
+        ]
+        self.assertEqual(len(section), 5)
+        self.assertEqual(
+            {record["assessment"]["status"] for record in section},
+            {"reviewed"},
+        )
+        groups: dict[str, set[str]] = {}
+        for record in section:
+            for target in record["target_rule_ids"]:
+                groups.setdefault(target, set()).add(record["source"]["block_id"])
+        self.assertEqual(
+            groups,
+            {
+                "ITSTE-R-0010": {"5.1"},
+                "ITSTE-R-0014": {"5.2"},
+                "ITSTE-R-0015": {"5.3"},
+                "ITSTE-R-0016": {"5.4"},
+                "ITSTE-R-0017": {"5.5"},
+            },
+        )
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        self.assertEqual(
+            targets["ITSTE-R-0010"]["source_block_ids"],
+            ["4.1", "5.1"],
+        )
+        sentence_intent = targets["ITSTE-R-0010"]["design_intent"]
+        self.assertIn("Do not impose one universal word limit", sentence_intent)
+        self.assertIn(
+            "a content profile can define and validate a local limit",
+            sentence_intent,
+        )
+        required_clauses = {
+            "ITSTE-R-0014": (
+                "each independently executable action in a separate procedural step",
+                "simultaneous, atomic, conventionally inseparable, or immediately coupled to a required result or verification",
+                "Preserve an intentional transaction boundary",
+            ),
+            "ITSTE-R-0015": (
+                "reader as the understood subject",
+                "Name the actor explicitly when a system",
+                "Do not add must to an imperative only for emphasis",
+            ),
+            "ITSTE-R-0016": (
+                "before the action that depends on it",
+                "make the condition's scope unambiguous",
+                "use separate sentences, a list, or an explicit control-flow structure",
+            ),
+            "ITSTE-R-0017": (
+                "Use a note only for supplemental information",
+                "required actions, prerequisites, limits, acceptance criteria, expected results",
+                "safety- or security-critical information in the main flow",
+                "warnings, cautions, requirements, and other semantic blocks their correct labels",
+                "complete and executable when its notes are hidden or skipped",
+            ),
+        }
+        for target_id, clauses in required_clauses.items():
+            intent = targets[target_id]["design_intent"]
+            for clause in clauses:
+                self.assertIn(clause, intent)
+
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
             adaptation.candidate_domains("5.2"),
@@ -294,6 +361,10 @@ class AdaptationPlanTests(unittest.TestCase):
         manifest = adaptation.load_json(adaptation.PLAN_MANIFEST)
         self.assertFalse(manifest["method"]["candidate_domains_are_normative"])
         self.assertFalse(manifest["method"]["full_source_text_loaded"])
+        self.assertEqual(
+            manifest["method"]["classification_basis"],
+            "initial candidates from authenticated source headings and physical page ranges; reviewed decisions from bounded source-text retrieval and editorial IT applicability assessment",
+        )
 
 
 if __name__ == "__main__":

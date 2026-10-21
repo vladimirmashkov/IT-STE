@@ -176,16 +176,22 @@
       "working_title": "Write concise and concrete sentences",
       "status": "planned",
       "source_block_ids": [
-        "4.1"
+        "4.1",
+        "5.1"
       ],
       "candidate_domains": [
         "general",
         "software-documentation",
+        "cli",
+        "user-interface",
         "error-messages",
+        "monitoring-alerts",
         "procedures-runbooks",
-        "support-troubleshooting"
+        "security",
+        "support-troubleshooting",
+        "ai-automation"
       ],
-      "design_intent": "Write sentences that communicate one principal topic or action with enough concrete information to be accurate. Split a sentence when independent ideas or actions make it difficult to understand, but do not remove necessary conditions, constraints, identifiers, or relationships only to reduce length. Do not impose one universal word limit across all IT content types."
+      "design_intent": "Write sentences that communicate one principal topic or action with enough concrete information to be accurate. Split a sentence when independent ideas or actions make it difficult to understand, but do not remove necessary conditions, constraints, identifiers, or relationships only to reduce length. Do not impose one universal word limit across all IT content types; a content profile can define and validate a local limit for a specific format or audience."
     },
     {
       "id": "ITSTE-R-0011",
@@ -254,6 +260,94 @@
         "support-troubleshooting"
       ],
       "design_intent": "Use a clear transition when readers must understand sequence, contrast, cause, result, or another relationship between sentences. Do not add a connector when order and context already make the relationship clear. Prefer an explicit noun phrase to this, these, or another demonstrative when more than one antecedent is possible."
+    },
+    {
+      "id": "ITSTE-R-0014",
+      "working_title": "Put one executable action in each step",
+      "status": "planned",
+      "source_block_ids": [
+        "5.2"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "cli",
+        "user-interface",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "support-troubleshooting",
+        "ai-automation"
+      ],
+      "design_intent": "Put each independently executable action in a separate procedural step so that readers and automation can follow, verify, resume, and report it independently. Keep multiple actions in one step only when they are simultaneous, atomic, conventionally inseparable, or immediately coupled to a required result or verification. Preserve an intentional transaction boundary and do not split a command, expression, or code example into artificial actions."
+    },
+    {
+      "id": "ITSTE-R-0015",
+      "working_title": "Use the imperative for reader actions",
+      "status": "planned",
+      "source_block_ids": [
+        "5.3"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "cli",
+        "user-interface",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "support-troubleshooting",
+        "ai-automation"
+      ],
+      "design_intent": "Start an instruction to the reader with a direct imperative verb and keep the reader as the understood subject. Name the actor explicitly when a system, service, role, team, or automated agent performs the action. Do not add must to an imperative only for emphasis; express obligations, policy requirements, and safety or security constraints with the semantic form and severity required by the governing content type. Preserve literal commands and interface text exactly."
+    },
+    {
+      "id": "ITSTE-R-0016",
+      "working_title": "State conditions before dependent actions",
+      "status": "planned",
+      "source_block_ids": [
+        "5.4"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "cli",
+        "user-interface",
+        "error-messages",
+        "monitoring-alerts",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "support-troubleshooting",
+        "ai-automation"
+      ],
+      "design_intent": "State a prerequisite or condition before the action that depends on it, and make the condition's scope unambiguous. For a short clause, use punctuation that clearly separates the condition from the command. For multiple or complex conditions, use separate sentences, a list, or an explicit control-flow structure. Do not hide a prerequisite after the action or make the reader undo work that should not have started."
+    },
+    {
+      "id": "ITSTE-R-0017",
+      "working_title": "Keep required actions out of notes",
+      "status": "planned",
+      "source_block_ids": [
+        "5.5"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "cli",
+        "user-interface",
+        "error-messages",
+        "monitoring-alerts",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "support-troubleshooting",
+        "ai-automation"
+      ],
+      "design_intent": "Use a note only for supplemental information that helps the reader but is not necessary to complete the procedure correctly. Keep required actions, prerequisites, limits, acceptance criteria, expected results, and safety- or security-critical information in the main flow. Give warnings, cautions, requirements, and other semantic blocks their correct labels. A procedure must remain complete and executable when its notes are hidden or skipped."
     }
   ],
   "rights": {

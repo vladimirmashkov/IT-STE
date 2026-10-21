@@ -521,7 +521,7 @@ def manifest(counts: dict[str, int]) -> dict[str, object]:
         "targets": "standards/it-ste/adaptation-plans/asd-ste100/issue-9/r0001/targets.json",
         "targets_sha256": sha256_file(PLAN_TARGETS),
         "method": {
-            "classification_basis": "authenticated compact source headings and physical page ranges",
+            "classification_basis": "initial candidates from authenticated source headings and physical page ranges; reviewed decisions from bounded source-text retrieval and editorial IT applicability assessment",
             "initial_review_state": "unreviewed",
             "candidate_domains_are_normative": False,
             "full_source_text_loaded": False,
