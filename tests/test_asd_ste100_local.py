@@ -22,7 +22,7 @@ def synthetic_record() -> dict[str, object]:
         "pdf_page": 1,
         "printed_page": "SYNTHETIC-1",
         "column_1": "ALPHA (n)",
-        "column_2": "Project-authored synthetic meaning",
+        "column_2": "Project-authored synthetic needle meaning",
         "column_3": "SYNTHETIC EXAMPLE.",
         "column_4": "",
         "warnings": [],
@@ -61,6 +61,26 @@ class PureFunctionTests(unittest.TestCase):
         for value in ("0", "-1", str(reference.MAX_RESULTS + 1), "many"):
             with self.assertRaises(argparse.ArgumentTypeError):
                 reference.bounded_limit(value)
+
+    def test_context_words_are_nonnegative_and_bounded(self) -> None:
+        self.assertEqual(reference.bounded_context_words("0"), 0)
+        self.assertEqual(
+            reference.bounded_context_words(str(reference.MAX_CONTEXT_WORDS)),
+            reference.MAX_CONTEXT_WORDS,
+        )
+        for value in ("-1", str(reference.MAX_CONTEXT_WORDS + 1), "many"):
+            with self.assertRaises(argparse.ArgumentTypeError):
+                reference.bounded_context_words(value)
+
+    def test_excerpt_window_is_bounded_and_requires_all_terms(self) -> None:
+        text = "zero one two alpha three four beta five six seven"
+        self.assertEqual(
+            reference.excerpt_window(text, "alpha beta", 1),
+            "… two alpha three four beta five …",
+        )
+        self.assertIsNone(reference.excerpt_window(text, "alpha missing", 1))
+        distant = "alpha " + " ".join(f"word{index}" for index in range(40)) + " beta"
+        self.assertIsNone(reference.excerpt_window(distant, "alpha beta", 1))
 
     def test_path_policies_separate_staging_and_publication(self) -> None:
         private = reference.private_path(reference.LOCAL_ROOT / "test.db", "database")
@@ -195,6 +215,52 @@ class SyntheticDatabaseTests(unittest.TestCase):
         with contextlib.redirect_stdout(stream):
             self.assertEqual(reference.search(args), 0)
         self.assertEqual(len(json.loads(stream.getvalue())), 1)
+
+    def test_search_all_uses_ordered_fallback(self) -> None:
+        args = argparse.Namespace(
+            query="needle", scope="all", limit=3, database=self.database, json=True
+        )
+        stream = io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            self.assertEqual(reference.search(args), 0)
+        self.assertEqual(
+            [item["scope"] for item in json.loads(stream.getvalue())],
+            ["block", "dictionary", "page"],
+        )
+
+    def test_entry_retrieves_one_stable_dictionary_row(self) -> None:
+        args = argparse.Namespace(
+            id="d-synthetic-001", database=self.database, json=True, full=False
+        )
+        stream = io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            self.assertEqual(reference.entry(args), 0)
+        item = json.loads(stream.getvalue())
+        self.assertEqual(item["id"], "D-SYNTHETIC-001")
+        self.assertNotIn("column_3", item)
+
+    def test_excerpt_returns_bounded_page_citation(self) -> None:
+        args = argparse.Namespace(
+            id="synthetic",
+            query="needle block",
+            limit=1,
+            context_words=1,
+            database=self.database,
+            json=True,
+        )
+        stream = io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            self.assertEqual(reference.excerpts(args), 0)
+        result = json.loads(stream.getvalue())
+        self.assertEqual(result["id"], "SYNTHETIC")
+        self.assertEqual(result["excerpts"][0]["pdf_page"], 1)
+        self.assertIn("needle block", result["excerpts"][0]["text"])
+
+    def test_compact_json_is_minified_and_unicode_safe(self) -> None:
+        stream = io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            reference.print_json({"text": "тест"}, compact=True)
+        self.assertEqual(stream.getvalue(), '{"text":"тест"}\n')
 
 
 class PublishTests(unittest.TestCase):

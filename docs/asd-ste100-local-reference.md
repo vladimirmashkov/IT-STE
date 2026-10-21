@@ -43,21 +43,25 @@ Use progressive disclosure:
 ```sh
 # Discover only relevant headings or snippets.
 python3 tools/asd_ste100_local.py rules --section 5
-python3 tools/asd_ste100_local.py search "passive voice" --scope rules
+python3 tools/asd_ste100_local.py search "passive voice" --scope blocks
 
-# Read a compact rule card first; request full text only when required.
-python3 tools/asd_ste100_local.py rule 5.1
-python3 tools/asd_ste100_local.py rule 5.1 --full
+# Read a compact rule card, then a bounded cited excerpt. Use full text last.
+python3 tools/asd_ste100_local.py rule 3.6
+python3 tools/asd_ste100_local.py excerpt 3.6 "passive voice"
+python3 tools/asd_ste100_local.py rule 3.6 --full
 
-# Read meaning/alternatives first; add examples only when required.
+# Discover dictionary candidates, select one stable ID, then add examples only if required.
 python3 tools/asd_ste100_local.py word test
-python3 tools/asd_ste100_local.py word test --pos n --full
+python3 tools/asd_ste100_local.py entry D-P401-003
+python3 tools/asd_ste100_local.py entry D-P401-003 --full
 
 # Use raw page output only as a verification fallback.
 python3 tools/asd_ste100_local.py page 87
 ```
 
-All retrieval commands support `--json`. `search` supports `--scope rules`, `dictionary`, `pages`, or `all`. The `--limit` range is 1–20 and applies globally across scopes. Full JSON avoids duplicating aggregate text and its page/column components.
+All retrieval commands support readable `--json` and deterministic minified `--compact-json`. `search` supports `--scope blocks`, `dictionary`, `pages`, or `all`; `rules` remains a compatibility alias for `blocks`. The `all` scope is an ordered fallback—blocks, then dictionary entries, then raw pages—because ranks from different FTS tables are not comparable. The `--limit` range is 1–20 and applies globally across scopes. Full JSON avoids duplicating aggregate text and its page/column components.
+
+`excerpt` finds the smallest word window containing all query terms on one cited block page and retains a bounded amount of surrounding text. A match window wider than 32 words is rejected as too broad. It returns at most three pages by default; refine the query or adjust `--context-words` or `--limit` before requesting an entire rule. `entry` retrieves exactly one dictionary row returned by `word` or `search`, which avoids repeating unrelated candidates.
 
 ## Reproduce and publish a new build
 

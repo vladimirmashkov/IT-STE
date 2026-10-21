@@ -9,7 +9,7 @@ These instructions apply to the entire repository. This English document is auth
 Use the tracked derivative retrieval database instead of reading or converting the complete standard:
 
 1. Run `python3 tools/asd_ste100_local.py doctor` to authenticate the published database and manifest. If the local source PDF is present, this also verifies its exact SHA-256.
-2. Use progressive disclosure: `overview`, then `rules`, `rule <ID>`, or `word <TERM>`. Add `--full` only when the compact result is insufficient. Use `search` for discovery and `page <PDF_PAGE>` only to verify a cited page.
+2. Use progressive disclosure: `overview`; then `rules` or `search`; then `rule <ID>`, `excerpt <ID> <QUERY>`, `word <TERM>`, or `entry <ID>`. Prefer bounded `excerpt` and exact `entry` retrieval; add `--full` only when they are insufficient. Use `page <PDF_PAGE>` only to verify a cited page. Use `--compact-json` when machine-readable output saves context.
 3. Never put the complete extraction into context. Keep the standard version and physical PDF page with every result. Treat mechanically extracted structure as unreviewed and verify ambiguous wording, table columns, typography, or diagrams against the PDF.
 4. Publication permission covers the derivative database, not the source PDF. Keep the PDF under `.local/` and never stage, commit, or publish it. Regenerate published artifacts only through `build` and `publish`, retain ASD ownership and the IT-STE project link, and do not present an extraction or adaptation as official ASD guidance.
 

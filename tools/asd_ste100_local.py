@@ -47,6 +47,8 @@ EXPECTED_SOURCE_SHA256 = "d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b0
 EXPECTED_PAGES = 434
 EXPECTED_DICTIONARY_ENTRIES = 2_196
 MAX_RESULTS = 20
+MAX_CONTEXT_WORDS = 80
+MAX_EXCERPT_MATCH_WORDS = 32
 SCHEMA_VERSION = "1.0.0"
 STANDARD = "ASD-STE100"
 ISSUE = "9"
@@ -130,6 +132,18 @@ def bounded_limit(value: str) -> int:
     if not 1 <= limit <= MAX_RESULTS:
         raise argparse.ArgumentTypeError(f"limit must be between 1 and {MAX_RESULTS}")
     return limit
+
+
+def bounded_context_words(value: str) -> int:
+    try:
+        context_words = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("context words must be an integer") from error
+    if not 0 <= context_words <= MAX_CONTEXT_WORDS:
+        raise argparse.ArgumentTypeError(
+            f"context words must be between 0 and {MAX_CONTEXT_WORDS}"
+        )
+    return context_words
 
 
 def sha256_file(path: Path) -> str:
@@ -870,15 +884,29 @@ def metadata(connection: sqlite3.Connection) -> dict[str, str]:
     return dict(connection.execute("SELECT key, value FROM metadata ORDER BY key"))
 
 
-def print_json(value: object) -> None:
+def print_json(value: object, compact: bool = False) -> None:
+    if compact:
+        print(
+            json.dumps(
+                value,
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            )
+        )
+        return
     print(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True))
+
+
+def output_json(args: argparse.Namespace, value: object) -> None:
+    print_json(value, compact=getattr(args, "compact_json", False))
 
 
 def overview(args: argparse.Namespace) -> int:
     with closing(open_database(args.database)) as connection:
         info = metadata(connection)
         if args.json:
-            print_json(info)
+            output_json(args, info)
             return 0
         print(f"{info['standard']} Issue {info['issue']} ({info['issue_date']})")
         print(f"Source SHA-256: {info['source_sha256']}")
@@ -887,8 +915,9 @@ def overview(args: argparse.Namespace) -> int:
             f"{info['dictionary_entries']} dictionary rows; {info['physical_pages']} pages"
         )
         print(f"State: {info['review_state']}; redistribution: {info['redistribution']}")
-        print("Fast path: rules -> rule ID -> rule ID --full; word TERM -> --full")
-        print("Fallback: search QUERY; page PDF_PAGE")
+        print("Fast path: search -> excerpt ID QUERY -> rule ID --full only if needed")
+        print("Dictionary: word TERM -> entry ID -> entry ID --full only if needed")
+        print("Fallback: page PDF_PAGE; add --compact-json for minimum machine-readable output")
     return 0
 
 
@@ -912,7 +941,7 @@ def list_rules(args: argparse.Namespace) -> int:
             values,
         ).fetchall()
         if args.json:
-            print_json([dict(row) for row in rows])
+            output_json(args, [dict(row) for row in rows])
             return 0
         for row in rows:
             print(f"{row['id']} | PDF {page_range(row)} | {row['title']}")
@@ -939,7 +968,7 @@ def get_block(args: argparse.Namespace) -> int:
             result.pop("text", None)
             if args.full:
                 result["segments"] = [dict(segment) for segment in segments]
-            print_json(result)
+            output_json(args, result)
             return 0
         print(f"{STANDARD} Issue {ISSUE} | {row['kind']} {row['id']}")
         print(f"PDF {page_range(row)} | {row['title']}")
@@ -990,6 +1019,42 @@ def dictionary_candidates(
     ).fetchall()
 
 
+def dictionary_item(row: sqlite3.Row, full: bool) -> dict[str, object]:
+    item = dict(row)
+    item["warnings"] = json.loads(item["warnings"])
+    item.pop("text", None)
+    if not full:
+        for key in ("column_1", "column_3", "column_4"):
+            item.pop(key, None)
+    return item
+
+
+def print_dictionary_rows(rows: Sequence[sqlite3.Row], full: bool) -> None:
+    for index, row in enumerate(rows):
+        if index:
+            print()
+        warnings = json.loads(row["warnings"])
+        label = f" / {row['printed_page']}" if row["printed_page"] else ""
+        print(
+            f"{row['id']} | {row['headword']} ({row['pos']}) | "
+            f"{row['approval']} | PDF {row['pdf_page']}{label}"
+        )
+        print("Meaning/alternatives:")
+        print(textwrap.indent(row["column_2"] or "[empty]", "  "))
+        if warnings:
+            print("Warnings: " + ", ".join(warnings))
+        if full:
+            print("Word/forms/help:")
+            print(textwrap.indent(row["column_1"] or "[empty]", "  "))
+            print("STE example:")
+            print(textwrap.indent(row["column_3"] or "[empty]", "  "))
+            print("Non-STE example:")
+            print(textwrap.indent(row["column_4"] or "[empty]", "  "))
+        else:
+            print("Examples omitted. Re-run with --full only if needed.")
+    print("\n[Column-aware mechanical extraction; verify ambiguous rows against the cited PDF page.]")
+
+
 def word(args: argparse.Namespace) -> int:
     with closing(open_database(args.database)) as connection:
         rows = dictionary_candidates(connection, args.term, args.pos, args.limit)
@@ -999,40 +1064,104 @@ def word(args: argparse.Namespace) -> int:
                 f"Try: python3 tools/asd_ste100_local.py search {json.dumps(args.term)} --scope pages"
             )
         if args.json:
-            output = []
-            for row in rows:
-                item = dict(row)
-                item["warnings"] = json.loads(item["warnings"])
-                item.pop("text", None)
-                if not args.full:
-                    for key in ("column_1", "column_3", "column_4"):
-                        item.pop(key, None)
-                output.append(item)
-            print_json(output)
+            output_json(args, [dictionary_item(row, args.full) for row in rows])
             return 0
-        for index, row in enumerate(rows):
-            if index:
-                print()
-            warnings = json.loads(row["warnings"])
-            label = f" / {row['printed_page']}" if row["printed_page"] else ""
-            print(
-                f"{row['id']} | {row['headword']} ({row['pos']}) | "
-                f"{row['approval']} | PDF {row['pdf_page']}{label}"
+        print_dictionary_rows(rows, args.full)
+    return 0
+
+
+def entry(args: argparse.Namespace) -> int:
+    with closing(open_database(args.database)) as connection:
+        row = connection.execute(
+            "SELECT * FROM dictionary_entries WHERE upper(id) = upper(?)", (args.id,)
+        ).fetchone()
+        if row is None:
+            raise ReferenceError(f"Dictionary entry not found: {args.id}")
+        if args.json:
+            output_json(args, dictionary_item(row, args.full))
+            return 0
+        print_dictionary_rows([row], args.full)
+    return 0
+
+
+def excerpt_window(text: str, query: str, context_words: int) -> str | None:
+    compact = re.sub(r"\s+", " ", text).strip()
+    words = list(TOKEN_RE.finditer(compact))
+    required = {token.casefold() for token in TOKEN_RE.findall(query)}
+    if not words or not required:
+        return None
+
+    counts: dict[str, int] = {}
+    left = 0
+    best: tuple[int, int] | None = None
+    for right, match in enumerate(words):
+        token = match.group(0).casefold()
+        if token in required:
+            counts[token] = counts.get(token, 0) + 1
+        while len(counts) == len(required):
+            if best is None or right - left < best[1] - best[0]:
+                best = (left, right)
+            left_token = words[left].group(0).casefold()
+            if left_token in required:
+                counts[left_token] -= 1
+                if counts[left_token] == 0:
+                    del counts[left_token]
+            left += 1
+    if best is None or best[1] - best[0] + 1 > MAX_EXCERPT_MATCH_WORDS:
+        return None
+
+    start_word = max(0, best[0] - context_words)
+    end_word = min(len(words) - 1, best[1] + context_words)
+    excerpt = compact[words[start_word].start() : words[end_word].end()]
+    if start_word:
+        excerpt = "… " + excerpt
+    if end_word < len(words) - 1:
+        excerpt += " …"
+    return excerpt
+
+
+def excerpts(args: argparse.Namespace) -> int:
+    requested = args.id.upper()
+    if requested.startswith("RULE "):
+        requested = requested[5:].strip()
+    with closing(open_database(args.database)) as connection:
+        block = connection.execute(
+            "SELECT id, kind, title FROM blocks WHERE upper(id) = ?", (requested,)
+        ).fetchone()
+        if block is None:
+            raise ReferenceError(f"Block not found: {args.id}")
+        segments = connection.execute(
+            "SELECT sequence, pdf_page, printed_page, text FROM block_segments "
+            "WHERE block_id = ? ORDER BY sequence",
+            (block["id"],),
+        ).fetchall()
+        matches = []
+        for segment in segments:
+            text = excerpt_window(segment["text"], args.query, args.context_words)
+            if text is not None:
+                matches.append(
+                    {
+                        "pdf_page": segment["pdf_page"],
+                        "printed_page": segment["printed_page"],
+                        "text": text,
+                    }
+                )
+            if len(matches) == args.limit:
+                break
+        if not matches:
+            raise ReferenceError(
+                f"No excerpt in block {block['id']} for: {args.query}\n"
+                f"Try: python3 tools/asd_ste100_local.py search {json.dumps(args.query)} --scope blocks"
             )
-            print("Meaning/alternatives:")
-            print(textwrap.indent(row["column_2"] or "[empty]", "  "))
-            if warnings:
-                print("Warnings: " + ", ".join(warnings))
-            if args.full:
-                print("Word/forms/help:")
-                print(textwrap.indent(row["column_1"] or "[empty]", "  "))
-                print("STE example:")
-                print(textwrap.indent(row["column_3"] or "[empty]", "  "))
-                print("Non-STE example:")
-                print(textwrap.indent(row["column_4"] or "[empty]", "  "))
-            else:
-                print("Examples omitted. Re-run with --full only if needed.")
-        print("\n[Column-aware mechanical extraction; verify ambiguous rows against the cited PDF page.]")
+        result = {**dict(block), "query": args.query, "excerpts": matches}
+        if args.json:
+            output_json(args, result)
+            return 0
+        print(f"{STANDARD} Issue {ISSUE} | {block['kind']} {block['id']} | {block['title']}")
+        for item in matches:
+            label = f" / {item['printed_page']}" if item["printed_page"] else ""
+            print(f"PDF {item['pdf_page']}{label} | {item['text']}")
+        print("\n[Bounded mechanical excerpts; use --full only if the surrounding rule is required.]")
     return 0
 
 
@@ -1047,36 +1176,38 @@ def search(args: argparse.Namespace) -> int:
     query = fts_query(args.query)
     output: list[dict[str, object]] = []
     with closing(open_database(args.database)) as connection:
-        if args.scope in ("all", "rules"):
+        if args.scope in ("all", "blocks", "rules"):
+            remaining = args.limit - len(output)
             rows = connection.execute(
                 "SELECT b.id, b.kind, b.title, b.start_pdf_page, b.end_pdf_page, "
                 "snippet(blocks_fts, 2, '[', ']', ' … ', 16) AS snippet "
                 "FROM blocks_fts JOIN blocks b ON b.id = blocks_fts.id "
-                "WHERE blocks_fts MATCH ? ORDER BY rank LIMIT ?",
-                (query, args.limit),
+                "WHERE blocks_fts MATCH ? ORDER BY rank, b.id LIMIT ?",
+                (query, remaining),
             ).fetchall()
             output.extend({"scope": "block", **dict(row)} for row in rows)
-        if args.scope in ("all", "dictionary"):
+        if args.scope in ("all", "dictionary") and len(output) < args.limit:
+            remaining = args.limit - len(output)
             rows = connection.execute(
                 "SELECT d.id, d.headword, d.pos, d.approval, d.pdf_page, d.printed_page, "
                 "snippet(dictionary_fts, 4, '[', ']', ' … ', 14) AS snippet "
                 "FROM dictionary_fts JOIN dictionary_entries d ON d.id = dictionary_fts.id "
-                "WHERE dictionary_fts MATCH ? ORDER BY rank LIMIT ?",
-                (query, args.limit),
+                "WHERE dictionary_fts MATCH ? ORDER BY rank, d.id LIMIT ?",
+                (query, remaining),
             ).fetchall()
             output.extend({"scope": "dictionary", **dict(row)} for row in rows)
-        if args.scope in ("all", "pages"):
+        if args.scope in ("all", "pages") and len(output) < args.limit:
+            remaining = args.limit - len(output)
             rows = connection.execute(
                 "SELECT p.pdf_page, p.printed_page, p.part, "
                 "snippet(pages_fts, 0, '[', ']', ' … ', 18) AS snippet "
                 "FROM pages_fts JOIN pages p ON p.pdf_page = pages_fts.rowid "
-                "WHERE pages_fts MATCH ? ORDER BY rank LIMIT ?",
-                (query, args.limit),
+                "WHERE pages_fts MATCH ? ORDER BY rank, p.pdf_page LIMIT ?",
+                (query, remaining),
             ).fetchall()
             output.extend({"scope": "page", **dict(row)} for row in rows)
-    output = output[: args.limit]
     if args.json:
-        print_json(output)
+        output_json(args, output)
         return 0
     if not output:
         print("No matches.")
@@ -1109,7 +1240,7 @@ def show_page(args: argparse.Namespace) -> int:
         if row is None:
             raise ReferenceError(f"PDF page out of range: {args.pdf_page}")
         if args.json:
-            print_json(dict(row))
+            output_json(args, dict(row))
             return 0
         label = f" / {row['printed_page']}" if row["printed_page"] else ""
         print(f"{STANDARD} Issue {ISSUE} | PDF {row['pdf_page']}{label} | {row['part']}")
@@ -1304,7 +1435,12 @@ def doctor(args: argparse.Namespace) -> int:
 def parser() -> argparse.ArgumentParser:
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("--database", type=Path, default=DEFAULT_DATABASE)
-    common.add_argument("--json", action="store_true")
+    common.add_argument("--json", action="store_true", help="emit readable JSON")
+    common.add_argument(
+        "--compact-json",
+        action="store_true",
+        help="emit deterministic minified JSON for agent context",
+    )
 
     root = argparse.ArgumentParser(
         description="Build, publish, and query an ASD-STE100 Issue 9 derivative reference."
@@ -1348,10 +1484,34 @@ def parser() -> argparse.ArgumentParser:
     word_parser.add_argument("--full", action="store_true")
     word_parser.set_defaults(function=word)
 
+    entry_parser = commands.add_parser(
+        "entry", parents=[common], help="get one dictionary row by stable ID"
+    )
+    entry_parser.add_argument("id")
+    entry_parser.add_argument("--full", action="store_true")
+    entry_parser.set_defaults(function=entry)
+
+    excerpt_parser = commands.add_parser(
+        "excerpt", parents=[common], help="get bounded cited excerpts from one rule or GR"
+    )
+    excerpt_parser.add_argument("id")
+    excerpt_parser.add_argument("query")
+    excerpt_parser.add_argument("--limit", type=bounded_limit, default=3)
+    excerpt_parser.add_argument(
+        "--context-words",
+        type=bounded_context_words,
+        default=24,
+        help="words retained on each side of the smallest match window (0-80)",
+    )
+    excerpt_parser.set_defaults(function=excerpts)
+
     search_parser = commands.add_parser("search", parents=[common], help="search compact snippets")
     search_parser.add_argument("query")
     search_parser.add_argument(
-        "--scope", choices=("all", "rules", "dictionary", "pages"), default="all"
+        "--scope",
+        choices=("all", "blocks", "rules", "dictionary", "pages"),
+        default="all",
+        help="all uses ordered fallback: blocks, dictionary, then pages; rules aliases blocks",
     )
     search_parser.add_argument("--limit", type=bounded_limit, default=8)
     search_parser.set_defaults(function=search)
@@ -1372,6 +1532,8 @@ def parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = parser().parse_args(argv)
+    if getattr(args, "compact_json", False):
+        args.json = True
     try:
         return args.function(args)
     except (ReferenceError, sqlite3.Error, OSError) as error:
