@@ -4,6 +4,17 @@
 
 These instructions apply to the entire repository. This English document is authoritative; the Russian version is an optional translation.
 
+## Private ASD-STE100 reference
+
+When `.local/sources/ASD-STE100-issue-9.pdf` is available, use the private retrieval tool instead of reading or converting the complete PDF:
+
+1. Run `python3 tools/asd_ste100_local.py doctor` to verify the exact source and index.
+2. Use progressive disclosure: `overview`, then `rules`, `rule <ID>`, or `word <TERM>`. Add `--full` only when the compact result is insufficient. Use `search` for discovery and `page <PDF_PAGE>` only to verify a cited page.
+3. Never put the complete extraction into context. Keep the standard version and physical PDF page with every result. Treat mechanically extracted structure as unreviewed and verify ambiguous wording, table columns, typography, or diagrams against the PDF.
+4. The PDF and all derived text or databases are restricted local inputs. Keep them under `.local/`; do not stage, commit, publish, or copy source text into tracked fixtures without documented permission. Do not present an extraction or IT-STE adaptation as official ASD guidance.
+
+See [the local-reference guide](docs/asd-ste100-local-reference.md).
+
 ## Review all changes and propose terminal commands
 
 After every change, before reporting completion:

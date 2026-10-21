@@ -2,7 +2,7 @@
 
 [Русский](README.ru.md)
 
-Create `<version>/revisions/<revision>/` directories here according to the [common storage structure](../../../docs/storage.md). No actual editions are registered yet. Do not insert an assumed “latest” edition number.
+Create `<version>/revisions/<revision>/` directories here according to the [common storage structure](../../../docs/storage.md). Issue 9 has a draft metadata-only revision for the [private local retrieval workflow](../../../docs/asd-ste100-local-reference.md), but no ASD-STE100 snapshot is registered as released. Do not use an implicit “latest” edition.
 
 - `version` preserves the identity of the official edition. Also record the exact publisher designation in the source metadata.
 - `revision` identifies a snapshot of this project's structured representation, metadata, and translations. It does not represent a new ASD-STE100 edition.

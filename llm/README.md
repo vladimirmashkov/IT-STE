@@ -23,6 +23,12 @@ By default, include only:
 
 Source metadata for restricted material is not permission to export the source text. Do not index drafts, withdrawn records, templates, or local PDF files as normative rules.
 
+## Private restricted-source retrieval
+
+A restricted local source can have a private retrieval index under `.local/` without becoming part of the publishable corpus. The Issue 9 workflow is described in [the private ASD-STE100 reference guide](../docs/asd-ste100-local-reference.md).
+
+This index uses compact discovery results and explicit `--full` retrieval instead of loading the complete standard into an LLM context. It must preserve source hash, edition, physical page citations, raw-page fallback, extraction warnings, and the boundary between source text and project-owned metadata. Never copy its extracted text into `standards/`, `exports/`, tests, or documentation unless rights have been verified.
+
 ## Export directory
 
 ```text
