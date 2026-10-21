@@ -29,14 +29,17 @@ See the [language policy](docs/language-policy.md) and its [Russian translation]
 catalog.json                       # Registry of standards and released snapshots
 standards/
   asd-ste100/versions/             # ASD-STE100 versions, separate from IT-STE
-  it-ste/versions/                 # Versions of the original IT-STE standard
-    <version>/revisions/<revision>/
-      manifest.json                # Exact contents of one snapshot
-      sources/                     # Source and rights metadata
-      content/<language>/
-        rules/<id>.json            # One rule per record
-        terms/<id>.json            # One term sense per record
-      relations.jsonl              # Adaptation and replacement relationships
+  it-ste/
+    domains/                       # Versioned draft IT domain identifiers
+    adaptation-plans/              # Source-pinned editorial decisions
+    versions/                      # Versions of the original IT-STE standard
+      <version>/revisions/<revision>/
+        manifest.json              # Exact contents of one snapshot
+        sources/                   # Source and rights metadata
+        content/<language>/
+          rules/<id>.json          # One rule per record
+          terms/<id>.json          # One term sense per record
+        relations.jsonl            # Adaptation and replacement relationships
 templates/                         # Record templates; not part of the standard
 llm/                               # Contract for LLM-oriented exports
 docs/storage.md                    # Storage and versioning rules
@@ -45,11 +48,11 @@ exports/                           # Generated JSONL; not committed to Git
 
 Both standards use the same snapshot structure. A **standard version** and a **corpus revision** are different coordinates: a translation or metadata update does not invent a new ASD-STE100 edition. JSON records are the single canonical data source. Markdown views and LLM exports must be generated from them.
 
-For details, see [storage and versioning](docs/storage.md), the [LLM export contract](llm/README.md), and the [record templates](templates/).
+For details, see [storage and versioning](docs/storage.md), the [adaptation workflow](docs/it-ste-adaptation.md), the [LLM export contract](llm/README.md), and the [record templates](templates/).
 
 ## Status
 
-The repository structure is ready. No IT-STE rules or vocabularies have been released, and the release registry is empty. Issue 9 has tracked source metadata and an authorized, mechanically extracted [derivative retrieval database](docs/asd-ste100-local-reference.md). The source PDF is not tracked or published. Canonical corpus export and validation tools are not implemented yet.
+No IT-STE rules or vocabularies have been released, and the release registry is empty. The first draft domain registry and a source-pinned adaptation plan cover all 53 rules and 8 recommendations from Issue 9; all assessments remain explicitly unreviewed. Issue 9 has tracked source metadata and an authorized, mechanically extracted [derivative retrieval database](docs/asd-ste100-local-reference.md). The source PDF is not tracked or published. Canonical corpus export and validation tools are not implemented yet.
 
 ## Licensing and required project link
 

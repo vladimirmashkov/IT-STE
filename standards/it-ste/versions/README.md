@@ -13,4 +13,6 @@ Use SemVer for `version`:
 
 English (`en`) is the primary and authoritative language. A released normative snapshot must have complete approved English records. Russian (`ru`) is the preferred secondary language, but it and all other translations are optional. Translations, metadata, and packaging can be updated through `revision` without changing the normative version. Released snapshots are immutable.
 
+Before authoring the first draft, record source applicability and rationale in the [adaptation plan](../../../docs/it-ste-adaptation.md). The plan does not reserve normative IDs or replace versioned records.
+
 For the first draft, use the [templates](../../../templates/). Add only original material or material for which the necessary rights have been verified. A relationship to ASD-STE100 must explain what was adapted and why; it must not imply official ASD endorsement.
