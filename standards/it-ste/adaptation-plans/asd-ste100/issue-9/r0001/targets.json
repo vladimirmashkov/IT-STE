@@ -177,21 +177,25 @@
       "status": "planned",
       "source_block_ids": [
         "4.1",
-        "5.1"
+        "5.1",
+        "6.3"
       ],
       "candidate_domains": [
         "general",
         "software-documentation",
+        "api",
         "cli",
         "user-interface",
         "error-messages",
         "monitoring-alerts",
         "procedures-runbooks",
+        "configuration",
         "security",
+        "release-notes",
         "support-troubleshooting",
         "ai-automation"
       ],
-      "design_intent": "Write sentences that communicate one principal topic or action with enough concrete information to be accurate. Split a sentence when independent ideas or actions make it difficult to understand, but do not remove necessary conditions, constraints, identifiers, or relationships only to reduce length. Do not impose one universal word limit across all IT content types; a content profile can define and validate a local limit for a specific format or audience."
+      "design_intent": "Write sentences that communicate one principal topic or action with enough concrete information to be accurate. Split a sentence when independent ideas or actions make it difficult to understand, but do not remove necessary conditions, constraints, identifiers, or relationships only to reduce length. Do not impose one universal word limit across procedural or descriptive IT content; a content profile can define and validate a local limit for a specific format or audience."
     },
     {
       "id": "ITSTE-R-0011",
@@ -247,19 +251,24 @@
       "working_title": "Connect related ideas explicitly",
       "status": "planned",
       "source_block_ids": [
-        "4.4"
+        "4.4",
+        "6.2"
       ],
       "candidate_domains": [
         "general",
         "software-documentation",
+        "api",
+        "user-interface",
         "error-messages",
         "monitoring-alerts",
         "procedures-runbooks",
+        "configuration",
         "security",
         "release-notes",
-        "support-troubleshooting"
+        "support-troubleshooting",
+        "ai-automation"
       ],
-      "design_intent": "Use a clear transition when readers must understand sequence, contrast, cause, result, or another relationship between sentences. Do not add a connector when order and context already make the relationship clear. Prefer an explicit noun phrase to this, these, or another demonstrative when more than one antecedent is possible."
+      "design_intent": "Use a clear transition when readers must understand sequence, contrast, cause, result, or another relationship between sentences. Reuse the same canonical key terms as anchors when they help readers connect related information across sentences or independently retrieved chunks. Do not replace a term with a synonym merely for variety, but do not add a connector or mechanical repetition when order and context already make the relationship clear. Prefer an explicit noun phrase to this, these, or another demonstrative when more than one antecedent is possible."
     },
     {
       "id": "ITSTE-R-0014",
@@ -348,6 +357,57 @@
         "ai-automation"
       ],
       "design_intent": "Use a note only for supplemental information that helps the reader but is not necessary to complete the procedure correctly. Keep required actions, prerequisites, limits, acceptance criteria, expected results, and safety- or security-critical information in the main flow. Give warnings, cautions, requirements, and other semantic blocks their correct labels. A procedure must remain complete and executable when its notes are hidden or skipped."
+    },
+    {
+      "id": "ITSTE-R-0018",
+      "working_title": "Present information in a reader-first sequence",
+      "status": "planned",
+      "source_block_ids": [
+        "6.1"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "user-interface",
+        "monitoring-alerts",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "networking",
+        "data-storage",
+        "cloud-infrastructure",
+        "release-notes",
+        "support-troubleshooting",
+        "ai-automation"
+      ],
+      "design_intent": "Present purpose, scope, prerequisites, and core concepts before details that depend on them. Move from familiar or high-level information to new or specialized information, and expose optional detail progressively. Give each independently retrievable section, help topic, or LLM chunk enough local context to identify its subject and interpret its references without copying unrelated background into every unit. Keep one principal subject in each sentence when possible; when multiple subjects are necessary, state their relationship explicitly. Apply this sentence-level control consistently with ITSTE-R-0010."
+    },
+    {
+      "id": "ITSTE-R-0019",
+      "working_title": "Keep each content block focused on one topic",
+      "status": "planned",
+      "source_block_ids": [
+        "6.4",
+        "6.5",
+        "6.6"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "user-interface",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "networking",
+        "data-storage",
+        "cloud-infrastructure",
+        "release-notes",
+        "support-troubleshooting",
+        "ai-automation"
+      ],
+      "design_intent": "Group related information in a paragraph or the equivalent structural block for the content type, and keep one primary topic in that block. Identify the topic early unless a heading, label, schema position, or container already makes it clear. Start a new block when the topic, reader task, retrieval boundary, or level of detail changes, or when length impairs scanning. Do not impose a universal six-sentence maximum; headings, reference entries, tables, cards, messages, and other constrained formats can provide equivalent topic boundaries without conventional paragraphs."
     }
   ],
   "rights": {

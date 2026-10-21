@@ -314,9 +314,10 @@ class AdaptationPlanTests(unittest.TestCase):
             target["id"]: target
             for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
         }
-        self.assertEqual(
-            targets["ITSTE-R-0010"]["source_block_ids"],
-            ["4.1", "5.1"],
+        self.assertTrue(
+            {"4.1", "5.1"}.issubset(
+                set(targets["ITSTE-R-0010"]["source_block_ids"])
+            )
         )
         sentence_intent = targets["ITSTE-R-0010"]["design_intent"]
         self.assertIn("Do not impose one universal word limit", sentence_intent)
@@ -346,6 +347,75 @@ class AdaptationPlanTests(unittest.TestCase):
                 "safety- or security-critical information in the main flow",
                 "warnings, cautions, requirements, and other semantic blocks their correct labels",
                 "complete and executable when its notes are hidden or skipped",
+            ),
+        }
+        for target_id, clauses in required_clauses.items():
+            intent = targets[target_id]["design_intent"]
+            for clause in clauses:
+                self.assertIn(clause, intent)
+
+    def test_section_six_decisions_create_description_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("6.")
+        ]
+        self.assertEqual(len(section), 6)
+        self.assertEqual(
+            {record["assessment"]["status"] for record in section},
+            {"reviewed"},
+        )
+        groups: dict[str, set[str]] = {}
+        for record in section:
+            for target in record["target_rule_ids"]:
+                groups.setdefault(target, set()).add(record["source"]["block_id"])
+        self.assertEqual(
+            groups,
+            {
+                "ITSTE-R-0018": {"6.1"},
+                "ITSTE-R-0013": {"6.2"},
+                "ITSTE-R-0010": {"6.3"},
+                "ITSTE-R-0019": {"6.4", "6.5", "6.6"},
+            },
+        )
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        self.assertEqual(
+            targets["ITSTE-R-0010"]["source_block_ids"],
+            ["4.1", "5.1", "6.3"],
+        )
+        self.assertEqual(
+            targets["ITSTE-R-0013"]["source_block_ids"],
+            ["4.4", "6.2"],
+        )
+        self.assertEqual(
+            targets["ITSTE-R-0019"]["source_block_ids"],
+            ["6.4", "6.5", "6.6"],
+        )
+        required_clauses = {
+            "ITSTE-R-0010": (
+                "Do not impose one universal word limit across procedural or descriptive IT content",
+                "a content profile can define and validate a local limit",
+            ),
+            "ITSTE-R-0013": (
+                "Reuse the same canonical key terms as anchors",
+                "Do not replace a term with a synonym merely for variety",
+                "do not add a connector or mechanical repetition",
+            ),
+            "ITSTE-R-0018": (
+                "Present purpose, scope, prerequisites, and core concepts before details",
+                "expose optional detail progressively",
+                "each independently retrievable section, help topic, or LLM chunk enough local context",
+                "Keep one principal subject in each sentence when possible",
+                "when multiple subjects are necessary, state their relationship explicitly",
+                "consistently with ITSTE-R-0010",
+            ),
+            "ITSTE-R-0019": (
+                "keep one primary topic in that block",
+                "when the topic, reader task, retrieval boundary, or level of detail changes",
+                "Do not impose a universal six-sentence maximum",
+                "constrained formats can provide equivalent topic boundaries without conventional paragraphs",
             ),
         }
         for target_id, clauses in required_clauses.items():
