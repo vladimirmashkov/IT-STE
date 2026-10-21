@@ -22,6 +22,7 @@ SOURCE_MANIFEST = SOURCE_ROOT / "manifest.json"
 DOMAINS = ROOT / "standards/it-ste/domains/v1.0.0.json"
 PLAN_ROOT = ROOT / "standards/it-ste/adaptation-plans/asd-ste100/issue-9/r0001"
 PLAN_MAP = PLAN_ROOT / "map.jsonl"
+PLAN_TARGETS = PLAN_ROOT / "targets.json"
 PLAN_MANIFEST = PLAN_ROOT / "manifest.json"
 PROJECT_URL = "https://github.com/vladimirmashkov/IT-STE"
 EXPECTED_DATABASE_SHA256 = "4a1d2bc943d35f689599af564e5587e870d384552c25aaaeff9892effc87642b"
@@ -47,8 +48,6 @@ APPLICABILITY_STATES = {
     "pending",
     "adopt",
     "adapt",
-    "split",
-    "merge",
     "not-applicable",
 }
 ADAPTATION_ACTIONS = {
@@ -262,10 +261,8 @@ def validate_reviewed_decision(
     applicability = assessment["applicability"]
     action = assessment["adaptation_action"]
     allowed_pairs = {
-        "adopt": {"create-rule"},
-        "adapt": {"create-rule"},
-        "split": {"create-rules"},
-        "merge": {"merge-into-rule"},
+        "adopt": {"create-rule", "create-rules", "merge-into-rule"},
+        "adapt": {"create-rule", "create-rules", "merge-into-rule"},
         "not-applicable": {"record-rationale-only"},
     }
     if applicability == "pending" or action == "pending":
@@ -342,6 +339,15 @@ def validate_records(records: Sequence[dict[str, Any]]) -> dict[str, int]:
             raise PlanError(f"Invalid target_rule_ids for {block_id}")
         if len(targets) != len(set(targets)):
             raise PlanError(f"Duplicate target_rule_ids within source block {block_id}")
+        if status == "unreviewed" and (
+            applicability != "pending"
+            or action != "pending"
+            or rationale is not None
+            or targets
+        ):
+            raise PlanError(f"An unreviewed assessment must remain empty and pending: {block_id}")
+        if status != "reviewed" and targets:
+            raise PlanError(f"Only reviewed assessments can allocate target IDs: {block_id}")
         if applicability in {"pending", "not-applicable"} and targets:
             raise PlanError(f"{applicability} assessment cannot have target IDs: {block_id}")
         if action == "pending" and targets:
@@ -349,7 +355,7 @@ def validate_records(records: Sequence[dict[str, Any]]) -> dict[str, int]:
         if status == "reviewed":
             validate_reviewed_decision(block_id, assessment, targets)
         for target in targets:
-            target_uses.setdefault(target, []).append(str(applicability))
+            target_uses.setdefault(target, []).append(str(action))
         status_counts[status] += 1
         applicability_counts[applicability] += 1
 
@@ -361,9 +367,9 @@ def validate_records(records: Sequence[dict[str, Any]]) -> dict[str, int]:
         extra = sorted(set(found_ids) - expected_ids)
         raise PlanError(f"Adaptation-map coverage mismatch; missing={missing}; extra={extra}")
     for target, uses in target_uses.items():
-        if len(uses) > 1 and set(uses) != {"merge"}:
+        if len(uses) > 1 and set(uses) != {"merge-into-rule"}:
             raise PlanError(
-                f"Target {target} is shared without merge decisions on all source blocks"
+                f"Target {target} is shared without merge actions on all source blocks"
             )
 
     return {
@@ -373,6 +379,114 @@ def validate_records(records: Sequence[dict[str, Any]]) -> dict[str, int]:
         **{f"assessment_{key}": value for key, value in status_counts.items()},
         **{f"applicability_{key}": value for key, value in applicability_counts.items()},
     }
+
+
+def empty_targets() -> dict[str, object]:
+    return {
+        "schema_version": "1.0.0",
+        "status": "draft",
+        "description": (
+            "Planned IT-STE rule concepts produced by reviewed adaptation decisions. "
+            "These entries are not normative rules."
+        ),
+        "targets": [],
+        "rights": {
+            "license": "CC-BY-SA-4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "attribution": {
+                "name": "IT-STE contributors",
+                "url": PROJECT_URL,
+            },
+        },
+    }
+
+
+def validate_targets(records: Sequence[dict[str, Any]]) -> int:
+    registry = load_json(PLAN_TARGETS)
+    if registry.get("schema_version") != "1.0.0" or registry.get("status") != "draft":
+        raise PlanError("Target registry must use schema 1.0.0 and draft status")
+    targets = registry.get("targets")
+    if not isinstance(targets, list):
+        raise PlanError("Target registry must contain a targets array")
+    attribution = registry.get("rights", {}).get("attribution", {})
+    if attribution.get("url") != PROJECT_URL:
+        raise PlanError("Target registry must retain the required IT-STE project link")
+
+    domains = domain_ids()
+    domain_registry = load_json(DOMAINS)
+    parents = {item["id"]: item["parent"] for item in domain_registry["domains"]}
+
+    def ancestors(domain: str) -> set[str]:
+        result = set()
+        parent = parents[domain]
+        while parent is not None:
+            result.add(parent)
+            parent = parents[parent]
+        return result
+
+    map_uses: dict[str, set[str]] = {}
+    map_domains: dict[str, set[str]] = {}
+    for record in records:
+        block_id = record["source"]["block_id"]
+        for target_id in record["target_rule_ids"]:
+            map_uses.setdefault(target_id, set()).add(block_id)
+            map_domains.setdefault(target_id, set()).update(
+                record["assessment"]["candidate_domains"]
+            )
+
+    target_uses: dict[str, set[str]] = {}
+    for target in targets:
+        if not isinstance(target, dict):
+            raise PlanError("Every planned target must be an object")
+        target_id = target.get("id")
+        if not isinstance(target_id, str) or TARGET_RULE_ID_RE.fullmatch(target_id) is None:
+            raise PlanError(f"Invalid planned target ID: {target_id!r}")
+        if target_id in target_uses:
+            raise PlanError(f"Duplicate planned target ID: {target_id}")
+        if target.get("status") != "planned" or "normative_record" in target:
+            raise PlanError(f"Target {target_id} must remain planned and non-normative")
+        for field in ("working_title", "design_intent"):
+            value = target.get(field)
+            if not isinstance(value, str) or not value.strip():
+                raise PlanError(f"Target {target_id} requires a non-empty {field}")
+        source_ids = target.get("source_block_ids")
+        if not isinstance(source_ids, list) or not source_ids or any(
+            not isinstance(source_id, str) for source_id in source_ids
+        ):
+            raise PlanError(f"Target {target_id} requires source_block_ids")
+        if len(source_ids) != len(set(source_ids)):
+            raise PlanError(f"Target {target_id} repeats a source block ID")
+        candidates = target.get("candidate_domains")
+        if not isinstance(candidates, list) or not candidates:
+            raise PlanError(f"Target {target_id} requires candidate_domains")
+        unknown = set(candidates) - domains
+        if unknown:
+            raise PlanError(f"Unknown target domains for {target_id}: {sorted(unknown)}")
+        source_domains = map_domains.get(target_id, set())
+        for candidate in candidates:
+            if not any(
+                candidate == source_domain or candidate in ancestors(source_domain)
+                for source_domain in source_domains
+            ):
+                raise PlanError(
+                    f"Target domain {candidate!r} is unsupported by source decisions for {target_id}"
+                )
+        for source_domain in source_domains:
+            if not any(
+                candidate == source_domain or candidate in ancestors(source_domain)
+                for candidate in candidates
+            ):
+                raise PlanError(
+                    f"Source domain {source_domain!r} is not covered by target {target_id}"
+                )
+        target_uses[target_id] = set(source_ids)
+
+    if target_uses != map_uses:
+        raise PlanError(
+            "Target registry does not match map target/source relationships: "
+            f"registry={target_uses}; map={map_uses}"
+        )
+    return len(targets)
 
 
 def manifest(counts: dict[str, int]) -> dict[str, object]:
@@ -404,6 +518,8 @@ def manifest(counts: dict[str, int]) -> dict[str, object]:
         "domain_registry_sha256": sha256_file(DOMAINS),
         "map": "standards/it-ste/adaptation-plans/asd-ste100/issue-9/r0001/map.jsonl",
         "map_sha256": sha256_file(PLAN_MAP),
+        "targets": "standards/it-ste/adaptation-plans/asd-ste100/issue-9/r0001/targets.json",
+        "targets_sha256": sha256_file(PLAN_TARGETS),
         "method": {
             "classification_basis": "authenticated compact source headings and physical page ranges",
             "initial_review_state": "unreviewed",
@@ -423,6 +539,7 @@ def seal(accept_domain_change: bool = False) -> None:
     authenticate_source()
     records = load_jsonl(PLAN_MAP)
     counts = validate_records(records)
+    counts["planned_targets"] = validate_targets(records)
     if PLAN_MANIFEST.exists():
         previous = load_json(PLAN_MANIFEST)
         previous_source = previous.get("source")
@@ -444,9 +561,10 @@ def initialize() -> None:
     authenticate_source()
     domain_ids()
     PLAN_ROOT.mkdir(parents=True, exist_ok=True)
-    if PLAN_MAP.exists() or PLAN_MANIFEST.exists():
+    if PLAN_MAP.exists() or PLAN_TARGETS.exists() or PLAN_MANIFEST.exists():
         raise PlanError("Adaptation plan already exists; init never overwrites manual work")
     write_jsonl(PLAN_MAP, initial_records())
+    write_json(PLAN_TARGETS, empty_targets())
     seal()
     print(f"Created adaptation map: {PLAN_MAP}")
     print(f"Created adaptation manifest: {PLAN_MANIFEST}")
@@ -456,6 +574,7 @@ def check() -> None:
     source_manifest = authenticate_source()
     records = load_jsonl(PLAN_MAP)
     counts = validate_records(records)
+    counts["planned_targets"] = validate_targets(records)
     plan_manifest = load_json(PLAN_MANIFEST)
     expected_manifest = manifest(counts)
     if plan_manifest != expected_manifest:
@@ -472,6 +591,7 @@ def check() -> None:
         f"- assessments: {counts['assessment_unreviewed']} unreviewed; "
         f"{counts['assessment_in-review']} in review; {counts['assessment_reviewed']} reviewed"
     )
+    print(f"- planned IT-STE targets: {counts['planned_targets']}")
     print(f"- required project link: {PROJECT_URL}")
 
 

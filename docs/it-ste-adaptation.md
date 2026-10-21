@@ -14,9 +14,10 @@ standards/it-ste/
   adaptation-plans/asd-ste100/issue-9/r0001/
     manifest.json
     map.jsonl
+    targets.json
 ```
 
-`domains/v1.0.0.json` defines stable draft identifiers for IT contexts. `map.jsonl` has one record for each of the 53 source rules and 8 general recommendations. The plan manifest authenticates the source database, domain registry, and map by SHA-256.
+`domains/v1.0.0.json` defines stable draft identifiers for IT contexts. `map.jsonl` has one record for each of the 53 source rules and 8 general recommendations. `targets.json` describes each planned IT-STE rule concept and the source decisions that produced it without becoming normative text. The plan manifest authenticates the source database, domain registry, map, and target registry by SHA-256.
 
 The plan is not an IT-STE release, its heading-based candidate domains are not normative, and no target rule ID is allocated until an editorial decision requires one.
 
@@ -25,7 +26,7 @@ The plan is not an IT-STE release, its heading-based candidate domains are not n
 Each source block moves through these independent fields:
 
 - `assessment.status`: `unreviewed`, `in-review`, or `reviewed`;
-- `assessment.applicability`: `pending`, `adopt`, `adapt`, `split`, `merge`, or `not-applicable`;
+- `assessment.applicability`: semantic disposition `pending`, `adopt`, `adapt`, or `not-applicable`;
 - `assessment.adaptation_action`: `pending`, `create-rule`, `create-rules`, `merge-into-rule`, or `record-rationale-only`.
 
 A `reviewed` assessment requires a non-empty English `rationale` and one coherent decision:
@@ -33,9 +34,11 @@ A `reviewed` assessment requires a non-empty English `rationale` and one coheren
 | Applicability | Action | Target IDs |
 | --- | --- | --- |
 | `adopt` or `adapt` | `create-rule` | exactly one |
-| `split` | `create-rules` | two or more |
-| `merge` | `merge-into-rule` | exactly one; it can be shared only by other merge decisions |
+| `adopt` or `adapt` | `create-rules` | two or more |
+| `adopt` or `adapt` | `merge-into-rule` | exactly one; it can be shared only by other merge actions |
 | `not-applicable` | `record-rationale-only` | none |
+
+`applicability` records whether source meaning is retained or changed; `adaptation_action` records one-to-one, one-to-many, or many-to-one target structure. Only reviewed assessments can allocate target IDs.
 
 Candidate domains must use IDs from the pinned `standards/it-ste/domains/v1.0.0.json` registry. Target IDs use the exact form `ITSTE-R-NNNN` and identify project-owned IT-STE rules rather than ASD rules.
 
@@ -57,7 +60,7 @@ Candidate domains must use IDs from the pinned `standards/it-ste/domains/v1.0.0.
    ```
 
 3. Edit only that block's map record. Explain what applies to IT, what must change, and why. Do not copy source wording into an IT-STE rule by default.
-4. Allocate target IDs only after deciding to create, split, or merge rules.
+4. Allocate target IDs only after deciding to create, split, or merge rules. Add or update the matching non-normative concept in `targets.json`; its source ID set must exactly match the map.
 5. Refresh hashes and counts, then validate:
 
    ```sh
@@ -69,7 +72,7 @@ Candidate domains must use IDs from the pinned `standards/it-ste/domains/v1.0.0.
 
 ## From plan to standard
 
-Reviewed map decisions are inputs to, not substitutes for, canonical IT-STE records. Author English rules under a versioned `standards/it-ste/versions/<version>/revisions/<revision>/content/en/` snapshot. Store exact source locators and rationale, keep Russian optional and subordinate to English, and generate human and LLM representations from the canonical records.
+Reviewed map decisions are inputs to, not substitutes for, canonical IT-STE records. A `targets.json` entry remains a non-normative planning concept and is not mutated into a canonical record. Author the English rule with the same stable ID under a versioned `standards/it-ste/versions/<version>/revisions/<revision>/content/en/` snapshot; the snapshot manifest and adaptation relations establish materialization. Store exact source locators and rationale, keep Russian optional and subordinate to English, and generate human and LLM representations from the canonical records.
 
 The current tool profile is intentionally pinned to Issue 9 `r0001`. A future upstream issue or corrected source representation gets a separate immutable plan path and trusted source profile; never repin this plan to another source.
 

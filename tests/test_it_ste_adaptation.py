@@ -65,27 +65,55 @@ class AdaptationPlanTests(unittest.TestCase):
 
     def test_reviewed_decisions_must_be_coherent(self) -> None:
         records = adaptation.load_jsonl(adaptation.PLAN_MAP)
-        records[0] = copy.deepcopy(records[0])
-        records[0]["assessment"]["status"] = "reviewed"
-        records[0]["assessment"]["rationale"] = "Synthetic reviewed rationale."
+        records[14] = copy.deepcopy(records[14])
+        records[14]["assessment"]["status"] = "reviewed"
+        records[14]["assessment"]["rationale"] = "Synthetic reviewed rationale."
         with self.assertRaises(adaptation.PlanError):
             adaptation.validate_records(records)
 
     def test_merge_can_share_one_target_id(self) -> None:
         records = adaptation.load_jsonl(adaptation.PLAN_MAP)
-        for index in (0, 1):
+        reviewed_before = sum(
+            record["assessment"]["status"] == "reviewed" for record in records
+        )
+        for index in (14, 15):
             records[index] = copy.deepcopy(records[index])
             records[index]["assessment"].update(
                 {
                     "status": "reviewed",
-                    "applicability": "merge",
+                    "applicability": "adapt",
                     "adaptation_action": "merge-into-rule",
                     "rationale": "Synthetic many-to-one merge rationale.",
                 }
             )
             records[index]["target_rule_ids"] = ["ITSTE-R-0001"]
         counts = adaptation.validate_records(records)
-        self.assertEqual(counts["assessment_reviewed"], 2)
+        self.assertEqual(counts["assessment_reviewed"], reviewed_before + 2)
+
+    def test_unreviewed_decision_cannot_allocate_a_target(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        records[0] = copy.deepcopy(records[0])
+        records[0]["assessment"]["status"] = "unreviewed"
+        with self.assertRaises(adaptation.PlanError):
+            adaptation.validate_records(records)
+
+    def test_unrelated_target_domain_is_rejected(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        registry = adaptation.load_json(adaptation.PLAN_TARGETS)
+        registry = copy.deepcopy(registry)
+        registry["targets"][0]["candidate_domains"] = ["ai-automation"]
+        original_load_json = adaptation.load_json
+
+        def patched_load_json(path):
+            if path == adaptation.PLAN_TARGETS:
+                return registry
+            return original_load_json(path)
+
+        with (
+            mock.patch.object(adaptation, "load_json", side_effect=patched_load_json),
+            self.assertRaises(adaptation.PlanError),
+        ):
+            adaptation.validate_targets(records)
 
     def test_target_rule_id_format_is_exact(self) -> None:
         records = adaptation.load_jsonl(adaptation.PLAN_MAP)
@@ -100,6 +128,37 @@ class AdaptationPlanTests(unittest.TestCase):
         records[0]["target_rule_ids"] = ["ITSTE-R-invalid"]
         with self.assertRaises(adaptation.PlanError):
             adaptation.validate_records(records)
+
+    def test_section_one_decisions_map_to_five_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("1.")
+        ]
+        self.assertEqual(len(section), 14)
+        self.assertEqual(
+            {record["assessment"]["status"] for record in section},
+            {"reviewed"},
+        )
+        groups: dict[str, set[str]] = {}
+        for record in section:
+            for target in record["target_rule_ids"]:
+                groups.setdefault(target, set()).add(record["source"]["block_id"])
+        self.assertEqual(
+            groups,
+            {
+                "ITSTE-R-0001": {"1.1", "1.5", "1.6", "1.12"},
+                "ITSTE-R-0002": {"1.2", "1.3", "1.4", "1.7", "1.13"},
+                "ITSTE-R-0003": {"1.8", "1.11"},
+                "ITSTE-R-0004": {"1.9", "1.10"},
+                "ITSTE-R-0005": {"1.14"},
+            },
+        )
+        targets = adaptation.load_json(adaptation.PLAN_TARGETS)
+        self.assertEqual(
+            {target["id"]: set(target["source_block_ids"]) for target in targets["targets"]},
+            groups,
+        )
+        self.assertTrue(all("normative_record" not in target for target in targets["targets"]))
 
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
