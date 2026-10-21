@@ -229,6 +229,63 @@ class AdaptationPlanTests(unittest.TestCase):
             "Use direct verbs for actions",
         )
 
+    def test_section_four_decisions_create_sentence_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("4.")
+        ]
+        self.assertEqual(len(section), 5)
+        self.assertEqual(
+            {record["assessment"]["status"] for record in section},
+            {"reviewed"},
+        )
+        groups: dict[str, set[str]] = {}
+        for record in section:
+            for target in record["target_rule_ids"]:
+                groups.setdefault(target, set()).add(record["source"]["block_id"])
+        self.assertEqual(
+            groups,
+            {
+                "ITSTE-R-0010": {"4.1"},
+                "ITSTE-R-0011": {"4.2", "4.5"},
+                "ITSTE-R-0012": {"4.3"},
+                "ITSTE-R-0013": {"4.4"},
+            },
+        )
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        self.assertEqual(
+            targets["ITSTE-R-0011"]["source_block_ids"],
+            ["4.2", "4.5"],
+        )
+        clarity_intent = targets["ITSTE-R-0011"]["design_intent"]
+        for required_clause in (
+            "An imperative can keep its understood reader subject",
+            "a sentence does not need an object when its verb or meaning does not require one",
+            "Use articles and demonstratives where standard English and the intended specificity require them",
+            "Spell out contractions",
+            "Permit conventional fragments",
+            "Preserve quotations, externally controlled strings, and machine-significant text exactly",
+        ):
+            self.assertIn(required_clause, clarity_intent)
+        self.assertEqual(
+            targets["ITSTE-R-0012"]["working_title"],
+            "Use parallel lists for complex content",
+        )
+        list_intent = targets["ITSTE-R-0012"]["design_intent"]
+        for required_clause in (
+            "make every item connect grammatically to its lead-in",
+            "keep items parallel",
+            "use an ordered list only when sequence or priority matters",
+            "Follow the governing output format or style guide",
+        ):
+            self.assertIn(required_clause, list_intent)
+        self.assertTrue(
+            all(targets[target_id]["status"] == "planned" for target_id in groups)
+        )
+
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
             adaptation.candidate_domains("5.2"),
