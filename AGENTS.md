@@ -4,16 +4,16 @@
 
 These instructions apply to the entire repository. This English document is authoritative; the Russian version is an optional translation.
 
-## Private ASD-STE100 reference
+## ASD-STE100 Issue 9 derivative reference
 
-When `.local/sources/ASD-STE100-issue-9.pdf` is available, use the private retrieval tool instead of reading or converting the complete PDF:
+Use the tracked derivative retrieval database instead of reading or converting the complete standard:
 
-1. Run `python3 tools/asd_ste100_local.py doctor` to verify the exact source and index.
+1. Run `python3 tools/asd_ste100_local.py doctor` to authenticate the published database and manifest. If the local source PDF is present, this also verifies its exact SHA-256.
 2. Use progressive disclosure: `overview`, then `rules`, `rule <ID>`, or `word <TERM>`. Add `--full` only when the compact result is insufficient. Use `search` for discovery and `page <PDF_PAGE>` only to verify a cited page.
 3. Never put the complete extraction into context. Keep the standard version and physical PDF page with every result. Treat mechanically extracted structure as unreviewed and verify ambiguous wording, table columns, typography, or diagrams against the PDF.
-4. The PDF and all derived text or databases are restricted local inputs. Keep them under `.local/`; do not stage, commit, publish, or copy source text into tracked fixtures without documented permission. Do not present an extraction or IT-STE adaptation as official ASD guidance.
+4. Publication permission covers the derivative database, not the source PDF. Keep the PDF under `.local/` and never stage, commit, or publish it. Regenerate published artifacts only through `build` and `publish`, retain ASD ownership and the IT-STE project link, and do not present an extraction or adaptation as official ASD guidance.
 
-See [the local-reference guide](docs/asd-ste100-local-reference.md).
+See [the derivative-reference guide](docs/asd-ste100-local-reference.md) and [permission record](docs/permissions/asd-ste100-issue-9-derivatives.md).
 
 ## Review all changes and propose terminal commands
 

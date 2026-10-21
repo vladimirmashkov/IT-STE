@@ -7,6 +7,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tools import asd_ste100_local as reference
 
@@ -61,11 +62,15 @@ class PureFunctionTests(unittest.TestCase):
             with self.assertRaises(argparse.ArgumentTypeError):
                 reference.bounded_limit(value)
 
-    def test_private_path_rejects_public_output(self) -> None:
-        accepted = reference.private_path(reference.LOCAL_ROOT / "test.db", "database")
-        self.assertTrue(accepted.is_relative_to(reference.LOCAL_ROOT))
+    def test_path_policies_separate_staging_and_publication(self) -> None:
+        private = reference.private_path(reference.LOCAL_ROOT / "test.db", "database")
+        self.assertTrue(private.is_relative_to(reference.LOCAL_ROOT))
+        published = reference.reference_path(reference.DEFAULT_DATABASE, "database")
+        self.assertTrue(published.is_relative_to(reference.PUBLISHED_ROOT))
         with self.assertRaises(reference.ReferenceError):
-            reference.private_path(reference.ROOT / "reference.db", "database")
+            reference.private_path(reference.DEFAULT_DATABASE, "database")
+        with self.assertRaises(reference.ReferenceError):
+            reference.reference_path(reference.ROOT / "reference.db", "database")
 
     def test_rule_segmentation_with_project_authored_text(self) -> None:
         pages = [
@@ -154,7 +159,7 @@ class SyntheticDatabaseTests(unittest.TestCase):
         self.temporary.cleanup()
 
     def test_database_and_fts_are_queryable(self) -> None:
-        with reference.open_database(self.database) as connection:
+        with contextlib.closing(reference.open_database(self.database)) as connection:
             self.assertEqual(connection.execute("PRAGMA integrity_check").fetchone()[0], "ok")
             self.assertEqual(connection.execute("SELECT count(*) FROM pages_fts").fetchone()[0], 1)
             self.assertEqual(connection.execute("SELECT count(*) FROM blocks_fts").fetchone()[0], 1)
@@ -192,9 +197,99 @@ class SyntheticDatabaseTests(unittest.TestCase):
         self.assertEqual(len(json.loads(stream.getvalue())), 1)
 
 
-@unittest.skipUnless(reference.DEFAULT_DATABASE.is_file(), "local reference is not built")
-class LocalReferenceIntegrationTests(unittest.TestCase):
-    def test_doctor_authenticates_local_artifacts(self) -> None:
+class PublishTests(unittest.TestCase):
+    def setUp(self) -> None:
+        reference.LOCAL_ROOT.mkdir(parents=True, exist_ok=True)
+        self.temporary = tempfile.TemporaryDirectory(dir=reference.LOCAL_ROOT)
+        self.root = Path(self.temporary.name)
+        self.source = self.root / "source.pdf"
+        self.database = self.root / "staging.sqlite3"
+        self.manifest = self.root / "staging.json"
+        self.notice = self.root / "NOTICE.md"
+        self.permission = self.root / "permission.md"
+        self.published = self.root / "published"
+        self.source.write_bytes(b"synthetic private PDF")
+        self.database.write_bytes(b"synthetic derivative database")
+        self.notice.write_text("Synthetic derivative notice\n", encoding="utf-8")
+        self.permission.write_text("Synthetic permission record\n", encoding="utf-8")
+        self.manifest.write_text(
+            json.dumps(
+                {
+                    "database": self.database.name,
+                    "database_sha256": reference.sha256_file(self.database),
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+
+    def tearDown(self) -> None:
+        self.temporary.cleanup()
+
+    def publication_patches(self) -> contextlib.ExitStack:
+        stack = contextlib.ExitStack()
+        stack.enter_context(mock.patch.object(reference, "PUBLISHED_ROOT", self.published))
+        stack.enter_context(
+            mock.patch.object(reference, "DEFAULT_DATABASE", self.published / "reference.sqlite3")
+        )
+        stack.enter_context(
+            mock.patch.object(reference, "DEFAULT_MANIFEST", self.published / "manifest.json")
+        )
+        stack.enter_context(mock.patch.object(reference, "DERIVATIVE_NOTICE", self.notice))
+        stack.enter_context(mock.patch.object(reference, "PERMISSION_RECORD", self.permission))
+        stack.enter_context(
+            mock.patch.object(reference, "PERMISSION_RECORD_REFERENCE", "permission.md")
+        )
+        stack.enter_context(mock.patch.object(reference, "doctor", return_value=0))
+        return stack
+
+    def test_publish_copies_only_authenticated_derivatives(self) -> None:
+        args = argparse.Namespace(
+            source=self.source,
+            database=self.database,
+            manifest=self.manifest,
+            force=False,
+        )
+        with self.publication_patches(), contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(reference.publish(args), 0)
+            published_database = reference.DEFAULT_DATABASE
+            published_manifest = reference.DEFAULT_MANIFEST
+            self.assertEqual(published_database.read_bytes(), self.database.read_bytes())
+            data = json.loads(published_manifest.read_text(encoding="utf-8"))
+            self.assertEqual(data["database_sha256"], reference.sha256_file(published_database))
+            self.assertEqual(data["publication"], "authorized-derivative")
+            self.assertFalse(data["source_pdf_included"])
+            self.assertEqual(data["notice_sha256"], reference.sha256_file(self.notice))
+            self.assertEqual(
+                data["permission_record_sha256"], reference.sha256_file(self.permission)
+            )
+            self.assertEqual(
+                {path.name for path in self.published.iterdir()},
+                {"reference.sqlite3", "manifest.json"},
+            )
+            with self.assertRaises(reference.ReferenceError):
+                reference.publish(args)
+
+    def test_publish_cleans_temporary_files_after_hash_failure(self) -> None:
+        data = json.loads(self.manifest.read_text(encoding="utf-8"))
+        data["database_sha256"] = "0" * 64
+        self.manifest.write_text(json.dumps(data) + "\n", encoding="utf-8")
+        args = argparse.Namespace(
+            source=self.source,
+            database=self.database,
+            manifest=self.manifest,
+            force=False,
+        )
+        with self.publication_patches(), contextlib.redirect_stdout(io.StringIO()):
+            with self.assertRaises(reference.ReferenceError):
+                reference.publish(args)
+            self.assertFalse((self.published / "reference.sqlite3.tmp").exists())
+            self.assertFalse((self.published / "manifest.json.tmp").exists())
+
+
+@unittest.skipUnless(reference.DEFAULT_DATABASE.is_file(), "published reference is not present")
+class PublishedReferenceIntegrationTests(unittest.TestCase):
+    def test_doctor_authenticates_published_artifacts(self) -> None:
         args = argparse.Namespace(
             source=reference.DEFAULT_SOURCE,
             database=reference.DEFAULT_DATABASE,
@@ -203,8 +298,37 @@ class LocalReferenceIntegrationTests(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(reference.doctor(args), 0)
 
+    def test_doctor_works_without_the_private_pdf(self) -> None:
+        args = argparse.Namespace(
+            source=reference.LOCAL_ROOT / "sources/not-present.pdf",
+            database=reference.DEFAULT_DATABASE,
+            manifest=reference.DEFAULT_MANIFEST,
+        )
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(reference.doctor(args), 0)
+
+    def test_doctor_rejects_a_weakened_publication_manifest(self) -> None:
+        with tempfile.TemporaryDirectory(dir=reference.LOCAL_ROOT) as temporary:
+            root = Path(temporary)
+            database = root / "reference.sqlite3"
+            manifest = root / "manifest.json"
+            database.write_bytes(reference.DEFAULT_DATABASE.read_bytes())
+            data = json.loads(reference.DEFAULT_MANIFEST.read_text(encoding="utf-8"))
+            data["source_pdf_included"] = True
+            manifest.write_text(json.dumps(data) + "\n", encoding="utf-8")
+            args = argparse.Namespace(
+                source=reference.LOCAL_ROOT / "sources/not-present.pdf",
+                database=database,
+                manifest=manifest,
+            )
+            with (
+                mock.patch.object(reference, "PUBLISHED_ROOT", root),
+                contextlib.redirect_stdout(io.StringIO()),
+            ):
+                self.assertEqual(reference.doctor(args), 1)
+
     def test_expected_structural_counts(self) -> None:
-        with reference.open_database(reference.DEFAULT_DATABASE) as connection:
+        with contextlib.closing(reference.open_database(reference.DEFAULT_DATABASE)) as connection:
             counts = dict(connection.execute("SELECT key, value FROM metadata"))
             self.assertEqual(counts["physical_pages"], str(reference.EXPECTED_PAGES))
             self.assertEqual(counts["rules"], str(len(reference.EXPECTED_RULE_IDS)))
@@ -218,7 +342,7 @@ class LocalReferenceIntegrationTests(unittest.TestCase):
         if not reference.DEFAULT_SOURCE.is_file():
             self.skipTest("local source PDF is absent")
         actual = reference.sha256_file(reference.DEFAULT_SOURCE)
-        with reference.open_database(reference.DEFAULT_DATABASE) as connection:
+        with contextlib.closing(reference.open_database(reference.DEFAULT_DATABASE)) as connection:
             expected = connection.execute(
                 "SELECT value FROM metadata WHERE key = 'source_sha256'"
             ).fetchone()[0]

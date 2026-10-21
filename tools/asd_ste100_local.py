@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-"""Build and query a private, token-efficient ASD-STE100 Issue 9 reference.
+"""Build, publish, and query a token-efficient ASD-STE100 Issue 9 derivative.
 
-The source PDF and all extracted text remain under .local/, which Git ignores.
-The database is a retrieval aid, not a replacement for the authoritative PDF.
+The source PDF remains under .local/. Only the authorized derivative database,
+manifest, and notices are published. The database is a retrieval aid, not a
+replacement for the authoritative PDF.
 """
 
 from __future__ import annotations
@@ -20,15 +21,28 @@ import sys
 import textwrap
 import xml.etree.ElementTree as ET
 from collections.abc import Iterable, Sequence
+from contextlib import closing
 from dataclasses import dataclass
 from pathlib import Path
 from typing import cast
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCAL_ROOT = (ROOT / ".local").resolve()
+PUBLISHED_ROOT = (
+    ROOT / "standards/asd-ste100/versions/issue-9/revisions/r0001/derived"
+).resolve()
 DEFAULT_SOURCE = LOCAL_ROOT / "sources/ASD-STE100-issue-9.pdf"
-DEFAULT_DATABASE = ROOT / ".local/derived/asd-ste100/issue-9/reference.sqlite3"
-DEFAULT_MANIFEST = DEFAULT_DATABASE.with_name("manifest.json")
+PRIVATE_DATABASE = LOCAL_ROOT / "derived/asd-ste100/issue-9/reference.sqlite3"
+PRIVATE_MANIFEST = PRIVATE_DATABASE.with_name("manifest.json")
+DEFAULT_DATABASE = PUBLISHED_ROOT / "reference.sqlite3"
+DEFAULT_MANIFEST = PUBLISHED_ROOT / "manifest.json"
+DERIVATIVE_NOTICE = PUBLISHED_ROOT / "NOTICE.md"
+PERMISSION_RECORD = ROOT / "docs/permissions/asd-ste100-issue-9-derivatives.md"
+PERMISSION_RECORD_REFERENCE = "docs/permissions/asd-ste100-issue-9-derivatives.md"
+PUBLICATION_NOTICE = (
+    "Published machine-readable derivative. The source PDF is excluded. "
+    "Mechanical extraction remains unreviewed and must be verified by page."
+)
 EXPECTED_SOURCE_SHA256 = "d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431"
 EXPECTED_PAGES = 434
 EXPECTED_DICTIONARY_ENTRIES = 2_196
@@ -90,6 +104,19 @@ def private_path(path: Path, label: str) -> Path:
     if not resolved.is_relative_to(LOCAL_ROOT):
         raise ReferenceError(
             f"{label} must stay under the private local directory: {LOCAL_ROOT}\n"
+            f"Received: {resolved}"
+        )
+    return resolved
+
+
+def reference_path(path: Path, label: str) -> Path:
+    resolved = path.expanduser().resolve()
+    if not (
+        resolved.is_relative_to(LOCAL_ROOT)
+        or resolved.is_relative_to(PUBLISHED_ROOT)
+    ):
+        raise ReferenceError(
+            f"{label} must stay under .local/ or the published Issue 9 artifact directory\n"
             f"Received: {resolved}"
         )
     return resolved
@@ -740,7 +767,9 @@ def build(args: argparse.Namespace) -> int:
         "extractor_version": SCHEMA_VERSION,
         "poppler": poppler_version(),
         "review_state": "mechanically-extracted-unreviewed",
-        "redistribution": "not-authorized",
+        "redistribution": "authorized-derivatives",
+        "source_pdf_redistribution": "forbidden",
+        "permission_basis": "written-authorization-held-offline-by-repository-owner",
     }
     print("Writing private SQLite reference...", file=sys.stderr)
     create_database(database, pages, blocks, entries, metadata)
@@ -751,8 +780,8 @@ def build(args: argparse.Namespace) -> int:
         "database_sha256": database_hash,
         "usage": "python3 tools/asd_ste100_local.py overview",
         "notice": (
-            "Private retrieval aid. Keep under .local/. The authoritative source is the "
-            "reviewed PDF; mechanically extracted structure and column assignments can be wrong."
+            "Staging build for an authorized derivative reference. The source PDF must remain "
+            "private; mechanically extracted structure and column assignments can be wrong."
         ),
     }
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -764,8 +793,69 @@ def build(args: argparse.Namespace) -> int:
     return 0
 
 
+def publish(args: argparse.Namespace) -> int:
+    source = private_path(args.source, "source")
+    database = private_path(args.database, "database")
+    manifest_path = private_path(args.manifest, "manifest")
+    validation_args = argparse.Namespace(
+        source=source,
+        database=database,
+        manifest=manifest_path,
+    )
+    if doctor(validation_args) != 0:
+        raise ReferenceError("Private staging artifacts did not pass validation")
+    if (DEFAULT_DATABASE.exists() or DEFAULT_MANIFEST.exists()) and not args.force:
+        raise ReferenceError(
+            "Published derivative artifacts already exist. Use publish --force to replace them."
+        )
+
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if not isinstance(manifest, dict):
+        raise ReferenceError("Private manifest root is not an object")
+    if not DERIVATIVE_NOTICE.is_file():
+        raise ReferenceError(f"Derivative notice not found: {DERIVATIVE_NOTICE}")
+    if not PERMISSION_RECORD.is_file():
+        raise ReferenceError(f"Permission record not found: {PERMISSION_RECORD}")
+    manifest.update(
+        {
+            "database": DEFAULT_DATABASE.name,
+            "publication": "authorized-derivative",
+            "permission_record": PERMISSION_RECORD_REFERENCE,
+            "permission_record_sha256": sha256_file(PERMISSION_RECORD),
+            "source_pdf_included": False,
+            "notice": PUBLICATION_NOTICE,
+            "notice_file": DERIVATIVE_NOTICE.name,
+            "notice_sha256": sha256_file(DERIVATIVE_NOTICE),
+        }
+    )
+
+    PUBLISHED_ROOT.mkdir(parents=True, exist_ok=True)
+    database_temporary = DEFAULT_DATABASE.with_suffix(".sqlite3.tmp")
+    manifest_temporary = DEFAULT_MANIFEST.with_suffix(".json.tmp")
+    database_temporary.unlink(missing_ok=True)
+    manifest_temporary.unlink(missing_ok=True)
+    try:
+        shutil.copyfile(database, database_temporary)
+        if sha256_file(database_temporary) != manifest["database_sha256"]:
+            raise ReferenceError("Published database copy failed its SHA-256 check")
+        manifest_temporary.write_text(
+            json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        database_temporary.replace(DEFAULT_DATABASE)
+        manifest_temporary.replace(DEFAULT_MANIFEST)
+    finally:
+        database_temporary.unlink(missing_ok=True)
+        manifest_temporary.unlink(missing_ok=True)
+
+    print(f"Published derivative database: {DEFAULT_DATABASE}")
+    print(f"Published manifest: {DEFAULT_MANIFEST}")
+    print("Source PDF not copied.")
+    return 0
+
+
 def open_database(path: Path) -> sqlite3.Connection:
-    path = private_path(path, "database")
+    path = reference_path(path, "database")
     if not path.is_file():
         raise ReferenceError(
             f"Local reference not found: {path}\n"
@@ -785,7 +875,7 @@ def print_json(value: object) -> None:
 
 
 def overview(args: argparse.Namespace) -> int:
-    with open_database(args.database) as connection:
+    with closing(open_database(args.database)) as connection:
         info = metadata(connection)
         if args.json:
             print_json(info)
@@ -809,7 +899,7 @@ def page_range(row: sqlite3.Row) -> str:
 
 
 def list_rules(args: argparse.Namespace) -> int:
-    with open_database(args.database) as connection:
+    with closing(open_database(args.database)) as connection:
         values: list[object] = ["rule"]
         where = "kind = ?"
         if args.section is not None:
@@ -833,7 +923,7 @@ def get_block(args: argparse.Namespace) -> int:
     requested = args.id.upper()
     if requested.startswith("RULE "):
         requested = requested[5:].strip()
-    with open_database(args.database) as connection:
+    with closing(open_database(args.database)) as connection:
         row = connection.execute(
             "SELECT * FROM blocks WHERE upper(id) = ?", (requested,)
         ).fetchone()
@@ -901,7 +991,7 @@ def dictionary_candidates(
 
 
 def word(args: argparse.Namespace) -> int:
-    with open_database(args.database) as connection:
+    with closing(open_database(args.database)) as connection:
         rows = dictionary_candidates(connection, args.term, args.pos, args.limit)
         if not rows:
             raise ReferenceError(
@@ -956,7 +1046,7 @@ def fts_query(value: str) -> str:
 def search(args: argparse.Namespace) -> int:
     query = fts_query(args.query)
     output: list[dict[str, object]] = []
-    with open_database(args.database) as connection:
+    with closing(open_database(args.database)) as connection:
         if args.scope in ("all", "rules"):
             rows = connection.execute(
                 "SELECT b.id, b.kind, b.title, b.start_pdf_page, b.end_pdf_page, "
@@ -1012,7 +1102,7 @@ def search(args: argparse.Namespace) -> int:
 
 
 def show_page(args: argparse.Namespace) -> int:
-    with open_database(args.database) as connection:
+    with closing(open_database(args.database)) as connection:
         row = connection.execute(
             "SELECT * FROM pages WHERE pdf_page = ?", (args.pdf_page,)
         ).fetchone()
@@ -1030,24 +1120,21 @@ def show_page(args: argparse.Namespace) -> int:
 
 def doctor(args: argparse.Namespace) -> int:
     source = private_path(args.source, "source")
-    database = private_path(args.database, "database")
-    manifest_path = private_path(args.manifest, "manifest")
+    database = reference_path(args.database, "database")
+    manifest_path = reference_path(args.manifest, "manifest")
     failures: list[str] = []
     source_hash: str | None = None
     manifest_data: dict[str, object] = {}
 
-    if not source.is_file():
-        failures.append(f"source missing: {source}")
-    else:
+    if source.is_file():
         source_hash = sha256_file(source)
         if source_hash != EXPECTED_SOURCE_SHA256:
             failures.append(f"source SHA-256 mismatch: {source_hash}")
-
-    try:
-        executable("pdftotext")
-        executable("pdfinfo")
-    except ReferenceError as error:
-        failures.append(str(error))
+        try:
+            executable("pdftotext")
+            executable("pdfinfo")
+        except ReferenceError as error:
+            failures.append(str(error))
 
     if not manifest_path.is_file():
         failures.append(f"manifest missing: {manifest_path}")
@@ -1061,6 +1148,33 @@ def doctor(args: argparse.Namespace) -> int:
         except (OSError, json.JSONDecodeError) as error:
             failures.append(f"manifest error: {error}")
 
+    database_is_published = database.is_relative_to(PUBLISHED_ROOT)
+    manifest_is_published = manifest_path.is_relative_to(PUBLISHED_ROOT)
+    if database_is_published != manifest_is_published:
+        failures.append("database and manifest must both be staging or both be published")
+    if database_is_published and manifest_is_published:
+        expected_publication = {
+            "publication": "authorized-derivative",
+            "permission_record": PERMISSION_RECORD_REFERENCE,
+            "source_pdf_included": False,
+            "notice": PUBLICATION_NOTICE,
+            "notice_file": DERIVATIVE_NOTICE.name,
+        }
+        for key, value in expected_publication.items():
+            if manifest_data.get(key) != value:
+                failures.append(
+                    f"published manifest {key}: expected {value}, "
+                    f"got {manifest_data.get(key)}"
+                )
+        if not DERIVATIVE_NOTICE.is_file():
+            failures.append(f"derivative notice missing: {DERIVATIVE_NOTICE}")
+        elif manifest_data.get("notice_sha256") != sha256_file(DERIVATIVE_NOTICE):
+            failures.append("derivative notice SHA-256 does not match the manifest")
+        if not PERMISSION_RECORD.is_file():
+            failures.append(f"permission record missing: {PERMISSION_RECORD}")
+        elif manifest_data.get("permission_record_sha256") != sha256_file(PERMISSION_RECORD):
+            failures.append("permission record SHA-256 does not match the manifest")
+
     if not database.is_file():
         failures.append(f"database missing: {database}")
     else:
@@ -1070,7 +1184,7 @@ def doctor(args: argparse.Namespace) -> int:
         if manifest_data.get("database") != database.name:
             failures.append("manifest database filename does not match the selected database")
         try:
-            with open_database(database) as connection:
+            with closing(open_database(database)) as connection:
                 integrity = connection.execute("PRAGMA integrity_check").fetchone()[0]
                 if integrity != "ok":
                     failures.append(f"database integrity: {integrity}")
@@ -1090,7 +1204,9 @@ def doctor(args: argparse.Namespace) -> int:
                     "guidance": str(len(EXPECTED_GUIDANCE_IDS)),
                     "dictionary_entries": str(EXPECTED_DICTIONARY_ENTRIES),
                     "review_state": "mechanically-extracted-unreviewed",
-                    "redistribution": "not-authorized",
+                    "redistribution": "authorized-derivatives",
+                    "source_pdf_redistribution": "forbidden",
+                    "permission_basis": "written-authorization-held-offline-by-repository-owner",
                 }
                 for key, value in expected_metadata.items():
                     if info.get(key) != value:
@@ -1170,7 +1286,10 @@ def doctor(args: argparse.Namespace) -> int:
             print("- " + failure)
         return 1
     print("PASS")
-    print(f"- source: {source}")
+    if source_hash is None:
+        print(f"- source PDF: not present (expected SHA-256: {EXPECTED_SOURCE_SHA256})")
+    else:
+        print(f"- source: {source}")
     print(f"- database: {database}")
     print(f"- manifest: {manifest_path}")
     print(f"- source SHA-256: {EXPECTED_SOURCE_SHA256}")
@@ -1178,7 +1297,7 @@ def doctor(args: argparse.Namespace) -> int:
         f"- rules: {len(EXPECTED_RULE_IDS)}; guidance: {len(EXPECTED_GUIDANCE_IDS)}; "
         f"dictionary rows: {EXPECTED_DICTIONARY_ENTRIES}"
     )
-    print("- source, index, and manifest are authenticated and remain under .local/")
+    print("- derivative index and manifest are authenticated; source PDF is not published")
     return 0
 
 
@@ -1188,16 +1307,25 @@ def parser() -> argparse.ArgumentParser:
     common.add_argument("--json", action="store_true")
 
     root = argparse.ArgumentParser(
-        description="Build and query a private ASD-STE100 Issue 9 reference."
+        description="Build, publish, and query an ASD-STE100 Issue 9 derivative reference."
     )
     commands = root.add_subparsers(dest="command", required=True)
 
     build_parser = commands.add_parser("build", help="build the private local index")
     build_parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
-    build_parser.add_argument("--database", type=Path, default=DEFAULT_DATABASE)
-    build_parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    build_parser.add_argument("--database", type=Path, default=PRIVATE_DATABASE)
+    build_parser.add_argument("--manifest", type=Path, default=PRIVATE_MANIFEST)
     build_parser.add_argument("--force", action="store_true")
     build_parser.set_defaults(function=build)
+
+    publish_parser = commands.add_parser(
+        "publish", help="copy authenticated derivative artifacts into the versioned snapshot"
+    )
+    publish_parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
+    publish_parser.add_argument("--database", type=Path, default=PRIVATE_DATABASE)
+    publish_parser.add_argument("--manifest", type=Path, default=PRIVATE_MANIFEST)
+    publish_parser.add_argument("--force", action="store_true")
+    publish_parser.set_defaults(function=publish)
 
     overview_parser = commands.add_parser("overview", parents=[common], help="show a short index overview")
     overview_parser.set_defaults(function=overview)
@@ -1232,7 +1360,9 @@ def parser() -> argparse.ArgumentParser:
     page_parser.add_argument("pdf_page", type=int)
     page_parser.set_defaults(function=show_page)
 
-    doctor_parser = commands.add_parser("doctor", help="validate the local source and index")
+    doctor_parser = commands.add_parser(
+        "doctor", help="authenticate the derivative index and optional local source"
+    )
     doctor_parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     doctor_parser.add_argument("--database", type=Path, default=DEFAULT_DATABASE)
     doctor_parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)

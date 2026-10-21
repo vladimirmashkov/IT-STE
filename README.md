@@ -49,7 +49,7 @@ For details, see [storage and versioning](docs/storage.md), the [LLM export cont
 
 ## Status
 
-The repository structure is ready. No rules or vocabularies have been released, and the release registry is empty. Issue 9 has tracked source metadata and a [private local retrieval workflow](docs/asd-ste100-local-reference.md), but no ASD-STE100 source text or generated index is tracked. Export and canonical corpus-validation tools are not implemented yet.
+The repository structure is ready. No IT-STE rules or vocabularies have been released, and the release registry is empty. Issue 9 has tracked source metadata and an authorized, mechanically extracted [derivative retrieval database](docs/asd-ste100-local-reference.md). The source PDF is not tracked or published. Canonical corpus export and validation tools are not implemented yet.
 
 ## Licensing and required project link
 
