@@ -158,8 +158,11 @@ class AdaptationPlanTests(unittest.TestCase):
             },
         )
         targets = adaptation.load_json(adaptation.PLAN_TARGETS)
+        section_source_ids = {
+            record["source"]["block_id"] for record in section
+        }
         target_groups = {
-            target["id"]: set(target["source_block_ids"])
+            target["id"]: set(target["source_block_ids"]) & section_source_ids
             for target in targets["targets"]
             if target["id"] in groups
         }
@@ -184,6 +187,47 @@ class AdaptationPlanTests(unittest.TestCase):
         target = next(item for item in targets if item["id"] == "ITSTE-R-0006")
         self.assertEqual(target["source_block_ids"], ["2.1", "2.2"])
         self.assertEqual(target["working_title"], "Clarify multi-word technical terms")
+
+    def test_section_three_decisions_create_verb_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("3.")
+        ]
+        self.assertEqual(len(section), 7)
+        self.assertEqual(
+            {record["assessment"]["status"] for record in section},
+            {"reviewed"},
+        )
+        groups: dict[str, set[str]] = {}
+        for record in section:
+            for target in record["target_rule_ids"]:
+                groups.setdefault(target, set()).add(record["source"]["block_id"])
+        self.assertEqual(
+            groups,
+            {
+                "ITSTE-R-0002": {"3.1"},
+                "ITSTE-R-0007": {"3.2", "3.3", "3.4", "3.5"},
+                "ITSTE-R-0008": {"3.6"},
+                "ITSTE-R-0009": {"3.7"},
+            },
+        )
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        self.assertIn("3.1", targets["ITSTE-R-0002"]["source_block_ids"])
+        self.assertEqual(
+            targets["ITSTE-R-0007"]["source_block_ids"],
+            ["3.2", "3.3", "3.4", "3.5"],
+        )
+        self.assertEqual(
+            targets["ITSTE-R-0008"]["working_title"],
+            "Prefer active voice and name the actor",
+        )
+        self.assertEqual(
+            targets["ITSTE-R-0009"]["working_title"],
+            "Use direct verbs for actions",
+        )
 
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
