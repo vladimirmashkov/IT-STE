@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 103,
-    "needs-review": 168,
+    "allowed": 104,
+    "needs-review": 167,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -42870,13 +42870,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: detect; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Identify evidence of a specified condition through a defined check\.
 
 Domains: monitoring\-alerts
 
-Rationale: The extracted cell contains wording repeated as the next row definition\; source alignment needs review\.
+Rationale: Authenticated PDF visual inspection confirms that detect \(v\) is row 1 with FIND \(v\) and SENSE \(v\) alternatives\; A worse condition belongs to the following DETERIORATION \(n\) row\. Prometheus alerting rules define conditions through expressions\, and Kubernetes probes use checks to detect unhealthy or not\-ready conditions\. This supports the bounded monitoring\-alerts sense without broadening detect to every observation\. See \`docs\/it\-ste\-research\/W1\-D\-P215\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -42910,9 +42910,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted cell contains wording repeated as the next row definition; source alignment needs review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 215 (printed page 2-1-D9). Findings: detect (v) is row 1 with FIND (v) and SENSE (v) alternatives; DETERIORATION (n) begins the next row and its definition is A worse condition.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 215,
     "printed_page": "2-1-D9",
@@ -167544,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `28942d25faf8abaee4d8d371d03ee49f9bc17c631d0ed88f5bfad55448ac8a94`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `25a48803d5e71ba4d99a95afaefd0a8755cb28400245e5b6184f551537580d2b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `b4eb237f5b9b3d586e3f0401226183bc6b5a5c97859137abadf41905241268db`
 

@@ -2324,12 +2324,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "Identify evidence of a specified condition through a defined check.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The extracted cell contains wording repeated as the next row definition; source alignment needs review.",
+      "rationale": "Authenticated PDF visual inspection confirms that detect (v) is row 1 with FIND (v) and SENSE (v) alternatives; A worse condition belongs to the following DETERIORATION (n) row. Prometheus alerting rules define conditions through expressions, and Kubernetes probes use checks to detect unhealthy or not-ready conditions. This supports the bounded monitoring-alerts sense without broadening detect to every observation. See `docs/it-ste-research/W1-D-P215.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "identify",
         "find evidence of"
@@ -2362,9 +2362,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 215 (printed page 2-1-D9). Findings: detect (v) is row 1 with FIND (v) and SENSE (v) alternatives; DETERIORATION (n) begins the next row and its definition is A worse condition.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
