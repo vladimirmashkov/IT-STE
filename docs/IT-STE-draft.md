@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 183,
+    "needs-review": 181,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1372
+    "restricted": 1374
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -34772,13 +34772,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONSTANT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Unchanging over an explicitly specified interval\, provisionally\.
+Definition: Having the same value throughout a specified interval\.
 
 Domains: configuration
 
-Rationale: The column includes Incessantly from the following adverb row\; separate unchanged value from uninterrupted activity before settling the source sense\.
+Rationale: The authenticated PDF shows a separate CONSTANT row with the meaning that something continues to be the same\, without change\; the Incessantly text belongs to the following CONSTANTLY row\. Prometheus and CloudWatch use discrete evaluations or periods\, so the draft meaning keeps an explicit interval and does not imply constant sampling or a constant response\. See docs\/it\-ste\-research\/W1\-D\-P200\.md\.
 
 Contextual alternatives:
 
@@ -34812,9 +34812,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The column appends Incessantly, also given for the following CONSTANTLY row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 200 -l 200 -r 180 -png from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 200 (2-1-C18), CONSTANT (adj) is a distinct ruled row with the meaning That continues to be the same, without change and its own STE example; a horizontal boundary separates it from CONSTANTLY (adv). The mechanically extracted Incessantly fragment belongs to the following adverb row. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 200,
     "printed_page": "2-1-C18",
@@ -34824,8 +34824,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P200-005",
@@ -34846,13 +34845,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONSTANTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Without interruption during a specified interval\, provisionally\.
+Definition: Without interruption throughout a specified interval\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped\-headword warning prevents a settled decision\; exact timing or a polling interval is preferable in operational guidance\.
+Rationale: The authenticated PDF confirms a separate CONSTANTLY row whose source meaning is Incessantly\; its wrapped headword does not merge it with CONSTANT\. Prometheus\, CloudWatch\, and Kubernetes documentation distinguish discrete evaluations or recurring schedules from uninterrupted activity\, so the draft meaning requires an explicit interval and does not describe periodic checks as constant\. See docs\/it\-ste\-research\/W1\-D\-P200\.md\.
 
 Contextual alternatives:
 
@@ -34886,9 +34885,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 200 -l 200 -r 180 -png from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 200 (2-1-C18), CONSTANTLY (adv) is a distinct ruled row below CONSTANT; the headword wraps over two lines, its POS is adv, and its meaning and STE example remain within the row. The wrapped-headword warning is confirmed and does not merge this row with the adjective. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 200,
     "printed_page": "2-1-C18",
@@ -34898,8 +34897,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P200-006",
@@ -167557,7 +167555,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d087ef231f144a5f342b2e364fe415276b30ed353a12cf38694546ad5bfc71f5`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `367f8235e7946229a74809f82d68364b7f251c8cf74efb52a0808f437d7d0d00`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `5cc1f6911314c4d5a68f1b3401504d7f0ddaca706f6ae2e63c6f8b4827a533b1`
 

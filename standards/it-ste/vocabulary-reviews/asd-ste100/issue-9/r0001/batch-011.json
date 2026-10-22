@@ -550,12 +550,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Unchanging over an explicitly specified interval, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Having the same value throughout a specified interval.",
       "domains": [
         "configuration"
       ],
-      "rationale": "The column includes Incessantly from the following adverb row; separate unchanged value from uninterrupted activity before settling the source sense.",
+      "rationale": "The authenticated PDF shows a separate CONSTANT row with the meaning that something continues to be the same, without change; the Incessantly text belongs to the following CONSTANTLY row. Prometheus and CloudWatch use discrete evaluations or periods, so the draft meaning keeps an explicit interval and does not imply constant sampling or a constant response. See docs/it-ste-research/W1-D-P200.md.",
       "permitted_contextual_alternatives": [
         "unchanged during the test",
         "fixed for this run"
@@ -588,14 +588,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 200 -l 200 -r 180 -png from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 200 (2-1-C18), CONSTANT (adj) is a distinct ruled row with the meaning That continues to be the same, without change and its own STE example; a horizontal boundary separates it from CONSTANTLY (adv). The mechanically extracted Incessantly fragment belongs to the following adverb row. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -612,12 +611,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Without interruption during a specified interval, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Without interruption throughout a specified interval.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The wrapped-headword warning prevents a settled decision; exact timing or a polling interval is preferable in operational guidance.",
+      "rationale": "The authenticated PDF confirms a separate CONSTANTLY row whose source meaning is Incessantly; its wrapped headword does not merge it with CONSTANT. Prometheus, CloudWatch, and Kubernetes documentation distinguish discrete evaluations or recurring schedules from uninterrupted activity, so the draft meaning requires an explicit interval and does not describe periodic checks as constant. See docs/it-ste-research/W1-D-P200.md.",
       "permitted_contextual_alternatives": [
         "without interruption for 60 seconds",
         "at every stated interval"
@@ -650,14 +649,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 200 -l 200 -r 180 -png from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 200 (2-1-C18), CONSTANTLY (adv) is a distinct ruled row below CONSTANT; the headword wraps over two lines, its POS is adv, and its meaning and STE example remain within the row. The wrapped-headword warning is confirmed and does not merge this row with the adjective. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
