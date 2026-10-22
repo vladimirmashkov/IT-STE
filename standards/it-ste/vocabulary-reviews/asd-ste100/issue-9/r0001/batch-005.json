@@ -1739,24 +1739,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Knowing about a stated condition that affects a user's next action.",
+      "it_disposition": "restricted",
+      "it_definition": "Knowing a stated condition, limitation, risk, or rule that affects a person's next action.",
       "domains": [
         "release-notes"
       ],
-      "rationale": "A notice should state the consequence directly; the extracted alternatives include the beginning of the following row.",
+      "rationale": "The authenticated PDF shows aware as a separate adjective row with KNOW and TELL alternatives and two examples; the extracted spill into AWAY FROM is a row-boundary artifact. Technical-writing guidance favors precise, specific wording and warns that vague adjectives can be loosely defined, while NIST situational-awareness guidance anchors awareness in perception and comprehension of an identified environment or risk. Keep this restricted to human knowledge of an identified condition, limitation, risk, or rule that changes the reader's action; do not use aware alone to imply a system state or to communicate the required response. This is a restricted draft sense, not vocabulary approval; the editorial distinction remains subject to review. See docs/it-ste-research/W1-D-P172.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
-        "note that",
-        "the stated limitation applies"
+        "know that",
+        "tell users that",
+        "note that"
       ],
       "examples": {
         "positive": {
-          "text": "Version 4 cannot read version 5 snapshots.",
-          "explanation": "Communicates the limitation without relying on awareness alone."
+          "text": "Administrators must know that version 5 cannot read version 4 snapshots before they upgrade.",
+          "explanation": "Names the limitation, affected versions, and action instead of relying on an unspecified awareness state."
         },
         "problematic": {
           "text": "Be aware of compatibility.",
-          "explanation": "Does not state the incompatible versions or required response."
+          "explanation": "Does not identify the incompatible versions, affected users, or required action."
         }
       },
       "evidence": {
@@ -1777,14 +1778,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 172 -l 172 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 172 (2-1-A24), aware (adj) is one row with the alternatives KNOW (v) and TELL (v), and two STE examples. A horizontal boundary separates it from AWAY FROM (prep); the extracted text from that following row is a boundary artifact. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },

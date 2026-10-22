@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 205,
+    "needs-review": 204,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1353
+    "restricted": 1354
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -18349,27 +18349,29 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: aware; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Knowing about a stated condition that affects a user\'s next action\.
+Definition: Knowing a stated condition\, limitation\, risk\, or rule that affects a person\'s next action\.
 
 Domains: release\-notes
 
-Rationale: A notice should state the consequence directly\; the extracted alternatives include the beginning of the following row\.
+Rationale: The authenticated PDF shows aware as a separate adjective row with KNOW and TELL alternatives and two examples\; the extracted spill into AWAY FROM is a row\-boundary artifact\. Technical\-writing guidance favors precise\, specific wording and warns that vague adjectives can be loosely defined\, while NIST situational\-awareness guidance anchors awareness in perception and comprehension of an identified environment or risk\. Keep this restricted to human knowledge of an identified condition\, limitation\, risk\, or rule that changes the reader\'s action\; do not use aware alone to imply a system state or to communicate the required response\. This is a restricted draft sense\, not vocabulary approval\; the editorial distinction remains subject to review\. See docs\/it\-ste\-research\/W1\-D\-P172\.md for the bounded evidence\.
 
 Contextual alternatives:
 
-- note that
+- know that
 
-- the stated limitation applies
+- tell users that
+
+- note that
 
 #### Positive example
 
 ```
-Version 4 cannot read version 5 snapshots.
+Administrators must know that version 5 cannot read version 4 snapshots before they upgrade.
 ```
 
-Explanation: Communicates the limitation without relying on awareness alone\.
+Explanation: Names the limitation\, affected versions\, and action instead of relying on an unspecified awareness state\.
 
 #### Problematic example
 
@@ -18377,7 +18379,7 @@ Explanation: Communicates the limitation without relying on awareness alone\.
 Be aware of compatibility.
 ```
 
-Explanation: Does not state the incompatible versions or required response\.
+Explanation: Does not identify the incompatible versions\, affected users\, or required action\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -18389,9 +18391,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning/alternatives includes the beginning of the following row; boundary not verified against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 172 -l 172 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 172 (2-1-A24), aware (adj) is one row with the alternatives KNOW (v) and TELL (v), and two STE examples. A horizontal boundary separates it from AWAY FROM (prep); the extracted text from that following row is a boundary artifact. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 172,
     "printed_page": "2-1-A24",
@@ -18401,8 +18403,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P172-005",
@@ -167549,7 +167550,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `41eda4ba20997a3975246df9484418f17f41a92b30398f19a7a90f5ec29ae178`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `542add15c1876deb3d9d132e990bb32505f4c7e9486dbe4700c744f7628ffa21`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `40cf0c707cf1ca1e591ff46c5a0fada40d77641172ff11da8937003a414885ef`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-006.json` SHA-256: `3652b6b98646d1ae995a7125ecbd9db68eddc1f7c76f20abd77fbfe56f783356`
 
