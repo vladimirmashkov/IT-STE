@@ -975,12 +975,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Give an identified line or physical item a smoothly bent shape, provisionally.",
+      "it_disposition": "allowed",
+      "it_definition": "Make a stated line or path follow a smooth bend, provisionally.",
       "domains": [
         "user-interface"
       ],
-      "rationale": "The row interleaves the alternative with apparent metal-bending example text; no settled source interpretation is claimed.",
+      "rationale": "Authenticated PDF visual inspection confirms that curve (v) is row 5 with the MAKE A CURVE alternative and its own strip-bending example. WHATWG Canvas and W3C SVG define graphical paths with curved segments and arcs, supporting the bounded action on a stated line or path; the physical hardware alternative remains contextual and requires its own radius limits. See `docs/it-ste-research/W1-D-P206.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "draw an arc",
         "bend to the specified radius, for hardware"
@@ -1013,14 +1013,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: curve (v) is row 5; MAKE A CURVE is the alternative, and the strip-bending text belongs to the row's example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -1037,12 +1036,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Divide material or remove part of it using a cutting operation, provisionally.",
+      "it_disposition": "allowed",
+      "it_definition": "Divide stated material into parts or remove a specified part with a cutting operation, provisionally.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The source numbered senses are interleaved with uppercase fragments, leaving column boundaries unresolved.",
+      "rationale": "Authenticated PDF visual inspection confirms that CUT (v) is row 6 with two numbered source senses: divide into parts, and remove with a sharp tool. The draft is bounded to stated material in an explicit hardware/procedure context. POSIX Issue 8 separately defines the `cut` utility as selecting bytes, characters, or fields from text; that computing utility and ambiguous data-deletion uses are outside this draft sense. See `docs/it-ste-research/W1-D-P206.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "cut to the specified length",
         "remove the named section"
@@ -1075,14 +1074,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: CUT (v) is row 6; senses 1 and 2 are separate source senses, with their cable and lockwire examples in the same row. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

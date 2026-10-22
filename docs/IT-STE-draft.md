@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 97,
-    "needs-review": 174,
+    "allowed": 99,
+    "needs-review": 172,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -38254,13 +38254,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: curve; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Give an identified line or physical item a smoothly bent shape\, provisionally\.
+Definition: Make a stated line or path follow a smooth bend\, provisionally\.
 
 Domains: user\-interface
 
-Rationale: The row interleaves the alternative with apparent metal\-bending example text\; no settled source interpretation is claimed\.
+Rationale: Authenticated PDF visual inspection confirms that curve \(v\) is row 5 with the MAKE A CURVE alternative and its own strip\-bending example\. WHATWG Canvas and W3C SVG define graphical paths with curved segments and arcs\, supporting the bounded action on a stated line or path\; the physical hardware alternative remains contextual and requires its own radius limits\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38294,9 +38294,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The alternative MAKE A CURVE is interleaved with apparent material-bending example fragments."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: curve (v) is row 5; MAKE A CURVE is the alternative, and the strip-bending text belongs to the row's example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38306,8 +38306,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P206-005",
@@ -38328,13 +38327,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CUT; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Divide material or remove part of it using a cutting operation\, provisionally\.
+Definition: Divide stated material into parts or remove a specified part with a cutting operation\, provisionally\.
 
 Domains: procedures\-runbooks
 
-Rationale: The source numbered senses are interleaved with uppercase fragments\, leaving column boundaries unresolved\.
+Rationale: Authenticated PDF visual inspection confirms that CUT \(v\) is row 6 with two numbered source senses\: divide into parts\, and remove with a sharp tool\. The draft is bounded to stated material in an explicit hardware\/procedure context\. POSIX Issue 8 separately defines the \`cut\` utility as selecting bytes\, characters\, or fields from text\; that computing utility and ambiguous data\-deletion uses are outside this draft sense\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38368,9 +38367,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Numbered cutting senses are interleaved with uppercase fragments apparently from examples."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: CUT (v) is row 6; senses 1 and 2 are separate source senses, with their cable and lockwire examples in the same row. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38380,8 +38379,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P206-006",
@@ -167548,7 +167546,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `dc71f956a75e682750c41123f4e202d94fd40da8a17d6786b7adf812621a1bbf`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `7ef7d0fb8bf3f92ba69230dd5d17632105ad8783c5c66030d2390acde087aefc`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 
