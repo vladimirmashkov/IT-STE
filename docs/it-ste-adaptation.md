@@ -19,7 +19,7 @@ standards/it-ste/
 
 `domains/v1.0.0.json` defines stable draft identifiers for IT contexts. `map.jsonl` has one record for each of the 53 source rules and 8 general recommendations. `targets.json` describes each planned IT-STE rule concept and the source decisions that produced it without becoming normative text. The plan manifest authenticates the source database, domain registry, map, and target registry by SHA-256.
 
-The plan is not an IT-STE release, its heading-based candidate domains are not normative, and no target rule ID is allocated until an editorial decision requires one.
+The plan is not an IT-STE release, its candidate domains are not normative, and no target rule ID is allocated until an editorial decision requires one. Initial candidates come from source headings; reviewed classifications also use bounded source text and editorial IT applicability assessment.
 
 ## Assessment states
 
@@ -69,6 +69,12 @@ Candidate domains must use IDs from the pinned `standards/it-ste/domains/v1.0.0.
    ```
 
 `init` creates a plan only when neither plan file exists and never overwrites manual work. Use `seal` after map edits. If the pinned domain-registry bytes changed, `seal` stops until classifications are reviewed; only then use `seal --accept-domain-change` to record the explicit migration.
+
+## Cross-target review
+
+All 61 source blocks now have reviewed decisions and 31 planned target IDs. The [cross-target review](it-ste-plan-review.md) pins the reviewed artifact hashes, records three clarifications, and defines the boundaries between targets. It retains all IDs and source allocations. The report is editorial evidence, not a release approval or a semantic guarantee from `check`.
+
+Before canonical materialization, resolve the report's source/facet locator contract, prose/literal boundaries, and profile precedence. Source recommendations retain `kind: guidance`; prose cross-references do not automatically create additional derivation edges. Test the contract with a small pilot before bulk authoring.
 
 ## From plan to standard
 

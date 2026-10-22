@@ -295,7 +295,7 @@
         "support-troubleshooting",
         "ai-automation"
       ],
-      "design_intent": "Put each independently executable action in a separate procedural step so that readers and automation can follow, verify, resume, and report it independently. Keep multiple actions in one step only when they are simultaneous, atomic, conventionally inseparable, or immediately coupled to a required result or verification. Preserve an intentional transaction boundary and do not split a command, expression, or code example into artificial actions."
+      "design_intent": "Put each independently executable action in a separate procedural step so that readers and automation can follow, verify, resume, and report it independently. Keep multiple actions in one step only when they are simultaneous, atomic, conventionally inseparable, or immediately coupled to a required result or verification. Preserve an intentional transaction boundary and do not split a command, expression, or code example into artificial actions. Prefer one principal instruction per sentence; the step-level exceptions do not justify a dense chain of independently executable instructions in one sentence. A step can contain multiple sentences for coupled actions, expected results, limits, or verification."
     },
     {
       "id": "ITSTE-R-0015",
@@ -316,7 +316,7 @@
         "support-troubleshooting",
         "ai-automation"
       ],
-      "design_intent": "Start an instruction to the reader with a direct imperative verb and keep the reader as the understood subject. Name the actor explicitly when a system, service, role, team, or automated agent performs the action. Do not add must to an imperative only for emphasis; express obligations, policy requirements, and safety or security constraints with the semantic form and severity required by the governing content type. Preserve literal commands and interface text exactly."
+      "design_intent": "Express the reader's action with a direct imperative verb and keep the reader as the understood subject; place any prerequisite or condition first, consistently with ITSTE-R-0016. Name the actor explicitly when a system, service, role, team, or automated agent performs the action. Do not add must to an imperative only for emphasis; express obligations, policy requirements, and safety or security constraints with the semantic form and severity required by the governing content type. Preserve literal commands and interface text exactly."
     },
     {
       "id": "ITSTE-R-0016",
@@ -413,7 +413,7 @@
         "support-troubleshooting",
         "ai-automation"
       ],
-      "design_intent": "Group related information in a paragraph or the equivalent structural block for the content type, and keep one primary topic in that block. Identify the topic early unless a heading, label, schema position, or container already makes it clear. Start a new block when the topic, reader task, retrieval boundary, or level of detail changes, or when length impairs scanning. Do not impose a universal six-sentence maximum; headings, reference entries, tables, cards, messages, and other constrained formats can provide equivalent topic boundaries without conventional paragraphs."
+      "design_intent": "Group related information in a paragraph or the equivalent structural block for the content type, and keep one primary topic in that block. Identify the topic early unless a heading, label, schema position, or container already makes it clear. Use the topic opening to connect new information to relevant preceding information when that relationship is not already clear, consistently with ITSTE-R-0013. Start a new block when the topic, reader task, retrieval boundary, or level of detail changes, or when length impairs scanning. Do not impose a universal six-sentence maximum; headings, reference entries, tables, cards, messages, and other constrained formats can provide equivalent topic boundaries without conventional paragraphs."
     },
     {
       "id": "ITSTE-R-0020",

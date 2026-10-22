@@ -683,6 +683,43 @@ class AdaptationPlanTests(unittest.TestCase):
             for clause in clauses:
                 self.assertIn(clause, targets[target_id]["design_intent"])
 
+    def test_cross_target_review_preserves_conditions_and_source_facets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        sources = {record["source"]["block_id"]: record for record in records}
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        imperative_intent = targets["ITSTE-R-0015"]["design_intent"]
+        self.assertIn(
+            "Express the reader's action with a direct imperative verb", imperative_intent
+        )
+        self.assertIn(
+            "place any prerequisite or condition first, consistently with ITSTE-R-0016",
+            imperative_intent,
+        )
+        self.assertNotIn("Start an instruction to the reader", imperative_intent)
+        self.assertIn(
+            "Prefer one principal instruction per sentence",
+            targets["ITSTE-R-0014"]["design_intent"],
+        )
+        self.assertIn(
+            "A step can contain multiple sentences for coupled actions, expected results, limits, or verification",
+            targets["ITSTE-R-0014"]["design_intent"],
+        )
+        self.assertIn(
+            "Adapt the source sentence-level ceiling to a step-level execution unit",
+            sources["5.2"]["assessment"]["rationale"],
+        )
+        self.assertIn(
+            "Use the topic opening to connect new information to relevant preceding information",
+            targets["ITSTE-R-0019"]["design_intent"],
+        )
+        self.assertIn(
+            "Retain the topic opening's bridging function in ITSTE-R-0019",
+            sources["6.5"]["assessment"]["rationale"],
+        )
+
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
             adaptation.candidate_domains("5.2"),
