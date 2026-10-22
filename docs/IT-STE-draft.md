@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 114,
-    "needs-review": 157,
+    "allowed": 116,
+    "needs-review": 155,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -49420,13 +49420,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: EACH; POS: pron.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Every individual member of a previously identified group\, standing without a following noun\.
 
 Domains: general
 
-Rationale: The cell includes the opening of the next reciprocal entry\; review alignment\.
+Rationale: Authenticated PDF visual inspection confirms that EACH \(pron\) is row 2 with Every one of two or more objects or persons\, seen together as a group but identified separately\; EACH OTHER \(pron\) begins the next row\. MDN\'s inspected forEach documentation invokes a function once for each array element\, supporting the bounded individual\-member sense when a group antecedent is stated\. See \`docs\/it\-ste\-research\/W1\-D\-P227\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -49460,9 +49460,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The cell includes the opening of the next reciprocal entry; review alignment."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 227 (printed page 2-1-E1). Findings: EACH (pron) is row 2; EACH OTHER (pron) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 227,
     "printed_page": "2-1-E1",
@@ -49493,13 +49493,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: EACH OTHER; POS: pron.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: A reciprocal relationship among identified components\.
 
 Domains: networking
 
-Rationale: Wrapped\-headword warning requires review\; do not assume complete connectivity for large groups\.
+Rationale: Authenticated PDF visual inspection confirms that EACH OTHER \(pron\) is row 3 with Each of two or more in reciprocal action or relation\; the wrapped headword is retained and early \(adj\) begins the next row\. RFC 8705 documents mutual\-TLS client authentication\, and RFC 8446 describes mutually authenticated client\/server peers\. This supports the bounded reciprocal networking sense without asserting full\-mesh connectivity\. See \`docs\/it\-ste\-research\/W1\-D\-P227\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -49533,9 +49533,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 227 (printed page 2-1-E1). Findings: EACH OTHER (pron) is row 3 with the wrapped headword and Each of two or more in reciprocal action or relation; early (adj) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 227,
     "printed_page": "2-1-E1",
@@ -167550,7 +167550,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `dae8a3c05877aa6846527c01060f4f6ab51addb8605fdbca9bde71cf736c3e9c`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `55f9d758e89b94d78b51988cfca690319761d73a5d8e3efa65034a9be442dd04`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `824131a2fa534fab9b602e776327995efc5951d984f0fa2a75e0334ac2eebf06`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `29fa5e8d1bb65620a3b9d8665a9abb18f4bbb6767132943b9d52c138a3d8d5b8`
 
