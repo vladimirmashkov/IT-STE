@@ -35,7 +35,7 @@ After every change, before reporting completion:
 ### Safe command proposals
 
 - Stage only explicit, reviewed paths with `git add -A -- ...`; include deletions and both paths of renames. Do not use blanket `git add .` or pathless `git add -A`.
-- Prefix commit commands with `GIT_EDITOR=true` and supply the proposed message with `-m`.
+- Prefix commit commands with `GIT_EDITOR=true` and supply the proposed message with `-m`. Put every `git commit` option, including `--only` and `-m "..."`, before the `--` option terminator; put only explicit paths after `--`. The safe shape is `GIT_EDITOR=true git commit --only -m "Message" -- path/one path/two`. Never place `-m` or its message after the path list, because Git treats them as pathspecs.
 - Check for unrelated staged changes before proposing a commit. Preserve them: use `git commit --only` with explicit paths only when each entire listed file belongs to the proposal. If a file mixes unrelated changes, explain the required selective staging instead of proposing unsafe whole-file staging or committing. Do not unstage someone else's work to make a command convenient.
 
 A command proposal is not permission to execute it. Do not stage files, create commits, or rewrite Git history unless the user explicitly requests that action.
