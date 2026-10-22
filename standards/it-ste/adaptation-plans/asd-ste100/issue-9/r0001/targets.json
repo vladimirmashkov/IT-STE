@@ -89,7 +89,8 @@
       "status": "planned",
       "source_block_ids": [
         "2.1",
-        "2.2"
+        "2.2",
+        "8.2"
       ],
       "candidate_domains": [
         "general",
@@ -103,7 +104,7 @@
         "configuration",
         "source-code"
       ],
-      "design_intent": "Make an already selected multi-word term clear in prose without changing authoritative or machine-significant names. Show modifier relationships with grammatical phrasing, write a long term in full at first use in each independently consumable unit, and introduce an unambiguous contextual alias or abbreviation only when it improves readability. Preserve established hyphenation, add hyphens only when standard spelling or grammar requires them, and do not impose an absolute three-word limit."
+      "design_intent": "Make an already selected multi-word term clear in prose without changing authoritative or machine-significant names. Show modifier relationships with grammatical phrasing, write a long term in full at first use in each independently consumable unit, and introduce an unambiguous contextual alias or abbreviation only when it improves readability. Preserve established hyphenation, add hyphens only when standard spelling or grammar requires them, distinguish hyphens from dashes, and never substitute typographic dashes for syntax-controlled characters. Do not impose an absolute three-word limit or add hyphens to evade a length limit."
     },
     {
       "id": "ITSTE-R-0007",
@@ -432,6 +433,59 @@
       "source_block_ids": ["7.3"],
       "candidate_domains": ["general", "security", "monitoring-alerts", "procedures-runbooks"],
       "design_intent": "When a credible consequence is known and can be disclosed, explain the risk or possible result after the protective action or condition. Identify the affected people, data, system, or service and explain the consequence specifically enough to support the decision. Distinguish possible consequences from certain outcomes; do not invent causes, probabilities, or guarantees. If details are unknown or security-sensitive, state the actionable risk at an appropriate level without exposing secrets or unnecessary exploit details. An explanation does not replace the protective action."
+    },
+    {
+      "id": "ITSTE-R-0023",
+      "working_title": "Use punctuation to clarify structure",
+      "status": "planned",
+      "source_block_ids": [
+        "8.1"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "cli",
+        "source-code",
+        "configuration"
+      ],
+      "design_intent": "Use standard English punctuation to make relationships and sentence boundaries clear. Prefer separate sentences or steps to complex semicolon constructions in prose, but do not impose a universal ban on semicolons. Follow the governing content profile where it restricts prose punctuation. Preserve punctuation in quotations, commands, source code, configuration, URLs, paths, and other syntax-controlled or externally controlled text exactly; prose guidance must not change executable meaning."
+    },
+    {
+      "id": "ITSTE-R-0024",
+      "working_title": "Keep parenthetical information unambiguous",
+      "status": "planned",
+      "source_block_ids": [
+        "8.3"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "api",
+        "cli",
+        "user-interface",
+        "procedures-runbooks",
+        "configuration",
+        "source-code"
+      ],
+      "design_intent": "Use parentheses for clear references, identifiers, introduced abbreviations, step markers, or short explanations when they improve comprehension. Avoid dense or nested parenthetical prose. State required conditions, limits, and branch-selection criteria explicitly in the main instruction rather than hiding them in parentheses. Prefer an explicit singular or plural form or an applicable quantifier to compact forms such as item(s), and expand ambiguous parenthetical alternatives into explicit choices. Preserve parentheses and other delimiters in literal commands, code, schemas, and externally controlled text exactly."
+    },
+    {
+      "id": "ITSTE-R-0025",
+      "working_title": "Define reproducible length metrics in content profiles",
+      "status": "planned",
+      "source_block_ids": [
+        "8.4",
+        "8.5",
+        "8.6",
+        "8.7"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "ai-automation"
+      ],
+      "design_intent": "If a content profile applies length limits, define a reproducible measurement method, its version, and its scope. Specify boundaries for list lead-ins and items from document structure; a colon in IT syntax is not automatically a sentence boundary. Specify treatment of parenthetical text, numbers and units, abbreviations, identifiers, quotations, titles, headings, labels, proper names, hyphenated compounds, code, URLs, paths, and structural numbering. Do not automatically count arbitrary parenthetical or quoted passages as one word or conceal their complexity through exclusions. Distinguish words, characters, and LLM tokens; token budgets must identify the tokenizer and its version. Preserve exact literals and do not alter spelling, hyphenation, or document structure merely to game the metric. No universal ASD counting convention or 20/25-word limit is imposed on IT-STE."
     }
   ],
   "rights": {

@@ -185,7 +185,10 @@ class AdaptationPlanTests(unittest.TestCase):
         )
         targets = adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
         target = next(item for item in targets if item["id"] == "ITSTE-R-0006")
-        self.assertEqual(target["source_block_ids"], ["2.1", "2.2"])
+        self.assertEqual(
+            [source_id for source_id in target["source_block_ids"] if source_id.startswith("2.")],
+            ["2.1", "2.2"],
+        )
         self.assertEqual(target["working_title"], "Clarify multi-word technical terms")
 
     def test_section_three_decisions_create_verb_targets(self) -> None:
@@ -470,6 +473,73 @@ class AdaptationPlanTests(unittest.TestCase):
                 "do not invent causes, probabilities, or guarantees",
                 "without exposing secrets or unnecessary exploit details",
                 "An explanation does not replace the protective action",
+            ),
+        }
+        for target_id, clauses in required_clauses.items():
+            for clause in clauses:
+                self.assertIn(clause, targets[target_id]["design_intent"])
+
+    def test_section_eight_decisions_create_punctuation_and_metric_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("8.")
+        ]
+        self.assertEqual(len(section), 7)
+        self.assertEqual(
+            {record["assessment"]["status"] for record in section}, {"reviewed"}
+        )
+        self.assertEqual(
+            {record["assessment"]["applicability"] for record in section}, {"adapt"}
+        )
+        groups: dict[str, set[str]] = {}
+        for record in section:
+            for target_id in record["target_rule_ids"]:
+                groups.setdefault(target_id, set()).add(record["source"]["block_id"])
+        self.assertEqual(
+            groups,
+            {
+                "ITSTE-R-0023": {"8.1"},
+                "ITSTE-R-0006": {"8.2"},
+                "ITSTE-R-0024": {"8.3"},
+                "ITSTE-R-0025": {"8.4", "8.5", "8.6", "8.7"},
+            },
+        )
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        self.assertEqual(
+            targets["ITSTE-R-0006"]["source_block_ids"], ["2.1", "2.2", "8.2"]
+        )
+        self.assertEqual(
+            targets["ITSTE-R-0025"]["source_block_ids"], ["8.4", "8.5", "8.6", "8.7"]
+        )
+        self.assertTrue(all(targets[target_id]["status"] == "planned" for target_id in groups))
+        required_clauses = {
+            "ITSTE-R-0006": (
+                "distinguish hyphens from dashes",
+                "never substitute typographic dashes for syntax-controlled characters",
+                "Do not impose an absolute three-word limit or add hyphens to evade a length limit",
+            ),
+            "ITSTE-R-0023": (
+                "Prefer separate sentences or steps to complex semicolon constructions",
+                "do not impose a universal ban on semicolons",
+                "prose guidance must not change executable meaning",
+            ),
+            "ITSTE-R-0024": (
+                "State required conditions, limits, and branch-selection criteria explicitly in the main instruction",
+                "expand ambiguous parenthetical alternatives into explicit choices",
+                "Preserve parentheses and other delimiters in literal commands",
+            ),
+            "ITSTE-R-0025": (
+                "If a content profile applies length limits",
+                "define a reproducible measurement method, its version, and its scope",
+                "a colon in IT syntax is not automatically a sentence boundary",
+                "Do not automatically count arbitrary parenthetical or quoted passages as one word",
+                "Distinguish words, characters, and LLM tokens",
+                "token budgets must identify the tokenizer and its version",
+                "do not alter spelling, hyphenation, or document structure merely to game the metric",
+                "No universal ASD counting convention or 20/25-word limit is imposed",
             ),
         }
         for target_id, clauses in required_clauses.items():
