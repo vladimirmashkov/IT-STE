@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 111,
-    "needs-review": 160,
+    "allowed": 113,
+    "needs-review": 158,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -47808,13 +47808,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DOWNSTREAM; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: In the direction from an identified producer toward its consumers\.
 
 Domains: networking
 
-Rationale: Wrapped\-headword warning requires review of this adverb sense\.
+Rationale: Authenticated PDF visual inspection confirms that DOWNSTREAM \(adv\) is row 5 with In the direction of the flow\; the wrapped headword is retained and DOWNSTREAM OF \(prep\) begins the next row\. MDN\'s stream documentation and Microsoft\'s publisher\-subscriber guidance support source\-to\-destination producer\/consumer direction\. This supports the bounded networking flow sense with the producer and consumers named\. See \`docs\/it\-ste\-research\/W1\-D\-P223\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -47848,9 +47848,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 223 (printed page 2-1-D17). Findings: DOWNSTREAM (adv) is row 5 with the wrapped headword and In the direction of the flow; DOWNSTREAM OF (prep) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 223,
     "printed_page": "2-1-D17",
@@ -47881,13 +47881,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DOWNSTREAM OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: After a named component along a defined processing flow\.
 
 Domains: data\-storage
 
-Rationale: Wrapped\-headword warning prevents settled alignment\; the reference component is essential\.
+Rationale: Authenticated PDF visual inspection confirms that DOWNSTREAM OF \(prep\) is row 6 with In the direction of the flow\; the wrapped headword is retained and downward \(adv\) begins the next row\. MDN\'s source\-to\-final\-destination stream model and Microsoft\'s sender\/consumer flow support the bounded relationship when the reference component and processing flow are named\. See \`docs\/it\-ste\-research\/W1\-D\-P223\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -47921,9 +47921,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 223 (printed page 2-1-D17). Findings: DOWNSTREAM OF (prep) is row 6 with the wrapped headword and In the direction of the flow; downward (adv) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 223,
     "printed_page": "2-1-D17",
@@ -167548,7 +167548,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `0ac8c174803c8426cd42e4de3bf15e743e51b0523031358729e20bf5649438d5`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `93bda0fe6dc9180aa4d851429433d8e9d08d128944be68e7bb2a6110715dc3fb`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `de77f121f5ea0f91ecbb0a512b57553a1235829c319d83ca4c42097fa742c142`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `55f9d758e89b94d78b51988cfca690319761d73a5d8e3efa65034a9be442dd04`
 
