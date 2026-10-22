@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 105,
-    "needs-review": 166,
+    "allowed": 106,
+    "needs-review": 165,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -43557,13 +43557,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: diagnose; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Identify the cause of a reported IT failure using evidence\.
 
 Domains: support\-troubleshooting
 
-Rationale: The extracted cell includes the next adverb definition\; alignment needs review\.
+Rationale: Authenticated PDF visual inspection confirms that diagnose \(v\) is row 5 with FIND \(v\)\; In a diagonal direction belongs to the following DIAGONALLY \(adv\) row\. Google SRE describes monitoring and debugging as using symptoms and evidence to determine root causes\, and Microsoft Azure reliability guidance connects retained signals with incident analysis and troubleshooting\. This supports the bounded support\-troubleshooting sense without broadening diagnose to unsupported conclusions\. See \`docs\/it\-ste\-research\/W1\-D\-P216\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -43597,9 +43597,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted cell includes the next adverb definition; alignment needs review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 216 (printed page 2-1-D10). Findings: diagnose (v) is row 5 with FIND (v); DIAGONALLY (adv) begins the next row and its definition is In a diagonal direction.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 216,
     "printed_page": "2-1-D10",
@@ -167546,7 +167546,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b42a3e32923d3092401ec29b77a0fd4b0a2b6287a5c88bd797129ace0161b49e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `b4eb237f5b9b3d586e3f0401226183bc6b5a5c97859137abadf41905241268db`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `be406553f88669bf73770002f08de00f7f5e58d107ba2117bac1ab8c46f2ad04`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `0788c2def07a599ff671aa0f7d57c8e5d7030173cfc554b9e761f1bfff620966`
 
