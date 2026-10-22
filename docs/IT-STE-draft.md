@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 96,
-    "needs-review": 175,
+    "allowed": 97,
+    "needs-review": 174,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -38114,7 +38114,7 @@ Definition: The amount or form of bending in a stated geometric line or surface\
 
 Domains: user\-interface
 
-Rationale: The meaning column contains scattered pipe and radius fragments\, indicating unresolved column interleaving\.
+Rationale: Authenticated PDF visual inspection confirms that curvature \(n\) is row 3 with the separate alternatives BEND \(n\)\, CURVE \(n\)\, and RADIUS \(TN\)\, each with its own example\. WHATWG Canvas and W3C SVG document related arc\, curve\, and radius geometry for graphics\, but the inspected sources do not settle the lexical scope of curvature for IT\-STE\. Keep the disposition needs\-review pending scope review\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38148,9 +38148,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The meaning column mixes geometric alternatives with PIPE, radius, and apparent example fragments."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: curvature (n) is row 3; BEND (n), CURVE (n), and RADIUS (TN) are separate alternatives in that row, each with its own example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38160,8 +38160,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P206-003",
@@ -38182,13 +38181,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CURVE; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: A smoothly bent line or outline\, provisionally\.
 
 Domains: user\-interface
 
-Rationale: Uppercase fragments interrupt the extracted definition\; source layout must be checked before settling the geometry sense\.
+Rationale: Authenticated PDF visual inspection confirms that CURVE \(n\) is row 4 with the complete definition \`The shape of something which is bent but which has no angles\` and its own radius example\. WHATWG Canvas and W3C SVG define paths containing curved segments and arcs\, supporting this bounded graphical geometry sense and the contextual alternatives \`smooth arc\` and \`curved outline\`\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38222,9 +38221,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The definition is interrupted by uppercase fragments apparently from another column; exact wording and boundaries remain unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: CURVE (n) is row 4; its definition is one source row, `The shape of something which is bent but which has no angles`, followed by the row's radius example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38234,8 +38233,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P206-004",
@@ -167550,7 +167548,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `9338466d42bca947d192cadf974a1b4a618751bb4f61bc00f97b60d71ff28bca`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `dc71f956a75e682750c41123f4e202d94fd40da8a17d6786b7adf812621a1bbf`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 
