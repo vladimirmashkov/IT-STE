@@ -189,24 +189,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Begin an identified operation; provisional reading of the start sense.",
+      "it_disposition": "prohibited",
+      "it_definition": "Start a specified operation.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The exact retrieval repeats the same alternative; keep the decision provisional until the row boundary and duplication are checked.",
+      "rationale": "Use direct start wording for a named operation; the source row's START mapping is visually verified. See docs/it-ste-research/W1-D-P194.md.",
       "permitted_contextual_alternatives": [
         "start the validation",
-        "begin the transfer"
+        "start the transfer"
       ],
       "examples": {
         "positive": {
           "text": "Start the validation after the snapshot succeeds.",
-          "explanation": "Gives a concrete action and prerequisite."
+          "explanation": "Names a concrete action and prerequisite."
         },
         "problematic": {
           "text": "Commence the work.",
-          "explanation": "Leaves the task and its start condition undefined."
+          "explanation": "Does not identify the operation or its prerequisite."
         }
       },
       "evidence": {
@@ -227,14 +227,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of authenticated PDF page 194 rendered with pdftoppm; SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 5 is a separate ruled row for commence (v) and its meaning column contains one START (v); the second START in mechanical extraction belongs to the following commencement row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -251,24 +250,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "The start event or start time of an identified operation, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "The recorded start event or start time of a named operation.",
       "domains": [
         "logs-events"
       ],
-      "rationale": "The wrapped-headword warning prevents a settled source interpretation even though a start-event IT use is plausible.",
+      "rationale": "Use only for an identified operation's start event or timestamp; do not imply readiness or successful completion. See docs/it-ste-research/W1-D-P194.md.",
       "permitted_contextual_alternatives": [
-        "start time",
+        "operation start time",
         "job start event"
       ],
       "examples": {
         "positive": {
-          "text": "Record the job start time in UTC.",
-          "explanation": "Specifies the event and time basis."
+          "text": "Record the backup start time in UTC with the job ID.",
+          "explanation": "Names the operation, event, and time basis."
         },
         "problematic": {
           "text": "Log commencement.",
-          "explanation": "Does not identify the operation or required timestamp."
+          "explanation": "Does not identify the operation, event, or time basis."
         }
       },
       "evidence": {
@@ -289,14 +288,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of authenticated PDF page 194 rendered with pdftoppm; SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 6 is a separate ruled row for commencement (n); the displayed word and POS wrap across lines, and the row has one START (v) meaning.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

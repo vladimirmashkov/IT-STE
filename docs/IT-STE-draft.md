@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 195,
+    "needs-review": 193,
     "not-applicable": 146,
-    "prohibited": 402,
-    "restricted": 1363
+    "prohibited": 403,
+    "restricted": 1364
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -31361,19 +31361,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: commence; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: prohibited.
 
-Definition: Begin an identified operation\; provisional reading of the start sense\.
+Definition: Start a specified operation\.
 
 Domains: procedures\-runbooks
 
-Rationale: The exact retrieval repeats the same alternative\; keep the decision provisional until the row boundary and duplication are checked\.
+Rationale: Use direct start wording for a named operation\; the source row\'s START mapping is visually verified\. See docs\/it\-ste\-research\/W1\-D\-P194\.md\.
 
 Contextual alternatives:
 
 - start the validation
 
-- begin the transfer
+- start the transfer
 
 #### Positive example
 
@@ -31381,7 +31381,7 @@ Contextual alternatives:
 Start the validation after the snapshot succeeds.
 ```
 
-Explanation: Gives a concrete action and prerequisite\.
+Explanation: Names a concrete action and prerequisite\.
 
 #### Problematic example
 
@@ -31389,7 +31389,7 @@ Explanation: Gives a concrete action and prerequisite\.
 Commence the work.
 ```
 
-Explanation: Leaves the task and its start condition undefined\.
+Explanation: Does not identify the operation or its prerequisite\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -31401,9 +31401,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The meaning column repeats START; duplicate extraction or a boundary issue remains unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of authenticated PDF page 194 rendered with pdftoppm; SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 5 is a separate ruled row for commence (v) and its meaning column contains one START (v); the second START in mechanical extraction belongs to the following commencement row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 194,
     "printed_page": "2-1-C12",
@@ -31413,8 +31413,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P194-005",
@@ -31435,27 +31434,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: commencement; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: The start event or start time of an identified operation\, provisionally\.
+Definition: The recorded start event or start time of a named operation\.
 
 Domains: logs\-events
 
-Rationale: The wrapped\-headword warning prevents a settled source interpretation even though a start\-event IT use is plausible\.
+Rationale: Use only for an identified operation\'s start event or timestamp\; do not imply readiness or successful completion\. See docs\/it\-ste\-research\/W1\-D\-P194\.md\.
 
 Contextual alternatives:
 
-- start time
+- operation start time
 
 - job start event
 
 #### Positive example
 
 ```
-Record the job start time in UTC.
+Record the backup start time in UTC with the job ID.
 ```
 
-Explanation: Specifies the event and time basis\.
+Explanation: Names the operation\, event\, and time basis\.
 
 #### Problematic example
 
@@ -31463,7 +31462,7 @@ Explanation: Specifies the event and time basis\.
 Log commencement.
 ```
 
-Explanation: Does not identify the operation or required timestamp\.
+Explanation: Does not identify the operation\, event\, or time basis\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -31475,9 +31474,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of authenticated PDF page 194 rendered with pdftoppm; SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 6 is a separate ruled row for commencement (n); the displayed word and POS wrap across lines, and the row has one START (v) meaning.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 194,
     "printed_page": "2-1-C12",
@@ -31487,8 +31486,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P194-006",
@@ -167563,7 +167561,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `efa95532283f07bfe5172a3240743b25aeb2d3e8f5e5300fbc168bea289e1d8b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `f67df2bb4ae1423f06e16e2c6f006d9c2e28b584bfa1a16836704452ce61a0c5`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d55df60a00254143c68cf358dcbf7ce0c0806b56ed86d56e136d2b5ea7fe47c6`
 
