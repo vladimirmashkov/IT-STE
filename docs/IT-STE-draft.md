@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 200,
+    "needs-review": 199,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1358
+    "restricted": 1359
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -25987,13 +25987,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: case \(in case of\); POS: conj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Introduce a condition that triggers a specified response\.
+Definition: Introduce a conditional statement for a specified IT condition or event\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped phrase requires source checking\; use if for direct conditional instructions and distinguish preparation from response\.
+Rationale: Restrict this to a named IT condition or event and an explicit response\; use IF for the condition rather than an undefined preparation trigger\. The verified source row is separate from case \(n\)\. See \`docs\/it\-ste\-research\/W1\-D\-P185\.md\`\.
 
 Contextual alternatives:
 
@@ -26007,7 +26007,7 @@ Contextual alternatives:
 If the restore fails, retain the error log and stop the migration.
 ```
 
-Explanation: Defines a failure condition and bounded response\.
+Explanation: Names a specific failure condition and a bounded response\.
 
 #### Problematic example
 
@@ -26015,7 +26015,7 @@ Explanation: Defines a failure condition and bounded response\.
 Restart in case of trouble.
 ```
 
-Explanation: Does not identify a failure condition or safe restart criteria\.
+Explanation: Does not identify an actionable IT condition or safe restart criteria\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -26027,9 +26027,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 185 -l 185 -png -r 160 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 185 (2-1-C3), case (n) is a distinct ruled row followed by the separate wrapped-headword row case (in case of) (conj); its IF (conj) alternative and examples stay within that row. The row boundary and typography are verified; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 185,
     "printed_page": "2-1-C3",
@@ -26039,8 +26039,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P185-007",
@@ -167560,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-007.json` SHA-256: `27a9136ac7e2ed54795bcd907232b316e83f565bd161d45920fab8e97b1f97f4`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-008.json` SHA-256: `ff1e46c582d8e89ee20bf55443af7563e14d270dbede0226d5932a09a9453bf7`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-008.json` SHA-256: `639e41a2c79b3c2235c257caeae23ebeb34f2d395b00e18f32ed276e0ae7e512`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 

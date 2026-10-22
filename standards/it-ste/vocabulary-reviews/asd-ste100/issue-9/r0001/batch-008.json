@@ -667,12 +667,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Introduce a condition that triggers a specified response.",
+      "it_disposition": "restricted",
+      "it_definition": "Introduce a conditional statement for a specified IT condition or event.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped phrase requires source checking; use if for direct conditional instructions and distinguish preparation from response.",
+      "rationale": "Restrict this to a named IT condition or event and an explicit response; use IF for the condition rather than an undefined preparation trigger. The verified source row is separate from case (n). See `docs/it-ste-research/W1-D-P185.md`.",
       "permitted_contextual_alternatives": [
         "if",
         "when the stated condition occurs"
@@ -680,11 +680,11 @@
       "examples": {
         "positive": {
           "text": "If the restore fails, retain the error log and stop the migration.",
-          "explanation": "Defines a failure condition and bounded response."
+          "explanation": "Names a specific failure condition and a bounded response."
         },
         "problematic": {
           "text": "Restart in case of trouble.",
-          "explanation": "Does not identify a failure condition or safe restart criteria."
+          "explanation": "Does not identify an actionable IT condition or safe restart criteria."
         }
       },
       "evidence": {
@@ -705,14 +705,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 185 -l 185 -png -r 160 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 185 (2-1-C3), case (n) is a distinct ruled row followed by the separate wrapped-headword row case (in case of) (conj); its IF (conj) alternative and examples stay within that row. The row boundary and typography are verified; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
