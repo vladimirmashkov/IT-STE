@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 214,
+    "needs-review": 212,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1344
+    "restricted": 1346
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -12018,13 +12018,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: alternately; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, describes repeated use of one named operation and then another in a defined cycle\; no settled source\-sense mapping is proposed\.
+Definition: Describes two named operations that occur in turn\, one and then the other\, in an explicitly defined sequence or cycle\.
 
 Domains: software\-documentation, ai\-automation
 
-Rationale: The exact retrieval includes a choice\-related fragment also present in the next adjective row\. This suggests adjacent\-row contamination\; do not treat that fragment as an adverb sense or settle the source without a bounded PDF check\.
+Rationale: The authenticated PDF separates this adverb from the following ALTERNATIVE adjective\: its approved meaning is IN ONE \(TN\) … AND THEN THE OTHER\. Use the term only when the order and repetition are explicit\; it must not introduce a selectable option\. Python\'s official iterator documentation supports the sequence sense through cyclic and round\-robin traversal\, while the WHATWG HTML Living Standard uses alternate for another representation\. This is a restricted draft sense\, not vocabulary approval\; the editorial distinction remains subject to review\. See docs\/it\-ste\-research\/W1\-D\-P161\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -12038,7 +12038,7 @@ Contextual alternatives:
 On each cycle, read one block and then write one block.
 ```
 
-Explanation: Provisional replacement gives the order directly and does not rely on the suspect extracted boundary\.
+Explanation: Names both operations and their order\, so the repetition is testable and the sequence sense is explicit\.
 
 #### Problematic example
 
@@ -12046,7 +12046,7 @@ Explanation: Provisional replacement gives the order directly and does not rely 
 Alternately, use the backup endpoint.
 ```
 
-Explanation: Expresses a choice rather than repeated switching and cannot establish the intended source sense\.
+Explanation: Expresses a choice rather than repeated switching\; use alternatively or state the choice directly\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -12058,9 +12058,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Exact-entry meaning/alternatives includes a trailing choice-related fragment duplicated in the adjacent ALTERNATIVE adjective entry; possible adjacent-row overlap, not PDF-verified."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 161 -l 161 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 161 (2-1-A13), row 5 is alternately (adv). Its approved meaning is IN ONE (TN) … AND THEN THE OTHER. A horizontal boundary separates row 5 from row 6; the choice-related text belongs to the following ALTERNATIVE adjective row and is not part of this adverb entry.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 161,
     "printed_page": "2-1-A13",
@@ -12070,8 +12070,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "bounded source PDF layout and visual review of the boundary between D-P161-005 and D-P161-006"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P161-005",
@@ -12092,13 +12091,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: ALTERNATIVE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, modifies a route or method that a user can select instead of the stated default for the same task\.
+Definition: Describes a route\, method\, or material offered as a choice in place of the stated route\, method\, or material for the same task\.
 
 Domains: software\-documentation, networking
 
-Rationale: The wrapped\-headword warning prevents a settled source interpretation\. A usable IT choice sense is proposed independently\, but source spelling and row boundaries remain unverified\.
+Rationale: Visual inspection shows a separate ALTERNATIVE \(adj\) row with That gives a choice\; the wrapped headword and row boundary are verified\. In IT documentation\, use the adjective only for an explicitly identified replacement or choice with its conditions\; it must not describe alternating execution\. The WHATWG HTML Living Standard supports the choice\/alternative\-representation sense\, while Python\'s official iterator documentation distinguishes cyclic or round\-robin sequence behavior\. This is a restricted draft sense\, not vocabulary approval\; the editorial distinction remains subject to review\. See docs\/it\-ste\-research\/W1\-D\-P161\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -12109,10 +12108,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The guide describes an alternative route through the backup gateway.
+Use the alternative route through the backup gateway when the primary route is unavailable.
 ```
 
-Explanation: Provisional example names the object being offered as a choice\, without claiming identical availability or security\.
+Explanation: Names the replacement route\, the default route\, and the condition for selecting it without claiming identical behavior\.
 
 #### Problematic example
 
@@ -12120,7 +12119,7 @@ Explanation: Provisional example names the object being offered as a choice\, wi
 Use the alternative configuration.
 ```
 
-Explanation: Does not identify which configuration\, its prerequisites\, or when it should replace the default\.
+Explanation: Does not identify the replacement\, the default\, or the conditions under which the choice is valid\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -12134,9 +12133,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Wrapped-headword warning remains unresolved; adjacent preceding entry also contains the adjective meaning fragment. Source typography and row boundary have not been verified."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 161 -l 161 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 161 (2-1-A13), row 6 displays ALTERNATIVE with (adj) wrapped below the headword. Its approved meaning is That gives a choice. The row starts below the horizontal boundary after row 5, and the wrapped headword is not a missing token or an adjacent-row overlap.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 161,
     "printed_page": "2-1-A13",
@@ -12146,8 +12145,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "bounded source PDF layout and visual review of wrapped headword and adjacent row boundary"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P161-006",
@@ -167544,7 +167542,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json` SHA-256: `a248690ce276c5a2b21284990d623ac677cc1b3c9b2416a6c1086eb5cf911e6d`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json` SHA-256: `c7e9fadb6e206d3a528ec4b3d0e5e38751e4603710da69b79592ac5579e82f23`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json` SHA-256: `5bdf4f9ffc6d0057677a0cd47a99de62b0da75567f223f5c1b47b2f8033f1040`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `a5ec534a0b4566d5f1dc40e45d540b89c3f5ae794b7661b86b3b6ec38d4d45ba`
 

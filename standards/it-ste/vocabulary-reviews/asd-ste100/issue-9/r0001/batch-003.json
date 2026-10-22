@@ -1447,13 +1447,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, describes repeated use of one named operation and then another in a defined cycle; no settled source-sense mapping is proposed.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes two named operations that occur in turn, one and then the other, in an explicitly defined sequence or cycle.",
       "domains": [
         "software-documentation",
         "ai-automation"
       ],
-      "rationale": "The exact retrieval includes a choice-related fragment also present in the next adjective row. This suggests adjacent-row contamination; do not treat that fragment as an adverb sense or settle the source without a bounded PDF check.",
+      "rationale": "The authenticated PDF separates this adverb from the following ALTERNATIVE adjective: its approved meaning is IN ONE (TN) … AND THEN THE OTHER. Use the term only when the order and repetition are explicit; it must not introduce a selectable option. Python's official iterator documentation supports the sequence sense through cyclic and round-robin traversal, while the WHATWG HTML Living Standard uses alternate for another representation. This is a restricted draft sense, not vocabulary approval; the editorial distinction remains subject to review. See docs/it-ste-research/W1-D-P161.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "read then write on each cycle, for explicit sequencing",
         "switch on each timer event, for a stated trigger"
@@ -1461,11 +1461,11 @@
       "examples": {
         "positive": {
           "text": "On each cycle, read one block and then write one block.",
-          "explanation": "Provisional replacement gives the order directly and does not rely on the suspect extracted boundary."
+          "explanation": "Names both operations and their order, so the repetition is testable and the sequence sense is explicit."
         },
         "problematic": {
           "text": "Alternately, use the backup endpoint.",
-          "explanation": "Expresses a choice rather than repeated switching and cannot establish the intended source sense."
+          "explanation": "Expresses a choice rather than repeated switching; use alternatively or state the choice directly."
         }
       },
       "evidence": {
@@ -1486,14 +1486,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 161 -l 161 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 161 (2-1-A13), row 5 is alternately (adv). Its approved meaning is IN ONE (TN) … AND THEN THE OTHER. A horizontal boundary separates row 5 from row 6; the choice-related text belongs to the following ALTERNATIVE adjective row and is not part of this adverb entry.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "bounded source PDF layout and visual review of the boundary between D-P161-005 and D-P161-006"
+          "original example review"
         ]
       }
     },
@@ -1510,25 +1509,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, modifies a route or method that a user can select instead of the stated default for the same task.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a route, method, or material offered as a choice in place of the stated route, method, or material for the same task.",
       "domains": [
         "software-documentation",
         "networking"
       ],
-      "rationale": "The wrapped-headword warning prevents a settled source interpretation. A usable IT choice sense is proposed independently, but source spelling and row boundaries remain unverified.",
+      "rationale": "Visual inspection shows a separate ALTERNATIVE (adj) row with That gives a choice; the wrapped headword and row boundary are verified. In IT documentation, use the adjective only for an explicitly identified replacement or choice with its conditions; it must not describe alternating execution. The WHATWG HTML Living Standard supports the choice/alternative-representation sense, while Python's official iterator documentation distinguishes cyclic or round-robin sequence behavior. This is a restricted draft sense, not vocabulary approval; the editorial distinction remains subject to review. See docs/it-ste-research/W1-D-P161.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "another supported route, for a routing choice",
         "optional method, only when the choice is genuinely optional"
       ],
       "examples": {
         "positive": {
-          "text": "The guide describes an alternative route through the backup gateway.",
-          "explanation": "Provisional example names the object being offered as a choice, without claiming identical availability or security."
+          "text": "Use the alternative route through the backup gateway when the primary route is unavailable.",
+          "explanation": "Names the replacement route, the default route, and the condition for selecting it without claiming identical behavior."
         },
         "problematic": {
           "text": "Use the alternative configuration.",
-          "explanation": "Does not identify which configuration, its prerequisites, or when it should replace the default."
+          "explanation": "Does not identify the replacement, the default, or the conditions under which the choice is valid."
         }
       },
       "evidence": {
@@ -1551,14 +1550,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 161 -l 161 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 161 (2-1-A13), row 6 displays ALTERNATIVE with (adj) wrapped below the headword. Its approved meaning is That gives a choice. The row starts below the horizontal boundary after row 5, and the wrapped headword is not a missing token or an adjacent-row overlap.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "bounded source PDF layout and visual review of wrapped headword and adjacent row boundary"
+          "original example review"
         ]
       }
     },
