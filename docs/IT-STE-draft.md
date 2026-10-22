@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 95,
-    "needs-review": 176,
+    "allowed": 96,
+    "needs-review": 175,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -37968,7 +37968,7 @@ Definition: Very important to a stated outcome\, provisionally\; no severity tax
 
 Domains: monitoring\-alerts
 
-Rationale: The column mixes isolated uppercase fragments and apparent example material\, so the source sense cannot be settled from this retrieval\.
+Rationale: Authenticated PDF visual inspection confirms that critical \(adj\) is row 1 with two alternatives\, VERY IMPORTANT \(the source meaning used for the first example\) and CAREFUL \(adj\) for the estimate example\. The source boundary is resolved\, but the IT disposition remains needs\-review\: FIRST CVSS v4\.0 uses Critical as a qualitative severity label tied to a 9\.0–10\.0 score\, while the ASD row also contains a non\-severity careful sense\. The current very\-important draft cannot safely cover both ordinary importance and named severity policy\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed pending scope review\.
 
 Contextual alternatives:
 
@@ -38002,9 +38002,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The alternatives column interleaves isolated uppercase words and apparent example fragments; intended alternatives and boundaries are unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: critical (adj) is row 1; VERY IMPORTANT and CAREFUL (adj) are separate alternatives within that row, each with its own example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38014,8 +38014,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P206-001",
@@ -38036,13 +38035,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: cross; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Move from one side of an identified boundary to the other\, provisionally\.
+Definition: Move across an identified network or security boundary\, provisionally\.
 
 Domains: networking
 
-Rationale: The extracted alternatives are interleaved with apparent example words\; the boundary and intended sense require source review\.
+Rationale: Authenticated PDF visual inspection confirms that cross \(v\) is row 2 with the ACROSS \(adv\) and CORRECTLY \(adv\) alternatives and its own safety\-line\/wire examples\. The draft networking sense is limited to movement across an identified boundary\. RFC 4301 describes traffic traversing an IPsec boundary and policies that determine whether packets cross\, bypass\, receive protection\, or are discarded\; this supports the bounded allowed draft disposition for the proposed networking sense\, not every use of cross\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38076,9 +38075,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The alternatives column includes apparent example fragments among ACROSS and CORRECTLY; the intended mapping is unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: cross (v) is row 2; ACROSS (adv) and CORRECTLY (adv) are alternatives within that row, and their examples are not part of the alternatives. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38088,8 +38087,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P206-002",
@@ -167552,7 +167550,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `3dcfbc1943a33faa4b1f44e6c1794e54bad4749316e45efea766c7c20de874b5`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `9338466d42bca947d192cadf974a1b4a618751bb4f61bc00f97b60d71ff28bca`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 

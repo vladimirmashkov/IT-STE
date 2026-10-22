@@ -736,7 +736,7 @@
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The column mixes isolated uppercase fragments and apparent example material, so the source sense cannot be settled from this retrieval.",
+      "rationale": "Authenticated PDF visual inspection confirms that critical (adj) is row 1 with two alternatives, VERY IMPORTANT (the source meaning used for the first example) and CAREFUL (adj) for the estimate example. The source boundary is resolved, but the IT disposition remains needs-review: FIRST CVSS v4.0 uses Critical as a qualitative severity label tied to a 9.0–10.0 score, while the ASD row also contains a non-severity careful sense. The current very-important draft cannot safely cover both ordinary importance and named severity policy. See `docs/it-ste-research/W1-D-P206.md`; keep this as draft/editorial-review-needed pending scope review.",
       "permitted_contextual_alternatives": [
         "essential for the stated function",
         "severity Critical, only under a named policy"
@@ -769,14 +769,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: critical (adj) is row 1; VERY IMPORTANT and CAREFUL (adj) are separate alternatives within that row, each with its own example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -793,12 +792,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Move from one side of an identified boundary to the other, provisionally.",
+      "it_disposition": "allowed",
+      "it_definition": "Move across an identified network or security boundary, provisionally.",
       "domains": [
         "networking"
       ],
-      "rationale": "The extracted alternatives are interleaved with apparent example words; the boundary and intended sense require source review.",
+      "rationale": "Authenticated PDF visual inspection confirms that cross (v) is row 2 with the ACROSS (adv) and CORRECTLY (adv) alternatives and its own safety-line/wire examples. The draft networking sense is limited to movement across an identified boundary. RFC 4301 describes traffic traversing an IPsec boundary and policies that determine whether packets cross, bypass, receive protection, or are discarded; this supports the bounded allowed draft disposition for the proposed networking sense, not every use of cross. See `docs/it-ste-research/W1-D-P206.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "pass through the stated boundary",
         "traverse the gateway"
@@ -831,14 +830,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: cross (v) is row 2; ACROSS (adv) and CORRECTLY (adv) are alternatives within that row, and their examples are not part of the alternatives. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
