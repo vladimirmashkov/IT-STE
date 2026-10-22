@@ -1801,24 +1801,26 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In a direction that increases separation from an identified physical reference.",
+      "it_disposition": "restricted",
+      "it_definition": "In or to a direction that increases physical separation from a named object, location, or hazard.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped source phrase needs checking; use explicit endpoints for logical transfers or migrations.",
+      "rationale": "The PDF confirms a standalone physical-direction row. Restrict the IT sense to a named physical reference; use operation-specific terms for logical removal, transfer, or placement. See `docs/it-ste-research/W1-D-P172.md`.",
       "permitted_contextual_alternatives": [
         "farther from",
-        "to the named target"
+        "remove from the named system",
+        "move or migrate to the named target",
+        "avoid scheduling on the named node"
       ],
       "examples": {
         "positive": {
           "text": "Route the sensor cable away from the power supply.",
-          "explanation": "Identifies the physical reference for separation."
+          "explanation": "Names the physical reference and expresses a direction that increases separation."
         },
         "problematic": {
           "text": "Move the data away from production.",
-          "explanation": "Does not name a destination or isolation requirement."
+          "explanation": "Does not say whether to remove, detach, or migrate the data, and does not name the destination or placement rule."
         }
       },
       "evidence": {
@@ -1839,14 +1841,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 172 -l 172 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 172 (2-1-A24), AWAY FROM (prep) is one row between aware (adj) and AXIAL (adj); its two-line headword, meaning, and STE example remain in that row. Horizontal rules bound the row. The wrapped-headword warning is a line-wrap artifact, not a row merge. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 204,
+    "needs-review": 203,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1354
+    "restricted": 1355
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -18424,19 +18424,23 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: AWAY FROM; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: In a direction that increases separation from an identified physical reference\.
+Definition: In or to a direction that increases physical separation from a named object\, location\, or hazard\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped source phrase needs checking\; use explicit endpoints for logical transfers or migrations\.
+Rationale: The PDF confirms a standalone physical\-direction row\. Restrict the IT sense to a named physical reference\; use operation\-specific terms for logical removal\, transfer\, or placement\. See \`docs\/it\-ste\-research\/W1\-D\-P172\.md\`\.
 
 Contextual alternatives:
 
 - farther from
 
-- to the named target
+- remove from the named system
+
+- move or migrate to the named target
+
+- avoid scheduling on the named node
 
 #### Positive example
 
@@ -18444,7 +18448,7 @@ Contextual alternatives:
 Route the sensor cable away from the power supply.
 ```
 
-Explanation: Identifies the physical reference for separation\.
+Explanation: Names the physical reference and expresses a direction that increases separation\.
 
 #### Problematic example
 
@@ -18452,7 +18456,7 @@ Explanation: Identifies the physical reference for separation\.
 Move the data away from production.
 ```
 
-Explanation: Does not name a destination or isolation requirement\.
+Explanation: Does not say whether to remove\, detach\, or migrate the data\, and does not name the destination or placement rule\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -18464,9 +18468,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 172 -l 172 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 172 (2-1-A24), AWAY FROM (prep) is one row between aware (adj) and AXIAL (adj); its two-line headword, meaning, and STE example remain in that row. Horizontal rules bound the row. The wrapped-headword warning is a line-wrap artifact, not a row merge. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 172,
     "printed_page": "2-1-A24",
@@ -18476,8 +18480,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P172-006",
@@ -167550,7 +167553,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `41eda4ba20997a3975246df9484418f17f41a92b30398f19a7a90f5ec29ae178`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `40cf0c707cf1ca1e591ff46c5a0fada40d77641172ff11da8937003a414885ef`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `09eeaf88f945db846c2644e6cca96c0a690ac7f23ad57b7ebaf3fd0d9735a12f`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-006.json` SHA-256: `3652b6b98646d1ae995a7125ecbd9db68eddc1f7c76f20abd77fbfe56f783356`
 
