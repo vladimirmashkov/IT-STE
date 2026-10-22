@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 144,
+    "needs-review": 143,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1385
+    "restricted": 1386
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -64001,13 +64001,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: fluctuate; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Vary up and down in a stated metric over time\.
 
 Domains: monitoring\-alerts
 
-Rationale: The extracted alternative describes constancy\, which may require a negative construction\; verify the source relationship\.
+Rationale: The ASD row pairs \`fluctuate \(v\)\` with \`CONSTANT \(adj\)\` and uses the positive STE instruction to keep pressure constant\, while the non\-STE example uses the negative construction \`does not fluctuate\`\. OpenTelemetry\'s metrics model defines sampled gauge values over time\, including current values such as CPU temperature\; the bounded IT sense is therefore restricted to measurable variation of a named metric over time\, not a claim that every non\-constant state fluctuates or that a metric has a specified range\. See \`docs\/it\-ste\-research\/W1\-D\-P253\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -64041,9 +64041,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted alternative describes constancy, which may require a negative construction; verify the source relationship."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 253 -l 253 -png -r 180 and visually inspected physical page 253. Findings: row 3 is bounded by horizontal rules between FLOW (v) and FLUID (n), reads fluctuate (v), and shows CONSTANT (adj) in the alternatives column; the non-STE example uses `does not fluctuate`.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 253,
     "printed_page": "2-1-F9",
@@ -167560,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `49da6c7029d13379881f9addfcd846efd67b0a8876850e36e91d89c1d54075df`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `ae576541d6dc0b12bcb02c01d8e98cbd42e73e10947be4b2f2c7ef51b66c45ab`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-022.json` SHA-256: `f1833432fe354f67cda5cb69850c5af022044b7c4833a78f2a3e76538e6ffa4b`
 

@@ -130,12 +130,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Vary up and down in a stated metric over time.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The extracted alternative describes constancy, which may require a negative construction; verify the source relationship.",
+      "rationale": "The ASD row pairs `fluctuate (v)` with `CONSTANT (adj)` and uses the positive STE instruction to keep pressure constant, while the non-STE example uses the negative construction `does not fluctuate`. OpenTelemetry's metrics model defines sampled gauge values over time, including current values such as CPU temperature; the bounded IT sense is therefore restricted to measurable variation of a named metric over time, not a claim that every non-constant state fluctuates or that a metric has a specified range. See `docs/it-ste-research/W1-D-P253.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "vary over time",
         "rise and fall"
@@ -168,9 +168,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 253 -l 253 -png -r 180 and visually inspected physical page 253. Findings: row 3 is bounded by horizontal rules between FLOW (v) and FLUID (n), reads fluctuate (v), and shows CONSTANT (adj) in the alternatives column; the non-STE example uses `does not fluctuate`.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
