@@ -249,12 +249,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A recorded occurrence with a defined type and time.",
+      "it_disposition": "restricted",
+      "it_definition": "A recorded occurrence identified by an event type, with a timestamp when available.",
       "domains": [
         "logs-events"
       ],
-      "rationale": "The source replacement suggests a conditional phrase, not necessarily a standalone event object; review sense alignment.",
+      "rationale": "The ASD row is `event (n)` with `IF (conj)` and a pressure-condition example, but `if` is a conditional conjunction rather than a noun synonym. CloudEvents defines an event as a data record that expresses an occurrence and its context, with a required event type and optional occurrence time; OpenTelemetry likewise models event class/type separately from an optional occurrence timestamp. The bounded IT sense is therefore restricted to a recorded occurrence identified by an event type, with a timestamp when available. See `docs/it-ste-research/W1-D-P236.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "recorded occurrence",
         "if for a condition"
@@ -287,9 +287,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 236 -l 236 -png -r 180 and visually inspected physical page 236. Findings: row 5 is bounded by horizontal rules and reads event (n), with IF (conj) in the alternatives column; the headword and POS are not wrapped.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

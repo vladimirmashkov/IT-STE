@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 149,
+    "needs-review": 148,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1380
+    "restricted": 1381
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -55230,13 +55230,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: event; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A recorded occurrence with a defined type and time\.
+Definition: A recorded occurrence identified by an event type\, with a timestamp when available\.
 
 Domains: logs\-events
 
-Rationale: The source replacement suggests a conditional phrase\, not necessarily a standalone event object\; review sense alignment\.
+Rationale: The ASD row is \`event \(n\)\` with \`IF \(conj\)\` and a pressure\-condition example\, but \`if\` is a conditional conjunction rather than a noun synonym\. CloudEvents defines an event as a data record that expresses an occurrence and its context\, with a required event type and optional occurrence time\; OpenTelemetry likewise models event class\/type separately from an optional occurrence timestamp\. The bounded IT sense is therefore restricted to a recorded occurrence identified by an event type\, with a timestamp when available\. See \`docs\/it\-ste\-research\/W1\-D\-P236\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -55270,9 +55270,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The source replacement suggests a conditional phrase, not necessarily a standalone event object; review sense alignment."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 236 -l 236 -png -r 180 and visually inspected physical page 236. Findings: row 5 is bounded by horizontal rules and reads event (n), with IF (conj) in the alternatives column; the headword and POS are not wrapped.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 236,
     "printed_page": "2-1-E10",
@@ -167554,7 +167554,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `7a57946b872c6f13395df2c14f9574440f6f862f58c4359aaec334b53fc70ac9`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `4ca1caea277013756650d1ab969a05d9624d291d4d30bf36418c620205172b97`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `c4f94d1ceed5d497ea2957768ee10ac1fa24b71929b0611f975ed1db120d9f12`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-019.json` SHA-256: `ad9a2e3fccf39f2b1eaee6d65e6a764de7ffc9d708bea228fb4887c1ea953ecf`
 
