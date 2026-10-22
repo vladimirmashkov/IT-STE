@@ -1,11 +1,12 @@
 
 # SPDX-License-Identifier: GPL-3.0-only
-"""Check the first draft vocabulary review batch; never approve vocabulary."""
+"""Check sequential draft vocabulary review batches; never approve vocabulary."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import re
 import sqlite3
 import sys
 from collections import Counter
@@ -117,16 +118,28 @@ def validate_decision(d, row, number, domains):
     warnings = json.loads(row["warnings"])
     require(ev["extraction_warnings"] == warnings, "Source warnings differ")
     ambiguities = strings(ev["mechanical_ambiguities"], "ambiguities", nonempty=False)
+    pdf = ev["pdf_layout_check"]
+    fields(pdf, "performed method visual_verification_performed", "PDF check")
+    require(type(pdf["performed"]) is bool and
+            type(pdf["visual_verification_performed"]) is bool, "Invalid PDF check flags")
+    if pdf["performed"]:
+        text(pdf["method"], "PDF check method")
+    else:
+        require(pdf["method"] is None and not pdf["visual_verification_performed"],
+                "An unperformed PDF check cannot claim a method or visual verification")
+    if pdf["visual_verification_performed"]:
+        require(adaptation.EXPECTED_SOURCE_SHA256 in pdf["method"] and
+                "Findings:" in pdf["method"],
+                "Visual resolution must identify the authenticated PDF and row findings")
     if warnings or ambiguities or row["id"] in KNOWN_AMBIGUITIES:
-        require(d["it_disposition"] == "needs-review", "Mechanical ambiguity requires needs-review")
+        require(d["it_disposition"] == "needs-review" or pdf["visual_verification_performed"],
+                "Mechanical ambiguity requires needs-review or recorded visual resolution")
     strings(ev["review_required"], "review requirements")
     fields(ev["retrieval"], "command scope", "retrieval")
     require(ev["retrieval"]["command"] ==
             f"python3 tools/asd_ste100_local.py entry {row['id']} --compact-json", "Forged retrieval locator")
     text(ev["retrieval"]["scope"], "retrieval scope")
-    fields(ev["pdf_layout_check"], "performed method visual_verification_performed", "PDF check")
-    require(type(ev["pdf_layout_check"]["performed"]) is bool and
-            type(ev["pdf_layout_check"]["visual_verification_performed"]) is bool, "Invalid PDF check flags")
+
 
 
 def validate_rights(rights):
@@ -154,7 +167,11 @@ def _check(path):
     fields(batch, "schema_version kind status review_status batch_id primary_language purpose source "
            "sequence domain_registry interpretation decisions rights evidence", "batch")
     expected(batch, {"schema_version": "1.0.0", "kind": "vocabulary-adaptation-batch",
-                     "batch_id": "001", "primary_language": "en"}, "batch")
+                     "primary_language": "en"}, "batch")
+    batch_id = batch["batch_id"]
+    require(isinstance(batch_id, str) and re.fullmatch(r"[0-9]{3}", batch_id) is not None
+            and int(batch_id) > 0, "Batch ID must be a canonical positive three-digit string")
+    offset = (int(batch_id) - 1) * 40
     draft(batch)
     text(batch["purpose"], "purpose")
     domains = validate_source(batch)
@@ -163,15 +180,20 @@ def _check(path):
         total = connection.execute("SELECT count(*) FROM dictionary_entries").fetchone()[0]
         rows = connection.execute(
             "SELECT id,headword,pos,approval,pdf_page,printed_page,warnings FROM dictionary_entries "
-            "ORDER BY pdf_page,CAST(substr(id,-3) AS INTEGER) LIMIT 41").fetchall()
-    require(total == 2196 and len(rows) == 41, "Unexpected source row count")
+            "ORDER BY pdf_page,CAST(substr(id,-3) AS INTEGER) LIMIT 41 OFFSET ?",
+            (offset,)).fetchall()
+    require(total == 2196, "Unexpected source row count")
+    require(offset < total, "Batch is beyond the source dictionary")
+    count = min(40, total - offset)
+    require(len(rows) == min(41, total - offset), "Unexpected source chunk size")
     seq = batch["sequence"]
     fields(seq, "first_entry_id last_entry_id order selection order_basis entry_count total_source_rows remaining", "sequence")
-    expected(seq, {"first_entry_id": rows[0]["id"], "last_entry_id": rows[39]["id"],
-                   "order": "physical-page-then-row", "entry_count": 40,
-                   "total_source_rows": total, "remaining": total - 40}, "sequence")
-    require(isinstance(batch["decisions"], list) and len(batch["decisions"]) == 40, "Require all first 40 rows")
-    for number, (decision, row) in enumerate(zip(batch["decisions"], rows), 1):
+    expected(seq, {"first_entry_id": rows[0]["id"], "last_entry_id": rows[count - 1]["id"],
+                   "order": "physical-page-then-row", "entry_count": count,
+                   "total_source_rows": total, "remaining": total - offset - count}, "sequence")
+    require(isinstance(batch["decisions"], list) and len(batch["decisions"]) == count,
+            "Require the complete 40-row chunk (or final remainder)")
+    for number, (decision, row) in enumerate(zip(batch["decisions"], rows), offset + 1):
         validate_decision(decision, row, number, domains)
     validate_rights(batch["rights"])
     ev = batch["evidence"]
@@ -182,19 +204,56 @@ def _check(path):
     for key in ("disposition_scope", *sorted(DISPOSITIONS), "alternatives", "examples",
                 "literal_boundary", "source_content_limit"):
         text(batch["interpretation"][key], key)
-    return batch, {"total": total, "candidates": 40, "remaining": total - 40,
-                   "next_entry_id": rows[40]["id"],
+    return batch, {"total": total, "candidates": count, "remaining": total - offset - count,
+                   "next_entry_id": rows[count]["id"] if len(rows) > count else None,
                    "dispositions": dict(sorted(Counter(d["it_disposition"] for d in batch["decisions"]).items()))}
 
 
-def checked(path):
+def _checked_all():
+    directory = safe_path(DEFAULT_BATCH).parent
+    paths = sorted(directory.glob("batch-*.json"))
+    require(bool(paths), "No vocabulary batches found")
+    batches = []
+    dispositions = Counter()
+    candidates = 0
+    summary = None
+    for number, path in enumerate(paths, 1):
+        batch_id = f"{number:03d}"
+        require(path.name == f"batch-{batch_id}.json", "Batch filenames must be canonical and contiguous")
+        batch, summary = checked(path)
+        require(batch["batch_id"] == batch_id, "Batch ID differs from filename")
+        batches.append(batch)
+        candidates += summary["candidates"]
+        dispositions.update(summary["dispositions"])
+    if summary is None:
+        raise VocabularyError("No vocabulary batches found")
+    return batches, {"total": summary["total"], "candidates": candidates,
+                     "remaining": summary["remaining"], "next_entry_id": summary["next_entry_id"],
+                     "dispositions": dict(sorted(dispositions.items())), "batch_count": len(batches)}
+
+
+def _validated(function, *args):
     try:
-        return _check(path)
+        return function(*args)
     except VocabularyError:
         raise
     except (adaptation.PlanError, OSError, ValueError, TypeError, KeyError, IndexError,
             AttributeError, RecursionError, sqlite3.Error) as error:
         raise VocabularyError(f"Cannot validate vocabulary batch: {error}") from error
+
+
+def checked(path):
+    return _validated(_check, path)
+
+
+def checked_all():
+    """Return all contiguous canonical batches and their verified aggregate summary."""
+    return _validated(_checked_all)
+
+
+def check_all() -> dict:
+    """Return aggregate draft counts, not vocabulary approval."""
+    return checked_all()[1]
 
 
 def check(path=DEFAULT_BATCH) -> dict:
@@ -207,16 +266,21 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     for name in ("check", "entry"):
         command = commands.add_parser(name)
-        command.add_argument("--batch", type=Path, default=DEFAULT_BATCH)
+        command.add_argument("--batch", type=Path)
         if name == "entry":
             command.add_argument("id")
         command.add_argument("--compact-json", action="store_true")
     args = parser.parse_args(argv)
     try:
-        batch, summary = checked(args.batch)
+        if args.batch is None:
+            batches, summary = checked_all()
+        else:
+            batch, summary = checked(args.batch)
+            batches = [batch]
         if args.command == "entry":
-            result = next((d for d in batch["decisions"] if d["entry_id"] == args.id), None)
-            require(result is not None, "Entry is not declared in this draft batch")
+            result = next((d for batch in batches for d in batch["decisions"]
+                           if d["entry_id"] == args.id), None)
+            require(result is not None, "Entry is not declared in the selected draft batches")
         else:
             result = {"status": "draft", "review_status": "editorial-review-needed",
                       "validation": "structure-and-provenance-only; no vocabulary approval", **summary}

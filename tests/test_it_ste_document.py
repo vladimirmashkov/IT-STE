@@ -5,6 +5,8 @@ import contextlib
 import copy
 import hashlib
 import io
+import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,6 +14,7 @@ from types import SimpleNamespace
 from unittest import mock
 
 from tools import it_ste_document as document
+from tools import it_ste_vocabulary as vocabulary
 
 
 class RenderingTests(unittest.TestCase):
@@ -24,21 +27,87 @@ class RenderingTests(unittest.TestCase):
             self.assertIn(f"\n## {identifier}\n", text)
             self.assertIn(f"[{identifier}](#{identifier.lower()})", text)
         self.assertEqual(text.count("\n## ITSTE-R-"), 31)
-        self.assertEqual(text.count("\n### D-P"), 40)
-        for expected in ("DRAFT", "not a release", "NOT an approved", "2156 pending",
+        batches, summary = vocabulary.checked_all()
+        entries = [item["entry_id"] for batch in batches for item in batch["decisions"]]
+        self.assertEqual(re.findall(r"^### (D-P\d+-\d+)$", text, re.MULTILINE), entries)
+        self.assertIn(f"First {summary['candidates']} source rows across "
+                      f"{summary['batch_count']} batches; {summary['remaining']} pending "
+                      f"of {summary['total']} source rows.", text)
+        self.assertIn(document.metadata(summary), text)
+        for expected in ("DRAFT", "not a release", "NOT an approved",
                          "needs-review", "physical_pdf_pages", "source_facet", "target_field",
                          "CC BY-SA 4.0", "downstream source license is unknown", "DO NOT EDIT"):
             self.assertIn(expected, text)
         batch = document.corpus.load_json(document.ROOT / document.DEFAULT_BATCH)
+        self.assertEqual(len(batch["decisions"]), 40)
+        self.assertEqual(batch["decisions"][0]["entry_id"], "D-P149-001")
         self.assertEqual(sum(item["it_disposition"] == "needs-review"
+                             for item in batch["decisions"]), 0)
+        self.assertEqual(sum(item["evidence"]["pdf_layout_check"]["visual_verification_performed"]
                              for item in batch["decisions"]), 6)
         for item in batch["decisions"]:
             self.assertIn(item["entry_id"], text)
+        for batch in batches:
+            self.assertIn(document.metadata(batch["interpretation"]), text)
+            self.assertIn(document.metadata({k: v for k, v in batch.items()
+                                            if k not in ("decisions", "interpretation")}), text)
+            path = document.ROOT / vocabulary.DEFAULT_BATCH.parent / f"batch-{batch['batch_id']}.json"
+            self.assertIn(f"- `{path.relative_to(document.ROOT).as_posix()}` SHA-256: "
+                          f"`{hashlib.sha256(path.read_bytes()).hexdigest()}`", text)
         manifest_path = document.ROOT / document.corpus.DEFAULT_MANIFEST
         manifest = document.corpus.load_json(manifest_path)
         for name in manifest["records"] + manifest["sources"]:
             path = manifest_path.parent / name
             self.assertIn(hashlib.sha256(path.read_bytes()).hexdigest(), text)
+
+    def test_all_validated_entries_render_once_including_later_batches(self):
+        batches, summary = copy.deepcopy(vocabulary.checked_all())
+        batches = batches[:1]
+        summary.update(candidates=40, remaining=summary["total"] - 40, batch_count=1,
+                       dispositions=vocabulary.check()["dispositions"])
+        later = copy.deepcopy(batches[-1])
+        later["batch_id"] = f"{len(batches) + 1:03d}"
+        decision = copy.deepcopy(later["decisions"][0])
+        decision.update(entry_id="D-P999-001", sequence_number=summary["candidates"] + 1,
+                        headword="later <term> *candidate*", it_disposition="needs-review")
+        later["decisions"] = [decision]
+        later["interpretation"]["examples"] = "Later batch examples are not blanket approvals."
+        later["sequence"].update(first_entry_id=decision["entry_id"],
+                                  last_entry_id=decision["entry_id"], entry_count=1,
+                                  remaining=summary["remaining"] - 1)
+        batches.append(later)
+        summary.update(candidates=summary["candidates"] + 1,
+                       remaining=summary["remaining"] - 1, batch_count=len(batches))
+        summary["dispositions"]["needs-review"] = summary["dispositions"].get("needs-review", 0) + 1
+        entries = [item["entry_id"] for batch in batches for item in batch["decisions"]]
+        # Mock the validated API, not batch discovery: later editorial data need
+        # not exist yet, and rendering must use the returned objects unchanged.
+        with tempfile.TemporaryDirectory(dir=document.ROOT) as directory:
+            paths = []
+            for batch in batches:
+                path = Path(directory) / f"batch-{batch['batch_id']}.json"
+                path.write_text(json.dumps(batch, ensure_ascii=False) + "\n", encoding="utf-8")
+                paths.append(path)
+            with (
+                mock.patch.object(vocabulary, "DEFAULT_BATCH", paths[0]),
+                mock.patch.object(vocabulary, "checked_all", return_value=(batches, summary)) as checked,
+            ):
+                data = document.render()
+                self.assertEqual(data, document.render())
+            self.assertEqual(checked.call_count, 2)
+            text = data.decode("utf-8")
+            self.assertEqual(re.findall(r"^### (D-P\d+-\d+)$", text, re.MULTILINE), entries)
+            self.assertIn(document.escaped(decision["headword"]), text)
+            self.assertIn(document.metadata(summary), text)
+            self.assertIn(f"{summary['remaining']} pending of {summary['total']} source rows.", text)
+            self.assertIn("NOT an approved allowed/prohibited dictionary", text)
+            self.assertIn(document.metadata(later["interpretation"]), text)
+            for batch, path in zip(batches, paths):
+                self.assertIn(document.metadata({k: v for k, v in batch.items()
+                                                if k not in ("decisions", "interpretation")}), text)
+                self.assertEqual(text.count(
+                    f"- `{path.relative_to(document.ROOT).as_posix()}` SHA-256: "
+                    f"`{hashlib.sha256(path.read_bytes()).hexdigest()}`"), 1)
 
     def test_segments_join_without_invented_spaces(self):
         self.assertEqual(document.example([
@@ -63,7 +132,7 @@ class RenderingTests(unittest.TestCase):
                          "```\n x \n```")
 
     def test_both_validators_gate_rendering(self):
-        vocabulary = SimpleNamespace(check=mock.Mock(side_effect=RuntimeError("forged batch source")))
+        vocabulary = SimpleNamespace(checked_all=mock.Mock(side_effect=RuntimeError("forged batch source")))
         with (
             mock.patch.object(document.importlib, "import_module", return_value=vocabulary),
             mock.patch.object(document.corpus, "check", return_value=31) as corpus_check,
@@ -71,7 +140,7 @@ class RenderingTests(unittest.TestCase):
         ):
             document.render()
         corpus_check.assert_called_once_with()
-        vocabulary.check.assert_called_once_with(path=document.DEFAULT_BATCH)
+        vocabulary.checked_all.assert_called_once_with()
         with (
             mock.patch.object(document.importlib, "import_module", return_value=vocabulary),
             mock.patch.object(document.corpus, "check", side_effect=RuntimeError("forged rule source")),

@@ -1,0 +1,2474 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "vocabulary-adaptation-batch",
+  "status": "draft",
+  "review_status": "editorial-review-needed",
+  "batch_id": "053",
+  "primary_language": "en",
+  "purpose": "Interim sequential editorial decisions, not canonical terms, an approved vocabulary, a released standard, or official ASD guidance.",
+  "source": {
+    "standard": "ASD-STE100",
+    "issue": "9",
+    "issue_date": "2025-01-15",
+    "revision": "r0001",
+    "revision_scope": "IT-STE derivative representation revision, not a new ASD issue",
+    "database_path": "standards/asd-ste100/versions/issue-9/revisions/r0001/reference/reference.sqlite3",
+    "database_sha256": "4a1d2bc943d35f689599af564e5587e870d384552c25aaaeff9892effc87642b",
+    "manifest_path": "standards/asd-ste100/versions/issue-9/revisions/r0001/reference/manifest.json",
+    "manifest_sha256": "1578c7c4c49372c2dbd390b9fea3edaab26c0165251f6e3199222ee6b5d270ce",
+    "pdf_sha256": "d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431",
+    "pdf_included": false,
+    "permission_path": "docs/permissions/asd-ste100-issue-9-derivatives.md",
+    "permission_sha256": "fa8bd26e2fae80e45607200c1635432feb7bfab9fb0f71173057a8db7f0576e3",
+    "owner": "ASD",
+    "publisher": "ASD",
+    "review_state": "mechanically-extracted-unreviewed",
+    "approval_field_interpretation": {
+      "field": "dictionary_entries.approval",
+      "algorithm": "Remove parenthesized qualifiers and nonletters from the extracted headword; all-uppercase letters yield approved, other letters yield not-approved, and no letters yield unknown.",
+      "limitation": "Retained verbatim as raw mechanical source status only; not an IT disposition, verified typography, or blanket permission for any sense."
+    }
+  },
+  "sequence": {
+    "first_entry_id": "D-P418-001",
+    "last_entry_id": "D-P422-008",
+    "order": "physical-page-then-row",
+    "selection": "Global rows 2081 through 2120 without filtering.",
+    "order_basis": "pdf_page ascending, then numeric row suffix of the stable entry ID; extractor assigns suffixes from positioned row anchors in page order.",
+    "entry_count": 40,
+    "total_source_rows": 2196,
+    "remaining": 76
+  },
+  "domain_registry": {
+    "path": "standards/it-ste/domains/v1.0.0.json",
+    "sha256": "b79f55d906bb669a4b2e326b7fedd912ec813586f788e2694837b47d7e603675",
+    "registry_version": "1.0.0",
+    "status": "draft"
+  },
+  "interpretation": {
+    "disposition_scope": "Each disposition applies only to the stated sense and scope, and remains a draft editorial proposal. Allowed and restricted do not constitute vocabulary approval.",
+    "allowed": "Proposed for the stated sense, subject to editorial review.",
+    "restricted": "Proposed only for the explicitly stated sense and contextual constraints.",
+    "prohibited": "Proposed exclusion of the stated prose use; choose a contextually correct alternative.",
+    "not-applicable": "No general IT prose sense proposed for the source sense; this does not ban all specialist physical documentation.",
+    "needs-review": "Mechanical ambiguity prevents a settled decision; definitions and examples are provisional editorial proposals.",
+    "alternatives": "Original contextual expressions, not allocated term IDs or an assertion that each expression is globally approved; use only when it preserves the intended meaning.",
+    "examples": "All examples and explanations are original IT-STE editorial content. Positive examples may demonstrate a replacement rather than use a prohibited or inapplicable headword. Positive examples under needs-review are provisional.",
+    "literal_boundary": "No decision authorizes changing literal code, API fields, protocol tokens, UI labels, citations, or proper names. No unknown proper noun is approved by this batch.",
+    "source_content_limit": "Only short headwords, raw status, locators, and extraction warnings are retained from source rows; source definitions, alternatives, and examples are not reproduced."
+  },
+  "decisions": [
+    {
+      "sequence_number": 2081,
+      "entry_id": "D-P418-001",
+      "headword": "UNTIL",
+      "part_of_speech_as_extracted": "conj",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Continue or maintain a stated condition up to the event described by a following clause.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "The event must be observable, and long waits need a timeout or escalation policy.",
+      "permitted_contextual_alternatives": [
+        "up to the point when",
+        "while the condition has not occurred"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Wait until the replica reaches the recorded checkpoint, with a 60-second timeout.",
+          "explanation": "Defines a measurable endpoint and a bounded wait."
+        },
+        "problematic": {
+          "text": "Wait until the system is good.",
+          "explanation": "Provides no observable end condition or timeout."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-001",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 1,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-001 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2082,
+      "entry_id": "D-P418-002",
+      "headword": "UNTIL",
+      "part_of_speech_as_extracted": "prep",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Maintain an action or state up to a named time or event expressed as a noun phrase.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "A time boundary needs a timezone or clearly identified event; inclusion at the boundary may require explicit wording.",
+      "permitted_contextual_alternatives": [
+        "before the stated cutoff",
+        "up to the named event"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Keep the old certificate available until the end of the rollback window.",
+          "explanation": "Identifies a documented lifecycle boundary."
+        },
+        "problematic": {
+          "text": "Keep the key until Friday.",
+          "explanation": "Omits the date, timezone, and retention or deletion rule at the boundary."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-002",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 2,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-002 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2083,
+      "entry_id": "D-P418-003",
+      "headword": "unused",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Not used within a stated observation window or never used under a defined inventory rule.",
+      "domains": [
+        "cloud-infrastructure"
+      ],
+      "rationale": "Unused is not synonymous with new, unowned, or safe to delete.",
+      "permitted_contextual_alternatives": [
+        "not accessed during the stated interval",
+        "never assigned"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The test volume is unused: no attachment is recorded during the seven-day review window.",
+          "explanation": "Bounds the observation to one defined indicator and interval."
+        },
+        "problematic": {
+          "text": "Delete every unused volume.",
+          "explanation": "Lack of observed use does not establish ownership, retention, or recoverability."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-003",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 3,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-003 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2084,
+      "entry_id": "D-P418-004",
+      "headword": "UNUSUAL",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Different from a documented baseline or expected pattern.",
+      "domains": [
+        "monitoring-alerts"
+      ],
+      "rationale": "An unusual condition needs a baseline and must not automatically be classified as malicious.",
+      "permitted_contextual_alternatives": [
+        "outside the baseline",
+        "unexpected for the stated workload"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The login rate is unusual compared with the previous seven daily peaks.",
+          "explanation": "Names the observation and comparison baseline."
+        },
+        "problematic": {
+          "text": "The hostname is unusual, so block the user.",
+          "explanation": "An unexplained subjective judgment is not sufficient evidence for access denial."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-004",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 4,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-004 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2085,
+      "entry_id": "D-P418-005",
+      "headword": "UNUSUALLY",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "To a degree that differs from an identified normal range.",
+      "domains": [
+        "monitoring-alerts"
+      ],
+      "rationale": "The adverb needs measurements and a reference interval rather than replace an alert threshold.",
+      "permitted_contextual_alternatives": [
+        "above the baseline",
+        "outside the normal range"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The queue is unusually long: 900 entries against a normal range of 10 to 50.",
+          "explanation": "Quantifies the departure from an explicit baseline."
+        },
+        "problematic": {
+          "text": "The system is unusually slow.",
+          "explanation": "Gives neither a metric nor a reference range."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-005",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 5,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-005 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2086,
+      "entry_id": "D-P418-006",
+      "headword": "UNWANTED",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Not required or not intended under a stated policy or desired configuration.",
+      "domains": [
+        "configuration"
+      ],
+      "rationale": "A preference label must not independently authorize deleting data or disabling controls.",
+      "permitted_contextual_alternatives": [
+        "not required by the policy",
+        "outside the desired configuration"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The policy identifies the legacy listener as unwanted and requires its removal.",
+          "explanation": "Grounds the judgment in a named configuration policy."
+        },
+        "problematic": {
+          "text": "Delete unwanted accounts.",
+          "explanation": "Does not define the policy, targets, or approval for deletion."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-006",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 6,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-006 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2087,
+      "entry_id": "D-P418-007",
+      "headword": "UNWIND",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Remove a physical cable or material from a wound arrangement.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "The physical action is distinct from exception-stack unwinding or reversing a transaction.",
+      "permitted_contextual_alternatives": [
+        "uncoil",
+        "pay out the cable"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Unwind the cable from the reel without twisting its connector.",
+          "explanation": "Defines a physical target and a handling constraint."
+        },
+        "problematic": {
+          "text": "Unwind the account changes.",
+          "explanation": "Does not identify a rollback mechanism or which state to restore."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-007",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 7,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-007 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2088,
+      "entry_id": "D-P418-008",
+      "headword": "UP",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "In a raised physical position; an operational availability sense requires a separately defined health criterion.",
+      "domains": [
+        "monitoring-alerts"
+      ],
+      "rationale": "Source spatial meaning does not by itself establish that a service is healthy or reachable.",
+      "permitted_contextual_alternatives": [
+        "raised",
+        "passing the named health probe, for availability"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The lift platform is up and its lock is engaged.",
+          "explanation": "Describes a physical state with an explicit securing condition."
+        },
+        "problematic": {
+          "text": "The service is up, so every dependency is healthy.",
+          "explanation": "A vague availability label does not establish end-to-end health."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-008",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 8,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-008 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2089,
+      "entry_id": "D-P418-009",
+      "headword": "UP",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Move toward a higher position in an explicit screen or physical reference frame.",
+      "domains": [
+        "user-interface"
+      ],
+      "rationale": "Directional movement must not be confused with starting a service or increasing a quota.",
+      "permitted_contextual_alternatives": [
+        "toward the top",
+        "to a higher position"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Move the selected row up one position in the list.",
+          "explanation": "Identifies direction, distance, and reference structure."
+        },
+        "problematic": {
+          "text": "Bring the database up.",
+          "explanation": "Does not specify starting, restoring, or promoting the database."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-009",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 9,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-009 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2090,
+      "entry_id": "D-P418-010",
+      "headword": "UP",
+      "part_of_speech_as_extracted": "prep",
+      "physical_pdf_page": 418,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Indicate movement along a named path toward its higher end.",
+      "domains": [
+        "user-interface"
+      ],
+      "rationale": "The path must be explicit, and scrolling direction must identify the visible result when ambiguity matters.",
+      "permitted_contextual_alternatives": [
+        "toward the top of",
+        "along the ascending path"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Move the selection up the list by one row.",
+          "explanation": "States the traversed structure and a bounded displacement."
+        },
+        "problematic": {
+          "text": "Send the data up the network.",
+          "explanation": "No endpoint or routing relationship is identified."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P418-010",
+        "physical_pdf_page": 418,
+        "printed_page": "2-1-U6",
+        "row_on_page": 10,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P418-010 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2091,
+      "entry_id": "D-P419-001",
+      "headword": "upon",
+      "part_of_speech_as_extracted": "prep",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "prohibited",
+      "it_definition": "Indicate a physical supporting surface or a triggering event using an explicit relation.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "On or when makes the intended spatial or temporal relation clearer.",
+      "permitted_contextual_alternatives": [
+        "on",
+        "when"
+      ],
+      "examples": {
+        "positive": {
+          "text": "When the integrity check fails, stop the import.",
+          "explanation": "Defines an event and the required response."
+        },
+        "problematic": {
+          "text": "Upon completion, do the usual.",
+          "explanation": "Leaves both the completion event and the following action unclear."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-001",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 1,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-001 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2092,
+      "entry_id": "D-P419-002",
+      "headword": "upper",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "At a higher position or serving as the maximum bound of a stated range.",
+      "domains": [
+        "configuration"
+      ],
+      "rationale": "Visual position and maximum limits are distinct; numerical use needs an inclusion rule.",
+      "permitted_contextual_alternatives": [
+        "top",
+        "maximum"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The upper bound is 64 connections, inclusive.",
+          "explanation": "Names the quantity and explicitly includes the boundary."
+        },
+        "problematic": {
+          "text": "Use the upper value.",
+          "explanation": "No range or parameter identifies which value is intended."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-002",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 2,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-002 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2093,
+      "entry_id": "D-P419-003",
+      "headword": "uppermost",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Located highest in a stated physical arrangement.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "The superlative needs a defined set and orientation, not an abstract importance ranking.",
+      "permitted_contextual_alternatives": [
+        "top",
+        "highest in the named rack"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Inspect the uppermost fan in the rear fan bank.",
+          "explanation": "Identifies a physical set and position."
+        },
+        "problematic": {
+          "text": "Restart the uppermost service.",
+          "explanation": "A software service has no defined physical position in that instruction."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-003",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 3,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-003 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2094,
+      "entry_id": "D-P419-004",
+      "headword": "uppermost",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "With the identified side facing the highest position in a stated orientation.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "Adverbial orientation can be useful for hardware handling when the side and frame are named.",
+      "permitted_contextual_alternatives": [
+        "facing up",
+        "on top"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Place the panel with its labeled face uppermost.",
+          "explanation": "Identifies which physical face must point upward."
+        },
+        "problematic": {
+          "text": "Keep security uppermost.",
+          "explanation": "A priority metaphor provides no executable security control."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-004",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 4,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-004 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2095,
+      "entry_id": "D-P419-005",
+      "headword": "UPSTREAM",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "On the source side of a documented flow or dependency relation.",
+      "domains": [
+        "networking"
+      ],
+      "rationale": "The IT flow adaptation requires a named direction; it must not assume the source physical-flow definition determines network roles.",
+      "permitted_contextual_alternatives": [
+        "source-side",
+        "earlier in the named processing path"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The upstream collector sends events to the archive service.",
+          "explanation": "Defines the relevant flow and component role."
+        },
+        "problematic": {
+          "text": "The upstream server is the one with the lowest address.",
+          "explanation": "Address ordering does not establish flow direction or dependency."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-005",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 5,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-005 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2096,
+      "entry_id": "D-P419-006",
+      "headword": "UPSTREAM",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "needs-review",
+      "it_definition": "Toward the source of a specified data flow or dependency path.",
+      "domains": [
+        "networking"
+      ],
+      "rationale": "The retrieved adverb row repeats a fragment apparently from the next row; direction must be anchored to one flow.",
+      "permitted_contextual_alternatives": [
+        "toward the data source",
+        "against the named data-flow direction"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The downstream agent sends acknowledgments upstream to the collector.",
+          "explanation": "Specifies the reverse direction relative to event delivery."
+        },
+        "problematic": {
+          "text": "Send the request upstream.",
+          "explanation": "Without a named flow or endpoint, the direction is ambiguous."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-006",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 6,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-006 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [
+          "Repeated direction fragment appears to overlap the following upstream-of row."
+        ],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review",
+          "verify flagged or ambiguous source row against PDF"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2097,
+      "entry_id": "D-P419-007",
+      "headword": "UPSTREAM OF",
+      "part_of_speech_as_extracted": "prep",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "needs-review",
+      "it_definition": "Located before a named component along an explicitly defined processing flow.",
+      "domains": [
+        "networking"
+      ],
+      "rationale": "Wrapped extraction needs review; source-side position is relational and not the same as greater authority.",
+      "permitted_contextual_alternatives": [
+        "before the named stage",
+        "on the source side of"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The sanitizer is upstream of the parser in the input-processing path.",
+          "explanation": "Names both stages and the reference flow."
+        },
+        "problematic": {
+          "text": "The firewall is upstream of security.",
+          "explanation": "Does not identify a concrete reference component or route."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-007",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 7,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-007 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [
+          "wrapped-headword"
+        ],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review",
+          "verify flagged or ambiguous source row against PDF"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2098,
+      "entry_id": "D-P419-008",
+      "headword": "up to",
+      "part_of_speech_as_extracted": "prep",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Express an explicitly inclusive maximum or a stated endpoint, with the intended relation clear.",
+      "domains": [
+        "configuration"
+      ],
+      "rationale": "The phrase can hide inclusivity, capacity guarantees, and temporal ambiguity.",
+      "permitted_contextual_alternatives": [
+        "at most",
+        "no more than",
+        "until, for a time boundary"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The service accepts up to 100 records per request, including 100.",
+          "explanation": "States the inclusive maximum and measurement scope."
+        },
+        "problematic": {
+          "text": "The service is up to 100 times faster.",
+          "explanation": "A best-case ceiling provides no representative performance expectation."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-008",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 8,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-008 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2099,
+      "entry_id": "D-P419-009",
+      "headword": "upward",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 419,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Toward a higher position in a stated physical or visual frame.",
+      "domains": [
+        "user-interface"
+      ],
+      "rationale": "This spatial direction must not imply increasing a numerical setting without naming it.",
+      "permitted_contextual_alternatives": [
+        "up",
+        "toward the top"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Move the divider upward by 20 pixels.",
+          "explanation": "Provides a visual target and displacement."
+        },
+        "problematic": {
+          "text": "Scale the cluster upward.",
+          "explanation": "Does not state whether to add nodes or increase per-node resources."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P419-009",
+        "physical_pdf_page": 419,
+        "printed_page": "2-1-U7",
+        "row_on_page": 9,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P419-009 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2100,
+      "entry_id": "D-P420-001",
+      "headword": "urgently",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "prohibited",
+      "it_definition": "With a response priority determined by an explicit deadline or incident policy.",
+      "domains": [
+        "monitoring-alerts"
+      ],
+      "rationale": "An urgency adverb cannot define severity, ownership, or a response-time target.",
+      "permitted_contextual_alternatives": [
+        "within the incident response deadline",
+        "immediately, when required by policy"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Acknowledge this critical alert within five minutes under the incident policy.",
+          "explanation": "States an actionable response window."
+        },
+        "problematic": {
+          "text": "Repair the server urgently.",
+          "explanation": "Gives neither a safe procedure nor a deadline or responsible role."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-001",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 1,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-001 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2101,
+      "entry_id": "D-P420-002",
+      "headword": "usage",
+      "part_of_speech_as_extracted": "n",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "A measured amount or documented pattern of resource consumption over a stated interval.",
+      "domains": [
+        "monitoring-alerts"
+      ],
+      "rationale": "Resource usage needs a metric, unit, scope, and sampling or aggregation rule.",
+      "permitted_contextual_alternatives": [
+        "resource consumption",
+        "measured amount used"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Memory usage is the resident byte count sampled every ten seconds.",
+          "explanation": "Defines the measurement and interval."
+        },
+        "problematic": {
+          "text": "Usage is 90 percent.",
+          "explanation": "Does not identify the resource or the capacity denominator."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-002",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 2,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-002 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2102,
+      "entry_id": "D-P420-003",
+      "headword": "use",
+      "part_of_speech_as_extracted": "n",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "The act or permitted purpose of applying a named resource or function.",
+      "domains": [
+        "software-documentation"
+      ],
+      "rationale": "The noun is useful for policy and scope descriptions when its object and conditions are stated.",
+      "permitted_contextual_alternatives": [
+        "operation",
+        "permitted application"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Use of the export endpoint requires the audit role.",
+          "explanation": "States the controlled action and prerequisite."
+        },
+        "problematic": {
+          "text": "Use is restricted.",
+          "explanation": "Does not identify the resource, action, or applicable policy."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-003",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 3,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-003 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2103,
+      "entry_id": "D-P420-004",
+      "headword": "USE",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Apply a named tool, input, or resource to a stated task.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "The generic action is acceptable when the object and purpose define the operation sufficiently.",
+      "permitted_contextual_alternatives": [
+        "run the utility",
+        "apply the setting",
+        "select the option"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Use the read-only account for the diagnostic query.",
+          "explanation": "Names the resource and a bounded purpose."
+        },
+        "problematic": {
+          "text": "Use security.",
+          "explanation": "Names no control, tool, or action."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-004",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 4,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-004 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2104,
+      "entry_id": "D-P420-005",
+      "headword": "USUAL",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Most frequent or established in a defined context, without guaranteeing correctness.",
+      "domains": [
+        "support-troubleshooting"
+      ],
+      "rationale": "A usual state is descriptive, not a substitute for a current specification or approved procedure.",
+      "permitted_contextual_alternatives": [
+        "most frequent",
+        "documented standard, when normative"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The usual peak occurs during the nightly import window.",
+          "explanation": "States a contextual frequency observation."
+        },
+        "problematic": {
+          "text": "Apply the usual permissions.",
+          "explanation": "Relies on unstated practice instead of an explicit access policy."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-005",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 5,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-005 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2105,
+      "entry_id": "D-P420-006",
+      "headword": "USUALLY",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "In most observed cases within a stated scope, not invariably.",
+      "domains": [
+        "software-documentation"
+      ],
+      "rationale": "Frequency qualifiers need evidence or clearly non-normative context and must not weaken mandatory steps.",
+      "permitted_contextual_alternatives": [
+        "in most observed runs",
+        "normally under the stated conditions"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The cache usually warms within one minute in this test configuration.",
+          "explanation": "Limits the observation to a configuration and avoids a guarantee."
+        },
+        "problematic": {
+          "text": "Usually verify the signature before installation.",
+          "explanation": "Makes a required integrity check appear optional."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-006",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 6,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-006 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2106,
+      "entry_id": "D-P420-007",
+      "headword": "utilization",
+      "part_of_speech_as_extracted": "n",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "The proportion of a defined resource capacity consumed over a specified interval.",
+      "domains": [
+        "monitoring-alerts"
+      ],
+      "rationale": "The metric is useful in IT independently of the source status, but requires a denominator and aggregation rule.",
+      "permitted_contextual_alternatives": [
+        "fraction of capacity used",
+        "resource consumption"
+      ],
+      "examples": {
+        "positive": {
+          "text": "CPU utilization is the mean busy fraction across four cores over one minute.",
+          "explanation": "Defines resource, denominator, and aggregation window."
+        },
+        "problematic": {
+          "text": "Utilization is 150 percent.",
+          "explanation": "Without a capacity model, the percentage cannot be interpreted."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-007",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 7,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-007 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2107,
+      "entry_id": "D-P420-008",
+      "headword": "utilize",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 420,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "prohibited",
+      "it_definition": "Apply a named resource to a specified purpose, with no special distinction from use.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "The longer verb adds no operational precision over use.",
+      "permitted_contextual_alternatives": [
+        "use",
+        "run the named utility"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Use the supported client to upload the report.",
+          "explanation": "States the tool and purpose directly."
+        },
+        "problematic": {
+          "text": "Utilize the capabilities appropriately.",
+          "explanation": "Does not identify a capability, task, or criterion for appropriate behavior."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P420-008",
+        "physical_pdf_page": 420,
+        "printed_page": "2-1-U8",
+        "row_on_page": 8,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P420-008 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2108,
+      "entry_id": "D-P421-001",
+      "headword": "valid",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 421,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Satisfying explicitly named checks for a stated purpose at a specified evaluation time.",
+      "domains": [
+        "security"
+      ],
+      "rationale": "Validity is multidimensional: syntax, signature, trust, authorization, and time are separate checks.",
+      "permitted_contextual_alternatives": [
+        "passes schema validation",
+        "within its validity interval",
+        "accepted for the stated purpose"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The token is valid for this request only if its signature, audience, and expiry checks pass.",
+          "explanation": "States the required validation dimensions."
+        },
+        "problematic": {
+          "text": "The JSON is valid, so the request is authorized.",
+          "explanation": "Syntactic validity does not establish permission."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P421-001",
+        "physical_pdf_page": 421,
+        "printed_page": "2-1-V1",
+        "row_on_page": 1,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P421-001 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2109,
+      "entry_id": "D-P421-002",
+      "headword": "validity",
+      "part_of_speech_as_extracted": "n",
+      "physical_pdf_page": 421,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "The state or interval in which an object meets specified acceptance conditions.",
+      "domains": [
+        "security"
+      ],
+      "rationale": "Separate a certificate's time interval from cryptographic verification and trust.",
+      "permitted_contextual_alternatives": [
+        "acceptance under the named checks",
+        "validity interval"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The certificate validity interval ends at the recorded UTC expiry time.",
+          "explanation": "States a precise temporal property."
+        },
+        "problematic": {
+          "text": "Check validity.",
+          "explanation": "Does not specify time, syntax, signature, trust, or intended use."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P421-002",
+        "physical_pdf_page": 421,
+        "printed_page": "2-1-V1",
+        "row_on_page": 2,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P421-002 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2110,
+      "entry_id": "D-P421-003",
+      "headword": "VALUE",
+      "part_of_speech_as_extracted": "n",
+      "physical_pdf_page": 421,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "A datum assigned to a named field, parameter, or measurement under an explicit type and unit.",
+      "domains": [
+        "configuration"
+      ],
+      "rationale": "Quantity values and textual field contents need schema context; value must not mean business benefit here.",
+      "permitted_contextual_alternatives": [
+        "parameter setting",
+        "field content",
+        "measured quantity"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Set the timeout value to 30 seconds.",
+          "explanation": "Names the field, magnitude, and unit."
+        },
+        "problematic": {
+          "text": "Change the value to improve security.",
+          "explanation": "Identifies neither the field nor the required setting."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P421-003",
+        "physical_pdf_page": 421,
+        "printed_page": "2-1-V1",
+        "row_on_page": 3,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P421-003 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2111,
+      "entry_id": "D-P421-004",
+      "headword": "variable",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 421,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Capable of changing within defined bounds or according to a stated input.",
+      "domains": [
+        "configuration"
+      ],
+      "rationale": "Adjectival variability is distinct from a source-code variable noun and needs a property and rule.",
+      "permitted_contextual_alternatives": [
+        "changes with the workload",
+        "not constant"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The retry delay is variable between 1 and 10 seconds.",
+          "explanation": "States the changing property and its bounds."
+        },
+        "problematic": {
+          "text": "The response is variable.",
+          "explanation": "Does not identify whether content, timing, size, or status changes."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P421-004",
+        "physical_pdf_page": 421,
+        "printed_page": "2-1-V1",
+        "row_on_page": 4,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P421-004 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2112,
+      "entry_id": "D-P421-005",
+      "headword": "various",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 421,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "prohibited",
+      "it_definition": "More than one unspecified kind or member of a set.",
+      "domains": [
+        "software-documentation"
+      ],
+      "rationale": "Enumerate the set or state its selection rule when readers need actionable scope.",
+      "permitted_contextual_alternatives": [
+        "the listed",
+        "several specified",
+        "different"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The client supports JSON and XML responses.",
+          "explanation": "Enumerates the supported formats."
+        },
+        "problematic": {
+          "text": "The client supports various formats.",
+          "explanation": "Does not tell the reader which formats are accepted."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P421-005",
+        "physical_pdf_page": 421,
+        "printed_page": "2-1-V1",
+        "row_on_page": 5,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P421-005 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2113,
+      "entry_id": "D-P422-001",
+      "headword": "vary",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Change a named property or differ across explicitly identified cases.",
+      "domains": [
+        "configuration"
+      ],
+      "rationale": "Useful only with an actor or comparison scope and an explicit range or rule.",
+      "permitted_contextual_alternatives": [
+        "change",
+        "differ across the named cases"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Vary the test concurrency from 1 to 8 workers while keeping the input fixed.",
+          "explanation": "Identifies the manipulated property and controlled range."
+        },
+        "problematic": {
+          "text": "Vary the security settings until it works.",
+          "explanation": "Encourages uncontrolled changes with no safety or success criteria."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-001",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 1,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-001 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2114,
+      "entry_id": "D-P422-002",
+      "headword": "vent",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "not-applicable",
+      "it_definition": "Release gas or pressure from a physical system under an approved equipment procedure.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "No general software-data equivalent is proposed; physical pressure work requires specialist controls.",
+      "permitted_contextual_alternatives": [
+        "release pressure under the hardware procedure",
+        "open the approved vent"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Follow the equipment procedure before releasing pressure from the cooling assembly.",
+          "explanation": "Keeps a physical hazard within its governing instructions."
+        },
+        "problematic": {
+          "text": "Vent the database.",
+          "explanation": "Does not describe a data, memory, or process operation."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-002",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 2,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-002 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2115,
+      "entry_id": "D-P422-003",
+      "headword": "ventilate",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Provide a specified airflow path for physical equipment or its enclosure.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "Cooling instructions need hardware airflow and environmental requirements, not an abstract open state.",
+      "permitted_contextual_alternatives": [
+        "provide airflow",
+        "keep the specified air path clear"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Ventilate the server enclosure according to its cooling requirements.",
+          "explanation": "Names the physical enclosure and governing requirement."
+        },
+        "problematic": {
+          "text": "Ventilate the software stack.",
+          "explanation": "No physical object or airflow requirement is identified."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-003",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 3,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-003 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2116,
+      "entry_id": "D-P422-004",
+      "headword": "ventilation",
+      "part_of_speech_as_extracted": "n",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "The provision or movement of air through a defined equipment space.",
+      "domains": [
+        "procedures-runbooks"
+      ],
+      "rationale": "Airflow must be assessed against hardware requirements; presence of fans alone is insufficient.",
+      "permitted_contextual_alternatives": [
+        "airflow",
+        "air exchange through the enclosure"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Keep the rear clearance required for rack ventilation.",
+          "explanation": "Links the physical space to the hardware cooling requirement."
+        },
+        "problematic": {
+          "text": "Ventilation is fine because the fan icon is green.",
+          "explanation": "An indicator alone does not demonstrate adequate airflow."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-004",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 4,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-004 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2117,
+      "entry_id": "D-P422-005",
+      "headword": "verify",
+      "part_of_speech_as_extracted": "v",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "not-approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Establish that a stated property meets a named requirement by an explicit check.",
+      "domains": [
+        "security"
+      ],
+      "rationale": "Verification needs evidence and a criterion; running a command is not automatically successful verification.",
+      "permitted_contextual_alternatives": [
+        "check against the manifest",
+        "confirm with the stated test"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Verify the archive checksum against the signed manifest before extraction.",
+          "explanation": "Names the object, reference, and procedural order."
+        },
+        "problematic": {
+          "text": "Verify that the server is safe.",
+          "explanation": "Provides no defined property, evidence, or acceptance criterion."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-005",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 5,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-005 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2118,
+      "entry_id": "D-P422-006",
+      "headword": "VERTICAL",
+      "part_of_speech_as_extracted": "adj",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Aligned with the defined up-down axis in a physical space or visual layout.",
+      "domains": [
+        "user-interface"
+      ],
+      "rationale": "Screen geometry and scaling architecture are distinct senses.",
+      "permitted_contextual_alternatives": [
+        "upright",
+        "along the screen's up-down axis"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The vertical divider separates the navigation panel from the editor.",
+          "explanation": "Describes a defined layout orientation."
+        },
+        "problematic": {
+          "text": "Vertical scaling moves the server higher in the rack.",
+          "explanation": "Confuses a software capacity concept with physical placement."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-006",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 6,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-006 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2119,
+      "entry_id": "D-P422-007",
+      "headword": "VERTICALLY",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "restricted",
+      "it_definition": "Along a defined vertical axis in a physical or visual frame.",
+      "domains": [
+        "user-interface"
+      ],
+      "rationale": "The directional adverb must not silently stand for changing compute resources.",
+      "permitted_contextual_alternatives": [
+        "along the up-down axis",
+        "in a vertical column"
+      ],
+      "examples": {
+        "positive": {
+          "text": "Align the status icons vertically in the sidebar.",
+          "explanation": "Names a layout arrangement and reference area."
+        },
+        "problematic": {
+          "text": "Scale vertically until the fault disappears.",
+          "explanation": "Does not identify which capacity parameter to change or a safe limit."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-007",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 7,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-007 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    },
+    {
+      "sequence_number": 2120,
+      "entry_id": "D-P422-008",
+      "headword": "VERY",
+      "part_of_speech_as_extracted": "adv",
+      "physical_pdf_page": 422,
+      "upstream_status_raw": {
+        "field": "approval",
+        "value": "approved",
+        "provenance": "Mechanical capitalization signal from the extracted headword, not an independently verified ASD approval decision."
+      },
+      "status": "draft",
+      "review_status": "editorial-review-needed",
+      "it_disposition": "prohibited",
+      "it_definition": "Intensify a degree without supplying a measurable quantity.",
+      "domains": [
+        "error-messages"
+      ],
+      "rationale": "The intensifier adds no threshold, evidence, or recovery instruction in technical status prose.",
+      "permitted_contextual_alternatives": [
+        "state the measured value",
+        "above the named limit"
+      ],
+      "examples": {
+        "positive": {
+          "text": "The request took 8 seconds; the service target is 2 seconds.",
+          "explanation": "Provides evidence and a comparison instead of subjective emphasis."
+        },
+        "problematic": {
+          "text": "The service is very slow.",
+          "explanation": "Does not quantify latency, scope, or impact."
+        }
+      },
+      "evidence": {
+        "source_standard": "ASD-STE100",
+        "source_issue": "9",
+        "source_revision": "r0001",
+        "source_entry_id": "D-P422-008",
+        "physical_pdf_page": 422,
+        "printed_page": "2-1-V2",
+        "row_on_page": 8,
+        "retrieval": {
+          "command": "python3 tools/asd_ste100_local.py entry D-P422-008 --compact-json",
+          "scope": "Exact ID retrieved with source dictionary_item(full=False) through the read-only API; meaning/alternatives only; no full extraction."
+        },
+        "extraction_warnings": [],
+        "mechanical_ambiguities": [],
+        "source_interpretation_status": "mechanically-extracted-unreviewed",
+        "pdf_layout_check": {
+          "performed": false,
+          "method": null,
+          "visual_verification_performed": false
+        },
+        "review_required": [
+          "editorial sense and scope review",
+          "original example review"
+        ]
+      }
+    }
+  ],
+  "rights": {
+    "original_editorial_content": {
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "IT-STE contributors",
+      "scope": "Original IT sense definitions, rationales, contextual alternatives, examples, explanations, and editorial assessments only; does not relicense ASD source material."
+    },
+    "project_link": "https://github.com/vladimirmashkov/IT-STE",
+    "asd_source": {
+      "owner": "ASD",
+      "standard": "ASD-STE100 Issue 9",
+      "permission_record": "docs/permissions/asd-ste100-issue-9-derivatives.md",
+      "publication_basis": "Repository owner records offline written authorization for derivative publication.",
+      "source_pdf_redistribution": "forbidden",
+      "downstream_license": "unknown; no broader downstream license terms are recorded",
+      "separation": "Do not infer that the editorial CC-BY-SA license applies to ASD-owned source content or that ASD endorses these adaptations."
+    }
+  },
+  "evidence": {
+    "authentication": {
+      "command": "python3 tools/asd_ste100_local.py doctor",
+      "result": "PASS",
+      "local_pdf_hash_verified": true
+    },
+    "metadata_inspection": "Read-only SQLite locator/status/warnings selection bounded to 40 assigned rows.",
+    "semantic_retrieval": "Each selected exact ID retrieved separately through dictionary_item(full=False), the entry command API; source meanings inspected, not reproduced.",
+    "pdf_checks": {
+      "performed": false,
+      "visual_verification_performed": false,
+      "physical_pages": [],
+      "method": null,
+      "result": "No PDF layout or visual checks performed.",
+      "source_examples_retained": false
+    },
+    "initial_worktree": "Pre-existing tool/test modifications and untracked batches 002 and 003; untouched.",
+    "coverage": "All global rows 2081 through 2120 represented exactly once.",
+    "validation_scope": "Individual --batch structural and provenance validation; no semantic approval.",
+    "human_editorial_approval": false,
+    "rules_changed": false,
+    "canonical_terms_created": false
+  }
+}

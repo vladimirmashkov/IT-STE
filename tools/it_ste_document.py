@@ -62,18 +62,17 @@ def render():
     vocabulary = importlib.import_module(
         f"{__package__}.it_ste_vocabulary" if __package__ else "it_ste_vocabulary")
     count = corpus.check()
-    summary = vocabulary.check(path=DEFAULT_BATCH)
+    batches, summary = vocabulary.checked_all()
     manifest_path = ROOT / corpus.DEFAULT_MANIFEST
     manifest = corpus.load_json(manifest_path)
-    batch_path = ROOT / DEFAULT_BATCH
-    batch = corpus.load_json(batch_path)
+
     snapshot = manifest_path.parent
     rules = [corpus.load_json(snapshot / name) for name in manifest["records"]]
     if count != 31 or len(rules) != 31 or any(r["status"] != "draft" for r in rules):
         raise DocumentError("Expected all 31 DRAFT rules")
     lines = [BANNER, ("> DRAFT: all 31 rules require human review. This is not a release, "
              "a complete vocabulary, a conformance checker, or official ASD guidance."),
-             "Edit canonical records and the vocabulary batch, then rebuild; never edit this snapshot.",
+             "Edit canonical records and the vocabulary batches, then rebuild; never edit this snapshot.",
              f"Version: {escaped(manifest['version'])}; revision: {escaped(manifest['revision'])}.",
              "## Contents"]
     for rule in rules:
@@ -95,28 +94,37 @@ def render():
                   ("Source: ASD-STE100 Issue 9; locators below use physical PDF pages. "
                   "Facet dispositions describe adaptations, not source approval."),
                   metadata({k: rule[k] for k in ("source_refs", "review", "rights")})]
-    sequence = batch["sequence"]
     lines += ["## Vocabulary candidates",
-              (f"First {sequence['entry_count']} source rows; {sequence['remaining']} pending "
-              f"of {sequence['total_source_rows']} source rows. These are draft sense-level "
+              (f"First {summary['candidates']} source rows across {summary['batch_count']} batches; "
+              f"{summary['remaining']} pending of {summary['total']} source rows. "
+              "These are draft sense-level "
               "candidate dispositions, NOT an approved allowed/prohibited dictionary. "
               "They are distinct from canonical rules; examples do not admit vocabulary."),
-              "Validated batch counts and review state:", metadata(summary),
-              "Batch interpretation:", metadata(batch["interpretation"])]
-    for item in batch["decisions"]:
-        lines += [f"### {item['entry_id']}",
-                  f"Term: {escaped(item['headword'])}; POS: {escaped(item['part_of_speech_as_extracted'])}.",
-                  (f"Status: {escaped(item['status'])}; {escaped(item['review_status'])}; "
-                  f"candidate disposition: {escaped(item['it_disposition'])}."),
-                  "Definition: " + escaped(item["it_definition"]),
-                  "Domains: " + ", ".join(escaped(v) for v in item["domains"]),
-                  "Rationale: " + escaped(item["rationale"]), "Contextual alternatives:"]
-        lines += ["- " + escaped(v) for v in item["permitted_contextual_alternatives"]] or ["None."]
-        for key in ("positive", "problematic"):
-            lines += [f"#### {key.capitalize()} example", fenced(item["examples"][key]["text"]),
-                      "Explanation: " + escaped(item["examples"][key]["explanation"])]
-        lines += ["Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.",
-                  metadata({k: item[k] for k in ("evidence", "upstream_status_raw")})]
+              "Validated aggregate counts (structure and provenance only; no vocabulary approval):",
+              metadata(summary)]
+    batch_paths = []
+    for batch in batches:
+        batch_path = ROOT / vocabulary.DEFAULT_BATCH.parent / f"batch-{batch['batch_id']}.json"
+        batch_paths.append(batch_path)
+        lines += [f"### Batch {escaped(batch['batch_id'])}",
+                  "Batch interpretation:", metadata(batch["interpretation"]),
+                  "Batch source, sequence, domain registry, rights, and review metadata:",
+                  metadata({k: v for k, v in batch.items()
+                            if k not in ("decisions", "interpretation")})]
+        for item in batch["decisions"]:
+            lines += [f"### {item['entry_id']}",
+                      f"Term: {escaped(item['headword'])}; POS: {escaped(item['part_of_speech_as_extracted'])}.",
+                      (f"Status: {escaped(item['status'])}; {escaped(item['review_status'])}; "
+                      f"candidate disposition: {escaped(item['it_disposition'])}."),
+                      "Definition: " + escaped(item["it_definition"]),
+                      "Domains: " + ", ".join(escaped(v) for v in item["domains"]),
+                      "Rationale: " + escaped(item["rationale"]), "Contextual alternatives:"]
+            lines += ["- " + escaped(v) for v in item["permitted_contextual_alternatives"]] or ["None."]
+            for key in ("positive", "problematic"):
+                lines += [f"#### {key.capitalize()} example", fenced(item["examples"][key]["text"]),
+                          "Explanation: " + escaped(item["examples"][key]["explanation"])]
+            lines += ["Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.",
+                      metadata({k: item[k] for k in ("evidence", "upstream_status_raw")})]
     lines += ["## Snapshot provenance",
               ("IT-STE — IT-STE contributors. https://github.com/vladimirmashkov/IT-STE. "
               "Original IT-STE wording and examples only: CC BY-SA 4.0, "
@@ -126,11 +134,9 @@ def render():
               "of Europe (ASD), https://asd-ste100.org/. Source rights remain separate; "
               "downstream source license is unknown. Derivative permission does not relicense "
               "the source. The source PDF stays private under .local/ and is not included."),
-              "Manifest identity and authenticated plan pins:", metadata(manifest),
-              "Vocabulary source, domain registry, and review metadata:",
-              metadata({k: v for k, v in batch.items() if k not in ("decisions", "interpretation")})]
+              "Manifest identity and authenticated plan pins:", metadata(manifest)]
     paths = [manifest_path, *(snapshot / name for name in manifest["records"]),
-             *(snapshot / name for name in manifest["sources"]), batch_path]
+             *(snapshot / name for name in manifest["sources"]), *batch_paths]
     for path in paths:
         lines.append(f"- `{path.relative_to(ROOT).as_posix()}` SHA-256: "
                      f"`{hashlib.sha256(path.read_bytes()).hexdigest()}`")

@@ -1646,13 +1646,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proposed IT sense: describing an action or state change that was not intended by the actor; intent must not be inferred from the result alone.",
+      "it_disposition": "restricted",
+      "it_definition": "Describing an action or state change that was not intended by the actor; intent must not be inferred from the result alone.",
       "domains": [
         "security",
         "user-interface"
       ],
-      "rationale": "An unintended deletion is a useful IT distinction, independent of source approval. The compact extraction repeats a fragment from the neighboring row; layout extraction on physical PDF page 153 supports the intended separation, but visual and editorial confirmation remain required.",
+      "rationale": "Visual inspection separates the adjective row from the following adverb row. Use accidental for an unintended action or outcome; do not infer intent merely from authorization status or an error.",
       "permitted_contextual_alternatives": [
         "unintended",
         "unintentional"
@@ -1689,13 +1689,12 @@
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
           "performed": true,
-          "method": "pdftotext -layout, physical pages 153 through 154",
-          "visual_verification_performed": false
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 153 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: The adjective and adverb occupy separate ruled rows; the wrapped adjective headword belongs only to row 1. Historical extraction warnings remain unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "visual PDF row-boundary and typography verification"
+          "original example review"
         ]
       }
     },
@@ -1712,13 +1711,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proposed IT sense: performing a specified action without intending that action or its stated outcome.",
+      "it_disposition": "restricted",
+      "it_definition": "Performing a specified action without intending that action or its stated outcome.",
       "domains": [
         "support-troubleshooting",
         "security"
       ],
-      "rationale": "Support procedures can describe an operator-reported unintended action, but must not infer motive from an error event. The wrapped headword and duplicated cross-row wording on page 153 require visual and editorial review despite a supportive layout-text check.",
+      "rationale": "Visual inspection confirms a separate adverb row. Use accidentally for an evidenced or operator-reported unintended action; a failure or security event alone does not establish intent.",
       "permitted_contextual_alternatives": [
         "unintentionally",
         "by mistake, when supported by the account of the action"
@@ -1755,13 +1754,12 @@
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
           "performed": true,
-          "method": "pdftotext -layout, physical pages 153 through 154",
-          "visual_verification_performed": false
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 153 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: Row 2 contains the adverb, with its own meaning cell and example; it is not a continuation of the adjective row. Historical extraction warnings remain unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "visual PDF row-boundary and typography verification"
+          "original example review"
         ]
       }
     },
@@ -1839,13 +1837,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proposed IT sense: complete a named operational task or achieve a defined result; prefer the actual operation in instructions.",
+      "it_disposition": "prohibited",
+      "it_definition": "Complete a named operational task or achieve a defined result; prefer the actual operation in instructions.",
       "domains": [
         "procedures-runbooks",
         "software-documentation"
       ],
-      "rationale": "IT procedures benefit from direct verbs such as deploy, validate, or complete rather than a generic accomplishment claim. The compact entry includes an alternative belonging to the next wrapped row; the page-153 layout-text check supports that diagnosis, but the row boundary still needs visual review.",
+      "rationale": "Visual inspection separates the generic accomplishment alternatives from the following attribution phrase. In IT instructions, name the operation or completion criterion rather than use an unspecified accomplishment verb.",
       "permitted_contextual_alternatives": [
         "complete the named task",
         "deploy the service, when deployment is intended",
@@ -1880,13 +1878,12 @@
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
           "performed": true,
-          "method": "pdftotext -layout, physical pages 153 through 154",
-          "visual_verification_performed": false
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 153 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: The accomplishment row has two alternatives within its boundary. The following attribution phrase starts a new row; its alternative must not be attached here. Historical extraction warnings remain unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "visual PDF row-boundary and typography verification"
+          "original example review"
         ]
       }
     },
@@ -1903,13 +1900,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proposed IT sense: identifying the authority, specification, or evidence on which a statement or operation is based.",
+      "it_disposition": "restricted",
+      "it_definition": "Identifying the authority, specification, or evidence on which a statement or operation is based.",
       "domains": [
         "software-documentation",
         "configuration"
       ],
-      "rationale": "IT writing must distinguish a reported observation from a required procedure. Replacing attribution with refer to can change that meaning. The source has a wrapped-headword warning and a neighboring-row boundary problem; retain a provisional sense pending visual and editorial review.",
+      "rationale": "Visual inspection confirms the separate phrase row. In IT, attributing an observation and directing a reader to instructions are different acts; replacing one with the other can change the meaning. Identify the exact authority or evidence.",
       "permitted_contextual_alternatives": [
         "as specified in, for a requirement",
         "as reported by, for an observation",
@@ -1947,13 +1944,12 @@
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
           "performed": true,
-          "method": "pdftotext -layout, physical pages 153 through 154",
-          "visual_verification_performed": false
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 153 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: The wrapped phrase begins a distinct row below the accomplishment row. Its alternative belongs to this phrase, not to the preceding verb. Historical extraction warnings remain unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "visual PDF row-boundary and typography verification"
+          "original example review"
         ]
       }
     },
@@ -2216,14 +2212,14 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proposed IT sense: agreeing with a stated reference within a specified error bound or evaluation criterion, not necessarily perfectly exact.",
+      "it_disposition": "restricted",
+      "it_definition": "Agreeing with a stated reference within a specified error bound or evaluation criterion, not necessarily perfectly exact.",
       "domains": [
         "monitoring-alerts",
         "ai-automation",
         "software-documentation"
       ],
-      "rationale": "IT measurements often have tolerances, so an exactness gloss is insufficient. The compact entry also contains an adverb gloss belonging to the adjacent wrapped row; the page-154 layout-text check supports separation, but visual and editorial review remain open.",
+      "rationale": "Visual inspection separates adjective and adverb rows. IT measurements need a named reference and error bound, and model evaluation needs a defined metric and dataset; an unqualified accuracy claim is insufficient.",
       "permitted_contextual_alternatives": [
         "within the specified error bound",
         "correct, for a discrete verified result"
@@ -2257,13 +2253,12 @@
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
           "performed": true,
-          "method": "pdftotext -layout, physical pages 153 through 154",
-          "visual_verification_performed": false
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 154 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: The adjective occupies row 2 and the adverb occupies row 3. The adverb meaning must not be appended to the adjective meaning. Historical extraction warnings remain unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "visual PDF row-boundary and typography verification"
+          "original example review"
         ]
       }
     },
@@ -2280,13 +2275,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proposed IT sense: performing a specified measurement or calculation within a stated error bound relative to a defined reference.",
+      "it_disposition": "restricted",
+      "it_definition": "Performing a specified measurement or calculation within a stated error bound relative to a defined reference.",
       "domains": [
         "monitoring-alerts",
         "source-code"
       ],
-      "rationale": "The adverb must communicate a measurable criterion, not vague reassurance. The wrapped-headword warning and adjective/adverb overlap on page 154 need visual and editorial confirmation before a final sense decision.",
+      "rationale": "Visual inspection confirms a separate adverb row. In IT, state the reference and acceptable error rather than use the adverb as an unmeasurable assurance.",
       "permitted_contextual_alternatives": [
         "within a stated tolerance",
         "with a stated maximum error"
@@ -2323,13 +2318,12 @@
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
           "performed": true,
-          "method": "pdftotext -layout, physical pages 153 through 154",
-          "visual_verification_performed": false
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 154 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: The wrapped adverb occupies its own ruled row below the adjective; its meaning is not part of the preceding adjective cell. Historical extraction warnings remain unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "visual PDF row-boundary and typography verification"
+          "original example review"
         ]
       }
     },
@@ -2545,8 +2539,8 @@
         153,
         154
       ],
-      "method": "Bounded pdftotext -layout check of local source PDF for flagged or observed adjacent-row ambiguity.",
-      "result": "Layout text supports separate wrapped rows and reveals overlap in compact entries. This is not visual verification of typography or final source review.",
+      "method": "Bounded pdftotext -layout check followed by visual inspection of pdftoppm PNG renderings of physical pages 153 and 154 from the authenticated local PDF.",
+      "result": "Six row-boundary cases visually resolved in this review; row-level methods record the PDF hash and findings. Historical extraction warnings are preserved. This does not repair the source database or constitute human editorial approval.",
       "source_examples_retained": false
     },
     "initial_worktree": "Clean before this task.",
