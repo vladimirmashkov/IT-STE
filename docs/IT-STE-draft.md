@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 145,
+    "needs-review": 144,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1384
+    "restricted": 1385
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -61468,13 +61468,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: file; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Remove physical material with a hand file\; no digital filing sense proposed\.
+Definition: Submit a report\, issue\, or support request through a named workflow\.
 
 Domains: general
 
-Rationale: The extracted technical\-noun parenthesis is incomplete\; verify source construction before settling the physical sense\.
+Rationale: The ASD row is a physical action with \`REMOVE \(v\)\` and the visibly incomplete technical\-noun parenthesis \`\(WITH A FILE \(TN\)\`\; that source fact does not establish an IT filing sense\. Azure documentation nevertheless uses \`file a support request\` for submitting a named support workflow with required permissions\, while GitHub documentation generally uses \`create\`\, \`open\`\, or \`submit\` an issue\. The bounded IT sense is therefore restricted to submitting a named report\, issue\, or support request through a defined workflow\; the physical hand\-file action remains outside this IT sense\. See \`docs\/it\-ste\-research\/W1\-D\-P249\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -61508,9 +61508,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted technical-noun parenthesis is incomplete; verify source construction before settling the physical sense."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 249 -l 249 -png -r 180 and visually inspected physical page 249. Findings: row 7 is bounded by horizontal rules between few (a few) (adj) and filing (n), reads file (v), and shows REMOVE (v) with the technical-noun parenthesis `(WITH A FILE (TN)`; the row boundary and source construction ambiguity are retained.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 249,
     "printed_page": "2-1-F5",
@@ -167558,7 +167558,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-019.json` SHA-256: `c99e50b8dbebd8a215c2e9b315008894cdf098438b4461b82f3e59ea70f1281f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `351873d3dfa62fa8080e5f7285521b189032b1b49aa7dcde40f0e8919e59788c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `49da6c7029d13379881f9addfcd846efd67b0a8876850e36e91d89c1d54075df`
 
