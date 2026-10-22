@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 92,
-    "needs-review": 179,
+    "allowed": 93,
+    "needs-review": 178,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -37317,13 +37317,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: corresponding; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Related to a specified item under an identified mapping\, provisionally\.
+Definition: Related to a specified API item through an explicit link or mapping\, provisionally\.
 
 Domains: api
 
-Rationale: The wrapped\-headword warning requires review\; the proposed IT use must still name the relationship and reference item\.
+Rationale: Authenticated PDF visual inspection confirms that corresponding \(adj\) is a separate row 5 with the RELATED \(adj\) meaning and a caution\-light relationship example\; its wrapped headword remains one spelling and POS\. The draft API sense is limited to an explicit link or mapping to a named item\, not equality or an unspecified association\. OpenAPI defines a known relationship and traversal mechanism between responses and operations\, and RFC 8288 defines a typed connection between a link context and target\. See \`docs\/it\-ste\-research\/W1\-D\-P204\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -37357,9 +37357,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 204 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: corresponding (adj) is row 5 with the RELATED (adj) meaning and its own caution-light example; the wrapped headword remains within that row. Historical extraction warning remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 204,
     "printed_page": "2-1-C22",
@@ -37369,8 +37369,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P204-005",
@@ -167555,7 +167554,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `5cc1f6911314c4d5a68f1b3401504d7f0ddaca706f6ae2e63c6f8b4827a533b1`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `dd1152da4fc1ba49d11016180faefc2b54bc3353e4e9df28e2c659ec874c1d72`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 
