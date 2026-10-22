@@ -45,7 +45,7 @@ Other manifest fields are `schema_version`, `standard`, `version`, `revision`, `
 
 For a released IT-STE snapshot, `en` must be listed and `language_coverage.en` must be `complete`. Additional languages can be absent or partial. The keys of `language_coverage` must exactly match `languages`.
 
-`schema_version` is the data-format version, not the standard version. An incompatible data-format change requires a new schema major version. At this stage, documents and templates describe the format; executable JSON Schemas do not exist yet.
+`schema_version` is the data-format version, not the standard version. An incompatible data-format change requires a new schema major version. Documents and templates describe the general format; executable JSON Schemas do not exist yet. The narrow [canonical draft pilot](it-ste-canonical-pilot.md) adds profile `it-ste-pilot-v1` in format `1.1.0`, with an executable standard-library validator, structured source/facet locators, and prose/literal example segments. It does not implement general release or translation validation.
 
 ## 3. Canonical records
 
@@ -123,4 +123,4 @@ JSON and JSONL files use UTF-8 without BOM, LF line endings, and a final newline
 
 Markdown, JSONL, and search indexes are not independently edited standards. Generate them from an explicitly selected released snapshot while retaining rights and attribution. The contract is in [llm/README.md](../llm/README.md).
 
-Repository crawlers must not treat `templates/`, `docs/`, local sources, or unverified third-party text as the normative LLM corpus. Automation for the checks and exports described here is a future step, not a completed feature of this scaffold.
+Repository crawlers must not treat `templates/`, `docs/`, local sources, or unverified third-party text as the normative LLM corpus. `python3 tools/it_ste_corpus.py check` validates the draft pilot's structure and authenticated provenance only. General release checks, arbitrary-prose conformance, and exports remain future work; the three draft pilot records are not a released normative LLM corpus.

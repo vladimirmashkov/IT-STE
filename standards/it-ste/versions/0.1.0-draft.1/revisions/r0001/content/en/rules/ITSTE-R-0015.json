@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0015",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Address reader actions with a direct imperative",
+  "text": "When an instruction assigns an action to the reader, express that action with a direct imperative verb and leave the reader as its understood subject. Put any prerequisite or branch condition before the action that depends on it; the imperative verb need not be the first word of the sentence. Do not replace a reader instruction with a passive statement of capability, permission, or future activity. If another actor performs the action, name that actor and describe its action explicitly instead of implying that the reader performs it. Distinguish an instruction from a system description, a permission, and a policy obligation. Do not add must to an imperative merely to make it sound stronger. Preserve the required actor, timing, modality, and safety or security constraints when you rewrite.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "user-interface", "procedures-runbooks", "configuration", "security", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "A description of system behavior or work assigned to another role is not a reader instruction. Name the system, service, role, team, or automated agent that performs the action; do not turn an automatic action into a manual step.",
+    "Retain the modality required for genuine obligations, permissions, and safety or security constraints by their governing content type. This rule does not prohibit must in those contexts or authorize turning a permission into an instruction.",
+    "Preserve commands, identifiers, quotations, and interface strings exactly in literal spans. Apply this rule to the surrounding editable instruction, not to external syntax.",
+    "If a rewrite conflicts with a governing external requirement or would alter technical meaning, stop and refer the conflict to the responsible editor or technical owner. Do not remove a prerequisite to make a sentence begin with a verb.",
+    "Supporting target IDs refer to related planned work, possibly not materialized in the pilot. They are not canonical relation endpoints and do not transfer this source allocation."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {"kind": "prose", "text": "If the deployment is paused, open the deployment log."}
+        ],
+        "rationale": "The reader receives a direct imperative after the condition that determines whether to act. Open is the action verb even though the sentence starts with If."
+      },
+      {
+        "segments": [
+          {"kind": "prose", "text": "After the upload completes, the import service checks the file format automatically. You do not start this check."}
+        ],
+        "rationale": "This is an explicitly named system description, not a reader action. An imperative would incorrectly assign the automatic check to the reader."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {"kind": "prose", "text": "If the deployment is paused, the deployment log can be opened."}
+        ],
+        "rationale": "When the intended requirement is for the reader to open the log, a passive capability statement does not assign the action. Use the condition-led imperative in the positive example; do not perform this rewrite if the source actually means permission or capability."
+      },
+      {
+        "segments": [
+          {"kind": "prose", "text": "If the deployment is paused, you must open the deployment log."}
+        ],
+        "rationale": "In this illustrative routine instruction, must was added only for emphasis. Use the direct imperative. This negative judgment does not apply to a genuine policy obligation or a required safety constraint."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "5.3", "kind": "rule", "physical_pdf_pages": [89, 90]},
+      "facets": [
+        {"source_facet": "Instructions should make the reader's required action direct rather than obscure it in passive wording.", "disposition": "adapt", "rationale": "Use a reader imperative for IT procedural actions and distinguish passive capability statements from actual instructions.", "target_field": "text"},
+        {"source_facet": "Unclear instruction wording can leave responsibility and timing uncertain.", "disposition": "adapt", "rationale": "Name non-reader actors and preserve automatic system behavior rather than incorrectly assign their actions to the reader.", "target_field": "text"},
+        {"source_facet": "A condition can precede the imperative, and added obligation wording is not needed simply to emphasize an instruction.", "disposition": "adapt", "rationale": "Keep prerequisites first and avoid emphatic must, while retaining the semantic distinctions among instruction, permission, and obligation.", "target_field": "text"},
+        {"source_facet": "Safety wording can require obligation language even where routine instruction wording does not.", "disposition": "adapt", "rationale": "Preserve required safety, security, and policy modality under the governing content type rather than impose a blanket ban on must.", "target_field": "exceptions"}
+      ]
+    }
+  ],
+  "supporting_target_ids": ["ITSTE-R-0008", "ITSTE-R-0016", "ITSTE-R-0026"],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Review Issue 9 source 5.3 on physical PDF pages 89-90 for complete facet treatment and original IT wording; mechanical source coverage does not prove semantic fidelity.",
+      "Check that each reader action has an imperative and that all conditions precede their dependent actions. Do not equate imperative form with a verb in the sentence's first position.",
+      "Verify the intended actor and modality against technical behavior. The import service example describes an automatic action and must not become a reader step.",
+      "Confirm that the passive negative example is wrong for its stated instructional intent, not universally wrong English, and that the emphatic-must example does not prohibit genuine obligations.",
+      "Review literal boundaries, exceptions, domain applicability, original authorship, separate source rights, attribution, and planned supporting targets. Escalate unresolved technical or external-requirement conflicts.",
+      "Human editors must judge grammar, meaning, example correctness, and legal scope. Automated validation checks structure, authenticated provenance, and any literal digests only; it does not approve this draft or establish official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"},
+      {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}
+    ],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

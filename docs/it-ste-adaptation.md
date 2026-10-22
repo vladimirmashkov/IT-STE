@@ -80,6 +80,8 @@ Before canonical materialization, resolve the report's source/facet locator cont
 
 Reviewed map decisions are inputs to, not substitutes for, canonical IT-STE records. A `targets.json` entry remains a non-normative planning concept and is not mutated into a canonical record. Author the English rule with the same stable ID under a versioned `standards/it-ste/versions/<version>/revisions/<revision>/content/en/` snapshot; the snapshot manifest and adaptation relations establish materialization. Store exact source locators and rationale, keep Russian optional and subordinate to English, and generate human and LLM representations from the canonical records.
 
+The [canonical draft pilot contract](it-ste-canonical-pilot.md) now implements a narrow first materialization: three English draft records with source/facet locators, exact plan pins, structured examples, and manual-review criteria. `python3 tools/it_ste_corpus.py check` checks that closed profile only. It does not approve prose, complete the vocabulary, or release the snapshot; the plan remains unchanged and the public catalog remains empty.
+
 The current tool profile is intentionally pinned to Issue 9 `r0001`. A future upstream issue or corrected source representation gets a separate immutable plan path and trusted source profile; never repin this plan to another source.
 
 This project is independent work and not official ASD guidance. Retain ASD ownership information for source-derived material and the required IT-STE attribution link: https://github.com/vladimirmashkov/IT-STE.

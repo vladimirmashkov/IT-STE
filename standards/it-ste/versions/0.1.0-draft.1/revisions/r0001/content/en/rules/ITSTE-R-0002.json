@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0002",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Keep each term within its approved use",
+  "text": "Before you use a term in editable prose, check the applicable English lexical entry against the intended technical meaning and context. Use only the meaning, part of speech, inflected form, and usage context that the entry permits. Check the entry's definition and restrictions, not only its headword. Approval of a spelling as a noun does not approve its use as a verb, and approval as a verb does not approve its use as a noun. Establish each function and meaning independently, even when both uses are common in IT. Use the permitted verb forms and adjective forms recorded or explicitly licensed by the applicable entry; do not infer permission for a form from ordinary English usage alone. Check suspected cross-language false friends against the English definition and the technical context. In an optional translation, preserve the authoritative English meaning rather than select a similar-looking or similar-sounding word without checking its meaning. If the applicable entry or permission is missing or ambiguous, refer the term and its intended use to the responsible lexical editor; do not claim lexical conformance.",
+  "applies_to": ["general"],
+  "exceptions": [
+    "This draft pilot supplies no controlled vocabulary. Its fictional local entries demonstrate review decisions only; neither an example term nor the surrounding prose establishes global IT-STE lexical approval.",
+    "Preserve exact identifiers, commands, interface strings, and quotations in marked literal spans. Their preservation does not approve their words for editable prose. Explain a misleading literal in surrounding prose instead of silently renaming it.",
+    "Do not import ASD dictionary entries, aviation-specific meanings, inflection tables, or technical-term categories as IT-STE vocabulary decisions. Use the applicable reviewed IT entry. A technical noun and verb may share a spelling when their functions and meanings are independently approved.",
+    "A lexical or style rewrite must not change technical meaning, actors, conditions, modality, or safety and security constraints. If an external requirement conflicts with these constraints, stop the rewrite and escalate it to the responsible editor or technical owner.",
+    "Supporting target IDs identify related planned work, including targets not materialized in this pilot. They neither delegate these source facets nor establish canonical relation endpoints."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {"kind": "prose", "text": "Fictional local lexical context: the status-panel entry approves refresh as a verb meaning reload the current service status. It permits refresh, refreshes, refreshed, and refreshing only for that status-panel operation, not credential rotation. Example instruction: Refresh the current service status."}
+        ],
+        "rationale": "The instruction uses the base verb with the meaning and context documented by this fictional local entry. This is not an actual vocabulary entry or global approval of refresh."
+      },
+      {
+        "segments": [
+          {"kind": "prose", "text": "Fictional local lexical context: the status-panel entry approves refresh only as a status-reloading verb; the credential entry separately approves rotate as a verb meaning replace the active credentials with newly issued credentials. Example instruction: Rotate the credentials. The legacy handler is named "},
+          {"kind": "literal", "text": "refresh_status", "literal_type": "identifier", "sha256": "58b5f1377b4482c0fb2372e67fdce4665f155984fa32c55346d513efb4815bc1"},
+          {"kind": "prose", "text": "."}
+        ],
+        "rationale": "The editable instruction states the intended rotation under a separately documented fictional entry. The identifier remains exact and is not treated as lexical evidence. These local example entries do not approve either verb globally."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {"kind": "prose", "text": "Fictional local lexical context: refresh is approved only as a verb for reloading the current service status; rotate is separately approved for replacing active credentials with newly issued credentials. Intended action: replace the active credentials with newly issued credentials. Example instruction: Refresh the credentials."}
+        ],
+        "rationale": "Refresh denotes the wrong action in this documented fictional context. Write Rotate the credentials to preserve the intended action. This judgment is local to the example entries, not a universal restriction on refresh."
+      },
+      {
+        "segments": [
+          {"kind": "prose", "text": "Fictional local lexical context: the status-panel entry approves refresh as a verb for reloading the current service status but contains no noun approval. Example instruction: Start a refresh of the current service status."}
+        ],
+        "rationale": "The sentence assumes noun approval from verb approval. Under this fictional entry, use Refresh the current service status instead, or request independent noun review. Ordinary IT noun usage alone is not approval under the example's local policy."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "1.2", "kind": "rule", "physical_pdf_pages": [46, 48]},
+      "facets": [
+        {"source_facet": "Lexical permission is tied to a grammatical function, not just a spelling.", "disposition": "adapt", "rationale": "Apply part-of-speech checks to reviewed IT lexical entries rather than the ASD dictionary.", "target_field": "text"},
+        {"source_facet": "Replacing an unsuitable word can require a different sentence construction.", "disposition": "adapt", "rationale": "Require an approved function and preserve technical meaning during any resulting rewrite; do not merely substitute a headword.", "target_field": "exceptions"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "1.3", "kind": "rule", "physical_pdf_pages": [48, 48]},
+      "facets": [
+        {"source_facet": "A controlled entry can permit fewer senses than ordinary English permits.", "disposition": "adapt", "rationale": "Bind IT usage to the applicable entry's meaning and context, without transferring ASD-specific senses.", "target_field": "text"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "1.4", "kind": "rule", "physical_pdf_pages": [48, 49]},
+      "facets": [
+        {"source_facet": "Verb inflections and adjective comparison forms need explicit lexical permission.", "disposition": "adapt", "rationale": "Require forms recorded or explicitly licensed by the applicable IT entry, including any permitted comparative construction.", "target_field": "text"},
+        {"source_facet": "The source dictionary uses its own tables and conventions to indicate permitted forms.", "disposition": "not-applicable", "rationale": "The pilot has no IT vocabulary tables and must not silently inherit the ASD table conventions or entries.", "target_field": "exceptions"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "1.7", "kind": "rule", "physical_pdf_pages": [55, 55]},
+      "facets": [
+        {"source_facet": "A technical noun does not automatically license a verb with the same spelling; some contexts support both functions.", "disposition": "adapt", "rationale": "Permit established IT noun-verb pairs only through independent approval of each function and meaning, not automatic conversion.", "target_field": "text"},
+        {"source_facet": "The source evaluates dual technical uses within its own term categories.", "disposition": "not-applicable", "rationale": "ASD technical-term categories do not constitute IT lexical approval.", "target_field": "exceptions"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "1.13", "kind": "rule", "physical_pdf_pages": [60, 61]},
+      "facets": [
+        {"source_facet": "A technical verb does not automatically license a noun, although independently justified dual uses can occur.", "disposition": "adapt", "rationale": "Require independent IT noun approval instead of inferring it from verb approval; do not impose an unconditional noun-verb ban.", "target_field": "text"},
+        {"source_facet": "The source distinguishes a verb function from verb-derived wording within technical nouns.", "disposition": "adapt", "rationale": "Review the function of the actual use and the applicable IT entry rather than decide approval from surface spelling alone.", "target_field": "text"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "3.1", "kind": "rule", "physical_pdf_pages": [67, 68]},
+      "facets": [
+        {"source_facet": "The applicable lexical entry determines which verb forms a writer may use.", "disposition": "adapt", "rationale": "Make IT verb forms part of the same explicit entry check as meaning and grammatical function, rather than use ASD verb tables.", "target_field": "text"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "9.2", "kind": "rule", "physical_pdf_pages": [119, 121]},
+      "facets": [
+        {"source_facet": "Writers must read an entry's definition and contextual restrictions before selecting a word.", "disposition": "adapt", "rationale": "Require checking the applicable English IT entry rather than treating headword membership as unrestricted permission.", "target_field": "text"},
+        {"source_facet": "The source illustrates restrictions using particular dictionary senses and grammatical functions.", "disposition": "not-applicable", "rationale": "Those individual ASD restrictions are not IT vocabulary decisions; the examples here instead document fictional local entries.", "target_field": "exceptions"}
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "GR-5", "kind": "guidance", "physical_pdf_pages": [126, 126]},
+      "facets": [
+        {"source_facet": "Similar-looking expressions in different languages can have different meanings.", "disposition": "adapt", "rationale": "Extend the source guidance into an explicit English-definition and technical-context check for international authors and optional translations; phonetic resemblance is also insufficient evidence.", "target_field": "text"}
+      ]
+    }
+  ],
+  "supporting_target_ids": ["ITSTE-R-0001", "ITSTE-R-0003", "ITSTE-R-0026"],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Compare all eight allocated Issue 9 blocks, including GR-5 guidance, with the summaries and dispositions. Human review must judge semantic completeness; mechanical locator coverage alone is insufficient.",
+      "Check each proposed use against an actual applicable lexical entry for meaning, part of speech, forms, and context. The pilot contains no such vocabulary; do not approve lexical conformance from these fictional examples.",
+      "Confirm that the refresh examples document local fictional permissions, distinguish status reload from credential rotation, and preserve the exact refresh_status identifier without inferring global lexical approval.",
+      "Review noun-verb independence, adjective and verb forms, and false-friend handling without importing ASD dictionary restrictions or changing technical meaning.",
+      "Check original English authorship, example correctness, exceptions, applicability, separate ASD rights, and both attribution links. A structural pass is neither editorial nor legal approval and is not official ASD guidance.",
+      "Treat supporting IDs as planned dependencies, not materialized rules or delegated source facets. Mechanical checks authenticate pins, paths, fields, and literal digests only."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"},
+      {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}
+    ],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

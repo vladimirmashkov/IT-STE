@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0021",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Put actionable protection before the hazard",
+  "text": "Place a required protective instruction before the operation that exposes the reader, system, or data to its hazard. After the risk label required by the governing classification, begin with a specific preventive action or prohibition, or with a condition that the reader must evaluate before acting. State what the responsible actor must do; a request for care alone is not a protective instruction. Identify the affected operation and its scope, then state the credible consequence needed to understand the risk. If a condition controls whether the operation may proceed, state that condition before the dependent action and give an explicit stop or escalation action when the condition is not satisfied. Keep the protection with the hazardous step in independently retrieved procedure fragments, not only in a distant introduction or a skippable note. Preserve exact literal syntax without treating it as evidence that an operation is safe or authorized.",
+  "applies_to": ["general", "security", "monitoring-alerts", "procedures-runbooks"],
+  "exceptions": [
+    "Use the risk labels and severity meanings required by the applicable organization and content type. The label in these examples is an illustrative local classification, not a universal risk scale or a substitute for a technical hazard assessment.",
+    "The command in both examples is invented for editorial illustration. It is not a real CLI specification or an instruction to execute anything. An allowed example approves only the presentation under this rule, not destructive execution or the sufficiency of its precautions for a real system.",
+    "Backup existence, backup integrity, and demonstrated recovery are different claims. A check that a copy exists does not establish that restoration was tested. State the exact assurance required by the technical owner; do not infer recovery assurance from a stylistic example.",
+    "An exact interface label, quoted requirement, or command remains literal. If it obscures the hazard, add clear surrounding protection; do not silently edit the literal or omit a required condition to meet a style or length preference.",
+    "A remote warning or note may supplement but must not replace required protection at the hazardous step. If a governing external requirement conflicts with preserving meaning, conditions, or safety context, stop the rewrite and escalate to the responsible editor or technical owner.",
+    "Supporting target IDs identify related planned work, including unmaterialized targets. They do not establish canonical relation endpoints or delegate the source facets recorded here."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {"kind": "prose", "text": "DATA-LOSS CAUTION: If the archive is still required for retention or recovery, do not delete it. Before the illustrative deletion operation "},
+          {"kind": "literal", "text": "archive delete --all", "literal_type": "command", "sha256": "a992f3272dd94d821fad4266c4a302fdc5b76768f2436105299fa30d2d77ebde"},
+          {"kind": "prose", "text": ", have the archive owner confirm the deletion scope and retention requirements, and have the recovery owner confirm that the separate recovery copy covers that scope and has passed the recovery test required by the approved recovery procedure. If either confirmation is missing, stop and contact the responsible owner. In this fictional scenario, the operation permanently removes every archive in the selected workspace; without a usable separate recovery copy, the removed data cannot be recovered. These protections do not by themselves authorize deletion. This example does not authorize execution."}
+        ],
+        "rationale": "After the illustrative local risk label, a condition and prohibition precede the hazardous operation. Scope, retention review, and the specifically required recovery-test confirmation occur before deletion; no claim that merely finding a backup proves recovery is made. The concrete consequence and stop action are explicit. The command is a preserved fictional literal, not a real executable instruction, and technical sufficiency and execution authorization remain outside this editorial judgment."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {"kind": "prose", "text": "DATA-LOSS CAUTION: Perform the illustrative deletion operation "},
+          {"kind": "literal", "text": "archive delete --all", "literal_type": "command", "sha256": "a992f3272dd94d821fad4266c4a302fdc5b76768f2436105299fa30d2d77ebde"},
+          {"kind": "prose", "text": ". Then check that a backup exists and ask the archive owner whether retention rules require keeping the archive. In this fictional scenario, the operation permanently removes every archive in the selected workspace; without a usable separate recovery copy, the removed data cannot be recovered. This example does not authorize execution."}
+        ],
+        "rationale": "The backup and retention checks occur after the destructive operation, too late to prevent the loss. Backup existence also fails to establish the recovery-test assurance specified in the positive example. A label and a consequence do not repair this unsafe ordering. DATA-LOSS CAUTION is only an illustrative local classification, and the identical hashed command is not a real CLI or execution authorization."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {"block_id": "7.2", "kind": "rule", "physical_pdf_pages": [105, 105]},
+      "facets": [
+        {"source_facet": "Protective wording needs a precise preventive command or prohibition, not a vague appeal to caution.", "disposition": "adapt", "rationale": "Apply actionable protection to IT data-loss and security hazards as well as physical hazards, with an identified operation and responsible actor.", "target_field": "text"},
+        {"source_facet": "A condition that the reader needs before a procedure or step must precede the dependent action.", "disposition": "adopt", "rationale": "Retain condition-first ordering and require protection before exposure to the hazard, including a stop path for unsatisfied prerequisites.", "target_field": "text"},
+        {"source_facet": "Protective instructions connect prevention with an understandable harmful outcome.", "disposition": "adapt", "rationale": "State the credible IT consequence while keeping the preventive action or condition at the start and preserving the protection in retrieved fragments.", "target_field": "text"},
+        {"source_facet": "The source illustrates safety instructions using its own warning presentation and physical-hazard contexts.", "disposition": "not-applicable", "rationale": "Do not transfer those examples or infer universal IT severity labels; use the governing local classification and label this pilot's classification as illustrative.", "target_field": "exceptions"}
+      ]
+    }
+  ],
+  "supporting_target_ids": ["ITSTE-R-0016", "ITSTE-R-0017", "ITSTE-R-0020", "ITSTE-R-0022"],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Review Issue 9 source 7.2 on physical PDF page 105 for semantic completeness of the summaries and dispositions. Distinguish retained source principles from IT-specific extensions.",
+      "Check that the condition and protective actions precede the hazardous operation, that scope and responsible actors are clear, and that an unsatisfied prerequisite has an explicit stop or escalation action.",
+      "Verify the consequence and required assurances with a technical owner. Do not equate a backup's existence with integrity or tested restoration; do not treat the positive example as authorization or a complete deletion runbook.",
+      "Confirm that both categories preserve exactly the same illustrative archive delete --all literal and digest. A mechanical digest match does not verify external command syntax, safety, or executability; no example is to be executed.",
+      "Check the illustrative local severity classification against any real governing classification before reuse, and ensure independently retrieved hazardous steps retain their required protection rather than hide it in notes.",
+      "Review original English wording, example correctness, exceptions, domain applicability, separate ASD rights, attribution, and planned supporting targets. Human editorial and legal judgments remain necessary; structure-only validation does not approve this draft or make it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"},
+      {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}
+    ],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}
