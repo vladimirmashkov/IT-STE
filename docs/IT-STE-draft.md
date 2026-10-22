@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 191,
+    "needs-review": 189,
     "not-applicable": 146,
     "prohibited": 403,
-    "restricted": 1366
+    "restricted": 1368
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -32505,13 +32505,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: COMPONENT; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A part of an identified system with a specified function\, provisionally\.
+Definition: A part of an identified system that has a specified function\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The compact source column appends FULL\, which also appears in the following row\; possible column or row contamination needs review\.
+Rationale: The authenticated PDF shows the complete COMPONENT meaning\; FULL \(adj\) starts the separate comprehensive row\. NIST terminology and Kubernetes architecture use component for an identifiable system part with a defined function\. Keep this restricted to a named system or subsystem and its function\; see docs\/it\-ste\-research\/W1\-D\-P197\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -32522,18 +32522,18 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The scheduler component assigns jobs to workers.
+The Kubernetes scheduler component assigns Pods to nodes.
 ```
 
-Explanation: Identifies a part and its function\.
+Explanation: Names the system component and its function\.
 
 #### Problematic example
 
 ```
-Replace the component.
+Replace the component without naming the system or function.
 ```
 
-Explanation: Does not identify the part\, version\, or affected function\.
+Explanation: Does not identify the affected component or the required function\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -32545,9 +32545,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The meaning column appends FULL, also present in the following comprehensive row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 197 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 1 is COMPONENT (n) with the complete source meaning; the separate comprehensive row begins below it with FULL (adj). Spelling and POS are confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 197,
     "printed_page": "2-1-C15",
@@ -32557,8 +32557,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P197-001",
@@ -32579,13 +32578,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: comprehensive; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Covering all items in a declared scope\, provisionally\.
+Definition: Covering all items in a specified scope\.
 
 Domains: software\-documentation
 
-Rationale: The wrapped source row requires review\; any completeness claim must also enumerate its coverage boundaries\.
+Rationale: The authenticated PDF confirms that comprehensive \(adj\) is a separate row mapped to FULL \(adj\)\, with a wrapped headword\. NIST security\-testing guidance distinguishes a comprehensive program from an overview of key elements\, supporting a scope\-dependent completeness claim\. Keep this restricted\: state the coverage scope and support the claim with evidence\; see docs\/it\-ste\-research\/W1\-D\-P197\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -32596,10 +32595,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The test matrix covers all supported database versions.
+The test matrix provides comprehensive coverage of all supported database versions.
 ```
 
-Explanation: Bounds the coverage claim\.
+Explanation: Names the coverage target and scope\; the claim still requires evidence\.
 
 #### Problematic example
 
@@ -32619,9 +32618,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 197 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 2 is comprehensive (adj), its FULL (adj) alternative is separate from the preceding COMPONENT row, and the wrapped headword, spelling, and POS are confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 197,
     "printed_page": "2-1-C15",
@@ -32631,8 +32630,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P197-002",
@@ -167559,7 +167557,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `d9a4ef62b293ed2c97a57bd8d70240d59f270dc82b7cb125ab1987061f258288`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `a5b7b6ce95832c0fe43b97ba4878dfdc82586178d43a38b38db2dfe78a0eb102`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d55df60a00254143c68cf358dcbf7ce0c0806b56ed86d56e136d2b5ea7fe47c6`
 

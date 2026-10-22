@@ -1144,24 +1144,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A part of an identified system with a specified function, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "A part of an identified system that has a specified function.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The compact source column appends FULL, which also appears in the following row; possible column or row contamination needs review.",
+      "rationale": "The authenticated PDF shows the complete COMPONENT meaning; FULL (adj) starts the separate comprehensive row. NIST terminology and Kubernetes architecture use component for an identifiable system part with a defined function. Keep this restricted to a named system or subsystem and its function; see docs/it-ste-research/W1-D-P197.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "system part",
         "named module"
       ],
       "examples": {
         "positive": {
-          "text": "The scheduler component assigns jobs to workers.",
-          "explanation": "Identifies a part and its function."
+          "text": "The Kubernetes scheduler component assigns Pods to nodes.",
+          "explanation": "Names the system component and its function."
         },
         "problematic": {
-          "text": "Replace the component.",
-          "explanation": "Does not identify the part, version, or affected function."
+          "text": "Replace the component without naming the system or function.",
+          "explanation": "Does not identify the affected component or the required function."
         }
       },
       "evidence": {
@@ -1182,14 +1182,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 197 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 1 is COMPONENT (n) with the complete source meaning; the separate comprehensive row begins below it with FULL (adj). Spelling and POS are confirmed.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -1206,20 +1205,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Covering all items in a declared scope, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Covering all items in a specified scope.",
       "domains": [
         "software-documentation"
       ],
-      "rationale": "The wrapped source row requires review; any completeness claim must also enumerate its coverage boundaries.",
+      "rationale": "The authenticated PDF confirms that comprehensive (adj) is a separate row mapped to FULL (adj), with a wrapped headword. NIST security-testing guidance distinguishes a comprehensive program from an overview of key elements, supporting a scope-dependent completeness claim. Keep this restricted: state the coverage scope and support the claim with evidence; see docs/it-ste-research/W1-D-P197.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "all listed cases",
         "full coverage of the stated matrix"
       ],
       "examples": {
         "positive": {
-          "text": "The test matrix covers all supported database versions.",
-          "explanation": "Bounds the coverage claim."
+          "text": "The test matrix provides comprehensive coverage of all supported database versions.",
+          "explanation": "Names the coverage target and scope; the claim still requires evidence."
         },
         "problematic": {
           "text": "The suite is comprehensive, so no review is needed.",
@@ -1244,14 +1243,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 197 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 2 is comprehensive (adj), its FULL (adj) alternative is separate from the preceding COMPONENT row, and the wrapped headword, spelling, and POS are confirmed.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

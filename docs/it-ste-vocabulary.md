@@ -19,10 +19,10 @@ The sequence is physical PDF page order, then numeric row order within the page,
 | Draft proposal | Rows |
 | --- | ---: |
 | allowed | 90 |
-| restricted | 1,364 |
+| restricted | 1,368 |
 | prohibited | 403 |
 | not-applicable | 146 |
-| needs-review | 193 |
+| needs-review | 189 |
 | Total draft source-row coverage | 2,196 |
 | Unprocessed source rows | 0 |
 
