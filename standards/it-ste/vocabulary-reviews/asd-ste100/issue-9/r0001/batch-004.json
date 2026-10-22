@@ -1323,24 +1323,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "With limited numerical precision rather than exactly.",
+      "it_disposition": "restricted",
+      "it_definition": "Close to a stated, measured, or calculated value; not exact.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The extracted wrapped headword is flagged; the proposed IT use must not weaken contractual timeouts or security limits.",
+      "rationale": "The authenticated PDF confirms the wrapped headword and row boundary. AWS documents approximate distributed metrics as close to the actual value and suitable for many operational decisions; PostgreSQL documents planner estimates as approximate because sampled statistics are not exact. Kubernetes and RFC 7519 distinguish estimates from enforced resource limits and exact expiration checks. Keep this restricted: use it for estimates or stated reduced precision, not for a security boundary, expiration time, timeout, quota, or other guaranteed limit. See docs/it-ste-research/W1-D-P166.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
+        "estimated",
         "about, for an estimate",
         "within a stated range"
       ],
       "examples": {
         "positive": {
           "text": "The rebuild takes approximately 20 minutes on the test cluster.",
-          "explanation": "Limits the estimate to a specified environment."
+          "explanation": "States the environment and presents the duration as an estimate."
         },
         "problematic": {
           "text": "Tokens expire after approximately 60 seconds.",
-          "explanation": "Does not define the actual validity limit."
+          "explanation": "JWT expiration is an exact acceptance condition, not an approximate duration."
         }
       },
       "evidence": {
@@ -1361,14 +1362,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 166 -l 166 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 166 (2-1-A18), APPROXIMATELY (adv) is a complete first row with the headword on one line and (adv) on the next; the horizontal rule below closes the row. The later APPROXIMATELY under AROUND is a displayed cross-reference for another meaning, not part of the first row. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },

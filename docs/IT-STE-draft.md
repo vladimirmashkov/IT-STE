@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 208,
+    "needs-review": 207,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1350
+    "restricted": 1351
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -14850,15 +14850,17 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: APPROXIMATELY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: With limited numerical precision rather than exactly\.
+Definition: Close to a stated\, measured\, or calculated value\; not exact\.
 
 Domains: monitoring\-alerts
 
-Rationale: The extracted wrapped headword is flagged\; the proposed IT use must not weaken contractual timeouts or security limits\.
+Rationale: The authenticated PDF confirms the wrapped headword and row boundary\. AWS documents approximate distributed metrics as close to the actual value and suitable for many operational decisions\; PostgreSQL documents planner estimates as approximate because sampled statistics are not exact\. Kubernetes and RFC 7519 distinguish estimates from enforced resource limits and exact expiration checks\. Keep this restricted\: use it for estimates or stated reduced precision\, not for a security boundary\, expiration time\, timeout\, quota\, or other guaranteed limit\. See docs\/it\-ste\-research\/W1\-D\-P166\.md for the bounded evidence\.
 
 Contextual alternatives:
+
+- estimated
 
 - about\, for an estimate
 
@@ -14870,7 +14872,7 @@ Contextual alternatives:
 The rebuild takes approximately 20 minutes on the test cluster.
 ```
 
-Explanation: Limits the estimate to a specified environment\.
+Explanation: States the environment and presents the duration as an estimate\.
 
 #### Problematic example
 
@@ -14878,7 +14880,7 @@ Explanation: Limits the estimate to a specified environment\.
 Tokens expire after approximately 60 seconds.
 ```
 
-Explanation: Does not define the actual validity limit\.
+Explanation: JWT expiration is an exact acceptance condition\, not an approximate duration\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -14890,9 +14892,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 166 -l 166 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 166 (2-1-A18), APPROXIMATELY (adv) is a complete first row with the headword on one line and (adv) on the next; the horizontal rule below closes the row. The later APPROXIMATELY under AROUND is a displayed cross-reference for another meaning, not part of the first row. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 166,
     "printed_page": "2-1-A18",
@@ -14902,8 +14904,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P166-001",
@@ -167544,7 +167545,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json` SHA-256: `5bdf4f9ffc6d0057677a0cd47a99de62b0da75567f223f5c1b47b2f8033f1040`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `fbf9391077a0ed76f77438855f2444bc5c680ae5d4a2c606045f591e799cece3`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `41eda4ba20997a3975246df9484418f17f41a92b30398f19a7a90f5ec29ae178`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `3fdce86b05dadc7e9e8a9ff067a1cd4e867f73a7ee4c080e67997fa498103fb7`
 
