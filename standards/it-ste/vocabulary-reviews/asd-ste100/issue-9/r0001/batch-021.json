@@ -664,12 +664,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Marks a stated purpose, recipient, or time interval in an IT statement.",
       "domains": [
         "general"
       ],
-      "rationale": "The cell also contains a typical-case introduction that may belong to a phrase subentry; verify scope.",
+      "rationale": "Visual inspection of physical page 254 confirms that `FOR (prep)` is row 3 between `following (adj)` and `FOR EXAMPLE`; the typical-case sentence belongs to the separate `FOR EXAMPLE` row. RFC 9110 describes purpose in request method semantics, target resources or objects, and protocol dates, supporting the bounded inference that `for` can mark purpose, recipient or object, or time relation in IT prose. Keep this broad function word restricted rather than globally allowed; `Run the backup for Friday.` remains ambiguous without a specified date, period, or purpose. See `docs/it-ste-research/W1-D-P254.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "intended to",
         "addressed to",
@@ -703,9 +703,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 254 -l 254 -png -r 180 and visually inspected physical page 254. Findings: row 3 is bounded by horizontal rules between following (adj) and FOR EXAMPLE, reads FOR (prep), and contains two examples in the STE EXAMPLE column; the typical-case text belongs to the separate FOR EXAMPLE row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

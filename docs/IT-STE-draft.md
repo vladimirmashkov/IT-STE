@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 143,
+    "needs-review": 142,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1386
+    "restricted": 1387
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -64644,13 +64644,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: FOR; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Marks a stated purpose\, recipient\, or time interval in an IT statement\.
 
 Domains: general
 
-Rationale: The cell also contains a typical\-case introduction that may belong to a phrase subentry\; verify scope\.
+Rationale: Visual inspection of physical page 254 confirms that \`FOR \(prep\)\` is row 3 between \`following \(adj\)\` and \`FOR EXAMPLE\`\; the typical\-case sentence belongs to the separate \`FOR EXAMPLE\` row\. RFC 9110 describes purpose in request method semantics\, target resources or objects\, and protocol dates\, supporting the bounded inference that \`for\` can mark purpose\, recipient or object\, or time relation in IT prose\. Keep this broad function word restricted rather than globally allowed\; \`Run the backup for Friday\.\` remains ambiguous without a specified date\, period\, or purpose\. See \`docs\/it\-ste\-research\/W1\-D\-P254\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -64686,9 +64686,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The cell also contains a typical-case introduction that may belong to a phrase subentry; verify scope."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 254 -l 254 -png -r 180 and visually inspected physical page 254. Findings: row 3 is bounded by horizontal rules between following (adj) and FOR EXAMPLE, reads FOR (prep), and contains two examples in the STE EXAMPLE column; the typical-case text belongs to the separate FOR EXAMPLE row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 254,
     "printed_page": "2-1-F10",
@@ -167560,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `ae576541d6dc0b12bcb02c01d8e98cbd42e73e10947be4b2f2c7ef51b66c45ab`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `94f7debec90f03c4be084cb17241ae06ba3fb9d6d39255dd37b1c2c716298844`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-022.json` SHA-256: `f1833432fe354f67cda5cb69850c5af022044b7c4833a78f2a3e76538e6ffa4b`
 
