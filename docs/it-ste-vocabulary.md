@@ -19,10 +19,10 @@ The sequence is physical PDF page order, then numeric row order within the page,
 | Draft proposal | Rows |
 | --- | ---: |
 | allowed | 90 |
-| restricted | 1,359 |
+| restricted | 1,363 |
 | prohibited | 402 |
 | not-applicable | 146 |
-| needs-review | 199 |
+| needs-review | 195 |
 | Total draft source-row coverage | 2,196 |
 | Unprocessed source rows | 0 |
 
@@ -30,7 +30,7 @@ All 2,196 decisions remain `draft` / `editorial-review-needed`; **none is an edi
 
 **Complete source-row draft coverage is not a complete approved IT vocabulary.** IT-only terms still require a separate inventory and sense-level editorial decisions. There is no approved lexicon, canonical term set, release readiness, or SFT readiness.
 
-The source approval field is a raw mechanical capitalization signal. It is retained for provenance, not automatically transferred to IT-STE. Source definitions and examples are not copied into the batches; the IT definitions and examples are original editorial work. The six initial ambiguity cases in batch 001 were resolved after visual inspection of physical PDF pages 153–154. Three more blockers in batch 002 were resolved after visual inspection of pages 156–157. Other rows have not been visually verified in this work: **199 rows still need sense/layout review**. Their inclusion in a draft is not verification of their meaning or extracted layout.
+The source approval field is a raw mechanical capitalization signal. It is retained for provenance, not automatically transferred to IT-STE. Source definitions and examples are not copied into the batches; the IT definitions and examples are original editorial work. The six initial ambiguity cases in batch 001 were resolved after visual inspection of physical PDF pages 153–154. Three more blockers in batch 002 were resolved after visual inspection of pages 156–157. Other rows have not been visually verified in this work: **195 rows still need sense/layout review**. Their inclusion in a draft is not verification of their meaning or extracted layout.
 
 ## Checks and bounded retrieval
 

@@ -2039,24 +2039,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Related to a physical substance or chemical process, not a general software property.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a specified chemical substance or its material effect on an IT device or component; it does not describe a general software property.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The extracted meaning repeats the following wrapped row; keep any physical safety proposal provisional.",
+      "rationale": "Visual inspection confirms that CHEMICAL (adj) is a separate row from CHEMICALLY (adv), so the source boundary is resolved. Dell's equipment-cleaning guidance supports a bounded hardware-maintenance sense that names the device and approved chemical. NIST SP 800-88 Rev. 2 treats media sanitization as a separate controlled data process; it does not support a general software-property sense. See docs/it-ste-research/W1-D-P189.md.",
       "permitted_contextual_alternatives": [
-        "related to the specified substance",
-        "chemical-resistant, for a defined material property"
+        "related to the specified chemical substance",
+        "chemical-resistant, for a defined material property",
+        "approved chemical compound, for a named maintenance procedure"
       ],
       "examples": {
         "positive": {
-          "text": "Use only the cleaning substance specified by the device manufacturer.",
-          "explanation": "Names a physical maintenance constraint."
+          "text": "Clean the device only with the manufacturer-approved chemical compound.",
+          "explanation": "Names the IT equipment, the material constraint, and the controlling procedure."
         },
         "problematic": {
           "text": "Apply chemical security to the API.",
-          "explanation": "No software control or meaningful process is identified."
+          "explanation": "Does not identify a chemical substance, hardware property, or meaningful software operation."
         }
       },
       "evidence": {
@@ -2077,14 +2078,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 189 -l 189 -r 160 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 189 (2-1-C7), row 2 is CHEMICAL (adj), with its own meaning and corrosion example. A horizontal row boundary separates it from row 3, CHEMICALLY (adv), so the extracted overlap is a historical boundary ambiguity rather than shared source content.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
@@ -2101,23 +2101,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "By a specified chemical process in a physical maintenance context.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes an operation performed with a specified chemical process on an IT device or component; it does not describe a general data-sanitization method.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped-headword warning requires checking; no general software manner of operation is proposed.",
+      "rationale": "Visual inspection confirms that CHEMICALLY (adv) is a distinct adverb row and that its wrapped headword is not a missing or shared word. Dell's equipment-cleaning guidance supports a bounded physical-maintenance use only when the device, compound, and procedure are specified. NIST SP 800-88 Rev. 2 describes media sanitization as a separate controlled data process, so this draft does not extend chemically to software data operations. See docs/it-ste-research/W1-D-P189.md.",
       "permitted_contextual_alternatives": [
-        "using the specified chemical process"
+        "using the specified chemical process",
+        "with the approved cleaning compound, for a named maintenance procedure"
       ],
       "examples": {
         "positive": {
-          "text": "Follow the approved procedure for removing residue from the sensor housing.",
-          "explanation": "Keeps the action within physical maintenance guidance."
+          "text": "Remove corrosion chemically only with the approved compound and procedure.",
+          "explanation": "Names the physical maintenance action and its required chemical control."
         },
         "problematic": {
           "text": "Chemically clean the database.",
-          "explanation": "Does not define a software sanitization or repair action."
+          "explanation": "Does not define a software sanitization or repair operation and misuses the physical-process sense."
         }
       },
       "evidence": {
@@ -2138,14 +2139,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 189 -l 189 -r 160 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 189 (2-1-C7), row 3 is CHEMICALLY (adv), with CHEMICALLY on the first line and (adv) on the next line within the same ruled row. Its meaning and corrosion example are separate from row 2; the retained wrapped-headword warning describes line wrapping, not a missing or shared headword.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 197,
+    "needs-review": 195,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1361
+    "restricted": 1363
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -27644,27 +27644,29 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CHEMICAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Related to a physical substance or chemical process\, not a general software property\.
+Definition: Describes a specified chemical substance or its material effect on an IT device or component\; it does not describe a general software property\.
 
 Domains: procedures\-runbooks
 
-Rationale: The extracted meaning repeats the following wrapped row\; keep any physical safety proposal provisional\.
+Rationale: Visual inspection confirms that CHEMICAL \(adj\) is a separate row from CHEMICALLY \(adv\)\, so the source boundary is resolved\. Dell\'s equipment\-cleaning guidance supports a bounded hardware\-maintenance sense that names the device and approved chemical\. NIST SP 800\-88 Rev\. 2 treats media sanitization as a separate controlled data process\; it does not support a general software\-property sense\. See docs\/it\-ste\-research\/W1\-D\-P189\.md\.
 
 Contextual alternatives:
 
-- related to the specified substance
+- related to the specified chemical substance
 
 - chemical\-resistant\, for a defined material property
+
+- approved chemical compound\, for a named maintenance procedure
 
 #### Positive example
 
 ```
-Use only the cleaning substance specified by the device manufacturer.
+Clean the device only with the manufacturer-approved chemical compound.
 ```
 
-Explanation: Names a physical maintenance constraint\.
+Explanation: Names the IT equipment\, the material constraint\, and the controlling procedure\.
 
 #### Problematic example
 
@@ -27672,7 +27674,7 @@ Explanation: Names a physical maintenance constraint\.
 Apply chemical security to the API.
 ```
 
-Explanation: No software control or meaningful process is identified\.
+Explanation: Does not identify a chemical substance\, hardware property\, or meaningful software operation\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -27684,9 +27686,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning/alternatives overlaps the following wrapped row; boundary not verified against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 189 -l 189 -r 160 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 189 (2-1-C7), row 2 is CHEMICAL (adj), with its own meaning and corrosion example. A horizontal row boundary separates it from row 3, CHEMICALLY (adv), so the extracted overlap is a historical boundary ambiguity rather than shared source content.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 189,
     "printed_page": "2-1-C7",
@@ -27696,8 +27698,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P189-002",
@@ -27718,25 +27719,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CHEMICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: By a specified chemical process in a physical maintenance context\.
+Definition: Describes an operation performed with a specified chemical process on an IT device or component\; it does not describe a general data\-sanitization method\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped\-headword warning requires checking\; no general software manner of operation is proposed\.
+Rationale: Visual inspection confirms that CHEMICALLY \(adv\) is a distinct adverb row and that its wrapped headword is not a missing or shared word\. Dell\'s equipment\-cleaning guidance supports a bounded physical\-maintenance use only when the device\, compound\, and procedure are specified\. NIST SP 800\-88 Rev\. 2 describes media sanitization as a separate controlled data process\, so this draft does not extend chemically to software data operations\. See docs\/it\-ste\-research\/W1\-D\-P189\.md\.
 
 Contextual alternatives:
 
 - using the specified chemical process
 
+- with the approved cleaning compound\, for a named maintenance procedure
+
 #### Positive example
 
 ```
-Follow the approved procedure for removing residue from the sensor housing.
+Remove corrosion chemically only with the approved compound and procedure.
 ```
 
-Explanation: Keeps the action within physical maintenance guidance\.
+Explanation: Names the physical maintenance action and its required chemical control\.
 
 #### Problematic example
 
@@ -27744,7 +27747,7 @@ Explanation: Keeps the action within physical maintenance guidance\.
 Chemically clean the database.
 ```
 
-Explanation: Does not define a software sanitization or repair action\.
+Explanation: Does not define a software sanitization or repair operation and misuses the physical\-process sense\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -27756,9 +27759,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 189 -l 189 -r 160 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 189 (2-1-C7), row 3 is CHEMICALLY (adv), with CHEMICALLY on the first line and (adv) on the next line within the same ruled row. Its meaning and corrosion example are separate from row 2; the retained wrapped-headword warning describes line wrapping, not a missing or shared headword.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 189,
     "printed_page": "2-1-C7",
@@ -27768,8 +27771,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P189-003",
@@ -167557,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-007.json` SHA-256: `27a9136ac7e2ed54795bcd907232b316e83f565bd161d45920fab8e97b1f97f4`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-008.json` SHA-256: `139eb440a29a860ae0c4926763bc540db8239021c887293ef11a5dc86d4ff128`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-008.json` SHA-256: `e6adcb9e24b34c62af30cbf98d458e23d59fb8d49c425353149d243c6a3da70e`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 
