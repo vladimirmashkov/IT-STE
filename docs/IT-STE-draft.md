@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 207,
+    "needs-review": 205,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1351
+    "restricted": 1353
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -17909,35 +17909,37 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: AUTOMATIC; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Configured to execute a defined action after a stated trigger without another manual command\.
+Definition: Controlled by predefined logic and started by a defined condition\, schedule\, or event without a new manual command\.
 
 Domains: ai\-automation
 
-Rationale: Automation still has inputs and conditions\; the extracted definition overlaps the following wrapped row\.
+Rationale: AWS and Kubernetes document automatic actions as configured responses to policies\, observed state\, or conditions\, not as actions without inputs\. Keep this restricted\: name the action and the relevant condition\, schedule\, or event when they affect behavior\. The authenticated PDF confirms a separate complete AUTOMATIC row\. See docs\/it\-ste\-research\/W1\-D\-P171\.md for the bounded evidence\.
 
 Contextual alternatives:
 
-- triggered without manual confirmation
+- triggered by a stated condition or event
 
 - scheduled
+
+- without a new manual command
 
 #### Positive example
 
 ```
-Automatic failover starts when the health check fails three times.
+The automatic failover starts when three health checks fail.
 ```
 
-Explanation: Names the trigger and resulting action\.
+Explanation: Names the action and the condition that starts it\.
 
 #### Problematic example
 
 ```
-The automatic system needs no input.
+The automatic control prevents all failures.
 ```
 
-Explanation: Conceals configuration\, sensor inputs\, and operator prerequisites\.
+Explanation: Does not identify the trigger\, scope\, or limits of the control and implies an unsupported guarantee\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -17949,9 +17951,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning/alternatives includes the beginning of the following row; boundary not verified against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 171 -l 171 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 171 (2-1-A23), AUTOMATIC (adj) is a complete row below authorized; the horizontal rule below its example closes the row. AUTOMATICALLY begins as a separate next row, so the extracted overlap is a row-boundary artifact. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 171,
     "printed_page": "2-1-A23",
@@ -17961,8 +17963,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P171-007",
@@ -17983,35 +17984,37 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: AUTOMATICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Without a further manual action after the stated prerequisite or trigger\.
+Definition: By a system without a new manual command\, after a defined condition\, schedule\, or event\.
 
 Domains: ai\-automation
 
-Rationale: The wrapped\-headword warning requires source checking\; specify what the system does and when\.
+Rationale: AWS and Kubernetes document automatic actions as configured responses to policies\, observed state\, or conditions\, not as actions without inputs\. Keep this restricted\: name the action and the relevant condition\, schedule\, or event when they affect behavior\. The authenticated PDF confirms a separate complete AUTOMATICALLY row\. See docs\/it\-ste\-research\/W1\-D\-P171\.md for the bounded evidence\.
 
 Contextual alternatives:
 
-- without another user command
+- after a stated condition or event
 
 - on the stated trigger
+
+- without a new manual command
 
 #### Positive example
 
 ```
-The client automatically renews the lease 30 seconds before expiry.
+The controller automatically creates a replacement pod when the desired state changes.
 ```
 
-Explanation: Gives an actor\, action\, and timing condition\.
+Explanation: Names the action and the observed condition that starts it\.
 
 #### Problematic example
 
 ```
-Data is automatically protected.
+The service automatically protects the data.
 ```
 
-Explanation: Does not identify a control\, trigger\, or coverage limit\.
+Explanation: Does not identify the control\, trigger\, scope\, or limits of the protection\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -18023,9 +18026,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 171 -l 171 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 171 (2-1-A23), AUTOMATICALLY (adv) is a complete row below AUTOMATIC; its headword wraps over two lines and the horizontal rule below its example closes the row. This confirms the wrapped-headword warning and does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 171,
     "printed_page": "2-1-A23",
@@ -18035,8 +18038,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P171-008",
@@ -167547,7 +167549,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `41eda4ba20997a3975246df9484418f17f41a92b30398f19a7a90f5ec29ae178`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `3fdce86b05dadc7e9e8a9ff067a1cd4e867f73a7ee4c080e67997fa498103fb7`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `542add15c1876deb3d9d132e990bb32505f4c7e9486dbe4700c744f7628ffa21`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-006.json` SHA-256: `3652b6b98646d1ae995a7125ecbd9db68eddc1f7c76f20abd77fbfe56f783356`
 

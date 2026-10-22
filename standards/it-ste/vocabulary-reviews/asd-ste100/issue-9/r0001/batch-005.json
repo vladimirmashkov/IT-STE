@@ -1376,24 +1376,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Configured to execute a defined action after a stated trigger without another manual command.",
+      "it_disposition": "restricted",
+      "it_definition": "Controlled by predefined logic and started by a defined condition, schedule, or event without a new manual command.",
       "domains": [
         "ai-automation"
       ],
-      "rationale": "Automation still has inputs and conditions; the extracted definition overlaps the following wrapped row.",
+      "rationale": "AWS and Kubernetes document automatic actions as configured responses to policies, observed state, or conditions, not as actions without inputs. Keep this restricted: name the action and the relevant condition, schedule, or event when they affect behavior. The authenticated PDF confirms a separate complete AUTOMATIC row. See docs/it-ste-research/W1-D-P171.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
-        "triggered without manual confirmation",
-        "scheduled"
+        "triggered by a stated condition or event",
+        "scheduled",
+        "without a new manual command"
       ],
       "examples": {
         "positive": {
-          "text": "Automatic failover starts when the health check fails three times.",
-          "explanation": "Names the trigger and resulting action."
+          "text": "The automatic failover starts when three health checks fail.",
+          "explanation": "Names the action and the condition that starts it."
         },
         "problematic": {
-          "text": "The automatic system needs no input.",
-          "explanation": "Conceals configuration, sensor inputs, and operator prerequisites."
+          "text": "The automatic control prevents all failures.",
+          "explanation": "Does not identify the trigger, scope, or limits of the control and implies an unsupported guarantee."
         }
       },
       "evidence": {
@@ -1414,14 +1415,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 171 -l 171 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 171 (2-1-A23), AUTOMATIC (adj) is a complete row below authorized; the horizontal rule below its example closes the row. AUTOMATICALLY begins as a separate next row, so the extracted overlap is a row-boundary artifact. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
@@ -1438,24 +1438,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Without a further manual action after the stated prerequisite or trigger.",
+      "it_disposition": "restricted",
+      "it_definition": "By a system without a new manual command, after a defined condition, schedule, or event.",
       "domains": [
         "ai-automation"
       ],
-      "rationale": "The wrapped-headword warning requires source checking; specify what the system does and when.",
+      "rationale": "AWS and Kubernetes document automatic actions as configured responses to policies, observed state, or conditions, not as actions without inputs. Keep this restricted: name the action and the relevant condition, schedule, or event when they affect behavior. The authenticated PDF confirms a separate complete AUTOMATICALLY row. See docs/it-ste-research/W1-D-P171.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
-        "without another user command",
-        "on the stated trigger"
+        "after a stated condition or event",
+        "on the stated trigger",
+        "without a new manual command"
       ],
       "examples": {
         "positive": {
-          "text": "The client automatically renews the lease 30 seconds before expiry.",
-          "explanation": "Gives an actor, action, and timing condition."
+          "text": "The controller automatically creates a replacement pod when the desired state changes.",
+          "explanation": "Names the action and the observed condition that starts it."
         },
         "problematic": {
-          "text": "Data is automatically protected.",
-          "explanation": "Does not identify a control, trigger, or coverage limit."
+          "text": "The service automatically protects the data.",
+          "explanation": "Does not identify the control, trigger, scope, or limits of the protection."
         }
       },
       "evidence": {
@@ -1476,14 +1477,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 171 -l 171 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 171 (2-1-A23), AUTOMATICALLY (adv) is a complete row below AUTOMATIC; its headword wraps over two lines and the horizontal rule below its example closes the row. This confirms the wrapped-headword warning and does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
