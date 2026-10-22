@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 104,
-    "needs-review": 167,
+    "allowed": 105,
+    "needs-review": 166,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -42943,13 +42943,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DETERIORATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: A worsening of a named service or hardware condition relative to a baseline\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped\-headword warning prevents a settled source interpretation\; quantify any proposed IT use\.
+Rationale: Authenticated PDF visual inspection confirms that DETERIORATION \(n\) is row 2 with A worse condition\; the wrapped\-headword warning is retained\. Prometheus alerting documentation gives measurable examples such as high request latency and unavailable instances\, which support a bounded monitoring sense of worsening against a baseline\. See \`docs\/it\-ste\-research\/W1\-D\-P215\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -42983,9 +42983,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 215 (printed page 2-1-D9). Findings: DETERIORATION (n) is row 2 with the wrapped headword and A worse condition; determine (v) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 215,
     "printed_page": "2-1-D9",
@@ -167544,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `25a48803d5e71ba4d99a95afaefd0a8755cb28400245e5b6184f551537580d2b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b42a3e32923d3092401ec29b77a0fd4b0a2b6287a5c88bd797129ace0161b49e`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `b4eb237f5b9b3d586e3f0401226183bc6b5a5c97859137abadf41905241268db`
 
