@@ -35346,11 +35346,11 @@ Term: contaminated; POS: adj.
 
 Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
 
-Definition: Changed by an unwanted physical substance\, provisionally\.
+Definition: Affected by an unwanted physical substance or material\; limited to a physical component or medium\, provisionally\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The source column ends with the opening of the following contamination definition\; the boundary remains unresolved\.
+Rationale: Authenticated layout resolves the boundary\: CONTAMINATION \(n\) and its definition are a separate row\, while this row contains the DIRTY \(adj\) meaning and a CONTAMINATION \(n\) alternative\. The draft is limited to physical components or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic claim that a database is contaminated\. Keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
 
 Contextual alternatives:
 
@@ -35384,9 +35384,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The column includes the opening fragment of the following CONTAMINATION definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated local ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered and visually inspected physical PDF page 201 / printed page 2-1-C19. Findings: the lower-case contaminated (adj) row is a separate ruled row with DIRTY (adj) and CONTAMINATION (n) source alternatives and their examples; the following upper-case CONTAMINATION (n) row starts after its own rule and contains the “Unwanted change...” definition. Spelling, POS, row boundary, and typography match the exact source entry; the extracted definition fragment is a mechanical column-boundary artifact.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 201,
     "printed_page": "2-1-C19",
@@ -35397,7 +35397,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "source PDF layout and sense verification; not performed"
+      "source interpretation remains mechanically extracted; semantic scope review required"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P201-004",
@@ -35420,11 +35420,11 @@ Term: CONTAMINATION; POS: n.
 
 Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
 
-Definition: An unwanted physical change caused by an external substance\, provisionally\.
+Definition: An unwanted physical change to a material caused by a chemical or physical agent or another material\; limited to physical infrastructure or media\, provisionally\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped\-headword warning and adjacent row fragment require source review\; no AI training\-data sense is adopted here\.
+Rationale: Authenticated layout confirms a separate wrapped CONTAMINATION \(n\) row with the physical definition beginning “Unwanted change of the original condition\.\.\.”\; the preceding CONTAMINATION \(n\) reference belongs to the contaminated row\. The draft is limited to physical infrastructure or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic data or configuration sense\. Keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
 
 Contextual alternatives:
 
@@ -35458,9 +35458,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated local ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered and visually inspected physical PDF page 201 / printed page 2-1-C19. Findings: CONTAMINATION (n) is a distinct ruled row, its headword is visibly wrapped across two lines, and its physical definition and example remain within that row. The preceding CONTAMINATION (n) reference is part of the contaminated (adj) row. Spelling, POS, row boundary, and typography match the exact source entry; the source interpretation remains mechanically extracted.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 201,
     "printed_page": "2-1-C19",
@@ -35471,7 +35471,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "source PDF layout and sense verification; not performed"
+      "source interpretation remains mechanically extracted; semantic scope review required"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P201-005",
@@ -167555,7 +167555,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `367f8235e7946229a74809f82d68364b7f251c8cf74efb52a0808f437d7d0d00`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `2e23d8775ef13b449d322987e69409666e6465defa671bfe030b20e6f852ef02`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `5cc1f6911314c4d5a68f1b3401504d7f0ddaca706f6ae2e63c6f8b4827a533b1`
 
