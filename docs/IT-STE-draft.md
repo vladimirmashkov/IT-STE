@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 187,
+    "needs-review": 185,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1368
+    "restricted": 1370
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -33298,13 +33298,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: concurrently; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: During overlapping execution intervals\, as a provisional IT scheduling sense\.
+Definition: During execution intervals that overlap\; the intervals do not need to start at the same time\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The word is tagged as an adjective and the column includes a fragment from condensation\; grammar and row boundaries need review\.
+Rationale: The authenticated PDF confirms a standalone row spelled concurrently and labeled \(adj\)\, with AT THE SAME TIME\; the extracted adjective label is retained even though the spelling is adverbial\. AWS Lambda documents concurrency as requests handled at the same time\, supporting the bounded overlap sense without requiring identical start times\. See docs\/it\-ste\-research\/W1\-D\-P198\.md\; W2 editorial review remains required\.
 
 Contextual alternatives:
 
@@ -33315,7 +33315,7 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The two workers run concurrently on separate partitions.
+The two requests are handled concurrently by separate execution environments.
 ```
 
 Explanation: Allows overlap without asserting identical start times\.
@@ -33338,9 +33338,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted part of speech is adj for an adverbial spelling; the column also includes the opening fragment of CONDENSATION."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; physical PDF page 198 / printed page 2-1-C16. Findings: concurrently is a standalone lower-case row labeled (adj), with AT THE SAME TIME in the meaning column; the next horizontal rule begins CONDENSATION, so the extracted adjacent fragment is not part of this row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 198,
     "printed_page": "2-1-C16",
@@ -33350,8 +33350,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P198-002",
@@ -33372,13 +33371,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONDENSATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Liquid formed when vapor changes phase\, provisionally\.
+Definition: Liquid that forms when water vapor changes phase on IT hardware\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped source row and preceding fragment require review\; a software summarization sense is not proposed\.
+Rationale: The authenticated PDF confirms CONDENSATION \(n\) is a separate wrapped row whose meaning is the result when a gas changes into a liquid\; the preceding concurrently row ends before the horizontal rule\. AWS Outposts facility requirements require relative humidity with no condensation\, supporting the physical IT\-hardware sense\; this is not a software summarization sense\. See docs\/it\-ste\-research\/W1\-D\-P198\.md\; W2 editorial review remains required\.
 
 Contextual alternatives:
 
@@ -33389,7 +33388,7 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Do not power the unit while condensation is present on the chassis.
+The rack must operate in a facility with no condensation.
 ```
 
 Explanation: Describes a physical inspection condition\.
@@ -33412,9 +33411,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; physical PDF page 198 / printed page 2-1-C16. Findings: CONDENSATION is an upper-case wrapped headword with (n) on the next line, followed by its own meaning and example; the preceding concurrently row is closed by a horizontal rule and contributes no text to this row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 198,
     "printed_page": "2-1-C16",
@@ -33424,8 +33423,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P198-003",
@@ -167559,7 +167557,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `bf136eb9d3a9bcb034c4f1a35bb66998485b8cdc6f1b1a21ff85712d693507a7`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d55df60a00254143c68cf358dcbf7ce0c0806b56ed86d56e136d2b5ea7fe47c6`
 
