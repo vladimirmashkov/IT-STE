@@ -19,10 +19,10 @@ The sequence is physical PDF page order, then numeric row order within the page,
 | Draft proposal | Rows |
 | --- | ---: |
 | allowed | 90 |
-| restricted | 1,344 |
+| restricted | 1,350 |
 | prohibited | 402 |
 | not-applicable | 146 |
-| needs-review | 214 |
+| needs-review | 208 |
 | Total draft source-row coverage | 2,196 |
 | Unprocessed source rows | 0 |
 
@@ -30,7 +30,7 @@ All 2,196 decisions remain `draft` / `editorial-review-needed`; **none is an edi
 
 **Complete source-row draft coverage is not a complete approved IT vocabulary.** IT-only terms still require a separate inventory and sense-level editorial decisions. There is no approved lexicon, canonical term set, release readiness, or SFT readiness.
 
-The source approval field is a raw mechanical capitalization signal. It is retained for provenance, not automatically transferred to IT-STE. Source definitions and examples are not copied into the batches; the IT definitions and examples are original editorial work. The six initial ambiguity cases in batch 001 were resolved after visual inspection of physical PDF pages 153–154. Three more blockers in batch 002 were resolved after visual inspection of pages 156–157. Other rows have not been visually verified in this work: **214 rows still need sense/layout review**. Their inclusion in a draft is not verification of their meaning or extracted layout.
+The source approval field is a raw mechanical capitalization signal. It is retained for provenance, not automatically transferred to IT-STE. Source definitions and examples are not copied into the batches; the IT definitions and examples are original editorial work. The six initial ambiguity cases in batch 001 were resolved after visual inspection of physical PDF pages 153–154. Three more blockers in batch 002 were resolved after visual inspection of pages 156–157. Other rows have not been visually verified in this work: **208 rows still need sense/layout review**. Their inclusion in a draft is not verification of their meaning or extracted layout.
 
 ## Checks and bounded retrieval
 
@@ -44,7 +44,7 @@ python3 tools/it_ste_vocabulary.py entry D-P149-001 --batch standards/it-ste/voc
 
 By default, `check` validates all batches and `entry` searches all batches; `--batch standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-001.json` selects one batch. The checker authenticates the published source, permission record, and domain registry; compares each row's ID, headword, extracted part of speech, physical page, raw approval, and warnings against the source; and verifies sequence, draft boundaries, required editorial fields, rights separation, and coverage counts. It does not approve meanings or prove semantic or PDF-layout accuracy. It works without the private PDF.
 
-There is no next unprocessed source row. Continue with the 214 unresolved sense/layout cases, further visual verification, and the IT-only term inventory. Retrieve bounded metadata first, then exact entries as needed. Do not load all dictionary definitions into an agent's context.
+There is no next unprocessed source row. Continue with the 208 unresolved sense/layout cases, further visual verification, and the IT-only term inventory. Retrieve bounded metadata first, then exact entries as needed. Do not load all dictionary definitions into an agent's context.
 
 For further editorial review:
 

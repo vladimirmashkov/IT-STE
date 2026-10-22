@@ -1200,24 +1200,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Authorized by an identified authority for a stated use.",
+      "it_disposition": "restricted",
+      "it_definition": "Permitted by an identified authority for a stated system, object, or use.",
       "domains": [
         "security"
       ],
-      "rationale": "The intended authorization sense is usable provisionally, but the extracted meaning ends with text repeated in the next row.",
+      "rationale": "The authenticated PDF confirms that APPROVED is a complete row with the meaning Permitted by an authority. NIST uses authorization for access privileges or an official sanction tied to a specific entity, resource, system, or activity. Keep this restricted: name the authority and the permitted scope; an unqualified approval claim is not actionable. See docs/it-ste-research/W1-D-P165.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
-        "authorized for",
+        "authorized for [stated use]",
+        "permitted by [named authority]",
         "accepted by the named authority"
       ],
       "examples": {
         "positive": {
-          "text": "Use an image approved by the security team for production deployment.",
-          "explanation": "States both approving authority and permitted use."
+          "text": "Use an image approved by the security team for this production environment.",
+          "explanation": "States both the approving authority and the permitted scope."
         },
         "problematic": {
           "text": "Use an approved image.",
-          "explanation": "Without an approval record or scope, readers cannot identify an eligible image."
+          "explanation": "Without an approval record, authority, or scope, readers cannot identify an eligible image."
         }
       },
       "evidence": {
@@ -1238,14 +1239,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 165 -l 165 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 165 (2-1-A17), APPROVED (adj) is a complete row and a horizontal rule separates it from APPROXIMATE (adj); the historical extraction ambiguity does not reflect a boundary spill. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
@@ -1262,24 +1262,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Close to a measured or calculated value without claiming exactness.",
+      "it_disposition": "restricted",
+      "it_definition": "Close to a measured or calculated value; not exact and not a guaranteed limit.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "Estimates need an uncertainty or purpose boundary; the wrapped source row requires checking before a settled mapping.",
+      "rationale": "The authenticated PDF confirms the complete APPROXIMATE row and its wrapped headword. AWS documents approximate distributed metrics as close to the actual value and suitable for many operational decisions; PostgreSQL documents planner estimates as approximate because sampled statistics are not exact. Kubernetes distinguishes requests from enforced limits. Keep this restricted: use it for estimates or reduced precision, not for a security boundary or other guaranteed maximum. See docs/it-ste-research/W1-D-P165.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "estimated",
-        "rounded"
+        "rounded value"
       ],
       "examples": {
         "positive": {
           "text": "The approximate export size is 2 GB; allow 3 GB of free space.",
-          "explanation": "Separates an estimate from a capacity requirement."
+          "explanation": "Separates an estimate from the capacity that must be provided."
         },
         "problematic": {
           "text": "The approximate maximum token lifetime is 60 seconds.",
-          "explanation": "A security maximum must be an enforceable bound, not a loose estimate."
+          "explanation": "A security maximum must be an exact, enforceable bound, not a loose estimate."
         }
       },
       "evidence": {
@@ -1300,14 +1300,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 165 -l 165 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 165 (2-1-A17), APPROXIMATE is a distinct row below APPROVED; the headword wraps as APPROXIMATE on one line and (adj) on the next, and the lower horizontal rule closes the row. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },

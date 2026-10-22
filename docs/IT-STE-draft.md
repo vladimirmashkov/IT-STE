@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 210,
+    "needs-review": 208,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1348
+    "restricted": 1350
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -14702,27 +14702,29 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: APPROVED; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Authorized by an identified authority for a stated use\.
+Definition: Permitted by an identified authority for a stated system\, object\, or use\.
 
 Domains: security
 
-Rationale: The intended authorization sense is usable provisionally\, but the extracted meaning ends with text repeated in the next row\.
+Rationale: The authenticated PDF confirms that APPROVED is a complete row with the meaning Permitted by an authority\. NIST uses authorization for access privileges or an official sanction tied to a specific entity\, resource\, system\, or activity\. Keep this restricted\: name the authority and the permitted scope\; an unqualified approval claim is not actionable\. See docs\/it\-ste\-research\/W1\-D\-P165\.md for the bounded evidence\.
 
 Contextual alternatives:
 
-- authorized for
+- authorized for \[stated use\]
+
+- permitted by \[named authority\]
 
 - accepted by the named authority
 
 #### Positive example
 
 ```
-Use an image approved by the security team for production deployment.
+Use an image approved by the security team for this production environment.
 ```
 
-Explanation: States both approving authority and permitted use\.
+Explanation: States both the approving authority and the permitted scope\.
 
 #### Problematic example
 
@@ -14730,7 +14732,7 @@ Explanation: States both approving authority and permitted use\.
 Use an approved image.
 ```
 
-Explanation: Without an approval record or scope\, readers cannot identify an eligible image\.
+Explanation: Without an approval record\, authority\, or scope\, readers cannot identify an eligible image\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -14742,9 +14744,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning/alternatives ends with text repeated in the following row; row boundary not verified against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 165 -l 165 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 165 (2-1-A17), APPROVED (adj) is a complete row and a horizontal rule separates it from APPROXIMATE (adj); the historical extraction ambiguity does not reflect a boundary spill. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 165,
     "printed_page": "2-1-A17",
@@ -14754,8 +14756,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P165-009",
@@ -14776,19 +14777,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: APPROXIMATE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Close to a measured or calculated value without claiming exactness\.
+Definition: Close to a measured or calculated value\; not exact and not a guaranteed limit\.
 
 Domains: monitoring\-alerts
 
-Rationale: Estimates need an uncertainty or purpose boundary\; the wrapped source row requires checking before a settled mapping\.
+Rationale: The authenticated PDF confirms the complete APPROXIMATE row and its wrapped headword\. AWS documents approximate distributed metrics as close to the actual value and suitable for many operational decisions\; PostgreSQL documents planner estimates as approximate because sampled statistics are not exact\. Kubernetes distinguishes requests from enforced limits\. Keep this restricted\: use it for estimates or reduced precision\, not for a security boundary or other guaranteed maximum\. See docs\/it\-ste\-research\/W1\-D\-P165\.md for the bounded evidence\.
 
 Contextual alternatives:
 
 - estimated
 
-- rounded
+- rounded value
 
 #### Positive example
 
@@ -14796,7 +14797,7 @@ Contextual alternatives:
 The approximate export size is 2 GB; allow 3 GB of free space.
 ```
 
-Explanation: Separates an estimate from a capacity requirement\.
+Explanation: Separates an estimate from the capacity that must be provided\.
 
 #### Problematic example
 
@@ -14804,7 +14805,7 @@ Explanation: Separates an estimate from a capacity requirement\.
 The approximate maximum token lifetime is 60 seconds.
 ```
 
-Explanation: A security maximum must be an enforceable bound\, not a loose estimate\.
+Explanation: A security maximum must be an exact\, enforceable bound\, not a loose estimate\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -14816,9 +14817,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 165 -l 165 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 165 (2-1-A17), APPROXIMATE is a distinct row below APPROVED; the headword wraps as APPROXIMATE on one line and (adj) on the next, and the lower horizontal rule closes the row. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 165,
     "printed_page": "2-1-A17",
@@ -14828,8 +14829,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 10,
     "source_entry_id": "D-P165-010",
@@ -167544,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json` SHA-256: `5bdf4f9ffc6d0057677a0cd47a99de62b0da75567f223f5c1b47b2f8033f1040`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `6a5afc8df360aa5310d974e3875d97621b6d759c97bf00d7845be0a77455d1a5`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `fbf9391077a0ed76f77438855f2444bc5c680ae5d4a2c606045f591e799cece3`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `3fdce86b05dadc7e9e8a9ff067a1cd4e867f73a7ee4c080e67997fa498103fb7`
 
