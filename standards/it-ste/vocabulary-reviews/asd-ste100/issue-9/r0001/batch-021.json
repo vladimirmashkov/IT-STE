@@ -1854,12 +1854,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Occurring at short intervals relative to a stated baseline.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The cell contains the opening of the adjacent adverb definition; review alignment and quantify the interval.",
+      "rationale": "Visual inspection of physical page 257 confirms that `FREQUENT (adj)` is row 4 between `FREEZE (v)` and `FREQUENTLY (adv)`; the phrase `At frequent or short intervals` belongs to the separate adverb row. Google SRE monitoring guidance and Prometheus rate documentation support expressing operational frequency with a measured rate or explicit time window, but they do not define a universal threshold for `frequent`. Keep this adjective restricted to a stated interval, baseline, or rate; see `docs/it-ste-research/W1-D-P257.md`. This is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "occurring every stated interval",
         "repeated"
@@ -1892,9 +1892,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 257 -l 257 -png -r 180 and visually inspected physical page 257. Findings: row 4 is bounded by horizontal rules between FREEZE (v) and FREQUENTLY (adv), reads FREQUENT (adj), and contains `That occurs or is found often at short intervals`; `At frequent or short intervals` belongs to the following FREQUENTLY row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 140,
+    "needs-review": 139,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1389
+    "restricted": 1390
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -66078,13 +66078,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: FREQUENT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Occurring at short intervals relative to a stated baseline\.
 
 Domains: monitoring\-alerts
 
-Rationale: The cell contains the opening of the adjacent adverb definition\; review alignment and quantify the interval\.
+Rationale: Visual inspection of physical page 257 confirms that \`FREQUENT \(adj\)\` is row 4 between \`FREEZE \(v\)\` and \`FREQUENTLY \(adv\)\`\; the phrase \`At frequent or short intervals\` belongs to the separate adverb row\. Google SRE monitoring guidance and Prometheus rate documentation support expressing operational frequency with a measured rate or explicit time window\, but they do not define a universal threshold for \`frequent\`\. Keep this adjective restricted to a stated interval\, baseline\, or rate\; see \`docs\/it\-ste\-research\/W1\-D\-P257\.md\`\. This is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -66118,9 +66118,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The cell contains the opening of the adjacent adverb definition; review alignment and quantify the interval."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 257 -l 257 -png -r 180 and visually inspected physical page 257. Findings: row 4 is bounded by horizontal rules between FREEZE (v) and FREQUENTLY (adv), reads FREQUENT (adj), and contains `That occurs or is found often at short intervals`; `At frequent or short intervals` belongs to the following FREQUENTLY row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 257,
     "printed_page": "2-1-F13",
@@ -167560,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `d8f535c5018bcd491a95a49f37d59ce4be0990b40deda312513362c279c990ad`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `0d59fd5cb39a34524ae2bdbae658e916b9b89d9e81ab30c28c69600da37c6109`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-022.json` SHA-256: `f1833432fe354f67cda5cb69850c5af022044b7c4833a78f2a3e76538e6ffa4b`
 
