@@ -35350,7 +35350,7 @@ Definition: Affected by an unwanted physical substance or material\; limited to 
 
 Domains: cloud\-infrastructure
 
-Rationale: Authenticated layout resolves the boundary\: CONTAMINATION \(n\) and its definition are a separate row\, while this row contains the DIRTY \(adj\) meaning and a CONTAMINATION \(n\) alternative\. The draft is limited to physical components or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic claim that a database is contaminated\. Keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
+Rationale: Authenticated layout resolves the boundary\: CONTAMINATION \(n\) and its definition are a separate row\, while this row contains the DIRTY \(adj\) meaning and a CONTAMINATION \(n\) alternative\. The draft is limited to physical components or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic claim that a database is contaminated\. See \`docs\/it\-ste\-research\/W1\-D\-P201\.md\`\; keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
 
 Contextual alternatives:
 
@@ -35424,7 +35424,7 @@ Definition: An unwanted physical change to a material caused by a chemical or ph
 
 Domains: cloud\-infrastructure
 
-Rationale: Authenticated layout confirms a separate wrapped CONTAMINATION \(n\) row with the physical definition beginning “Unwanted change of the original condition\.\.\.”\; the preceding CONTAMINATION \(n\) reference belongs to the contaminated row\. The draft is limited to physical infrastructure or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic data or configuration sense\. Keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
+Rationale: Authenticated layout confirms a separate wrapped CONTAMINATION \(n\) row with the physical definition beginning “Unwanted change of the original condition\.\.\.”\; the preceding CONTAMINATION \(n\) reference belongs to the contaminated row\. The draft is limited to physical infrastructure or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic data or configuration sense\. See \`docs\/it\-ste\-research\/W1\-D\-P201\.md\`\; keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
 
 Contextual alternatives:
 
@@ -167555,7 +167555,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `2e23d8775ef13b449d322987e69409666e6465defa671bfe030b20e6f852ef02`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `3a338fe99178c42093e9e4c0278bbee13bacc0ed606fa52b7dbef205c2e952de`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `5cc1f6911314c4d5a68f1b3401504d7f0ddaca706f6ae2e63c6f8b4827a533b1`
 
