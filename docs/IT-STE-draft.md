@@ -4257,8 +4257,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 189,
-    "not-applicable": 146,
+    "needs-review": 187,
+    "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1368
   },
@@ -32935,27 +32935,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: concentrate; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Direct attention to an identified subject\, as a provisional IT interpretation\.
+Definition: Put a physical load or object at a specified location\; no general software\-documentation sense is proposed\.
 
 Domains: software\-documentation
 
-Rationale: The extracted verb row provides ALL and a fragment of the following mixture definition\, so its intended source sense cannot be settled\.
+Rationale: The authenticated PDF shows a complete physical placement\/allocation sense mapped to ALL\, with no row spill from CONCENTRATION\. The proposed attention sense is a different use\; no general software\-documentation sense is proposed\. See docs\/it\-ste\-research\/W1\-D\-P197\-concentration\.md\.
 
 Contextual alternatives:
 
-- focus on the failed stage
+- place the load at the specified point
 
-- inspect only the selected records
+- focus on the failed stage
 
 #### Positive example
 
 ```
-Inspect only the records rejected by schema validation.
+Place the test load at the specified physical point before the inspection.
 ```
 
-Explanation: Bounds the proposed review action\.
+Explanation: Uses an explicit physical placement instruction\.
 
 #### Problematic example
 
@@ -32963,7 +32963,7 @@ Explanation: Bounds the proposed review action\.
 Concentrate the database.
 ```
 
-Explanation: Could mean focus attention\, consolidate storage\, or change a physical mixture\.
+Explanation: Does not identify a physical placement\; use an explicit operation such as focus the review or consolidate the data\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -32975,9 +32975,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted alternatives do not establish the verb sense and include the opening fragment of CONCENTRATION."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 197 -l 197 -png -r 144 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 197 (2-1-C15), row 7 is concentrate (v) and its meaning/example stay within the row; row 8 starts a distinct CONCENTRATION (n) row. Spelling and POS match; no adjacent-row spill. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 197,
     "printed_page": "2-1-C15",
@@ -32987,8 +32987,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P197-007",
@@ -33009,19 +33008,23 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONCENTRATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Proportion of a substance in a physical mixture\, provisionally\.
+Definition: Measured strength of a substance in a physical mixture\; no general cloud\-infrastructure sense is proposed\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped\-headword warning and adjacent concentrate fragment require source review\; no workload\-density sense is adopted\.
+Rationale: The authenticated PDF shows a separate CONCENTRATION noun row with a physical\-mixture meaning\; the wrapped headword is not a boundary error\. Kubernetes documentation uses resource requests\, limits\, usage\, allocation\, load\/pressure\, and request rate for cloud resources\, so no general cloud\-infrastructure sense is proposed\. See docs\/it\-ste\-research\/W1\-D\-P197\-concentration\.md\.
 
 Contextual alternatives:
 
 - measured coolant proportion
 
 - specified mixture ratio
+
+- resource usage
+
+- request rate
 
 #### Positive example
 
@@ -33037,7 +33040,7 @@ Explanation: Keeps the proposal in a measured physical context\.
 Increase the concentration of requests.
 ```
 
-Explanation: Confuses physical mixture strength with request rate or workload density\.
+Explanation: Use a term that states the intended resource metric\, such as increase request rate or resource usage\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -33049,9 +33052,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 197 -l 197 -png -r 144 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 197 (2-1-C15), row 8 is CONCENTRATION (n) with its own meaning and example. The wrapped headword belongs to this row and is not a continuation of row 7. Historical extraction warning remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 197,
     "printed_page": "2-1-C15",
@@ -33061,8 +33064,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P197-008",
@@ -167557,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `a5b7b6ce95832c0fe43b97ba4878dfdc82586178d43a38b38db2dfe78a0eb102`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `bf136eb9d3a9bcb034c4f1a35bb66998485b8cdc6f1b1a21ff85712d693507a7`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d55df60a00254143c68cf358dcbf7ce0c0806b56ed86d56e136d2b5ea7fe47c6`
 

@@ -1503,24 +1503,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Direct attention to an identified subject, as a provisional IT interpretation.",
+      "it_disposition": "not-applicable",
+      "it_definition": "Put a physical load or object at a specified location; no general software-documentation sense is proposed.",
       "domains": [
         "software-documentation"
       ],
-      "rationale": "The extracted verb row provides ALL and a fragment of the following mixture definition, so its intended source sense cannot be settled.",
+      "rationale": "The authenticated PDF shows a complete physical placement/allocation sense mapped to ALL, with no row spill from CONCENTRATION. The proposed attention sense is a different use; no general software-documentation sense is proposed. See docs/it-ste-research/W1-D-P197-concentration.md.",
       "permitted_contextual_alternatives": [
-        "focus on the failed stage",
-        "inspect only the selected records"
+        "place the load at the specified point",
+        "focus on the failed stage"
       ],
       "examples": {
         "positive": {
-          "text": "Inspect only the records rejected by schema validation.",
-          "explanation": "Bounds the proposed review action."
+          "text": "Place the test load at the specified physical point before the inspection.",
+          "explanation": "Uses an explicit physical placement instruction."
         },
         "problematic": {
           "text": "Concentrate the database.",
-          "explanation": "Could mean focus attention, consolidate storage, or change a physical mixture."
+          "explanation": "Does not identify a physical placement; use an explicit operation such as focus the review or consolidate the data."
         }
       },
       "evidence": {
@@ -1541,14 +1541,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 197 -l 197 -png -r 144 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 197 (2-1-C15), row 7 is concentrate (v) and its meaning/example stay within the row; row 8 starts a distinct CONCENTRATION (n) row. Spelling and POS match; no adjacent-row spill. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -1565,15 +1564,17 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Proportion of a substance in a physical mixture, provisionally.",
+      "it_disposition": "not-applicable",
+      "it_definition": "Measured strength of a substance in a physical mixture; no general cloud-infrastructure sense is proposed.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The wrapped-headword warning and adjacent concentrate fragment require source review; no workload-density sense is adopted.",
+      "rationale": "The authenticated PDF shows a separate CONCENTRATION noun row with a physical-mixture meaning; the wrapped headword is not a boundary error. Kubernetes documentation uses resource requests, limits, usage, allocation, load/pressure, and request rate for cloud resources, so no general cloud-infrastructure sense is proposed. See docs/it-ste-research/W1-D-P197-concentration.md.",
       "permitted_contextual_alternatives": [
         "measured coolant proportion",
-        "specified mixture ratio"
+        "specified mixture ratio",
+        "resource usage",
+        "request rate"
       ],
       "examples": {
         "positive": {
@@ -1582,7 +1583,7 @@
         },
         "problematic": {
           "text": "Increase the concentration of requests.",
-          "explanation": "Confuses physical mixture strength with request rate or workload density."
+          "explanation": "Use a term that states the intended resource metric, such as increase request rate or resource usage."
         }
       },
       "evidence": {
@@ -1603,14 +1604,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 197 -l 197 -png -r 144 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 197 (2-1-C15), row 8 is CONCENTRATION (n) with its own meaning and example. The wrapped headword belongs to this row and is not a continuation of row 7. Historical extraction warning remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

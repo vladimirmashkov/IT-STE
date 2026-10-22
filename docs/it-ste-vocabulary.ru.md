@@ -15,8 +15,8 @@
 - `allowed`: 90;
 - `restricted`: 1 368;
 - `prohibited`: 403;
-- `not-applicable`: 146;
-- `needs-review`: 189.
+- `not-applicable`: 148;
+- `needs-review`: 187.
 
 Всего: 2 196 черновых решений; необработанных исходных строк: 0.
 
