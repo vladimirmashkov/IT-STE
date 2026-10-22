@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 142,
+    "needs-review": 141,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1387
+    "restricted": 1388
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -65360,13 +65360,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: FORWARD; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Toward the defined front of physical equipment\.
 
 Domains: procedures\-runbooks
 
-Rationale: The extracted cell includes the opening of the next positional phrase\; review row boundaries\.
+Rationale: Visual inspection of physical page 255 confirms that \`FORWARD \(adv\)\` is row 9 between \`FORWARD \(adj\)\` and \`FORWARD OF \(prep\)\`\; the phrase \`At a position nearer to the front\` belongs to the separate \`FORWARD OF\` row\. RFC 791 defines forwarding datagrams and RFC 9110 defines forwarding HTTP messages\, showing distinct network senses that must not be conflated with this physical direction\. Keep the physical\-equipment sense restricted to procedures and runbooks\; see \`docs\/it\-ste\-research\/W1\-D\-P255\.md\`\. This is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -65400,9 +65400,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted cell includes the opening of the next positional phrase; review row boundaries."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 255 -l 255 -png -r 180 and visually inspected physical page 255. Findings: row 9 is bounded by horizontal rules between FORWARD (adj) and FORWARD OF (prep), reads FORWARD (adv), and contains `In the direction of the front`; `At a position nearer to the front` belongs to the following FORWARD OF row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 255,
     "printed_page": "2-1-F11",
@@ -167560,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `94f7debec90f03c4be084cb17241ae06ba3fb9d6d39255dd37b1c2c716298844`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `e0d65f342d6cee5f6f54238adcaadfe60c8a624b81c32b6a686b006349683413`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-022.json` SHA-256: `f1833432fe354f67cda5cb69850c5af022044b7c4833a78f2a3e76538e6ffa4b`
 

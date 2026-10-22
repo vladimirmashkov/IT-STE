@@ -1258,12 +1258,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Toward the defined front of physical equipment.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The extracted cell includes the opening of the next positional phrase; review row boundaries.",
+      "rationale": "Visual inspection of physical page 255 confirms that `FORWARD (adv)` is row 9 between `FORWARD (adj)` and `FORWARD OF (prep)`; the phrase `At a position nearer to the front` belongs to the separate `FORWARD OF` row. RFC 791 defines forwarding datagrams and RFC 9110 defines forwarding HTTP messages, showing distinct network senses that must not be conflated with this physical direction. Keep the physical-equipment sense restricted to procedures and runbooks; see `docs/it-ste-research/W1-D-P255.md`. This is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "toward the front",
         "in the frontward direction"
@@ -1296,9 +1296,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 255 -l 255 -png -r 180 and visually inspected physical page 255. Findings: row 9 is bounded by horizontal rules between FORWARD (adj) and FORWARD OF (prep), reads FORWARD (adv), and contains `In the direction of the front`; `At a position nearer to the front` belongs to the following FORWARD OF row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
