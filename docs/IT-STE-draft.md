@@ -52078,9 +52078,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "extraction_warnings": [],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local source PDF page 231 with pdftoppm at 150 dpi. Findings: row 4 is spelled employ (v), its boundary is before EMPTY (adj), and the USE/HAVE alternatives and layout are visually confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 231,
     "printed_page": "2-1-E5",
@@ -167552,7 +167552,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `69265560dc71a461d7d5fbecc2a5111569da60f59893119d104975194117515e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `29fa5e8d1bb65620a3b9d8665a9abb18f4bbb6767132943b9d52c138a3d8d5b8`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `dfe541008eeca78fcad17b1e89a679554a9a04a58617d1635a08e72f3f61085c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `4ca1caea277013756650d1ab969a05d9624d291d4d30bf36418c620205172b97`
 
