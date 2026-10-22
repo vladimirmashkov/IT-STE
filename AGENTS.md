@@ -4,6 +4,10 @@
 
 These instructions apply to the entire repository. This English document is authoritative; the Russian version is an optional translation.
 
+## Continuing IT-STE draft remediation
+
+For draft vocabulary blockers, editorial review, or IT-only term coverage, read [the compact handoff](docs/it-ste-draft-handoff.md) first. It records completed work, the three open workstreams, bounded live-queue retrieval, and validation requirements. Do not bootstrap by reading the complete generated Markdown, all vocabulary batches, or the source extraction into context. Recompute current counts; handoff baseline numbers are historical, not approvals.
+
 ## ASD-STE100 Issue 9 derivative reference
 
 Use the tracked derivative retrieval database instead of reading or converting the complete standard:

@@ -4,6 +4,8 @@
 
 English is authoritative. This is an editorial review queue, not an approved vocabulary, a released standard, or official ASD guidance.
 
+For an independent continuation thread, start with the [compact remediation handoff](it-ste-draft-handoff.md): completed work, live paginated blocker retrieval, and the separate editorial/IT-only coverage tasks. Do not read the full generated draft to bootstrap.
+
 ## Current progress
 
 All **2,196 source dictionary rows** from ASD-STE100 Issue 9, representation `r0001`, have draft IT sense proposals, applicability, rationales, contextual alternatives, and positive/problematic examples. They are stored in **55 batches**, `batch-001.json` through `batch-055.json`, under:
