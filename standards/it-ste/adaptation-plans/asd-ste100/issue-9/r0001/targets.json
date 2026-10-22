@@ -29,12 +29,13 @@
         "1.7",
         "1.13",
         "3.1",
-        "9.2"
+        "9.2",
+        "GR-5"
       ],
       "candidate_domains": [
         "general"
       ],
-      "design_intent": "Make approval specific to meaning, part of speech, form, and applicable context, including independent approval when one spelling functions as both an IT noun and verb. Check the definition and usage restrictions of the applicable IT lexical entry before use; approval in one sense or context does not approve other senses or contexts. Do not import ASD-specific dictionary restrictions as IT-STE vocabulary decisions."
+      "design_intent": "Make approval specific to meaning, part of speech, form, and applicable context, including independent approval when one spelling functions as both an IT noun and verb. Check the definition and usage restrictions of the applicable IT lexical entry before use; approval in one sense or context does not approve other senses or contexts. Do not import ASD-specific dictionary restrictions as IT-STE vocabulary decisions. Check suspected false friends against the applicable English definition and technical context; similar spelling or sound across languages does not establish equivalent meaning. Optional translations must preserve the authoritative English meaning rather than copy a misleading cognate."
     },
     {
       "id": "ITSTE-R-0003",
@@ -205,7 +206,8 @@
       "status": "planned",
       "source_block_ids": [
         "4.2",
-        "4.5"
+        "4.5",
+        "GR-1"
       ],
       "candidate_domains": [
         "general",
@@ -223,7 +225,7 @@
         "support-troubleshooting",
         "ai-automation"
       ],
-      "design_intent": "In controlled prose, include all grammatically and semantically necessary words so that actors, actions, objects, conditions, and referents are unambiguous. An imperative can keep its understood reader subject, and a sentence does not need an object when its verb or meaning does not require one. Use articles and demonstratives where standard English and the intended specificity require them. Spell out contractions. Permit conventional fragments in headings, labels, tables, diagrams, CLI syntax, logs, source code, and other constrained content when context supplies the omitted grammar. Preserve quotations, externally controlled strings, and machine-significant text exactly."
+      "design_intent": "In controlled prose, include all grammatically and semantically necessary words so that actors, actions, objects, conditions, and referents are unambiguous. An imperative can keep its understood reader subject, and a sentence does not need an object when its verb or meaning does not require one. Use articles and demonstratives where standard English and the intended specificity require them. Retain the conjunction that when it clarifies a subordinate-clause boundary or helps international comprehension; do not insert it mechanically. Spell out contractions. Permit conventional fragments in headings, labels, tables, diagrams, CLI syntax, logs, source code, and other constrained content when context supplies the omitted grammar. Preserve quotations, externally controlled strings, and machine-significant text exactly."
     },
     {
       "id": "ITSTE-R-0012",
@@ -254,7 +256,9 @@
       "status": "planned",
       "source_block_ids": [
         "4.4",
-        "6.2"
+        "6.2",
+        "GR-3",
+        "GR-4"
       ],
       "candidate_domains": [
         "general",
@@ -270,7 +274,7 @@
         "support-troubleshooting",
         "ai-automation"
       ],
-      "design_intent": "Use a clear transition when readers must understand sequence, contrast, cause, result, or another relationship between sentences. Reuse the same canonical key terms as anchors when they help readers connect related information across sentences or independently retrieved chunks. Do not replace a term with a synonym merely for variety, but do not add a connector or mechanical repetition when order and context already make the relationship clear. Prefer an explicit noun phrase to this, these, or another demonstrative when more than one antecedent is possible."
+      "design_intent": "Use a clear transition when readers must understand sequence, contrast, cause, result, or another relationship between sentences. Reuse the same canonical key terms as anchors when they help readers connect related information across sentences or independently retrieved chunks. Do not replace a term with a synonym merely for variety, but do not add a connector or mechanical repetition when order and context already make the relationship clear. Prefer an explicit noun phrase to this, these, or another demonstrative when more than one antecedent is possible. Use pronouns only when the intended referent is clear in the independently readable unit; repeat the actual noun, action, state, or condition when ambiguity remains, especially after a prohibition or in a risk explanation. Do not import the ASD pronoun inventory as the IT-STE vocabulary or guess a referent that the source does not establish."
     },
     {
       "id": "ITSTE-R-0014",
@@ -523,6 +527,45 @@
         "general"
       ],
       "design_intent": "Use the same authoritative terms and consistent sentence patterns for equivalent instructions or descriptions when meaning and context match. Apply terminology consistency through ITSTE-R-0003 and reuse reviewed wording or templates instead of introducing stylistic synonyms. Do not erase differences in actors, conditions, quantities, scope, timing, or effects merely to make sentences look alike. Preserve externally controlled interface text and machine-significant literals exactly. Keep descriptive text coherent as a whole rather than repeating a procedural template mechanically."
+    },
+    {
+      "id": "ITSTE-R-0029",
+      "working_title": "Make grammatical relationships explicit",
+      "status": "planned",
+      "source_block_ids": [
+        "GR-2",
+        "GR-8"
+      ],
+      "candidate_domains": [
+        "general"
+      ],
+      "design_intent": "Make the relationship between an action and its modifiers unambiguous. When with can mean association, accompaniment, means, or a condition, state the intended relationship explicitly while retaining the primary action verb. Put a prerequisite or condition first consistently with ITSTE-R-0016. Permit a grammatically correct possessive when ownership or association is clear; rewrite confusing possessive chains with an explicit noun phrase or of construction. Do not ban with, possessives, or apostrophes universally. Preserve externally controlled text, code, paths, and other machine-significant literals exactly. If the source relationship is unclear, obtain clarification rather than choosing an unsupported interpretation."
+    },
+    {
+      "id": "ITSTE-R-0030",
+      "working_title": "Prefer clear English to Latin abbreviations",
+      "status": "planned",
+      "source_block_ids": [
+        "GR-6"
+      ],
+      "candidate_domains": [
+        "general"
+      ],
+      "design_intent": "Prefer clear English phrases such as for example and that is to unfamiliar Latin abbreviations in controlled prose. Preserve the difference between illustrative examples, a restatement or definition, and an open-ended list. Omit an unnecessary abbreviation only when no meaning or scope is lost. Do not use and so on or etc. in place of a complete list of required actions, prerequisites, or permitted values. Preserve quotations, externally controlled strings, and machine-significant text exactly."
+    },
+    {
+      "id": "ITSTE-R-0031",
+      "working_title": "Use neutral and respectful language",
+      "status": "planned",
+      "source_block_ids": [
+        "GR-7"
+      ],
+      "candidate_domains": [
+        "general",
+        "software-documentation",
+        "user-interface"
+      ],
+      "design_intent": "Use neutral, respectful, and non-discriminatory language for people and roles, following applicable accessibility and inclusion guidance. Avoid unsupported assumptions about gender, ability, or personal characteristics, and use a person's known pronouns correctly. Prefer role-based terms, direct address, or singular they when a person's gender is unknown or irrelevant. Mention personal characteristics only when relevant to accurate communication; do not impose a blanket ban on gendered words or personal pronouns. Preserve quotations, proper names, authoritative interface terms, and machine-significant literals exactly. Where neutral explanatory terminology differs from an external term, document the mapping rather than silently renaming the external element."
     }
   ],
   "rights": {

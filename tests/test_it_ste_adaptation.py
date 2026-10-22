@@ -260,7 +260,10 @@ class AdaptationPlanTests(unittest.TestCase):
             for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
         }
         self.assertEqual(
-            targets["ITSTE-R-0011"]["source_block_ids"],
+            [
+                source_id for source_id in targets["ITSTE-R-0011"]["source_block_ids"]
+                if source_id.startswith("4.")
+            ],
             ["4.2", "4.5"],
         )
         clarity_intent = targets["ITSTE-R-0011"]["design_intent"]
@@ -389,7 +392,10 @@ class AdaptationPlanTests(unittest.TestCase):
             ["4.1", "5.1", "6.3"],
         )
         self.assertEqual(
-            targets["ITSTE-R-0013"]["source_block_ids"],
+            [
+                source_id for source_id in targets["ITSTE-R-0013"]["source_block_ids"]
+                if not source_id.startswith("GR-")
+            ],
             ["4.4", "6.2"],
         )
         self.assertEqual(
@@ -571,7 +577,10 @@ class AdaptationPlanTests(unittest.TestCase):
             self.assertIn(source_id, targets[target_id]["source_block_ids"])
             self.assertEqual(targets[target_id]["status"], "planned")
         self.assertEqual(
-            targets["ITSTE-R-0002"]["source_block_ids"],
+            [
+                source_id for source_id in targets["ITSTE-R-0002"]["source_block_ids"]
+                if not source_id.startswith("GR-")
+            ],
             ["1.2", "1.3", "1.4", "1.7", "1.13", "3.1", "9.2"],
         )
         required_clauses = {
@@ -600,6 +609,74 @@ class AdaptationPlanTests(unittest.TestCase):
                 "Do not erase differences in actors, conditions, quantities, scope, timing, or effects",
                 "Preserve externally controlled interface text and machine-significant literals exactly",
                 "rather than repeating a procedural template mechanically",
+            ),
+        }
+        for target_id, clauses in required_clauses.items():
+            for clause in clauses:
+                self.assertIn(clause, targets[target_id]["design_intent"])
+
+    def test_general_recommendations_complete_the_adaptation_map(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        guidance = [record for record in records if record["source"]["kind"] == "guidance"]
+        expected = {
+            "GR-1": "ITSTE-R-0011",
+            "GR-2": "ITSTE-R-0029",
+            "GR-3": "ITSTE-R-0013",
+            "GR-4": "ITSTE-R-0013",
+            "GR-5": "ITSTE-R-0002",
+            "GR-6": "ITSTE-R-0030",
+            "GR-7": "ITSTE-R-0031",
+            "GR-8": "ITSTE-R-0029",
+        }
+        self.assertEqual(len(guidance), 8)
+        self.assertEqual(
+            {record["source"]["block_id"] for record in guidance}, set(expected)
+        )
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        self.assertTrue(all(record["assessment"]["status"] == "reviewed" for record in records))
+        self.assertTrue(all(target["status"] == "planned" for target in targets.values()))
+        for record in guidance:
+            source_id = record["source"]["block_id"]
+            target_id = expected[source_id]
+            self.assertEqual(record["assessment"]["applicability"], "adapt")
+            self.assertEqual(record["target_rule_ids"], [target_id])
+            self.assertIn(source_id, targets[target_id]["source_block_ids"])
+        required_clauses = {
+            "ITSTE-R-0011": (
+                "Retain the conjunction that when it clarifies a subordinate-clause boundary",
+                "do not insert it mechanically",
+            ),
+            "ITSTE-R-0013": (
+                "intended referent is clear in the independently readable unit",
+                "repeat the actual noun, action, state, or condition",
+                "Do not import the ASD pronoun inventory",
+                "or guess a referent that the source does not establish",
+            ),
+            "ITSTE-R-0002": (
+                "Check suspected false friends against the applicable English definition and technical context",
+                "Optional translations must preserve the authoritative English meaning",
+            ),
+            "ITSTE-R-0029": (
+                "retaining the primary action verb",
+                "Put a prerequisite or condition first",
+                "Permit a grammatically correct possessive",
+                "Do not ban with, possessives, or apostrophes universally",
+                "obtain clarification rather than choosing an unsupported interpretation",
+            ),
+            "ITSTE-R-0030": (
+                "Preserve the difference between illustrative examples, a restatement or definition, and an open-ended list",
+                "only when no meaning or scope is lost",
+                "Do not use and so on or etc. in place of a complete list",
+                "Preserve quotations, externally controlled strings, and machine-significant text exactly",
+            ),
+            "ITSTE-R-0031": (
+                "use a person's known pronouns correctly",
+                "do not impose a blanket ban on gendered words or personal pronouns",
+                "Preserve quotations, proper names, authoritative interface terms, and machine-significant literals exactly",
+                "document the mapping rather than silently renaming the external element",
             ),
         }
         for target_id, clauses in required_clauses.items():
