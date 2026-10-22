@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 102,
-    "needs-review": 169,
+    "allowed": 103,
+    "needs-review": 168,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -42434,13 +42434,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: design; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Plan software components and their interactions to satisfy stated requirements\.
 
 Domains: software\-documentation
 
-Rationale: The isolated source replacement does not identify whether planning or intended function is meant\; proposed software sense needs review\.
+Rationale: Authenticated PDF visual inspection confirms that design \(v\) is row 1 with HAVE \(v\) as the source alternative\. Carnegie Mellon SEI describes software architecture as design decisions about system structure and behavior\, including architectural elements and their interrelationships\; Microsoft\'s Azure Architecture Center ties application design to requirements\, components\, patterns\, and trade\-offs\. This supports the bounded software\-planning sense\, not every use of design\. See \`docs\/it\-ste\-research\/W1\-D\-P214\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -42474,9 +42474,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The isolated source replacement does not identify whether planning or intended function is meant; proposed software sense needs review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 214 (printed page 2-1-D8). Findings: row 1 is design (v), with HAVE (v) as the source alternative; desired (adj) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 214,
     "printed_page": "2-1-D8",
@@ -167544,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b9564d8bb987b3b2c9de8b68729f513fd3d78332cec47b963444e5c59efb5457`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `28942d25faf8abaee4d8d371d03ee49f9bc17c631d0ed88f5bfad55448ac8a94`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `b4eb237f5b9b3d586e3f0401226183bc6b5a5c97859137abadf41905241268db`
 
