@@ -71,12 +71,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "A numeric reduction applied to a counter.",
       "domains": [
         "source-code"
       ],
-      "rationale": "The extracted alternative suggests an increase, the opposite operation; verify the row before settling terminology.",
+      "rationale": "Authenticated PDF visual inspection confirms that decrement (n) is row 2 with the INCREMENT (n) alternative; the alternative is a contrasting operation, not a replacement meaning for decrement. MDN's inspected JavaScript reference defines decrement as subtracting one from an operand and increment as the opposite direction. This supports the bounded numeric counter sense. See `docs/it-ste-research/W1-D-P210.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "decrease amount",
         "subtraction step"
@@ -109,9 +109,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 210 (printed page 2-1-D4). Findings: row 2 is decrement (n), and INCREMENT (n) is its contrasting alternative.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

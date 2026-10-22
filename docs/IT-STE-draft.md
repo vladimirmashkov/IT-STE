@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 101,
-    "needs-review": 170,
+    "allowed": 102,
+    "needs-review": 169,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -40154,13 +40154,13 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: decrement; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: A numeric reduction applied to a counter\.
 
 Domains: source\-code
 
-Rationale: The extracted alternative suggests an increase\, the opposite operation\; verify the row before settling terminology\.
+Rationale: Authenticated PDF visual inspection confirms that decrement \(n\) is row 2 with the INCREMENT \(n\) alternative\; the alternative is a contrasting operation\, not a replacement meaning for decrement\. MDN\'s inspected JavaScript reference defines decrement as subtracting one from an operand and increment as the opposite direction\. This supports the bounded numeric counter sense\. See \`docs\/it\-ste\-research\/W1\-D\-P210\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -40194,9 +40194,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted alternative suggests an increase, the opposite operation; verify the row before settling terminology."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 210 (printed page 2-1-D4). Findings: row 2 is decrement (n), and INCREMENT (n) is its contrasting alternative.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 210,
     "printed_page": "2-1-D4",
@@ -167544,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b9564d8bb987b3b2c9de8b68729f513fd3d78332cec47b963444e5c59efb5457`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `b4eb237f5b9b3d586e3f0401226183bc6b5a5c97859137abadf41905241268db`
 
