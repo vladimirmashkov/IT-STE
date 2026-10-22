@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 153,
+    "needs-review": 151,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1376
+    "restricted": 1378
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -51566,13 +51566,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: ELECTRONIC; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Implemented with electronic components\, describing identified hardware\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The cell repeats the opening of the next adverb definition\; source boundaries need review\.
+Rationale: Visual inspection confirms that ELECTRONIC \(adj\) is a distinct row from ELECTRONICALLY \(adv\)\, despite the mechanical overlap warning\. ITU\-T K\.136 \(11\/22\) is an in\-force Recommendation for electromagnetic compatibility requirements for radio telecommunication equipment\; keep this draft sense for identified electronic components or hardware\, not a generic software policy or safety claim\. This is a restricted draft sense\, not vocabulary approval\; see docs\/it\-ste\-research\/W1\-D\-P230\.md\.
 
 Contextual alternatives:
 
@@ -51606,9 +51606,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The cell repeats the opening of the next adverb definition; source boundaries need review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 230 -l 230 -png -r 180 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 230 (2-1-E4), row 7 is ELECTRONIC (adj) with its own Related to or operated by electronics meaning and hardware example. Horizontal rules separate it from row 8; the repeated text in the mechanical extraction is a boundary artifact. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 230,
     "printed_page": "2-1-E4",
@@ -51639,13 +51639,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: ELECTRONICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: By an identified electronic mechanism rather than a manual or paper process\.
 
 Domains: user\-interface
 
-Rationale: Wrapped\-headword warning requires review\; electronic does not mean encrypted or signed\.
+Rationale: The authenticated PDF confirms ELECTRONICALLY \(adv\) as a separate wrapped row\. NIST SP 800\-63 Rev\. 4 describes digital identity\, authentication\, and federation as electronic mechanisms and protocols\; keep this draft sense for a named electronic channel or mechanism\, and do not infer encryption or signatures from electronic transmission alone\. This is a restricted draft sense\, not vocabulary approval\; see docs\/it\-ste\-research\/W1\-D\-P230\.md\.
 
 Contextual alternatives:
 
@@ -51679,9 +51679,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 230 -l 230 -png -r 180 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 230 (2-1-E4), row 8 is ELECTRONICALLY (adv), with the headword wrapped over two lines and its own Related to or operated by electronics meaning and example. Horizontal rules bound the row below ELECTRONIC (adj); the wrapped-headword warning is a display artifact. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 230,
     "printed_page": "2-1-E4",
@@ -167550,7 +167550,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `dae8a3c05877aa6846527c01060f4f6ab51addb8605fdbca9bde71cf736c3e9c`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `afa7ae9e3a6b6eb1cb8fb8ea3da50f337b7353c76499a9a37cb53ac95de2f7dc`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `1b7558717a08fe4ea4de180eaab85e653738eaf124670468ff6740c55fc6ff5a`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `dfe541008eeca78fcad17b1e89a679554a9a04a58617d1635a08e72f3f61085c`
 
