@@ -371,12 +371,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "Determine the number of specified items or events, provisionally.",
       "domains": [
         "data-storage"
       ],
-      "rationale": "The meaning column includes the opening of the following direction definition; source boundaries remain unresolved.",
+      "rationale": "Authenticated PDF visual inspection confirms that COUNT (v) is row 1 and ends before the separate COUNTERCLOCK-WISE (adv) row; its meaning is only to add items or occurrences to get a total. PostgreSQL defines count as computing the number of input rows, supporting the bounded data-storage sense. The draft does not imply a quality judgment, threshold, or unspecified population. See `docs/it-ste-research/W1-D-P205.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "total the matching records",
         "determine the event count"
@@ -409,14 +409,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 205 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: COUNT (v) is row 1 with its own meaning and example; the following COUNTERCLOCK-WISE row begins after a horizontal boundary. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -433,12 +432,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In the direction opposite a clock hand from a stated viewpoint, provisionally.",
+      "it_disposition": "allowed",
+      "it_definition": "In the direction opposite to clockwise from a stated viewpoint, provisionally.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped source spelling COUNTERCLOCK- WISE is preserved, not repaired; layout and typography remain unchecked.",
+      "rationale": "Authenticated PDF visual inspection confirms that COUNTERCLOCK-WISE (adv) is row 2, with the source line-break hyphen and wrapped spelling retained; its meaning and control-knob example are separate from COUNT. The draft direction sense is bounded by a stated viewpoint. The WHATWG Canvas API uses a `counterclockwise` flag for the opposite arc direction, supporting the technical distinction without defining physical control procedures. See `docs/it-ste-research/W1-D-P205.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "rotate opposite the clock-hand direction, viewed from the front",
         "turn left from the stated viewpoint"
@@ -471,14 +470,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 205 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: COUNTERCLOCK-WISE (adv) is row 2; its source line-break hyphen and wrapped spelling remain within one ruled row. Historical extraction warning remains unchanged; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

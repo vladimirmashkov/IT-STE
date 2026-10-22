@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 93,
-    "needs-review": 178,
+    "allowed": 95,
+    "needs-review": 176,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -37532,13 +37532,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: COUNT; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Determine the number of specified items or events\, provisionally\.
 
 Domains: data\-storage
 
-Rationale: The meaning column includes the opening of the following direction definition\; source boundaries remain unresolved\.
+Rationale: Authenticated PDF visual inspection confirms that COUNT \(v\) is row 1 and ends before the separate COUNTERCLOCK\-WISE \(adv\) row\; its meaning is only to add items or occurrences to get a total\. PostgreSQL defines count as computing the number of input rows\, supporting the bounded data\-storage sense\. The draft does not imply a quality judgment\, threshold\, or unspecified population\. See \`docs\/it\-ste\-research\/W1\-D\-P205\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -37572,9 +37572,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The meaning column includes the opening of the following counterclockwise definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 205 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: COUNT (v) is row 1 with its own meaning and example; the following COUNTERCLOCK-WISE row begins after a horizontal boundary. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 205,
     "printed_page": "2-1-C23",
@@ -37584,8 +37584,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P205-001",
@@ -37606,13 +37605,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: COUNTERCLOCK\- WISE; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: In the direction opposite a clock hand from a stated viewpoint\, provisionally\.
+Definition: In the direction opposite to clockwise from a stated viewpoint\, provisionally\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped source spelling COUNTERCLOCK\- WISE is preserved\, not repaired\; layout and typography remain unchecked\.
+Rationale: Authenticated PDF visual inspection confirms that COUNTERCLOCK\-WISE \(adv\) is row 2\, with the source line\-break hyphen and wrapped spelling retained\; its meaning and control\-knob example are separate from COUNT\. The draft direction sense is bounded by a stated viewpoint\. The WHATWG Canvas API uses a \`counterclockwise\` flag for the opposite arc direction\, supporting the technical distinction without defining physical control procedures\. See \`docs\/it\-ste\-research\/W1\-D\-P205\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -37646,9 +37645,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 205 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: COUNTERCLOCK-WISE (adv) is row 2; its source line-break hyphen and wrapped spelling remain within one ruled row. Historical extraction warning remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 205,
     "printed_page": "2-1-C23",
@@ -37658,8 +37657,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P205-002",
@@ -167554,7 +167552,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `dd1152da4fc1ba49d11016180faefc2b54bc3353e4e9df28e2c659ec874c1d72`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `3dcfbc1943a33faa4b1f44e6c1794e54bad4749316e45efea766c7c20de874b5`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 
