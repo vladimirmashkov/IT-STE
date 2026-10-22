@@ -960,12 +960,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Occur after and as a result of an identified event.",
       "domains": [
         "support-troubleshooting"
       ],
-      "rationale": "The isolated replacement cause reverses grammatical roles; source construction needs review.",
+      "rationale": "The authenticated PDF confirms ensue (v) is a distinct row from ensure (v). Google SRE distinguishes a system symptom from its cause, and RFC 9110 describes an origin server rejecting a request when a required condition is not met; keep this draft verb restricted to an identified event followed by its result, not an instruction that causes the result. See docs/it-ste-research/W1-D-P233.md.",
       "permitted_contextual_alternatives": [
         "occur as a result",
         "follow"
@@ -998,9 +998,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 233 -l 233 -png -r 180 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 233 (2-1-E7), row 2 is ensue (v), with CAUSE (v) as its alternative and the incorrect-installation/damage example. Horizontal rules separate it from ensure (v), which starts the next row. The mechanical actor/grammar ambiguity remains preserved, and this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 150,
+    "needs-review": 149,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1379
+    "restricted": 1380
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -53111,13 +53111,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: ensue; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Occur after and as a result of an identified event\.
 
 Domains: support\-troubleshooting
 
-Rationale: The isolated replacement cause reverses grammatical roles\; source construction needs review\.
+Rationale: The authenticated PDF confirms ensue \(v\) is a distinct row from ensure \(v\)\. Google SRE distinguishes a system symptom from its cause\, and RFC 9110 describes an origin server rejecting a request when a required condition is not met\; keep this draft verb restricted to an identified event followed by its result\, not an instruction that causes the result\. See docs\/it\-ste\-research\/W1\-D\-P233\.md\.
 
 Contextual alternatives:
 
@@ -53151,9 +53151,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The isolated replacement cause reverses grammatical roles; source construction needs review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 233 -l 233 -png -r 180 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 233 (2-1-E7), row 2 is ensue (v), with CAUSE (v) as its alternative and the incorrect-installation/damage example. Horizontal rules separate it from ensure (v), which starts the next row. The mechanical actor/grammar ambiguity remains preserved, and this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 233,
     "printed_page": "2-1-E7",
@@ -167552,7 +167552,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `1b7558717a08fe4ea4de180eaab85e653738eaf124670468ff6740c55fc6ff5a`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `f606ab2c9c020469387c6ce84171b7fd1febbe35d61f6a5b4c595755fdfc1762`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `7a57946b872c6f13395df2c14f9574440f6f862f58c4359aaec334b53fc70ac9`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `4ca1caea277013756650d1ab969a05d9624d291d4d30bf36418c620205172b97`
 
