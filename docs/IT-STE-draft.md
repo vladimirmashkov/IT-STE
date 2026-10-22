@@ -39761,7 +39761,7 @@ Definition: A chosen outcome reached through an identified evaluation\, provisio
 
 Domains: ai\-automation, logs\-events
 
-Rationale: The meaning column appends REMOVE from the following decontamination row\, leaving a source boundary unresolved\.
+Rationale: Authenticated PDF visual inspection confirms that DECISION \(n\) is row 4 and that the appended REMOVE fragment belongs to the following decontamination row\. The source boundary is resolved\, but the proposed AI\/logs decision sense needs substantive IT evidence and scope review\. See \`docs\/it\-ste\-research\/W1\-D\-P209\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -39795,9 +39795,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The definition appends REMOVE, also the opening of the following decontamination alternative."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 209 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: DECISION (n) is row 4; `The result after you think about a problem` is the complete definition, and REMOVE begins the following row's alternative. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 209,
     "printed_page": "2-1-D3",
@@ -39807,8 +39807,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P209-004",
@@ -39835,7 +39834,7 @@ Definition: Removal of unwanted physical substances under an identified maintena
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped\-headword warning and preceding REMOVE fragment require source review\; malware removal is not adopted as the physical source sense\.
+Rationale: Authenticated PDF visual inspection confirms that decontamination \(n\) is row 5 with the wrapped headword and the alternatives REMOVE CONTAMINATION and CLEAN \(v\)\; the preceding REMOVE fragment is part of this row\, not the DECISION definition\. The physical source sense is bounded\, but the cloud\-infrastructure scope and possible malware\/data\-sanitization senses need substantive evidence\. See \`docs\/it\-ste\-research\/W1\-D\-P209\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -39869,9 +39868,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 209 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: decontamination (n) is row 5 with a wrapped headword; REMOVE CONTAMINATION and CLEAN (v) are alternatives in that row. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 209,
     "printed_page": "2-1-D3",
@@ -39881,8 +39880,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P209-005",
@@ -167544,7 +167542,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `ea68ad8924791944feed5649c3bb72cfa9432696ca460cb71f2ff3d8d1cc200a`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 
