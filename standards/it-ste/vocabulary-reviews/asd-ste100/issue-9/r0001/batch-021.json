@@ -1319,12 +1319,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "At a position nearer a defined front than a named reference object.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped-headword warning requires source review; the comparison object is essential.",
+      "rationale": "Visual inspection of physical page 255 confirms that `FORWARD OF (prep)` is row 10 between `FORWARD (adv)` and the following dictionary row; its source meaning is `At a position nearer to the front`. The wrapped headword is a layout warning from extraction, not a change to the source spelling or POS. RFC 791 and RFC 9110 use forwarding for distinct network operations, so retain this relative physical-location sense only when the front and reference object are defined. See `docs/it-ste-research/W1-D-P255.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "in front of",
         "nearer the front than"
@@ -1357,9 +1357,9 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 255 -l 255 -png -r 180 and visually inspected physical page 255. Findings: row 10 is bounded by horizontal rules after FORWARD (adv) and before the following dictionary row, reads FORWARD OF (prep), and contains `At a position nearer to the front`; the wrapped two-line headword is visually confirmed.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

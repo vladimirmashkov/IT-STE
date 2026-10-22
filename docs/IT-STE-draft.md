@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 141,
+    "needs-review": 140,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1388
+    "restricted": 1389
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -65433,13 +65433,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: FORWARD OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: At a position nearer a defined front than a named reference object\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires source review\; the comparison object is essential\.
+Rationale: Visual inspection of physical page 255 confirms that \`FORWARD OF \(prep\)\` is row 10 between \`FORWARD \(adv\)\` and the following dictionary row\; its source meaning is \`At a position nearer to the front\`\. The wrapped headword is a layout warning from extraction\, not a change to the source spelling or POS\. RFC 791 and RFC 9110 use forwarding for distinct network operations\, so retain this relative physical\-location sense only when the front and reference object are defined\. See \`docs\/it\-ste\-research\/W1\-D\-P255\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -65473,9 +65473,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 255 -l 255 -png -r 180 and visually inspected physical page 255. Findings: row 10 is bounded by horizontal rules after FORWARD (adv) and before the following dictionary row, reads FORWARD OF (prep), and contains `At a position nearer to the front`; the wrapped two-line headword is visually confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 255,
     "printed_page": "2-1-F11",
@@ -167560,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `e0d65f342d6cee5f6f54238adcaadfe60c8a624b81c32b6a686b006349683413`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `d8f535c5018bcd491a95a49f37d59ce4be0990b40deda312513362c279c990ad`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-022.json` SHA-256: `f1833432fe354f67cda5cb69850c5af022044b7c4833a78f2a3e76538e6ffa4b`
 
