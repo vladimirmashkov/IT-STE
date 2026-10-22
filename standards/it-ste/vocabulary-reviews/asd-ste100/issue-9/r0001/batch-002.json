@@ -979,21 +979,21 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally describes consecutive elements in a declared IT ordering with no intervening element in that ordering.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes consecutive elements in an explicitly identified IT ordering, with no intervening element in that ordering.",
       "domains": [
         "data-storage",
         "source-code"
       ],
-      "rationale": "The exact adjective entry includes an unfinished phrase also present at the start of the following preposition entry. That observed overlap prevents a settled source interpretation; the proposed IT ordering sense remains provisional.",
+      "rationale": "Visual inspection resolves the adjacent-row overlap; the authenticated derivative remains unchanged. The proposed IT adjective is limited to a declared logical ordering, such as array index order. Logical adjacency does not imply contiguous memory, shared disk blocks, or physical proximity.",
       "permitted_contextual_alternatives": [
         "consecutive array elements, for index order",
-        "neighboring cells, with the grid relation defined"
+        "elements at indexes i and i + 1, for an explicit pair"
       ],
       "examples": {
         "positive": {
           "text": "Compare adjacent array elements at indexes i and i + 1.",
-          "explanation": "Provisionally fixes adjacency to index order rather than unspecified physical memory."
+          "explanation": "Fixes adjacency to array index order rather than physical memory."
         },
         "problematic": {
           "text": "Adjacent database records always occupy the same disk block.",
@@ -1018,14 +1018,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 156 -l 156 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 156 (2-1-A8), row 5 is the uppercase adjective ADJACENT. Its meaning ends above the horizontal boundary with row 6. The trailing phrase in the derivative belongs only to row 6; the adjective and preposition are distinct entries.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify the cited physical PDF page and row boundaries before resolving the source sense"
+          "original example review"
         ]
       }
     },
@@ -1042,21 +1041,21 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally relates one IT element to its immediate neighbor in a specified order or layout.",
+      "it_disposition": "restricted",
+      "it_definition": "Relates one IT element to an immediate neighbor in an explicitly specified ordering or layout.",
       "domains": [
         "user-interface",
         "data-storage"
       ],
-      "rationale": "The source flags a wrapped headword, and the preceding adjective entry appears to include this row's opening phrase. Preserve the extracted phrase and defer the decision until the page layout is verified.",
+      "rationale": "Visual inspection confirms a separate preposition entry and resolves the wrapped-headword and boundary questions without changing raw source metadata. The proposed IT relation requires a declared order or layout; name the direction if the instruction depends on it. Adjacency alone specifies neither access permissions nor a shared storage location.",
       "permitted_contextual_alternatives": [
-        "immediately before, for a declared order",
-        "in the next grid cell, for a declared layout"
+        "immediately before, when that direction in the declared order is intended",
+        "in the cell immediately to the right of, when that grid direction is intended"
       ],
       "examples": {
         "positive": {
-          "text": "In the numbered grid, cell 8 is adjacent to cell 9 in the same row.",
-          "explanation": "Provisionally supplies a layout and a specific neighboring pair."
+          "text": "In the grid, the cell in row 2, column 3 is adjacent to the cell in row 2, column 4.",
+          "explanation": "Identifies both cells and the layout; the coordinates establish horizontal adjacency."
         },
         "problematic": {
           "text": "Store the secret adjacent to the application.",
@@ -1083,14 +1082,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 156 -l 156 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 156 (2-1-A8), row 6 displays ADJACENT TO together on one line and (prep) below it. Its meaning starts below the horizontal boundary with row 5. The wrapped-headword warning does not indicate a missing word or a hyphenated spelling; the derivative duplicates this row opening in row 5.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify the cited physical PDF page and row boundaries before resolving the source sense"
+          "original example review"
         ]
       }
     },
@@ -1468,25 +1466,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisional noun for a measured forward displacement of an IT cursor or position within a defined ordering.",
+      "it_disposition": "prohibited",
+      "it_definition": "A noun for forward movement of an IT cursor or position in a declared traversal order.",
       "domains": [
         "source-code",
         "software-documentation"
       ],
-      "rationale": "The noun entry supplies only an adjective alternative, without enough context to distinguish movement, a forward setting, or another noun sense. Keep this narrow IT proposal unresolved rather than infer a source definition.",
+      "rationale": "The full source examples and visual row check resolve the noun as forward movement of a physical control, not a setting or resulting location. For the analogous IT movement sense, prefer an explicit movement or displacement expression with direction and unit instead of the noun advance. This draft exclusion is an independent IT clarity decision, not inherited from source capitalization, and does not cover the verb, improvement, payment, or literal API identifiers.",
       "permitted_contextual_alternatives": [
-        "cursor displacement of one element, for a measured movement",
-        "next position, for the resulting location"
+        "forward cursor movement, with the traversal order specified",
+        "cursor displacement of one element in the forward iteration direction, for that measured change"
       ],
       "examples": {
         "positive": {
-          "text": "The cursor displacement is one element in the iteration order.",
-          "explanation": "Uses a precise provisional replacement without asserting a settled meaning for the source noun."
+          "text": "The cursor moves forward by one element in the iteration order.",
+          "explanation": "Names the moving object, direction, order, and unit instead of the ambiguous noun."
         },
         "problematic": {
-          "text": "Apply an advance to the configuration.",
-          "explanation": "Neither the meaning of the noun nor a measurable change is specified."
+          "text": "Apply an advance to the cursor.",
+          "explanation": "The noun does not specify the direction, unit, or size of the intended movement."
         }
       },
       "evidence": {
@@ -1507,14 +1505,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 157 -l 157 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 157 (2-1-A9), row 3 is advance (n), with an adjective alternative and paired examples about forward movement of a physical control. These examples establish movement, not a resulting position or a configuration setting. The following advance (v) is separated by a horizontal row boundary. Additional bounded retrieval: python3 tools/asd_ste100_local.py entry D-P157-003 --full --compact-json; examples inspected to resolve the noun context.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify the cited physical PDF page and row boundaries before resolving the source sense"
+          "original example review"
         ]
       }
     },
@@ -2508,11 +2505,14 @@
       "local_pdf_hash_verified": true
     },
     "metadata_inspection": "Python standard-library sqlite3 opened with mode=ro; selected only id, headword, pos, approval, pdf_page, printed_page, and warnings, ordered by physical page and numeric row suffix, LIMIT 40 OFFSET 40. A second bounded ID-only query supplied the exact-entry retrieval commands; the same metadata-only selection supplied generation locators. No complete extraction read.",
-    "semantic_retrieval": "All 40 selected exact IDs were individually retrieved through python3 tools/asd_ste100_local.py entry ID --compact-json without --full. No word search or source examples were retrieved.",
+    "semantic_retrieval": "All 40 selected exact IDs were individually retrieved through python3 tools/asd_ste100_local.py entry ID --compact-json without --full. No word search or source examples were retrieved. W1 follow-up: retrieved D-P156-005 and D-P156-006 exactly, and D-P157-003 with --full to inspect the noun context; source examples were inspected, not retained in IT wording.",
     "pdf_checks": {
-      "physical_pages": [],
-      "method": null,
-      "result": "No PDF layout extraction or visual verification performed. Doctor authenticated the local PDF hash only; that is not semantic or visual verification. Ambiguous entries remain needs-review.",
+      "physical_pages": [
+        156,
+        157
+      ],
+      "method": "Visual inspection of page-specific pdftoppm PNG renderings of authenticated source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; row-specific findings are recorded in the three decisions.",
+      "result": "W1 follow-up resolves D-P156-005, D-P156-006, and D-P157-003. This is not visual verification of other rows or approval of IT senses. Historical mechanical ambiguities and raw warnings are retained.",
       "source_examples_retained": false
     },
     "initial_worktree": "Pre-existing unstaged modifications in tools/it_ste_vocabulary.py and tests/test_it_ste_vocabulary.py; neither file was changed for this batch. No staged changes at initial inspection.",

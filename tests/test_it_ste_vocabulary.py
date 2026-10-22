@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 90, "restricted": 1342, "prohibited": 401,
-                             "not-applicable": 146, "needs-review": 217},
+            "dispositions": {"allowed": 90, "restricted": 1344, "prohibited": 402,
+                             "not-applicable": 146, "needs-review": 214},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -70,6 +70,36 @@ class VocabularyTests(unittest.TestCase):
         self.assertIn("test receiver", by_id["D-P252-011"]["examples"]["positive"]["text"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
+
+    def test_batch_002_w1_resolutions_preserve_evidence(self):
+        batches, _ = vocabulary.checked_all()
+        batch = next(b for b in batches if b["batch_id"] == "002")
+        by_id = {d["entry_id"]: d for d in batch["decisions"]}
+        for identifier, disposition, page in (
+            ("D-P156-005", "restricted", 156),
+            ("D-P156-006", "restricted", 156),
+            ("D-P157-003", "prohibited", 157),
+        ):
+            with self.subTest(entry=identifier):
+                decision = by_id[identifier]
+                self.assertEqual(decision["it_disposition"], disposition)
+                evidence = decision["evidence"]
+                self.assertEqual(evidence["physical_pdf_page"], page)
+                self.assertTrue(evidence["mechanical_ambiguities"])
+                self.assertEqual(evidence["source_interpretation_status"],
+                                 "mechanically-extracted-unreviewed")
+                layout = evidence["pdf_layout_check"]
+                self.assertTrue(layout["performed"])
+                self.assertTrue(layout["visual_verification_performed"])
+                self.assertIn(vocabulary.adaptation.EXPECTED_SOURCE_SHA256, layout["method"])
+                self.assertIn("Findings:", layout["method"])
+                self.assertEqual(decision["status"], "draft")
+                self.assertEqual(decision["review_status"], "editorial-review-needed")
+        self.assertEqual(by_id["D-P156-006"]["evidence"]["extraction_warnings"],
+                         ["wrapped-headword"])
+        self.assertIn("--full", by_id["D-P157-003"]["evidence"]["pdf_layout_check"]["method"])
+        self.assertEqual(by_id["D-P157-003"]["part_of_speech_as_extracted"], "n")
+        self.assertIn("does not cover the verb", by_id["D-P157-003"]["rationale"])
 
     def test_no_skipped_reordered_or_duplicate_rows(self):
         for change in ("omit", "swap", "duplicate"):
