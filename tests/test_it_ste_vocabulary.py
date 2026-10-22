@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 90, "restricted": 1359, "prohibited": 402,
-                             "not-applicable": 146, "needs-review": 199},
+            "dispositions": {"allowed": 90, "restricted": 1361, "prohibited": 402,
+                             "not-applicable": 146, "needs-review": 197},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))

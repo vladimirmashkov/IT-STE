@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 199,
+    "needs-review": 197,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1359
+    "restricted": 1361
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -26991,13 +26991,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: chafed; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Physically worn by rubbing\, especially a cable covering\.
+Definition: Physically worn or damaged by rubbing\, especially the covering of a cable or wire\.
 
 Domains: procedures\-runbooks
 
-Rationale: The retrieved alternatives include RISK\, repeated in the following row\, so the boundary needs checking\.
+Rationale: The authenticated PDF confirms that chafed is a separate row mapped only to WORN\. Restrict this to observable wear or rubbing damage\, especially on cable or wire covering\; inspect\, isolate\, or replace according to the applicable procedure rather than infer safe continued use\. See \`docs\/it\-ste\-research\/W1\-D\-P187\.md\`\.
 
 Contextual alternatives:
 
@@ -27008,18 +27008,18 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Replace a cable with worn insulation according to the maintenance procedure.
+Inspect the cable for chafed insulation and replace it according to the maintenance procedure.
 ```
 
-Explanation: Uses a specific physical damage state\.
+Explanation: Names observable rubbing damage and requires the applicable inspection and replacement decision\.
 
 #### Problematic example
 
 ```
-The chafed connection is probably safe.
+The chafed cable is probably safe to use.
 ```
 
-Explanation: Neither the damage nor an electrical safety check supports continued use\.
+Explanation: Observable chafing does not justify continued use without the required inspection and disposition\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -27028,12 +27028,12 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
   "evidence": {
     "extraction_warnings": [],
     "mechanical_ambiguities": [
-      "Meaning/alternatives overlaps the following wrapped row; boundary not verified against PDF."
+      "Meaning/alternatives overlaps the following wrapped row; boundary not verified against PDF before this bounded check. Visual inspection resolved the row boundary; this historical extraction ambiguity is retained."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 187 -l 187 -png -r 160 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 187 (2-1-C5), chafed (adj) is a distinct ruled row 6 mapped only to WORN (adj); chance (by chance) is the separate following row. The row boundary and typography are verified; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 187,
     "printed_page": "2-1-C5",
@@ -27043,8 +27043,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P187-006",
@@ -27065,13 +27064,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: chance \(by chance\); POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: By an unintended coincidence rather than an established causal mechanism\.
+Definition: By accident or coincidence\, without evidence that the event was intentional or caused by a specified mechanism\.
 
 Domains: support\-troubleshooting
 
-Rationale: The wrapped phrase is flagged\; statistical probability and accidental occurrence are separate concepts\.
+Rationale: The authenticated PDF confirms two separate alternatives\: RISK \(n\) and ACCIDENTALLY \(adv\)\. Restrict this to a factual accidental or coincidental occurrence without a specified causal mechanism\; use risk for potential harm and likelihood\, and do not use by chance to close an investigation\. See \`docs\/it\-ste\-research\/W1\-D\-P187\.md\`\.
 
 Contextual alternatives:
 
@@ -27082,10 +27081,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The two failures occurred at the same time; their relationship is not established.
+The two failures occurred at the same time; do not assume that one caused the other.
 ```
 
-Explanation: Avoids asserting a causal link from coincidence\.
+Explanation: Describes a coincidence without asserting a causal mechanism\.
 
 #### Problematic example
 
@@ -27093,7 +27092,7 @@ Explanation: Avoids asserting a causal link from coincidence\.
 The failure happened by chance, so no investigation is needed.
 ```
 
-Explanation: Lack of a known cause does not establish harmless randomness\.
+Explanation: A lack of an established cause does not justify dismissing risk or stopping the investigation\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -27105,9 +27104,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 187 -l 187 -png -r 160 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 187 (2-1-C5), chance (by chance) (n) is a distinct multi-line ruled row 7 with RISK (n) and ACCIDENTALLY (adv) in separate alternative lines; CHANGE (n) is the following row. The wrapped-headword warning is retained; the row boundary and typography are verified. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 187,
     "printed_page": "2-1-C5",
@@ -27117,8 +27116,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P187-007",
@@ -167559,7 +167557,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-007.json` SHA-256: `27a9136ac7e2ed54795bcd907232b316e83f565bd161d45920fab8e97b1f97f4`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-008.json` SHA-256: `639e41a2c79b3c2235c257caeae23ebeb34f2d395b00e18f32ed276e0ae7e512`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-008.json` SHA-256: `139eb440a29a860ae0c4926763bc540db8239021c887293ef11a5dc86d4ff128`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 

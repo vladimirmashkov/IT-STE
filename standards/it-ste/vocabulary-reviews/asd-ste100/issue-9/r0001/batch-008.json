@@ -1499,24 +1499,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Physically worn by rubbing, especially a cable covering.",
+      "it_disposition": "restricted",
+      "it_definition": "Physically worn or damaged by rubbing, especially the covering of a cable or wire.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The retrieved alternatives include RISK, repeated in the following row, so the boundary needs checking.",
+      "rationale": "The authenticated PDF confirms that chafed is a separate row mapped only to WORN. Restrict this to observable wear or rubbing damage, especially on cable or wire covering; inspect, isolate, or replace according to the applicable procedure rather than infer safe continued use. See `docs/it-ste-research/W1-D-P187.md`.",
       "permitted_contextual_alternatives": [
         "worn by rubbing",
         "damaged insulation"
       ],
       "examples": {
         "positive": {
-          "text": "Replace a cable with worn insulation according to the maintenance procedure.",
-          "explanation": "Uses a specific physical damage state."
+          "text": "Inspect the cable for chafed insulation and replace it according to the maintenance procedure.",
+          "explanation": "Names observable rubbing damage and requires the applicable inspection and replacement decision."
         },
         "problematic": {
-          "text": "The chafed connection is probably safe.",
-          "explanation": "Neither the damage nor an electrical safety check supports continued use."
+          "text": "The chafed cable is probably safe to use.",
+          "explanation": "Observable chafing does not justify continued use without the required inspection and disposition."
         }
       },
       "evidence": {
@@ -1533,18 +1533,17 @@
         },
         "extraction_warnings": [],
         "mechanical_ambiguities": [
-          "Meaning/alternatives overlaps the following wrapped row; boundary not verified against PDF."
+          "Meaning/alternatives overlaps the following wrapped row; boundary not verified against PDF before this bounded check. Visual inspection resolved the row boundary; this historical extraction ambiguity is retained."
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 187 -l 187 -png -r 160 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 187 (2-1-C5), chafed (adj) is a distinct ruled row 6 mapped only to WORN (adj); chance (by chance) is the separate following row. The row boundary and typography are verified; this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
@@ -1561,24 +1560,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "By an unintended coincidence rather than an established causal mechanism.",
+      "it_disposition": "restricted",
+      "it_definition": "By accident or coincidence, without evidence that the event was intentional or caused by a specified mechanism.",
       "domains": [
         "support-troubleshooting"
       ],
-      "rationale": "The wrapped phrase is flagged; statistical probability and accidental occurrence are separate concepts.",
+      "rationale": "The authenticated PDF confirms two separate alternatives: RISK (n) and ACCIDENTALLY (adv). Restrict this to a factual accidental or coincidental occurrence without a specified causal mechanism; use risk for potential harm and likelihood, and do not use by chance to close an investigation. See `docs/it-ste-research/W1-D-P187.md`.",
       "permitted_contextual_alternatives": [
         "accidentally",
         "coincidentally"
       ],
       "examples": {
         "positive": {
-          "text": "The two failures occurred at the same time; their relationship is not established.",
-          "explanation": "Avoids asserting a causal link from coincidence."
+          "text": "The two failures occurred at the same time; do not assume that one caused the other.",
+          "explanation": "Describes a coincidence without asserting a causal mechanism."
         },
         "problematic": {
           "text": "The failure happened by chance, so no investigation is needed.",
-          "explanation": "Lack of a known cause does not establish harmless randomness."
+          "explanation": "A lack of an established cause does not justify dismissing risk or stopping the investigation."
         }
       },
       "evidence": {
@@ -1599,14 +1598,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 187 -l 187 -png -r 160 -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 187 (2-1-C5), chance (by chance) (n) is a distinct multi-line ruled row 7 with RISK (n) and ACCIDENTALLY (adv) in separate alternative lines; CHANGE (n) is the following row. The wrapped-headword warning is retained; the row boundary and typography are verified. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
