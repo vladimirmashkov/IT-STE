@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 148,
+    "needs-review": 146,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1381
+    "restricted": 1383
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -58193,13 +58193,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: expose; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Make an interface or data accessible beyond a defined boundary\.
 
 Domains: security
 
-Rationale: The isolated source replacement does not establish whether access\, damage\, or physical exposure is meant\; review the proposed IT sense\.
+Rationale: The ASD row uses \`GET \(v\)\` for obtaining access to a physical assembly\, so the source alone does not establish an IT sense\. Kubernetes documentation uses \`expose\` for making a service or application reachable through a network or external endpoint\; the bounded IT sense is therefore restricted to deliberately making a named interface or data accessible beyond a stated boundary\. NIST SP 800\-207 shows that exposure or external location does not establish authorization or trust\. See \`docs\/it\-ste\-research\/W1\-D\-P243\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -58233,9 +58233,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The isolated source replacement does not establish whether access, damage, or physical exposure is meant; review the proposed IT sense."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 243 -l 243 -png -r 180 and visually inspected physical page 243. Findings: row 1 is bounded by the header rule and the horizontal rule before EXTEND; it reads expose (v) with GET (v), with no wrapped headword or POS.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 243,
     "printed_page": "2-1-E17",
@@ -58554,13 +58554,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: EXTERNAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Situated on the outer side of a named physical object\.
 
 Domains: procedures\-runbooks
 
-Rationale: The same wording is repeated for the adjacent adverb\; review extraction boundaries\.
+Rationale: Visual inspection confirms that \`EXTERNAL \(adj\)\` is a separate row from \`EXTERNALLY \(adv\)\` and that the repeated source wording is not an extraction overlap\. The draft remains restricted to the physical outer\-side relation stated by the source\; NIST SP 800\-207 cautions that physical or network location does not by itself establish trust or authorization\. See \`docs\/it\-ste\-research\/W1\-D\-P243\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -58594,9 +58594,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The same wording is repeated for the adjacent adverb; review extraction boundaries."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 243 -l 243 -png -r 180 and visually inspected physical page 243. Findings: row 6 is bounded by horizontal rules and reads EXTERNAL (adj) with `Of, or on, the outer side`; row 7 separately begins EXTERNALLY (adv), confirming the POS and row boundary.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 243,
     "printed_page": "2-1-E17",
@@ -167556,7 +167556,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `c4f94d1ceed5d497ea2957768ee10ac1fa24b71929b0611f975ed1db120d9f12`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-019.json` SHA-256: `ad9a2e3fccf39f2b1eaee6d65e6a764de7ffc9d708bea228fb4887c1ea953ecf`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-019.json` SHA-256: `155b4e08bc06843398fea101bad060e7cd932290e97148c1d55e75503ca14ec0`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `351873d3dfa62fa8080e5f7285521b189032b1b49aa7dcde40f0e8919e59788c`
 

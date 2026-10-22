@@ -248,12 +248,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Make an interface or data accessible beyond a defined boundary.",
       "domains": [
         "security"
       ],
-      "rationale": "The isolated source replacement does not establish whether access, damage, or physical exposure is meant; review the proposed IT sense.",
+      "rationale": "The ASD row uses `GET (v)` for obtaining access to a physical assembly, so the source alone does not establish an IT sense. Kubernetes documentation uses `expose` for making a service or application reachable through a network or external endpoint; the bounded IT sense is therefore restricted to deliberately making a named interface or data accessible beyond a stated boundary. NIST SP 800-207 shows that exposure or external location does not establish authorization or trust. See `docs/it-ste-research/W1-D-P243.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "make accessible to",
         "publish to"
@@ -286,9 +286,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 243 -l 243 -png -r 180 and visually inspected physical page 243. Findings: row 1 is bounded by the header rule and the horizontal rule before EXTEND; it reads expose (v) with GET (v), with no wrapped headword or POS.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
@@ -547,12 +547,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Situated on the outer side of a named physical object.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The same wording is repeated for the adjacent adverb; review extraction boundaries.",
+      "rationale": "Visual inspection confirms that `EXTERNAL (adj)` is a separate row from `EXTERNALLY (adv)` and that the repeated source wording is not an extraction overlap. The draft remains restricted to the physical outer-side relation stated by the source; NIST SP 800-207 cautions that physical or network location does not by itself establish trust or authorization. See `docs/it-ste-research/W1-D-P243.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "outer",
         "on the outside of"
@@ -585,9 +585,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 243 -l 243 -png -r 180 and visually inspected physical page 243. Findings: row 6 is bounded by horizontal rules and reads EXTERNAL (adj) with `Of, or on, the outer side`; row 7 separately begins EXTERNALLY (adv), confirming the POS and row boundary.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
