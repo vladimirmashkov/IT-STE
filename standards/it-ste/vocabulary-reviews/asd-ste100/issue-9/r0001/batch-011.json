@@ -131,24 +131,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Following one another without an intervening item in the stated sequence, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Following one another in a stated event sequence, with no intervening item of the specified kind.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The meaning column repeats a truncated alternative; the intended row boundary needs source review.",
+      "rationale": "The authenticated PDF confirms a distinct adjective row with one meaning and one example; the repeated extracted fragment is a row-boundary artifact. Prometheus alerting requires the condition to remain active at each evaluation and deactivates it on the first unmet evaluation, supporting this bounded monitoring sense. This draft does not generalize consecutive evaluation to alert systems that use other window semantics.",
       "permitted_contextual_alternatives": [
-        "successive checks with no intervening success",
+        "successive failed checks with no intervening passing check",
         "adjacent sequence numbers"
       ],
       "examples": {
         "positive": {
           "text": "Alert after three consecutive failed checks.",
-          "explanation": "Makes the sequence and intervening-success rule interpretable."
+          "explanation": "Each check in the stated evaluation sequence fails; a passing check breaks the sequence."
         },
         "problematic": {
           "text": "Alert after consecutive problems.",
-          "explanation": "Provides neither a count nor the event stream to inspect."
+          "explanation": "Does not identify the event sequence or the condition that must be consecutive."
         }
       },
       "evidence": {
@@ -169,14 +169,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 199 -l 199 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 199 (2-1-C17), consecutive (adj) is a distinct ruled row with one ONE (TN) AFTER THE OTHER meaning and its own STE example; a horizontal boundary separates it from consecutively (adv). The mechanically extracted repeated fragment is not a second meaning for this adjective. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -193,12 +192,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In a sequence where each specified operation follows the preceding one, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "One operation after another in the stated sequence, with the preceding operation completed before the next starts.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped-headword warning requires review; a runbook must independently specify whether operations may overlap.",
+      "rationale": "The authenticated PDF confirms the wrapped headword is a complete adverb row with its own meaning and examples. Kubernetes Job documentation distinguishes requested and actual parallelism and permits multiple Pods to run at once, so this draft is limited to an explicitly stated procedure sequence and does not imply system-wide serialization.",
       "permitted_contextual_alternatives": [
         "one job after the previous job finishes",
         "in the listed order"
@@ -206,11 +205,11 @@
       "examples": {
         "positive": {
           "text": "Run the migrations consecutively, waiting for each to finish before starting the next.",
-          "explanation": "Defines the ordering and non-overlap requirement."
+          "explanation": "States the order and requires each migration to finish before the next starts."
         },
         "problematic": {
           "text": "Run the commands consecutively in parallel.",
-          "explanation": "Contradicts the proposed execution sequence."
+          "explanation": "The word parallel contradicts the explicitly stated one-after-another procedure."
         }
       },
       "evidence": {
@@ -231,14 +230,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 199 -l 199 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 199 (2-1-C17), consecutively is a distinct row below consecutive; its headword wraps over two lines, its POS is adv, and its meaning and two examples remain within the row. The wrapped-headword warning is confirmed and does not merge this row with the adjective. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

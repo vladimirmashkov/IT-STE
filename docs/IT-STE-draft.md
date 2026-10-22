@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 185,
+    "needs-review": 183,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1370
+    "restricted": 1372
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -34269,17 +34269,17 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: consecutive; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Following one another without an intervening item in the stated sequence\, provisionally\.
+Definition: Following one another in a stated event sequence\, with no intervening item of the specified kind\.
 
 Domains: monitoring\-alerts
 
-Rationale: The meaning column repeats a truncated alternative\; the intended row boundary needs source review\.
+Rationale: The authenticated PDF confirms a distinct adjective row with one meaning and one example\; the repeated extracted fragment is a row\-boundary artifact\. Prometheus alerting requires the condition to remain active at each evaluation and deactivates it on the first unmet evaluation\, supporting this bounded monitoring sense\. This draft does not generalize consecutive evaluation to alert systems that use other window semantics\.
 
 Contextual alternatives:
 
-- successive checks with no intervening success
+- successive failed checks with no intervening passing check
 
 - adjacent sequence numbers
 
@@ -34289,7 +34289,7 @@ Contextual alternatives:
 Alert after three consecutive failed checks.
 ```
 
-Explanation: Makes the sequence and intervening\-success rule interpretable\.
+Explanation: Each check in the stated evaluation sequence fails\; a passing check breaks the sequence\.
 
 #### Problematic example
 
@@ -34297,7 +34297,7 @@ Explanation: Makes the sequence and intervening\-success rule interpretable\.
 Alert after consecutive problems.
 ```
 
-Explanation: Provides neither a count nor the event stream to inspect\.
+Explanation: Does not identify the event sequence or the condition that must be consecutive\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -34309,9 +34309,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The source alternative repeats an incomplete ONE AFTER THE fragment; row boundaries remain unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 199 -l 199 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 199 (2-1-C17), consecutive (adj) is a distinct ruled row with one ONE (TN) AFTER THE OTHER meaning and its own STE example; a horizontal boundary separates it from consecutively (adv). The mechanically extracted repeated fragment is not a second meaning for this adjective. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 199,
     "printed_page": "2-1-C17",
@@ -34321,8 +34321,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P199-006",
@@ -34343,13 +34342,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: consecutively; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: In a sequence where each specified operation follows the preceding one\, provisionally\.
+Definition: One operation after another in the stated sequence\, with the preceding operation completed before the next starts\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped\-headword warning requires review\; a runbook must independently specify whether operations may overlap\.
+Rationale: The authenticated PDF confirms the wrapped headword is a complete adverb row with its own meaning and examples\. Kubernetes Job documentation distinguishes requested and actual parallelism and permits multiple Pods to run at once\, so this draft is limited to an explicitly stated procedure sequence and does not imply system\-wide serialization\.
 
 Contextual alternatives:
 
@@ -34363,7 +34362,7 @@ Contextual alternatives:
 Run the migrations consecutively, waiting for each to finish before starting the next.
 ```
 
-Explanation: Defines the ordering and non\-overlap requirement\.
+Explanation: States the order and requires each migration to finish before the next starts\.
 
 #### Problematic example
 
@@ -34371,7 +34370,7 @@ Explanation: Defines the ordering and non\-overlap requirement\.
 Run the commands consecutively in parallel.
 ```
 
-Explanation: Contradicts the proposed execution sequence\.
+Explanation: The word parallel contradicts the explicitly stated one\-after\-another procedure\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -34383,9 +34382,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 199 -l 199 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 199 (2-1-C17), consecutively is a distinct row below consecutive; its headword wraps over two lines, its POS is adv, and its meaning and two examples remain within the row. The wrapped-headword warning is confirmed and does not merge this row with the adjective. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 199,
     "printed_page": "2-1-C17",
@@ -34395,8 +34394,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P199-007",
@@ -167559,7 +167557,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d55df60a00254143c68cf358dcbf7ce0c0806b56ed86d56e136d2b5ea7fe47c6`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d087ef231f144a5f342b2e364fe415276b30ed353a12cf38694546ad5bfc71f5`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `5cc1f6911314c4d5a68f1b3401504d7f0ddaca706f6ae2e63c6f8b4827a533b1`
 
