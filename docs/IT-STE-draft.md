@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 113,
-    "needs-review": 158,
+    "allowed": 114,
+    "needs-review": 157,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -48309,13 +48309,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: drift; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Change unintentionally away from a stated configuration baseline over time\.
 
 Domains: configuration
 
-Rationale: The source offers both movement and removal with a specialist tool\; this row needs sense review before the IT extension is settled\.
+Rationale: Authenticated PDF visual inspection confirms that drift \(v\) is row 2 with MOVE \(v\)\, REMOVE \(v\)\, and the specialist qualifier \(WITH A DRIFT \[TN\]\)\; DRINK \(v\) begins the next row\. AWS CloudFormation and Terraform documentation define configuration drift as actual settings diverging from expected\/template or state configuration\, including manual changes\. This supports the bounded configuration sense while excluding physical move\/removal meanings\. See \`docs\/it\-ste\-research\/W1\-D\-P224\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -48349,9 +48349,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The source offers both movement and removal with a specialist tool; this row needs sense review before the IT extension is settled."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 224 (printed page 2-1-D18). Findings: drift (v) is row 2 with MOVE (v), REMOVE (v), and (WITH A DRIFT [TN]); DRINK (v) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 224,
     "printed_page": "2-1-D18",
@@ -167548,7 +167548,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `0ac8c174803c8426cd42e4de3bf15e743e51b0523031358729e20bf5649438d5`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `de77f121f5ea0f91ecbb0a512b57553a1235829c319d83ca4c42097fa742c142`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `dae8a3c05877aa6846527c01060f4f6ab51addb8605fdbca9bde71cf736c3e9c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `55f9d758e89b94d78b51988cfca690319761d73a5d8e3efa65034a9be442dd04`
 

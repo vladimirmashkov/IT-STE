@@ -1910,12 +1910,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "Change unintentionally away from a stated configuration baseline over time.",
       "domains": [
         "configuration"
       ],
-      "rationale": "The source offers both movement and removal with a specialist tool; this row needs sense review before the IT extension is settled.",
+      "rationale": "Authenticated PDF visual inspection confirms that drift (v) is row 2 with MOVE (v), REMOVE (v), and the specialist qualifier (WITH A DRIFT [TN]); DRINK (v) begins the next row. AWS CloudFormation and Terraform documentation define configuration drift as actual settings diverging from expected/template or state configuration, including manual changes. This supports the bounded configuration sense while excluding physical move/removal meanings. See `docs/it-ste-research/W1-D-P224.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "diverge from the baseline",
         "change unexpectedly"
@@ -1948,9 +1948,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 224 (printed page 2-1-D18). Findings: drift (v) is row 2 with MOVE (v), REMOVE (v), and (WITH A DRIFT [TN]); DRINK (v) begins the next row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
