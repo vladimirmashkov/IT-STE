@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0027",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Approve multi-word verb meanings explicitly",
+  "text": "Do not infer approval of a phrasal or other multi-word verb meaning from approval of its individual words. Before using the expression in editable prose, check a reviewed lexical entry that documents its meaning, grammatical pattern, and applicable context. Check required complements, particle placement, and permitted forms for the intended use. Admit an established IT expression through the applicable vocabulary review rather than reject it merely because it has several words. Prefer a clearer direct verb when it preserves the same meaning; do not force an inaccurate one-word substitute. If the expression lacks a suitable entry, refer its intended use to the responsible lexical editor instead of claiming lexical conformance.",
+  "applies_to": ["general"],
+  "exceptions": [
+    "This is not a blanket ban on phrasal verbs. Approval remains specific to a meaning and grammatical pattern; a literal directional phrase and an idiomatic use of the same words can need different treatment.",
+    "Preserve authoritative interface strings, commands, identifiers, and quotations exactly in marked literal spans. Explain their operation in surrounding prose without treating their wording as lexical approval.",
+    "The pilot provides no controlled vocabulary. The local entry in these examples is fictional, and sign in is not thereby approved globally. Do not import ASD's restricted expression inventory as IT vocabulary.",
+    "Preserve actors, modality, technical effects, conditions, and safety or security constraints during replacement. Escalate unclear meaning or conflicting external requirements to the responsible editor or technical owner. Supporting IDs are planning references, not canonical endpoints or delegated provenance."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Fictional local entry: sign in means establish an authenticated user session in the example portal. Its instruction pattern is sign in to followed by the portal name; this example uses only the base form. Instruction: Sign in to the review portal."}], "rationale": "The instruction uses a documented local phrase meaning, complement pattern, and context. The phrase is not accepted merely because its component words are familiar."},
+      {"segments": [{"kind": "prose", "text": "The example portal's button is labeled "}, {"kind": "literal", "text": "Sign in", "literal_type": "interface", "sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"}, {"kind": "prose", "text": ". Its handler identifier is "}, {"kind": "literal", "text": "sign_in", "literal_type": "identifier", "sha256": "f4696e3fe64ceaed5152d35bcb462f703ad8b1534020250bd9456faf76496531"}, {"kind": "prose", "text": ". Preserve both names when explaining session creation."}], "rationale": "Exact interface and identifier spans are preserved independently of prose vocabulary approval. A one-word stylistic preference must not silently rename either element."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Fictional local entry: sign in is approved only for establishing an authenticated user session in the example portal. Instruction: Sign in the request to record its arrival."}], "rationale": "The sentence invents a different meaning and a transitive pattern not documented by the local entry. Component-word approval does not authorize that use."},
+      {"segments": [{"kind": "prose", "text": "Editorial context: the intended action is to establish an authenticated user session, not to create an account. Rewrite sign in as register because every multi-word verb must become one word."}], "rationale": "The proposed replacement changes the operation from session creation to account registration. There is no blanket multi-word-verb ban that could justify this change."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "9.3", "kind": "rule", "physical_pdf_pages": [121, 122]}, "facets": [
+      {"source_facet": "A verb combined with particles can acquire a meaning not licensed by its component words.", "disposition": "adapt", "rationale": "Require explicit IT phrase-level meaning, grammatical pattern, and context checks instead of inferring approval from individual entries.", "target_field": "text"},
+      {"source_facet": "A direct replacement must have the same meaning and leave the sentence grammatical.", "disposition": "adopt", "rationale": "Prefer a clearer direct verb only when the technical operation and grammatical relationships remain accurate.", "target_field": "text"},
+      {"source_facet": "Despite the broad prohibition in its heading, the source dictionary permits a small restricted set of expressions.", "disposition": "adapt", "rationale": "Use reviewed IT expression entries rather than a blanket ban or the source's particular inventory.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0001", "ITSTE-R-0002", "ITSTE-R-0009", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review ASD-STE100 Issue 9 rule 9.3, physical PDF pages 121-122, including restricted approved expressions and grammatical and meaning checks.",
+    "Check phrase meaning, complements, particle placement, forms, and context against an actual applicable entry before claiming lexical conformance. Confirm that fictional entries remain illustrative and session creation is not confused with registration.",
+    "Review original wording, examples, exact interface and identifier digests, exceptions, domains, separate source rights, attribution, and planned references. Structural validation neither approves a vocabulary nor verifies an external product interface."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

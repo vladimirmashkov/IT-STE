@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0016",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Put conditions before the actions they control",
+  "text": "State a prerequisite or condition before the action that depends on it. Make clear which action or sequence the condition controls and whether multiple conditions all apply or are alternatives. For a short condition clause, separate the condition from the instruction with clear punctuation, normally a comma. For complex conditions, use separate sentences, a list, or an explicit control-flow structure before the dependent steps. Give an explicit stop or escalation path when an unmet prerequisite prevents continuation. Do not make readers begin work before they discover that it does not apply or cannot proceed. Keep the controlling condition available with an independently retrieved action. Express reader actions as imperatives without requiring the action verb to be the sentence's first word; name any different actor truthfully.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "user-interface", "error-messages", "monitoring-alerts", "procedures-runbooks", "configuration", "security", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "A result that becomes observable only after an action can follow it. Distinguish such a result or subsequent decision from a prerequisite that must be evaluated before acting.",
+    "A shared condition can precede a clearly bounded group of steps rather than be repeated mechanically. If a step is delivered independently, include the condition or a reliable context mechanism that supplies it before the action.",
+    "Preserve exact commands, expressions, interface strings, and other literal syntax. Explain the condition before the literal rather than rearrange executable syntax to imitate English word order.",
+    "Do not invent a condition, actor, permission, or failure response. Resolve missing technical meaning with the responsible owner. Stop and escalate any governing-requirement conflict that would remove necessary conditions, change modality or limits, or weaken protection.",
+    "Examples illustrate condition placement, not complete runbooks or vocabulary approval. Supporting target IDs are planning references, not canonical endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "If the import status is complete, open the import report. If the status is still running, wait for completion before opening the report."}], "rationale": "The reader evaluates each status condition before its dependent action. The imperative follows the condition rather than forcing an unconditional verb-first instruction."},
+      {"segments": [{"kind": "prose", "text": "Before you continue, verify both prerequisites:\n- The maintenance owner has approved the service window.\n- The deployment status is paused.\nIf either prerequisite is not satisfied, stop and contact the maintenance owner. If both are satisfied, open the deployment log."}], "rationale": "The list states a conjunction, gives its scope and stop path, and places all prerequisites before the dependent action."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Open the import report, but only if the import status is complete."}], "rationale": "The controlling condition arrives after the command. Put the status test first so the reader does not act before deciding whether the instruction applies."},
+      {"segments": [{"kind": "prose", "text": "Open the deployment log. The maintenance owner must have approved the service window, and the deployment must be paused; otherwise, stop."}], "rationale": "The prerequisites and stop response follow the dependent action. Their presence does not repair the ordering; state and evaluate them first."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "5.4", "kind": "rule", "physical_pdf_pages": [90, 91]}, "facets": [
+      {"source_facet": "Information that determines whether an instruction applies must be read before the instruction.", "disposition": "adopt", "rationale": "Retain prerequisite-first ordering for IT reader actions, with explicit scope and a stop path when continuation is blocked.", "target_field": "text"},
+      {"source_facet": "A comma separates a preceding descriptive condition from its command.", "disposition": "adapt", "rationale": "Use the comma for short clauses, but allow sentences, lists, and control flow for complex conditions instead of forcing one overloaded sentence.", "target_field": "text"},
+      {"source_facet": "The preceding statement gives information needed before action, rather than information that results from action.", "disposition": "adapt", "rationale": "Distinguish genuine prerequisites from later observations so that condition-first ordering does not misrepresent when facts become knowable.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0012", "ITSTE-R-0014", "ITSTE-R-0015", "ITSTE-R-0018", "ITSTE-R-0021", "ITSTE-R-0029"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Compare Issue 9 rule 5.4, physical PDF pages 90-91, with all facet dispositions and original wording.",
+    "Trace each condition to its dependent action or bounded sequence. Check conjunction versus alternatives, punctuation, prerequisite timing, and stop or escalation paths with the technical owner.",
+    "Distinguish post-action results from prerequisites. Check condition-led imperatives against 0015, protective placement against 0021, and context retention in independently retrieved units.",
+    "Review example judgments, truthful actors, modality, limits, applicability, exceptions, literals and any digests, attribution, rights scope, and supporting planned IDs. Structural validation neither executes examples nor approves vocabulary, technical meaning, or legal scope."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

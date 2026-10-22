@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0031",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Use neutral and respectful language",
+  "text": "Use neutral, respectful, and non-discriminatory language for people and roles, following applicable accessibility and inclusion guidance. Do not assume a person's gender, ability, or other personal characteristics from a name, role, or task. Use a person's known pronouns correctly. When gender is unknown or irrelevant, prefer a role term, direct address, or singular they, with an unambiguous referent. Mention personal characteristics only when relevant to accurate communication. Preserve proper names, quotations, authoritative interface terms, and machine-significant literals exactly. If neutral explanatory terminology differs from an external term, document the mapping explicitly rather than silently rename the external element.",
+  "applies_to": ["general", "software-documentation", "user-interface"],
+  "exceptions": [
+    "This rule does not ban gendered words or personal pronouns. Respect a person's known pronouns, including he or she; use relevant personal characteristics accurately and respectfully when the communication requires them.",
+    "Pronoun choice must not obscure responsibility. Repeat a person's name or role when they could refer to more than one actor. A clarity rewrite must still respect known pronouns.",
+    "Preservation of an exact name or external term is not endorsement or general prose approval. Give a respectful explanation and an explicit mapping when necessary; do not alter identifiers, name spelling, punctuation, or interface text under a prose policy.",
+    "Preserve technical actors, requirements, and safety or security context. If applicable external requirements conflict with these constraints, stop the proposed rewrite and escalate to the responsible editor or technical owner instead of silently claiming conformance.",
+    "People, products, and local terminology in these examples are fictional. Supporting target IDs are planning references, not canonical relation endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Fictional review context: Morgan uses she/her pronouns and is the only reviewer mentioned here. Instruction: Ask Morgan to review the report. She records the decision."}], "rationale": "The wording respects known pronouns and has a single clear referent. Neutral communication does not require replacing she when it correctly refers to Morgan."},
+      {"segments": [{"kind": "prose", "text": "Fictional legacy mapping: the preferred explanatory term is coordinator node; the unchanged schema field is "}, {"kind": "literal", "text": "master_node", "literal_type": "identifier", "sha256": "bbb2c1f8bcf45ec736f9aa89183095a84d928e5d3e07ce03575bf22024381f0b"}, {"kind": "prose", "text": ". The assigned reviewer is "}, {"kind": "literal", "text": "D’Angelo", "literal_type": "value", "sha256": "2344cff549d0d37e62821d529dd55e0439a2bca9fe5ed33e6d617155603392ec"}, {"kind": "prose", "text": ". Refer to the reviewer by that exact name or by role; no pronouns are specified."}], "rationale": "The mapping distinguishes neutral explanation from an unchanged legacy identifier, and the fictional person's exact name retains its punctuation. Neither the role nor the name supplies a basis for guessing pronouns."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Fictional review context: Morgan uses she/her pronouns. Editorial policy: Replace her known pronouns with he because reviewers are usually men."}], "rationale": "The proposed policy overrides known pronouns with an unsupported gender assumption. Use the known pronouns correctly and keep referents explicit."},
+      {"segments": [{"kind": "prose", "text": "Fictional legacy mapping: documentation calls the unchanged schema field "}, {"kind": "literal", "text": "master_node", "literal_type": "identifier", "sha256": "bbb2c1f8bcf45ec736f9aa89183095a84d928e5d3e07ce03575bf22024381f0b"}, {"kind": "prose", "text": " coordinator node. Editorial instruction: Rename the field in every command example without changing the actual schema or explaining the mapping."}], "rationale": "Silently changing machine-significant examples breaks the interface mapping. Keep the identifier exact and explain the preferred prose term; an actual schema migration requires separate technical authorization."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "GR-7", "kind": "guidance", "physical_pdf_pages": [127, 127]}, "facets": [
+      {"source_facet": "Inclusive technical communication avoids bias and uses respectful, non-discriminatory descriptions of people.", "disposition": "adapt", "rationale": "Apply the principle to IT roles, accessibility, and unsupported assumptions about personal characteristics.", "target_field": "text"},
+      {"source_facet": "The source excludes gender-specific pronouns and restricts gendered person terms to necessary contexts.", "disposition": "adapt", "rationale": "Respect known pronouns, permit relevant accurate personal characteristics, and use neutral role terms or singular they when gender is unknown or irrelevant rather than impose a blanket ban.", "target_field": "exceptions"},
+      {"source_facet": "The source refers writers to applicable international, national, company, or industry inclusion guidance.", "disposition": "adapt", "rationale": "Require applicable accessibility and inclusion guidance while preserving exact names and external syntax through explicit mappings and escalation of conflicts.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0003", "ITSTE-R-0013", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review ASD-STE100 Issue 9 guidance GR-7 on physical PDF page 127, including the deliberate adaptation of its gender-specific-pronoun exclusion. Retain guidance kind.",
+    "Verify known pronouns and relevance of personal characteristics without guessing from roles or names. Check singular-they referents and ensure clarity changes still respect known pronouns.",
+    "Check exact names, identifier digests, and external-term mappings; preservation does not authorize global prose use or a silent interface migration. Confirm any applicable accessibility and inclusion guidance before approval.",
+    "Review original authorship, examples, exceptions, applicability, separate ASD rights, attribution, and planned references. Structure-only validation neither detects discrimination reliably nor grants editorial or legal approval; this draft is not official ASD guidance."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

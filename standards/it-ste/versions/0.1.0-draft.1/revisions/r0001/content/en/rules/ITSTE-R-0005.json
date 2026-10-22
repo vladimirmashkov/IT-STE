@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0005",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Use American spelling without changing external text",
+  "text": "Use American English spelling consistently in editable canonical English prose. Check uncertain spellings against the applicable American English reference and project terminology authority. If a governing contract, specification, style guide, or other mandatory external directive requires another variety, identify its scope and apply that variety consistently within that scope. Do not use spelling normalization to change a quotation, proper name, localized example, or externally controlled or machine-significant string. Keep those spans exact and apply the prose baseline only outside them. If directives conflict or their scope is unclear, refer the issue to the responsible editor before rewriting.",
+  "applies_to": [
+    "general"
+  ],
+  "exceptions": [
+    "This rule controls spelling, not vocabulary admission, product naming, or a wholesale change of grammar or terminology. It does not import the ASD dictionary as the spelling or lexical authority.",
+    "A required localized example can demonstrate another variety. Identify the locale and preserve the example rather than present it as an accidental canonical prose spelling.",
+    "Preserved paths, identifiers, commands, interface labels, and quotations may contain non-American spellings. Their words gain no general prose approval from preservation."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Check the color of the status indicator."
+          }
+        ],
+        "rationale": "Color follows the American spelling baseline in editable prose when no contrary directive applies."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The configuration key is "
+          },
+          {
+            "kind": "literal",
+            "text": "colour",
+            "literal_type": "identifier",
+            "sha256": "d6838c357444c5ad16992daa4e21303cb3bca71e3b17a3dbdc4c91613d2fe0c6"
+          },
+          {
+            "kind": "prose",
+            "text": ". Use this key to set the indicator color."
+          }
+        ],
+        "rationale": "The externally defined key keeps its exact spelling while the surrounding prose uses color."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Check the colour of the status indicator."
+          }
+        ],
+        "rationale": "With no governing exception or quotation in this example, editable canonical prose uses the American spelling color."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The schema defines "
+          },
+          {
+            "kind": "literal",
+            "text": "colour",
+            "literal_type": "identifier",
+            "sha256": "d6838c357444c5ad16992daa4e21303cb3bca71e3b17a3dbdc4c91613d2fe0c6"
+          },
+          {
+            "kind": "prose",
+            "text": ", but send "
+          },
+          {
+            "kind": "literal",
+            "text": "color",
+            "literal_type": "identifier",
+            "sha256": "74284d9dcbcc09928ca5d7d6187270a62ac1b58ccdc4a44b81e47257ffa53b9e"
+          },
+          {
+            "kind": "prose",
+            "text": " as the key to conform to American spelling."
+          }
+        ],
+        "rationale": "Normalizing a machine-significant key changes the schema contract. The prose baseline never authorizes this edit."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.14",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          61,
+          62
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "American spelling supplies a consistent default, with an exception for governing directives.",
+          "disposition": "adapt",
+          "rationale": "Use that default for canonical IT prose and identify the scope of any required alternate variety.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source obtains its default spelling from its own controlled dictionary.",
+          "disposition": "not-applicable",
+          "rationale": "Use applicable IT spelling and terminology authority, not ASD dictionary admission.",
+          "target_field": "exceptions"
+        },
+        {
+          "source_facet": "Applicable publication specifications, style guides, contracts, or official directives can require different spellings.",
+          "disposition": "adapt",
+          "rationale": "Extend the externally governed spelling exception to explicit preservation of quotations, names, localized examples, and machine-significant strings in IT content.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0002",
+    "ITSTE-R-0003",
+    "ITSTE-R-0026"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Confirm that a claimed alternate spelling requirement is mandatory and has an identified scope, rather than being an author preference.",
+      "Check color versus colour only in editable prose; verify the fictional schema key remains exact in both example categories.",
+      "Review proper names, quotations, and localized examples separately from prose normalization; no spelling decision supplies lexical approval.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

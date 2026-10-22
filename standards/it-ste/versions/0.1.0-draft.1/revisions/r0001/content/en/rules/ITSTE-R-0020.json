@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0020",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Select risk labels from an assessed classification",
+  "text": "Select a risk label from an actual risk assessment and the governing classification policy for the content and operation. Consider physical harm, data loss, security compromise, and service disruption, including combined consequences. Do not downgrade a more serious assessed risk because another consequence appears minor. Use the policy's defined labels and meanings; do not invent a severity scale or treat a log level or incident priority as an equivalent risk label without a documented mapping. Make the classification understandable in text rather than rely only on color or a symbol. Follow applicable publication and accessibility requirements for presentation. Keep the label and necessary classification context with the relevant protective instruction when content is delivered independently. If the assessment, governing policy, or mapping is missing or unclear, refer the classification to the responsible risk owner instead of guessing.",
+  "applies_to": ["general", "security", "monitoring-alerts", "procedures-runbooks"],
+  "exceptions": [
+    "This draft defines no universal warning/caution distinction, severity names, numeric levels, or uppercase requirement. Follow a governing classification, including mandatory physical-safety requirements where applicable, rather than transfer an aviation scale to all IT risks.",
+    "A documented mapping can connect risk labels with incident priorities or log levels for a defined context. Preserve its scope and qualifications; a shared word alone does not establish equivalence.",
+    "A risk label does not supply a protective action, prove authorization, or establish a consequence. Retain actionable protection and credible, appropriately disclosed explanations alongside the operation.",
+    "Preserve exact external labels, interface strings, and other literals. If an inherited label conflicts with the assessed classification, explain the mismatch and consult the responsible owner; do not silently rename it or claim compliance.",
+    "The examples describe classification decisions without creating policy labels or a usable risk scale. They grant no vocabulary approval. Preserve actors, modality, conditions, and technical meaning; escalate governing-requirement conflicts. Supporting IDs are planned references, not canonical endpoints or transferred provenance."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Classification decision: The assessment identifies both possible service interruption and loss of retained records. Use the label required by the governing policy for the combined assessed risk, including its treatment of the record-loss consequence. Record the assessment and policy references with the decision."}], "rationale": "The decision considers both consequences and defers label selection to an actual governing policy. It does not create a severity name or ignore record loss because interruption is easier to repair."},
+      {"segments": [{"kind": "prose", "text": "Classification decision: The monitoring system's log level has no documented mapping to procedural risk labels. Ask the risk owner to select the label from the assessment and publication policy. Include the resulting label as text with the protective instruction, not only as a colored icon."}], "rationale": "The decision avoids a false log-level equivalence and requires an understandable textual classification before publication."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Classification decision: The operation may permanently lose retained records, but a service restart takes only a minute. Select the least serious label because the interruption is brief."}], "rationale": "A minor consequence is used to discount a more serious one without applying the governing assessment and combined-risk policy."},
+      {"segments": [{"kind": "prose", "text": "Classification decision: Copy the log level into the procedure as its risk label. No mapping is needed. Show only a red triangle so that the classification needs no text."}], "rationale": "The decision invents equivalence between log level and risk classification and makes meaning depend entirely on a visual symbol and color."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "7.1", "kind": "rule", "physical_pdf_pages": [104, 104]}, "facets": [
+      {"source_facet": "An accurate assessment precedes selection of a word that identifies the risk level.", "disposition": "adapt", "rationale": "Require assessed IT risks and a governing classification, with escalation when the basis for selection is missing.", "target_field": "text"},
+      {"source_facet": "Different kinds of harmful outcome can require different risk treatment, including when risks coexist.", "disposition": "adapt", "rationale": "Consider physical harm, data loss, compromise, and disruption together without allowing a minor outcome to mask a more serious risk.", "target_field": "text"},
+      {"source_facet": "The source uses warning and caution with defined physical-harm and equipment-damage meanings.", "disposition": "not-applicable", "rationale": "Those meanings are not a universal IT scale; retain any applicable governing safety classification instead of inventing replacements.", "target_field": "exceptions"},
+      {"source_facet": "A recognizable risk word introduces the protective content in the publication's presentation.", "disposition": "adapt", "rationale": "Require textual meaning and governing publication and accessibility treatment, not universal uppercase or visual-only coding.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0018", "ITSTE-R-0021", "ITSTE-R-0022"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Compare Issue 9 rule 7.1, physical PDF page 104, with the assessment, combined-risk, label-meaning, and presentation dispositions. Check original wording and that no universal IT scale is introduced.",
+    "Require an actual assessment, governing policy, and scoped mapping where log levels or incident priorities are reused. Have the risk owner verify combined consequences and the selected classification.",
+    "Check textual accessibility, exact external labels, and classification context at retrieval boundaries. Keep the responsibilities of 0020, 0021, and 0022 distinct: label, protection, and explanation.",
+    "Review example decisions, exceptions, applicability, literal boundaries and any digests, attribution, rights scope, and planned supporting IDs. Structural validation does not assess risk, choose a label, approve vocabulary, or provide editorial or legal approval."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

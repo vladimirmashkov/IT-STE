@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0022",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Explain credible consequences without unsafe disclosure",
+  "text": "After the protective action or condition, explain the credible risk or possible result when it is known and can be disclosed. Identify the affected people, data, system, or service, and state the consequence specifically enough to support the reader's decision. Name the hazardous action or condition when a pronoun could confuse it with obeying the protection. Distinguish a possible consequence from a certain outcome. Do not invent a cause, probability, guarantee, or recovery assurance. If details are unknown or security-sensitive, state what is known at an appropriate level, retain a usable precaution, and provide an authorized escalation path for information needed to proceed. Keep the necessary explanation with the protection in independently delivered content. An explanation does not replace the protective instruction or justify placing it after the hazardous operation.",
+  "applies_to": ["general", "security", "monitoring-alerts", "procedures-runbooks"],
+  "exceptions": [
+    "Do not disclose secrets, personal data, or unnecessary exploit details to make a consequence more vivid. Use an approved abstraction for the audience and an authorized channel for restricted detail; sensitivity does not excuse an unusably vague precaution.",
+    "If evidence does not establish a detailed consequence, do not manufacture one. State the known actionable risk and uncertainty. If the missing information prevents a safe decision, instruct the reader to stop and contact the responsible owner.",
+    "A condition can precede the action verb, and a required risk label can precede the protection. The explanation follows the protective action or condition; this rule does not create a severity scale or change governing label requirements.",
+    "Preserve exact commands, identifiers, quotations, interface strings, and other literal spans, including their digests when present. Explain them in editable prose rather than alter syntax. A matched digest does not prove technical truth, execution safety, or disclosure permission.",
+    "Examples describe fictional editorial scenarios, not execution authorization, complete precautions, or vocabulary approval. Preserve actors, modality, conditions, and limits; stop and escalate governing-requirement conflicts to the responsible editor or technical owner. Supporting IDs are planned references, not canonical endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Do not share the recovery token. Sharing the recovery token can allow another person to take control of the account. If the token has been disclosed, contact the account security team through the approved incident channel."}], "rationale": "The prohibition comes first. The explanation identifies the affected account and a possible consequence of sharing, not of obeying the prohibition. No token value or exploit sequence is disclosed."},
+      {"segments": [{"kind": "prose", "text": "If retention or recovery requirements for the selected workspace are unresolved, do not proceed with the illustrative operation "}, {"kind": "literal", "text": "archive delete --all", "literal_type": "command", "sha256": "a992f3272dd94d821fad4266c4a302fdc5b76768f2436105299fa30d2d77ebde"}, {"kind": "prose", "text": ". Contact the archive and recovery owners to resolve those requirements. In this scenario, the operation permanently removes every archive in the selected workspace. Without a usable separate recovery copy, the removed data cannot be recovered."}], "rationale": "The condition and stop instruction precede the operation. The explanation identifies scope and the conditional loss consequence without treating backup existence as tested recovery. The illustrative literal and consequence match the scenario in 0021."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Do not share the recovery token. Sharing it will certainly destroy every account and all backups."}], "rationale": "The scenario supports possible account takeover, not guaranteed destruction of every account and backup. Dramatic certainty invents effects and scope instead of explaining the credible risk."},
+      {"segments": [{"kind": "prose", "text": "If retention or recovery requirements for the selected workspace are unresolved, do not proceed with the illustrative operation "}, {"kind": "literal", "text": "archive delete --all", "literal_type": "command", "sha256": "a992f3272dd94d821fad4266c4a302fdc5b76768f2436105299fa30d2d77ebde"}, {"kind": "prose", "text": ". Contact the archive and recovery owners. Something bad might happen, but a backup always guarantees complete recovery."}], "rationale": "The protection is present, but the explanation hides the known deletion scope and asserts an unsupported recovery guarantee. The unchanged literal does not make those prose claims true."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "7.3", "kind": "rule", "physical_pdf_pages": [106, 106]}, "facets": [
+      {"source_facet": "An explanation helps readers understand the harmful result that a protective instruction is intended to prevent.", "disposition": "adapt", "rationale": "Name the affected IT asset and credible consequence after the protection, while retaining the action as the primary instruction.", "target_field": "text"},
+      {"source_facet": "The explanation can describe a possible outcome rather than promise that it always occurs.", "disposition": "adapt", "rationale": "Preserve uncertainty and prohibit invented causes, probabilities, guarantees, or recovery assurances.", "target_field": "text"},
+      {"source_facet": "The explanation is supplied when the relevant risk information can be given.", "disposition": "adapt", "rationale": "Handle unknown or restricted IT details with truthful abstraction and escalation, without disclosing secrets or losing usable precautions.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0013", "ITSTE-R-0016", "ITSTE-R-0018", "ITSTE-R-0020", "ITSTE-R-0021"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review Issue 9 rule 7.3, physical PDF page 106, for explanation, possible outcome, and availability facets. Check original wording and distinguish IT disclosure safeguards from retained source principles.",
+    "Have the technical owner verify affected assets, causal claims, uncertainty, scope, and recovery assurances. Confirm that the consequence refers to the hazardous action, not to following the protection.",
+    "Have the appropriate security owner assess audience and disclosure. Keep an actionable precaution and authorized escalation path when detail is restricted or unknown; do not hide necessary context in optional retrieval content.",
+    "Compare the archive scope, separate recovery-copy condition, exact illustrative command, and digest with 0021. Check condition-first placement without importing a risk scale or treating this fragment as authorization.",
+    "Review examples, exceptions, domains, rights scope, attribution, and supporting planned IDs. Structure-only validation checks provenance and digests, not consequence truth, execution safety, vocabulary approval, editorial approval, or legal sufficiency."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

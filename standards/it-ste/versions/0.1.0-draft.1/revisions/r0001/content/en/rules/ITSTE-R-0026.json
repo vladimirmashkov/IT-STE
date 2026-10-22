@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0026",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Restructure prose without changing its meaning",
+  "text": "When a word-for-word replacement is ungrammatical, unclear, or inaccurate, rewrite the sentence around its intended technical meaning. Preserve the actors, actions, objects, negation, modality, conditions, sequence, quantities, limits, and technical relationships. Use a different construction, or reorganize sentences, lists, or tables, only if the same information and dependencies remain clear. Check related text, cross-references, and independently retrieved fragments for unintended effects. Preserve quotations and machine-significant literals exactly. If the source meaning is unclear or incomplete, obtain clarification from an authoritative source or subject-matter expert before proposing a definitive rewrite; do not invent facts to make the sentence fluent.",
+  "applies_to": ["general"],
+  "exceptions": [
+    "Brevity, lexical preferences, and local length limits do not authorize dropping a prerequisite, qualification, required action, or safety and security constraint. Remove only information established as unnecessary for the intended communication, not information that is merely difficult to express.",
+    "A vocabulary substitution is not proof of grammatical or technical equivalence. Check the applicable lexical meaning, function, and forms independently; this pilot supplies no controlled vocabulary.",
+    "Do not rewrite inside an externally controlled literal. Add an explanation outside it when needed. If a governing requirement conflicts with preserving meaning or exact syntax, stop and escalate to the responsible editor or technical owner.",
+    "Supporting IDs are planning references only; they neither establish canonical relations nor transfer the source facets recorded here."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Editorial context: this import requires successful validation; validation success alone does not require it. Rewrite: If validation has not succeeded, do not start the import."}], "rationale": "The rewrite preserves the necessary condition without turning it into a sufficient condition or inventing an obligation to import."},
+      {"segments": [{"kind": "prose", "text": "Editorial context: the client may make at most two additional attempts after a failed request. Rewrite: If a request fails, the client may retry it up to two times. The configuration field is "}, {"kind": "literal", "text": "max_retries", "literal_type": "identifier", "sha256": "1c4c5788653ed969f64c27ab51fff4912691a25c0d26e1fa4bb725f587c86881"}, {"kind": "prose", "text": "."}], "rationale": "The client remains the actor, retries remain permitted rather than mandatory, and the limit still means two attempts in addition to the original request. The identifier is preserved, not paraphrased."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Editorial context: this import requires successful validation; validation success alone does not require it. Rewrite: When validation succeeds, start the import."}], "rationale": "The rewrite turns a necessary condition into an instruction triggered by success. Fluent imperative wording does not preserve the original modality."},
+      {"segments": [{"kind": "prose", "text": "Editorial context: the client may make at most two additional attempts after a failed request. Rewrite: The operator must send the request twice."}], "rationale": "The rewrite changes the actor, permission, failure condition, and maximum additional-attempt count. A shorter sentence does not justify these semantic changes."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "9.1", "kind": "rule", "physical_pdf_pages": [115, 119]}, "facets": [
+      {"source_facet": "A lexical alternative may require grammatical restructuring rather than direct substitution.", "disposition": "adapt", "rationale": "Require an original IT rewrite based on intended technical meaning and independently checked lexical function.", "target_field": "text"},
+      {"source_facet": "A rewritten sentence must convey the intended message rather than merely use acceptable words.", "disposition": "adopt", "rationale": "Make preservation concrete through actors, modality, negation, conditions, sequence, quantities, and relationships.", "target_field": "text"},
+      {"source_facet": "Revision can require splitting text, removing unnecessary information, or obtaining more information from an engineer.", "disposition": "adapt", "rationale": "Permit restructuring and authoritative clarification, with checks on related references and fragments and no invented facts.", "target_field": "text"},
+      {"source_facet": "The source uses its controlled dictionary and worked domain examples to guide revisions.", "disposition": "not-applicable", "rationale": "Those vocabulary decisions and examples are not IT approvals; this pilot has no controlled vocabulary and retains required context during simplification.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0002", "ITSTE-R-0010", "ITSTE-R-0015", "ITSTE-R-0016", "ITSTE-R-0018"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Compare the facet treatment with ASD-STE100 Issue 9 rule 9.1, physical PDF pages 115-119; distinguish source revision principles from IT-specific preservation checks.",
+    "Check each semantic dimension before and after rewriting, including necessary versus sufficient conditions and additional versus total attempts. Review related references and retrieval boundaries.",
+    "Resolve missing source meaning with an authoritative owner. Check original authorship, literal boundaries and digest, examples, exceptions, applicability, rights, attribution, and planned references. Structural validation is not a technical-equivalence or legal judgment."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

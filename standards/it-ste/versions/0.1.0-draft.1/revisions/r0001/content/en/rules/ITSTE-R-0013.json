@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0013",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Make relationships and referents clear",
+  "text": "Connect related ideas explicitly when their sequence, contrast, cause, result, or other relationship would otherwise be unclear. Select a connector that expresses the actual relationship; do not imply causation from sequence alone. Reuse canonical key terms as anchors across sentences and independently readable units when they help readers follow the subject. Do not substitute synonyms merely for variety. Use a pronoun or demonstrative only when its intended referent is clear within the unit that readers can receive independently. If competing referents remain, name the actual person, role, object, action, state, or condition. After a prohibition or in a risk explanation, identify whether a consequence follows from the prohibited action, the protective action, or the stated condition. If the source does not establish the relationship or referent, obtain clarification instead of guessing.",
+  "applies_to": ["general", "software-documentation", "api", "user-interface", "error-messages", "monitoring-alerts", "procedures-runbooks", "configuration", "security", "release-notes", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "Do not add a connector or repeat a noun mechanically when order and context already establish the relationship. Clear pronouns are permitted; use people's known pronouns accurately, and use a name or role when reference remains ambiguous.",
+    "The ASD pronoun inventory is not an IT-STE vocabulary policy. This draft supplies no controlled vocabulary, and its examples grant no lexical approval.",
+    "Preserve exact quotations, identifiers, interface strings, and other literal spans. Explain an ambiguous external string in surrounding prose instead of silently editing it.",
+    "A title or container can supply context only if it accompanies the independently delivered unit. Do not rely on an omitted preceding chunk for a decision-relevant referent or protective instruction.",
+    "Do not invent an actor or change modality, conditions, limits, or technical effects to improve cohesion. Stop and escalate unresolved meaning or external-requirement conflicts to the responsible editor or technical owner. Supporting IDs are planned cross-references, not canonical endpoints or transferred provenance."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "The import report lists records rejected during validation. The import report does not list records rejected during authorization; use the authorization log for those records."}], "rationale": "The repeated canonical term anchors the contrast. The alternative source is named, and those records clearly refers to authorization rejections."},
+      {"segments": [{"kind": "prose", "text": "Do not share the recovery token. Sharing the recovery token can allow another person to take control of the account."}], "rationale": "The risk explanation explicitly names the prohibited action as the cause of the possible consequence, rather than leaving this to refer to the prohibition itself."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "The import report and the authorization log contain different rejection records. It includes them."}], "rationale": "Both the document and the record set have competing antecedents. Name the relevant document and the rejection category instead of guessing which pair is intended."},
+      {"segments": [{"kind": "prose", "text": "Do not share the recovery token. This can allow another person to take control of the account."}], "rationale": "This can appear to refer to obeying the prohibition. Name sharing the recovery token as the risky action so that the explanation cannot reverse the intended advice."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "4.4", "kind": "rule", "physical_pdf_pages": [83, 84]}, "facets": [
+      {"source_facet": "Transitions show how an idea in one sentence relates to an idea in another.", "disposition": "adapt", "rationale": "Require truthful, useful connections without inserting connectors where the relationship is already evident.", "target_field": "text"},
+      {"source_facet": "A demonstrative can accompany a connecting phrase only if the reference is understandable.", "disposition": "adapt", "rationale": "Name the actual referent when competing antecedents would make a transition ambiguous.", "target_field": "text"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "6.2", "kind": "rule", "physical_pdf_pages": [96, 98]}, "facets": [
+      {"source_facet": "Recurring key terms and phrases connect successive statements into a logical explanation.", "disposition": "adapt", "rationale": "Use canonical IT terms as anchors within prose and locally retrievable units rather than vary terms for style.", "target_field": "text"},
+      {"source_facet": "Repetition supports continuity between information already introduced and later detail.", "disposition": "adapt", "rationale": "Retain purposeful repetition but avoid a mechanical repetition requirement when context is already clear.", "target_field": "exceptions"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "GR-3", "kind": "guidance", "physical_pdf_pages": [125, 125]}, "facets": [
+      {"source_facet": "Pronouns help readability only when readers can identify the intended noun.", "disposition": "adapt", "rationale": "Make reference clarity explicit for independently consumed IT content and require a specific referent when ambiguity remains.", "target_field": "text"},
+      {"source_facet": "The source restricts pronouns through its own dictionary inventory.", "disposition": "not-applicable", "rationale": "Do not import that inventory as IT vocabulary or substitute inaccurate personal pronouns.", "target_field": "exceptions"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "GR-4", "kind": "guidance", "physical_pdf_pages": [125, 125]}, "facets": [
+      {"source_facet": "The demonstrative this needs an identifiable referent, especially when surrounding advice can create ambiguity.", "disposition": "adapt", "rationale": "Name the action, state, or condition behind a consequence, including explanations after prohibitions.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0003", "ITSTE-R-0018", "ITSTE-R-0019", "ITSTE-R-0022", "ITSTE-R-0031"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review Issue 9 rules 4.4 (physical PDF pages 83-84), 6.2 (96-98), and guidance GR-3 and GR-4 (125). Check all facet dispositions and original wording; retain guidance kinds.",
+    "Identify each connector's actual relationship and every pronoun's antecedent in the independently delivered unit. Check that no causal claim or actor has been invented.",
+    "Check purposeful canonical anchors without mechanical repetition or an imported pronoun inventory. Respect known pronouns while resolving ambiguity through names or roles.",
+    "Confirm that risk explanations name the hazardous action and that chunk boundaries retain decision context. Review exceptions, domains, literals and any digests, examples, attribution, separate source rights, and planned supporting IDs. Structural checks are not editorial, lexical, or legal approval."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

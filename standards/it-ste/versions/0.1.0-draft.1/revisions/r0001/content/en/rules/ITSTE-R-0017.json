@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0017",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Reserve notes for supplemental information",
+  "text": "Use a note only for supplemental information that is not necessary to complete the procedure correctly. Keep required actions, prerequisites, limits, acceptance criteria, expected results needed for execution or verification, and safety- or security-critical information in the main procedural flow. Label protective instructions, requirements, and other semantic blocks according to their actual function rather than disguise them as notes. Place required information before the action that depends on it, or with the action when it is an immediate result or verification. Test the procedure with its notes hidden: the remaining content must still identify what to do, when to proceed, what to verify, and when to stop. Preserve that completeness in independently retrieved procedure fragments.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "user-interface", "error-messages", "monitoring-alerts", "procedures-runbooks", "configuration", "security", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "A note can explain optional background or a nonessential historical fact. An expected result may be supplemental only when it is not needed to execute, verify, choose a branch, or proceed correctly.",
+    "A required warning or other semantic block may be visually distinct from numbered steps, but it remains part of the mandatory flow and must not be hidden or treated as optional. Follow governing labels and accessibility requirements.",
+    "A necessary inline identifier in parentheses is not automatically a skippable note. Preserve exact identifiers, commands, quotations, and interface strings; retain required identification where the reader needs it.",
+    "A remote note or reference may supplement but cannot replace local prerequisites, protection, or decision criteria. Do not change actors, modality, conditions, limits, or technical meaning to relocate content. Stop and escalate governing-requirement conflicts to the responsible editor or technical owner.",
+    "Examples are editorial scenarios, not complete operational procedures or vocabulary approvals. Supporting IDs are related planned work, not canonical endpoints or transferred source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "1. Open the import history.\n2. Select the completed import.\n3. Open its report.\nNote: Earlier product versions called this view the import summary."}], "rationale": "The historical name is supplemental. Hiding the note does not remove an action, prerequisite, or verification criterion from the report-viewing sequence."},
+      {"segments": [{"kind": "prose", "text": "1. Save the notification preferences. The settings service displays a confirmation. Verify that the confirmation lists the intended recipients before you continue.\nNote: The confirmation uses the same typography as the settings page."}], "rationale": "The required result and verification remain in the step, while the note contains only nonessential visual background. The settings service is the actor displaying the confirmation."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "1. Save the notification preferences.\n2. Continue to the next setup task.\nNote: Before continuing, verify that the save confirmation lists the intended recipients."}], "rationale": "The required verification is hidden in a note after continuation. Promote it into the save step before the reader can proceed."},
+      {"segments": [{"kind": "prose", "text": "1. Open the deployment log.\nNote: Proceed only if the deployment is paused and the maintenance owner has approved the service window."}], "rationale": "The note contains mandatory prerequisites. Hiding it makes the action unconditional, and its late position also violates condition-first ordering."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "5.5", "kind": "rule", "physical_pdf_pages": [91, 94]}, "facets": [
+      {"source_facet": "Notes supply descriptive assistance rather than required instructions, requirements, or limits.", "disposition": "adapt", "rationale": "Distinguish optional IT background from every item needed for execution, verification, or safe continuation, even when that item is phrased descriptively.", "target_field": "text"},
+      {"source_facet": "Readers can overlook notes, so protective content needs its proper procedural role and label.", "disposition": "adapt", "rationale": "Keep safety and security requirements in the mandatory flow with appropriate semantic presentation rather than simply rename a skippable note.", "target_field": "text"},
+      {"source_facet": "Removing notes is a practical test of whether the procedure still contains its necessary information.", "disposition": "adopt", "rationale": "Retain the hidden-notes test and extend it to independently retrieved procedure fragments.", "target_field": "text"},
+      {"source_facet": "Information essential to correct execution must be moved from a note into the appropriate work step.", "disposition": "adapt", "rationale": "Place prerequisites before dependent actions and results or verification with their action, without treating every inline parenthetical identifier as a note.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0014", "ITSTE-R-0016", "ITSTE-R-0018", "ITSTE-R-0021", "ITSTE-R-0024"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review Issue 9 rule 5.5, physical PDF pages 91-94, for complete facet dispositions and original wording.",
+    "Hide notes and inspect the remaining procedure for required actions, prerequisites, limits, verification, branch choices, and protective context. Repeat the test at retrieval boundaries.",
+    "Check required expected results versus merely supplemental observations. Verify that a distinct warning remains mandatory and that inline identifiers are not removed as presumed notes.",
+    "Compare the save example with 0014 and the deployment prerequisites with 0016. Review actors, modality, examples, domains, exceptions, literals and any digests, attribution, separate rights, and planned supporting IDs. Structural checks are not procedural, lexical, or legal approval."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

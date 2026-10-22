@@ -1,4 +1,4 @@
-# Canonical draft pilot contract
+# Canonical English draft rule contract
 
 [Русское резюме](it-ste-canonical-pilot.ru.md)
 
@@ -23,12 +23,12 @@ python3 -W error::ResourceWarning -m unittest discover -s tests -v
 standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/
   manifest.json
   sources/ASDSTE-SOURCE-ISSUE9-R0001.json
-  content/en/rules/ITSTE-R-0002.json
-  content/en/rules/ITSTE-R-0015.json
-  content/en/rules/ITSTE-R-0021.json
+  content/en/rules/ITSTE-R-0001.json
+  ...
+  content/en/rules/ITSTE-R-0031.json
 ```
 
-The initial three-rule pilot is deliberately partial. The profile can validate further reviewed target IDs at these coordinates while they remain drafts, but this is not permission to expand them without editorial review. Planned targets are not mutated into canonical records. `catalog.json` remains unchanged with empty release lists. English is authoritative; translations are outside this pilot profile, not prohibited by the project.
+The initial three-rule pilot has been expanded to all 31 reviewed target IDs. Each rule now has original English draft text, exceptions, positive/negative examples, source-facet dispositions, and review criteria. Coverage deliberately remains partial because the controlled vocabulary is incomplete. Profile identity is retained because the record contract has not changed. Planned targets are not mutated into canonical records. `catalog.json` remains unchanged with empty release lists. English is authoritative; translations are outside this pilot profile, not prohibited by the project.
 
 Each JSON object has exactly the fields specified below. Unknown fields and `template` markers are errors. Files are UTF-8 without BOM, LF-only, with a final newline. Duplicate JSON keys and non-JSON numeric constants are rejected. Member paths are relative to the snapshot, cannot contain traversal or escape through symlinks, and cannot alias another member. Language, ID, and filename must agree. Files under `content/` and `sources/` must be explicitly listed; unlisted files there are errors.
 
@@ -135,9 +135,9 @@ For this pilot's authors and reviewers:
 
 This order is an editorial contract, not a claim that the validator checks technical truth or resolves legal/security conflicts. Preserve necessary inline identifiers, but do not hide mandatory actions in skippable notes. Known pronouns and unambiguous referents must both be respected.
 
-## Pilot review criteria and validation limits
+## Draft review criteria and validation limits
 
-The three records exercise complementary paths:
+All 31 target rules are materialized. The original three pilot records still exercise complementary paths:
 
 - `ITSTE-R-0002`: complete many-source allocation, a genuine guidance locator for GR-5, context-specific meanings, and a preserved identifier;
 - `ITSTE-R-0015`: direct reader action, a preceding condition, and a named non-reader actor;
@@ -147,6 +147,6 @@ The records contain explicit human-review criteria. Before approval, review sour
 
 The validator checks paths, closed fields, encoding, source and plan authentication, full allocated-source coverage, domains, rights shape, literal digests, and presence of examples and review criteria. It does **not** check arbitrary prose, infer English language from strings, prove translations equivalent, execute commands, certify accessibility or legal rights, evaluate example correctness, approve a vocabulary, release a snapshot, or produce training data. Empty release catalogs and draft status are intentional. This profile rejects release fields but does not implement a general release workflow.
 
-Further work must define a general canonical schema, release checks and record hashes, complete lexical dependencies, reviewed translations, generation of human/LLM views, and a separate SFT rights and quality gate. Do not train on these drafts or planning documents as if they were an approved standard.
+`python3 tools/it_ste_document.py build` generates [one Markdown draft](IT-STE-draft.md) from all 31 manifest-listed rules and the first [vocabulary review batch](it-ste-vocabulary.md). Its `check` command detects stale output without writing. The document is a derived editorial view, not independently editable canonical content or a released corpus. Further work must define a general canonical schema, release checks and record hashes, complete lexical dependencies, reviewed translations, released LLM views, and a separate SFT rights and quality gate. Do not train on these drafts or planning documents as if they were an approved standard.
 
 Original project text: IT-STE contributors, [CC BY-SA 4.0](../LICENSE-CONTENT.md). ASD source ownership and [derivative-permission limits](permissions/asd-ste100-issue-9-derivatives.md) remain separate. This work is independent and not official ASD guidance.

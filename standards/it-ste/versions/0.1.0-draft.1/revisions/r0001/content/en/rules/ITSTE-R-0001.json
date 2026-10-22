@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0001",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Admit vocabulary through documented IT meanings",
+  "text": "Use general words from the applicable reviewed English vocabulary and domain terms admitted for the intended IT context. Before admitting a general word, record its definition, part of speech, permitted forms, and usage restrictions. Before admitting a technical noun or verb, also identify the domain concept or operation, its terminology authority, and the product or specification version when relevant. A noun position, a familiar spelling, or use in source code is not admission evidence. Prefer an admitted general expression when it conveys the same operation and distinctions clearly; admit a specialized term when it names a necessary concept or operation more accurately. Submit missing or disputed entries to the responsible lexical editor with the proposed meaning, authority, context, and an example. Until review resolves the entry, identify the unresolved terminology and do not claim lexical conformance.",
+  "applies_to": [
+    "general"
+  ],
+  "exceptions": [
+    "The pilot contains no controlled vocabulary. Hypothetical review decisions in these examples illustrate admission evidence, not actual entries or global word approval.",
+    "Authoritative IT standards, schemas, product specifications, and maintained project glossaries can support domain admission. Do not inherit the ASD dictionary, its technical-term categories, or its example vocabulary as an IT admission list.",
+    "An exact command, identifier, interface string, or quotation can be preserved as a literal without admitting its words into editable prose. Explain an unfamiliar literal outside its boundary.",
+    "Admission does not permit every use of a spelling: review meaning, grammatical function, forms, and context independently. Do not label an ordinary unsupported use a technical term merely to bypass review."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Hypothetical admission record: lease is a noun for a time-limited right to hold a worker slot, restricted to the scheduler specification. The lexical editor records that definition, its plural form, the specification version, and the scheduler domain before accepting the entry."
+          }
+        ],
+        "rationale": "A concept, authority, grammatical function, forms, and scope make the proposed noun reviewable; this is not an actual vocabulary admission."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Hypothetical admission record: drain is a verb meaning stop new work and wait for assigned work to finish, under the worker API specification. Submit that operation and its permitted forms for lexical review instead of replacing it with stop."
+          }
+        ],
+        "rationale": "The technical operation differs from an immediate stop. Domain admission can preserve that distinction instead of imposing an inaccurate general synonym."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The developer used frobnicate in a code comment, so frobnicate is approved for every administration guide."
+          }
+        ],
+        "rationale": "Code occurrence provides neither a reviewed meaning nor an authority or scope. Submit the proposed term for review rather than infer general approval."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Call any unfamiliar word a technical noun if it follows the article the."
+          }
+        ],
+        "rationale": "A grammatical position is not evidence of a domain concept or admission. General vocabulary and technical terms both need documented review."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.1",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          46,
+          46
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Controlled writing separates general vocabulary from subject-specific noun and verb terminology.",
+          "disposition": "adapt",
+          "rationale": "Define reviewed IT admission routes with explicit entry evidence instead of treating the ASD dictionary as the vocabulary.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.5",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          49,
+          53
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Technical nouns identify domain concepts and can be collected in a terminology resource.",
+          "disposition": "adapt",
+          "rationale": "Require a concept, authority, and context for an IT noun entry.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source supplies a category inventory and illustrative technical nouns.",
+          "disposition": "not-applicable",
+          "rationale": "The IT terminology framework must not inherit the ASD categories or their examples.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.6",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          53,
+          54
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "A word outside general approval can be valid within a specific technical noun or compound.",
+          "disposition": "adapt",
+          "rationale": "Require admission of the particular domain meaning rather than treat noun position as unrestricted permission.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.12",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          57,
+          60
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Technical verbs name specialized processes and require controlled use.",
+          "disposition": "adapt",
+          "rationale": "Admit IT operations with documented meaning and forms, preferring general wording only when the operation remains accurate.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source organizes technical verbs into its own categories and examples.",
+          "disposition": "not-applicable",
+          "rationale": "IT verb admission uses applicable IT authority, not the source category inventory.",
+          "target_field": "exceptions"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0002",
+    "ITSTE-R-0003",
+    "ITSTE-R-0004",
+    "ITSTE-R-0027"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that an admission proposal records a real concept or operation, authority, version where relevant, meaning, function, forms, and context; a source-code occurrence is insufficient.",
+      "Check that replacing a domain operation with general wording preserves its effects; draining work must not become an immediate stop.",
+      "Confirm that the hypothetical entries remain illustrations, that unresolved terms prevent lexical-conformance claims, and that no ASD category or dictionary entry becomes an IT approval.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

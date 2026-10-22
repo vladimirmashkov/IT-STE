@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0030",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Prefer clear English to Latin abbreviations",
+  "text": "Prefer familiar English phrases to Latin abbreviations in editable controlled prose. Use for example to introduce illustrations and that is to introduce a restatement or definition. Preserve the distinction between a non-exhaustive example list, an exact restatement, and an open-ended set. Omit an unnecessary abbreviation only if no meaning or scope is lost. Do not use etc. or and so on in place of a complete list of required actions, prerequisites, or permitted values. State such a list completely, or provide an authoritative reference that defines the complete set and its applicable version.",
+  "applies_to": ["general"],
+  "exceptions": [
+    "An example list is not an exhaustive specification, and a restatement must not broaden or narrow its subject. If the intended scope is unclear, obtain clarification rather than choose an expansion from the abbreviation alone.",
+    "Preserve quotations, authoritative names, interface strings, identifiers, and other externally or machine-controlled text exactly in marked literal spans. Explain an unfamiliar abbreviation outside the preserved span instead of silently changing it.",
+    "Do not remove necessary qualifications, conditions, or safety and security context to simplify wording. Escalate conflicting external requirements to the responsible editor or technical owner.",
+    "Examples judge this rule only and do not approve a vocabulary. Supporting target IDs are planning references, not canonical relation endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Illustrative list: The report can include diagnostic details, for example, request times and response codes. Exact local value set: The only permitted modes are manual and automatic."}], "rationale": "For example marks illustrations without asserting completeness; the separate permitted-value sentence explicitly states its complete local set."},
+      {"segments": [{"kind": "prose", "text": "The legacy help text contains the abbreviation "}, {"kind": "literal", "text": "e.g.", "literal_type": "quotation", "sha256": "a79b4bf9e7696b20f00efb8d207076c72c5b9a16b96437c62a6719a2d5d2d5c0"}, {"kind": "prose", "text": ". In this quoted text it means for example, not that is."}], "rationale": "The exact quoted abbreviation remains unchanged, and surrounding English explains its illustrative function without converting it into a definition."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Editorial context: the local mode set contains only manual and automatic. Specification: Permitted modes are manual, automatic, and so on."}], "rationale": "An open-ended ending contradicts the complete value set and leaves validation requirements undefined. Expanding etc. to and so on would not solve the scope problem."},
+      {"segments": [{"kind": "prose", "text": "Editorial context: request times and response codes are two examples among several possible diagnostic details. Rewrite: Diagnostic details, that is, request times and response codes, appear in the report."}], "rationale": "That is presents the two examples as an exact restatement and narrows the category. Retain for example when the intent is illustration."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "GR-6", "kind": "guidance", "physical_pdf_pages": [126, 126]}, "facets": [
+      {"source_facet": "Latin abbreviations can be unfamiliar, so English expansions help readers understand the intended relationship.", "disposition": "adapt", "rationale": "Prefer clear English in IT prose while preserving exact external text and distinguishing examples from restatements.", "target_field": "text"},
+      {"source_facet": "The source illustrates abbreviations for examples, clarification, and continuation of a list.", "disposition": "adapt", "rationale": "Preserve those distinct functions and require complete operational or value specifications rather than merely expand an open-ended abbreviation.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0004", "ITSTE-R-0012", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review ASD-STE100 Issue 9 guidance GR-6 on physical PDF page 126; preserve guidance kind and distinguish the source's clarity recommendation from the added IT completeness requirement.",
+    "Check whether each list illustrates, defines, or enumerates a complete set. Verify any authoritative reference and its version; never infer omitted required values or actions.",
+    "Review original wording, examples, quotation digest, exceptions, applicability, separate ASD rights, attribution, and planned dependencies. Automated checks do not establish list completeness, vocabulary approval, or legal rights."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

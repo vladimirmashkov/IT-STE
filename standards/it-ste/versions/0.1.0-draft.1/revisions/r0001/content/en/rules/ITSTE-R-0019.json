@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0019",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Give each content block one primary topic",
+  "text": "Group related information in a paragraph or an equivalent structural block, and keep one primary topic in that block. Identify the topic early unless an accompanying heading, label, schema position, or container already makes it clear. When the relationship to preceding information is not evident, use the topic opening to bridge from that information to the new topic. Keep supporting statements relevant to the topic. Start a new block when the topic, reader task, retrieval boundary, or level of detail changes, or when length makes the block difficult to scan. Choose boundaries that expose relationships without separating an action from its required conditions, protection, or verification. Use the native structures of the content type rather than force every format into conventional paragraphs.",
+  "applies_to": ["general", "software-documentation", "api", "user-interface", "procedures-runbooks", "configuration", "security", "networking", "data-storage", "cloud-infrastructure", "release-notes", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "Tables, reference entries, cards, messages, and other constrained formats can use cells, fields, headings, or containers as topic boundaries. Their context must accompany the content when it is retrieved independently.",
+    "A comparison or tightly coupled relationship can be one primary topic even when it names several objects. One-topic focus is not a ban on related supporting detail.",
+    "This draft sets no universal six-sentence maximum. Split for topic, task, retrieval, or scanning needs rather than to satisfy an arbitrary count; do not scatter required procedural context across optional blocks.",
+    "Do not add a redundant opening when a heading already identifies the topic and connection. Preserve exact quotations, commands, identifiers, interface strings, and other literals instead of editing their structure as prose.",
+    "Preserve actors, modality, conditions, limits, and technical meaning. Stop and escalate any governing-requirement conflict to the responsible editor or technical owner. Examples grant no vocabulary approval; supporting IDs are related planned targets, not canonical endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "The import report lists validation rejections. Each report row identifies the rejected record and its validation error.\n\nFor authorization rejections, use the authorization log instead of the import report. The authorization log identifies the denied operation and the requesting account."}], "rationale": "Each paragraph has one primary topic. The second opening bridges from the report's validation scope to the contrasting authorization source instead of merely announcing an unrelated topic."},
+      {"segments": [{"kind": "prose", "text": "Import-report columns\n\nRecord identifier: Identifies the rejected input record.\n\nValidation error: Explains why validation rejected the record."}], "rationale": "The heading and reference-entry labels identify the topics. Each entry supplies focused detail without a redundant topic sentence or an imposed paragraph format."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "The import report lists validation rejections. Each row identifies a rejected record. The account settings page lets you change your display name. The report also gives the validation error."}], "rationale": "An unrelated account-settings task interrupts the report topic. Move that task to its own appropriate block; a short paragraph can still be incoherent."},
+      {"segments": [{"kind": "prose", "text": "The import report covers validation rejections.\n\nIt also has entries. These identify the denied operation and the requesting account."}], "rationale": "The second block is intended to introduce the authorization log, but its opening neither identifies that new topic nor bridges the scope change. The pronouns instead suggest that authorization entries belong to the import report."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "6.4", "kind": "rule", "physical_pdf_pages": [99, 99]}, "facets": [
+      {"source_facet": "Paragraph boundaries group related information and reveal the logical sequence of an explanation.", "disposition": "adapt", "rationale": "Retain coherent grouping while recognizing IT reference entries, tables, cards, and messages as equivalent structural units.", "target_field": "text"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "6.5", "kind": "rule", "physical_pdf_pages": [100, 100]}, "facets": [
+      {"source_facet": "A paragraph develops one topic, introduced by an opening that guides the reader through its supporting information.", "disposition": "adapt", "rationale": "Require one primary topic and early identification unless an accompanying container already provides it.", "target_field": "text"},
+      {"source_facet": "The topic opening connects new information with the information that came before it.", "disposition": "adapt", "rationale": "Retain the bridging function locally when needed, consistently with 0013, without treating a supporting reference as delegated provenance.", "target_field": "text"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "6.6", "kind": "rule", "physical_pdf_pages": [101, 104]}, "facets": [
+      {"source_facet": "Overlong paragraphs weaken logical grouping and make it harder to maintain reader attention.", "disposition": "adapt", "rationale": "Split IT blocks when topic, task, detail, retrieval, or scanning needs require a new unit.", "target_field": "text"},
+      {"source_facet": "The source applies a fixed ceiling of six sentences to a paragraph.", "disposition": "not-applicable", "rationale": "Do not impose that universal ceiling across IT formats; use meaningful boundaries without losing mandatory context.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0010", "ITSTE-R-0013", "ITSTE-R-0014", "ITSTE-R-0018"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review Issue 9 rules 6.4 (physical PDF page 99), 6.5 (100), and 6.6 (101-104). Check one-topic grouping, topic identification, the retained opening bridge, and explicit rejection of a universal numeric ceiling.",
+    "Identify each block's primary topic and the function of each supporting statement. Check native-format boundaries and whether a heading really accompanies independently delivered content.",
+    "Verify that openings connect topics when needed without mechanical repetition. Confirm that splits retain required conditions, protection, and verification with their actions, consistently with 0013 and 0018.",
+    "Review example correctness, original wording, exceptions, domains, literals and any digests, attribution, separate rights, and supporting planned IDs. Structural validation cannot establish editorial, technical, lexical, or legal approval."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

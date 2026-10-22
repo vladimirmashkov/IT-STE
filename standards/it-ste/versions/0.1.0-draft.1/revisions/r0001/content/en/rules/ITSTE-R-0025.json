@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0025",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Make local length metrics reproducible",
+  "text": "If a content profile imposes a length limit, identify that local profile and its version, the limit, the measured content, and a reproducible measurement method with its version. Distinguish word counts, character counts, and model-token counts. Define sentence, block, list lead-in, and list-item boundaries from the document structure; do not treat every colon as a sentence boundary. Specify how the method handles parenthetical text, numbers and units, abbreviations, identifiers, quotations, titles, headings, labels, proper names, hyphenated compounds, code, URLs, paths, and structural numbering. Do not automatically replace an arbitrary parenthetical or quoted passage with a one-word count or hide its complexity through exclusions. For a token budget, identify the specific tokenizer, its version and encoding or vocabulary identity, and the input preparation and special-token policy needed to reproduce the count. Preserve exact literals and technical meaning; do not change spelling, hyphenation, or document structure merely to reduce a reported count.",
+  "applies_to": ["general", "software-documentation", "ai-automation"],
+  "exceptions": [
+    "This draft defines no universal numeric limit and imports neither the ASD 20/25-word limits nor its special counting conventions. A tested local content profile may define limits; report conformance only against its stated method and scope.",
+    "A word count is not a model-token estimate. A model name alone does not identify a tokenizer. Record the exact tokenizer implementation and version plus its encoding or vocabulary identity; pin mutable artifacts by revision or digest when needed for reproduction.",
+    "Declare and justify exclusions such as structural numbering. Keep excluded content available for readability and technical review; a favorable metric is not proof of clarity or completeness. If a profile is underspecified, request clarification instead of inventing a count convention.",
+    "Preserve machine-significant literals and necessary conditions, limits, and safety or security context even when they exceed a local budget. Stop and escalate an unresolved conflict to the responsible profile owner or technical editor; do not silently omit content or claim conformance.",
+    "Example profiles are fictional local policies, not implemented tools or global IT-STE requirements. Supporting IDs are planning references, not canonical relations or delegated provenance."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Fictional local profile Review Cards version 1: measure each rendered card body separately, including its list lead-in, list items, and parenthetical text. The local limit is 500 Unicode scalar values per body. Method Scalar Count version 1 counts every Unicode scalar value in that body, including whitespace, punctuation, numbers, units, abbreviations, identifiers, quotations, titles, headings, labels, names, hyphenated compounds, code, URLs, and paths. Count each rendered line break as one LF; do not normalize other characters. Exclude only generated list markers and structural numbering. Derive blocks from the rendered card structure, not colons. Review excluded markers separately for clarity."}], "rationale": "This illustrative character metric has a local scope, version, boundary rule, unit, and explicit treatment of difficult content. It does not pretend to count words or model tokens, and its limit is not an IT-STE ceiling."},
+      {"segments": [{"kind": "prose", "text": "Fictional local profile Prompt Review version 1: allow at most 1200 tokens in the complete UTF-8 user-message body, including code, quotations, parentheses, numbers and units, abbreviations, identifiers, titles, headings, labels, names, compounds, URLs, paths, and numbering. Count with tiktoken 0.7.0, encoding cl100k_base, using encode_ordinary on the decoded text without normalization or added special tokens. Preserve existing line breaks. Do not split at colons or list boundaries. This budget excludes the transport envelope and other messages; it is not a claim about the model's entire context window."}], "rationale": "The example names a specific tokenizer implementation, version, encoding, input scope, and counting operation. It is a proposed local policy, not an executed measurement or evidence that this tokenizer matches an unspecified model."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Every IT-STE sentence must have at most 20 words. Count any quotation or parenthetical passage as one word, and add hyphens if the count is too high."}], "rationale": "This invents a universal limit, hides complexity, and encourages metric gaming rather than defining and testing a local profile."},
+      {"segments": [{"kind": "prose", "text": "Count words as model tokens. Split the address "}, {"kind": "literal", "text": "https://example.invalid:8443/status", "literal_type": "value", "sha256": "b4de625f7b65c883c191ad35fb81493eb96fd8ae7ae58bfb14d79c60bcf730e5"}, {"kind": "prose", "text": " into sentences at each colon. Use whichever tokenizer is current."}], "rationale": "Words are not tokens, syntax colons are not automatic prose boundaries, and a moving tokenizer identity prevents reproduction. The exact illustrative URL remains literal; the erroneous counting instruction does not authorize editing it."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "8.4", "kind": "rule", "physical_pdf_pages": [110, 110]}, "facets": [
+      {"source_facet": "The source measures a list lead-in and its items separately using the lead-in colon as a boundary.", "disposition": "adapt", "rationale": "Require explicit structural boundaries in a versioned local method rather than interpreting IT syntax colons as sentence breaks.", "target_field": "text"},
+      {"source_facet": "List measurements inherit the source's procedural and descriptive word ceilings.", "disposition": "not-applicable", "rationale": "Those numeric ceilings do not establish general IT-STE limits; any limit belongs to a named local profile.", "target_field": "exceptions"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "8.5", "kind": "rule", "physical_pdf_pages": [111, 111]}, "facets": [
+      {"source_facet": "The source substitutes one word for a parenthetical group in the containing sentence and counts its interior separately.", "disposition": "adapt", "rationale": "Require an explicit reproducible local treatment without concealing arbitrary parenthetical complexity behind a one-word substitution.", "target_field": "text"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "8.6", "kind": "rule", "physical_pdf_pages": [111, 114]}, "facets": [
+      {"source_facet": "The source gives special single-word treatment to numbers, number-unit groups, abbreviations, identifiers, quoted text, titles, labels, and proper names.", "disposition": "adapt", "rationale": "Declare each category in the local method and extend coverage to code, URLs, and paths without confusing word conventions with model tokens.", "target_field": "text"},
+      {"source_facet": "Document numbering is excluded, and externally fixed wording retains its spelling even when it contains several words.", "disposition": "adapt", "rationale": "Declare structural-number exclusions and preserve exact literals while requiring separate readability review of excluded content.", "target_field": "exceptions"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "8.7", "kind": "rule", "physical_pdf_pages": [114, 114]}, "facets": [
+      {"source_facet": "The source treats hyphenated compounds and linked technical-word groups as single counting units.", "disposition": "adapt", "rationale": "Require the local method to state compound treatment while preserving established spelling and prohibiting hyphenation solely to manipulate the metric.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0006", "ITSTE-R-0010", "ITSTE-R-0012", "ITSTE-R-0024"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review all facets of ASD-STE100 Issue 9 rules 8.4-8.7, physical PDF pages 110-114, including separate parenthetical measurement, structural numbering, and fixed multi-word names.",
+    "Reproduce any actual local measurement from its named profile, version, method, scope, and input. For token budgets verify the specific tokenizer implementation, version, encoding or vocabulary, preparation, and special-token policy; do not infer them from a model name.",
+    "Check that all declared content categories and boundaries are covered, excluded content remains reviewable, and neither example profile is presented as implemented or universally required. No example count was executed by the corpus validator.",
+    "Check original wording, examples and literal digest, applicability, exceptions, separate ASD rights, attribution, and planned references. Human review must assess clarity and technical completeness; structure-only validation cannot do so."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

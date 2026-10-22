@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0006",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Expose the structure of multi-word terms",
+  "text": "Make the head noun and modifier relationships of a multi-word expression clear. For editable descriptive wording, replace an ambiguous stack with explicit grammatical relationships, such as a phrase that identifies what belongs to what or which operation affects which object. Preserve an authoritative term rather than shorten or respell it. Write a long term in full at first use in each independently consumable unit; introduce a contextual short form or abbreviation only when it improves readability and has one clear referent. Preserve established hyphenation. Add hyphens only when standard spelling or grammar requires them to connect related words, not to reduce a count. Distinguish a hyphen from a dash, and preserve syntax-controlled characters exactly.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "api",
+    "cli",
+    "user-interface",
+    "error-messages",
+    "logs-events",
+    "procedures-runbooks",
+    "configuration",
+    "source-code"
+  ],
+  "exceptions": [
+    "There is no absolute three-word limit. A long authoritative term can remain intact; explain its role outside the name if its internal wording is difficult.",
+    "An alias introduced in another page, help topic, or retrieved fragment is not sufficient when the current unit can be read alone. Reintroduce it where needed.",
+    "Do not add hyphens inside names or identifiers, substitute typographic dashes for command hyphens, or join unrelated words to satisfy a local length policy. A preserved literal need not follow prose hyphenation."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Check the retention policy for logs from the backup agent."
+          }
+        ],
+        "rationale": "The phrase states that the logs come from the agent and that the policy concerns those logs, instead of stacking four modifiers."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "In this self-contained fictional help topic, open "
+          },
+          {
+            "kind": "literal",
+            "text": "Regional Access Policy Manager",
+            "literal_type": "interface",
+            "sha256": "bfa0f459549f339b922401f8038da0f724b68de83d95a1579ec224d429261263"
+          },
+          {
+            "kind": "prose",
+            "text": " (the policy manager). The policy manager lists the regional access policies. The illustrative option "
+          },
+          {
+            "kind": "literal",
+            "text": "--read-only",
+            "literal_type": "command",
+            "sha256": "d96b8951a8d8c308404b9aa8fd855bb8eb705e12cbf683e78c5eef4818cd7d6a"
+          },
+          {
+            "kind": "prose",
+            "text": " retains its two leading hyphens."
+          }
+        ],
+        "rationale": "The full interface name precedes a unique contextual alias. The option is an exact syntax illustration, not an instruction to execute a command."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Check the backup agent log retention policy."
+          }
+        ],
+        "rationale": "In the intended relationship shown by the positive example, the modifier stack makes the policy scope harder to identify. State that it is the retention policy for logs from the backup agent."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Rewrite the illustrative option "
+          },
+          {
+            "kind": "literal",
+            "text": "--read-only",
+            "literal_type": "command",
+            "sha256": "d96b8951a8d8c308404b9aa8fd855bb8eb705e12cbf683e78c5eef4818cd7d6a"
+          },
+          {
+            "kind": "prose",
+            "text": " as "
+          },
+          {
+            "kind": "literal",
+            "text": "—read-only",
+            "literal_type": "command",
+            "sha256": "9ed9847a77024a3d842a1ae541016fb87056fcbf358396d006c801407850bcca"
+          },
+          {
+            "kind": "prose",
+            "text": " and add hyphens throughout the interface name to reduce its word count."
+          }
+        ],
+        "rationale": "A typographic dash is not two syntax hyphens, and counting does not justify altering a name. Negative literals record the proposed error, not valid alternate syntax."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "2.1",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          63,
+          64
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Long noun and adjective groups can hide how their components relate.",
+          "disposition": "adapt",
+          "rationale": "Use explicit IT modifier relationships instead of enforcing a fixed word ceiling.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source uses a three-word maximum for multi-word nouns.",
+          "disposition": "not-applicable",
+          "rationale": "Authoritative IT terms can be longer without becoming invalid.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "2.2",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          64,
+          66
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Long established technical terms need their full form and can benefit from a shorter contextual form.",
+          "disposition": "adapt",
+          "rationale": "Introduce the full name in every independently consumable unit and permit only a useful unambiguous alias.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "Hyphens can group related modifiers and affect the source word-count convention.",
+          "disposition": "adapt",
+          "rationale": "Allow grammatical hyphens but forbid count-driven respelling and preserve authoritative hyphenation.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "8.2",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          108,
+          108
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "A hyphen can show that words function together.",
+          "disposition": "adapt",
+          "rationale": "Apply standard spelling and grammar while distinguishing dashes and preserving syntax-controlled characters.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0003",
+    "ITSTE-R-0004",
+    "ITSTE-R-0010",
+    "ITSTE-R-0025"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Identify the head noun and each modifier relationship; ensure the expanded backup-agent phrase matches the intended policy scope.",
+      "Verify full-name introduction and alias uniqueness at each independent retrieval boundary without renaming the interface.",
+      "Check established hyphenation and exact code points in both option examples: two ASCII hyphens and one em dash are deliberately different, not interchangeable.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

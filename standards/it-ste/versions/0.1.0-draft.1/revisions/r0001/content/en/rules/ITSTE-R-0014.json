@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0014",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Separate independently executable actions into steps",
+  "text": "Put each independently executable action in a separate procedural step so that the reader or automation can follow, verify, resume, and report it separately. Keep multiple actions in one step only when a technical dependency makes them simultaneous, atomic, conventionally inseparable, or immediately coupled to a required result or verification. Preserve intentional transaction boundaries. Prefer one principal instruction per sentence; permission to group coupled actions in a step does not justify a dense sentence of independent instructions. A step can contain multiple sentences that state coupled actions, expected results, limits, or verification. Keep the conditions and required results with the action they govern. Describe automatic system behavior as behavior of the named system rather than invent a reader action.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "user-interface", "procedures-runbooks", "configuration", "security", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "Do not split a command, expression, code example, or atomic transaction into artificial actions. Preserve exact literal syntax, and explain its execution boundary in surrounding prose when necessary.",
+    "A result or immediately required verification can remain in the action's step. Use separate sentences for clarity; do not separate the verification so far that the reader can continue before checking it.",
+    "Technical coupling, not formatting convenience or a desired step count, justifies grouping. A conditional branch can contain several separate steps while keeping its controlling condition explicit.",
+    "Preserve actors, timing, modality, branch conditions, limits, and protection. If a governing requirement conflicts with a safe, meaning-preserving division, stop the rewrite and consult the responsible editor or technical owner.",
+    "Examples are editorial scenarios, not complete operational procedures or vocabulary approvals. Supporting IDs name related planned targets, not canonical endpoints or delegated source facets."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "To view the completed import report:\n1. Open the import history.\n2. Select the completed import.\n3. Open its report."}], "rationale": "Each action is independently executable and has its own step. A reader can identify the last completed action without interpreting a chain inside one step."},
+      {"segments": [{"kind": "prose", "text": "1. Save the notification preferences. The settings service displays a confirmation. Verify that the confirmation lists the intended recipients before you continue."}], "rationale": "The save action, immediate system result, and required verification form one coupled unit. Separate sentences preserve the sentence-level preference, and the service remains the actor that displays the result."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "1. Open the import history, select the completed import, and open its report."}], "rationale": "Three independently executable actions are compressed into one sentence and step without a technical coupling reason. Separate them as in the positive example."},
+      {"segments": [{"kind": "prose", "text": "1. Save the notification preferences.\n2. Continue to the next setup task.\n3. Verify that the save confirmation lists the intended recipients."}], "rationale": "The required verification is separated from the save and placed after continuation. Splitting has broken the coupled acceptance boundary instead of improving resumability."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "5.2", "kind": "rule", "physical_pdf_pages": [88, 89]}, "facets": [
+      {"source_facet": "Limiting a sentence to one instruction reduces the burden of following procedural actions.", "disposition": "adapt", "rationale": "Use a step-level execution boundary plus a preference for one principal instruction per sentence, rather than silently replace the source's sentence unit with a step unit.", "target_field": "text"},
+      {"source_facet": "Actions that occur together can require more than one instruction in the same unit.", "disposition": "adapt", "rationale": "Retain simultaneous actions and extend justified grouping to atomic, conventionally inseparable, and immediately coupled IT operations.", "target_field": "text"},
+      {"source_facet": "A work step can contain multiple sentences for simultaneous actions or an immediate result.", "disposition": "adapt", "rationale": "Keep coupled actions, system results, limits, and required verification local without permitting dense independent instruction chains.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0010", "ITSTE-R-0012", "ITSTE-R-0015", "ITSTE-R-0016", "ITSTE-R-0017"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review Issue 9 rule 5.2, physical PDF pages 88-89, and the corrected plan distinction between sentence and step. Check that both units receive explicit treatment.",
+    "For each grouped action, record the technical coupling reason. Check resumability, transaction boundaries, immediate results, and required verification without splitting literals or inventing reader actions.",
+    "Confirm that multiple sentences within a step do not become permission for a dense chain of independent instructions. Compare the import sequence with 0012 and the required-content boundary with 0017.",
+    "Review examples, applicability, exceptions, literal boundaries and any digests, original wording, separate source rights, attribution, and planned supporting IDs. Structural validation cannot establish technical sufficiency, lexical approval, or editorial approval."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0009",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Express operations with direct verbs",
+  "text": "When editable prose describes an action, use a direct verb permitted for that meaning and context if it is clearer than a nominalization or a support-verb phrase. Replace wording such as perform a validation with the corresponding direct action only when the actor, object, timing, modality, and effect remain the same. Rebuild the sentence as needed rather than mechanically exchange words. Keep a noun when it names a concept, state, result, interface element, or machine-significant entity instead of hiding an action. If no applicable verb entry exists, request lexical review; do not turn an admitted noun into a verb solely to shorten the sentence.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "api",
+    "cli",
+    "user-interface",
+    "error-messages",
+    "logs-events",
+    "monitoring-alerts",
+    "procedures-runbooks",
+    "configuration",
+    "security",
+    "source-code",
+    "support-troubleshooting"
+  ],
+  "exceptions": [
+    "A concept such as authentication or a result such as a validation report can be the actual subject of discussion. Do not force every action-related noun into a verb.",
+    "Commands, fields, interface labels, and quoted strings retain their exact noun or verb wording. Give a direct surrounding instruction without renaming the element.",
+    "A shorter verb must not change a verification into a repair, a permission into a command, or an automatic operation into a reader step. Example verbs are not global lexical approvals."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Before the deployment starts, validate the configuration."
+          }
+        ],
+        "rationale": "In a context where validate is admitted for this check, the direct verb replaces Perform a validation of the configuration without changing the prerequisite."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Select "
+          },
+          {
+            "kind": "literal",
+            "text": "Validation",
+            "literal_type": "interface",
+            "sha256": "68e1ca575295bb5604fea711b5d2eff44006ce4bd985481083a76b71fce0daef"
+          },
+          {
+            "kind": "prose",
+            "text": " to view the validation report."
+          }
+        ],
+        "rationale": "The surrounding action is direct, while the interface label and report concept remain nouns. The label is illustrative, not an actual product specification."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Perform the execution of a validation of the configuration before the deployment starts."
+          }
+        ],
+        "rationale": "In the same intended context as the positive example, the support-verb chain hides the operation. Use the direct validation verb and keep the timing condition."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Rename the tab "
+          },
+          {
+            "kind": "literal",
+            "text": "Validation",
+            "literal_type": "interface",
+            "sha256": "68e1ca575295bb5604fea711b5d2eff44006ce4bd985481083a76b71fce0daef"
+          },
+          {
+            "kind": "prose",
+            "text": " to "
+          },
+          {
+            "kind": "literal",
+            "text": "Validate",
+            "literal_type": "interface",
+            "sha256": "40611abbdda22526b47ddcb41553bf3f556195a6855f2aca8404d62791a7ec67"
+          },
+          {
+            "kind": "prose",
+            "text": " because action-related nouns are prohibited."
+          }
+        ],
+        "rationale": "The rule does not prohibit concept nouns or authorize changing a fixed interface label. Keep the label and express the reader action outside it."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "3.7",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          75,
+          76
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "A permitted verb can express an action more directly than noun-based wording.",
+          "disposition": "adapt",
+          "rationale": "Prefer an applicable IT verb while retaining genuine concepts and exact external names; do not infer verb admission from a noun.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0002",
+    "ITSTE-R-0007",
+    "ITSTE-R-0008",
+    "ITSTE-R-0015",
+    "ITSTE-R-0026"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Confirm that the direct verb has an applicable lexical entry and preserves actor, object, timing, obligation, and operation; this pilot supplies no vocabulary.",
+      "Distinguish a hidden operation from a concept or result noun and verify the fictional Validation label stays literal.",
+      "Check that a direct rewrite does not imply permission to rename an interface or replace validation with correction.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

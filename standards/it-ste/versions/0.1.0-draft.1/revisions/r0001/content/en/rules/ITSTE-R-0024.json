@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0024",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Keep parenthetical information unambiguous",
+  "text": "Use parentheses for a clear reference, item identifier, step marker, introduced abbreviation, or brief supplementary explanation when they help the reader. Keep required actions, prerequisites, limits, and branch-selection criteria explicit in the main instruction, not only in parentheses. Expand a parenthetical alternative into explicit choices with their selection criteria. Choose a singular or plural form, or a quantifier that states the intended quantity, instead of attaching a parenthetical plural ending. Avoid dense or nested parenthetical prose; use separate sentences or a structured list when relationships become difficult to follow.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "user-interface", "procedures-runbooks", "configuration", "source-code"],
+  "exceptions": [
+    "Do not infer that every noun has a regular plural or that either number is interchangeable. Preserve the intended cardinality, agreement, and established term; obtain clarification when the quantity is unknown.",
+    "Preserve parentheses and other delimiters exactly in marked commands, code, schema expressions, interface strings, quotations, and other syntax-controlled text. Their syntactic role is not a prose choice.",
+    "A brief explanation may remain parenthetical only if it is supplemental; necessary conditions and limits must remain visible in the main flow. Do not omit them to simplify a sentence. Escalate conflicting external requirements to the responsible editor or technical owner.",
+    "Examples do not approve a vocabulary or executable syntax. Supporting target IDs are planning references only, not canonical relation endpoints or delegated source facets."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "If the service uses the primary region, open the primary-region log. If the service uses the recovery region, open the recovery-region log."}], "rationale": "Each alternative has an explicit condition and matching action. Neither the region choice nor its condition is hidden in parentheses."},
+      {"segments": [{"kind": "prose", "text": "This illustrative regular-expression fragment is "}, {"kind": "literal", "text": "(a|b)", "literal_type": "value", "sha256": "164bd918880ae11dec985388ffd6d0aae65725179364cb1bafe64db85895b27c"}, {"kind": "prose", "text": ". The parentheses belong to the expression, not to a prose aside."}], "rationale": "The syntax-controlled fragment retains its exact delimiters. The example demonstrates preservation, not validation of a complete expression for a particular engine."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Open the primary-region (recovery-region) log (depending on the service region)."}], "rationale": "The compact alternative and parenthetical condition hide branch selection. State each condition and action explicitly as in the positive example."},
+      {"segments": [{"kind": "prose", "text": "Context: the procedure requires exactly one selected log. Instruction: Open the log(s)."}], "rationale": "The parenthetical plural suggests an unsupported choice of quantity. Write Open the selected log. Do not automatically expand every compact form into a plural instruction."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "8.3", "kind": "rule", "physical_pdf_pages": [109, 110]}, "facets": [
+      {"source_facet": "Parentheses can supply references, item identifiers, procedure markers, abbreviations, and explanations.", "disposition": "adapt", "rationale": "Retain these useful functions in IT prose when the information is clear and supplemental, while excluding required constraints from asides.", "target_field": "text"},
+      {"source_facet": "The source permits compact singular-and-plural forms and parenthetical alternatives.", "disposition": "adapt", "rationale": "Require explicit cardinality and branch selection instead of ambiguous compressed choices; do not presume regular noun plurals.", "target_field": "text"},
+      {"source_facet": "Source explanations can place operational limits inside parentheses.", "disposition": "adapt", "rationale": "IT readers and independently retrieved instructions need required limits in the main procedural flow, not merely in an aside.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0012", "ITSTE-R-0016", "ITSTE-R-0017", "ITSTE-R-0025", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review all uses allocated from ASD-STE100 Issue 9 rule 8.3, physical PDF pages 109-110, including explanations, limits, number, and alternatives.",
+    "Verify cardinality and branch criteria with the technical context. Check that supplemental references remain possible and that no noun-plural assumption or executable delimiter rewrite is introduced.",
+    "Check original English wording, examples and literal digest, applicability, exceptions, separate source rights, attribution, and planned dependencies. A structural pass does not establish semantic completeness or editorial approval."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

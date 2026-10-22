@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0003",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Keep authoritative names consistent within context",
+  "text": "Identify the applicable terminology authority for each concept and use its name consistently within the documented product, version, and interface layer. Check the relevant standard, schema, product specification, or maintained project glossary before choosing a name. Do not alternate synonyms for the same concept for stylistic variety. If different layers or versions expose different names for the same concept, state their mapping and scope explicitly at first relevant use. Preserve each external name exactly when referring to that interface. Distinguish genuinely different concepts instead of forcing them under one convenient name. When authorities disagree within the same scope, ask the responsible terminology or technical owner to resolve the conflict before claiming consistency.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "api",
+    "cli",
+    "user-interface",
+    "configuration",
+    "source-code"
+  ],
+  "exceptions": [
+    "A documented contextual short form may follow the full name when its referent remains unique. It is an explicit alias, not permission to introduce arbitrary synonyms.",
+    "Different interface layers, product versions, and separately defined concepts can legitimately have different names. A mapping must not imply equivalence unless the technical owner confirms it.",
+    "Do not rename commands, fields, proper names, quoted text, or interface strings to match prose terminology. Preserve literal spelling and explain the relationship outside the literal."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "In this guide, the project glossary calls the queued work item a job. The scheduler assigns a job to a worker. The worker reports the job result."
+          }
+        ],
+        "rationale": "The same glossary concept keeps one name across its lifecycle; the local example does not approve job as a global vocabulary entry."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "In this fictional product, the interface label "
+          },
+          {
+            "kind": "literal",
+            "text": "Workspace",
+            "literal_type": "interface",
+            "sha256": "87bb59ba2f92f2a5a9f13e021fd58dd14ae5c065b1046146875e6e68d5ebc8b7"
+          },
+          {
+            "kind": "prose",
+            "text": " corresponds to the API field "
+          },
+          {
+            "kind": "literal",
+            "text": "tenant_id",
+            "literal_type": "identifier",
+            "sha256": "759b6ffea819a48a54ce7629b1ea21b328898ac2c1b460a10f268153d0b362c5"
+          },
+          {
+            "kind": "prose",
+            "text": ". Use the label in interface instructions and the field name in API requests."
+          }
+        ],
+        "rationale": "The explicit mapping distinguishes two naming layers while preserving their different external spellings."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The glossary names the object a job. Submit the job, inspect the task, and archive the request; all three names refer to that same object."
+          }
+        ],
+        "rationale": "Unmapped synonyms make one object look like three concepts. Keep job in this stated glossary context."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The documented API field is "
+          },
+          {
+            "kind": "literal",
+            "text": "tenant_id",
+            "literal_type": "identifier",
+            "sha256": "759b6ffea819a48a54ce7629b1ea21b328898ac2c1b460a10f268153d0b362c5"
+          },
+          {
+            "kind": "prose",
+            "text": ", but call the field "
+          },
+          {
+            "kind": "literal",
+            "text": "workspace_id",
+            "literal_type": "identifier",
+            "sha256": "98608ef93fc8ae9aeae45f80e214cfab75b37fb38538b7e4d08ad3e90df5f77e"
+          },
+          {
+            "kind": "prose",
+            "text": " in requests so that it matches the interface terminology."
+          }
+        ],
+        "rationale": "The proposed rename changes the interface contract. An explanatory mapping must preserve the real field name, not replace it."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.8",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          55,
+          55
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Established subject-field terminology takes precedence over a newly chosen name.",
+          "disposition": "adapt",
+          "rationale": "Recognize IT specifications, schemas, products, and maintained glossaries as scoped authorities.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.11",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          57,
+          57
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Changing the name of one item can make references inconsistent.",
+          "disposition": "adapt",
+          "rationale": "Require stable concept names while explicitly mapping legitimate layer and version differences.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0001",
+    "ITSTE-R-0004",
+    "ITSTE-R-0006",
+    "ITSTE-R-0028"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify the authority and scope of each selected name, including version and interface layer; resolve conflicting authorities with the owner.",
+      "Check that the job example refers to one object and that any real Workspace-to-tenant_id mapping is technically verified before reuse.",
+      "Inspect every literal boundary and alias: consistency must not rename an external field, merge distinct concepts, or suppress a necessary mapping.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

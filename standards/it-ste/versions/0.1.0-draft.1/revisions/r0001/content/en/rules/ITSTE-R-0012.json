@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0012",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Make lists parallel and easy to scan",
+  "text": "Use a list when separate items make alternatives, prerequisites, components, or actions easier to find than a continuous sentence. Introduce the list with a lead-in that states its purpose and, where needed, whether all items or only selected alternatives apply. Make each item connect grammatically to the lead-in. Use parallel constructions for items with the same function, and keep punctuation and item style consistent. Separate items that have different logical levels or functions instead of mixing descriptions, prerequisites, and commands in one undifferentiated list. Use an ordered list when sequence or priority matters; otherwise, use an unordered list. Preserve the actual execution order and branch conditions. Follow the governing output format or style guide for presentation details.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "user-interface", "error-messages", "monitoring-alerts", "procedures-runbooks", "configuration", "security", "release-notes", "support-troubleshooting"],
+  "exceptions": [
+    "A short sentence or a table can be clearer than a list. Choose the structure that exposes the relationships; do not convert every series into a vertical list.",
+    "A constrained interface or machine-readable format can require its own separators, ordering, and item syntax. Preserve exact commands, identifiers, interface strings, and other literals; apply prose parallelism only to editable wording.",
+    "A list item is not automatically one executable step. Keep technically coupled actions, required results, and verification together when appropriate, without using parallel presentation to hide independent actions or required protection.",
+    "Do not change actors, modality, conditions, limits, or technical meaning for uniformity. If a governing requirement conflicts with preserving them, stop the rewrite and consult the responsible editor or technical owner.",
+    "Examples judge list structure only and do not establish vocabulary approval. Supporting target IDs are planning references, not canonical endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "The connection report contains:\n- The server address.\n- The negotiated protocol.\n- The connection duration."}], "rationale": "The lead-in identifies a set of report fields. Parallel noun phrases complete it, and bullets do not imply a required sequence."},
+      {"segments": [{"kind": "prose", "text": "To view the completed import report:\n1. Open the import history.\n2. Select the completed import.\n3. Open its report."}], "rationale": "The ordered items are parallel reader actions whose sequence matters. The referent of its is the import selected in the preceding step."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "The connection report contains:\n- The server address.\n- Check the negotiated protocol.\n- How long was it connected?"}], "rationale": "A command and a question interrupt a list of report fields and do not complete the lead-in grammatically. Use parallel field descriptions."},
+      {"segments": [{"kind": "prose", "text": "Required order for viewing a completed import report:\n1. Open the report.\n2. Open the import history.\n3. Select the completed import."}], "rationale": "Numbering falsely presents an executable sequence: this interface requires selection from the history before the report can be opened. Consistent formatting cannot repair the wrong order."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "4.3", "kind": "rule", "physical_pdf_pages": [80, 83]}, "facets": [
+      {"source_facet": "Separating a complex series into visible items improves access to its content.", "disposition": "adapt", "rationale": "Apply lists to IT alternatives, prerequisites, fields, and actions when they improve scanning rather than require a list for every series.", "target_field": "text"},
+      {"source_facet": "Every item must fit the introductory wording and use a consistent grammatical and visual pattern.", "disposition": "adapt", "rationale": "Require clear lead-ins and parallel items while distinguishing logical levels and meaningful ordering in IT formats.", "target_field": "text"},
+      {"source_facet": "The source demonstrates particular list layouts and punctuation conventions.", "disposition": "adapt", "rationale": "Retain consistent presentation but let the governing format determine syntax and punctuation without modifying exact literals.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0014", "ITSTE-R-0019", "ITSTE-R-0023", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Compare the dispositions with Issue 9 rule 4.3, physical PDF pages 80-83, for semantic completeness and original wording.",
+    "Read each item with its lead-in; check parallel grammar, logical level, item style, all-versus-alternative scope, and whether ordering expresses a real dependency or priority.",
+    "Check the report and import examples against their stated contexts. Keep execution boundaries, condition-first ordering, truthful actors, and required protection consistent with related drafts.",
+    "Review applicability, exceptions, literal boundaries and any digests, rights scope, attribution, and supporting planned IDs. Structural validation does not approve prose, vocabulary, technical correctness, or legal sufficiency."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

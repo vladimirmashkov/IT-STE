@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0004",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Choose terms that international readers can understand",
+  "text": "When no applicable authority fixes a term, choose the shortest term that identifies the concept unambiguously for the intended international audience. Compare candidates for meaning and reader familiarity, not only length. Avoid regional expressions, slang, and unexplained internal nicknames. Keep a longer term when shortening would remove a necessary distinction. Use established IT terminology when it is familiar to the intended audience; otherwise define it at first relevant use with the concept and its distinguishing property. Make the definition available in independently read sections that need it. Submit a newly selected term through terminology review rather than treat its use in a draft as admission.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "user-interface",
+    "error-messages",
+    "support-troubleshooting"
+  ],
+  "exceptions": [
+    "An authoritative name takes precedence over a locally preferred shorter name. Preserve exact external labels and names, and explain unfamiliar wording instead of silently renaming them.",
+    "Established or clearly defined specialist IT terms are not prohibited merely because a general audience might call them jargon. Judge familiarity against the actual audience and supply necessary definitions.",
+    "There is no three-word ceiling. A shorter ambiguous term is not preferable to a longer accurate term; a local abbreviation also needs a clear introduction."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "For this fictional support guide, no authority fixes the term. Call the location for rejected messages a failed-message queue, and define it as the queue that holds messages after delivery attempts fail."
+          }
+        ],
+        "rationale": "The selected term identifies a concrete role without an internal nickname. The definition limits its meaning; this is a local selection example, not lexical approval."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "A tombstone is a stored marker that records a deletion so that replicas can apply that deletion. Keep the marker until every required replica has received it."
+          }
+        ],
+        "rationale": "The established specialist term is explained rather than prohibited or replaced with an inaccurate shorter word. The retention condition remains explicit."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Put the undeliverable message in the naughty corner."
+          }
+        ],
+        "rationale": "The metaphor is an unexplained local nickname, not a clear international name for a message location."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Rename the failed-message queue to queue everywhere because one word is always clearer."
+          }
+        ],
+        "rationale": "The shorter name loses the distinction between failed messages and normal work. Brevity does not justify ambiguity."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.9",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          56,
+          56
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "When no approved name exists, a short understandable term should be selected.",
+          "disposition": "adapt",
+          "rationale": "Select the shortest unambiguous IT term against audience understanding and necessary distinctions.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source places a small numeric ceiling on a newly selected term.",
+          "disposition": "not-applicable",
+          "rationale": "A fixed three-word limit could erase necessary IT distinctions or external names.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "1.10",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          56,
+          56
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Regional and narrowly understood expressions hinder readers outside their originating group.",
+          "disposition": "adapt",
+          "rationale": "Avoid slang and unexplained internal nicknames while permitting established or clearly defined specialist terminology.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0001",
+    "ITSTE-R-0003",
+    "ITSTE-R-0006",
+    "ITSTE-R-0018"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Compare candidate names against the intended international audience and concept distinctions; do not decide from word count alone.",
+      "Check that a specialist definition is technically correct and available where a section is read independently.",
+      "Verify that the fictional queue selection does not override an actual authority and that the tombstone explanation does not become a universal retention policy.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

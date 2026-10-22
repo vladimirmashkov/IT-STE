@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0010",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Keep each sentence focused and technically complete",
+  "text": "Write concise, concrete sentences with one principal topic or action. Name the relevant object, condition, and result instead of relying on vague wording. Split independent ideas or actions when their combination makes a sentence difficult to follow. When splitting, repeat or explicitly connect the information needed to preserve sequence, causality, branch scope, and reference. Keep necessary prerequisites, limits, identifiers, modality, and safety or security context with the statements they govern. Do not remove a technical distinction merely to shorten a sentence. Use a local length limit only when a content profile defines its scope and measurement and validates it for the format and audience; this rule sets no universal word or token maximum.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "api",
+    "cli",
+    "user-interface",
+    "error-messages",
+    "monitoring-alerts",
+    "procedures-runbooks",
+    "configuration",
+    "security",
+    "release-notes",
+    "support-troubleshooting",
+    "ai-automation"
+  ],
+  "exceptions": [
+    "A sentence can express a necessary relationship between subjects or coupled actions while retaining one principal focus. Do not split an atomic operation or detach its condition simply to obtain shorter sentences.",
+    "Literal identifiers, quotations, commands, and names remain exact even when long. Local counting rules cannot authorize editing them or hiding complexity behind an arbitrary one-word count.",
+    "If a mandatory external length requirement cannot be met without changing meaning or required protection, stop the rewrite and refer the conflict to the editor or technical owner. Do not omit information or claim conformance."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "If the replica is healthy, restart the worker. Otherwise, stop and contact the service owner."
+          }
+        ],
+        "rationale": "The action keeps its prerequisite, and the separate sentence supplies an explicit unsatisfied-condition path without weakening the branch."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The exporter writes one file per region. Each file contains only the records assigned to that region."
+          }
+        ],
+        "rationale": "Two focused sentences state file organization and content scope with an explicit referent; no numeric ceiling is needed."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The exporter writes one file per region and the dashboard has a new theme and administrators can rotate credentials from the settings page."
+          }
+        ],
+        "rationale": "Three unrelated topics compete in one sentence. Separate them into their relevant topics rather than retain a dense chain."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Restart the worker. Check replica health later; the prerequisite was removed to meet a local word limit."
+          }
+        ],
+        "rationale": "The shortened instruction changes the action conditions. Preserve the health prerequisite before the restart and escalate a conflicting limit."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "4.1",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          77,
+          78
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Short clear sentences should communicate accurate instructions and information.",
+          "disposition": "adapt",
+          "rationale": "Require concrete IT focus and preserve relationships and constraints during splitting.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "5.1",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          87,
+          88
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Procedural sentences should be easy to understand during execution.",
+          "disposition": "adapt",
+          "rationale": "Keep action focus and prerequisites intact, allowing validated local limits rather than a universal ceiling.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source applies a twenty-word procedural ceiling, including protective instructions.",
+          "disposition": "not-applicable",
+          "rationale": "IT procedure length must not override atomicity or required safety and security context.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "6.3",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          98,
+          99
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Descriptive sentences also benefit from concise structure.",
+          "disposition": "adapt",
+          "rationale": "Use the same meaning-preserving focus for descriptions and require scoped measurement for any local limit.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source sets a twenty-five-word descriptive maximum.",
+          "disposition": "not-applicable",
+          "rationale": "No universal descriptive count is imposed across IT formats.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0006",
+    "ITSTE-R-0011",
+    "ITSTE-R-0013",
+    "ITSTE-R-0014",
+    "ITSTE-R-0016",
+    "ITSTE-R-0021",
+    "ITSTE-R-0025"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Compare the full technical claims before and after splitting, especially branch scope, sequence, referents, modality, and required protection.",
+      "Check that every sentence has a principal focus without separating an atomic operation or a necessary relationship.",
+      "Review any local length policy for scope, reproducible measurement, and audience validation; do not inherit ASD numeric limits or equate words with model tokens.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0008",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Name relevant actors without inventing responsibility",
+  "text": "Use active voice when the actor or responsible component matters to understanding or performing the action. Name the service, role, team, or automated agent that performs it; use a direct imperative for an action assigned to the reader. Before changing passive wording, verify who actually acts and whether the action is automatic or manual. Use passive voice when the actor is unknown, irrelevant, intentionally omitted for security, or less important than the affected object or state. Keep any responsibility, timing, condition, and required response explicit even when passive voice is justified. If responsibility is necessary but unknown, report or escalate that gap instead of guessing an actor.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "user-interface",
+    "error-messages",
+    "logs-events",
+    "monitoring-alerts",
+    "procedures-runbooks",
+    "security",
+    "support-troubleshooting"
+  ],
+  "exceptions": [
+    "Object-focused incident descriptions and state reports can validly use passive voice. Do not invent a component or expose a protected identity merely to force an active sentence.",
+    "A justified passive description must not replace a required reader instruction with a vague capability statement. Assign the reader action or identify the responsible non-reader actor.",
+    "Preserve exact external messages and quotations. A state adjective is not automatically passive voice; review the intended claim, not just a form of be."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The deployment controller restarts the worker after the health check fails."
+          }
+        ],
+        "rationale": "The verified component and triggering condition make an automatic action explicit; it is not assigned to the reader."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The audit record was deleted during the outage. The investigation has not identified who deleted it."
+          }
+        ],
+        "rationale": "The actor is explicitly unknown. Passive voice reports the observed event without inventing responsibility."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Routine reader instruction: The deployment log can be opened."
+          }
+        ],
+        "rationale": "When the intended action belongs to the reader, write Open the deployment log. Passive capability leaves the instruction unassigned."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The administrator deleted the audit record. Editorial context: the investigation has established the deletion but has not identified who performed it."
+          }
+        ],
+        "rationale": "Adding an unsupported administrator falsely attributes responsibility. Preserve the known event and explicitly report the unknown actor instead."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "3.6",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          71,
+          75
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Active voice exposes the actor and action; unknown agency can justify passive description.",
+          "disposition": "adapt",
+          "rationale": "Name verified IT actors and retain reader imperatives, while extending legitimate passive contexts to irrelevant, protected, and object-focused agency.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source narrows passive permission to descriptive writing with unknown agency.",
+          "disposition": "adapt",
+          "rationale": "Permit additional justified IT contexts without losing operational responsibility or inventing an actor.",
+          "target_field": "exceptions"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0007",
+    "ITSTE-R-0015",
+    "ITSTE-R-0016",
+    "ITSTE-R-0026"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify each actor against technical behavior and distinguish automatic system work from reader work; do not infer an administrator from an event alone.",
+      "For a passive sentence, identify the specific justification and confirm that any required responsibility, condition, and response remain clear.",
+      "Review security-driven omissions with the owner, preserve external text, and distinguish state adjectives from passive actions.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

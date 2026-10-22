@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0011",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Retain the words that make prose unambiguous",
+  "text": "In editable full-sentence prose, include the words needed for grammatical completeness and for clear actors, actions, objects, conditions, and references. Use articles and demonstratives where standard English and the intended specificity require them; distinguish a new item from an identified item without inserting a determiner mechanically. Retain the conjunction that when it clarifies the boundary of a subordinate clause or helps international comprehension. Spell out contractions in authored prose. Do not delete necessary words merely to reduce length. Keep the understood reader subject in an imperative, and supply an object only when the verb and intended meaning require one.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "api",
+    "cli",
+    "user-interface",
+    "error-messages",
+    "logs-events",
+    "monitoring-alerts",
+    "procedures-runbooks",
+    "configuration",
+    "release-notes",
+    "source-code",
+    "support-troubleshooting",
+    "ai-automation"
+  ],
+  "exceptions": [
+    "Headings, labels, table cells, diagrams, logs, CLI syntax, source code, and other constrained content can use conventional fragments when their context supplies the omitted grammar and the meaning remains clear. Do not use that exception to make an ordinary procedural sentence ambiguous.",
+    "Standard English permits bare plurals, mass nouns, and proper names in suitable contexts. This rule does not require an article before every noun or a blanket article ban around an identifier; review the complete construction and intended specificity.",
+    "Preserve quotations, externally controlled strings, and machine-significant text exactly, including contractions or omitted words. Clarify them in surrounding prose rather than expanding inside the literal.",
+    "The source recommendation about that is guidance, not a mandate to insert that after every verb. Use it where it improves the clause boundary without changing meaning."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Confirm that the worker has received the configuration. Then wait."
+          }
+        ],
+        "rationale": "That marks the subordinate clause, articles identify the relevant items, and wait needs neither an expressed reader subject nor an invented object."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Do not retry the request. The fictional interface displays "
+          },
+          {
+            "kind": "literal",
+            "text": "Can't connect",
+            "literal_type": "interface",
+            "sha256": "5946f15d581c8739b4b70c78235fcef744766bb62c7056a7bd883364cd448457"
+          },
+          {
+            "kind": "prose",
+            "text": ". In the status table, the heading Connection status can introduce the fragment Unavailable."
+          }
+        ],
+        "rationale": "The authored prohibition spells out the contraction, the external label remains exact, and a clearly identified table context permits a conventional fragment."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Confirm worker received configuration, then wait it."
+          }
+        ],
+        "rationale": "In this full-sentence instruction, missing determiners blur the intended items; wait it also adds an object that the intended verb construction does not permit. Use the positive wording."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "Don't retry request because it's failing."
+          }
+        ],
+        "rationale": "Authored prose contracts do not and it is, and omits the article required for the identified request. Write Do not retry the request because it is failing. No external string is being quoted here."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "4.2",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          79,
+          80
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Deleting required sentence parts and contracting words can reduce clarity.",
+          "disposition": "adapt",
+          "rationale": "Retain necessary grammar and spell out authored contractions while allowing a valid imperative and verbs without objects.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source requires sentence parts to be retained rather than omitted for brevity.",
+          "disposition": "adapt",
+          "rationale": "Permit contextual fragments and preserve exact strings rather than expand logs or syntax mechanically.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "4.5",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          84,
+          86
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Articles and demonstratives help identify nouns and their intended specificity.",
+          "disposition": "adapt",
+          "rationale": "Apply standard English to the actual IT construction, preserving distinctions among specific, general, and new referents.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source gives particular article treatment for names followed by alphanumeric identifiers.",
+          "disposition": "not-applicable",
+          "rationale": "Do not impose a blanket identifier-based article rule; judge the complete construction and preserve syntax.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "GR-1",
+        "kind": "guidance",
+        "physical_pdf_pages": [
+          123,
+          123
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "The conjunction that can help readers locate a subordinate-clause boundary.",
+          "disposition": "adapt",
+          "rationale": "Retain the source guidance as a contextual clarity test, not mechanical insertion or a fabricated source rule.",
+          "target_field": "text"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0010",
+    "ITSTE-R-0013",
+    "ITSTE-R-0015",
+    "ITSTE-R-0026"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Check articles and demonstratives against the intended referent and standard English, including bare nouns and identifier constructions; do not insert them mechanically.",
+      "Review whether that clarifies each clause boundary and keep GR-1 classified as guidance.",
+      "Distinguish valid imperatives, intransitive verbs, and format-specific fragments from missing prose grammar; verify the exact contracted interface string is not expanded.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

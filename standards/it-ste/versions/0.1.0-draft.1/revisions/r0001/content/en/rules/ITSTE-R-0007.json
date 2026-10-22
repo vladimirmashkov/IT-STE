@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0007",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Simplify verbs without losing time or state",
+  "text": "Choose the simplest verb construction that preserves the technical meaning. Prefer simple tenses and explicit clauses when they express the same facts. Retain perfect or progressive aspect when it distinguishes prior completion, present result, duration, or activity in progress. Remove redundant auxiliary wording, but keep auxiliaries that carry required time, uncertainty, permission, or obligation. Make a participial state distinguishable from an action: add the relevant time, actor, or explicit state wording when the distinction matters. Permit established nouns and clear modifiers ending in ing; rewrite dense chains so that the operation, object, and relationship are explicit. Use forms permitted by the applicable IT lexical entry rather than infer permission from spelling alone.",
+  "applies_to": [
+    "general",
+    "software-documentation",
+    "user-interface",
+    "error-messages",
+    "logs-events",
+    "monitoring-alerts",
+    "procedures-runbooks",
+    "support-troubleshooting"
+  ],
+  "exceptions": [
+    "This rule does not impose the ASD tense whitelist, its prohibition on perfect constructions, or its restriction of ing forms to technical nouns and modifiers. Necessary aspect and modality remain available.",
+    "A participle after be does not by itself prove either a passive action or a state. Determine the intended technical claim before rewriting; do not invent completion from a report of ongoing activity.",
+    "Exact status strings, identifiers, logs, and quotations remain literal. Clarify their timing or meaning in surrounding prose instead of editing them."
+  ],
+  "examples": {
+    "allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The worker is copying the snapshot now. The copy has not finished."
+          }
+        ],
+        "rationale": "Progressive aspect expresses current activity; simplifying to a completed event would change the claim."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The volume remains encrypted while the service is stopped. The key service encrypted the volume before the shutdown."
+          }
+        ],
+        "rationale": "The first sentence describes a continuing state; the second identifies a completed action and its time relationship. Neither claim depends on treating every participle as passive."
+      }
+    ],
+    "not_allowed": [
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The agent is in the process of performing a check of the queue now."
+          }
+        ],
+        "rationale": "Write The agent is checking the queue now. This removes the redundant process and support-verb wording while retaining progressive aspect and the explicit current time; it does not turn ongoing work into a completed event."
+      },
+      {
+        "segments": [
+          {
+            "kind": "prose",
+            "text": "The ongoing routing monitoring logging processing is failing."
+          }
+        ],
+        "rationale": "The dense ing chain hides the failed operation and its object. If the intended fact is that the logger cannot process events from the routing monitor, state that fact explicitly instead of guessing from the stack."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "3.2",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          68,
+          68
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "A limited set of simple verb constructions reduces linguistic complexity.",
+          "disposition": "adapt",
+          "rationale": "Prefer simple constructions but retain meaningful IT aspect, time, and modality rather than a source whitelist.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "3.3",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          68,
+          69
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "A past participle can describe a condition rather than a passive event.",
+          "disposition": "adapt",
+          "rationale": "Disambiguate state and action using technical context and permitted IT lexical forms.",
+          "target_field": "text"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "3.4",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          69,
+          69
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Auxiliary chains can make verb constructions unnecessarily complex.",
+          "disposition": "adapt",
+          "rationale": "Remove redundant auxiliaries but retain perfect aspect and other auxiliaries when meaning requires them.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source excludes perfect constructions made with have.",
+          "disposition": "not-applicable",
+          "rationale": "An IT completion or present-result distinction must not disappear to satisfy a blanket auxiliary ban.",
+          "target_field": "exceptions"
+        }
+      ]
+    },
+    {
+      "source_id": "ASDSTE-SOURCE-ISSUE9-R0001",
+      "locator": {
+        "block_id": "3.5",
+        "kind": "rule",
+        "physical_pdf_pages": [
+          70,
+          71
+        ]
+      },
+      "facets": [
+        {
+          "source_facet": "Forms ending in ing can function as nouns, modifiers, or parts of verb constructions.",
+          "disposition": "adapt",
+          "rationale": "Review function and clarity, permitting established nouns, clear modifiers, and meaningful progressive aspect.",
+          "target_field": "text"
+        },
+        {
+          "source_facet": "The source restricts ing forms to particular technical nominal functions.",
+          "disposition": "not-applicable",
+          "rationale": "Do not transfer that restriction to IT prose describing an ongoing process.",
+          "target_field": "exceptions"
+        }
+      ]
+    }
+  ],
+  "supporting_target_ids": [
+    "ITSTE-R-0002",
+    "ITSTE-R-0006",
+    "ITSTE-R-0008",
+    "ITSTE-R-0009"
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Compare before-and-after claims for sequence, completion, duration, uncertainty, and modality; a shorter construction must preserve them.",
+      "Distinguish an encrypted state from the encryption event and verify any timing or actor added for disambiguation.",
+      "Check each ing form by function and intended relationship, not its suffix; resolve the negative chain with a technical owner rather than assume its meaning.",
+      "Review every allocated Issue 9 source block at its recorded physical PDF pages for semantic facet completeness and distinguish retained principles from IT-specific changes; locator coverage alone is insufficient.",
+      "Check original English wording, example judgments, exceptions, domain scope, literal boundaries and digests, and the unchanged original-content rights and attribution. Examples do not admit vocabulary; supporting IDs are planned references, not canonical endpoints or delegated provenance.",
+      "Preserve technical meaning, actors, modality, branch conditions, limits, and required safety and security context. Escalate unresolved external-requirement conflicts rather than silently rewrite. Human review remains necessary: structural validation neither approves nor releases this draft or makes it official ASD guidance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      },
+      {
+        "name": "Aerospace, Security and Defence Industries Association of Europe (ASD)",
+        "url": "https://asd-ste100.org/"
+      }
+    ],
+    "evidence": [
+      "LICENSE-CONTENT.md",
+      "docs/permissions/asd-ste100-issue-9-derivatives.md"
+    ],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

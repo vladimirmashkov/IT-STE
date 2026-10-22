@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0029",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Make action and ownership relationships explicit",
+  "text": "Make the relationship between an action and its modifiers unambiguous. If with could describe association, accompaniment, a means, or a condition, state the intended relationship explicitly while retaining the primary action verb. Put a prerequisite or condition before its dependent action. Use a grammatically correct possessive when the owner or associated entity and the relationship are clear. Rewrite confusing possessive chains with explicit noun phrases or an of construction, and check that the rewrite preserves the same ownership or association. If the intended relationship is unclear, obtain clarification from the authoritative source or technical owner rather than choose an unsupported interpretation.",
+  "applies_to": ["general"],
+  "exceptions": [
+    "Neither with nor possessives nor apostrophes are universally prohibited. A clear means phrase can retain with; a clear possessive can be simpler than an elaborate replacement.",
+    "Possession can express association, not only legal ownership. Do not invent an owner or reverse a relationship while expanding a phrase.",
+    "Preserve externally controlled names, quotations, code, paths, and other machine-significant literals exactly. Apply prose rewrites outside those spans, not inside identifiers or personal names.",
+    "Preserve actors, modality, sequence, quantities, required limits, and safety or security constraints. Escalate conflicting external requirements rather than silently choose a rewrite. Examples do not approve vocabulary globally; supporting IDs are planning references, not canonical relations or delegated provenance."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Editorial context: the diagnostic client is the tool used to check a connection, not a property that selects the connection. Instruction: Check the connection with the diagnostic client."}], "rationale": "The explicit tool context makes with unambiguous, and Check remains the primary action verb. There is no need to ban the preposition or replace the instruction with a vague Use construction."},
+      {"segments": [{"kind": "prose", "text": "Editorial context: a service has one assigned owner, and that owner has one escalation contact. Description: The service owner's escalation contact reviews the report."}], "rationale": "The possessive is grammatical and the stated context resolves the association. Possessive wording is permitted when clear."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "Check the connection with the proxy enabled."}], "rationale": "Without context, the modifier can identify a connection by its proxy setting or require enabling the proxy during the check. Ask which relationship is intended. For the latter meaning, use the condition-first instruction: While the proxy is enabled, check the connection."},
+      {"segments": [{"kind": "prose", "text": "Review the team's client's owner's settings."}], "rationale": "The chain does not establish whether client is software or a customer, or which owner's settings are intended. Obtain the relationships, then name the relevant entity explicitly rather than guess an of-chain replacement."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "GR-2", "kind": "guidance", "physical_pdf_pages": [124, 124]}, "facets": [
+      {"source_facet": "A with phrase can leave association, accompaniment, instrument, and condition relationships ambiguous.", "disposition": "adapt", "rationale": "Require explicit IT relationships and authoritative clarification when several readings remain possible.", "target_field": "text"},
+      {"source_facet": "A condition belongs before the dependent action, and a rewrite should retain the primary action verb.", "disposition": "adopt", "rationale": "Keep condition-first instructions and preserve the actual operation rather than reduce it to an unspecific tool-use statement.", "target_field": "text"},
+      {"source_facet": "The source gives a restricted set of dictionary meanings for with.", "disposition": "not-applicable", "rationale": "This rule addresses relationship clarity, not adoption of ASD's function-word inventory; clear with phrases remain possible without global lexical approval.", "target_field": "exceptions"}
+    ]},
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "GR-8", "kind": "guidance", "physical_pdf_pages": [127, 127]}, "facets": [
+      {"source_facet": "Possessives are permitted when correctly formed and clear; an alternative construction can avoid uncertain usage.", "disposition": "adapt", "rationale": "Retain clear possessives and require explicit relationships for confusing IT ownership or association chains, without banning apostrophes.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0006", "ITSTE-R-0013", "ITSTE-R-0016", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review ASD-STE100 Issue 9 guidance GR-2 and GR-8 on physical PDF pages 124 and 127. Keep both locators typed as guidance and distinguish source recommendations from IT extensions.",
+    "Verify the primary action, modifier attachment, condition scope, and ownership or association before rewriting. Confirm that clear with phrases and possessives remain allowed and ambiguous examples prompt clarification, not an invented interpretation.",
+    "Review original wording, examples, exceptions, literal boundaries, applicability, separate ASD rights, attribution, and planned references. Structural validation cannot determine the intended relationship or grant lexical approval."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

@@ -25,11 +25,11 @@ class PilotIntegrationTests(unittest.TestCase):
         self.assertTrue((corpus.ROOT / corpus.DEFAULT_MANIFEST).is_file(),
                         "Default pilot manifest is required for integration")
         with contextlib.redirect_stdout(io.StringIO()):
-            self.assertEqual(corpus.check(), 3)
+            self.assertEqual(corpus.check(), 31)
         snapshot = corpus.ROOT / corpus.DEFAULT_MANIFEST.parent
         manifest = corpus.load_json(snapshot / "manifest.json")
         identifiers = {corpus.load_json(snapshot / name)["id"] for name in manifest["records"]}
-        self.assertEqual(identifiers, {"ITSTE-R-0002", "ITSTE-R-0015", "ITSTE-R-0021"})
+        self.assertEqual(identifiers, {f"ITSTE-R-{number:04d}" for number in range(1, 32)})
         catalog = corpus.load_json(corpus.ROOT / "catalog.json")
         for standard in catalog["standards"]:
             if standard["id"] == manifest["standard"]:
@@ -37,6 +37,24 @@ class PilotIntegrationTests(unittest.TestCase):
                     self.assertNotEqual((release["version"], release["revision"]),
                                         (manifest["version"], manifest["revision"]))
                     self.assertNotEqual(release["manifest"], corpus.DEFAULT_MANIFEST.as_posix())
+
+    def test_complete_rule_draft_covers_every_planned_source_block(self):
+        snapshot = corpus.ROOT / corpus.DEFAULT_MANIFEST.parent
+        manifest = corpus.load_json(snapshot / "manifest.json")
+        records = {rule["id"]: rule for rule in (
+            corpus.load_json(snapshot / name) for name in manifest["records"]
+        )}
+        locators = [ref["locator"] for rule in records.values() for ref in rule["source_refs"]]
+        self.assertEqual(len(locators), 61)
+        self.assertEqual(len({locator["block_id"] for locator in locators}), 61)
+        self.assertEqual(sum(locator["kind"] == "rule" for locator in locators), 53)
+        self.assertEqual(sum(locator["kind"] == "guidance" for locator in locators), 8)
+        self.assertTrue(all(record["status"] == "draft" for record in records.values()))
+        joined = lambda example: "".join(segment["text"] for segment in example["segments"])
+        self.assertIn("Before the deployment starts, validate", joined(records["ITSTE-R-0009"]["examples"]["allowed"][0]))
+        self.assertIn("In that failure case, contact", joined(records["ITSTE-R-0023"]["examples"]["allowed"][0]))
+        self.assertIn("If validation has not succeeded, do not start", joined(records["ITSTE-R-0026"]["examples"]["allowed"][0]))
+        self.assertIn("While the proxy is enabled, check", records["ITSTE-R-0029"]["examples"]["not_allowed"][0]["rationale"])
 
     def test_published_authentication_does_not_need_source_pdf(self):
         original_open = Path.open

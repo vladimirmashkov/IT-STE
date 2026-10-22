@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0018",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Sequence information around the reader's task",
+  "text": "Present purpose, scope, prerequisites, and core concepts before details that depend on them. Move from information the intended reader can recognize to new or specialized information, and introduce necessary concepts before using them to explain an operation. Defer only optional detail through progressive disclosure. Give each independently retrievable section, help topic, or generated chunk enough local context to identify its subject, applicability, and decision-relevant references. Keep required prerequisites, protective instructions, and necessary consequences available with the action before the reader can act. Keep one principal subject in each sentence when possible. When a sentence needs multiple subjects, state their relationship explicitly. Preserve the actual actors and operational sequence instead of imposing an explanatory order that changes system behavior.",
+  "applies_to": ["general", "software-documentation", "api", "user-interface", "monitoring-alerts", "procedures-runbooks", "configuration", "security", "networking", "data-storage", "cloud-infrastructure", "release-notes", "support-troubleshooting", "ai-automation"],
+  "exceptions": [
+    "An expert reference can rely on documented audience knowledge or a heading and container that accompany the content. Do not copy unrelated background into every unit, but do not assume an omitted chunk supplies required context.",
+    "An urgent protective instruction can precede background explanation. Progressive disclosure never makes a required condition, branch choice, limit, acceptance criterion, or protective action optional.",
+    "A link or expansion can hold optional detail. Required context may use a delivery mechanism only if it reliably supplies that context before the dependent action; a skippable link alone is insufficient.",
+    "Preserve exact commands, identifiers, quotations, interface strings, and other literal syntax. The one-principal-subject preference is a focus control, not a ban on comparisons or a universal sentence-length limit.",
+    "Do not invent actors, causal relationships, permissions, or prerequisites. Stop and consult the responsible editor or technical owner if a governing requirement conflicts with preserving technical meaning, modality, limits, or protection. Examples grant no vocabulary approval; supporting IDs are planned references, not canonical endpoints or delegated provenance."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "Import reports identify records rejected by a completed import. To inspect a report:\n1. Open the import history.\n2. Select the completed import.\n3. Open its report.\nThe field reference provides optional detail about each report column."}], "rationale": "Purpose and the completed-import context precede the separately executable navigation steps. Optional field definitions follow the core task rather than obscure it."},
+      {"segments": [{"kind": "prose", "text": "Deployment-log help for a paused deployment: Before you continue, confirm that the maintenance owner has approved the service window. If approval is missing, stop and contact the owner. If approval is confirmed, open the deployment log."}], "rationale": "The independently readable help unit names its subject and status scope, retains its prerequisite and stop path, and gives the dependent reader action last."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "The third report column contains the validation-stage category code. The field reference defines the category codes. This report identifies records rejected by a completed import; open the import history to find it."}], "rationale": "Specialized column details precede the report's purpose and access context. Introduce the report and task first, then offer optional column detail."},
+      {"segments": [{"kind": "prose", "text": "Independently delivered help fragment: Open its log. Expand the optional background section to learn which deployment status and maintenance approval are required."}], "rationale": "The fragment omits the deployment referent and makes prerequisites optional. Neither a remote antecedent nor progressive disclosure can supply a condition after the reader acts."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "6.1", "kind": "rule", "physical_pdf_pages": [95, 96]}, "facets": [
+      {"source_facet": "Explanations should introduce information gradually so readers can build understanding.", "disposition": "adapt", "rationale": "Order IT purpose, scope, prerequisites, and core concepts before dependent detail, while allowing optional detail to be deferred.", "target_field": "text"},
+      {"source_facet": "A sentence focused on one main subject is easier to assimilate before further information is added.", "disposition": "adapt", "rationale": "Retain one principal subject per sentence when possible and require explicit relationships when multiple subjects are necessary; do not delegate this facet to the sentence-length target.", "target_field": "text"},
+      {"source_facet": "Gradual explanation depends on readers having enough preceding context to understand each addition.", "disposition": "adapt", "rationale": "Extend the continuity principle to independent IT retrieval units without allowing progressive disclosure to hide required conditions or protection.", "target_field": "text"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0010", "ITSTE-R-0013", "ITSTE-R-0014", "ITSTE-R-0016", "ITSTE-R-0017", "ITSTE-R-0019", "ITSTE-R-0021", "ITSTE-R-0022"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Review Issue 9 rule 6.1, physical PDF pages 95-96, for gradual information and the retained sentence-subject facet. Check original wording and all dispositions.",
+    "Identify the intended audience and independently consumable units. Check purpose before dependent detail and verify every unit has the subject, scope, and decision context its reader needs.",
+    "Test collapsed optional content and isolated retrieval fragments. Required prerequisites, protection, limits, and verification must remain available before action; optional background need not be duplicated.",
+    "Check sentence focus without a numeric ceiling, truthful system actors, and consistency with step, note, cohesion, topic, and risk targets. Review examples, exceptions, domains, literals and any digests, rights, attribution, and supporting planned IDs. Structural validation cannot prove technical, lexical, editorial, or legal approval."
+  ]},
+  "rights": {"license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed", "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}], "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"], "scope": "original IT-STE wording and examples only; ASD source rights remain separate"}
+}

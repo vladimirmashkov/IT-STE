@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-R-0023",
+  "kind": "rule",
+  "language": "en",
+  "status": "draft",
+  "origin": "adaptation",
+  "title": "Use punctuation to expose structure",
+  "text": "Use standard English punctuation to make sentence boundaries and relationships clear in editable prose. Prefer separate sentences or procedure steps when a semicolon construction joins several actions, conditions, or qualifications that are difficult to follow. Keep each condition attached to the action that it controls. Follow an applicable content profile's prose punctuation restrictions only while preserving technical meaning and required context. Do not change syntax-controlled punctuation to satisfy a prose preference.",
+  "applies_to": ["general", "software-documentation", "api", "cli", "source-code", "configuration"],
+  "exceptions": [
+    "A semicolon is not universally prohibited. A clear construction can retain it when the governing prose profile permits it; punctuation alone does not establish clarity.",
+    "Preserve punctuation exactly in marked commands, code, configuration, quotations, URLs, paths, and other externally controlled text. Apply prose guidance only outside those spans.",
+    "Do not split away prerequisites, branch conditions, or safety and security constraints. If a governing requirement conflicts with meaning preservation, stop the rewrite and refer the conflict to the responsible editor or technical owner.",
+    "Examples judge presentation only and do not approve vocabulary globally. Supporting target IDs are planning references, not canonical relation endpoints or delegated source allocations."
+  ],
+  "examples": {
+    "allowed": [
+      {"segments": [{"kind": "prose", "text": "If the connection fails, record the error. In that failure case, contact the service owner."}], "rationale": "Separate sentences expose the two actions and their order. Both actions belong to the stated connection-failure branch."},
+      {"segments": [{"kind": "prose", "text": "In this descriptive comparison, the first report covers requests; the second covers responses."}], "rationale": "The semicolon connects two short parallel clauses without hiding actions or conditions. This is allowed where the local prose profile permits semicolons, not evidence of a universal punctuation policy."}
+    ],
+    "not_allowed": [
+      {"segments": [{"kind": "prose", "text": "If the connection fails, record the error; contact the owner; include the request time; if no owner is assigned, contact support instead; retain the error reference."}], "rationale": "The semicolon chain obscures which actions the alternative branch replaces. Clarify the branch scope with the technical owner, then use explicit sentences or steps; merely replacing every semicolon with a period is insufficient."},
+      {"segments": [{"kind": "prose", "text": "Remove every semicolon from commands and configuration because English prose should use short sentences."}], "rationale": "A prose preference cannot authorize changes to executable or externally controlled syntax. Preserve exact literals even when the surrounding prose is split."}
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {"source_id": "ASDSTE-SOURCE-ISSUE9-R0001", "locator": {"block_id": "8.1", "kind": "rule", "physical_pdf_pages": [108, 108]}, "facets": [
+      {"source_facet": "Punctuation should support readable sentence structure rather than extended clause chains.", "disposition": "adapt", "rationale": "Prefer explicit IT sentences and steps while retaining conditions and action relationships.", "target_field": "text"},
+      {"source_facet": "The source excludes semicolons and replaces them with sentence breaks.", "disposition": "adapt", "rationale": "Make simplification depend on clarity and the applicable prose profile instead of imposing a universal ban, especially on syntax-controlled content.", "target_field": "exceptions"}
+    ]}
+  ],
+  "supporting_target_ids": ["ITSTE-R-0010", "ITSTE-R-0012", "ITSTE-R-0014", "ITSTE-R-0026"],
+  "review": {"mode": "human", "automation": "structure-only", "criteria": [
+    "Compare both facets with ASD-STE100 Issue 9 rule 8.1, physical PDF page 108; review the deliberate departure from its semicolon exclusion.",
+    "Check branch scope and action order before splitting clauses. Confirm that clear semicolons remain possible and exact syntax is not rewritten.",
+    "Review original authorship, examples, applicability, exceptions, separate source rights, and both attribution links. Supporting IDs remain planned references; automated checks do not approve prose or legal rights."
+  ]},
+  "rights": {
+    "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "redistribution": "allowed", "adaptation": "allowed",
+    "attribution": [{"name": "IT-STE contributors", "url": "https://github.com/vladimirmashkov/IT-STE"}, {"name": "Aerospace, Security and Defence Industries Association of Europe (ASD)", "url": "https://asd-ste100.org/"}],
+    "evidence": ["LICENSE-CONTENT.md", "docs/permissions/asd-ste100-issue-9-derivatives.md"],
+    "scope": "original IT-STE wording and examples only; ASD source rights remain separate"
+  }
+}

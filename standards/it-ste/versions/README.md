@@ -2,7 +2,7 @@
 
 [Русский](README.ru.md)
 
-Create `<version>/revisions/<revision>/` directories here according to the [common storage structure](../../../docs/storage.md). No versions or normative records have been released yet. A [three-rule English draft pilot](../../../docs/it-ste-canonical-pilot.md) now exists at `0.1.0-draft.1/revisions/r0001/`; its coverage is partial and the release catalog remains empty.
+Create `<version>/revisions/<revision>/` directories here according to the [common storage structure](../../../docs/storage.md). No versions or normative records have been released yet. All [31 English draft rules](../../../docs/it-ste-canonical-pilot.md) now exist at `0.1.0-draft.1/revisions/r0001/`. The [single-file draft](../../../docs/IT-STE-draft.md) is generated from them and the first vocabulary review batch. Coverage remains partial because the vocabulary is incomplete, and the release catalog remains empty.
 
 Use SemVer for `version`:
 
