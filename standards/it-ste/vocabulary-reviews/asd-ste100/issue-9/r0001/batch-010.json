@@ -370,20 +370,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Send or exchange information through an identified channel, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Exchange information between identified endpoints through a specified protocol or channel.",
       "domains": [
         "networking"
       ],
-      "rationale": "The compact column ends with a fragment matching the following communication row; the source boundary remains unresolved.",
+      "rationale": "The authenticated PDF shows a separate communicate row; its COMMUNICATION alternative is not a continuation of the row. IETF protocol evidence supports the bounded networking sense, but the verb remains restricted to named endpoints and a specified protocol or channel.",
       "permitted_contextual_alternatives": [
         "send the message",
         "exchange status messages"
       ],
       "examples": {
         "positive": {
-          "text": "The agent sends status messages to the controller over TLS.",
-          "explanation": "Names content, endpoints, and channel protection."
+          "text": "The agent and controller communicate over a TLS-protected channel.",
+          "explanation": "Names endpoints and channel protection."
         },
         "problematic": {
           "text": "The servers communicate safely.",
@@ -408,14 +408,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 195 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 1 is communicate (v) and ends before the separate COMMUNICATION (n) row; its POS and spelling are confirmed.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },
@@ -432,12 +431,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "An exchange of information between identified participants, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "An exchange of information between identified endpoints through a specified protocol or channel.",
       "domains": [
         "networking"
       ],
-      "rationale": "A wrapped-headword warning requires source review; a channel and participants are still necessary in the proposed IT sense.",
+      "rationale": "The authenticated PDF shows a distinct COMMUNICATION noun row with the complete source definition. IETF protocol evidence supports the bounded networking sense, but the noun remains restricted to identified endpoints and a specified protocol or channel.",
       "permitted_contextual_alternatives": [
         "message exchange",
         "client-server traffic"
@@ -470,14 +469,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 195 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 2 is a separate COMMUNICATION (n) row with the complete source meaning; its wrapped headword, POS, and spelling are confirmed.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source PDF layout and sense verification; not performed"
+          "original example review"
         ]
       }
     },

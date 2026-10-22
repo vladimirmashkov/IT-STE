@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 193,
+    "needs-review": 191,
     "not-applicable": 146,
     "prohibited": 403,
-    "restricted": 1364
+    "restricted": 1366
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -31578,13 +31578,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: communicate; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Send or exchange information through an identified channel\, provisionally\.
+Definition: Exchange information between identified endpoints through a specified protocol or channel\.
 
 Domains: networking
 
-Rationale: The compact column ends with a fragment matching the following communication row\; the source boundary remains unresolved\.
+Rationale: The authenticated PDF shows a separate communicate row\; its COMMUNICATION alternative is not a continuation of the row\. IETF protocol evidence supports the bounded networking sense\, but the verb remains restricted to named endpoints and a specified protocol or channel\.
 
 Contextual alternatives:
 
@@ -31595,10 +31595,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The agent sends status messages to the controller over TLS.
+The agent and controller communicate over a TLS-protected channel.
 ```
 
-Explanation: Names content\, endpoints\, and channel protection\.
+Explanation: Names endpoints and channel protection\.
 
 #### Problematic example
 
@@ -31618,9 +31618,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The meaning column ends with the opening fragment of the following COMMUNICATION definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 195 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 1 is communicate (v) and ends before the separate COMMUNICATION (n) row; its POS and spelling are confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 195,
     "printed_page": "2-1-C13",
@@ -31630,8 +31630,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P195-001",
@@ -31652,13 +31651,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: COMMUNICATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: An exchange of information between identified participants\, provisionally\.
+Definition: An exchange of information between identified endpoints through a specified protocol or channel\.
 
 Domains: networking
 
-Rationale: A wrapped\-headword warning requires source review\; a channel and participants are still necessary in the proposed IT sense\.
+Rationale: The authenticated PDF shows a distinct COMMUNICATION noun row with the complete source definition\. IETF protocol evidence supports the bounded networking sense\, but the noun remains restricted to identified endpoints and a specified protocol or channel\.
 
 Contextual alternatives:
 
@@ -31692,9 +31691,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 195 with pdftoppm and visually inspected the ruled rows and columns. Findings: row 2 is a separate COMMUNICATION (n) row with the complete source meaning; its wrapped headword, POS, and spelling are confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 195,
     "printed_page": "2-1-C13",
@@ -31704,8 +31703,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P195-002",
@@ -167561,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-009.json` SHA-256: `ffba92804e4d93274e1e5d4b180954d2d7bcf17e81af33b14d57af1c293b2582`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `f67df2bb4ae1423f06e16e2c6f006d9c2e28b584bfa1a16836704452ce61a0c5`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `d9a4ef62b293ed2c97a57bd8d70240d59f270dc82b7cb125ab1987061f258288`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `d55df60a00254143c68cf358dcbf7ce0c0806b56ed86d56e136d2b5ea7fe47c6`
 
