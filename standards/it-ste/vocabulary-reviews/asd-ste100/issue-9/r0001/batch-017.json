@@ -663,12 +663,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Apply a policy so that prohibited operations are rejected.",
       "domains": [
         "security"
       ],
-      "rationale": "The extracted alternative describes obeying rather than causing compliance; the actor relationship needs source review.",
+      "rationale": "The authenticated PDF confirms enforce (v) is a distinct row with OBEY (v) as its alternative; ENGAGE begins after the lower boundary. Azure Policy and Kubernetes NetworkPolicy documentation show enforcement as an identified policy mechanism evaluating rules and denying non-compliant changes or connections. Keep this draft sense restricted to a named actor or component that applies a policy and rejects a specified violation; see docs/it-ste-research/W1-D-P232.md.",
       "permitted_contextual_alternatives": [
         "apply the policy",
         "reject violations"
@@ -701,9 +701,9 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 232 -l 232 -png -r 180 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 232 (2-1-E6), row 5 is enforce (v) with OBEY (v) as its alternative and the safety-precautions examples. Horizontal rules bound the row; ENGAGE begins the next row. The mechanical alternative/actor ambiguity is preserved, and this row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

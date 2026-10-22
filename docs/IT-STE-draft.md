@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 151,
+    "needs-review": 150,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1378
+    "restricted": 1379
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -52754,13 +52754,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: enforce; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Apply a policy so that prohibited operations are rejected\.
 
 Domains: security
 
-Rationale: The extracted alternative describes obeying rather than causing compliance\; the actor relationship needs source review\.
+Rationale: The authenticated PDF confirms enforce \(v\) is a distinct row with OBEY \(v\) as its alternative\; ENGAGE begins after the lower boundary\. Azure Policy and Kubernetes NetworkPolicy documentation show enforcement as an identified policy mechanism evaluating rules and denying non\-compliant changes or connections\. Keep this draft sense restricted to a named actor or component that applies a policy and rejects a specified violation\; see docs\/it\-ste\-research\/W1\-D\-P232\.md\.
 
 Contextual alternatives:
 
@@ -52794,9 +52794,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted alternative describes obeying rather than causing compliance; the actor relationship needs source review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 232 -l 232 -png -r 180 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 232 (2-1-E6), row 5 is enforce (v) with OBEY (v) as its alternative and the safety-precautions examples. Horizontal rules bound the row; ENGAGE begins the next row. The mechanical alternative/actor ambiguity is preserved, and this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 232,
     "printed_page": "2-1-E6",
@@ -167552,7 +167552,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `1b7558717a08fe4ea4de180eaab85e653738eaf124670468ff6740c55fc6ff5a`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `dfe541008eeca78fcad17b1e89a679554a9a04a58617d1635a08e72f3f61085c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `f606ab2c9c020469387c6ce84171b7fd1febbe35d61f6a5b4c595755fdfc1762`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `4ca1caea277013756650d1ab969a05d9624d291d4d30bf36418c620205172b97`
 
