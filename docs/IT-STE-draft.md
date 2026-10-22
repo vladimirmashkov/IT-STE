@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 109,
-    "needs-review": 162,
+    "allowed": 111,
+    "needs-review": 160,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -47662,13 +47662,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DOWN; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Along a path toward a lower screen or physical position\.
 
 Domains: user\-interface
 
-Rationale: The extracted cell ends with a fragment repeated by the next row\; verify boundaries\.
+Rationale: Authenticated PDF visual inspection confirms that DOWN \(prep\) is row 3 with To a position below\; the direction\-of\-flow fragment belongs to the following DOWNSTREAM \(adj\) row\. MDN\'s inspected scrollBy documentation uses horizontal\/vertical coordinates and an example that scrolls content down\. This supports the bounded user\-interface sense when a path and lower endpoint are stated\. See \`docs\/it\-ste\-research\/W1\-D\-P223\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -47702,9 +47702,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted cell ends with a fragment repeated by the next row; verify boundaries."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 223 (printed page 2-1-D17). Findings: DOWN (prep) is row 3 with To a position below; DOWNSTREAM (adj) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 223,
     "printed_page": "2-1-D17",
@@ -47735,13 +47735,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DOWNSTREAM; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Located later along a named data\-processing flow\.
 
 Domains: data\-storage
 
-Rationale: Wrapped\-headword and repeated flow fragments need review\; identify producer\-to\-consumer direction\.
+Rationale: Authenticated PDF visual inspection confirms that DOWNSTREAM \(adj\) is row 4 with In the direction of the flow\; the wrapped headword and repeated flow fragment are retained as source evidence\. MDN\'s stream documentation pipes a source stream to a final destination\, and Microsoft\'s publisher\-subscriber guidance describes senders\, channels\, brokers\, and consumers\. This supports the bounded producer\-to\-consumer flow sense\. See \`docs\/it\-ste\-research\/W1\-D\-P223\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -47775,9 +47775,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 223 (printed page 2-1-D17). Findings: DOWNSTREAM (adj) is row 4 with the wrapped headword and In the direction of the flow; DOWNSTREAM (adv) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 223,
     "printed_page": "2-1-D17",
@@ -167548,7 +167548,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `0ac8c174803c8426cd42e4de3bf15e743e51b0523031358729e20bf5649438d5`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `0788c2def07a599ff671aa0f7d57c8e5d7030173cfc554b9e761f1bfff620966`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `93bda0fe6dc9180aa4d851429433d8e9d08d128944be68e7bb2a6110715dc3fb`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `55f9d758e89b94d78b51988cfca690319761d73a5d8e3efa65034a9be442dd04`
 
