@@ -51314,9 +51314,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The extracted cell includes the start of the adjacent adverb definition; alignment needs review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 230 (printed page 2-1-E4). Findings: ELECTRICAL (adj) is row 3 with Related to electricity; ELECTRICALLY (adv) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 230,
     "printed_page": "2-1-E4",
@@ -51387,9 +51387,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 230 (printed page 2-1-E4). Findings: ELECTRICALLY (adv) is row 4 with the wrapped headword and Related to or operated by electricity; ELECTROMAGNETIC (adj) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 230,
     "printed_page": "2-1-E4",
@@ -167550,7 +167550,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `dae8a3c05877aa6846527c01060f4f6ab51addb8605fdbca9bde71cf736c3e9c`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `824131a2fa534fab9b602e776327995efc5951d984f0fa2a75e0334ac2eebf06`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `69265560dc71a461d7d5fbecc2a5111569da60f59893119d104975194117515e`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `29fa5e8d1bb65620a3b9d8665a9abb18f4bbb6767132943b9d52c138a3d8d5b8`
 
