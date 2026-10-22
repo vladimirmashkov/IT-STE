@@ -603,20 +603,21 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Introduce a clause stating a confirmed cause.",
+      "it_disposition": "restricted",
+      "it_definition": "Introduce a clause that identifies the cause of a stated condition.",
       "domains": [
         "error-messages"
       ],
-      "rationale": "Causal explanations must distinguish proof from correlation; duplicated extracted meaning may overlap the next row.",
+      "rationale": "Restrict this to an identified causal relation in an error message; a coincident event or symptom does not establish the cause. The verified source row is separate from BECAUSE OF. See `docs/it-ste-research/W1-D-P175.md`.",
       "permitted_contextual_alternatives": [
-        "the cause is",
-        "due to a confirmed cause"
+        "as",
+        "since",
+        "the cause is"
       ],
       "examples": {
         "positive": {
           "text": "The request failed because the token expired before validation.",
-          "explanation": "Names a specific causal condition."
+          "explanation": "Names an identified causal condition and the affected result."
         },
         "problematic": {
           "text": "The disk failed because the host restarted at the same time.",
@@ -641,14 +642,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 175 -l 175 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 175 (2-1-B3), BECAUSE (conj) is a distinct ruled row between BE (v) and BECAUSE OF (prep); its single As a result of meaning and example stay within the row. The adjacent repeated extracted meaning is a mechanical boundary artifact, not a second source meaning. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
@@ -665,12 +665,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Introduce a noun phrase identifying a confirmed cause.",
+      "it_disposition": "restricted",
+      "it_definition": "Introduce a noun phrase that identifies the cause of a stated condition.",
       "domains": [
         "error-messages"
       ],
-      "rationale": "The wrapped phrase needs source checking; the noun phrase must name a cause rather than a symptom summary.",
+      "rationale": "Restrict this to an identified causal relation in an error message; a vague symptom summary does not establish the cause. The verified source row is separate from BECAUSE. See `docs/it-ste-research/W1-D-P175.md`.",
       "permitted_contextual_alternatives": [
         "as a result of",
         "caused by"
@@ -678,7 +678,7 @@
       "examples": {
         "positive": {
           "text": "The upload stopped because of insufficient free space on the target volume.",
-          "explanation": "Identifies a concrete limiting resource."
+          "explanation": "Names an identified limiting resource as the cause of the stopped upload."
         },
         "problematic": {
           "text": "The upload stopped because of problems.",
@@ -703,14 +703,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 175 -l 175 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 175 (2-1-B3), BECAUSE OF (prep) is a distinct ruled row below BECAUSE (conj); the wrapped headword remains one headword, and its single As a result of meaning and example stay within the row. The wrapped-headword warning is a line-wrap artifact, not a row merge. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },

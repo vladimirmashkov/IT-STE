@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 202,
+    "needs-review": 200,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1356
+    "restricted": 1358
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -19970,19 +19970,21 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: BECAUSE; POS: conj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Introduce a clause stating a confirmed cause\.
+Definition: Introduce a clause that identifies the cause of a stated condition\.
 
 Domains: error\-messages
 
-Rationale: Causal explanations must distinguish proof from correlation\; duplicated extracted meaning may overlap the next row\.
+Rationale: Restrict this to an identified causal relation in an error message\; a coincident event or symptom does not establish the cause\. The verified source row is separate from BECAUSE OF\. See \`docs\/it\-ste\-research\/W1\-D\-P175\.md\`\.
 
 Contextual alternatives:
 
-- the cause is
+- as
 
-- due to a confirmed cause
+- since
+
+- the cause is
 
 #### Positive example
 
@@ -19990,7 +19992,7 @@ Contextual alternatives:
 The request failed because the token expired before validation.
 ```
 
-Explanation: Names a specific causal condition\.
+Explanation: Names an identified causal condition and the affected result\.
 
 #### Problematic example
 
@@ -20010,9 +20012,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning is duplicated adjacent to the following wrapped phrase; row boundary not verified against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 175 -l 175 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 175 (2-1-B3), BECAUSE (conj) is a distinct ruled row between BE (v) and BECAUSE OF (prep); its single As a result of meaning and example stay within the row. The adjacent repeated extracted meaning is a mechanical boundary artifact, not a second source meaning. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 175,
     "printed_page": "2-1-B3",
@@ -20022,8 +20024,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P175-002",
@@ -20044,13 +20045,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: BECAUSE OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Introduce a noun phrase identifying a confirmed cause\.
+Definition: Introduce a noun phrase that identifies the cause of a stated condition\.
 
 Domains: error\-messages
 
-Rationale: The wrapped phrase needs source checking\; the noun phrase must name a cause rather than a symptom summary\.
+Rationale: Restrict this to an identified causal relation in an error message\; a vague symptom summary does not establish the cause\. The verified source row is separate from BECAUSE\. See \`docs\/it\-ste\-research\/W1\-D\-P175\.md\`\.
 
 Contextual alternatives:
 
@@ -20064,7 +20065,7 @@ Contextual alternatives:
 The upload stopped because of insufficient free space on the target volume.
 ```
 
-Explanation: Identifies a concrete limiting resource\.
+Explanation: Names an identified limiting resource as the cause of the stopped upload\.
 
 #### Problematic example
 
@@ -20084,9 +20085,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 175 -l 175 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 175 (2-1-B3), BECAUSE OF (prep) is a distinct ruled row below BECAUSE (conj); the wrapped headword remains one headword, and its single As a result of meaning and example stay within the row. The wrapped-headword warning is a line-wrap artifact, not a row merge. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 175,
     "printed_page": "2-1-B3",
@@ -20096,8 +20097,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P175-003",
@@ -167556,7 +167556,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `75b26ab48aac388540f32711b1405b12be6738a0c3383867aa55e569028e5960`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-006.json` SHA-256: `3652b6b98646d1ae995a7125ecbd9db68eddc1f7c76f20abd77fbfe56f783356`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-006.json` SHA-256: `bc49decb97569e91002bd4dc36714516441feb423ae761c4505c49aa4cdfff1b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-007.json` SHA-256: `27a9136ac7e2ed54795bcd907232b316e83f565bd161d45920fab8e97b1f97f4`
 
