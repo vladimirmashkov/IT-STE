@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 139,
+    "needs-review": 138,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1390
+    "restricted": 1391
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -66151,13 +66151,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: FREQUENTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: At short or repeated intervals relative to a stated reference\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires review\; procedures still need an exact schedule\.
+Rationale: Visual inspection confirms the wrapped row\. In procedures and monitoring\, an unqualified frequency is not actionable\; require an explicit interval\, rate\, trigger\, or policy reference\. Google SRE monitoring guidance and Prometheus rate documentation support measured windows and rates but do not define a universal threshold for frequently\. See docs\/it\-ste\-research\/W1\-D\-P257\.md\.
 
 Contextual alternatives:
 
@@ -66191,9 +66191,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 257 -l 257 -png -r 180 and visually inspected physical page 257. Findings: row 5 is bounded by FREQUENT (adj) above and fresh (adj) below; FREQUENTLY (adv) is a wrapped two-line headword and its definition reads `At frequent or short intervals`.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 257,
     "printed_page": "2-1-F13",
@@ -167560,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `8147ddd1e691a6bc98ac650be0942d8422f3d7e1d885c0672820e869ffe8ae10`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `0d59fd5cb39a34524ae2bdbae658e916b9b89d9e81ab30c28c69600da37c6109`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-021.json` SHA-256: `ce9e99b8d874f2737b0726b8e2fda9b1014fc5d57ffaa0fc477d2fd187e97162`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-022.json` SHA-256: `f1833432fe354f67cda5cb69850c5af022044b7c4833a78f2a3e76538e6ffa4b`
 

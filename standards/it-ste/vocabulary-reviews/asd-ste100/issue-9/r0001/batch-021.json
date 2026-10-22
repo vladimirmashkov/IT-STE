@@ -1915,12 +1915,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "At short or repeated intervals relative to a stated reference.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped-headword warning requires review; procedures still need an exact schedule.",
+      "rationale": "Visual inspection confirms the wrapped row. In procedures and monitoring, an unqualified frequency is not actionable; require an explicit interval, rate, trigger, or policy reference. Google SRE monitoring guidance and Prometheus rate documentation support measured windows and rates but do not define a universal threshold for frequently. See docs/it-ste-research/W1-D-P257.md.",
       "permitted_contextual_alternatives": [
         "at the stated interval",
         "repeatedly"
@@ -1953,9 +1953,9 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 257 -l 257 -png -r 180 and visually inspected physical page 257. Findings: row 5 is bounded by FREQUENT (adj) above and fresh (adj) below; FREQUENTLY (adv) is a wrapped two-line headword and its definition reads `At frequent or short intervals`.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
