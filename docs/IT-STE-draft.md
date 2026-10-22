@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 90,
-    "needs-review": 181,
+    "allowed": 92,
+    "needs-review": 179,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -35705,13 +35705,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONTINUOUS; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Uninterrupted over a stated interval\, provisionally\.
+Definition: Continuing without interruption during a stated interval\, provisionally\.
 
 Domains: monitoring\-alerts
 
-Rationale: The column includes the following adverb\'s wording\; the boundary must be checked before the source sense is settled\.
+Rationale: Authenticated PDF visual inspection confirms that CONTINUOUS \(adj\) is row 1 and has only the meaning ‘That continues’\; the following CONTINUOUSLY row is separate\. The draft IT sense is limited to an activity or condition continuing without interruption during a stated interval\. NIST uses continuous monitoring for an ongoing monitoring program but does not establish uninterrupted sampling\; Prometheus requires an alert condition to continue during evaluations for the stated duration\. See \`docs\/it\-ste\-research\/W1\-D\-P202\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -35745,9 +35745,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The column includes the following CONTINUOUSLY row definition as well as the adjective definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 202 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: CONTINUOUS (adj) is row 1 with only the meaning That continues; the following CONTINUOUSLY (adv) row begins after a horizontal boundary. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 202,
     "printed_page": "2-1-C20",
@@ -35757,8 +35757,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P202-001",
@@ -35779,13 +35778,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONTINUOUSLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Without an interruption in the stated activity during the stated interval\, provisionally\.
+Definition: In a manner that continues without interruption during a stated interval\, provisionally\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped\-headword warning requires review\; do not substitute a marketing claim for an observation schedule\.
+Rationale: Authenticated PDF visual inspection confirms that CONTINUOUSLY \(adv\) is a separate row 2\; its wrapped headword remains one spelling and one POS\. The draft IT sense is limited to an activity or condition continuing without interruption during a stated interval\. NIST uses continuous monitoring for an ongoing monitoring program but does not establish uninterrupted sampling\; Prometheus requires an alert condition to continue during evaluations for the stated duration\. See \`docs\/it\-ste\-research\/W1\-D\-P202\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -35819,9 +35818,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the pdftoppm PNG rendering of physical PDF page 202 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: CONTINUOUSLY (adv) is row 2; its headword wraps onto the next line but remains in one ruled row. Historical extraction warning remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 202,
     "printed_page": "2-1-C20",
@@ -35831,8 +35830,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P202-002",
@@ -167555,7 +167553,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `3a338fe99178c42093e9e4c0278bbee13bacc0ed606fa52b7dbef205c2e952de`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `5cc1f6911314c4d5a68f1b3401504d7f0ddaca706f6ae2e63c6f8b4827a533b1`
 
