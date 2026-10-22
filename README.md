@@ -52,7 +52,7 @@ For details, see [storage and versioning](docs/storage.md), the [adaptation work
 
 ## Status
 
-No IT-STE rules or vocabularies have been released, and the release registry is empty. The first draft domain registry and a source-pinned adaptation plan cover all 53 rules and 8 recommendations from Issue 9. Sections 1 through 8 are reviewed: 49 source rules map to 25 planned IT-STE rule IDs; the other 12 source blocks remain explicitly unreviewed. Issue 9 has tracked source metadata and an authorized, mechanically extracted [derivative retrieval database](docs/asd-ste100-local-reference.md). The source PDF is not tracked or published. Canonical corpus export and validation tools are not implemented yet.
+No IT-STE rules or vocabularies have been released, and the release registry is empty. The first draft domain registry and a source-pinned adaptation plan cover all 53 rules and 8 recommendations from Issue 9. Sections 1 through 9 are reviewed: all 53 source rules map to 28 planned IT-STE rule IDs; the 8 general recommendations remain explicitly unreviewed. Issue 9 has tracked source metadata and an authorized, mechanically extracted [derivative retrieval database](docs/asd-ste100-local-reference.md). The source PDF is not tracked or published. Canonical corpus export and validation tools are not implemented yet.
 
 ## Licensing and required project link
 

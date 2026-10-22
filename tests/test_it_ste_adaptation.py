@@ -546,6 +546,66 @@ class AdaptationPlanTests(unittest.TestCase):
             for clause in clauses:
                 self.assertIn(clause, targets[target_id]["design_intent"])
 
+    def test_section_nine_decisions_create_rewriting_and_usage_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("9.")
+        ]
+        expected = {
+            "9.1": "ITSTE-R-0026",
+            "9.2": "ITSTE-R-0002",
+            "9.3": "ITSTE-R-0027",
+            "9.4": "ITSTE-R-0028",
+        }
+        self.assertEqual(len(section), 4)
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        for record in section:
+            source_id = record["source"]["block_id"]
+            target_id = expected[source_id]
+            self.assertEqual(record["assessment"]["status"], "reviewed")
+            self.assertEqual(record["assessment"]["applicability"], "adapt")
+            self.assertEqual(record["target_rule_ids"], [target_id])
+            self.assertIn(source_id, targets[target_id]["source_block_ids"])
+            self.assertEqual(targets[target_id]["status"], "planned")
+        self.assertEqual(
+            targets["ITSTE-R-0002"]["source_block_ids"],
+            ["1.2", "1.3", "1.4", "1.7", "1.13", "3.1", "9.2"],
+        )
+        required_clauses = {
+            "ITSTE-R-0002": (
+                "Check the definition and usage restrictions",
+                "approval in one sense or context does not approve other senses or contexts",
+                "Do not import ASD-specific dictionary restrictions",
+            ),
+            "ITSTE-R-0026": (
+                "when a word-for-word replacement is ungrammatical, unclear, or changes the intended meaning",
+                "negation, modality, conditions, sequence, quantities, limits",
+                "Preserve quotations and machine-significant literals exactly",
+                "check related text and references for unintended effects",
+                "obtain clarification from an authoritative source or subject-matter expert rather than inventing missing facts",
+            ),
+            "ITSTE-R-0027": (
+                "Do not infer approval of a phrasal or other multi-word verb meaning",
+                "documented meaning, grammatical pattern, and applicable context",
+                "do not impose a blanket ban on phrasal verbs",
+                "force an inaccurate one-word replacement",
+                "Preserve authoritative interface wording, literal commands, and identifiers exactly",
+            ),
+            "ITSTE-R-0028": (
+                "when meaning and context match",
+                "Apply terminology consistency through ITSTE-R-0003",
+                "Do not erase differences in actors, conditions, quantities, scope, timing, or effects",
+                "Preserve externally controlled interface text and machine-significant literals exactly",
+                "rather than repeating a procedural template mechanically",
+            ),
+        }
+        for target_id, clauses in required_clauses.items():
+            for clause in clauses:
+                self.assertIn(clause, targets[target_id]["design_intent"])
+
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
             adaptation.candidate_domains("5.2"),

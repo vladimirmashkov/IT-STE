@@ -28,12 +28,13 @@
         "1.4",
         "1.7",
         "1.13",
-        "3.1"
+        "3.1",
+        "9.2"
       ],
       "candidate_domains": [
         "general"
       ],
-      "design_intent": "Make approval specific to meaning, part of speech, and form, including independent approval when one spelling functions as both an IT noun and verb."
+      "design_intent": "Make approval specific to meaning, part of speech, form, and applicable context, including independent approval when one spelling functions as both an IT noun and verb. Check the definition and usage restrictions of the applicable IT lexical entry before use; approval in one sense or context does not approve other senses or contexts. Do not import ASD-specific dictionary restrictions as IT-STE vocabulary decisions."
     },
     {
       "id": "ITSTE-R-0003",
@@ -486,6 +487,42 @@
         "ai-automation"
       ],
       "design_intent": "If a content profile applies length limits, define a reproducible measurement method, its version, and its scope. Specify boundaries for list lead-ins and items from document structure; a colon in IT syntax is not automatically a sentence boundary. Specify treatment of parenthetical text, numbers and units, abbreviations, identifiers, quotations, titles, headings, labels, proper names, hyphenated compounds, code, URLs, paths, and structural numbering. Do not automatically count arbitrary parenthetical or quoted passages as one word or conceal their complexity through exclusions. Distinguish words, characters, and LLM tokens; token budgets must identify the tokenizer and its version. Preserve exact literals and do not alter spelling, hyphenation, or document structure merely to game the metric. No universal ASD counting convention or 20/25-word limit is imposed on IT-STE."
+    },
+    {
+      "id": "ITSTE-R-0026",
+      "working_title": "Rewrite sentences without changing technical meaning",
+      "status": "planned",
+      "source_block_ids": [
+        "9.1"
+      ],
+      "candidate_domains": [
+        "general"
+      ],
+      "design_intent": "Use a different sentence construction when a word-for-word replacement is ungrammatical, unclear, or changes the intended meaning. Preserve actors, actions, objects, negation, modality, conditions, sequence, quantities, limits, and technical relationships. Preserve quotations and machine-significant literals exactly. Split or reorganize prose, lists, and tables only when the same information and dependencies remain clear; check related text and references for unintended effects. If the source meaning is unclear, obtain clarification from an authoritative source or subject-matter expert rather than inventing missing facts."
+    },
+    {
+      "id": "ITSTE-R-0027",
+      "working_title": "Approve multi-word verb meanings explicitly",
+      "status": "planned",
+      "source_block_ids": [
+        "9.3"
+      ],
+      "candidate_domains": [
+        "general"
+      ],
+      "design_intent": "Do not infer approval of a phrasal or other multi-word verb meaning from approval of its individual words. Admit an established IT expression only with a documented meaning, grammatical pattern, and applicable context, using the vocabulary controls in ITSTE-R-0001 and ITSTE-R-0002. Prefer a clearer direct verb when it preserves the same meaning, but do not impose a blanket ban on phrasal verbs or force an inaccurate one-word replacement for an established expression such as sign in. Preserve authoritative interface wording, literal commands, and identifiers exactly, and distinguish them from explanatory prose."
+    },
+    {
+      "id": "ITSTE-R-0028",
+      "working_title": "Reuse wording when meaning and context match",
+      "status": "planned",
+      "source_block_ids": [
+        "9.4"
+      ],
+      "candidate_domains": [
+        "general"
+      ],
+      "design_intent": "Use the same authoritative terms and consistent sentence patterns for equivalent instructions or descriptions when meaning and context match. Apply terminology consistency through ITSTE-R-0003 and reuse reviewed wording or templates instead of introducing stylistic synonyms. Do not erase differences in actors, conditions, quantities, scope, timing, or effects merely to make sentences look alike. Preserve externally controlled interface text and machine-significant literals exactly. Keep descriptive text coherent as a whole rather than repeating a procedural template mechanically."
     }
   ],
   "rights": {
