@@ -2159,24 +2159,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Repeated movement or exchange in two opposite directions.",
+      "it_disposition": "restricted",
+      "it_definition": "Repeatedly exchange messages or data between two named endpoints, with the direction changing.",
       "domains": [
         "networking"
       ],
-      "rationale": "The source phrase is wrapped; network descriptions should identify each direction and whether exchanges are repeated.",
+      "rationale": "The PDF confirms a standalone adverb row for the physical movement sense. Restrict the IT sense to a repeated exchange with named endpoints and a changing direction; use operation-specific wording when only bidirectional flow or request/response behavior is meant. See `docs/it-ste-research/W1-D-P173.md`.",
       "permitted_contextual_alternatives": [
         "in both directions",
-        "repeatedly between the named endpoints"
+        "exchange messages between the named endpoints",
+        "send the request and receive the response"
       ],
       "examples": {
         "positive": {
-          "text": "The test sends traffic in both directions between the two gateways.",
-          "explanation": "Names endpoints and directionality."
+          "text": "The WebSocket client and server exchange messages back and forth on one connection.",
+          "explanation": "Names both endpoints and describes a repeated two-way message exchange."
         },
         "problematic": {
           "text": "Move the database back and forth.",
-          "explanation": "Hides whether data is copied, migrated, or repeatedly rolled back."
+          "explanation": "Does not identify the endpoints or whether the operation is copying, migrating, rolling back, or repeatedly transferring data."
         }
       },
       "evidence": {
@@ -2197,14 +2198,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 173 -l 173 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 173 (2-1-B1), back and forth (adv) is a distinct ruled row between back (n) and back off (v). The adverb marker wraps to the next line but belongs to the same headword; its DIRECTION (n) meaning and both examples stay within the row. The wrapped-headword warning is a line-wrap artifact, not a row merge. This row-level check does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify source row boundary and typography against cited physical PDF page"
+          "original example review"
         ]
       }
     },
