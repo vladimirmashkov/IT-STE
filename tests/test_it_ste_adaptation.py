@@ -423,6 +423,59 @@ class AdaptationPlanTests(unittest.TestCase):
             for clause in clauses:
                 self.assertIn(clause, intent)
 
+    def test_section_seven_decisions_create_risk_targets(self) -> None:
+        records = adaptation.load_jsonl(adaptation.PLAN_MAP)
+        section = [
+            record for record in records if record["source"]["block_id"].startswith("7.")
+        ]
+        expected = {
+            "7.1": "ITSTE-R-0020",
+            "7.2": "ITSTE-R-0021",
+            "7.3": "ITSTE-R-0022",
+        }
+        self.assertEqual(len(section), 3)
+        targets = {
+            target["id"]: target
+            for target in adaptation.load_json(adaptation.PLAN_TARGETS)["targets"]
+        }
+        for record in section:
+            source_id = record["source"]["block_id"]
+            target_id = expected[source_id]
+            self.assertEqual(record["assessment"]["status"], "reviewed")
+            self.assertEqual(record["assessment"]["applicability"], "adapt")
+            self.assertEqual(record["assessment"]["adaptation_action"], "create-rule")
+            self.assertEqual(record["target_rule_ids"], [target_id])
+            self.assertEqual(targets[target_id]["source_block_ids"], [source_id])
+            self.assertEqual(targets[target_id]["status"], "planned")
+        required_clauses = {
+            "ITSTE-R-0020": (
+                "actual risk assessment and the governing classification policy",
+                "physical harm, data loss, security compromise, and service disruption",
+                "do not downgrade a more serious risk",
+                "Do not impose the aviation warning/caution distinction as a universal IT scale",
+                "without a documented mapping",
+                "rather than relying only on color or a symbol",
+            ),
+            "ITSTE-R-0021": (
+                "After the risk label",
+                "condition that the reader must evaluate first",
+                "State the required action explicitly",
+                "Place the instruction before the hazardous operation",
+                "independently retrieved procedural content",
+                "do not hide required precautions in notes",
+            ),
+            "ITSTE-R-0022": (
+                "When a credible consequence is known and can be disclosed",
+                "Distinguish possible consequences from certain outcomes",
+                "do not invent causes, probabilities, or guarantees",
+                "without exposing secrets or unnecessary exploit details",
+                "An explanation does not replace the protective action",
+            ),
+        }
+        for target_id, clauses in required_clauses.items():
+            for clause in clauses:
+                self.assertIn(clause, targets[target_id]["design_intent"])
+
     def test_heading_only_candidates_are_non_normative(self) -> None:
         self.assertEqual(
             adaptation.candidate_domains("5.2"),
