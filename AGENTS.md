@@ -8,6 +8,8 @@ These instructions apply to the entire repository. This English document is auth
 
 For draft vocabulary blockers, editorial review, or IT-only term coverage, read [the compact handoff](docs/it-ste-draft-handoff.md) first. It records completed work, the three open workstreams, bounded live-queue retrieval, and validation requirements. Do not bootstrap by reading the complete generated Markdown, all vocabulary batches, or the source extraction into context. Recompute current counts; handoff baseline numbers are historical, not approvals.
 
+Apply the agreed [evidence-based research method](docs/it-ste-research-method.md) to substantive W1/W2/W3 decisions: inspect competent primary/expert sources online, compare alternatives, and record a traceable draft decision. PDF layout questions still require the authenticated PDF. Start from the handoff's **Current checkpoint** and read only the active research note(s); update that checkpoint after each bounded slice. Do not reread the full research history or claim external corroboration without inspecting sources. This standing assignment does not authorize vocabulary approval, release, staging, or commits.
+
 ## ASD-STE100 Issue 9 derivative reference
 
 Use the tracked derivative retrieval database instead of reading or converting the complete standard:

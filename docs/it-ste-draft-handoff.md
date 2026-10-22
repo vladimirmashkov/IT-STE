@@ -4,6 +4,18 @@
 
 English is authoritative. Read this after the root `AGENTS.md` when continuing draft remediation in an independent thread. This is a work handoff, not an approval or a new standard version. Do not read the complete generated draft or source extraction to bootstrap.
 
+## Current checkpoint — read before historical baseline
+
+- Standing assignment: apply the [evidence-based research method](it-ste-research-method.md) for substantive W1/W2/W3 decisions. Read it once per fresh session; then read only the active note(s), not all research history. Make supported draft decisions autonomously; escalate missing evidence or owner-policy choices. No approval/release authority is implied.
+- Active workstream: **W1**. Next slice: **`D-P161-005` (alternately) / `D-P161-006` (ALTERNATIVE), batch 003, physical PDF page 161**. Recompute the live queue below before editing; do not rely on historical offsets.
+- Last completed slice: `D-P156-005`, `D-P156-006`, `D-P157-003`, batch 002, pages 156–157. Row-specific PDF evidence is in those records; no external research was performed for that slice. Do not relabel it as externally corroborated. W2 editorial review remains open.
+- In-progress research: **none**. No research note exists yet. First action: retrieve the next pair's exact draft/source entries, verify the row boundary against the authenticated page, then research the IT distinction between alternation and alternatives under the method. Create only the relevant short note when actual research begins.
+- Recomputed at this documentation checkpoint: **214 needs-review**; 90 allowed, 1,344 restricted, 402 prohibited, 146 not-applicable; 2,196 total / 55 batches. The live canonical data overrides these snapshot counts.
+- Latest content validation: affected-batch and full adaptation/corpus/vocabulary/document checks plus **118 tests passed** in the pages 156–157 slice. This method-only update reran all-batch vocabulary validation and checked the next two queue IDs; it does not represent another full test run or new semantic research.
+- Resume budget: root instructions → this handoff → research method → active note(s), if any → at most eight queue locators → selected exact records. Historical sections below are reference, not instructions to reread all completed work. Read only the validation/source-contract sections needed for the selected change.
+
+Maintain this checkpoint in place after every slice, including blocked work and one exact next action. Put detailed external evidence in addressed notes, not a growing startup history. Canonical records remain the disposition authority. Preserve historical deltas below without treating their counts as current.
+
 ## Verified baseline and completed work
 
 Baseline: Git commits `1f040c4` (`Complete draft rules and start vocabulary`) and `2089f95` (`Complete draft vocabulary coverage`). These identify completed work, not authorization to commit future changes. Recompute current status and counts; this baseline is historical if records change.
@@ -64,14 +76,14 @@ Group work by physical page, preserving global order. Recompute the queue after 
 
 ## Three distinct open workstreams
 
-### W1 — Resolve the 217 explicit blockers first
+### W1 — Resolve explicit blockers first (217 at baseline)
 
 These are unresolved decisions, **not 217 proven extraction errors**. At baseline 103 have source extraction warnings; 114 do not. Warning absence is not semantic verification. Examples: adjacent-row overlap (`D-P156-005`/`006`), insufficient noun context (`D-P157-003`, advance), physical fastening versus information security (`D-P370-004`, security), and setting a number to zero versus calibration/sanitization (`D-P433-007`, zero).
 
 For each selected record:
 
 1. Inspect its existing proposal, rationale, warning/ambiguity evidence, and exact source sense. Verify the cited PDF page visually if layout is in question; source examples can help only when bounded retrieval is insufficient.
-2. Decide independently which IT sense and grammatical function to propose. An aviation meaning is not an IT whitelist/ban. `not-applicable` concerns the stated source sense, not every use of the spelling.
+2. Use the [research method](it-ste-research-method.md) to investigate substantive IT questions, evaluate competent external evidence, compare alternatives, and record a bounded draft decision with an evidence-note reference. Decide independently which IT sense and grammatical function to propose. An aviation meaning is not an IT whitelist/ban. `not-applicable` concerns the stated source sense, not every use of the spelling.
 3. Amend the existing decision in its batch, with original IT wording and examples. Preserve IDs, global sequence, raw source metadata/warnings, pins, and rights. Record what was verified and any still-open question. Do not silently repair the authenticated source database or blanket-clear `needs-review`.
 4. For a visual resolution, the existing `evidence.pdf_layout_check` contract requires `performed: true`, `visual_verification_performed: true`, and a nonempty `method` containing the authenticated PDF SHA-256 and `Findings:` with row-specific findings. These are recorded assertions, not automated proof of inspection. Text extraction or a correct hash alone is not visual verification. Retain the source's mechanical/unreviewed status; row review does not certify the entire database.
 5. Change the proposed disposition only when the recorded blocker is actually resolved. Keep `status: draft` and `review_status: editorial-review-needed`: resolving extraction is not human approval. If blocked, preserve the record and state exactly what evidence/decision is missing.
@@ -119,7 +131,7 @@ python3 -W error::ResourceWarning -m unittest discover -s tests
 
 `tests/test_it_ste_vocabulary.py::VocabularyTests.test_complete_source_coverage_and_review_boundaries` intentionally pins baseline disposition counts; batch-001 tests and document tests also pin its six visual resolutions. After justified decisions, update affected expectations and EN/RU progress counts to the recomputed results without weakening total coverage, order, provenance, or draft boundaries. Update this handoff's **baseline** only deliberately; do not confuse historical counts with current invariants. Rebuild Markdown, never hand-edit it. Relevant tests are `tests/test_it_ste_vocabulary.py` and `tests/test_it_ste_document.py`.
 
-Before finishing, follow the root Git review/commit-proposal instructions and append a concise handoff delta here: IDs/pages resolved, evidence used, blockers left, new files/contracts, and actual checks run. Preserve unrelated work. A fresh thread must be able to resume from records without the chat transcript.
+Before finishing, follow the root Git review/commit-proposal instructions and update the Current checkpoint in place: IDs/pages resolved, evidence-note links, any in-progress or blocked question and exact next action, recomputed counts, new files/contracts, and actual checks run. Preserve unrelated work. Add a historical delta only for a material milestone; do not grow a mandatory startup transcript. A fresh thread must be able to resume from records without the chat transcript.
 
 Release/SFT readiness is **not** established by successful checks or zero unprocessed rows. Require approved technical/editorial content, canonical vocabulary/release validation, and separate dataset review (rights, unresolved examples, splits/evaluation, versioned provenance) before publishing an approved lexicon or training export.
 
