@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 90,
-    "needs-review": 212,
+    "needs-review": 210,
     "not-applicable": 146,
     "prohibited": 402,
-    "restricted": 1346
+    "restricted": 1348
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -13485,13 +13485,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: another; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: An additional instance or a different instance of an IT object\, depending on context\.
+Definition: An additional instance\, a different instance\, or a further occurrence of an IT object or operation\; state which meaning applies\.
 
 Domains: general
 
-Rationale: Additional capacity and replacement are distinct operations\; the extracted alternatives also overlap the following direction row\.
+Rationale: The authenticated PDF shows three separate source alternatives\: ONE \(TN\) MORE\, DIFFERENT \(adj\)\, and AGAIN \(adv\)\; the historical extraction ambiguity is retained\, but visual inspection shows no spill into anticlockwise\. Kubernetes and PostgreSQL distinguish creating or scaling additional resources from changing or replacing an existing resource\. Keep this restricted because unqualified another leaves addition\, difference\, and further\-occurrence readings unresolved\. This is a restricted draft sense\, not vocabulary approval\; the editorial distinction remains subject to review\. See docs\/it\-ste\-research\/W1\-D\-P163\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -13499,13 +13499,15 @@ Contextual alternatives:
 
 - a different
 
+- a further occurrence of
+
 #### Positive example
 
 ```
-Create one more worker instance.
+Scale the worker pool to create one more worker instance.
 ```
 
-Explanation: Specifies addition rather than replacement\.
+Explanation: Specifies an additional instance rather than a replacement\.
 
 #### Problematic example
 
@@ -13525,9 +13527,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning/alternatives ends with text repeated in the following row; row boundary not verified against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 163 -l 163 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 163 (2-1-A15), another (adj) has three alternatives—ONE (TN) MORE, DIFFERENT (adj), and AGAIN (adv)—within one ruled row group. A horizontal boundary separates the group from anticlockwise (adv); the historical extraction ambiguity does not reflect a boundary spill. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 163,
     "printed_page": "2-1-A15",
@@ -13537,8 +13539,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P163-006",
@@ -13559,17 +13560,17 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: anticlockwise; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Rotation opposite to clock\-hand movement when viewed from a stated side of a physical device\.
+Definition: A physical or graphical rotation opposite to clockwise\, relative to the stated viewing direction or coordinate system\.
 
-Domains: procedures\-runbooks
+Domains: procedures\-runbooks, user\-interface
 
-Rationale: This is a physical orientation\, not a direction for traversing a software sequence\; the wrapped\-headword warning needs verification\.
+Rationale: The authenticated PDF confirms anticlockwise \(adv\) is a separate row and that its two\-line headword is a display wrap\. W3C CSS transform evidence supports a geometric rotation in a defined coordinate system\, while expert Mozilla guidance shows that counter\-clockwise direction depends on writing direction\; neither supports using the word for traversing a software sequence\. Keep this restricted\: state the viewing direction or coordinate system and use counterclockwise when it is the clearer project term\. This is a restricted draft sense\, not vocabulary approval\; the editorial distinction remains subject to review\. See docs\/it\-ste\-research\/W1\-D\-P163\.md for the bounded evidence\.
 
 Contextual alternatives:
 
-- counterclockwise\, viewed from the front
+- counterclockwise
 
 #### Positive example
 
@@ -13577,15 +13578,15 @@ Contextual alternatives:
 Turn the rack latch counterclockwise when viewed from the front.
 ```
 
-Explanation: Defines both direction and viewpoint\.
+Explanation: Defines the direction and viewpoint for a physical control\.
 
 #### Problematic example
 
 ```
-Rotate the log anticlockwise.
+Rotate the control anticlockwise.
 ```
 
-Explanation: A log has no physical rotational reference\.
+Explanation: Does not state the viewing direction or coordinate system\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -13597,9 +13598,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 163 -l 163 -scale-to 1800 -png -singlefile from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 163 (2-1-A15), anticlockwise (adv) is a distinct row below a horizontal boundary; the headword wraps as anticlockwise on one line and (adv) on the next. This row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 163,
     "printed_page": "2-1-A15",
@@ -13609,8 +13610,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify source row boundary and typography against cited physical PDF page"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P163-007",
@@ -167544,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json` SHA-256: `5bdf4f9ffc6d0057677a0cd47a99de62b0da75567f223f5c1b47b2f8033f1040`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `a5ec534a0b4566d5f1dc40e45d540b89c3f5ae794b7661b86b3b6ec38d4d45ba`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-004.json` SHA-256: `6a5afc8df360aa5310d974e3875d97621b6d759c97bf00d7845be0a77455d1a5`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-005.json` SHA-256: `3fdce86b05dadc7e9e8a9ff067a1cd4e867f73a7ee4c080e67997fa498103fb7`
 
