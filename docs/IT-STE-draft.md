@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 106,
-    "needs-review": 165,
+    "allowed": 107,
+    "needs-review": 164,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -43630,13 +43630,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DIAGONALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: In a direction with both horizontal and vertical components on a specified display\.
 
 Domains: user\-interface
 
-Rationale: Wrapped\-headword warning requires source review\; screen motion also needs endpoints\.
+Rationale: Authenticated PDF visual inspection confirms that DIAGONALLY \(adv\) is row 6 with In a diagonal direction\; the wrapped\-headword warning is retained and diametrically \(adv\) begins the next row\. MDN\'s inspected CSS translate documentation defines two\-dimensional horizontal\/vertical movement with a vector \[tx\, ty\] and shows combined x\/y movement\. This supports the bounded user\-interface sense with explicit endpoints\/components\. See \`docs\/it\-ste\-research\/W1\-D\-P216\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -43670,9 +43670,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 216 (printed page 2-1-D10). Findings: DIAGONALLY (adv) is row 6 with In a diagonal direction and a wrapped headword; DIAMETRICALLY (adv) begins the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 216,
     "printed_page": "2-1-D10",
@@ -167546,7 +167546,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b42a3e32923d3092401ec29b77a0fd4b0a2b6287a5c88bd797129ace0161b49e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `be406553f88669bf73770002f08de00f7f5e58d107ba2117bac1ab8c46f2ad04`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-014.json` SHA-256: `49c66e56cc4f7f861cfed4cc5b8b16fa88bc5a2e945a596e684459630d048a8b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `0788c2def07a599ff671aa0f7d57c8e5d7030173cfc554b9e761f1bfff620966`
 
