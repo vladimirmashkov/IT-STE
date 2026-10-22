@@ -608,12 +608,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "On or from the outside of an identified physical enclosure.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped-headword warning requires source review; network exposure needs a separately defined boundary.",
+      "rationale": "Visual inspection confirms that `EXTERNALLY (adv)` is a separate row from `EXTERNAL (adj)`; the line break in the headword matches the preserved wrapped-headword warning. The draft remains restricted to the physical outside relation stated by the source. Reused NIST SP 800-207 evidence shows that external physical or network location does not establish trust or authorization. See `docs/it-ste-research/W1-D-P243.md`; this is a draft editorial inference and remains subject to review.",
       "permitted_contextual_alternatives": [
         "on the outside",
         "from outside the enclosure"
@@ -646,9 +646,9 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 243 -l 243 -png -r 180 and visually inspected physical page 243. Findings: row 7 is bounded by horizontal rules, begins separately after EXTERNAL (adj), and reads EXTERNALLY (adv) with the headword split across lines as recorded by the wrapped-headword warning.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

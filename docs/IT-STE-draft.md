@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 146,
+    "needs-review": 145,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1383
+    "restricted": 1384
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -58627,13 +58627,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: EXTERNALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: On or from the outside of an identified physical enclosure\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires source review\; network exposure needs a separately defined boundary\.
+Rationale: Visual inspection confirms that \`EXTERNALLY \(adv\)\` is a separate row from \`EXTERNAL \(adj\)\`\; the line break in the headword matches the preserved wrapped\-headword warning\. The draft remains restricted to the physical outside relation stated by the source\. Reused NIST SP 800\-207 evidence shows that external physical or network location does not establish trust or authorization\. See \`docs\/it\-ste\-research\/W1\-D\-P243\.md\`\; this is a draft editorial inference and remains subject to review\.
 
 Contextual alternatives:
 
@@ -58667,9 +58667,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 243 -l 243 -png -r 180 and visually inspected physical page 243. Findings: row 7 is bounded by horizontal rules, begins separately after EXTERNAL (adj), and reads EXTERNALLY (adv) with the headword split across lines as recorded by the wrapped-headword warning.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 243,
     "printed_page": "2-1-E17",
@@ -167556,7 +167556,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-018.json` SHA-256: `c4f94d1ceed5d497ea2957768ee10ac1fa24b71929b0611f975ed1db120d9f12`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-019.json` SHA-256: `155b4e08bc06843398fea101bad060e7cd932290e97148c1d55e75503ca14ec0`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-019.json` SHA-256: `c99e50b8dbebd8a215c2e9b315008894cdf098438b4461b82f3e59ea70f1281f`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-020.json` SHA-256: `351873d3dfa62fa8080e5f7285521b189032b1b49aa7dcde40f0e8919e59788c`
 
