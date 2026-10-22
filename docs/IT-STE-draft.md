@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 99,
-    "needs-review": 172,
+    "allowed": 101,
+    "needs-review": 170,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1374
@@ -38400,13 +38400,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CYCLE; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: One full sequence of a specified operation\, provisionally\.
 
 Domains: procedures\-runbooks
 
-Rationale: The column mixes the definition with apparent timing examples\; source review is required before settling the sense\.
+Rationale: Authenticated PDF visual inspection confirms that CYCLE \(n\) is row 7 with the complete definition \`One complete sequence of operation\`\; SET\, THREE\, and MINUTE belong to its timing example\. The bounded diagnostic\-sequence draft is supported as a one\-run procedure\. Python\'s official \`itertools\.cycle\(\)\` documentation separately defines indefinite repetition\, which this draft does not cover\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38440,9 +38440,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The definition includes SET, THREE, and MINUTE fragments apparently from a timing example."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: CYCLE (n) is row 7; its definition is one complete sequence of operation, and SET/THREE/MINUTE belong to the timing example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38452,8 +38452,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P206-007",
@@ -38474,13 +38473,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: cycle; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Operate an identified mechanism through a full sequence\, provisionally\.
 
 Domains: procedures\-runbooks
 
-Rationale: The compact column mixes the noun alternative with apparent actuator example fragments\; the verb sense remains provisional\.
+Rationale: Authenticated PDF visual inspection confirms that cycle \(v\) is row 8 with the CYCLE \(n\) alternative and its actuator example\. The bounded verb sense operates an identified mechanism through one stated sequence\; Python\'s official \`itertools\.cycle\(\)\` documentation shows that indefinite repetition is a distinct computing meaning and is excluded here\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -38514,9 +38513,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The noun alternative is interleaved with apparent actuator-operation example fragments."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of the authenticated pdftoppm PNG rendering of physical PDF page 206 from ASD-STE100 Issue 9; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: cycle (v) is row 8; CYCLE (n) is the alternative and the actuator text belongs to the row's example. Historical extraction ambiguity remains unchanged; this row-level check does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 206,
     "printed_page": "2-1-C24",
@@ -38526,8 +38525,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source PDF layout and sense verification; not performed"
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P206-008",
@@ -167546,7 +167544,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `7ef7d0fb8bf3f92ba69230dd5d17632105ad8783c5c66030d2390acde087aefc`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `ea68ad8924791944feed5649c3bb72cfa9432696ca460cb71f2ff3d8d1cc200a`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `c77be808fdb594d1076dab420dcea151e0adc1540fcba98cba9115cc0204fa9f`
 
