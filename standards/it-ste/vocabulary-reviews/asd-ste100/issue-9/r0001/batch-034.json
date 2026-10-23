@@ -1969,24 +1969,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Out of a physical vessel; no general software sense is proposed.",
+      "it_disposition": "restricted",
+      "it_definition": "Use only for an explicitly identified physical vessel; for digital data, name the object and use delete or remove with any required retention or verification condition.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The wrapped headword requires review, and maritime disposal language is unsuitable for deleting data.",
+      "rationale": "The authenticated ASD row gives the maritime meaning \"Out of a vessel\" and the wrapped headword is visually confirmed. AWS S3 documents deletion by named object key or version and warns that versioning can make a delete a marker rather than permanent removal; Kubernetes documents deletion and dependent cleanup as distinct, controlled operations. Restrict the IT extension to explicit object scope and named action/condition rather than a maritime disposal metaphor. See `docs/it-ste-research/W1-D-P327.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "remove from the vessel",
-        "delete, for data only"
+        "delete the named object",
+        "remove the named object after the retention or verification condition"
       ],
       "examples": {
         "positive": {
           "text": "Delete the temporary report after verification succeeds.",
-          "explanation": "States a digital action without a disposal metaphor."
+          "explanation": "Names the digital object, deletion action, and verification condition."
         },
         "problematic": {
           "text": "Throw the audit logs overboard.",
-          "explanation": "Hides deletion scope and retention obligations."
+          "explanation": "Uses a maritime metaphor and hides the object, deletion semantics, and retention obligations."
         }
       },
       "evidence": {
@@ -2007,14 +2008,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 327 -l 327 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-15-page-327; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: OVERBOARD (adv) is a distinct first row on printed page 2-1-O9, with the wrapped headword, `Out of a vessel` in the approved-meaning/alternatives column, and `RELEASE THE AIR OVERBOARD.` in the STE example column; overfill follows as a separate row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
