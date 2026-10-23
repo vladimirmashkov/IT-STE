@@ -71,20 +71,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, provide specified content or a defined function to an identified client.",
+      "it_disposition": "restricted",
+      "it_definition": "Handle HTTP requests for files under a configured URL-to-file mapping and send the applicable HTTP response to the requesting client.",
       "domains": [
         "general"
       ],
-      "rationale": "The source asks for an accurate verb but gives no sense; HTTP serving needs independent scope review.",
+      "rationale": "Authenticated page 374 shows a serves-to-control construction, not an HTTP definition. Restrict this independently supported IT adaptation to HTTP file-request handling under an explicit mapping. Python documents file serving, HEAD, conditional responses and errors; serving does not imply a successful content-body transfer for every request, secure filesystem containment or production suitability. Generic purpose/function wording still needs an accurate verb. See docs/it-ste-research/W1-D-P374.md.",
       "permitted_contextual_alternatives": [
-        "provide",
-        "send the specified content"
+        "handle HTTP requests for the mapped files",
+        "send the specified file contents, when the response includes that body"
       ],
       "examples": {
         "positive": {
-          "text": "Send the requested HTML document to the client.",
-          "explanation": "Names the actual delivery action."
+          "text": "The HTTP handler serves files using the configured URL-to-file mapping.",
+          "explanation": "Names the HTTP role and resource mapping, not a guarantee of successful delivery. The actual method and status determine whether file contents are sent; this is not an instruction to deploy Python http.server in production."
         },
         "problematic": {
           "text": "Serve the system.",
@@ -109,14 +109,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 374 / printed 2-1-S8, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: separate row 3 serve (v), bounded by SERRATION and service, contains Use an accurate verb and a radio-switch serves-to-control example rewritten with controls. It does not define network serving. See docs/it-ste-research/W1-D-P374.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Verify actual HTTP method/status behavior, URL-to-file mapping and deployment security separately"
         ]
       }
     },
@@ -197,15 +197,15 @@
       "domains": [
         "general"
       ],
-      "rationale": "The compact entry includes a probable fragment from the next row; acceptance must be tied to explicit tests.",
+      "rationale": "Authenticated page 374 resolves the overlap: SERVICEABLE belongs to this noun row; Correct or satisfactory belongs to the next adjective row. Lenovo's fan procedure establishes seating and installation constraints, not a complete operating-acceptance criterion. Keep needs-review until a named hardware component's full applicable requirements and the intended noun scope are established; selected checks alone do not prove general fitness or future reliability. See docs/it-ste-research/W1-D-P374.md.",
       "permitted_contextual_alternatives": [
-        "fitness for operation",
-        "meets operating requirements"
+        "fitness for operation under the stated criteria",
+        "meets the operating requirements stated in the applicable procedure"
       ],
       "examples": {
         "positive": {
           "text": "Record whether the replacement fan passes its operating checks.",
-          "explanation": "Makes acceptance testable."
+          "explanation": "Records only the named checks' result; the applicable procedure must identify them and their limits. Passing selected checks is not proof of every operating requirement, future reliability or complete serviceability."
         },
         "problematic": {
           "text": "Serviceability means there can be no future failure.",
@@ -230,14 +230,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 374 / printed 2-1-S8, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 5 serviceability (n) has SERVICEABLE (adj) and a tire-cut example rewritten as an adjective condition. The horizontal rule below starts SERVICEABLE (adj); Correct or satisfactory belongs only to that next row. The tire threshold is not a general IT acceptance limit. See docs/it-ste-research/W1-D-P374.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Establish the intended hardware noun sense and complete applicable operating/acceptance criteria; distinguish installation checks from fitness and future reliability"
         ]
       }
     },

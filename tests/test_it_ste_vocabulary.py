@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1465, "prohibited": 407,
-                             "not-applicable": 148, "needs-review": 58},
+            "dispositions": {"allowed": 118, "restricted": 1466, "prohibited": 407,
+                             "not-applicable": 148, "needs-review": 57},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -182,6 +182,17 @@ class VocabularyTests(unittest.TestCase):
         self.assertIn("180-degree circular arc", by_id["D-P372-003"]["it_definition"])
         self.assertIn("not a filled half-disk", by_id["D-P372-003"]["rationale"])
         self.assertNotIn("cable guide", by_id["D-P372-003"]["examples"]["positive"]["text"])
+        serve = by_id["D-P374-003"]
+        self.assertEqual(serve["it_disposition"], "restricted")
+        self.assertIn("configured URL-to-file mapping", serve["it_definition"])
+        self.assertIn("HEAD, conditional responses and errors", serve["rationale"])
+        serviceability = by_id["D-P374-005"]
+        self.assertEqual(serviceability["it_disposition"], "needs-review")
+        self.assertIn("not a complete operating-acceptance criterion", serviceability["rationale"])
+        self.assertIn("not proof of every operating requirement", serviceability["examples"]["positive"]["explanation"])
+        for decision in (serve, serviceability):
+            self.assertTrue(decision["evidence"]["mechanical_ambiguities"])
+            self.assertTrue(decision["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 58,
+    "needs-review": 57,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1465
+    "restricted": 1466
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -132128,27 +132128,27 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: serve; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, provide specified content or a defined function to an identified client\.
+Definition: Handle HTTP requests for files under a configured URL\-to\-file mapping and send the applicable HTTP response to the requesting client\.
 
 Domains: general
 
-Rationale: The source asks for an accurate verb but gives no sense\; HTTP serving needs independent scope review\.
+Rationale: Authenticated page 374 shows a serves\-to\-control construction\, not an HTTP definition\. Restrict this independently supported IT adaptation to HTTP file\-request handling under an explicit mapping\. Python documents file serving\, HEAD\, conditional responses and errors\; serving does not imply a successful content\-body transfer for every request\, secure filesystem containment or production suitability\. Generic purpose\/function wording still needs an accurate verb\. See docs\/it\-ste\-research\/W1\-D\-P374\.md\.
 
 Contextual alternatives:
 
-- provide
+- handle HTTP requests for the mapped files
 
-- send the specified content
+- send the specified file contents\, when the response includes that body
 
 #### Positive example
 
 ```
-Send the requested HTML document to the client.
+The HTTP handler serves files using the configured URL-to-file mapping.
 ```
 
-Explanation: Names the actual delivery action\.
+Explanation: Names the HTTP role and resource mapping\, not a guarantee of successful delivery\. The actual method and status determine whether file contents are sent\; this is not an instruction to deploy Python http\.server in production\.
 
 #### Problematic example
 
@@ -132168,9 +132168,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Source contains an editorial instruction rather than a definition; network-serving scope is not established."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 374 / printed 2-1-S8, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: separate row 3 serve (v), bounded by SERRATION and service, contains Use an accurate verb and a radio-switch serves-to-control example rewritten with controls. It does not define network serving. See docs/it-ste-research/W1-D-P374.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 374,
     "printed_page": "2-1-S8",
@@ -132181,7 +132181,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Verify actual HTTP method/status behavior, URL-to-file mapping and deployment security separately"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P374-003",
@@ -132279,13 +132279,13 @@ Definition: Provisionally\, the condition of meeting a hardware component\'s ope
 
 Domains: general
 
-Rationale: The compact entry includes a probable fragment from the next row\; acceptance must be tied to explicit tests\.
+Rationale: Authenticated page 374 resolves the overlap\: SERVICEABLE belongs to this noun row\; Correct or satisfactory belongs to the next adjective row\. Lenovo\'s fan procedure establishes seating and installation constraints\, not a complete operating\-acceptance criterion\. Keep needs\-review until a named hardware component\'s full applicable requirements and the intended noun scope are established\; selected checks alone do not prove general fitness or future reliability\. See docs\/it\-ste\-research\/W1\-D\-P374\.md\.
 
 Contextual alternatives:
 
-- fitness for operation
+- fitness for operation under the stated criteria
 
-- meets operating requirements
+- meets the operating requirements stated in the applicable procedure
 
 #### Positive example
 
@@ -132293,7 +132293,7 @@ Contextual alternatives:
 Record whether the replacement fan passes its operating checks.
 ```
 
-Explanation: Makes acceptance testable\.
+Explanation: Records only the named checks\' result\; the applicable procedure must identify them and their limits\. Passing selected checks is not proof of every operating requirement\, future reliability or complete serviceability\.
 
 #### Problematic example
 
@@ -132313,9 +132313,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition includes Correct or satisfactory, apparently overlapping the following adjective row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 374 / printed 2-1-S8, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 5 serviceability (n) has SERVICEABLE (adj) and a tire-cut example rewritten as an adjective condition. The horizontal rule below starts SERVICEABLE (adj); Correct or satisfactory belongs only to that next row. The tire threshold is not a general IT acceptance limit. See docs/it-ste-research/W1-D-P374.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 374,
     "printed_page": "2-1-S8",
@@ -132326,7 +132326,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Establish the intended hardware noun sense and complete applicable operating/acceptance criteria; distinguish installation checks from fitness and future reliability"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P374-005",
@@ -167567,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `c16eaec5b0715ff9d454c1dd9f6e4f9af54dda83438c1380cb51f5b3aada8a58`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `40ed3a1a1ec2ee7b59c06002d8e36752d91940451ff3247eeb38100fce38378d`
 
