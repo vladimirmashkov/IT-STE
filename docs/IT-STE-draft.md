@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 106,
+    "needs-review": 105,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1422
+    "restricted": 1423
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -94688,13 +94688,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: meteorological; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes weather observations handled by a specialized data service\.
+Definition: Related to weather observations or meteorological data\; not a general descriptor for system behavior\.
 
 Domains: data\-storage
 
-Rationale: The wrapped source row needs review\; a weather\-data scope is not general vocabulary approval\.
+Rationale: The authenticated page confirms a distinct meteorological row with WEATHER as its alternative\; restrict use to weather\-observation data and do not extend it to generic system or resource behavior\.
 
 Contextual alternatives:
 
@@ -94728,9 +94728,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 310 -l 310 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-310-iter3; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: meteorological (adj) is a distinct row with WEATHER (n), immediately after the separate mesh (v) row and before METHOD (n); the wrapped headword is visually complete and the row boundaries are clear.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 310,
     "printed_page": "2-1-M6",
@@ -94740,8 +94740,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P310-004",
@@ -167554,7 +167553,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `ce66eff5059b1a955ed5bea6b75e666d64431002c7222d097a403dca63664086`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `bd35cbff5857827cd5ac4975c84e86f77956ef8bdc50fd87e5a5400a0c2b6db7`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 

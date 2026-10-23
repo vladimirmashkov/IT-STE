@@ -964,12 +964,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes weather observations handled by a specialized data service.",
+      "it_disposition": "restricted",
+      "it_definition": "Related to weather observations or meteorological data; not a general descriptor for system behavior.",
       "domains": [
         "data-storage"
       ],
-      "rationale": "The wrapped source row needs review; a weather-data scope is not general vocabulary approval.",
+      "rationale": "The authenticated page confirms a distinct meteorological row with WEATHER as its alternative; restrict use to weather-observation data and do not extend it to generic system or resource behavior.",
       "permitted_contextual_alternatives": [
         "weather",
         "related to weather observations"
@@ -1002,14 +1002,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 310 -l 310 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-310-iter3; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: meteorological (adj) is a distinct row with WEATHER (n), immediately after the separate mesh (v) row and before METHOD (n); the wrapped headword is visually complete and the row boundaries are clear.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
