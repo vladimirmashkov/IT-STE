@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 138,
+    "needs-review": 136,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1391
+    "restricted": 1393
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -74888,13 +74888,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: HORIZONTAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Parallel to a stated physical or displayed baseline\.
 
 Domains: user\-interface
 
-Rationale: The extracted adjective cell also contains an adverb\-like sentence\; the boundary needs review\.
+Rationale: Visual inspection confirms row 6 and separates the adjective from the following adverb\. In UI and layout text\, require the referenced axis\, baseline\, or object\; do not use this adjective for infrastructure horizontal scaling without that scope\. W3C CSS writing\-modes evidence describes horizontal dimensions and writing modes\, while Kubernetes uses horizontal scaling for adding Pods\. See docs\/it\-ste\-research\/W1\-D\-P272\.md\.
 
 Contextual alternatives:
 
@@ -74928,9 +74928,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell includes wording apparently belonging to the following adverb row; PDF layout and visual checks not performed."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 272 -l 272 -png -r 180 and visually inspected physical page 272. Findings: row 6 is bounded by hook up (v) above and HORIZONTALLY (adv) below; the row reads HORIZONTAL (adj) and `Parallel to the horizon or a baseline`.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 272,
     "printed_page": "2-1-H6",
@@ -74962,13 +74962,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: HORIZONTALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: In a direction parallel to a stated baseline\.
 
 Domains: user\-interface
 
-Rationale: A wrapped\-headword warning prevents settling the extracted adverb without source review\.
+Rationale: Visual inspection confirms the wrapped row 7\. In UI and layout text\, require the referenced axis\, baseline\, or object\; do not use this adverb for infrastructure horizontal scaling without that scope\. W3C CSS writing\-modes evidence describes horizontal dimensions and writing modes\, while Kubernetes uses horizontal scaling for adding Pods\. See docs\/it\-ste\-research\/W1\-D\-P272\.md\.
 
 Contextual alternatives:
 
@@ -75002,9 +75002,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 272 -l 272 -png -r 180 and visually inspected physical page 272. Findings: row 7 follows HORIZONTAL (adj), precedes HOT (adj), and shows HORIZONTALLY (adv) as a wrapped two-line headword with `In a horizontal position` in its own meaning cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 272,
     "printed_page": "2-1-H6",
@@ -167566,7 +167566,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-023.json` SHA-256: `9082c656c5e4aef637f5d11c989c5665540634a9b6c92fc68702879dc5c78771`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `a389337a5e6c31d635a5ed80219ac7585b501ec0240c3bede1fcac55b1046860`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `6e86f758cf72e87b6046a4b8110a70b0eb3b4c05cd1e1656a0ba2eb6652991a9`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `e0ac8417b459ae99f9d28d353142bc099e5154394b91d4a42e74f645f258be62`
 
