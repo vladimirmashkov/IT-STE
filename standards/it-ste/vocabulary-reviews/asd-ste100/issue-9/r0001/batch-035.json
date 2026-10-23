@@ -1491,24 +1491,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Measured ability of a named system to meet defined workload criteria.",
+      "it_disposition": "restricted",
+      "it_definition": "Measured ability of a named part, mechanism, or system to perform a defined function under a stated workload and meet a specified criterion.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The wrapped source requires review; throughput, latency, and correctness must not collapse into one undefined score.",
+      "rationale": "The authenticated ASD row gives the ability-to-function-against-a-standard sense and separately directs other meanings to `DO (v)`; its wrapped headword is visually confirmed. Kubernetes documents performance evaluation through resource-usage metrics and recognizes bottleneck analysis, while AWS CloudWatch defines metrics as time-ordered data points with dimensions, units, periods, statistics, and thresholds. Restrict the IT sense to a named subject, workload, metric or criterion, and comparison basis rather than an undefined score. See `docs/it-ste-research/W1-D-P332.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "measured latency",
-        "throughput under the stated workload"
+        "throughput under the stated workload",
+        "ability to meet the specified requirement"
       ],
       "examples": {
         "positive": {
           "text": "Report performance as p95 latency and successful requests per second for this workload.",
-          "explanation": "Names measurable criteria."
+          "explanation": "Names the workload and measurable criteria."
         },
         "problematic": {
           "text": "Performance is excellent.",
-          "explanation": "Provides no metric, load, or comparison."
+          "explanation": "Provides no metric, workload, criterion, or comparison basis."
         }
       },
       "evidence": {
@@ -1529,14 +1530,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 332 -l 332 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-17-page-332; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: PERFORMANCE (n) is the distinct first row on printed page 2-1-P4 with the wrapped headword and the full ability-to-function meaning; `DO (v)` is visibly marked for other meanings in the same row, and PERIOD (n) follows as a separate row. Spelling, POS, columns, row boundaries, and layout are verified.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },

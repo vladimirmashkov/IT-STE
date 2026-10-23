@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 92,
+    "needs-review": 91,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1435
+    "restricted": 1436
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -107173,13 +107173,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PERFORMANCE; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Measured ability of a named system to meet defined workload criteria\.
+Definition: Measured ability of a named part\, mechanism\, or system to perform a defined function under a stated workload and meet a specified criterion\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped source requires review\; throughput\, latency\, and correctness must not collapse into one undefined score\.
+Rationale: The authenticated ASD row gives the ability\-to\-function\-against\-a\-standard sense and separately directs other meanings to \`DO \(v\)\`\; its wrapped headword is visually confirmed\. Kubernetes documents performance evaluation through resource\-usage metrics and recognizes bottleneck analysis\, while AWS CloudWatch defines metrics as time\-ordered data points with dimensions\, units\, periods\, statistics\, and thresholds\. Restrict the IT sense to a named subject\, workload\, metric or criterion\, and comparison basis rather than an undefined score\. See \`docs\/it\-ste\-research\/W1\-D\-P332\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -107187,13 +107187,15 @@ Contextual alternatives:
 
 - throughput under the stated workload
 
+- ability to meet the specified requirement
+
 #### Positive example
 
 ```
 Report performance as p95 latency and successful requests per second for this workload.
 ```
 
-Explanation: Names measurable criteria\.
+Explanation: Names the workload and measurable criteria\.
 
 #### Problematic example
 
@@ -107201,7 +107203,7 @@ Explanation: Names measurable criteria\.
 Performance is excellent.
 ```
 
-Explanation: Provides no metric\, load\, or comparison\.
+Explanation: Provides no metric\, workload\, criterion\, or comparison basis\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -107213,9 +107215,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 332 -l 332 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-17-page-332; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: PERFORMANCE (n) is the distinct first row on printed page 2-1-P4 with the wrapped headword and the full ability-to-function meaning; `DO (v)` is visibly marked for other meanings in the same row, and PERIOD (n) follows as a separate row. Spelling, POS, columns, row boundaries, and layout are verified.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 332,
     "printed_page": "2-1-P4",
@@ -107225,8 +107227,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P332-001",
@@ -167558,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `161f9698b8ca55aadb83b8752876713e0452eb6294a5dd4331fbcf442e81b8b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8f3ffe561277bbc36da08faa9b04e1b3edd044d93b85bccb5daee74d02882f09`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `1c7fbc84b211d3db038fd153179364ffd4a25fd8937609315196387ca448135c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
 
