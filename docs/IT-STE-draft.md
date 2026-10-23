@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 134,
+    "needs-review": 132,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1395
+    "restricted": 1397
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -76362,13 +76362,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: immediate; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Without an intervening delay or spatial separation in the stated context\.
 
 Domains: software\-documentation
 
-Rationale: The cell includes a fragment apparently belonging to immediately\; source boundaries remain uncertain\.
+Rationale: Visual inspection confirms row 2 and shows IMMEDIATELY as this row\'s source alternative\, not a following\-row definition\. In IT documentation\, use immediate only with a named event\, timing model\, or spatial relation\; AWS and Azure document consistency and replication behavior with explicit modes or bounds\, while RFC 9110 distinguishes immediate protocol responses from asynchronous processing\. See docs\/it\-ste\-research\/W1\-D\-P276\.md\.
 
 Contextual alternatives:
 
@@ -76402,9 +76402,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the adjacent row definition; source boundaries not checked against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 276 -l 276 -png -r 180 and visually inspected physical page 276. Findings: row 2 is bounded by the ILLUMINATED group above and IMMEDIATELY (adv) below; it reads immediate (adj) with IMMEDIATELY (adv) as its source alternative and the speedbrake example in its own row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 276,
     "printed_page": "2-1-I2",
@@ -76436,13 +76436,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: IMMEDIATELY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Without an intervening delay or gap\, relative to a named event or location\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires source review\; timing claims still need realistic bounds\.
+Rationale: Visual inspection confirms the wrapped row 3 and its own meaning cell\. In runbooks\, use immediately only when the triggering event and required timing or spatial relation are operationally clear\; RFC 9110 defines asynchronous acceptance separately\, and AWS\/Azure show that distributed systems require explicit consistency or replication bounds\. See docs\/it\-ste\-research\/W1\-D\-P276\.md\.
 
 Contextual alternatives:
 
@@ -76476,9 +76476,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 276 -l 276 -png -r 180 and visually inspected physical page 276. Findings: row 3 follows immediate (adj), precedes immerse (v), and shows IMMEDIATELY (adv) as a wrapped two-line headword with `Without a gap of time or space` in its own meaning/alternatives cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 276,
     "printed_page": "2-1-I2",
@@ -167568,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `705c2e2f342eb69bd00c6bbe2fbc6d2ba9811ff33c69a09cfdedffa97d2c4eb0`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `676223a391cd26b0955495796c5e91d79f8cb74188462e6df8c64c8737c2eab6`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `76bccdc52667eea2f4559a1a79d84d60aef0a9922e2249c4bd4530b65a8201c7`
 
