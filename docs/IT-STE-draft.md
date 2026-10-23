@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 49,
+    "needs-review": 48,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1474
+    "restricted": 1475
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -144353,13 +144353,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SUBASSEMBLY; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A physical assembled unit that forms part of a larger IT equipment assembly\.
+Definition: A named physical assembled unit that forms part of a larger IT equipment assembly\.
 
 Domains: general
 
-Rationale: The warning requires boundary review\; do not equate it with any arbitrary software module\.
+Rationale: Visual verification of page 392 confirms a separate SUBASSEMBLY \(n\) row with a wrapped two\-line headword and the meaning An assembly that is a part of a larger assembly\; the warning is a display wrap\, not a row\-boundary error\. Lenovo\'s official SR650 V3 rack procedure documents named physical hardware parts\, rails\, latches and controlled installation\. Restrict this draft sense to a named physical IT assembly identified by a parts list\, drawing\, or procedure\; do not equate it with an arbitrary software module or unbounded collection\. See docs\/it\-ste\-research\/W1\-D\-P392\-005\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144393,9 +144393,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows SUBASSEMBLY (n) as a separate row after the structural rows and before submerge (v); its two-line headword is a display wrap, and the meaning is An assembly that is a part of a larger assembly.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144406,7 +144406,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the physical assembly and its parts-list, drawing, or procedure locator before use; do not apply this noun to an arbitrary software module"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P392-005",
@@ -167575,7 +167575,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `e54544577830afc117a321f0dd54c310a0c666836e72b4133b22998d2873b525`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `a1e16b2c9cc9af50a2038390dbc5a9420158a00f9113b8eb1ca3271be8c39450`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
 

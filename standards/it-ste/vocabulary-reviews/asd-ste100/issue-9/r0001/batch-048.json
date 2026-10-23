@@ -376,12 +376,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A physical assembled unit that forms part of a larger IT equipment assembly.",
+      "it_disposition": "restricted",
+      "it_definition": "A named physical assembled unit that forms part of a larger IT equipment assembly.",
       "domains": [
         "general"
       ],
-      "rationale": "The warning requires boundary review; do not equate it with any arbitrary software module.",
+      "rationale": "Visual verification of page 392 confirms a separate SUBASSEMBLY (n) row with a wrapped two-line headword and the meaning An assembly that is a part of a larger assembly; the warning is a display wrap, not a row-boundary error. Lenovo's official SR650 V3 rack procedure documents named physical hardware parts, rails, latches and controlled installation. Restrict this draft sense to a named physical IT assembly identified by a parts list, drawing, or procedure; do not equate it with an arbitrary software module or unbounded collection. See docs/it-ste-research/W1-D-P392-005.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "component assembly",
         "assembled unit within a larger assembly"
@@ -414,14 +414,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows SUBASSEMBLY (n) as a separate row after the structural rows and before submerge (v); its two-line headword is a display wrap, and the meaning is An assembly that is a part of a larger assembly.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the physical assembly and its parts-list, drawing, or procedure locator before use; do not apply this noun to an arbitrary software module"
         ]
       }
     },
