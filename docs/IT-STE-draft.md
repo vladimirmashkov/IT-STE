@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 73,
+    "needs-review": 72,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1454
+    "restricted": 1455
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -77806,13 +77806,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: IN PROGRESS; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Currently occurring and not yet complete\.
 
 Domains: user\-interface
 
-Rationale: Wrapped\-headword warning requires source review\; the status needs an identified operation\.
+Rationale: Restricted to a named operation that is currently occurring under a documented status contract\; distinguish queued or pending work and terminal success\, failure\, or cancellation\. Visual inspection resolves the wrapped\-row warning\. Google AIP\-151 and Microsoft\'s asynchronous request\-reply guidance support operation\-specific progress and separate completion\/error states\, not successful output or restore readiness\. The alternatives are contextual\: running requires active execution\; not yet complete alone can also describe queued work\. See docs\/it\-ste\-research\/W1\-D\-P279\.md\.
 
 Contextual alternatives:
 
@@ -77823,10 +77823,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The dashboard marks the export as in progress until its output is committed.
+The dashboard shows that export job 42 is in progress while it processes the selected records.
 ```
 
-Explanation: Gives a provisional completion boundary\.
+Explanation: Names the active operation\; the label does not promise success or exclude later failure or cancellation\.
 
 #### Problematic example
 
@@ -77846,9 +77846,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 279 -l 279 -singlefile -png -r 150 and visually inspected physical page 279. Findings: row 3 follows IN FRONT OF (prep) and precedes inactive (adj); IN PROGRESS is on one line with (adv) below, Occurring is in its own meaning cell, and horizontal rules separate the interactive-session example from adjacent rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 279,
     "printed_page": "2-1-I5",
@@ -167535,7 +167535,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `29779611fe3f60c6b685d38452fb830d025ddedee6af8ee0cc556cffa64f7214`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `e13bd111346d74730cfb77510e2a3d34af42302efbd3d3c7323e2b872880fa5b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 

@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1454, "prohibited": 403,
-                             "not-applicable": 148, "needs-review": 73},
+            "dispositions": {"allowed": 118, "restricted": 1455, "prohibited": 403,
+                             "not-applicable": 148, "needs-review": 72},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -68,6 +68,12 @@ class VocabularyTests(unittest.TestCase):
         self.assertNotIn("may, for permission", by_id["D-P183-006"]["permitted_contextual_alternatives"])
         self.assertIn("Sanitization is a distinct operation", by_id["D-P212-003"]["rationale"])
         self.assertIn("test receiver", by_id["D-P252-011"]["examples"]["positive"]["text"])
+        progress = by_id["D-P279-003"]
+        self.assertEqual(progress["it_disposition"], "restricted")
+        self.assertEqual(progress["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertTrue(progress["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("failure, or cancellation", progress["rationale"])
+        self.assertIn("export job 42", progress["examples"]["positive"]["text"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

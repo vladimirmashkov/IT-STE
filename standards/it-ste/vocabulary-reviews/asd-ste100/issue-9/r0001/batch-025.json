@@ -1747,20 +1747,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Currently occurring and not yet complete.",
       "domains": [
         "user-interface"
       ],
-      "rationale": "Wrapped-headword warning requires source review; the status needs an identified operation.",
+      "rationale": "Restricted to a named operation that is currently occurring under a documented status contract; distinguish queued or pending work and terminal success, failure, or cancellation. Visual inspection resolves the wrapped-row warning. Google AIP-151 and Microsoft's asynchronous request-reply guidance support operation-specific progress and separate completion/error states, not successful output or restore readiness. The alternatives are contextual: running requires active execution; not yet complete alone can also describe queued work. See docs/it-ste-research/W1-D-P279.md.",
       "permitted_contextual_alternatives": [
         "running",
         "not yet complete"
       ],
       "examples": {
         "positive": {
-          "text": "The dashboard marks the export as in progress until its output is committed.",
-          "explanation": "Gives a provisional completion boundary."
+          "text": "The dashboard shows that export job 42 is in progress while it processes the selected records.",
+          "explanation": "Names the active operation; the label does not promise success or exclude later failure or cancellation."
         },
         "problematic": {
           "text": "In progress means the backup is safe to restore.",
@@ -1785,9 +1785,9 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 279 -l 279 -singlefile -png -r 150 and visually inspected physical page 279. Findings: row 3 follows IN FRONT OF (prep) and precedes inactive (adj); IN PROGRESS is on one line with (adv) below, Occurring is in its own meaning cell, and horizontal rules separate the interactive-session example from adjacent rows.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
