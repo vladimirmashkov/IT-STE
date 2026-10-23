@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 97,
+    "needs-review": 96,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1430
+    "restricted": 1431
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -103918,17 +103918,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: OUTBOARD; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: In a direction away from a defined longitudinal axis of hardware\.
+Definition: Specifies a physical position farther from a named longitudinal axis of hardware\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The compact source includes a fragment matching the following preposition row\.
+Rationale: The authenticated page isolates \`OUTBOARD \(adv\)\` between the adjective and preposition rows\; its meaning is \`In\, or to\, a position farther from the longitudinal axis of something\`\, while the compact extraction retains a fragment from \`OUTBOARD OF\`\. AWS VPC routing and Kubernetes NetworkPolicy documentation specify network direction with destinations\, targets\, ingress\, and egress rather than \`outboard\`\. Restrict \`outboard\` to a named physical reference axis\; do not use it for cloud or packet direction\. See \`docs\/it\-ste\-research\/W1\-D\-P325\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
 - away from the marked axis
+
+- farther from the longitudinal axis
 
 #### Positive example
 
@@ -103956,9 +103958,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source contains a trailing fragment matching the following OUTBOARD OF row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 325 -l 325 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-12-page-325; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: OUTBOARD (adv) is a distinct row after OUTBOARD (adj) and before OUTBOARD OF (prep); its meaning and `MOVE THE JACK OUTBOARD...` STE example are separate, and the trailing extraction fragment belongs to the following preposition row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 325,
     "printed_page": "2-1-O7",
@@ -103968,8 +103970,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P325-002",
@@ -167551,7 +167552,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-033.json` SHA-256: `5c3cbcf6bcd3bb665542eecdc5e506344b322f9fd601f9a939eb888115fa90f3`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `7c4bb137d980e30715deaa18fa9831b7a2d26258bc8f4a1bc5ef30a37692bc17`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `dda1e5e87731e0fee967f5351abb7b1111e956cb299e0e5b4f1abc8e2f30069d`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8b1e5dc42caa3b89f2b6fa4956c8b31598dc74183d5e823cac78f2f475ef932f`
 

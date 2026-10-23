@@ -1253,14 +1253,15 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In a direction away from a defined longitudinal axis of hardware.",
+      "it_disposition": "restricted",
+      "it_definition": "Specifies a physical position farther from a named longitudinal axis of hardware.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The compact source includes a fragment matching the following preposition row.",
+      "rationale": "The authenticated page isolates `OUTBOARD (adv)` between the adjective and preposition rows; its meaning is `In, or to, a position farther from the longitudinal axis of something`, while the compact extraction retains a fragment from `OUTBOARD OF`. AWS VPC routing and Kubernetes NetworkPolicy documentation specify network direction with destinations, targets, ingress, and egress rather than `outboard`. Restrict `outboard` to a named physical reference axis; do not use it for cloud or packet direction. See `docs/it-ste-research/W1-D-P325.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
-        "away from the marked axis"
+        "away from the marked axis",
+        "farther from the longitudinal axis"
       ],
       "examples": {
         "positive": {
@@ -1290,14 +1291,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 325 -l 325 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-12-page-325; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: OUTBOARD (adv) is a distinct row after OUTBOARD (adj) and before OUTBOARD OF (prep); its meaning and `MOVE THE JACK OUTBOARD...` STE example are separate, and the trailing extraction fragment belongs to the following preposition row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
