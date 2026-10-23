@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 96,
+    "needs-review": 95,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1431
+    "restricted": 1432
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -103991,17 +103991,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: OUTBOARD OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: At a position farther from a named longitudinal axis than a reference component\.
+Definition: Specifies that one physical component is farther from a named longitudinal axis than another named component\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Wrapped extraction needs review\; the physical comparison cannot become a software\-layer relation\.
+Rationale: The authenticated page isolates \`OUTBOARD OF \(prep\)\` after the adjective and adverb rows\; its meaning is \`At a position farther from the longitudinal axis\`\, and the wrapped headword is a row\-boundary artifact rather than a software relation\. Kubernetes placement documentation expresses cloud topology with named labels\, zones\, nodes\, and topology keys\, not \`outboard of\`\. Restrict \`outboard of\` to a physical comparison with an explicit axis and reference component\; do not use it for an undefined service architecture\. See \`docs\/it\-ste\-research\/W1\-D\-P325\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
 - farther from the centerline than
+
+- farther from the longitudinal axis than
 
 #### Positive example
 
@@ -104029,9 +104031,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 325 -l 325 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-13-page-325; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: OUTBOARD OF (prep) is a distinct row after OUTBOARD (adv), with `At a position farther from the longitudinal axis` and `PUT THE ACCESS PLATFORM IN A POSITION THAT IS OUTBOARD OF THE FLAP TRACK.`; the wrapped headword and following row boundary are visually clear.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 325,
     "printed_page": "2-1-O7",
@@ -104041,8 +104043,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P325-003",
@@ -167552,7 +167553,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-033.json` SHA-256: `5c3cbcf6bcd3bb665542eecdc5e506344b322f9fd601f9a939eb888115fa90f3`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `dda1e5e87731e0fee967f5351abb7b1111e956cb299e0e5b4f1abc8e2f30069d`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `1f4b19e530085dbae138eb3642a61424ff727f1f48bc8b21491bdd724da8b921`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8b1e5dc42caa3b89f2b6fa4956c8b31598dc74183d5e823cac78f2f475ef932f`
 

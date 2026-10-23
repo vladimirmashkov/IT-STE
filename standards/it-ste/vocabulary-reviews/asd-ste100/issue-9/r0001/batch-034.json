@@ -1314,14 +1314,15 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "At a position farther from a named longitudinal axis than a reference component.",
+      "it_disposition": "restricted",
+      "it_definition": "Specifies that one physical component is farther from a named longitudinal axis than another named component.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "Wrapped extraction needs review; the physical comparison cannot become a software-layer relation.",
+      "rationale": "The authenticated page isolates `OUTBOARD OF (prep)` after the adjective and adverb rows; its meaning is `At a position farther from the longitudinal axis`, and the wrapped headword is a row-boundary artifact rather than a software relation. Kubernetes placement documentation expresses cloud topology with named labels, zones, nodes, and topology keys, not `outboard of`. Restrict `outboard of` to a physical comparison with an explicit axis and reference component; do not use it for an undefined service architecture. See `docs/it-ste-research/W1-D-P325.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
-        "farther from the centerline than"
+        "farther from the centerline than",
+        "farther from the longitudinal axis than"
       ],
       "examples": {
         "positive": {
@@ -1351,14 +1352,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 325 -l 325 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-13-page-325; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: OUTBOARD OF (prep) is a distinct row after OUTBOARD (adv), with `At a position farther from the longitudinal axis` and `PUT THE ACCESS PLATFORM IN A POSITION THAT IS OUTBOARD OF THE FLAP TRACK.`; the wrapped headword and following row boundary are visually clear.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
