@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 113,
+    "needs-review": 111,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1415
+    "restricted": 1417
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -91637,13 +91637,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MAGNETIC; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Related to a magnet or magnetic field in a physical component\.
 
 Domains: data\-storage
 
-Rationale: The adjective cell also contains the apparent following\-adverb definition\.
+Rationale: The authenticated PDF confirms a distinct MAGNETIC \(adj\) row with the meaning Related to the properties of a magnet\. Retain a bounded physical\-property\/media sense for IT use\; do not extend it to undefined security or API properties\. See docs\/it\-ste\-research\/W1\-D\-P305\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -91677,9 +91677,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 305 -l 305 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-305; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct MAGNETIC (adj) row has its own physical-properties meaning and example, followed by a separate MAGNETICALLY (adv) row; the extracted adverb text is not a row-boundary merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 305,
     "printed_page": "2-1-M1",
@@ -91689,8 +91689,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P305-001",
@@ -91711,13 +91710,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MAGNETICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: By a magnetic field or magnetic physical action\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires source review\; name the actual mechanism\.
+Rationale: The authenticated PDF confirms a separate MAGNETICALLY \(adv\) row with the meaning In a magnetic manner despite the wrapped\-headword warning\. Retain a bounded physical\-mechanism sense for IT use\; name the actual mechanism and do not imply authentication or other security behavior\. See docs\/it\-ste\-research\/W1\-D\-P305\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -91751,9 +91750,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 305 -l 305 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-305; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: separate MAGNETICALLY (adv) row follows the MAGNETIC (adj) row and has its own In a magnetic manner meaning and example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 305,
     "printed_page": "2-1-M1",
@@ -91763,8 +91762,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P305-002",
@@ -167558,7 +167556,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `03e2a65e638dafa8db5ad2a43b9bc43eb644073a35176f9a527003e2c649ae13`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `b46132e51074f1cdfdb42a0b7dcfc3b6d429eb3dc177f596cc22352b07e54391`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `4e8fa26cc2d2e7743e31acdaf0d95bd8f755d4326b39743629aaab149985f400`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `ee129bfc8b3428043cda4eb69cea852a512ca99b8757744f39504e343d838f99`
 
