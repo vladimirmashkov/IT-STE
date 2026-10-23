@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 68,
+    "needs-review": 66,
     "not-applicable": 148,
     "prohibited": 406,
-    "restricted": 1456
+    "restricted": 1458
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -123235,13 +123235,13 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: REPLACE; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Remove a component and install a serviceable component with the same role\.
+Definition: Remove a named physical IT component and install a new or serviceable component of the specified compatible type\.
 
 Domains: general
 
-Rationale: Replacement needs compatibility and migration checks\; the extracted definition also contains an apparent adjacent\-row fragment\.
+Rationale: Restricted to removing a named physical IT component and installing a new or serviceable component of the specified compatible type\, not merely one with the same role\. Visual inspection separates the verb definition from the following noun fragment\. Lenovo server PSU documentation supports removal\/installation and explicit support\/capacity checks\; replacement does not itself imply hot\-swap\, uninterrupted service\, migration\, or data deletion\. Contextual substitutes must preserve both removal and installation\; follow the applicable product procedure\. See docs\/it\-ste\-research\/W1\-D\-P359\.md\.
 
 Contextual alternatives:
 
@@ -123255,7 +123255,7 @@ Contextual alternatives:
 Replace the failed power supply with the specified compatible unit.
 ```
 
-Explanation: States the failed part and compatibility constraint\.
+Explanation: States the failed part and compatibility constraint\; this lexical example does not replace the product\-specific service procedure or establish hot\-swap safety\.
 
 #### Problematic example
 
@@ -123275,9 +123275,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition ends with an apparent fragment of the following replacement noun row; PDF boundary verification is required."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 359 -l 359 -singlefile -png -r 150 and visually inspected physical page 359. Findings: row 1 is REPLACE (v) with inflections below, between the page header and REPLACEMENT (n). The definition ends at same type; The item you install belongs below the full horizontal boundary in row 2. The relay example is in the verb row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 359,
     "printed_page": "2-1-R11",
@@ -123288,7 +123288,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "source row boundaries and layout visually verified; retain editorial interpretation review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P359-001",
@@ -123309,19 +123309,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: REPLACEMENT; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A serviceable item installed in place of a removed IT component\.
+Definition: A new or serviceable physical IT component installed in place of a removed component of the specified compatible type\.
 
 Domains: general
 
-Rationale: Provisional item sense only\; the wrapped\-headword warning requires source boundary review\.
+Rationale: Restricted to the physical item installed in a named component\'s place\, not the replacement operation or a data\-deletion policy\. Visual inspection confirms the separate noun row\. Lenovo PSU documentation identifies supported replacement parts and capacity requirements\; a correct rating alone is not full compatibility or safe\-installation evidence\. Newness is not required if an item is serviceable and of the specified compatible type\. See docs\/it\-ste\-research\/W1\-D\-P359\.md\.
 
 Contextual alternatives:
 
-- substitute component
+- compatible substitute component
 
-- new component
+- new or serviceable component of the specified type
 
 #### Positive example
 
@@ -123329,7 +123329,7 @@ Contextual alternatives:
 Verify that the replacement power supply has the correct rating.
 ```
 
-Explanation: Checks the substitute item\.
+Explanation: Names a property to check on the item\; rating alone does not establish compatibility\, redundancy\, or safe installation\.
 
 #### Problematic example
 
@@ -123349,9 +123349,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 359 -l 359 -singlefile -png -r 150 and visually inspected physical page 359. Findings: row 2 is REPLACEMENT with (n) below, after REPLACE (v) and before replenish (v). Its definition describes the item installed and its own example checks dimensions; horizontal rules separate the noun from both adjacent rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 359,
     "printed_page": "2-1-R11",
@@ -123362,7 +123362,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "source row boundaries and layout visually verified; retain editorial interpretation review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P359-002",
@@ -167567,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-040.json` SHA-256: `9725bab3b75cd7b783b5714a46002a448b86746cecaa36b9642865756abdd935`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-041.json` SHA-256: `765be58aaa6d2a18431e31822e987fe2d46d5c25e94c145ee9f6712d6b894d8c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-041.json` SHA-256: `efd31f9650be53fff471c46e8213340f6369939d2f4e0ae09acde7aeb138985b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `fffc89abb27ca9eb8ffd35a7a7262b51512a0345519ad8a3276be0a790f46765`
 

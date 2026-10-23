@@ -71,12 +71,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Remove a component and install a serviceable component with the same role.",
+      "it_disposition": "restricted",
+      "it_definition": "Remove a named physical IT component and install a new or serviceable component of the specified compatible type.",
       "domains": [
         "general"
       ],
-      "rationale": "Replacement needs compatibility and migration checks; the extracted definition also contains an apparent adjacent-row fragment.",
+      "rationale": "Restricted to removing a named physical IT component and installing a new or serviceable component of the specified compatible type, not merely one with the same role. Visual inspection separates the verb definition from the following noun fragment. Lenovo server PSU documentation supports removal/installation and explicit support/capacity checks; replacement does not itself imply hot-swap, uninterrupted service, migration, or data deletion. Contextual substitutes must preserve both removal and installation; follow the applicable product procedure. See docs/it-ste-research/W1-D-P359.md.",
       "permitted_contextual_alternatives": [
         "substitute",
         "install a replacement"
@@ -84,7 +84,7 @@
       "examples": {
         "positive": {
           "text": "Replace the failed power supply with the specified compatible unit.",
-          "explanation": "States the failed part and compatibility constraint."
+          "explanation": "States the failed part and compatibility constraint; this lexical example does not replace the product-specific service procedure or establish hot-swap safety."
         },
         "problematic": {
           "text": "Replace the database.",
@@ -109,14 +109,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 359 -l 359 -singlefile -png -r 150 and visually inspected physical page 359. Findings: row 1 is REPLACE (v) with inflections below, between the page header and REPLACEMENT (n). The definition ends at same type; The item you install belongs below the full horizontal boundary in row 2. The relay example is in the verb row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "source row boundaries and layout visually verified; retain editorial interpretation review"
         ]
       }
     },
@@ -133,20 +133,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A serviceable item installed in place of a removed IT component.",
+      "it_disposition": "restricted",
+      "it_definition": "A new or serviceable physical IT component installed in place of a removed component of the specified compatible type.",
       "domains": [
         "general"
       ],
-      "rationale": "Provisional item sense only; the wrapped-headword warning requires source boundary review.",
+      "rationale": "Restricted to the physical item installed in a named component's place, not the replacement operation or a data-deletion policy. Visual inspection confirms the separate noun row. Lenovo PSU documentation identifies supported replacement parts and capacity requirements; a correct rating alone is not full compatibility or safe-installation evidence. Newness is not required if an item is serviceable and of the specified compatible type. See docs/it-ste-research/W1-D-P359.md.",
       "permitted_contextual_alternatives": [
-        "substitute component",
-        "new component"
+        "compatible substitute component",
+        "new or serviceable component of the specified type"
       ],
       "examples": {
         "positive": {
           "text": "Verify that the replacement power supply has the correct rating.",
-          "explanation": "Checks the substitute item."
+          "explanation": "Names a property to check on the item; rating alone does not establish compatibility, redundancy, or safe installation."
         },
         "problematic": {
           "text": "The replacement deletes the old records.",
@@ -171,14 +171,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 359 -l 359 -singlefile -png -r 150 and visually inspected physical page 359. Findings: row 2 is REPLACEMENT with (n) below, after REPLACE (v) and before replenish (v). Its definition describes the item installed and its own example checks dimensions; horizontal rules separate the noun from both adjacent rows.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "source row boundaries and layout visually verified; retain editorial interpretation review"
         ]
       }
     },
