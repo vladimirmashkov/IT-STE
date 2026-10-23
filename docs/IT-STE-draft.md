@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 100,
+    "needs-review": 99,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1427
+    "restricted": 1428
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -96120,7 +96120,7 @@ Definition: Describes a measured condition within a documented intermediate band
 
 Domains: monitoring\-alerts
 
-Rationale: The authenticated page isolates MODERATELY \(adv\) with \`In a moderate manner\` after MODERATE \(adj\)\; its example describes a surface that is moderately dry\. Prometheus alert rules use explicit expressions\, thresholds\, and durations\, while OpenTelemetry requires defined attribute semantics\. Restrict use to a named metric or classification with explicit intermediate boundaries\, units or scale\, and relevant response\; do not use it as an undefined degree judgment\. See \`docs\/it\-ste\-research\/W1\-D\-P310\.md\`\; keep this as draft\/editorial\-review\-needed\.
+Rationale: The authenticated page isolates MODERATELY \(adv\) with \`In a moderate manner\` after MODERATE \(adj\)\; its example describes a surface that is moderately dry\. Prometheus alert rules use explicit expressions\, thresholds\, and durations\, while OpenTelemetry requires defined attribute semantics\. Restrict use to a named metric or classification with explicit intermediate boundaries\, units or scale\, and relevant response\; do not use it as an undefined degree judgment\. See \`docs\/it\-ste\-research\/W1\-D\-P312\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -96335,7 +96335,7 @@ Definition: Apply a specified liquid to a named cleaning material for permitted 
 
 Domains: cloud\-infrastructure
 
-Rationale: The authenticated page isolates \`moisten \(v\)\` with \`MOIST \(adj\)\` and a cloth\-and\-solvent example\; the compact extraction also includes the adjacent MOMENTARILY definition\. Manufacturer guidance supports moistening a specified cloth while keeping liquid away from openings and never spraying directly on equipment\. Restrict use to a named cleaning material\, specified liquid\, and applicable manufacturer procedure\; do not use it to direct liquid onto a server or other equipment\. See \`docs\/it\-ste\-research\/W1\-D\-P310\.md\`\; keep this as draft\/editorial\-review\-needed\.
+Rationale: The authenticated page isolates \`moisten \(v\)\` with \`MOIST \(adj\)\` and a cloth\-and\-solvent example\; the compact extraction also includes the adjacent MOMENTARILY definition\. Manufacturer guidance supports moistening a specified cloth while keeping liquid away from openings and never spraying directly on equipment\. Restrict use to a named cleaning material\, specified liquid\, and applicable manufacturer procedure\; do not use it to direct liquid onto a server or other equipment\. See \`docs\/it\-ste\-research\/W1\-D\-P312\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -96400,13 +96400,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MOMENTARILY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: For a brief interval during an identified system operation\, not after a short delay\.
+Definition: For an explicitly measured brief interval during an identified system operation\, not to mean soon\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped extraction needs review\, and the word can confuse duration with imminent occurrence\.
+Rationale: The authenticated page isolates wrapped \`MOMENTARILY \(adv\)\` with \`For a short time\`\; the example describes a pump stop followed by a restart\. Prometheus alert rules and Kubernetes lifecycle documentation express temporal behavior with explicit durations\, states\, grace periods\, or backoff intervals\. Restrict use to an identified operation with a stated duration or measurable bound\; do not use it to mean an unspecified imminent event\. See \`docs\/it\-ste\-research\/W1\-D\-P312\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -96440,9 +96440,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 312 -l 312 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-9-page-312; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MOMENTARILY (adv) is a distinct wrapped-headword row after moisten (v) and before momentary (adj); its meaning is For a short time and its pump-stop/restart example is separate from the neighboring rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 312,
     "printed_page": "2-1-M8",
@@ -96452,8 +96452,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P312-008",
@@ -167548,7 +167547,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `a178a8d0a9f51e7ec62f7c7ed6178630c719ba1bca26ad016a2c3f73849bc7cc`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `edb29f102a51c1eb809dfaf51cb915b6c07ceed54fc040737a756992020dd42d`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 
