@@ -2156,13 +2156,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Set a named numeric indicator, counter, or reference value to the number 0.",
+      "it_disposition": "restricted",
+      "it_definition": "Adjust a meter or named numeric indicator to show the number 0.",
       "domains": [
         "configuration",
         "monitoring-alerts"
       ],
-      "rationale": "The retrieved row points to a numeric technical noun without an explicit verb definition. Treat the proposed counter-reset sense as provisional pending source-sense review; do not infer secure erasure or physical calibration steps.",
+      "rationale": "The ASD row and example support adjusting a meter to zero; Prometheus documents reset-to-zero behavior for cumulative counters. Restrict the draft IT sense to a named meter, counter, indicator, or reference value and an explicit numeric target; do not use it to imply disk erasure, data destruction, or unverified calibration. See docs/it-ste-research/W1-D-P433-007.md.",
       "permitted_contextual_alternatives": [
         "set the named counter to 0",
         "reset the documented baseline to 0, when no historical samples are deleted"
@@ -2170,7 +2170,7 @@
       "examples": {
         "positive": {
           "text": "Set the test-session error counter to 0 before starting the isolated test.",
-          "explanation": "Names a numeric target and a bounded context; this is a provisional replacement, not a source-approved verb use."
+          "explanation": "Names a numeric target and a bounded context; the wording is a draft contextual use, not source approval."
         },
         "problematic": {
           "text": "Zero the production disk.",
@@ -2191,18 +2191,17 @@
         },
         "extraction_warnings": [],
         "mechanical_ambiguities": [
-          "The extracted verb row supplies only a numeric technical-noun cross-reference; it does not establish whether the intended action is setting a value to 0, calibrating an indicator, or another specialized action."
+          "The extracted verb row supplies only the ZERO (TN) cross-reference; the authenticated PDF confirms the meter example but does not by itself settle the broader IT counter/indicator scope."
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local page 433 with pdftoppm. Findings: separate ruled row 7 is zero (v), with ZERO (TN), ADJUST THE METER TO ZERO. and Zero the meter.; spelling, POS, columns, row boundary, and examples match the exact entry.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "resolve the verb sense and technical-noun cross-reference against the source PDF before settling the disposition"
+          "original example review"
         ]
       }
     }

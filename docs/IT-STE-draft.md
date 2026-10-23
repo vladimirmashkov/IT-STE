@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 40,
+    "needs-review": 39,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1481
+    "restricted": 1482
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -167267,13 +167267,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: zero; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Set a named numeric indicator\, counter\, or reference value to the number 0\.
+Definition: Adjust a meter or named numeric indicator to show the number 0\.
 
 Domains: configuration, monitoring\-alerts
 
-Rationale: The retrieved row points to a numeric technical noun without an explicit verb definition\. Treat the proposed counter\-reset sense as provisional pending source\-sense review\; do not infer secure erasure or physical calibration steps\.
+Rationale: The ASD row and example support adjusting a meter to zero\; Prometheus documents reset\-to\-zero behavior for cumulative counters\. Restrict the draft IT sense to a named meter\, counter\, indicator\, or reference value and an explicit numeric target\; do not use it to imply disk erasure\, data destruction\, or unverified calibration\. See docs\/it\-ste\-research\/W1\-D\-P433\-007\.md\.
 
 Contextual alternatives:
 
@@ -167287,7 +167287,7 @@ Contextual alternatives:
 Set the test-session error counter to 0 before starting the isolated test.
 ```
 
-Explanation: Names a numeric target and a bounded context\; this is a provisional replacement\, not a source\-approved verb use\.
+Explanation: Names a numeric target and a bounded context\; the wording is a draft contextual use\, not source approval\.
 
 #### Problematic example
 
@@ -167304,12 +167304,12 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
   "evidence": {
     "extraction_warnings": [],
     "mechanical_ambiguities": [
-      "The extracted verb row supplies only a numeric technical-noun cross-reference; it does not establish whether the intended action is setting a value to 0, calibrating an indicator, or another specialized action."
+      "The extracted verb row supplies only the ZERO (TN) cross-reference; the authenticated PDF confirms the meter example but does not by itself settle the broader IT counter/indicator scope."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local page 433 with pdftoppm. Findings: separate ruled row 7 is zero (v), with ZERO (TN), ADJUST THE METER TO ZERO. and Zero the meter.; spelling, POS, columns, row boundary, and examples match the exact entry.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 433,
     "printed_page": "2-1-Y1",
@@ -167319,8 +167319,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "resolve the verb sense and technical-noun cross-reference against the source PDF before settling the disposition"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P433-007",
@@ -167583,7 +167582,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-054.json` SHA-256: `d59b2d08df87c9fcb1ff97d74bd8fd9db9aade67c4393aef1413d8e02eb90b90`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-055.json` SHA-256: `7043075010c28c48e81ec1788d57e4e15d1dc69143e96e13c79617738d35d0a8`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-055.json` SHA-256: `37f78083eaea853dc0d98c22bc36d804ddd0a7bad384202a76dd0a62752b78fb`
 
 Source record:
 
