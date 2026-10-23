@@ -2018,12 +2018,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "At or above a stated lower bound.",
       "domains": [
         "data-storage"
       ],
-      "rationale": "The wrapped-headword warning requires source review of the extracted parenthesized phrase.",
+      "rationale": "The authenticated PDF confirms a distinct least (at least) (adv) row with MINIMUM alternatives. Retain this bounded lower-bound quantifier for IT use; state the object and unit or count, and do not treat the lower bound alone as proof of integrity, recoverability, or sufficient protection. See docs/it-ste-research/W1-D-P297.md for the draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "a minimum of",
         "no fewer than"
@@ -2056,14 +2056,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 297 -l 297 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-297; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct least (at least) (adv) row with MINIMUM (adj) and MINIMUM (n) alternatives and two examples, followed by a separate leave (v) row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },

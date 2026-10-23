@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 116,
-    "needs-review": 119,
+    "allowed": 117,
+    "needs-review": 118,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1410
@@ -87052,13 +87052,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: least \(at least\); POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: At or above a stated lower bound\.
 
 Domains: data\-storage
 
-Rationale: The wrapped\-headword warning requires source review of the extracted parenthesized phrase\.
+Rationale: The authenticated PDF confirms a distinct least \(at least\) \(adv\) row with MINIMUM alternatives\. Retain this bounded lower\-bound quantifier for IT use\; state the object and unit or count\, and do not treat the lower bound alone as proof of integrity\, recoverability\, or sufficient protection\. See docs\/it\-ste\-research\/W1\-D\-P297\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -87092,9 +87092,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 297 -l 297 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-297; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct least (at least) (adv) row with MINIMUM (adj) and MINIMUM (n) alternatives and two examples, followed by a separate leave (v) row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 297,
     "printed_page": "2-1-L3",
@@ -87104,8 +87104,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P297-004",
@@ -167560,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `0081f513b94b357d3e0e25baed7566ca6520e7e5f5092c6c636246ce15ab74b9`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `8c58c3854abb6a889baa24d6ead3943ff6d5f0fa34f5ff2a6a85f3cd1d82f8b9`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `1e31339585355b38d82ca89e675b673226355a1cbaaf05a12b37e50bfd24b6b4`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `19165f77226fd887f33ef0e6146a1f63b979e6b8ca4f7c4079083c54dafb1a47`
 
