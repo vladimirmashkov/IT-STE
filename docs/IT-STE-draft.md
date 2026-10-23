@@ -111407,7 +111407,7 @@ Definition: The fact that a named item exists at a specified location or in a de
 
 Domains: configuration
 
-Rationale: Existence is useful to state\, but does not establish validity\, availability\, or permission\.
+Rationale: Use \`presence\` to state that a named item exists at a specified location or in a defined set\; do not infer validity\, availability\, trust\, or permission from existence alone\. The authenticated row verification and bounded IT research are recorded in docs\/it\-ste\-research\/W1\-D\-P338\-003\.md\.
 
 Contextual alternatives:
 
@@ -111439,9 +111439,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "extraction_warnings": [],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 338 with pdftoppm and visually inspected. Findings: presence (n) is a distinct third row between prescribed (adj) and present (adj), with clear spelling, POS, columns, row boundaries, printed page 2-1-P10, approved alternative BE (v), STE example, and non-STE example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 338,
     "printed_page": "2-1-P10",
@@ -167570,7 +167570,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5fb3d8adbcaa10a56247fde08ea2dc9c3387dc15e0681741896dc01ca8fc9bea`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `8cda7b4e6e83d596bfc18d17060b4c1415da19af441d6b40ba3f757713b2c0c0`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `cb2b2fed349391cf81d490bdbcf03faedd4da5aff09f33937002a3f7964c1fa3`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `1620932b1ba89f137545efce5241352f5b057c5c143872acaadc7ac1166c637d`
 
