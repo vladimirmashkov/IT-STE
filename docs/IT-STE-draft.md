@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 57,
+    "needs-review": 56,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1466
+    "restricted": 1467
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -134914,13 +134914,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: simultaneously; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: At the same time under an explicitly defined timing criterion\.
+Definition: At the same time within a stated synchronization or timing requirement\.
 
 Domains: general
 
-Rationale: The wrapped\-headword warning requires source review\; timing tolerance remains necessary\.
+Rationale: Visual verification confirms a separate simultaneously \(adv\) row with the meaning AT THE SAME TIME\. Official Python documentation distinguishes concurrency and parallel execution from synchronization that releases threads simultaneously\, supporting a bounded IT use for named actions with a stated timing or synchronization requirement\. The term does not guarantee exact physical simultaneity\, successful completion\, or operational safety\.
 
 Contextual alternatives:
 
@@ -134954,9 +134954,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 378 / printed 2-1-S12 shows simultaneously (adv) as a separate row below simultaneous (adj); the wrapped headword is complete and its approved meaning is AT THE SAME TIME.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 378,
     "printed_page": "2-1-S12",
@@ -134967,7 +134967,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm a named synchronization or timing requirement and its tolerance before using the term as an operational acceptance claim"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P378-004",
@@ -167567,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `1ba8bcfe59477ada1eb3e2a450290715dc9a40165c35dec47bf50b041197fcae`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `8663e22d801977f746a5c34f01e969443d914c5ed297972193ae751389290f6f`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `40ed3a1a1ec2ee7b59c06002d8e36752d91940451ff3247eeb38100fce38378d`
 
