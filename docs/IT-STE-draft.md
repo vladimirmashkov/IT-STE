@@ -158667,15 +158667,17 @@ Term: unstable; POS: adj.
 
 Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Not maintaining a specified operational state or measurement within stated limits\.
+Definition: Not remaining within specified operational limits for a defined period\.
 
 Domains: support\-troubleshooting
 
-Rationale: Stability must name a property and interval\; it is not a general judgment of release quality\.
+Rationale: Stability must identify an observable property\, limit\, and time window\; it is not a general judgment of release quality\.
 
 Contextual alternatives:
 
 - restarts repeatedly
+
+- shows varying output
 
 - outside the stated variation limit
 
@@ -158703,9 +158705,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "extraction_warnings": [],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated local PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, page 417 rendered with pdftoppm and visually inspected. Findings: row 10 is separated from UNSERVICEABLE and unstable by horizontal rules; the wrapped example remains within the unstable row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 417,
     "printed_page": "2-1-U5",
@@ -167571,7 +167573,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `75e05707de9205889a0e667702b64c6b0f8e4c76f4340c31984a4afed8014025`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `d233a6666621b0196429fae339ae476ff2554487f8d7d5953926acdaf0e40b1a`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 

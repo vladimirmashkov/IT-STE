@@ -2402,13 +2402,14 @@
       "status": "draft",
       "review_status": "editorial-review-needed",
       "it_disposition": "restricted",
-      "it_definition": "Not maintaining a specified operational state or measurement within stated limits.",
+      "it_definition": "Not remaining within specified operational limits for a defined period.",
       "domains": [
         "support-troubleshooting"
       ],
-      "rationale": "Stability must name a property and interval; it is not a general judgment of release quality.",
+      "rationale": "Stability must identify an observable property, limit, and time window; it is not a general judgment of release quality.",
       "permitted_contextual_alternatives": [
         "restarts repeatedly",
+        "shows varying output",
         "outside the stated variation limit"
       ],
       "examples": {
@@ -2437,9 +2438,9 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated local PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, page 417 rendered with pdftoppm and visually inspected. Findings: row 10 is separated from UNSERVICEABLE and unstable by horizontal rules; the wrapped example remains within the unstable row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
