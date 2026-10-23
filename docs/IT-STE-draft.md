@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 136,
+    "needs-review": 134,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1393
+    "restricted": 1395
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -75790,13 +75790,13 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: identical; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Equal in every property within an explicitly stated comparison scope\.
 
 Domains: data\-storage
 
-Rationale: The meaning cell contains an apparent fragment from identification\; boundary review is required\.
+Rationale: Visual inspection confirms row 1 and separates the adjective from IDENTIFICATION\. Use identical only when the compared properties and representation are explicit\; Python filecmp and RFC 8785 show that equality can depend on comparison mode or canonical representation\. See docs\/it\-ste\-research\/W1\-D\-P275\.md\.
 
 Contextual alternatives:
 
@@ -75830,9 +75830,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the adjacent row definition; source boundaries not checked against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 275 -l 275 -png -r 180 and visually inspected physical page 275. Findings: row 1 is bounded by the page header and IDENTIFICATION (n) below; the row reads identical (adj) with SAME (adj) in its meaning cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 275,
     "printed_page": "2-1-I1",
@@ -75864,13 +75864,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: IDENTIFICATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: A code or marking that distinguishes a specified IT object\.
 
 Domains: api
 
-Rationale: Wrapped\-headword warning requires source review\; identifiers are not proof of authorization\.
+Rationale: Visual inspection confirms the wrapped row 2\. In API and security text\, identification can distinguish or locate an object but does not by itself authenticate a subject or authorize an action\; NIST SP 800\-63A\-4 treats identification as identity\-proofing evidence\. See docs\/it\-ste\-research\/W1\-D\-P275\.md\.
 
 Contextual alternatives:
 
@@ -75904,9 +75904,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 275 -l 275 -png -r 180 and visually inspected physical page 275. Findings: row 2 follows identical (adj), precedes IDENTIFY (v), and shows IDENTIFICATION (n) as a wrapped two-line headword with `Something that identifies an object` in its own meaning cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 275,
     "printed_page": "2-1-I1",
@@ -167568,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `e0ac8417b459ae99f9d28d353142bc099e5154394b91d4a42e74f645f258be62`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `705c2e2f342eb69bd00c6bbe2fbc6d2ba9811ff33c69a09cfdedffa97d2c4eb0`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `76bccdc52667eea2f4559a1a79d84d60aef0a9922e2249c4bd4530b65a8201c7`
 
