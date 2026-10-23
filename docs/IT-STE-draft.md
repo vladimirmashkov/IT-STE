@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 46,
+    "needs-review": 44,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1477
+    "restricted": 1479
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -144648,13 +144648,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SUBSEQUENTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: After an identified event at a time not otherwise specified\.
+Definition: After an identified event at a time not otherwise specified\, without meaning immediately after\.
 
 Domains: general
 
-Rationale: The warning prevents a settled interpretation\; use explicit timing where order affects safety\.
+Rationale: Visual verification confirms SUBSEQUENTLY \(adv\) as a separate wrapped\-headword row with the meaning After an unspecified time and explicit guidance to use THEN for an occurrence that follows immediately\. WHATWG\'s form\-submission specification uses subsequent processing as a later phase distinct from the submit event\. Restrict this draft adverb to an identified earlier event and non\-immediate sequence context\; do not infer a deadline\, causality\, or immediate successor\. See docs\/it\-ste\-research\/W1\-D\-P393\-001\-002\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144690,9 +144690,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 393 / printed 2-1-S27 shows SUBSEQUENTLY (adv) as a separate wrapped-headword row above subsequent to (prep); its meaning is After an unspecified time, and the page directs immediate succession to THEN (adv).",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 393,
     "printed_page": "2-1-S27",
@@ -144703,7 +144703,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the earlier event and non-immediate sequence context; use then only for immediate succession"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P393-001",
@@ -144724,13 +144724,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: subsequent to; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: After a specified event or time\.
+Definition: After a named event or time\, when the temporal relation is stated explicitly\.
 
 Domains: general
 
-Rationale: The phrase is unnecessarily formal and source extraction is warned\; provisional preference is after\.
+Rationale: Visual verification confirms subsequent to \(prep\) as a separate row below SUBSEQUENTLY \(adv\)\, with the meaning AFTER \(conj\) and an installation\/removal example\. Restrict this formal prepositional phrase to a named event or time\; prefer after when it is clearer\, and do not infer causality\, immediacy\, or completion\. See docs\/it\-ste\-research\/W1\-D\-P393\-001\-002\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144764,9 +144764,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 393 / printed 2-1-S27 shows subsequent to (prep) as a separate wrapped-headword row below SUBSEQUENTLY (adv); its meaning is AFTER (conj), with an example that names installation before removal.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 393,
     "printed_page": "2-1-S27",
@@ -144777,7 +144777,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named event or time before use; prefer after when it is clearer and do not imply causality or completion"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P393-002",
@@ -167575,7 +167575,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `5bcd13b033c06f53c1cc572f993c26c4468345108abc5de8d673fa2cc9d83948`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `45e15f382f106fb06474ed3babcbd079e70d22ed022c2af355084a671fde84d1`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
 

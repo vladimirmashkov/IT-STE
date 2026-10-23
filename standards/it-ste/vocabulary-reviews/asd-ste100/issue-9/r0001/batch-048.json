@@ -622,12 +622,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "After an identified event at a time not otherwise specified.",
+      "it_disposition": "restricted",
+      "it_definition": "After an identified event at a time not otherwise specified, without meaning immediately after.",
       "domains": [
         "general"
       ],
-      "rationale": "The warning prevents a settled interpretation; use explicit timing where order affects safety.",
+      "rationale": "Visual verification confirms SUBSEQUENTLY (adv) as a separate wrapped-headword row with the meaning After an unspecified time and explicit guidance to use THEN for an occurrence that follows immediately. WHATWG's form-submission specification uses subsequent processing as a later phase distinct from the submit event. Restrict this draft adverb to an identified earlier event and non-immediate sequence context; do not infer a deadline, causality, or immediate successor. See docs/it-ste-research/W1-D-P393-001-002.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "later",
         "after the named event",
@@ -661,14 +661,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 393 / printed 2-1-S27 shows SUBSEQUENTLY (adv) as a separate wrapped-headword row above subsequent to (prep); its meaning is After an unspecified time, and the page directs immediate succession to THEN (adv).",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the earlier event and non-immediate sequence context; use then only for immediate succession"
         ]
       }
     },
@@ -685,12 +685,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "After a specified event or time.",
+      "it_disposition": "restricted",
+      "it_definition": "After a named event or time, when the temporal relation is stated explicitly.",
       "domains": [
         "general"
       ],
-      "rationale": "The phrase is unnecessarily formal and source extraction is warned; provisional preference is after.",
+      "rationale": "Visual verification confirms subsequent to (prep) as a separate row below SUBSEQUENTLY (adv), with the meaning AFTER (conj) and an installation/removal example. Restrict this formal prepositional phrase to a named event or time; prefer after when it is clearer, and do not infer causality, immediacy, or completion. See docs/it-ste-research/W1-D-P393-001-002.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "after",
         "following completion of"
@@ -723,14 +723,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 393 / printed 2-1-S27 shows subsequent to (prep) as a separate wrapped-headword row below SUBSEQUENTLY (adv); its meaning is AFTER (conj), with an example that names installation before removal.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named event or time before use; prefer after when it is clearer and do not imply causality or completion"
         ]
       }
     },
