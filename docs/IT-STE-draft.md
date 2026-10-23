@@ -78170,7 +78170,7 @@ Definition: Toward a specified physical longitudinal centerline\.
 
 Domains: procedures\-runbooks
 
-Rationale: The cell includes an apparent start of the following preposition\'s definition\.
+Rationale: Visual inspection confirms the INBOARD \(adv\) row and separates it from INBOARD OF below\. The authenticated source gives a physical longitudinal\-axis sense\; RFC 9110 uses upstream\/downstream and request paths for IT traffic\, so the draft network example remains substantively blocked and this record stays needs\-review\. See docs\/it\-ste\-research\/W1\-D\-P280\.md\.
 
 Contextual alternatives:
 
@@ -78202,9 +78202,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the adjacent row definition; source boundaries not checked against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 280 -l 280 -png -r 180 and visually inspected physical page 280. Findings: the selected INBOARD (adv) row is the second INBOARD row in the group, follows INBOARD (adj), precedes INBOARD OF (prep), and contains `The landing gear retracts inboard into the bay.` in its own example cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 280,
     "printed_page": "2-1-I6",
@@ -78242,7 +78242,7 @@ Definition: Nearer a stated longitudinal centerline than a named reference objec
 
 Domains: software\-documentation
 
-Rationale: The wrapped\-headword warning requires review of the preposition and its boundaries\.
+Rationale: Visual inspection confirms the wrapped INBOARD OF row and its physical longitudinal\-axis meaning\. No competent IT source inspected here supports extending this aerospace relation to generic network topology\; the database\/firewall example remains blocked and the draft stays needs\-review\. See docs\/it\-ste\-research\/W1\-D\-P280\.md\.
 
 Contextual alternatives:
 
@@ -78274,9 +78274,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 280 -l 280 -png -r 180 and visually inspected physical page 280. Findings: INBOARD OF (prep) follows the selected INBOARD (adv) row, precedes INCIDENT (n), and shows a wrapped two-line headword with `At a position nearer to the longitudinal axis` in its own meaning cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 280,
     "printed_page": "2-1-I6",
@@ -167568,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `d5e65e07adf92511bd73162b68ab47d2f7e954b4a979373163213f845086ee9b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `29779611fe3f60c6b685d38452fb830d025ddedee6af8ee0cc556cffa64f7214`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `76bccdc52667eea2f4559a1a79d84d60aef0a9922e2249c4bd4530b65a8201c7`
 
