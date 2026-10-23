@@ -156013,7 +156013,7 @@ Definition: Straighten a coiled physical cable within its permitted bend and tor
 
 Domains: procedures\-runbooks
 
-Rationale: The compact source also contains a cleanliness cue apparently associated with the next row\.
+Rationale: The compact source also contains a cleanliness cue apparently associated with the next row\. Page 413 was visually checked against the authenticated PDF\; NASA\-STD\-6016C supports only a physical\-hardware contamination boundary\, not a general IT sense for uncoiling\. See \`docs\/it\-ste\-research\/W1\-D\-P413\-005\-006\.md\`\; retain needs\-review pending competent cabling evidence and editorial review\.
 
 Contextual alternatives:
 
@@ -156045,9 +156045,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Cleanliness cue apparently overlaps the following row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 5 clearly maps uncoil (v) to UNWIND (v); the cable example is distinct, and the adjacent cleanliness cue belongs to the following row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 413,
     "printed_page": "2-1-U1",
@@ -156085,7 +156085,7 @@ Definition: Free of specified unwanted physical substances under a stated inspec
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped row needs verification\; cleanliness of hardware does not establish that software is free of malware\.
+Rationale: The wrapped row was visually checked against the authenticated PDF\; NASA\-STD\-6016C supports a physical\-hardware contamination boundary\, while Microsoft Azure distinguishes data states and security threats\. Neither establishes a general IT sense or malware claim\. See \`docs\/it\-ste\-research\/W1\-D\-P413\-005\-006\.md\`\; retain needs\-review pending applicable contamination evidence and editorial review\.
 
 Contextual alternatives:
 
@@ -156119,9 +156119,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 6 maps uncontaminated (adj) to CLEAN (adj); the wrapped row and separate CONTAMINATION (n) continuation/reference are visually distinct.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 413,
     "printed_page": "2-1-U1",
@@ -167581,7 +167581,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `ea83004b784fa97d3148fb650c4c1c9586d78a5c0052c7f04afd561f18e2cbc2`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `d2af02756f155d55ee26eed1f4a2bec5e0242af3d0839f64ece069e4ad690704`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `dc46f89eef754a750c4379ad466ab3e7a032f3872358601cd154039445a251c9`
 
