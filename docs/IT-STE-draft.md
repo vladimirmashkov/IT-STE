@@ -132353,7 +132353,7 @@ Definition: Fit for a specified IT hardware operation under stated acceptance cr
 
 Domains: general
 
-Rationale: The wrapped\-headword warning requires source review before settling the proposal\.
+Rationale: Visual verification resolves the wrapped\-headword and adjacent\-row ambiguity\: SERVICEABLE \(adj\) is a separate row with the approved meaning Correct or satisfactory\. A draft IT use may be restricted to a named component and documented acceptance criteria\; it must not imply compatibility or full operating acceptance\. The noun\'s scope remains unresolved\; see the page\-374 research note\.
 
 Contextual alternatives:
 
@@ -132387,9 +132387,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 374 / printed 2-1-S8 shows SERVICEABLE (adj) as a separate row below serviceability (n); the wrapped headword is complete and its approved meaning is Correct or satisfactory. The tire criterion belongs to serviceability (n), not this adjective row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 374,
     "printed_page": "2-1-S8",
@@ -132400,7 +132400,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm a named IT component and complete applicable acceptance criteria before settling the adjective's serviceability scope"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P374-006",
@@ -167567,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `c16eaec5b0715ff9d454c1dd9f6e4f9af54dda83438c1380cb51f5b3aada8a58`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `1ba8bcfe59477ada1eb3e2a450290715dc9a40165c35dec47bf50b041197fcae`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `40ed3a1a1ec2ee7b59c06002d8e36752d91940451ff3247eeb38100fce38378d`
 
