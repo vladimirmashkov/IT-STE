@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 130,
+    "needs-review": 128,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1399
+    "restricted": 1401
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -78989,13 +78989,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INCORRECT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Not matching a stated expected value or rule\.
 
 Domains: error\-messages
 
-Rationale: The cell also contains the following adverb\'s apparent definition\.
+Rationale: Visual inspection confirms the separate adjective row and its own \`Not correct\` meaning cell\. In IT error messages\, use incorrect only for a named value\, state\, or rule that does not match the stated expectation\; RFC 9110 distinguishes invalid protocol constructs and also uses incorrect for a known mismatching field value\, while RFC 9457 requires error details to help the client correct a specific problem\. See docs\/it\-ste\-research\/W1\-D\-P281\.md\.
 
 Contextual alternatives:
 
@@ -79029,9 +79029,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the following adverb definition; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 281 -l 281 -png -r 180 and visually inspected physical page 281. Findings: row 4 is bounded by incorporation (n) above and INCORRECTLY (adv) below; it reads INCORRECT (adj) with `Not correct` in its own meaning cell and the trim-tab example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 281,
     "printed_page": "2-1-I7",
@@ -79041,8 +79041,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P281-004",
@@ -79063,13 +79062,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INCORRECTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: In a manner that fails a stated rule or expected behavior\.
 
 Domains: error\-messages
 
-Rationale: Wrapped\-headword warning requires source review before settling this adverb\.
+Rationale: Visual inspection confirms the separate wrapped adverb row and its own \`In an incorrect manner\` meaning cell\. In IT error messages\, use incorrectly only when the action or process is named and the failed rule or expected behavior is observable\; RFC 9110 and RFC 9457 support describing the concrete invalid or mismatching condition and how to correct it\. See docs\/it\-ste\-research\/W1\-D\-P281\.md\.
 
 Contextual alternatives:
 
@@ -79103,9 +79102,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 281 -l 281 -png -r 180 and visually inspected physical page 281. Findings: row 5 follows INCORRECT (adj), shows INCORRECTLY (adv) as a wrapped two-line headword, and has `In an incorrect manner` with the installed-part example in its own row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 281,
     "printed_page": "2-1-I7",
@@ -79115,8 +79114,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P281-005",
@@ -167570,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `29779611fe3f60c6b685d38452fb830d025ddedee6af8ee0cc556cffa64f7214`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `76bccdc52667eea2f4559a1a79d84d60aef0a9922e2249c4bd4530b65a8201c7`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `f10b27abe9face511c90e0bdb82b73f6520cfd48706f21cad6dfa638e77a3100`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `c953df704322afa13595ba7c22e6c24594417f0d4560d3577473ce49fd4cc725`
 

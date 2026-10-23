@@ -248,12 +248,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Not matching a stated expected value or rule.",
       "domains": [
         "error-messages"
       ],
-      "rationale": "The cell also contains the following adverb's apparent definition.",
+      "rationale": "Visual inspection confirms the separate adjective row and its own `Not correct` meaning cell. In IT error messages, use incorrect only for a named value, state, or rule that does not match the stated expectation; RFC 9110 distinguishes invalid protocol constructs and also uses incorrect for a known mismatching field value, while RFC 9457 requires error details to help the client correct a specific problem. See docs/it-ste-research/W1-D-P281.md.",
       "permitted_contextual_alternatives": [
         "wrong",
         "invalid under the stated rule"
@@ -286,14 +286,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 281 -l 281 -png -r 180 and visually inspected physical page 281. Findings: row 4 is bounded by incorporation (n) above and INCORRECTLY (adv) below; it reads INCORRECT (adj) with `Not correct` in its own meaning cell and the trim-tab example.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },
@@ -310,12 +309,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "In a manner that fails a stated rule or expected behavior.",
       "domains": [
         "error-messages"
       ],
-      "rationale": "Wrapped-headword warning requires source review before settling this adverb.",
+      "rationale": "Visual inspection confirms the separate wrapped adverb row and its own `In an incorrect manner` meaning cell. In IT error messages, use incorrectly only when the action or process is named and the failed rule or expected behavior is observable; RFC 9110 and RFC 9457 support describing the concrete invalid or mismatching condition and how to correct it. See docs/it-ste-research/W1-D-P281.md.",
       "permitted_contextual_alternatives": [
         "with the wrong value",
         "not as specified"
@@ -348,14 +347,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 281 -l 281 -png -r 180 and visually inspected physical page 281. Findings: row 5 follows INCORRECT (adj), shows INCORRECTLY (adv) as a wrapped two-line headword, and has `In an incorrect manner` with the installed-part example in its own row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },
