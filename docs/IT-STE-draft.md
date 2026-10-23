@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 93,
+    "needs-review": 92,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1434
+    "restricted": 1435
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -106242,19 +106242,21 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: particular; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes a specifically identified IT item rather than an arbitrary member of its class\.
+Definition: Describes a specifically identified item\, condition\, or rule to which an IT requirement applies\; do not use it as a vague intensifier\.
 
 Domains: configuration
 
-Rationale: The source alternatives include an intensifier that does not clearly match this adjective\; source sense is unresolved\.
+Rationale: The authenticated ASD page shows \`particular \(adj\)\` with separate alternatives \`ONLY APPLICABLE\` and \`VERY \(adv\)\`\; the latter is a distinct continuation of the adjective row and does not authorize an unrestricted emphasis sense\. Kubernetes label selectors identify sets by explicit key\/value requirements\, and AWS IAM Resource identifies the object or objects to which a statement applies\. Restrict the IT sense to a named item\, condition\, or rule and use a measurable or explicit alternative for emphasis\. See \`docs\/it\-ste\-research\/W1\-D\-P330\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
 - specific
 
 - identified
+
+- only applicable
 
 #### Positive example
 
@@ -106270,7 +106272,7 @@ Explanation: Bounds an exception to a named item\.
 Use a particular server.
 ```
 
-Explanation: No server is actually identified\.
+Explanation: Does not identify the server or define the applicable condition\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -106282,9 +106284,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact alternatives include VERY, whose intensifier sense is not clearly the adjective sense proposed."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 330 -l 330 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-16-page-330; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: particular (adj) is the distinct first row on printed page 2-1-P2; `ONLY APPLICABLE` is the first alternative with its STE/non-STE examples, and `VERY (adv)` is a separate continuation row before particularly (adv). Row boundaries, spelling, POS, columns, and layout are verified.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 330,
     "printed_page": "2-1-P2",
@@ -106294,8 +106296,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P330-001",
@@ -167557,7 +167558,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `161f9698b8ca55aadb83b8752876713e0452eb6294a5dd4331fbcf442e81b8b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8b1e5dc42caa3b89f2b6fa4956c8b31598dc74183d5e823cac78f2f475ef932f`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8f3ffe561277bbc36da08faa9b04e1b3edd044d93b85bccb5daee74d02882f09`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
 

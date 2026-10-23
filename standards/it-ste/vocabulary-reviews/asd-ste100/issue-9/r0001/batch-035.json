@@ -719,15 +719,16 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes a specifically identified IT item rather than an arbitrary member of its class.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a specifically identified item, condition, or rule to which an IT requirement applies; do not use it as a vague intensifier.",
       "domains": [
         "configuration"
       ],
-      "rationale": "The source alternatives include an intensifier that does not clearly match this adjective; source sense is unresolved.",
+      "rationale": "The authenticated ASD page shows `particular (adj)` with separate alternatives `ONLY APPLICABLE` and `VERY (adv)`; the latter is a distinct continuation of the adjective row and does not authorize an unrestricted emphasis sense. Kubernetes label selectors identify sets by explicit key/value requirements, and AWS IAM Resource identifies the object or objects to which a statement applies. Restrict the IT sense to a named item, condition, or rule and use a measurable or explicit alternative for emphasis. See `docs/it-ste-research/W1-D-P330.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "specific",
-        "identified"
+        "identified",
+        "only applicable"
       ],
       "examples": {
         "positive": {
@@ -736,7 +737,7 @@
         },
         "problematic": {
           "text": "Use a particular server.",
-          "explanation": "No server is actually identified."
+          "explanation": "Does not identify the server or define the applicable condition."
         }
       },
       "evidence": {
@@ -757,14 +758,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 330 -l 330 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-16-page-330; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: particular (adj) is the distinct first row on printed page 2-1-P2; `ONLY APPLICABLE` is the first alternative with its STE/non-STE examples, and `VERY (adv)` is a separate continuation row before particularly (adv). Row boundaries, spelling, POS, columns, and layout are verified.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
