@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 103,
+    "needs-review": 102,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1424
+    "restricted": 1425
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -96043,13 +96043,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MODERATE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes a metric category between defined low and high thresholds\.
+Definition: Describes a measured condition in the defined middle band between explicit low and high thresholds\.
 
 Domains: monitoring\-alerts
 
-Rationale: The compact source includes the following adverbial definition\; also\, moderate needs metric\-specific limits\.
+Rationale: The authenticated page isolates MODERATE \(adj\) with \`Between low and high values\`\; NIST categorizes impact levels\, Prometheus alert rules use expressions and thresholds\, and OpenTelemetry requires defined attribute semantics\. Restrict use to a metric or classification with explicit scale boundaries\; do not use it as an undefined risk judgment\. See \`docs\/it\-ste\-research\/W1\-D\-P312\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -96081,9 +96081,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact meaning includes the adjacent MODERATELY definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 312 -l 312 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-312-iter6; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MODERATE (adj) is a distinct row after MODE (n) and before MODERATELY (adv); its meaning is Between low and high values and its load-on-brake-pedals example is separate from the adjacent adverbial row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 312,
     "printed_page": "2-1-M8",
@@ -96093,8 +96093,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P312-003",
@@ -167551,7 +167550,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `5e14fe8a15b5b93baaaa8e9b74c7502bbbf528046d199b6928c5a780e2f650e1`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `54194a0c3d4270682b49e338db0c62f984442928066e83cd499b17de8769d2ab`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 

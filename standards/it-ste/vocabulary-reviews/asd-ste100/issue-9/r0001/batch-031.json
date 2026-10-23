@@ -2091,12 +2091,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes a metric category between defined low and high thresholds.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a measured condition in the defined middle band between explicit low and high thresholds.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The compact source includes the following adverbial definition; also, moderate needs metric-specific limits.",
+      "rationale": "The authenticated page isolates MODERATE (adj) with `Between low and high values`; NIST categorizes impact levels, Prometheus alert rules use expressions and thresholds, and OpenTelemetry requires defined attribute semantics. Restrict use to a metric or classification with explicit scale boundaries; do not use it as an undefined risk judgment. See `docs/it-ste-research/W1-D-P312.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "within the middle band"
       ],
@@ -2128,14 +2128,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 312 -l 312 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-312-iter6; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MODERATE (adj) is a distinct row after MODE (n) and before MODERATELY (adv); its meaning is Between low and high values and its load-on-brake-pedals example is separate from the adjacent adverbial row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
