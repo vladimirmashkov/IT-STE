@@ -94,6 +94,11 @@ class VocabularyTests(unittest.TestCase):
         self.assertTrue(by_id["D-P344-006"]["evidence"]["mechanical_ambiguities"])
         self.assertEqual(by_id["D-P344-007"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
         self.assertIn("not an automatic substitute", by_id["D-P344-007"]["rationale"])
+        radioactive = by_id["D-P349-003"]
+        self.assertEqual(radioactive["it_disposition"], "needs-review")
+        self.assertEqual(radioactive["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertTrue(radioactive["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("without identifying their sensing technology", radioactive["rationale"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

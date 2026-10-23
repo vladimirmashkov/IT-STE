@@ -116725,7 +116725,7 @@ Definition: Having a physical property associated with radioactive material\; no
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped\-headword warning and nearby overlap require source review\. Hazard classification and handling must come from qualified safety documentation\.
+Rationale: Visual inspection confirms RADIOACTIVE \(adj\) and its own physical\-radioactivity meaning\; it is separate from RADIALLY\. EPA documents radioactive americium in some ionization smoke detectors\, while AWS documents data\-center smoke sensors without identifying their sensing technology\. Those facts do not establish a radioactive item in this cloud\-infrastructure scope\, so needs\-review remains pending applicable equipment evidence and project\-scope review\. Hazard classification and handling require qualified safety documentation\; neither a detector label nor a software metaphor establishes a hazard\. See docs\/it\-ste\-research\/W1\-D\-P349\-002\.md\.
 
 Contextual alternatives:
 
@@ -116759,9 +116759,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 349 -l 349 -singlefile -png -r 150 and visually inspected physical page 349. Findings: row 3 is RADIOACTIVE with (adj) below, after RADIALLY (adv) and before raise (v). Related to radioactivity belongs to its own meaning cell, and its contamination-check example is bounded by horizontal rules; neither belongs to RADIALLY.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 349,
     "printed_page": "2-1-R1",
@@ -116772,7 +116772,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "source row boundaries and layout visually verified; retain editorial interpretation review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P349-003",
@@ -167561,7 +167561,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `273c3b9e683e0f4c73da3ba8f3d0a2cb62cb31ab2d4be25036a7f6524d623d58`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `66f8029843d022a81ce0963c26bac9f992508f02f7acfb3957dc2f855abec7dd`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `19fbd5774bf495bac0d9885d6da6df9a0b79ca089020766708734a56744e09ca`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `f5efd07e6b636208138bb3d23c113307d89c8b3e9a4ba48fe6eab9ad7c51bcc4`
 
