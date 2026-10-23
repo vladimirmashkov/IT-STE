@@ -147703,7 +147703,7 @@ Definition: In agreement for specified data or timing within a stated tolerance 
 
 Domains: data\-storage
 
-Rationale: The extracted row has a warning and two senses\; data agreement and simultaneous operation must remain distinct\.
+Rationale: The extracted row has a warning and two senses\; data agreement and simultaneous operation must remain distinct\. Page 398 confirms the separate wrapped headword row and both examples\. RFC 5905 defines synchronization as reducing clock differences within stated error\/tolerance measures\, while PostgreSQL documents replication lag and synchronous commit as distinct data\-replication and durability conditions\; neither selects one bounded IT\-STE sense\. See docs\/it\-ste\-research\/W1\-D\-P398\-001\.md\.
 
 Contextual alternatives:
 
@@ -147737,9 +147737,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated Issue 9 PDF page 398, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, rendered with pdftoppm at 150 dpi and visually inspected. Findings: separate SYNCHRONIZED (adj) row; wrapped POS; two meanings and their distinct rotor/timer examples; horizontal boundary before SYSTEM (n); exact derivative entry and raw page retrieval agree.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 398,
     "printed_page": "2-1-S32",
@@ -147749,8 +147749,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P398-001",
@@ -167577,7 +167576,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d7b67ea6a0609ebb41b18254f455906d95abb9e1f37943e69f8fb451b86e71cf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `9c5b6e779b3ed5f8c7f6f44c4bcf4c4bbecb2e2e33b4ea0eee037cc73d283461`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `a86b5f161d430bd429a77246227134b7c22612ab019a52e05a90b52edc3d56b4`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 
