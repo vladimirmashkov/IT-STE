@@ -896,12 +896,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "Send a specified signal or encoded data over a named communication path.",
       "domains": [
         "networking"
       ],
-      "rationale": "The IT signal sense is useful, but the retrieved meaning includes an apparent fragment of the transparent row.",
+      "rationale": "The networking sense is a bounded application of the ASD meaning \"To send energy or a signal\": it covers sending a specified signal or encoded data over a named communication path without asserting receipt, delivery, or durable storage. The apparent overlap in the compact extraction was resolved by visual inspection of the authenticated PDF; see docs/it-ste-research/W1-D-P408-004.md.",
       "permitted_contextual_alternatives": [
         "send",
         "emit the specified signal"
@@ -930,13 +930,13 @@
         },
         "extraction_warnings": [],
         "mechanical_ambiguities": [
-          "Compact meaning includes wording apparently belonging to the following transparent row; PDF verification outstanding."
+          "Compact meaning included wording apparently belonging to the following transparent row; authenticated PDF verification resolved this historical extraction ambiguity."
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: rendered physical page 408 with pdftoppm -f 408 -l 408 -png -r 150 and visually inspected the standalone TRANSMIT row, boundary before TRANSPARENT, and columns.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",

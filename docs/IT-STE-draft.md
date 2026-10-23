@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 118,
-    "needs-review": 42,
+    "allowed": 119,
+    "needs-review": 41,
     "not-applicable": 148,
     "prohibited": 407,
     "restricted": 1481
@@ -153897,13 +153897,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: TRANSMIT; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Send a specified signal or encoded data over a named communication path\.
 
 Domains: networking
 
-Rationale: The IT signal sense is useful\, but the retrieved meaning includes an apparent fragment of the transparent row\.
+Rationale: The networking sense is a bounded application of the ASD meaning \"To send energy or a signal\"\: it covers sending a specified signal or encoded data over a named communication path without asserting receipt\, delivery\, or durable storage\. The apparent overlap in the compact extraction was resolved by visual inspection of the authenticated PDF\; see docs\/it\-ste\-research\/W1\-D\-P408\-004\.md\.
 
 Contextual alternatives:
 
@@ -153934,12 +153934,12 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
   "evidence": {
     "extraction_warnings": [],
     "mechanical_ambiguities": [
-      "Compact meaning includes wording apparently belonging to the following transparent row; PDF verification outstanding."
+      "Compact meaning included wording apparently belonging to the following transparent row; authenticated PDF verification resolved this historical extraction ambiguity."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: rendered physical page 408 with pdftoppm -f 408 -l 408 -png -r 150 and visually inspected the standalone TRANSMIT row, boundary before TRANSPARENT, and columns.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 408,
     "printed_page": "2-1-T10",
@@ -167580,7 +167580,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `d2b2a186a90137602a9aae8405653ed6c90773ad467cec1794e6aa07658d3bfd`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `a1ade124570a6affc55cf589e4148ee6ecb20514c8df0a56a627dcec45f2578e`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `ea83004b784fa97d3148fb650c4c1c9586d78a5c0052c7f04afd561f18e2cbc2`
 
