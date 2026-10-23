@@ -1788,15 +1788,16 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Beyond a named physical or logical boundary; proposed here only for explicitly defined sets.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a value or object that is not within a named physical or logical boundary.",
       "domains": [
         "configuration"
       ],
-      "rationale": "The source gives NEAR, which does not establish the ordinary exterior sense; source interpretation remains unresolved.",
+      "rationale": "The authenticated page isolates `outside (prep)` and maps it to `NEAR (prep)`; its fuel-tank example distinguishes the source's proximity sense from an unrestricted exterior claim. Kubernetes NetworkPolicy uses explicit pod, namespace, IP-block, ingress, and egress selectors, while AWS VPC routing uses named CIDR destinations and targets. Restrict the IT extension to a named boundary or explicitly defined set; do not use `outside` as an unbounded spatial or network relation. See `docs/it-ste-research/W1-D-P326.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "not within",
-        "beyond the defined boundary"
+        "beyond the defined boundary",
+        "outside the configured set"
       ],
       "examples": {
         "positive": {
@@ -1804,8 +1805,8 @@
           "explanation": "Defines an exact digital boundary for the provisional sense."
         },
         "problematic": {
-          "text": "The server is outside the building, so it is near it.",
-          "explanation": "Exterior position does not imply proximity."
+          "text": "Allow traffic from outside.",
+          "explanation": "Does not name the boundary, source set, or permitted addresses."
         }
       },
       "evidence": {
@@ -1826,14 +1827,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 326 -l 326 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-14-page-326; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: outside (prep) is a distinct row after outside (n), with `NEAR (prep)` in the approved-meaning/alternatives column and the separate fuel-tank example; the row is before outwards (adv) on printed page 2-1-O8.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 95,
+    "needs-review": 94,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1432
+    "restricted": 1433
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -104561,19 +104561,21 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: outside; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Beyond a named physical or logical boundary\; proposed here only for explicitly defined sets\.
+Definition: Describes a value or object that is not within a named physical or logical boundary\.
 
 Domains: configuration
 
-Rationale: The source gives NEAR\, which does not establish the ordinary exterior sense\; source interpretation remains unresolved\.
+Rationale: The authenticated page isolates \`outside \(prep\)\` and maps it to \`NEAR \(prep\)\`\; its fuel\-tank example distinguishes the source\'s proximity sense from an unrestricted exterior claim\. Kubernetes NetworkPolicy uses explicit pod\, namespace\, IP\-block\, ingress\, and egress selectors\, while AWS VPC routing uses named CIDR destinations and targets\. Restrict the IT extension to a named boundary or explicitly defined set\; do not use \`outside\` as an unbounded spatial or network relation\. See \`docs\/it\-ste\-research\/W1\-D\-P326\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
 - not within
 
 - beyond the defined boundary
+
+- outside the configured set
 
 #### Positive example
 
@@ -104586,10 +104588,10 @@ Explanation: Defines an exact digital boundary for the provisional sense\.
 #### Problematic example
 
 ```
-The server is outside the building, so it is near it.
+Allow traffic from outside.
 ```
 
-Explanation: Exterior position does not imply proximity\.
+Explanation: Does not name the boundary\, source set\, or permitted addresses\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -104601,9 +104603,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source offers NEAR, which does not establish an exterior-boundary meaning."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 326 -l 326 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-14-page-326; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: outside (prep) is a distinct row after outside (n), with `NEAR (prep)` in the approved-meaning/alternatives column and the separate fuel-tank example; the row is before outwards (adv) on printed page 2-1-O8.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 326,
     "printed_page": "2-1-O8",
@@ -104613,8 +104615,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P326-003",
@@ -167553,7 +167554,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-033.json` SHA-256: `5c3cbcf6bcd3bb665542eecdc5e506344b322f9fd601f9a939eb888115fa90f3`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `1f4b19e530085dbae138eb3642a61424ff727f1f48bc8b21491bdd724da8b921`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `c70d307eb75f49dc23969b18355fb2ec1b9edf05f411f8b5f48b04bd2c826143`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8b1e5dc42caa3b89f2b6fa4956c8b31598dc74183d5e823cac78f2f475ef932f`
 
