@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 123,
+    "needs-review": 121,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1406
+    "restricted": 1408
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -83665,13 +83665,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: investigate; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Examine evidence systematically to determine a stated cause or condition\.
+Definition: Examine evidence systematically to identify a possible cause or condition\.
 
 Domains: support\-troubleshooting
 
-Rationale: The meaning cell apparently contains a fragment from investigation\; source review is required\.
+Rationale: The authenticated PDF confirms a distinct investigate \(v\) row\. Retain a bounded evidence\-review sense for IT use\; an investigation can identify a possible cause or condition but does not by itself prove causality\. See docs\/it\-ste\-research\/W1\-D\-P289\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -83705,9 +83705,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 289 -l 289 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-289; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct investigate (v) row, followed by a separate INVESTIGATION (n) row; the apparent cross-row extraction is a mechanical ambiguity, not a PDF row-boundary issue.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 289,
     "printed_page": "2-1-I15",
@@ -83717,8 +83717,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P289-009",
@@ -83739,13 +83738,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INVESTIGATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: A systematic inquiry into a specified incident or technical question\.
 
 Domains: support\-troubleshooting
 
-Rationale: Wrapped\-headword warning requires source review\; an inquiry is not proof of cause\.
+Rationale: The authenticated PDF confirms a distinct INVESTIGATION \(n\) row despite the wrapped\-headword warning\. Retain a bounded inquiry sense for IT use\; an investigation can compare evidence without confirming a cause or hypothesis\. See docs\/it\-ste\-research\/W1\-D\-P289\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -83779,9 +83778,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 289 -l 289 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-289; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct INVESTIGATION (n) row follows the separate investigate (v) row and has its own meaning and example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 289,
     "printed_page": "2-1-I15",
@@ -83791,8 +83790,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 10,
     "source_entry_id": "D-P289-010",
@@ -167562,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `aae6c99835e39816b1ed8c937732e38c5008ddb9df4d0bae7b6ee90ae0610198`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `d03ed582a3cab87601da0004eeaed0a623c57e2c559ae83753040040e8de3282`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `8c58c3854abb6a889baa24d6ead3943ff6d5f0fa34f5ff2a6a85f3cd1d82f8b9`
 
