@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 108,
+    "needs-review": 107,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1420
+    "restricted": 1421
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -94115,13 +94115,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MECHANICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: By movement or force transmitted through hardware parts\, not by software automation\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Wrapped extraction requires review\, and a software action must not inherit the physical adverb\.
+Rationale: The authenticated page confirms a separate MECHANICALLY row after MECHANICAL\; restrict the adverb to force or movement transmitted through physical hardware\, not software automation\.
 
 Contextual alternatives:
 
@@ -94155,9 +94155,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Rendered authenticated PDF page 309 at 180 DPI with pdftoppm and visually inspected the dictionary table. Authenticated PDF SHA-256: d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: MECHANICALLY (adv) is a distinct row after MECHANICAL (adj) and before MECHANISM (n); spelling, POS, row boundary, columns, and wrapped typography are confirmed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 309,
     "printed_page": "2-1-M5",
@@ -94167,8 +94167,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P309-004",
@@ -167555,7 +167554,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `d4e5fb1aa932e0721a6bf616b5d84b275d87d7c4f64b0c252968b4503774a34c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `d1a03dde39572ff242cefd3c9e1afe00a278b416dff7df6c0e7e91fc478144b9`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 
