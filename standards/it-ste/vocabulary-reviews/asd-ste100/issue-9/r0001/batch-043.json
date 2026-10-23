@@ -71,20 +71,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "In a manner that meets the stated test acceptance criteria.",
       "domains": [
         "general"
       ],
-      "rationale": "The wrapped headword and trailing definition fragment prevent a settled source interpretation.",
+      "rationale": "Authenticated page 368 confirms the complete adverb row and excludes the following adjective fragment. Restrict satisfactorily to an explicitly identified test and its stated acceptance criteria; prefer direct pass results where practical. PostgreSQL pg_verifybackup documents bounded checks and still requires test restores, so passing named checks is not a general recovery or service-health guarantee. See docs/it-ste-research/W1-D-P368.md.",
       "permitted_contextual_alternatives": [
-        "within the stated acceptance limits",
-        "with all required checks passed"
+        "within the stated acceptance limits for the named test",
+        "with all checks required by the named test passed"
       ],
       "examples": {
         "positive": {
           "text": "The replica passes all three recovery checks.",
-          "explanation": "States the acceptance evidence directly."
+          "explanation": "States a bounded pass result rather than a vague adverb; the procedure must identify those checks and their criteria. Three passed checks alone do not establish complete recoverability or service health."
         },
         "problematic": {
           "text": "The replica works satisfactorily.",
@@ -111,14 +111,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 4 SATISFACTORILY has (adv) on the next line, its own In a satisfactory manner definition and microswitch example. The horizontal rule below starts SATISFACTORY (adj); Agrees with all that is necessary belongs to that separate row. See docs/it-ste-research/W1-D-P368.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named test, acceptance criteria and limits of any operational conclusion"
         ]
       }
     },

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 65,
+    "needs-review": 63,
     "not-applicable": 148,
     "prohibited": 406,
-    "restricted": 1459
+    "restricted": 1461
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -128969,19 +128969,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: sample; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Select or measure part of a dataset or signal for a specified test\.
+Definition: Select telemetry records by a specified sampling policy\, or record measurements of a named signal at stated intervals\, for inspection or analysis\.
 
 Domains: general
 
-Rationale: The following phrase appears unrelated to sampling\; keep the proposal provisional pending boundary review\.
+Rationale: Authenticated page 368 separates sample \(v\) from the following adverb\; SAMPLE \(n\) belongs to the verb\, not In a satisfactory manner\. Restrict the IT adaptation to an explicit telemetry selection policy or named signal and interval\. OpenTelemetry distinguishes sampling decisions from general filtering\, and Prometheus separates scrape interval from rule evaluation\. Neither an interval nor a selection rate guarantees representativeness\, complete event coverage or absence of faults\. See docs\/it\-ste\-research\/W1\-D\-P368\.md\.
 
 Contextual alternatives:
 
-- select a test subset
+- select telemetry records under the stated sampling policy
 
-- measure at stated intervals
+- record measurements at the stated intervals
 
 #### Positive example
 
@@ -128989,15 +128989,15 @@ Contextual alternatives:
 Sample CPU utilization every five seconds.
 ```
 
-Explanation: Defines quantity and interval\.
+Explanation: Names a quantity and collection interval\; the instrumentation must define the utilization measurement and target\. This is not a rule\-evaluation interval or a guarantee that brief events are observed\.
 
 #### Problematic example
 
 ```
-Sample all events and call the result a subset.
+Sample some traces and conclude that no requests failed.
 ```
 
-Explanation: Confuses exhaustive collection with subset sampling\.
+Explanation: An unspecified selection policy cannot establish absence of failures in unobserved requests\; naming sampling alone does not prove representativeness or completeness\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -129009,9 +129009,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source sense includes the unrelated phrase In a satisfactory manner; adjacent-row boundary needs PDF verification."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 3 sample (v) has SAMPLE (n) and a fuel sampling/test example; the horizontal rule below starts row 4 SATISFACTORILY (adv). In a satisfactory manner belongs only to row 4. See docs/it-ste-research/W1-D-P368.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 368,
     "printed_page": "2-1-S2",
@@ -129022,7 +129022,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Validate the actual sampling policy, instrumentation and any statistical inference for the named telemetry"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P368-003",
@@ -129154,19 +129154,19 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: SATISFACTORILY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: In a manner that meets the stated test acceptance criteria\.
 
 Domains: general
 
-Rationale: The wrapped headword and trailing definition fragment prevent a settled source interpretation\.
+Rationale: Authenticated page 368 confirms the complete adverb row and excludes the following adjective fragment\. Restrict satisfactorily to an explicitly identified test and its stated acceptance criteria\; prefer direct pass results where practical\. PostgreSQL pg\_verifybackup documents bounded checks and still requires test restores\, so passing named checks is not a general recovery or service\-health guarantee\. See docs\/it\-ste\-research\/W1\-D\-P368\.md\.
 
 Contextual alternatives:
 
-- within the stated acceptance limits
+- within the stated acceptance limits for the named test
 
-- with all required checks passed
+- with all checks required by the named test passed
 
 #### Positive example
 
@@ -129174,7 +129174,7 @@ Contextual alternatives:
 The replica passes all three recovery checks.
 ```
 
-Explanation: States the acceptance evidence directly\.
+Explanation: States a bounded pass result rather than a vague adverb\; the procedure must identify those checks and their criteria\. Three passed checks alone do not establish complete recoverability or service health\.
 
 #### Problematic example
 
@@ -129196,9 +129196,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition contains an apparent fragment of the following adjective row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 4 SATISFACTORILY has (adv) on the next line, its own In a satisfactory manner definition and microswitch example. The horizontal rule below starts SATISFACTORY (adj); Agrees with all that is necessary belongs to that separate row. See docs/it-ste-research/W1-D-P368.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 368,
     "printed_page": "2-1-S2",
@@ -129209,7 +129209,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named test, acceptance criteria and limits of any operational conclusion"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P368-004",
@@ -167567,9 +167567,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-041.json` SHA-256: `efd31f9650be53fff471c46e8213340f6369939d2f4e0ae09acde7aeb138985b`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `944c5ed85a5e16183fdb8da12f25da12c4f1f751fc299bbef45744d690d51f3a`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `f6b4a99e65166ddc0ce6d54ae4c76719b3d08759edf7a5470b5909fdbaafce0b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `73093ac8dc316fa197c2ce7bd85e61fb3db1fcecf4abbc2c6db20d36c06c1989`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
 

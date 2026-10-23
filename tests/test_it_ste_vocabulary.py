@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1459, "prohibited": 406,
-                             "not-applicable": 148, "needs-review": 65},
+            "dispositions": {"allowed": 118, "restricted": 1461, "prohibited": 406,
+                             "not-applicable": 148, "needs-review": 63},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -128,6 +128,16 @@ class VocabularyTests(unittest.TestCase):
         self.assertTrue(running["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertEqual(running["permitted_contextual_alternatives"], ["flowing water, in hardware cleaning"])
         self.assertIn("not a readiness or general health guarantee", running["rationale"])
+        for identifier in ("D-P368-003", "D-P368-004"):
+            decision = by_id[identifier]
+            self.assertEqual(decision["it_disposition"], "restricted")
+            self.assertTrue(decision["evidence"]["mechanical_ambiguities"])
+            self.assertTrue(decision["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("specified sampling policy", by_id["D-P368-003"]["it_definition"])
+        self.assertIn("no requests failed", by_id["D-P368-003"]["examples"]["problematic"]["text"])
+        self.assertEqual(by_id["D-P368-004"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertIn("not a general recovery", by_id["D-P368-004"]["rationale"])
+        self.assertIn("named test", by_id["D-P368-004"]["permitted_contextual_alternatives"][1])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

@@ -2378,24 +2378,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Select or measure part of a dataset or signal for a specified test.",
+      "it_disposition": "restricted",
+      "it_definition": "Select telemetry records by a specified sampling policy, or record measurements of a named signal at stated intervals, for inspection or analysis.",
       "domains": [
         "general"
       ],
-      "rationale": "The following phrase appears unrelated to sampling; keep the proposal provisional pending boundary review.",
+      "rationale": "Authenticated page 368 separates sample (v) from the following adverb; SAMPLE (n) belongs to the verb, not In a satisfactory manner. Restrict the IT adaptation to an explicit telemetry selection policy or named signal and interval. OpenTelemetry distinguishes sampling decisions from general filtering, and Prometheus separates scrape interval from rule evaluation. Neither an interval nor a selection rate guarantees representativeness, complete event coverage or absence of faults. See docs/it-ste-research/W1-D-P368.md.",
       "permitted_contextual_alternatives": [
-        "select a test subset",
-        "measure at stated intervals"
+        "select telemetry records under the stated sampling policy",
+        "record measurements at the stated intervals"
       ],
       "examples": {
         "positive": {
           "text": "Sample CPU utilization every five seconds.",
-          "explanation": "Defines quantity and interval."
+          "explanation": "Names a quantity and collection interval; the instrumentation must define the utilization measurement and target. This is not a rule-evaluation interval or a guarantee that brief events are observed."
         },
         "problematic": {
-          "text": "Sample all events and call the result a subset.",
-          "explanation": "Confuses exhaustive collection with subset sampling."
+          "text": "Sample some traces and conclude that no requests failed.",
+          "explanation": "An unspecified selection policy cannot establish absence of failures in unobserved requests; naming sampling alone does not prove representativeness or completeness."
         }
       },
       "evidence": {
@@ -2416,14 +2416,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 3 sample (v) has SAMPLE (n) and a fuel sampling/test example; the horizontal rule below starts row 4 SATISFACTORILY (adv). In a satisfactory manner belongs only to row 4. See docs/it-ste-research/W1-D-P368.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Validate the actual sampling policy, instrumentation and any statistical inference for the named telemetry"
         ]
       }
     }
