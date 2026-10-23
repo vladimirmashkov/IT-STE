@@ -4257,9 +4257,9 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 61,
+    "needs-review": 60,
     "not-applicable": 148,
-    "prohibited": 406,
+    "prohibited": 407,
     "restricted": 1463
   },
   "next_entry_id": null,
@@ -130584,27 +130584,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: security; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: prohibited.
 
-Definition: Provisionally\, the condition of correct physical fastening in the retrieved maintenance context\.
+Definition: The condition of a named physical IT component being attached as specified by its hardware procedure\.
 
 Domains: general
 
-Rationale: The single adverb alternative does not establish a noun sense\; do not infer information\-security coverage\.
+Rationale: Prohibit this physical\-fastening noun sense in IT instructions\; name the component and check its attachment against the applicable hardware procedure\. Authenticated page 370 rewrites the noun construction as components correctly attached\, not a noun\/adverb substitution\. Lenovo\'s rack\-latch procedure specifies alignment and fastening actions\; NIST information security is a distinct protection sense\. This decision does not prohibit independently scoped information\-security terminology or authorize service work\. See docs\/it\-ste\-research\/W1\-D\-P370\.md\.
 
 Contextual alternatives:
 
-- correct attachment
+- attachment that meets the specified hardware procedure
 
-- specified fastening condition
+- the component is attached as specified\, with a sentence rewrite
 
 #### Positive example
 
 ```
-Check that each mounting bolt meets the hardware specification.
+Check that the server rack latch is attached as specified in the hardware installation procedure.
 ```
 
-Explanation: Uses a concrete physical criterion\.
+Explanation: Names the component and controlling procedure instead of an ambiguous security condition\. The real procedure must supply alignment\, fasteners\, checks and safety requirements\; this is not a complete installation instruction\.
 
 #### Problematic example
 
@@ -130612,7 +130612,7 @@ Explanation: Uses a concrete physical criterion\.
 Security means the database is protected from every attack.
 ```
 
-Explanation: Claims an unrelated and unlimited protection state\.
+Explanation: Imports a different information\-protection sense and adds an unlimited guarantee\; neither follows from the source\'s physical\-attachment use\. This example does not reject legitimate information\-security terminology\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -130624,9 +130624,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The source noun maps only to CORRECTLY; sense and grammatical relationship require source review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 370 / printed 2-1-S4, rendered locally with pdftoppm and visually inspected on 2026-10-23 after source doctor passed. Findings: separate bottom row 4 security (n), below securely (adv), has CORRECTLY (adv); its non-STE component-security check is rewritten as making sure the components are correctly attached. The adverb modifies attached in a clause, not the noun security by direct substitution. See docs/it-ste-research/W1-D-P370.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 370,
     "printed_page": "2-1-S4",
@@ -130637,7 +130637,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Validate real hardware attachment criteria and service instructions separately; do not apply this physical-sense decision to information security"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P370-004",
@@ -167565,7 +167565,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `aa0fb7c17746408e9c7459cf13891519435406ce7d43cce449197eddfd65c161`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `9f713399d4d1e1d3d2a44f6fa39db0a3a8eedd47d777c40622ebad25b146c979`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
 

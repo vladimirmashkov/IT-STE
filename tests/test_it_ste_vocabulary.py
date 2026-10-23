@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1463, "prohibited": 406,
-                             "not-applicable": 148, "needs-review": 61},
+            "dispositions": {"allowed": 118, "restricted": 1463, "prohibited": 407,
+                             "not-applicable": 148, "needs-review": 60},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -163,6 +163,14 @@ class VocabularyTests(unittest.TestCase):
         self.assertNotIn("surface-damaged", scratched["permitted_contextual_alternatives"])
         self.assertIn("inspection report", scratched["examples"]["positive"]["text"])
         self.assertIn("distinct scored entry remains unresolved", scratched["rationale"])
+        security = by_id["D-P370-004"]
+        self.assertEqual(security["it_disposition"], "prohibited")
+        self.assertTrue(security["evidence"]["mechanical_ambiguities"])
+        self.assertTrue(security["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("physical IT component", security["it_definition"])
+        self.assertIn("does not prohibit independently scoped information-security", security["rationale"])
+        self.assertIn("server rack latch", security["examples"]["positive"]["text"])
+        self.assertIn("sentence rewrite", security["permitted_contextual_alternatives"][1])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

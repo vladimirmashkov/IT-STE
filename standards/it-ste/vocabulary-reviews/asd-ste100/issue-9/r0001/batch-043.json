@@ -1263,24 +1263,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, the condition of correct physical fastening in the retrieved maintenance context.",
+      "it_disposition": "prohibited",
+      "it_definition": "The condition of a named physical IT component being attached as specified by its hardware procedure.",
       "domains": [
         "general"
       ],
-      "rationale": "The single adverb alternative does not establish a noun sense; do not infer information-security coverage.",
+      "rationale": "Prohibit this physical-fastening noun sense in IT instructions; name the component and check its attachment against the applicable hardware procedure. Authenticated page 370 rewrites the noun construction as components correctly attached, not a noun/adverb substitution. Lenovo's rack-latch procedure specifies alignment and fastening actions; NIST information security is a distinct protection sense. This decision does not prohibit independently scoped information-security terminology or authorize service work. See docs/it-ste-research/W1-D-P370.md.",
       "permitted_contextual_alternatives": [
-        "correct attachment",
-        "specified fastening condition"
+        "attachment that meets the specified hardware procedure",
+        "the component is attached as specified, with a sentence rewrite"
       ],
       "examples": {
         "positive": {
-          "text": "Check that each mounting bolt meets the hardware specification.",
-          "explanation": "Uses a concrete physical criterion."
+          "text": "Check that the server rack latch is attached as specified in the hardware installation procedure.",
+          "explanation": "Names the component and controlling procedure instead of an ambiguous security condition. The real procedure must supply alignment, fasteners, checks and safety requirements; this is not a complete installation instruction."
         },
         "problematic": {
           "text": "Security means the database is protected from every attack.",
-          "explanation": "Claims an unrelated and unlimited protection state."
+          "explanation": "Imports a different information-protection sense and adds an unlimited guarantee; neither follows from the source's physical-attachment use. This example does not reject legitimate information-security terminology."
         }
       },
       "evidence": {
@@ -1301,14 +1301,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 370 / printed 2-1-S4, rendered locally with pdftoppm and visually inspected on 2026-10-23 after source doctor passed. Findings: separate bottom row 4 security (n), below securely (adv), has CORRECTLY (adv); its non-STE component-security check is rewritten as making sure the components are correctly attached. The adverb modifies attached in a clause, not the noun security by direct substitution. See docs/it-ste-research/W1-D-P370.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Validate real hardware attachment criteria and service instructions separately; do not apply this physical-sense decision to information security"
         ]
       }
     },
