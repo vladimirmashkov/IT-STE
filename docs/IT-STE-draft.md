@@ -158860,7 +158860,7 @@ Definition: Continue or maintain a stated condition up to the event described by
 
 Domains: procedures\-runbooks
 
-Rationale: The event must be observable\, and long waits need a timeout or escalation policy\.
+Rationale: The event must be observable\, and long waits need a timeout or escalation policy\. See docs\/it\-ste\-research\/W1\-D\-P418\-001\-002\.md\: RFC 3339 supports fully qualified time boundaries\, while the endpoint requirement is an IT\-STE draft editorial constraint\.
 
 Contextual alternatives:
 
@@ -158892,9 +158892,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "extraction_warnings": [],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local page 418 with pdftoppm. Findings: separate ruled row 1 is UNTIL (conj), with the Up to the time that meaning and lever/link example; spelling, POS, columns, and boundaries match the exact entry.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 418,
     "printed_page": "2-1-U6",
@@ -158931,7 +158931,7 @@ Definition: Maintain an action or state up to a named time or event expressed as
 
 Domains: procedures\-runbooks
 
-Rationale: A time boundary needs a timezone or clearly identified event\; inclusion at the boundary may require explicit wording\.
+Rationale: A time boundary needs a timezone or clearly identified event\; inclusion at the boundary may require explicit wording\. See docs\/it\-ste\-research\/W1\-D\-P418\-001\-002\.md\: RFC 3339 supports fully qualified time boundaries\, while the endpoint requirement is an IT\-STE draft editorial constraint\.
 
 Contextual alternatives:
 
@@ -158963,9 +158963,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "extraction_warnings": [],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local page 418 with pdftoppm. Findings: separate ruled row 2 is UNTIL (prep), with the Up to the time of meaning and fire-bottle/test example; spelling, POS, columns, and boundaries match the exact entry.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 418,
     "printed_page": "2-1-U6",
@@ -167581,7 +167581,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `25775f941294a3cb9d495825c2ec4b99e0eae397b3ab11965bca8802abca2bd6`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `dc46f89eef754a750c4379ad466ab3e7a032f3872358601cd154039445a251c9`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `2f00c63e446ade0b5846e1a5e53fdb42e6b8ce6d67f32f8f895a91b0136cbb6d`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-054.json` SHA-256: `d59b2d08df87c9fcb1ff97d74bd8fd9db9aade67c4393aef1413d8e02eb90b90`
 
