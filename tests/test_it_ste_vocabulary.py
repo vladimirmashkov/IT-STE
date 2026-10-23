@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1455, "prohibited": 404,
-                             "not-applicable": 148, "needs-review": 71},
+            "dispositions": {"allowed": 118, "restricted": 1455, "prohibited": 405,
+                             "not-applicable": 148, "needs-review": 70},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -80,6 +80,13 @@ class VocabularyTests(unittest.TestCase):
         self.assertTrue(precautionary["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertIn("PRECAUTION (n)", precautionary["rationale"])
         self.assertNotIn("precautionary", precautionary["examples"]["positive"]["text"])
+        temporal_phrase = by_id["D-P341-003"]
+        self.assertEqual(temporal_phrase["it_disposition"], "prohibited")
+        self.assertEqual(temporal_phrase["headword"], "process (in the process of )")
+        self.assertEqual(temporal_phrase["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertTrue(temporal_phrase["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("not the technical noun process", temporal_phrase["rationale"])
+        self.assertIn("While the service exports", temporal_phrase["examples"]["positive"]["text"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

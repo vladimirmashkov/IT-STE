@@ -1552,24 +1552,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A temporal expression indicating that a named activity is underway; the extracted phrase remains provisional.",
+      "it_disposition": "prohibited",
+      "it_definition": "A temporal expression indicating that a named activity is underway.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped-headword warning prevents a settled source decision. Prefer a direct clause that identifies the activity and actor.",
+      "rationale": "Do not use in the process of in this draft runbook sense; use while with an explicit actor and action, or during with a named activity, preserving the temporal relationship. Visual inspection confirms DURING (prep) and WHILE (conj) belong to this phrase row, not to adjacent process noun/verb entries. Google Technical Writing and Microsoft concise-writing guidance support removing unnecessary wording without changing meaning. This editorial draft prohibition is limited to the phrase, not the technical noun process or a product status. See docs/it-ste-research/W1-D-P341-002.md.",
       "permitted_contextual_alternatives": [
-        "while exporting",
+        "while the service exports the records",
         "during validation"
       ],
       "examples": {
         "positive": {
           "text": "While the service exports the records, leave the source database available.",
-          "explanation": "States the concurrent activity and required condition directly."
+          "explanation": "Preserves the concurrent activity with an explicit actor and database; the illustrative wording is not a verified export procedure."
         },
         "problematic": {
-          "text": "In the process of things, restart it.",
-          "explanation": "Neither the activity nor the restart target is identifiable."
+          "text": "In the process of exporting the records, keep it available.",
+          "explanation": "Uses the avoidable phrase and leaves the actor and the object to keep available unclear."
         }
       },
       "evidence": {
@@ -1590,14 +1590,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 341 -l 341 -singlefile -png -r 150 and visually inspected physical page 341. Findings: row 3 is process (in the process of ) (prep), wrapped across two lines, after proceed (v) and before process (n). Its alternative column contains DURING (prep) and WHILE (conj), each with its own repair example; horizontal rules separate the adjacent rows.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "source row boundaries and layout visually verified; retain editorial interpretation review"
         ]
       }
     },

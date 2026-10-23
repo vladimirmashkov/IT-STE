@@ -4257,9 +4257,9 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 71,
+    "needs-review": 70,
     "not-applicable": 148,
-    "prohibited": 404,
+    "prohibited": 405,
     "restricted": 1455
   },
   "next_entry_id": null,
@@ -113182,17 +113182,17 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: process \(in the process of \); POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: prohibited.
 
-Definition: A temporal expression indicating that a named activity is underway\; the extracted phrase remains provisional\.
+Definition: A temporal expression indicating that a named activity is underway\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped\-headword warning prevents a settled source decision\. Prefer a direct clause that identifies the activity and actor\.
+Rationale: Do not use in the process of in this draft runbook sense\; use while with an explicit actor and action\, or during with a named activity\, preserving the temporal relationship\. Visual inspection confirms DURING \(prep\) and WHILE \(conj\) belong to this phrase row\, not to adjacent process noun\/verb entries\. Google Technical Writing and Microsoft concise\-writing guidance support removing unnecessary wording without changing meaning\. This editorial draft prohibition is limited to the phrase\, not the technical noun process or a product status\. See docs\/it\-ste\-research\/W1\-D\-P341\-002\.md\.
 
 Contextual alternatives:
 
-- while exporting
+- while the service exports the records
 
 - during validation
 
@@ -113202,15 +113202,15 @@ Contextual alternatives:
 While the service exports the records, leave the source database available.
 ```
 
-Explanation: States the concurrent activity and required condition directly\.
+Explanation: Preserves the concurrent activity with an explicit actor and database\; the illustrative wording is not a verified export procedure\.
 
 #### Problematic example
 
 ```
-In the process of things, restart it.
+In the process of exporting the records, keep it available.
 ```
 
-Explanation: Neither the activity nor the restart target is identifiable\.
+Explanation: Uses the avoidable phrase and leaves the actor and the object to keep available unclear\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -113222,9 +113222,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 341 -l 341 -singlefile -png -r 150 and visually inspected physical page 341. Findings: row 3 is process (in the process of ) (prep), wrapped across two lines, after proceed (v) and before process (n). Its alternative column contains DURING (prep) and WHILE (conj), each with its own repair example; horizontal rules separate the adjacent rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 341,
     "printed_page": "2-1-P13",
@@ -113235,7 +113235,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "source row boundaries and layout visually verified; retain editorial interpretation review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P341-003",
@@ -167559,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `b1d85ad2a2fa1b0cffc0a7da929a0efb345bb9d1ad80bf284a7b245c217c50a0`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c693ce41baa27b6e58984eff6ab023ce7a2c727efe54dd753e5eec74d09baf38`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `273c3b9e683e0f4c73da3ba8f3d0a2cb62cb31ab2d4be25036a7f6524d623d58`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `a9535643afc1464dcfad3fd7ee3d8b3c50d75186193eb2e1bc708939b12f2679`
 
