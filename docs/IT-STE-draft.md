@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 56,
+    "needs-review": 55,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1467
+    "restricted": 1468
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -137451,13 +137451,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: soapy; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, containing soap in a physical cleaning solution\.
+Definition: Containing soap\, only in a cleaning solution specified for a named IT component or surface\.
 
 Domains: general
 
-Rationale: The technical\-noun reference does not establish composition or equipment compatibility\.
+Rationale: Visual verification confirms soapy \(adj\) with the cross\-reference SOAP \(TN\) and a soap\-and\-water surface\-cleaning example\. Dell\'s official cleaning guidance supports a named\, manufacturer\-specified solution and warns against direct liquid\, excess moisture\, and damaging chemicals\; it does not authorize arbitrary soapy liquids\. Restrict this draft sense to a named component or surface and its applicable procedure\.
 
 Contextual alternatives:
 
@@ -137491,9 +137491,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "SOAP technical-noun cross-reference leaves mixture, adjective scope, and permitted treatment unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 382 / printed 2-1-S16 shows soapy (adj) as a separate row with SOAP (TN) in the meaning column and a soap-and-water surface-cleaning example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 382,
     "printed_page": "2-1-S16",
@@ -137504,7 +137504,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named component or surface, permitted cleaning mixture, application method, and drying/safety conditions before operational use"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P382-004",
@@ -167569,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `8663e22d801977f746a5c34f01e969443d914c5ed297972193ae751389290f6f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `03624b76cd0e36165d34c8af1e8b1a02c517c0f18bbd1026dfe3bbef4905ceb8`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `d491be2d4151ec0a1b2e1ca3c882f994af514f9926a19f808a712d69ae3ea619`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `83bed1e5ac5fe4012c7a28ee4df325161fb26cf9d4bf777f8dfa996db1e2a81b`
 
