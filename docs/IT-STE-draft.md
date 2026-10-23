@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 84,
+    "needs-review": 83,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1443
+    "restricted": 1444
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -111756,13 +111756,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: press; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Apply physical pressure to a named key or button to activate it\; this is a provisional physical\-input sense\.
+Definition: Activate a named key or button by applying physical input\.
 
 Domains: user\-interface
 
-Rationale: The exact entry includes an apparent fragment from the following pressure\-related row\. Keep the input sense provisional until source boundaries are checked\.
+Rationale: Use \`press\` for activation of a named key or button\, including documented keyboard activation of a user\-interface control\; do not use it for an unspecified service operation\. The authenticated page separates the press row from PRESSURIZATION\, and the bounded W3C evidence is recorded in docs\/it\-ste\-research\/W1\-D\-P338\-008\.md\.
 
 Contextual alternatives:
 
@@ -111796,9 +111796,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The meaning column ends with 'The procedure that', apparently overlapping the following PRESSURIZATION row; row boundary remains unverified."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 338 with pdftoppm and visually inspected. Findings: press (v) is a distinct eighth row with clear spelling, POS, columns, row boundary, printed page 2-1-P10, approved alternative PUSH (v), and STE/non-STE examples; PRESSURIZATION (n) begins as a separate following row, so the apparent overlap is extraction ambiguity rather than a PDF row merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 338,
     "printed_page": "2-1-P10",
@@ -111808,8 +111808,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P338-008",
@@ -167570,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5fb3d8adbcaa10a56247fde08ea2dc9c3387dc15e0681741896dc01ca8fc9bea`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `cb2b2fed349391cf81d490bdbcf03faedd4da5aff09f33937002a3f7964c1fa3`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c761723827bdabf2c8b8cbf6489b67ca283993aa0a571e4a5b47126ec44e9233`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `1620932b1ba89f137545efce5241352f5b057c5c143872acaadc7ac1166c637d`
 

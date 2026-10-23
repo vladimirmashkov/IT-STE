@@ -366,12 +366,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Apply physical pressure to a named key or button to activate it; this is a provisional physical-input sense.",
+      "it_disposition": "restricted",
+      "it_definition": "Activate a named key or button by applying physical input.",
       "domains": [
         "user-interface"
       ],
-      "rationale": "The exact entry includes an apparent fragment from the following pressure-related row. Keep the input sense provisional until source boundaries are checked.",
+      "rationale": "Use `press` for activation of a named key or button, including documented keyboard activation of a user-interface control; do not use it for an unspecified service operation. The authenticated page separates the press row from PRESSURIZATION, and the bounded W3C evidence is recorded in docs/it-ste-research/W1-D-P338-008.md.",
       "permitted_contextual_alternatives": [
         "press the Enter key",
         "select the on-screen control"
@@ -404,14 +404,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 338 with pdftoppm and visually inspected. Findings: press (v) is a distinct eighth row with clear spelling, POS, columns, row boundary, printed page 2-1-P10, approved alternative PUSH (v), and STE/non-STE examples; PRESSURIZATION (n) begins as a separate following row, so the apparent overlap is extraction ambiguity rather than a PDF row merge.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "original example review"
         ]
       }
     },
