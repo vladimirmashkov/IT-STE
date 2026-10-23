@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 79,
+    "needs-review": 78,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1448
+    "restricted": 1449
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -110577,19 +110577,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PRECISION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: The explicitly defined repeatability or resolution of a measurement\, kept distinct from correctness\.
+Definition: The closeness of agreement between repeated measurements under stated conditions\; distinct from accuracy\.
 
 Domains: monitoring\-alerts
 
-Rationale: The retrieved source equates precision with accuracy\; IT measurement terminology needs a separate editorial decision\.
+Rationale: The ASD source equates precision with accuracy\, but the Vocabulary of International Metrology \(VIM\)\, 2\.15\, defines measurement precision as closeness of agreement between replicate measurements under specified conditions and warns that using it to mean accuracy is erroneous\. Restrict this draft sense to stated measurement repeatability\, intermediate precision\, or reproducibility conditions\; do not use it as a claim of closeness to the reference value\. See \`docs\/it\-ste\-research\/W1\-D\-P337\-003\.md\`\; this remains draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
-- repeatability
+- repeatability under stated conditions
 
-- numeric resolution
+- measurement resolution\, when resolution is intended
 
 #### Positive example
 
@@ -110617,9 +110617,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Source interpretation equates precision with accuracy; distinction unresolved for IT measurements."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated local ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 337 / printed page 2-1-P9. Findings: PRECISION (n) is a distinct ruled row between precisely (adv) and preferable (adj); its spelling, POS, row boundary, and temperature-indicator example match the exact source entry. The source interpretation remains mechanically extracted.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 337,
     "printed_page": "2-1-P9",
@@ -110630,7 +110630,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+      "source interpretation remains mechanically extracted; semantic scope review required"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P337-003",
@@ -167563,7 +167563,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `3754a826b567d81c11d9a5abccf09b7ecce8e00d9cc1a673677e27f152e4e80d`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5fb3d8adbcaa10a56247fde08ea2dc9c3387dc15e0681741896dc01ca8fc9bea`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5d37783fd9bb1a6a9302acebc79014fe754deebf8d96f0d141c657baae4f1d47`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c693ce41baa27b6e58984eff6ab023ce7a2c727efe54dd753e5eec74d09baf38`
 

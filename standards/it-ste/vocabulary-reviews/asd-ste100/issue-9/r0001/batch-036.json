@@ -1850,15 +1850,15 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "The explicitly defined repeatability or resolution of a measurement, kept distinct from correctness.",
+      "it_disposition": "restricted",
+      "it_definition": "The closeness of agreement between repeated measurements under stated conditions; distinct from accuracy.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The retrieved source equates precision with accuracy; IT measurement terminology needs a separate editorial decision.",
+      "rationale": "The ASD source equates precision with accuracy, but the Vocabulary of International Metrology (VIM), 2.15, defines measurement precision as closeness of agreement between replicate measurements under specified conditions and warns that using it to mean accuracy is erroneous. Restrict this draft sense to stated measurement repeatability, intermediate precision, or reproducibility conditions; do not use it as a claim of closeness to the reference value. See `docs/it-ste-research/W1-D-P337-003.md`; this remains draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
-        "repeatability",
-        "numeric resolution"
+        "repeatability under stated conditions",
+        "measurement resolution, when resolution is intended"
       ],
       "examples": {
         "positive": {
@@ -1888,14 +1888,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated local ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 337 / printed page 2-1-P9. Findings: PRECISION (n) is a distinct ruled row between precisely (adv) and preferable (adj); its spelling, POS, row boundary, and temperature-indicator example match the exact source entry. The source interpretation remains mechanically extracted.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+          "source interpretation remains mechanically extracted; semantic scope review required"
         ]
       }
     },
