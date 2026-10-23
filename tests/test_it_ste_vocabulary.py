@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1463, "prohibited": 407,
-                             "not-applicable": 148, "needs-review": 60},
+            "dispositions": {"allowed": 118, "restricted": 1465, "prohibited": 407,
+                             "not-applicable": 148, "needs-review": 58},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -171,6 +171,17 @@ class VocabularyTests(unittest.TestCase):
         self.assertIn("does not prohibit independently scoped information-security", security["rationale"])
         self.assertIn("server rack latch", security["examples"]["positive"]["text"])
         self.assertIn("sentence rewrite", security["permitted_contextual_alternatives"][1])
+        for identifier in ("D-P372-002", "D-P372-003"):
+            decision = by_id[identifier]
+            self.assertEqual(decision["it_disposition"], "restricted")
+            self.assertTrue(decision["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertTrue(by_id["D-P372-002"]["evidence"]["mechanical_ambiguities"])
+        self.assertIn("UI's selected state", by_id["D-P372-002"]["it_definition"])
+        self.assertIn("application-specific side effects", by_id["D-P372-002"]["rationale"])
+        self.assertEqual(by_id["D-P372-003"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertIn("180-degree circular arc", by_id["D-P372-003"]["it_definition"])
+        self.assertIn("not a filled half-disk", by_id["D-P372-003"]["rationale"])
+        self.assertNotIn("cable guide", by_id["D-P372-003"]["examples"]["positive"]["text"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

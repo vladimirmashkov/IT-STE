@@ -1621,24 +1621,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "The act of choosing, or the explicitly identified items chosen.",
+      "it_disposition": "restricted",
+      "it_definition": "The act of choosing named UI options, or the explicitly identified set of options in the UI's selected state.",
       "domains": [
         "general"
       ],
-      "rationale": "Selection is useful for UI state, but the compact definition appears to overlap the next row.",
+      "rationale": "Authenticated page 372 separates the action/result-of-choosing noun from the next shape definition. Restrict to named UI options and distinguish the choosing action from the selected set. WAI-ARIA listbox guidance distinguishes selected state from focus, including models where selection follows focus. Selection alone does not prove that an application operation completed; application-specific side effects require their own contract. See docs/it-ste-research/W1-D-P372.md.",
       "permitted_contextual_alternatives": [
-        "choice",
-        "selected items"
+        "choice, for the choosing action",
+        "selected options, for the resulting set"
       ],
       "examples": {
         "positive": {
           "text": "Verify the file selection before starting the import.",
-          "explanation": "Requires checking the chosen objects."
+          "explanation": "Names a chosen set in an illustrative interface where import is a separate action; verify the selected files, not merely the focused option. This is not a claim that every application defers side effects until another command."
         },
         "problematic": {
           "text": "Selection means the files were already imported.",
-          "explanation": "Confuses choice with execution."
+          "explanation": "A selected state is not evidence of completed import; any operation triggered by selection must be established by the application's documented behavior."
         }
       },
       "evidence": {
@@ -1659,14 +1659,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 372 / printed 2-1-S6, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: separate row 2 SELECTION (n) has the complete action or result of choosing definition and a system-selection example. The horizontal rule below starts SEMICIRCULAR (adj); That has the shape of belongs only to row 3. See docs/it-ste-research/W1-D-P372.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Verify actual UI selected-state semantics, focus behavior and any application-specific operation triggered by selection"
         ]
       }
     },
@@ -1683,20 +1683,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Having the shape of half a circle in a specified plane.",
+      "it_disposition": "restricted",
+      "it_definition": "Having the shape of a 180-degree circular arc in a specified plane of an IT diagram.",
       "domains": [
         "general"
       ],
-      "rationale": "The physical shape is provisionally useful for hardware diagrams, but the extraction warning requires review.",
+      "rationale": "Authenticated page 372 confirms the complete half-circle adjective definition. Restrict this draft IT use to a named planar circular arc spanning 180 degrees, not a filled half-disk, arbitrary elliptical arc or complete circle. MathWorld distinguishes semicircle from half-disk; SVG 2 defines planar arc parameters but does not make every arc semicircular. This diagram sense does not specify physical cable bend limits or hardware safety. See docs/it-ste-research/W1-D-P372.md.",
       "permitted_contextual_alternatives": [
-        "half-circle-shaped",
-        "shaped as half a circle"
+        "shaped as a 180-degree circular arc",
+        "half-circle arc in the specified plane"
       ],
       "examples": {
         "positive": {
-          "text": "The drawing shows a semicircular cable guide.",
-          "explanation": "Names a bounded geometric feature."
+          "text": "The diagram shows a semicircular arc of radius 20 px between opposite ends of its diameter.",
+          "explanation": "Names a planar circular-arc shape with a radius and diameter endpoints. The dimension is illustrative, not a cable bend requirement; a filled half-disk or a shape distorted by unequal scaling is outside this arc sense."
         },
         "problematic": {
           "text": "The semicircular path is a complete circle.",
@@ -1721,14 +1721,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 372 / printed 2-1-S6, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: separate row 3 SEMICIRCULAR has (adj) below the headword, its own complete half-circle definition and valve-flap example. Horizontal rules separate it from SELECTION above and SEND below. See docs/it-ste-research/W1-D-P372.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Verify diagram plane, circular radius, 180-degree span and any transformation; assess physical hardware constraints separately"
         ]
       }
     },

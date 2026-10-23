@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 60,
+    "needs-review": 58,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1463
+    "restricted": 1465
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -131015,19 +131015,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SELECTION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: The act of choosing\, or the explicitly identified items chosen\.
+Definition: The act of choosing named UI options\, or the explicitly identified set of options in the UI\'s selected state\.
 
 Domains: general
 
-Rationale: Selection is useful for UI state\, but the compact definition appears to overlap the next row\.
+Rationale: Authenticated page 372 separates the action\/result\-of\-choosing noun from the next shape definition\. Restrict to named UI options and distinguish the choosing action from the selected set\. WAI\-ARIA listbox guidance distinguishes selected state from focus\, including models where selection follows focus\. Selection alone does not prove that an application operation completed\; application\-specific side effects require their own contract\. See docs\/it\-ste\-research\/W1\-D\-P372\.md\.
 
 Contextual alternatives:
 
-- choice
+- choice\, for the choosing action
 
-- selected items
+- selected options\, for the resulting set
 
 #### Positive example
 
@@ -131035,7 +131035,7 @@ Contextual alternatives:
 Verify the file selection before starting the import.
 ```
 
-Explanation: Requires checking the chosen objects\.
+Explanation: Names a chosen set in an illustrative interface where import is a separate action\; verify the selected files\, not merely the focused option\. This is not a claim that every application defers side effects until another command\.
 
 #### Problematic example
 
@@ -131043,7 +131043,7 @@ Explanation: Requires checking the chosen objects\.
 Selection means the files were already imported.
 ```
 
-Explanation: Confuses choice with execution\.
+Explanation: A selected state is not evidence of completed import\; any operation triggered by selection must be established by the application\'s documented behavior\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -131055,9 +131055,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition ends with That has the shape of, apparently from the following semicircular row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 372 / printed 2-1-S6, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: separate row 2 SELECTION (n) has the complete action or result of choosing definition and a system-selection example. The horizontal rule below starts SEMICIRCULAR (adj); That has the shape of belongs only to row 3. See docs/it-ste-research/W1-D-P372.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 372,
     "printed_page": "2-1-S6",
@@ -131068,7 +131068,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Verify actual UI selected-state semantics, focus behavior and any application-specific operation triggered by selection"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P372-002",
@@ -131089,27 +131089,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SEMICIRCULAR; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Having the shape of half a circle in a specified plane\.
+Definition: Having the shape of a 180\-degree circular arc in a specified plane of an IT diagram\.
 
 Domains: general
 
-Rationale: The physical shape is provisionally useful for hardware diagrams\, but the extraction warning requires review\.
+Rationale: Authenticated page 372 confirms the complete half\-circle adjective definition\. Restrict this draft IT use to a named planar circular arc spanning 180 degrees\, not a filled half\-disk\, arbitrary elliptical arc or complete circle\. MathWorld distinguishes semicircle from half\-disk\; SVG 2 defines planar arc parameters but does not make every arc semicircular\. This diagram sense does not specify physical cable bend limits or hardware safety\. See docs\/it\-ste\-research\/W1\-D\-P372\.md\.
 
 Contextual alternatives:
 
-- half\-circle\-shaped
+- shaped as a 180\-degree circular arc
 
-- shaped as half a circle
+- half\-circle arc in the specified plane
 
 #### Positive example
 
 ```
-The drawing shows a semicircular cable guide.
+The diagram shows a semicircular arc of radius 20 px between opposite ends of its diameter.
 ```
 
-Explanation: Names a bounded geometric feature\.
+Explanation: Names a planar circular\-arc shape with a radius and diameter endpoints\. The dimension is illustrative\, not a cable bend requirement\; a filled half\-disk or a shape distorted by unequal scaling is outside this arc sense\.
 
 #### Problematic example
 
@@ -131129,9 +131129,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 372 / printed 2-1-S6, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: separate row 3 SEMICIRCULAR has (adj) below the headword, its own complete half-circle definition and valve-flap example. Horizontal rules separate it from SELECTION above and SEND below. See docs/it-ste-research/W1-D-P372.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 372,
     "printed_page": "2-1-S6",
@@ -131142,7 +131142,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Verify diagram plane, circular radius, 180-degree span and any transformation; assess physical hardware constraints separately"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P372-003",
@@ -167565,7 +167565,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `9f713399d4d1e1d3d2a44f6fa39db0a3a8eedd47d777c40622ebad25b146c979`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
 
