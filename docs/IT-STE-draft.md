@@ -135391,7 +135391,7 @@ Definition: Provisionally\, slide unintentionally across a physical supporting s
 
 Domains: general
 
-Rationale: The technical\-noun reference does not establish the verb or safe handling response\.
+Rationale: Visual verification confirms that the ASD row is skid \(v\) with the cross\-reference SKID \(TN\) and a car\-skidding example\; it does not establish an IT verb sense\. Lenovo\'s official server\-rack procedure uses slide for controlled hardware movement and documents separate lifting\/rail safety conditions\, which supports the contextual alternative but not this headword\. Retain needs\-review pending a competent IT source or owner decision on whether accidental hardware sliding is a publishable sense\.
 
 Contextual alternatives:
 
@@ -135425,9 +135425,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "SKID technical-noun cross-reference leaves the extracted verb sense unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 379 / printed 2-1-S13 shows skid (v) as a separate row with SKID (TN) in the meaning column and a car-skidding example; the cross-reference does not provide an IT verb sense.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 379,
     "printed_page": "2-1-S13",
@@ -135438,7 +135438,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Find a competent IT source or owner decision for an accidental physical-hardware sliding sense before changing disposition"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P379-002",
@@ -167569,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `8663e22d801977f746a5c34f01e969443d914c5ed297972193ae751389290f6f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `40ed3a1a1ec2ee7b59c06002d8e36752d91940451ff3247eeb38100fce38378d`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `03624b76cd0e36165d34c8af1e8b1a02c517c0f18bbd1026dfe3bbef4905ceb8`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `83bed1e5ac5fe4012c7a28ee4df325161fb26cf9d4bf777f8dfa996db1e2a81b`
 
