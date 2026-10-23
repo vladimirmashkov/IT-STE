@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 111,
+    "needs-review": 110,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1417
+    "restricted": 1418
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -93432,13 +93432,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MATING; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Designed to contact or fit a corresponding physical part\.
 
 Domains: procedures\-runbooks
 
-Rationale: The cell contains Not glossy\, apparently from a following finish\-related row\; boundaries need review\.
+Rationale: The authenticated PDF confirms a distinct MATING \(adj\) row with the meaning Made to touch\, followed by a separate MATT \(or MATTE\) row\. Retain a bounded physical\-fit sense for IT procedures\; physical mating does not establish software trust or a security relationship\. See docs\/it\-ste\-research\/W1\-D\-P308\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -93472,9 +93472,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 308 -l 308 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-308; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct MATING (adj) row has the Made to touch meaning and its own example, followed by a separate MATT (or MATTE) row; the extracted Not glossy text is not a row-boundary merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 308,
     "printed_page": "2-1-M4",
@@ -93484,8 +93484,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P308-004",
@@ -167556,7 +167555,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `03e2a65e638dafa8db5ad2a43b9bc43eb644073a35176f9a527003e2c649ae13`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `4e8fa26cc2d2e7743e31acdaf0d95bd8f755d4326b39743629aaab149985f400`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `ee129bfc8b3428043cda4eb69cea852a512ca99b8757744f39504e343d838f99`
 
