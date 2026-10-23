@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 52,
+    "needs-review": 51,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1471
+    "restricted": 1472
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -140205,13 +140205,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: splined; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, having physical grooves or teeth that engage a mating part\.
+Definition: Having specified grooves or teeth that engage a named mating mechanical part in IT hardware\.
 
 Domains: general
 
-Rationale: The technical\-noun reference does not establish geometry or an IT software spline sense\.
+Rationale: Visual verification confirms a separate splined \(adj\) row whose meaning column contains the technical\-noun cross\-reference SPLINE \(TN\)\, with a drive\-shaft example\; the unresolved question is IT scope\, not a row\-boundary error\. Lenovo\'s official SR650 V3 rack procedure documents named physical components and controlled mechanical installation\, but does not use or define splined\. Restrict this draft sense to a named IT mechanical coupling and its specified mating profile\; do not apply it to mathematical splines\, API interpolation\, data processing\, or unspecified geometry\. See docs\/it\-ste\-research\/W1\-D\-P386\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -140245,9 +140245,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "SPLINE technical-noun cross-reference leaves adjective geometry and intended scope unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 386 / printed 2-1-S20 shows splined (adj) as a separate row between splash (v) and split (adj); its meaning column contains SPLINE (TN), and its examples refer to a drive shaft with splines. The cross-reference leaves IT scope open but is not a row-boundary error.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 386,
     "printed_page": "2-1-S20",
@@ -140258,7 +140258,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named IT mechanical part and mating profile before using this adjective; do not apply it to mathematical or software spline behavior"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P386-004",
@@ -167571,7 +167571,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `d491be2d4151ec0a1b2e1ca3c882f994af514f9926a19f808a712d69ae3ea619`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `dd7bc63c70a1dbec25f3031200d3a91c4dc6e27413efec7597679ce1679109c9`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `cd79512de294312a3f89ec12edc9d331e2f94b2d50e136fb4d12b51eb863a8af`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `e80583ea2b2c5157f21c2ff65d6a220395b4e47622f670654de32859545118cb`
 
