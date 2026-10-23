@@ -75539,7 +75539,7 @@ Definition: Using pressurized liquid to transmit force in physical equipment\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The adjective cell also contains the following adverb\'s apparent definition\; source boundaries need review\.
+Rationale: Visual inspection resolves the row boundary\, but the proposed cloud\-infrastructure scope is blocked\: the source meaning is physical hydraulic equipment and no competent IT\-specific usage has been verified\. See docs\/it\-ste\-research\/W1\-D\-P273\.md\.
 
 Contextual alternatives:
 
@@ -75571,9 +75571,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell includes wording apparently belonging to the following adverb row; PDF layout and visual checks not performed."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 273 -l 273 -png -r 180 and visually inspected physical page 273. Findings: row 4 is bounded by hurt (v) above and HYDRAULICALLY (adv) below; the row reads HYDRAULIC (adj) and `Related to, or operated by, pressurized liquid`.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 273,
     "printed_page": "2-1-H7",
@@ -75611,7 +75611,7 @@ Definition: By power transmitted through pressurized liquid\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped\-headword warning requires review before settling this adverb\.
+Rationale: Visual inspection resolves the wrapped row boundary\, but the proposed cloud\-infrastructure scope is blocked\: the source meaning is hydraulic power in physical equipment and no competent IT\-specific usage has been verified\. See docs\/it\-ste\-research\/W1\-D\-P273\.md\.
 
 Contextual alternatives:
 
@@ -75645,9 +75645,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 273 -l 273 -png -r 180 and visually inspected physical page 273. Findings: row 5 follows HYDRAULIC (adj), precedes the page end, and shows HYDRAULICALLY (adv) as a wrapped two-line headword with `With hydraulic power` in its own meaning cell.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 273,
     "printed_page": "2-1-H7",
@@ -167566,7 +167566,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-023.json` SHA-256: `9082c656c5e4aef637f5d11c989c5665540634a9b6c92fc68702879dc5c78771`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `6e86f758cf72e87b6046a4b8110a70b0eb3b4c05cd1e1656a0ba2eb6652991a9`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `e0ac8417b459ae99f9d28d353142bc099e5154394b91d4a42e74f645f258be62`
 
