@@ -156301,7 +156301,7 @@ Definition: Without observed physical damage under a named inspection scope\.
 
 Domains: procedures\-runbooks
 
-Rationale: The retrieved meaning includes an apparent fragment from the next row\; visible condition alone does not prove functionality\.
+Rationale: The retrieved meaning includes an apparent fragment from the next row\; visible condition alone does not prove functionality\. NASA\-STD\-6016C supports a physical hardware damage\/contamination boundary but does not settle a general IT vocabulary sense\; see docs\/it\-ste\-research\/W1\-D\-P413\-009\-010\.md\.
 
 Contextual alternatives:
 
@@ -156335,9 +156335,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Apparent following-row definition fragment."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 9 is a distinct undamaged (adj) entry with NOT DAMAGED and the skin example; its boundaries do not include the following UNDEMANDED row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 413,
     "printed_page": "2-1-U1",
@@ -156347,8 +156347,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P413-009",
@@ -156375,7 +156374,7 @@ Definition: Occurring without an identified initiating request or apparent cause
 
 Domains: support\-troubleshooting
 
-Rationale: The unusual headword and wrapped extraction require verification before choosing between uncommanded and unexplained behavior\.
+Rationale: The unusual headword and wrapped extraction require verification before choosing between uncommanded\, unsolicited\, and unexplained behavior\. RFC 6455 uses unsolicited for a protocol message sent without a preceding request\, but that is not evidence that this source headword is a safe general IT term\; see docs\/it\-ste\-research\/W1\-D\-P413\-009\-010\.md\.
 
 Contextual alternatives:
 
@@ -156409,9 +156408,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: row 10 is a distinct wrapped UNDEMANDED (adj) entry; the meaning reads That occurs without an apparent cause, the movement example is present, and no non-STE example is printed.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 413,
     "printed_page": "2-1-U1",
@@ -156421,8 +156420,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 10,
     "source_entry_id": "D-P413-010",
@@ -167581,7 +167579,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `d2af02756f155d55ee26eed1f4a2bec5e0242af3d0839f64ece069e4ad690704`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `9c3c96e18577d0b9df3de9aa7c4cba140c885491554d2eee6c02b9fce31d5ffe`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `dc46f89eef754a750c4379ad466ab3e7a032f3872358601cd154039445a251c9`
 
