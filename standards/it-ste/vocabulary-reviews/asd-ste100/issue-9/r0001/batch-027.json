@@ -1969,12 +1969,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "A deviation from a stated expected pattern or physical condition.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "The cell includes the apparent following adverb definition Not regularly.",
+      "rationale": "The authenticated PDF confirms one irregularity (n) row with multiple alternatives and examples. Retain a bounded observation sense for IT use; an irregularity can indicate an anomaly or defect, but does not by itself prove an attack, cause, or required corrective action. See docs/it-ste-research/W1-D-P290.md for the draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "deviation",
         "defect, if verified"
@@ -2007,14 +2007,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 290 -l 290 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-290; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: one irregularity (n) row contains the DAMAGE, DEFECT, IRREGULAR, and UNUSUAL alternatives with their examples, and ends before the separate IRREGULARLY (adv) row; the apparent following text is not a row-boundary merge.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },
@@ -2031,12 +2030,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Without a consistent stated timing or spatial pattern.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "Wrapped-headword warning requires source review; record actual intervals when known.",
+      "rationale": "The authenticated PDF confirms a separate IRREGULARLY (adv) row with the meaning Not regularly despite the wrapped-headword warning. Retain a bounded timing/spatial observation sense for IT use; irregular occurrence does not by itself establish a defect, cause, severity, or attack. See docs/it-ste-research/W1-D-P290.md for the draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "at uneven intervals",
         "without a fixed pattern"
@@ -2069,14 +2068,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 290 -l 290 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-290; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: separate IRREGULARLY (adv) row follows the irregularity (n) row and has its own meaning and example.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },

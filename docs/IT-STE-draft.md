@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 121,
+    "needs-review": 119,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1408
+    "restricted": 1410
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -84024,13 +84024,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: irregularity; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: A deviation from a stated expected pattern or physical condition\.
 
 Domains: monitoring\-alerts
 
-Rationale: The cell includes the apparent following adverb definition Not regularly\.
+Rationale: The authenticated PDF confirms one irregularity \(n\) row with multiple alternatives and examples\. Retain a bounded observation sense for IT use\; an irregularity can indicate an anomaly or defect\, but does not by itself prove an attack\, cause\, or required corrective action\. See docs\/it\-ste\-research\/W1\-D\-P290\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -84064,9 +84064,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 290 -l 290 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-290; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: one irregularity (n) row contains the DAMAGE, DEFECT, IRREGULAR, and UNUSUAL alternatives with their examples, and ends before the separate IRREGULARLY (adv) row; the apparent following text is not a row-boundary merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 290,
     "printed_page": "2-1-I16",
@@ -84076,8 +84076,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P290-004",
@@ -84098,13 +84097,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: IRREGULARLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Without a consistent stated timing or spatial pattern\.
 
 Domains: monitoring\-alerts
 
-Rationale: Wrapped\-headword warning requires source review\; record actual intervals when known\.
+Rationale: The authenticated PDF confirms a separate IRREGULARLY \(adv\) row with the meaning Not regularly despite the wrapped\-headword warning\. Retain a bounded timing\/spatial observation sense for IT use\; irregular occurrence does not by itself establish a defect\, cause\, severity\, or attack\. See docs\/it\-ste\-research\/W1\-D\-P290\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -84138,9 +84137,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 290 -l 290 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-290; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: separate IRREGULARLY (adv) row follows the irregularity (n) row and has its own meaning and example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 290,
     "printed_page": "2-1-I16",
@@ -84150,8 +84149,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P290-005",
@@ -167560,7 +167558,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `d03ed582a3cab87601da0004eeaed0a623c57e2c559ae83753040040e8de3282`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `0081f513b94b357d3e0e25baed7566ca6520e7e5f5092c6c636246ce15ab74b9`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `8c58c3854abb6a889baa24d6ead3943ff6d5f0fa34f5ff2a6a85f3cd1d82f8b9`
 
