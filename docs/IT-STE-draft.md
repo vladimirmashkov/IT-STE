@@ -147489,7 +147489,7 @@ Definition: In a way that preserves matching positions about a stated layout axi
 
 Domains: user\-interface
 
-Rationale: A spatial adverb needs a geometric reference\, not an assumed equality of permissions\.
+Rationale: The authenticated page confirms a distinct SYMMETRICALLY \(adv\) row with a wrapped headword\, the meaning In a symmetrical manner\, and a physical elevator example\. Visual verification resolves the row boundary\, but the IT scope still spans UI layout\, diagrams\, data structures\, mathematical uses\, and cryptographic terminology\. W3C WCAG 2\.2 is relevant to accessible non\-text content but does not settle this controlled vocabulary sense\. Retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
 
 Contextual alternatives:
 
@@ -147521,9 +147521,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 397 -l 397 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: on physical page 397 (2-1-S31), SYMMETRICALLY (adv) is a distinct ruled row below SYMMETRICAL (adj) and above SYMPTOM (n), with the wrapped headword and its own elevator example. Layout is resolved but cross-domain IT scope remains open.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 397,
     "printed_page": "2-1-S31",
@@ -147534,7 +147534,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "Select the intended UI/geometric scope and distinguish it from data, mathematical, cryptographic, or permission semantics"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P397-007",
@@ -167577,7 +167577,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d7b67ea6a0609ebb41b18254f455906d95abb9e1f37943e69f8fb451b86e71cf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `9c5b6e779b3ed5f8c7f6f44c4bcf4c4bbecb2e2e33b4ea0eee037cc73d283461`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 
