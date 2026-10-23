@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 118,
+    "needs-review": 116,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1410
+    "restricted": 1412
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -90230,13 +90230,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: LONG; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Having a specified substantial physical extent or duration\.
 
 Domains: software\-documentation
 
-Rationale: The adjective cell includes WHILE\, apparently belonging to the following conjunction row\.
+Rationale: The authenticated PDF confirms a distinct LONG \(adj\) row with separate length and duration examples\. Retain a bounded physical\-extent\/duration sense for IT use\; specify the measured quantity and unit\, and do not use vague length to imply performance or security properties\. See docs\/it\-ste\-research\/W1\-D\-P302\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -90270,9 +90270,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 302 -l 302 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-302; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct LONG (adj) row contains the LONG/LONGER/LONGEST variants and three separate length/duration examples, followed by a separate long (as long as) (conj) row; the extracted WHILE text is not a row-boundary merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 302,
     "printed_page": "2-1-L8",
@@ -90282,8 +90282,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P302-005",
@@ -90304,13 +90303,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: long \(as long as\); POS: conj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: During the time that a specified condition holds\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires source review of this extracted conjunction phrase\.
+Rationale: The authenticated PDF confirms a separate long \(as long as\) \(conj\) row with WHILE \(conj\) as its alternative\. Retain a bounded condition sense for IT use\; state an observable condition and its scope\, and do not treat vague persistence as a safety criterion\. See docs\/it\-ste\-research\/W1\-D\-P302\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -90344,9 +90343,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 302 -l 302 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-302; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: separate long (as long as) (conj) row follows the LONG (adj) row and has its own WHILE (conj) alternative, meaning, and example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 302,
     "printed_page": "2-1-L8",
@@ -90356,8 +90355,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P302-006",
@@ -167561,7 +167559,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `1e31339585355b38d82ca89e675b673226355a1cbaaf05a12b37e50bfd24b6b4`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `19165f77226fd887f33ef0e6146a1f63b979e6b8ca4f7c4079083c54dafb1a47`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `9af0a77c5ad875571945f714befbb6da78efef7159ac39bc0022c6834464e2bf`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `862206d4fc9b8e4c27bc7a9238888f59d0e5e98a1f16e435ed5dcc9dd03e8dde`
 
