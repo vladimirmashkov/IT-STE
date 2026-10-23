@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 83,
+    "needs-review": 82,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1444
+    "restricted": 1445
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -111829,13 +111829,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PRESSURIZATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A controlled operation that increases pressure in a physical equipment system\; no software\-load sense is proposed\.
+Definition: The controlled operation of supplying or increasing pressure in a named physical equipment system\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The wrapped\-headword warning requires source review even though a physical\-pressure reading is plausible\. Any equipment procedure needs specialist limits\.
+Rationale: Use only for a controlled pressure operation in a named physical equipment system under its procedure\; do not use \`pressurization\` as a metaphor for software load\, traffic\, or urgency\. The authenticated row verification and bounded physical\-pressure research are recorded in docs\/it\-ste\-research\/W1\-D\-P338\-009\.md\.
 
 Contextual alternatives:
 
@@ -111846,10 +111846,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Use the cooling-system procedure for the specified pressure test.
+Continue pressurization for 10 minutes during the specified chamber test.
 ```
 
-Explanation: Refers to a reviewed physical procedure rather than inventing a pressure limit\.
+Explanation: Names a physical procedure and duration without inventing an equipment pressure limit\.
 
 #### Problematic example
 
@@ -111869,9 +111869,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 338 with pdftoppm and visually inspected. Findings: PRESSURIZATION (n) is a distinct ninth row with wrapped headword, clear spelling, POS, columns, row boundaries, printed page 2-1-P10, approved meaning, and STE example; PRESSURIZE (v) follows as a separate row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 338,
     "printed_page": "2-1-P10",
@@ -111881,8 +111881,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "original example review"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P338-009",
@@ -167569,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5fb3d8adbcaa10a56247fde08ea2dc9c3387dc15e0681741896dc01ca8fc9bea`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c761723827bdabf2c8b8cbf6489b67ca283993aa0a571e4a5b47126ec44e9233`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c56cf0587f27cc235940a5a7ce19599c8127ebb4b3b2485ab3a6246628acdd3c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `1620932b1ba89f137545efce5241352f5b057c5c143872acaadc7ac1166c637d`
 

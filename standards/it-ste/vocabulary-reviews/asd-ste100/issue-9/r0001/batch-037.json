@@ -427,20 +427,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A controlled operation that increases pressure in a physical equipment system; no software-load sense is proposed.",
+      "it_disposition": "restricted",
+      "it_definition": "The controlled operation of supplying or increasing pressure in a named physical equipment system.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The wrapped-headword warning requires source review even though a physical-pressure reading is plausible. Any equipment procedure needs specialist limits.",
+      "rationale": "Use only for a controlled pressure operation in a named physical equipment system under its procedure; do not use `pressurization` as a metaphor for software load, traffic, or urgency. The authenticated row verification and bounded physical-pressure research are recorded in docs/it-ste-research/W1-D-P338-009.md.",
       "permitted_contextual_alternatives": [
         "increase the specified fluid pressure",
         "follow the equipment pressure procedure"
       ],
       "examples": {
         "positive": {
-          "text": "Use the cooling-system procedure for the specified pressure test.",
-          "explanation": "Refers to a reviewed physical procedure rather than inventing a pressure limit."
+          "text": "Continue pressurization for 10 minutes during the specified chamber test.",
+          "explanation": "Names a physical procedure and duration without inventing an equipment pressure limit."
         },
         "problematic": {
           "text": "Pressurization of the request queue improves throughput.",
@@ -465,14 +465,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 338 with pdftoppm and visually inspected. Findings: PRESSURIZATION (n) is a distinct ninth row with wrapped headword, clear spelling, POS, columns, row boundaries, printed page 2-1-P10, approved meaning, and STE example; PRESSURIZE (v) follows as a separate row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "original example review"
         ]
       }
     },
