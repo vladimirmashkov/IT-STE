@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 70,
+    "needs-review": 68,
     "not-applicable": 148,
-    "prohibited": 405,
-    "restricted": 1455
+    "prohibited": 406,
+    "restricted": 1456
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -115075,19 +115075,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: provide; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Supply a named item to a specified recipient or interface\; this verb reading is provisional\.
+Definition: Supply a named item to a specified recipient or interface\.
 
 Domains: api
 
-Rationale: The meaning column also contains a conditional conjunction associated with the next row\. Keep the verb sense separate and record the unresolved overlap\.
+Rationale: Restricted to supplying a named item to an identified recipient or interface\, not generic access\, permission grants\, or connectivity\. Visual inspection assigns GIVE and SUPPLY to the verb and IF only to the next conjunction row\; preserve the overlap as historical extraction evidence\. RFC 6750 distinguishes sending a bearer token from its validity\/scope\, and GitHub documents endpoint\-specific permissions\. Prefer a concrete include or supply instruction\; secret tokens require a specified authorized destination and protected transport\, never a support\-report substitution\. See docs\/it\-ste\-research\/W1\-D\-P344\-001\.md\.
 
 Contextual alternatives:
 
 - supply the identifier
 
-- include the token in the request
+- include the bearer token in the Authorization header of the HTTPS request to the intended resource server
 
 #### Positive example
 
@@ -115115,9 +115115,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "IF appears in the verb's meaning column next to the following provided (that) conjunction row; possible adjacent-row overlap is unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 344 -l 344 -singlefile -png -r 150 and visually inspected physical page 344. Findings: row 6 is provide (v), after PROTRUDE and before provided (that) (conj); GIVE and SUPPLY each have a separate example within this verb row. IF is below the full horizontal row boundary in the following conjunction row, not a verb alternative.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 344,
     "printed_page": "2-1-P16",
@@ -115128,7 +115128,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "source row boundaries and layout visually verified; retain editorial interpretation review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P344-006",
@@ -115149,13 +115149,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: provided \(that\); POS: conj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: prohibited.
 
-Definition: Introduce a condition that must hold for a stated action or result\; the extracted expression remains provisional\.
+Definition: Introduce a stated condition for a named action or result\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped\-headword warning requires review\. A direct if\-clause can state the operational condition without settling source typography\.
+Rationale: Do not use provided \(that\) in this draft conditional runbook sense\; rewrite with an explicit if\-clause before the named action\. The authenticated PDF gives IF in this separate conjunction row\, and Google\'s sentence\-structure guidance supports stating the condition before the instruction\. Preserve the intended condition\: only if is contextual for a genuinely necessary condition\, not an automatic substitute for if or a sufficient\-condition instruction\. This is a bounded editorial draft prohibition\, not a ban on the verb provide\. See docs\/it\-ste\-research\/W1\-D\-P344\-001\.md\.
 
 Contextual alternatives:
 
@@ -115169,7 +115169,7 @@ Contextual alternatives:
 If the checksum matches, continue with installation.
 ```
 
-Explanation: Connects a concrete condition to the next action\.
+Explanation: Illustrates condition\-before\-action wording\; checksum equality alone is not a complete installation authorization or security policy\.
 
 #### Problematic example
 
@@ -115189,9 +115189,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 344 -l 344 -singlefile -png -r 150 and visually inspected physical page 344. Findings: row 7 is provided (that) with (conj) on the next line, after provide (v) and before the page end. IF (conj) and its replacement-part example are enclosed in this row's separate columns and horizontal boundaries.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 344,
     "printed_page": "2-1-P16",
@@ -115202,7 +115202,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "source row boundaries and layout visually verified; retain editorial interpretation review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P344-007",
@@ -167561,7 +167561,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `273c3b9e683e0f4c73da3ba8f3d0a2cb62cb31ab2d4be25036a7f6524d623d58`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `a9535643afc1464dcfad3fd7ee3d8b3c50d75186193eb2e1bc708939b12f2679`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `66f8029843d022a81ce0963c26bac9f992508f02f7acfb3957dc2f855abec7dd`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `f5efd07e6b636208138bb3d23c113307d89c8b3e9a4ba48fe6eab9ad7c51bcc4`
 

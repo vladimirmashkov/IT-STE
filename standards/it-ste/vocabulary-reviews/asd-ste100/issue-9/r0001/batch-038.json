@@ -663,15 +663,15 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Supply a named item to a specified recipient or interface; this verb reading is provisional.",
+      "it_disposition": "restricted",
+      "it_definition": "Supply a named item to a specified recipient or interface.",
       "domains": [
         "api"
       ],
-      "rationale": "The meaning column also contains a conditional conjunction associated with the next row. Keep the verb sense separate and record the unresolved overlap.",
+      "rationale": "Restricted to supplying a named item to an identified recipient or interface, not generic access, permission grants, or connectivity. Visual inspection assigns GIVE and SUPPLY to the verb and IF only to the next conjunction row; preserve the overlap as historical extraction evidence. RFC 6750 distinguishes sending a bearer token from its validity/scope, and GitHub documents endpoint-specific permissions. Prefer a concrete include or supply instruction; secret tokens require a specified authorized destination and protected transport, never a support-report substitution. See docs/it-ste-research/W1-D-P344-001.md.",
       "permitted_contextual_alternatives": [
         "supply the identifier",
-        "include the token in the request"
+        "include the bearer token in the Authorization header of the HTTPS request to the intended resource server"
       ],
       "examples": {
         "positive": {
@@ -701,14 +701,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 344 -l 344 -singlefile -png -r 150 and visually inspected physical page 344. Findings: row 6 is provide (v), after PROTRUDE and before provided (that) (conj); GIVE and SUPPLY each have a separate example within this verb row. IF is below the full horizontal row boundary in the following conjunction row, not a verb alternative.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "source row boundaries and layout visually verified; retain editorial interpretation review"
         ]
       }
     },
@@ -725,12 +725,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Introduce a condition that must hold for a stated action or result; the extracted expression remains provisional.",
+      "it_disposition": "prohibited",
+      "it_definition": "Introduce a stated condition for a named action or result.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped-headword warning requires review. A direct if-clause can state the operational condition without settling source typography.",
+      "rationale": "Do not use provided (that) in this draft conditional runbook sense; rewrite with an explicit if-clause before the named action. The authenticated PDF gives IF in this separate conjunction row, and Google's sentence-structure guidance supports stating the condition before the instruction. Preserve the intended condition: only if is contextual for a genuinely necessary condition, not an automatic substitute for if or a sufficient-condition instruction. This is a bounded editorial draft prohibition, not a ban on the verb provide. See docs/it-ste-research/W1-D-P344-001.md.",
       "permitted_contextual_alternatives": [
         "if",
         "only if, for a necessary condition"
@@ -738,7 +738,7 @@
       "examples": {
         "positive": {
           "text": "If the checksum matches, continue with installation.",
-          "explanation": "Connects a concrete condition to the next action."
+          "explanation": "Illustrates condition-before-action wording; checksum equality alone is not a complete installation authorization or security policy."
         },
         "problematic": {
           "text": "Continue, provided that everything is fine.",
@@ -763,14 +763,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 344 -l 344 -singlefile -png -r 150 and visually inspected physical page 344. Findings: row 7 is provided (that) with (conj) on the next line, after provide (v) and before the page end. IF (conj) and its replacement-part example are enclosed in this row's separate columns and horizontal boundaries.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "source row boundaries and layout visually verified; retain editorial interpretation review"
         ]
       }
     },

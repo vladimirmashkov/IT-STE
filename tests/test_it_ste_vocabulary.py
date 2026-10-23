@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1455, "prohibited": 405,
-                             "not-applicable": 148, "needs-review": 70},
+            "dispositions": {"allowed": 118, "restricted": 1456, "prohibited": 406,
+                             "not-applicable": 148, "needs-review": 68},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -87,6 +87,13 @@ class VocabularyTests(unittest.TestCase):
         self.assertTrue(temporal_phrase["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertIn("not the technical noun process", temporal_phrase["rationale"])
         self.assertIn("While the service exports", temporal_phrase["examples"]["positive"]["text"])
+        for identifier, disposition in (("D-P344-006", "restricted"), ("D-P344-007", "prohibited")):
+            decision = by_id[identifier]
+            self.assertEqual(decision["it_disposition"], disposition)
+            self.assertTrue(decision["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertTrue(by_id["D-P344-006"]["evidence"]["mechanical_ambiguities"])
+        self.assertEqual(by_id["D-P344-007"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertIn("not an automatic substitute", by_id["D-P344-007"]["rationale"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 
