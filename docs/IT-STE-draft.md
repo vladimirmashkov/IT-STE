@@ -117975,7 +117975,7 @@ Definition: Provisionally\, corresponding to an actual observed state rather tha
 
 Domains: software\-documentation
 
-Rationale: The exact adjective row gives only a verb alternative whose relation to the headword is unclear\. Do not infer whether actual\, genuine\, or agreement\-related meaning was intended\.
+Rationale: The exact adjective row is visually confirmed as a separate row with AGREE \(v\) in the alternatives column and a gauge example\, but that source mapping does not establish whether the IT sense is actual\, genuine\, verified\, or non\-simulated\. RFC 9110 provides related representation\-state and validator concepts without selecting one of those senses\; retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P351\-001\.md\.
 
 Contextual alternatives:
 
@@ -118009,9 +118009,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The adjective real is linked only to AGREE (v); the intended source sense cannot be established from this exact meaning column alone."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 351 -l 351 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 351 (2-1-R3), real (adj) is a distinct first row; AGREE (v) is in its alternatives column and the gauge/fuel text is its non-STE example. A horizontal rule separates the row from REAR (adj). The layout confirms spelling, POS, row boundary, and example association, but does not resolve the adjective's intended IT sense or repair the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 351,
     "printed_page": "2-1-R3",
@@ -167569,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `a9535643afc1464dcfad3fd7ee3d8b3c50d75186193eb2e1bc708939b12f2679`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `fe087a53d5ca67a874e39b79a63f047d7f351b2d2201b5b8cf83ad4c6be0c9a2`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `f5efd07e6b636208138bb3d23c113307d89c8b3e9a4ba48fe6eab9ad7c51bcc4`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-040.json` SHA-256: `9725bab3b75cd7b783b5714a46002a448b86746cecaa36b9642865756abdd935`
 
