@@ -787,15 +787,15 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Introduce a stated condition on an action or outcome; no sense of supplying an item is intended.",
+      "it_disposition": "restricted",
+      "it_definition": "Introduce an explicit condition for a named action or outcome; do not use for supplying an item.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped-headword warning is retained. Prefer a direct condition with a measurable check rather than resolve the source phrase silently.",
+      "rationale": "The authenticated PDF confirms the wrapped `providing (that)` conjunction and its `IF (conj)` alternative. Restrict this draft sense to an explicit prerequisite and named action or outcome; Kubernetes operational documentation uses direct `if` conditions for such prerequisites. Prefer `if` in new technical prose, and do not confuse the conjunction with providing or supplying an item. See `docs/it-ste-research/W1-D-P345-001.md`; this remains draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "if",
-        "when the stated prerequisite holds"
+        "when the named prerequisite holds"
       ],
       "examples": {
         "positive": {
@@ -825,14 +825,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated local ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; visually inspected physical PDF page 345 / printed page 2-1-P17. Findings: providing (that) is a distinct first row, its conjunction label is wrapped onto the next line, IF (conj) is the alternative, and the example remains within the row. The source interpretation remains mechanically extracted.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "source interpretation remains mechanically extracted; semantic scope review required"
         ]
       }
     },
