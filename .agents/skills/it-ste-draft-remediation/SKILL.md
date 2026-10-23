@@ -1,11 +1,11 @@
 ---
 name: it-ste-draft-remediation
-description: Continue the IT-STE draft vocabulary remediation in one bounded W1/W2/W3 research slice, preserving canonical provenance, validating the authenticated ASD source, updating the handoff, and proposing but never executing commits.
+description: Continue the IT-STE draft vocabulary remediation in one bounded W1/W2/W3 research slice, preserve canonical provenance, validate the authenticated ASD source, update the handoff, and automatically commit only the reviewed changes from this run.
 ---
 
 # IT-STE draft remediation
 
-When this skill is invoked in the IT-STE repository, continue the draft remediation workflow defined by `AGENTS.md` and the current checkpoint. Do not ask the user to repeat the standing assignment.
+When this skill is invoked in the IT-STE repository, continue the draft remediation workflow defined by `AGENTS.md` and the current checkpoint. Do not ask the user to repeat the standing assignment. This skill has explicit permission to create one safe commit at the end of a successful run, but never to include unrelated or pre-existing user work.
 
 ## Startup and scope
 
@@ -60,7 +60,25 @@ git --no-pager diff --name-status --find-renames
 git --no-pager diff --cached --name-status --find-renames
 ```
 
-Review every modified, added, deleted, renamed, untracked, binary, mode, and submodule change. Read new/untracked content, inspect deleted content from Git, and distinguish pre-existing user work from changes made by this skill. Do not stage, commit, release, publish, or revert unrelated work.
+Review every modified, added, deleted, renamed, untracked, binary, mode, and submodule change. Read new/untracked content, inspect deleted content from Git, and distinguish pre-existing user work from changes made by this skill. Do not stage or commit until this review is complete. Never stage, commit, release, publish, or revert unrelated work.
+
+## Automatic commit policy
+
+After validation and the mandatory review, commit automatically only when all of these conditions hold:
+
+1. The final change inventory can be separated from the baseline inventory captured at startup.
+2. Every proposed commit path is wholly owned by this run; do not commit a file that mixes this run's edits with pre-existing user edits.
+3. No PDF, PDF rendering, secret, ignored local artifact, unrelated staged change, deletion, rename, binary, mode, or submodule change is being included unintentionally.
+4. The canonical, note, checkpoint, test, and generated files listed for this slice have passed all required checks.
+
+Use explicit paths only, never a blanket add:
+
+```sh
+git add -A -- <reviewed-paths>
+GIT_EDITOR=true git commit --only -m "<imperative message, <=50 chars>" -- <reviewed-paths>
+```
+
+Do not ask for confirmation: the user explicitly enabled automatic commits for this skill. If any safety condition fails, do not stage or commit; explain the exact blocker and provide a copy-ready selective command instead. If the commit command fails, report the failure and preserve existing user staging/work without resetting it. Report the resulting commit hash and exact paths when it succeeds.
 
 ## Final report
 
@@ -72,6 +90,7 @@ Report in Russian unless the user requests another language:
 - all validation results, including failures;
 - the complete changed/new-file inventory and ignored temporary artifacts;
 - unresolved questions and the exact next live-queue slice;
-- one or more safe commit proposals with exact files and copy-ready `git add -A -- ...` and `GIT_EDITOR=true git commit --only -m "..." -- ...` commands.
+- the automatic commit result: commit hash, message, and exact paths, or the safety blocker and a copy-ready selective command if no commit was safe;
+- reviewed changes left out of the commit and why.
 
-Commit proposals are not permission to execute them. Do not stage or commit unless the user explicitly asks.
+Automatic committing is authorized by this skill. Never include unrelated or mixed user work merely to make the commit convenient.
