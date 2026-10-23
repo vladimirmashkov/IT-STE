@@ -157159,7 +157159,7 @@ Definition: Not intended by the responsible actor\, where evidence supports the 
 
 Domains: support\-troubleshooting
 
-Rationale: The compact adjective row also contains an adverb cue\; do not infer human intent from logs alone\.
+Rationale: The compact adjective row is a separate source entry from the following adverb\; retain a bounded intent claim only when the responsible actor and evidence support it\. See research note W1\-D\-P415\-004\-005\.
 
 Contextual alternatives:
 
@@ -157193,9 +157193,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Adverb cue in the adjective row may overlap the following row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Rendered and visually inspected authenticated ASD-STE100 Issue 9/r0001 PDF page 415 (SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431). Findings: row 4 is a distinct unintentional (adj) entry; the following unintentionally (adv) row is separate.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 415,
     "printed_page": "2-1-U3",
@@ -157233,7 +157233,7 @@ Definition: Without intending the resulting action\, with the actor and evidence
 
 Domains: support\-troubleshooting
 
-Rationale: Wrapped extraction needs review\; separate observed behavior from assumptions about intention\.
+Rationale: The wrapped adverb row is separate from the adjective row\; separate observed behavior from assumptions about intention and retain the bounded actor\/evidence condition\. See research note W1\-D\-P415\-004\-005\.
 
 Contextual alternatives:
 
@@ -157267,9 +157267,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Rendered and visually inspected authenticated ASD-STE100 Issue 9/r0001 PDF page 415 (SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431). Findings: row 5 is the distinct unintentionally (adv) entry; its headword wraps, and its alternatives/example remain in the same row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 415,
     "printed_page": "2-1-U3",
@@ -167579,7 +167579,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `9c3c96e18577d0b9df3de9aa7c4cba140c885491554d2eee6c02b9fce31d5ffe`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `25775f941294a3cb9d495825c2ec4b99e0eae397b3ab11965bca8802abca2bd6`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `dc46f89eef754a750c4379ad466ab3e7a032f3872358601cd154039445a251c9`
 
