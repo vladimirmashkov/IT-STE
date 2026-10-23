@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 55,
+    "needs-review": 53,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1468
+    "restricted": 1470
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -138275,13 +138275,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SOME; POS: pron.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: An unspecified subset of a previously identified collection\.
+Definition: An unspecified subset of an explicitly identified collection\.
 
 Domains: general
 
-Rationale: The pronoun requires an antecedent\, and its compact definition appears to include the next row\'s fragment\.
+Rationale: Visual verification confirms a separate SOME \(pron\) row with the meaning Related to a quantity not specified\; the apparent overlap with SOMETHING is a mechanical ambiguity\, not a page\-layout error\. Google\'s official developer documentation style guide requires pronouns to have clear antecedents and warns against vague references\. Restrict this draft sense to an explicitly identified collection and subset context\, not an unspecified operational target\. See docs\/it\-ste\-research\/W1\-D\-P383\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -138315,9 +138315,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition ends with A thing that is not, apparently overlapping SOMETHING."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 383 / printed 2-1-S17 shows SOME (pron) as a separate row above SOMETHING (pron); the meaning is Related to a quantity not specified and the apparent definition overlap is not a row-boundary error.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 383,
     "printed_page": "2-1-S17",
@@ -138328,7 +138328,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm an explicit collection antecedent and subset context before using the pronoun in an operational instruction"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P383-004",
@@ -138349,13 +138349,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SOMETHING; POS: pron.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: An unidentified item whose identity is not yet established\.
+Definition: An unidentified item or cause reported during diagnosis\, with a concrete follow\-up to identify it\.
 
 Domains: general
 
-Rationale: The extraction warning requires review\; use only to report uncertainty\, not to assign an operational target\.
+Rationale: Visual verification confirms a separate SOMETHING \(pron\) row below SOME \(pron\) with the meaning A thing that is not determined or specified\. The wrapped\-headword warning is retained as historical mechanical evidence\; it does not replace the page check\. Google\'s developer documentation style guide requires pronouns to have clear antecedents and warns against vague references\; its word list advises specific wording and context\-sensitive terminology decisions\. Restrict this draft sense to intentional diagnostic uncertainty with a concrete follow\-up that identifies the item or cause\. Do not use it as an unspecified operational\, destructive\, or authorization target\. See docs\/it\-ste\-research\/W1\-D\-P383\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -138389,9 +138389,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 383 / printed 2-1-S17 shows SOME (pron) as a separate row above SOMETHING (pron); SOMETHING has the meaning A thing that is not determined or specified, and its wrapped headword is a retained extraction warning, not a row-boundary error.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 383,
     "printed_page": "2-1-S17",
@@ -138402,7 +138402,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm a concrete diagnostic follow-up identifies the item or cause before using the pronoun; do not use it as an unspecified operational or destructive target"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P383-005",
@@ -167571,7 +167571,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `d491be2d4151ec0a1b2e1ca3c882f994af514f9926a19f808a712d69ae3ea619`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `83bed1e5ac5fe4012c7a28ee4df325161fb26cf9d4bf777f8dfa996db1e2a81b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `5b0076db0ff64b2a8e34e5868bdf0a8e3e3df21d68951abddc8e38176f19449c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `e80583ea2b2c5157f21c2ff65d6a220395b4e47622f670654de32859545118cb`
 
