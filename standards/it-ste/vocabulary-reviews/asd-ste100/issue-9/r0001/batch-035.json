@@ -1913,24 +1913,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes an action authorized by a stated policy for a defined actor and resource.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes an action that a named policy authorizes a specified actor to perform on a specified resource.",
       "domains": [
         "security"
       ],
-      "rationale": "The compact source includes the following perpendicular-angle definition, so authorization wording remains provisional.",
+      "rationale": "Use only when the authorization scope identifies the actor, action, resource, and governing policy; successful execution or absence of an error does not establish permission. See docs/it-ste-research/W1-D-P332-008.md. The compact source includes the following perpendicular-angle definition, which remains a separate mechanical ambiguity.",
       "permitted_contextual_alternatives": [
         "authorized",
-        "allowed by policy"
+        "allowed by policy",
+        "allowed for the named actor"
       ],
       "examples": {
         "positive": {
-          "text": "Only the permitted export fields listed in the policy appear in the report.",
-          "explanation": "Bounds the authorized set."
+          "text": "Only the permitted export fields listed in policy SEC-12 appear in the report for the audit role.",
+          "explanation": "Names the policy, actor, and bounded resource set."
         },
         "problematic": {
-          "text": "The action is permitted because no error occurred.",
-          "explanation": "Execution success does not prove authorization."
+          "text": "The action is permitted because the system returned no error.",
+          "explanation": "Successful execution does not prove policy authorization."
         }
       },
       "evidence": {
@@ -1951,14 +1952,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 332 with pdftoppm and visually inspected. Findings: PERMITTED (adj) is a distinct eighth row with spelling, POS, columns, row boundaries, printed page 2-1-P4, and approved meaning Allowed; PERPENDICULAR (adj) follows as a separate row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },

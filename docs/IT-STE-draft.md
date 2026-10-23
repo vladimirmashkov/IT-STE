@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 89,
+    "needs-review": 88,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1438
+    "restricted": 1439
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -107682,13 +107682,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PERMITTED; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes an action authorized by a stated policy for a defined actor and resource\.
+Definition: Describes an action that a named policy authorizes a specified actor to perform on a specified resource\.
 
 Domains: security
 
-Rationale: The compact source includes the following perpendicular\-angle definition\, so authorization wording remains provisional\.
+Rationale: Use only when the authorization scope identifies the actor\, action\, resource\, and governing policy\; successful execution or absence of an error does not establish permission\. See docs\/it\-ste\-research\/W1\-D\-P332\-008\.md\. The compact source includes the following perpendicular\-angle definition\, which remains a separate mechanical ambiguity\.
 
 Contextual alternatives:
 
@@ -107696,21 +107696,23 @@ Contextual alternatives:
 
 - allowed by policy
 
+- allowed for the named actor
+
 #### Positive example
 
 ```
-Only the permitted export fields listed in the policy appear in the report.
+Only the permitted export fields listed in policy SEC-12 appear in the report for the audit role.
 ```
 
-Explanation: Bounds the authorized set\.
+Explanation: Names the policy\, actor\, and bounded resource set\.
 
 #### Problematic example
 
 ```
-The action is permitted because no error occurred.
+The action is permitted because the system returned no error.
 ```
 
-Explanation: Execution success does not prove authorization\.
+Explanation: Successful execution does not prove policy authorization\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -107722,9 +107724,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source includes the following PERPENDICULAR definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 332 with pdftoppm and visually inspected. Findings: PERMITTED (adj) is a distinct eighth row with spelling, POS, columns, row boundaries, printed page 2-1-P4, and approved meaning Allowed; PERPENDICULAR (adj) follows as a separate row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 332,
     "printed_page": "2-1-P4",
@@ -107734,8 +107736,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P332-008",
@@ -167561,7 +167562,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `161f9698b8ca55aadb83b8752876713e0452eb6294a5dd4331fbcf442e81b8b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `1c0171fccafdd1d55cb446f18eaeadd4ccef9e1d259364f87df0e8ed6aedf5fb`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `698ccad10efb384b7a6fbcc57dbdf14fe24080930fc54f6bee25df95e1d82414`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
 
