@@ -1970,12 +1970,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In a direction along a radius from a specified center; this spatial reading is provisional.",
+      "it_disposition": "restricted",
+      "it_definition": "Along a specified radius from a named center in a geometric layout.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The exact row also contains wording about radioactivity from the following row. Keep the geometry sense provisional and do not merge it with radiation terminology.",
+      "rationale": "The authenticated page confirms that RADIALLY (adv) is a distinct second row between RADIAL (adj) and RADIOACTIVE (adj); the extracted radioactivity phrase belongs to the following row. Restrict the draft sense to a named geometric center and radius, and reject network, security, or radiation metaphors. W3C radial-image geometry and Kubernetes topology documentation are summarized in docs/it-ste-research/W1-D-P349-002.md.",
       "permitted_contextual_alternatives": [
         "along the stated radius",
         "outward from the specified center"
@@ -2004,18 +2004,17 @@
         },
         "extraction_warnings": [],
         "mechanical_ambiguities": [
-          "The meaning column includes 'Related to radioactivity', matching the following RADIOACTIVE row; possible adjacent-row contamination requires source verification."
+          "The extracted meaning included 'Related to radioactivity', which the authenticated page confirms belongs to the following RADIOACTIVE row."
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 349 with pdftoppm -f 349 -l 349 -png -r 180 and visually inspected. Findings: RADIAL (adj), RADIALLY (adv), and RADIOACTIVE (adj) are distinct rows; RADIALLY (adv) has source alternative Along a radius and the following Related to radioactivity belongs to RADIOACTIVE (adj).",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "original example review"
         ]
       }
     },
