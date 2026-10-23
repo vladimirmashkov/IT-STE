@@ -143238,7 +143238,7 @@ Definition: Provisionally\, pass a physical liquid through a filter to remove pa
 
 Domains: general
 
-Rationale: Two technical\-noun references do not resolve whether filtering or mechanical deformation is intended\.
+Rationale: Visual verification confirms one strain \(v\) row with two distinct technical\-noun references\, FILTER \(TN\) and STRAIN \(TN\)\: the examples separately show filtering oil and applying strain to bellows\. The layout is resolved\, but no inspected competent IT source establishes whether this draft should cover coolant filtration\, mechanical deformation of IT hardware\, or neither\. Keep this needs\-review sense blocked\; do not generalize it to software load behavior\. See docs\/it\-ste\-research\/W1\-D\-P391\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -143272,9 +143272,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "FILTER and STRAIN technical-noun references leave the physical action and intended sense unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 391 / printed 2-1-S25 shows strain (v) as a separate row below straighten (v) and above strap (v); its meaning column has separate FILTER (TN) and STRAIN (TN) references, with distinct oil-filtering and bellows-strain examples. The ambiguity is substantive, not a row-boundary error.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 391,
     "printed_page": "2-1-S25",
@@ -143285,7 +143285,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Identify whether the intended IT sense is filtration of a named liquid or mechanical deformation of a named component; do not use it for software load behavior without separate evidence"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P391-003",
@@ -143383,7 +143383,7 @@ Definition: Provisionally\, apply a specified mechanical force to a physical IT 
 
 Domains: general
 
-Rationale: The source supplies a force cross\-reference\, not a bounded verb\; software load testing is not inferred\.
+Rationale: Visual verification confirms a separate stress \(v\) row with FORCE \(TN\) and the physical example Do not put too much force on the ducting\. The row boundary is resolved\, but the force cross\-reference does not establish a bounded IT hardware acceptance test or a software load\-testing sense\. Keep this needs\-review sense blocked rather than infer an operational action or software semantics\. See docs\/it\-ste\-research\/W1\-D\-P391\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -143417,9 +143417,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "FORCE technical-noun cross-reference does not define the verb or establish software stress-testing semantics."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 391 / printed 2-1-S25 shows stress (v) as a separate row below strap (v) and above strictly (adv); its meaning column contains FORCE (TN), and its examples refer to force on ducting. The cross-reference leaves the IT verb scope open but is not a row-boundary error.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 391,
     "printed_page": "2-1-S25",
@@ -143430,7 +143430,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Identify a bounded mechanical-force test and named component, or a competent software load-testing source; do not use this verb as an uncontrolled operational instruction"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P391-005",
@@ -167573,7 +167573,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `cd79512de294312a3f89ec12edc9d331e2f94b2d50e136fb4d12b51eb863a8af`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `e80583ea2b2c5157f21c2ff65d6a220395b4e47622f670654de32859545118cb`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d8fe55b8e96fa460c9629e11cea6f6c74e808ef920da43364222ea07af099693`
 
