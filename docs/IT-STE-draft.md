@@ -129594,11 +129594,9 @@ Definition: Provisionally\, having a physical groove caused by damage to an equi
 
 Domains: general
 
-Rationale: The source gives only a technical\-noun cross\-reference\; do not confuse grooves with numeric scoring\.
+Rationale: Authenticated page 368 confirms scored \(adj\)\, SCORE \(TN\)\, and a bearing\-race damage example\, not numeric scoring\. FOA connector\-inspection guidance distinguishes contamination and physical scratches but does not define scored or equate every groove with damage\. Remove unqualified grooved because a groove can be a designed feature\. Keep needs\-review until a named IT hardware surface and applicable manufacturer damage criteria establish the proposed scope\. See docs\/it\-ste\-research\/W1\-D\-P368\.md\.
 
 Contextual alternatives:
-
-- grooved
 
 - damaged by a groove
 
@@ -129608,7 +129606,7 @@ Contextual alternatives:
 Inspect the connector surface for grooves.
 ```
 
-Explanation: Uses an observable physical condition\.
+Explanation: Names a physical observation\, not a pass\/fail rule\. The applicable equipment procedure must distinguish damage from designed features\; this provisional example is not an authorized optical inspection\, cleaning or replacement procedure\.
 
 #### Problematic example
 
@@ -129628,9 +129626,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "SCORE technical-noun cross-reference does not supply a complete adjective sense or damage criteria."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2; existing local pdftoppm single-page rendering visually rechecked on 2026-10-23 after source doctor passed. Findings: row 10 scored (adj) is bounded by SCHEDULE above and scrap below; SCORE (TN) and both bearing-race examples belong to this row. The STE example describes scores on the bearing race, not a numerical rating; the cross-reference does not supply general IT damage criteria. See docs/it-ste-research/W1-D-P368.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 368,
     "printed_page": "2-1-S2",
@@ -129641,7 +129639,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Identify a named IT hardware scored-surface sense and applicable manufacturer criteria distinguishing damage from designed features"
     ],
     "row_on_page": 10,
     "source_entry_id": "D-P368-010",
@@ -167569,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `bd1838b59dbad7efa0f257bed34e3609e01b4ed6fac52abdec8b79904615af0e`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `a255ddcd537f7e72a55cf4d54b3e6b1d6a073d2ba5543cad6aa29d62bfd97db2`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
 

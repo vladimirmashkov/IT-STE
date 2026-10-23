@@ -147,6 +147,13 @@ class VocabularyTests(unittest.TestCase):
         self.assertIn("last 24 hours", satisfactory["examples"]["positive"]["text"])
         self.assertIn("measured at the gateway", satisfactory["examples"]["positive"]["text"])
         self.assertIn("not project measurements", satisfactory["examples"]["positive"]["explanation"])
+        scored = by_id["D-P368-010"]
+        self.assertEqual(scored["it_disposition"], "needs-review")
+        self.assertTrue(scored["evidence"]["mechanical_ambiguities"])
+        self.assertTrue(scored["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertEqual(scored["permitted_contextual_alternatives"], ["damaged by a groove"])
+        self.assertIn("does not define scored", scored["rationale"])
+        self.assertIn("not a pass/fail rule", scored["examples"]["positive"]["explanation"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

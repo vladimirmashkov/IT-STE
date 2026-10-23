@@ -438,15 +438,14 @@
       "domains": [
         "general"
       ],
-      "rationale": "The source gives only a technical-noun cross-reference; do not confuse grooves with numeric scoring.",
+      "rationale": "Authenticated page 368 confirms scored (adj), SCORE (TN), and a bearing-race damage example, not numeric scoring. FOA connector-inspection guidance distinguishes contamination and physical scratches but does not define scored or equate every groove with damage. Remove unqualified grooved because a groove can be a designed feature. Keep needs-review until a named IT hardware surface and applicable manufacturer damage criteria establish the proposed scope. See docs/it-ste-research/W1-D-P368.md.",
       "permitted_contextual_alternatives": [
-        "grooved",
         "damaged by a groove"
       ],
       "examples": {
         "positive": {
           "text": "Inspect the connector surface for grooves.",
-          "explanation": "Uses an observable physical condition."
+          "explanation": "Names a physical observation, not a pass/fail rule. The applicable equipment procedure must distinguish damage from designed features; this provisional example is not an authorized optical inspection, cleaning or replacement procedure."
         },
         "problematic": {
           "text": "The scored server has a rating of ten.",
@@ -471,14 +470,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2; existing local pdftoppm single-page rendering visually rechecked on 2026-10-23 after source doctor passed. Findings: row 10 scored (adj) is bounded by SCHEDULE above and scrap below; SCORE (TN) and both bearing-race examples belong to this row. The STE example describes scores on the bearing race, not a numerical rating; the cross-reference does not supply general IT damage criteria. See docs/it-ste-research/W1-D-P368.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Identify a named IT hardware scored-surface sense and applicable manufacturer criteria distinguishing damage from designed features"
         ]
       }
     },
