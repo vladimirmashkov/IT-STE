@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 102,
+    "needs-review": 101,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1425
+    "restricted": 1426
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -96114,13 +96114,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MODERATELY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: To a degree within a documented intermediate measurement band\.
+Definition: Describes a measured condition within a documented intermediate band\.
 
 Domains: monitoring\-alerts
 
-Rationale: Wrapped extraction needs review\; the adverb must not replace a measured rate or load\.
+Rationale: The authenticated page isolates MODERATELY \(adv\) with \`In a moderate manner\` after MODERATE \(adj\)\; its example describes a surface that is moderately dry\. Prometheus alert rules use explicit expressions\, thresholds\, and durations\, while OpenTelemetry requires defined attribute semantics\. Restrict use to a named metric or classification with explicit intermediate boundaries\, units or scale\, and relevant response\; do not use it as an undefined degree judgment\. See \`docs\/it\-ste\-research\/W1\-D\-P310\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -96131,10 +96131,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-CPU utilization remains within the defined intermediate band of 40 to 60 percent.
+CPU utilization remains moderately high within the defined band of 40 to 60 percent.
 ```
 
-Explanation: Makes the intended degree measurable\.
+Explanation: Names the metric and makes the intermediate degree measurable\.
 
 #### Problematic example
 
@@ -96154,9 +96154,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 312 -l 312 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-7-page-312; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MODERATELY (adv) is a distinct wrapped-headword row after MODERATE (adj) and before modify (v); its meaning is In a moderate manner and its moderately-dry surface example is separate from the neighboring rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 312,
     "printed_page": "2-1-M8",
@@ -96166,8 +96166,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P312-004",
@@ -167550,7 +167549,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `54194a0c3d4270682b49e338db0c62f984442928066e83cd499b17de8769d2ab`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `a48f4544b80516c80b5d3b2ccd83d1751aabf5dd6d07295fea113482b50b7c70`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 

@@ -2151,20 +2151,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "To a degree within a documented intermediate measurement band.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a measured condition within a documented intermediate band.",
       "domains": [
         "monitoring-alerts"
       ],
-      "rationale": "Wrapped extraction needs review; the adverb must not replace a measured rate or load.",
+      "rationale": "The authenticated page isolates MODERATELY (adv) with `In a moderate manner` after MODERATE (adj); its example describes a surface that is moderately dry. Prometheus alert rules use explicit expressions, thresholds, and durations, while OpenTelemetry requires defined attribute semantics. Restrict use to a named metric or classification with explicit intermediate boundaries, units or scale, and relevant response; do not use it as an undefined degree judgment. See `docs/it-ste-research/W1-D-P310.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "within the intermediate band",
         "at 50 percent utilization"
       ],
       "examples": {
         "positive": {
-          "text": "CPU utilization remains within the defined intermediate band of 40 to 60 percent.",
-          "explanation": "Makes the intended degree measurable."
+          "text": "CPU utilization remains moderately high within the defined band of 40 to 60 percent.",
+          "explanation": "Names the metric and makes the intermediate degree measurable."
         },
         "problematic": {
           "text": "The server is moderately overloaded.",
@@ -2189,14 +2189,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 312 -l 312 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-7-page-312; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MODERATELY (adv) is a distinct wrapped-headword row after MODERATE (adj) and before modify (v); its meaning is In a moderate manner and its moderately-dry surface example is separate from the neighboring rows.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
