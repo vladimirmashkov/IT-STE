@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 125,
+    "needs-review": 123,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1404
+    "restricted": 1406
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -83093,13 +83093,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INTERMITTENT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Stopping and starting rather than remaining continuous\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped\-headword warning and apparent following\-adverb text require source review\.
+Rationale: The authenticated PDF confirms a distinct INTERMITTENT \(adj\) row with the ASD meaning That stops and starts again\, not continuous\. Retain this bounded observation sense for IT use\; intermittent behavior does not by itself establish severity\, harmlessness\, transience\, or retryability\. See docs\/it\-ste\-research\/W1\-D\-P289\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -83135,9 +83135,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 289 -l 289 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-289; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct INTERMITTENT (adj) row, its meaning ends at not continuous, followed by a separate INTERMITTENTLY (adv) row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 289,
     "printed_page": "2-1-I15",
@@ -83146,9 +83146,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "scope": "exact entry; meaning/alternatives only; no --full"
     },
     "review_required": [
-      "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "editorial sense and scope review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P289-001",
@@ -83169,13 +83167,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INTERMITTENTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: With periods of stopping and starting in a stated observation window\.
 
 Domains: support\-troubleshooting
 
-Rationale: Wrapped\-headword warning requires source review\; quantify observations where possible\.
+Rationale: The authenticated PDF confirms a distinct INTERMITTENTLY \(adv\) row with the ASD meaning In an intermittent manner\. Retain the observation\-window scope for IT use\; frequency alone does not establish severity\, cause\, transience\, or safe retry behavior\. See docs\/it\-ste\-research\/W1\-D\-P289\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -83209,9 +83207,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 289 -l 289 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-289; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct INTERMITTENTLY (adv) row follows the separate INTERMITTENT (adj) row and has its own meaning and example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 289,
     "printed_page": "2-1-I15",
@@ -83220,9 +83218,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "scope": "exact entry; meaning/alternatives only; no --full"
     },
     "review_required": [
-      "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "editorial sense and scope review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P289-002",
@@ -167566,7 +167562,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `32f60608e6443cf53947640906bab053d9d521e33a6ae8c81af59aa540983914`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `aae6c99835e39816b1ed8c937732e38c5008ddb9df4d0bae7b6ee90ae0610198`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `8c58c3854abb6a889baa24d6ead3943ff6d5f0fa34f5ff2a6a85f3cd1d82f8b9`
 
