@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1458, "prohibited": 406,
-                             "not-applicable": 148, "needs-review": 66},
+            "dispositions": {"allowed": 118, "restricted": 1459, "prohibited": 406,
+                             "not-applicable": 148, "needs-review": 65},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -112,6 +112,15 @@ class VocabularyTests(unittest.TestCase):
         self.assertTrue(by_id["D-P359-001"]["evidence"]["mechanical_ambiguities"])
         self.assertEqual(by_id["D-P359-002"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
         self.assertNotIn("new component", by_id["D-P359-002"]["permitted_contextual_alternatives"])
+        rework = by_id["D-P363-009"]
+        self.assertEqual(rework["it_disposition"], "restricted")
+        self.assertIn("meets the specified requirements", rework["it_definition"])
+        self.assertIn("not automatic substitutes", rework["rationale"])
+        self.assertTrue(rework["evidence"]["mechanical_ambiguities"])
+        self.assertTrue(rework["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertNotIn("correct under the repair procedure", rework["permitted_contextual_alternatives"])
+        self.assertNotIn("replace the faulty assembly", rework["permitted_contextual_alternatives"])
+        self.assertIn("server cable harness", rework["examples"]["positive"]["text"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

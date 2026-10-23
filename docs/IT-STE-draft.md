@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 66,
+    "needs-review": 65,
     "not-applicable": 148,
     "prohibited": 406,
-    "restricted": 1458
+    "restricted": 1459
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -126336,27 +126336,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: rework; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Modify an assembled hardware item through a defined manufacturing correction process\.
+Definition: Correct a specified nonconformity in a physical IT hardware assembly through a defined manufacturing process so that the assembly meets the specified requirements\.
 
 Domains: general
 
-Rationale: The source refers to a technical\-verb class rather than a bounded definition\; specialist process review is needed\.
+Rationale: Restrict to a specified physical hardware nonconformity and manufacturing correction process with explicit requirements\. Authenticated page 363 confirms a technical\-verb cross\-reference\, not a definition\. NASA\-STD\-8739\.4A distinguishes restoring conformity from repair for intended use\; repair and whole\-assembly replacement are not automatic substitutes\. See docs\/it\-ste\-research\/W1\-D\-P363\.md\. Software\, live data modification and service\-safety authorization are outside this draft sense\.
 
 Contextual alternatives:
 
-- correct under the repair procedure
+- correct the specified nonconformity under the manufacturing procedure
 
-- replace the faulty assembly
+- perform the specified manufacturing correction
 
 #### Positive example
 
 ```
-Replace the faulty board under the maintenance procedure.
+Rework the server cable harness under the specified manufacturing procedure to meet drawing H-12.
 ```
 
-Explanation: Offers a concrete alternative without inventing a manufacturing process\.
+Explanation: Illustrates a named physical assembly\, process and conformity target\; the actual nonconformity\, authorized procedure and acceptance checks must be supplied by the work instruction\. H\-12 is an illustrative drawing identifier\, not a real service procedure\.
 
 #### Problematic example
 
@@ -126376,9 +126376,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Source provides a manufacturing-process cross-reference rather than a specific sense definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, page 363 rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: row 9 rework (v) is bounded by rewind and rig. The lightbulb note refers to technical verbs, manufacturing processes; the STE example specifies examination and light polishing, not repair or assembly replacement. See docs/it-ste-research/W1-D-P363.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 363,
     "printed_page": "2-1-R15",
@@ -126389,7 +126389,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Validate actual manufacturing correction procedures, specified requirements and acceptance checks with the responsible hardware specialist"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P363-009",
@@ -167569,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-041.json` SHA-256: `efd31f9650be53fff471c46e8213340f6369939d2f4e0ae09acde7aeb138985b`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `fffc89abb27ca9eb8ffd35a7a7262b51512a0345519ad8a3276be0a790f46765`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `ece519517352bada41e2aa3ed2c1edded0a809fba90f7a52db14e99fa87440b7`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `f6b4a99e65166ddc0ce6d54ae4c76719b3d08759edf7a5470b5909fdbaafce0b`
 
