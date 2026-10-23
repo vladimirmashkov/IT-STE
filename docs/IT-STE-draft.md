@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 119,
-    "needs-review": 41,
+    "allowed": 120,
+    "needs-review": 40,
     "not-applicable": 148,
     "prohibited": 407,
     "restricted": 1481
@@ -153971,13 +153971,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: TRANSPARENT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
 Definition: Allow objects behind a visual layer or physical panel to remain visible\.
 
 Domains: user\-interface
 
-Rationale: Keep the optical sense distinct from claims about security visibility or invisible system behavior\.
+Rationale: The ASD visual meaning supports a bounded UI\/material sense\: a layer with reduced opacity lets content behind it remain visible\. W3C CSS Color 4 §3\.3 and §4 describe opacity\/alpha as showing the backdrop through a rendered element or color\. MDN\'s opacity reference confirms that content behind an element can be seen\, while its accessibility guidance limits this to visual rendering and does not make it a semantic or security property\. This does not cover transparent proxies\, security visibility\, hidden system behavior\, or guaranteed readability\. Draft evidence note\: docs\/it\-ste\-research\/W1\-D\-P408\-005\.md\.
 
 Contextual alternatives:
 
@@ -154011,9 +154011,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered ASD-STE100 Issue 9 PDF page 408 at 150 DPI with pdftoppm. Findings: visually inspected row boundaries, spelling, POS, wrapping, columns, and neighboring rows; TRANSPARENT (adj) is a distinct row between TRANSMIT and transport.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 408,
     "printed_page": "2-1-T10",
@@ -154023,8 +154023,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P408-005",
@@ -167580,7 +167579,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `a1ade124570a6affc55cf589e4148ee6ecb20514c8df0a56a627dcec45f2578e`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `ea83004b784fa97d3148fb650c4c1c9586d78a5c0052c7f04afd561f18e2cbc2`
 

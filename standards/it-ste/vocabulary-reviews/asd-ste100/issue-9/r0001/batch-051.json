@@ -958,12 +958,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "allowed",
       "it_definition": "Allow objects behind a visual layer or physical panel to remain visible.",
       "domains": [
         "user-interface"
       ],
-      "rationale": "Keep the optical sense distinct from claims about security visibility or invisible system behavior.",
+      "rationale": "The ASD visual meaning supports a bounded UI/material sense: a layer with reduced opacity lets content behind it remain visible. W3C CSS Color 4 §3.3 and §4 describe opacity/alpha as showing the backdrop through a rendered element or color. MDN's opacity reference confirms that content behind an element can be seen, while its accessibility guidance limits this to visual rendering and does not make it a semantic or security property. This does not cover transparent proxies, security visibility, hidden system behavior, or guaranteed readability. Draft evidence note: docs/it-ste-research/W1-D-P408-005.md.",
       "permitted_contextual_alternatives": [
         "see-through",
         "with the stated opacity"
@@ -996,14 +996,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered ASD-STE100 Issue 9 PDF page 408 at 150 DPI with pdftoppm. Findings: visually inspected row boundaries, spelling, POS, wrapping, columns, and neighboring rows; TRANSPARENT (adj) is a distinct row between TRANSMIT and transport.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify flagged or overlapping source row against PDF"
+          "original example review"
         ]
       }
     },
