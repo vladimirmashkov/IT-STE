@@ -147349,7 +147349,7 @@ Definition: A visible mark that denotes a specified operation\, object\, or stat
 
 Domains: software\-documentation
 
-Rationale: Useful for notation and interface descriptions\, but the retrieved meaning includes a fragment from the next row\.
+Rationale: The authenticated page confirms a distinct SYMBOL \(n\) row and its complete written\-sign meaning\, but the intended IT scope still spans notation\, UI marks\, encoded indicators\, and other representations\. W3C WCAG 2\.2 supports treating non\-text controls and information as requiring a purpose\-bearing text alternative\, but it does not settle the controlled vocabulary sense\. Retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
 
 Contextual alternatives:
 
@@ -147383,9 +147383,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact meaning includes an apparent fragment of the following row; PDF verification outstanding."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 397 -l 397 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 397 (2-1-S31), SYMBOL (n) is a distinct ruled row with the complete meaning A written sign that identifies a quantity, operation, item, or condition and its own example. A horizontal rule separates it from SYMMETRICAL below. The layout confirms row and example association but does not settle IT sense scope or repair the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 397,
     "printed_page": "2-1-S31",
@@ -147395,8 +147395,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P397-005",
@@ -147423,7 +147422,7 @@ Definition: Having matching shapes or positions on opposite sides of a specified
 
 Domains: user\-interface
 
-Rationale: Limit the proposal to geometric layout\; it does not establish cryptographic key properties\.
+Rationale: The authenticated page confirms a distinct SYMMETRICAL \(adj\) row and a physical\-parts example\. The current geometric proposal remains plausible\, but the source wording does not decide whether the IT scope includes UI layout\, data structures\, or other mathematical and cryptographic uses\. W3C WCAG 2\.2 is relevant to accessible non\-text content but does not resolve this scope\. Retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
 
 Contextual alternatives:
 
@@ -147457,9 +147456,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 397 -l 397 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 397 (2-1-S31), SYMMETRICAL (adj) is a distinct ruled row with the wrapped headword, the meaning That has or is with symmetry, and the physical-parts example. A horizontal rule separates it from SYMBOL above and SYMMETRICALLY below. The layout confirms spelling, POS, row, and example association but does not settle the IT scope.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 397,
     "printed_page": "2-1-S31",
@@ -147469,8 +147468,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P397-006",
@@ -167587,7 +167585,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d8fe55b8e96fa460c9629e11cea6f6c74e808ef920da43364222ea07af099693`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `dd3e32130ee560221070ed54abcfab512cd30c606626f0a9ed26c4b5f3a931fd`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `81bcd060f0e9b163b8c595946f065881920f6721598d3a5c2adc8822e8915365`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 
