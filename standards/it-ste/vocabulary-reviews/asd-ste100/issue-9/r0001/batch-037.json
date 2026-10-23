@@ -1491,12 +1491,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Continue an identified task after a specified prerequisite is satisfied; the source alignment is provisional.",
+      "it_disposition": "restricted",
+      "it_definition": "Continue a named task after a specified prerequisite or condition is satisfied.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The exact meaning column includes DURING before a neighboring temporal-expression row. Do not settle that apparent overlap without source review.",
+      "rationale": "The authenticated page confirms that CONTINUE (v) is the approved alternative for this distinct proceed row; the following process row separately contains DURING (prep). Restrict the draft sense to continuing a named task after an explicit prerequisite or condition, and reject vague continuation wording. See docs/it-ste-research/W1-D-P341-002.md for the bounded evidence and research.",
       "permitted_contextual_alternatives": [
         "continue with step 4",
         "resume the named task"
@@ -1525,18 +1525,17 @@
         },
         "extraction_warnings": [],
         "mechanical_ambiguities": [
-          "DURING in the meaning column may belong to the following temporal-expression row; the row boundary is unverified."
+          "DURING in the meaning column may belong to the following temporal-expression row; the authenticated page resolves this as an extraction row-boundary ambiguity."
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 341 with pdftoppm -f 341 -l 341 -png -r 180 and visually inspected. Findings: proceed (v) is a distinct second row with CONTINUE (v) as its approved alternative; the following process (in the process of) (prep) row separately contains DURING (prep) and WHILE (conj), so the apparent overlap is extraction ambiguity rather than a merged PDF row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "original example review"
         ]
       }
     },

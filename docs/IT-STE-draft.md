@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 82,
+    "needs-review": 81,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1445
+    "restricted": 1446
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -113109,13 +113109,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: proceed; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Continue an identified task after a specified prerequisite is satisfied\; the source alignment is provisional\.
+Definition: Continue a named task after a specified prerequisite or condition is satisfied\.
 
 Domains: procedures\-runbooks
 
-Rationale: The exact meaning column includes DURING before a neighboring temporal\-expression row\. Do not settle that apparent overlap without source review\.
+Rationale: The authenticated page confirms that CONTINUE \(v\) is the approved alternative for this distinct proceed row\; the following process row separately contains DURING \(prep\)\. Restrict the draft sense to continuing a named task after an explicit prerequisite or condition\, and reject vague continuation wording\. See docs\/it\-ste\-research\/W1\-D\-P341\-002\.md for the bounded evidence and research\.
 
 Contextual alternatives:
 
@@ -113146,12 +113146,12 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
   "evidence": {
     "extraction_warnings": [],
     "mechanical_ambiguities": [
-      "DURING in the meaning column may belong to the following temporal-expression row; the row boundary is unverified."
+      "DURING in the meaning column may belong to the following temporal-expression row; the authenticated page resolves this as an extraction row-boundary ambiguity."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 341 with pdftoppm -f 341 -l 341 -png -r 180 and visually inspected. Findings: proceed (v) is a distinct second row with CONTINUE (v) as its approved alternative; the following process (in the process of) (prep) row separately contains DURING (prep) and WHILE (conj), so the apparent overlap is extraction ambiguity rather than a merged PDF row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 341,
     "printed_page": "2-1-P13",
@@ -113161,8 +113161,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P341-002",
@@ -167568,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5fb3d8adbcaa10a56247fde08ea2dc9c3387dc15e0681741896dc01ca8fc9bea`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c56cf0587f27cc235940a5a7ce19599c8127ebb4b3b2485ab3a6246628acdd3c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c693ce41baa27b6e58984eff6ab023ce7a2c727efe54dd753e5eec74d09baf38`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `1620932b1ba89f137545efce5241352f5b057c5c143872acaadc7ac1166c637d`
 
