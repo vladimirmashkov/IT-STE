@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 88,
+    "needs-review": 87,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1439
+    "restricted": 1440
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -107757,17 +107757,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PERPENDICULAR; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: At a right angle to a named physical line or plane\.
+Definition: Describes two named physical lines\, segments\, axes\, or planes that intersect at 90 degrees\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Wrapped extraction needs review\; a physical reference must be explicit\.
+Rationale: Use only for named geometric objects and an explicit right\-angle relation\; do not apply it to an abstract cloud\, network\, or security property\. The wrapped headword is visually confirmed\. See docs\/it\-ste\-research\/W1\-D\-P332\-009\.md\.
 
 Contextual alternatives:
 
 - at 90 degrees to
+
+- orthogonal to
 
 #### Positive example
 
@@ -107775,7 +107777,7 @@ Contextual alternatives:
 Keep the bracket perpendicular to the marked rail according to the drawing.
 ```
 
-Explanation: Identifies the reference and angle\.
+Explanation: Identifies the geometric objects and the drawing reference\.
 
 #### Problematic example
 
@@ -107783,7 +107785,7 @@ Explanation: Identifies the reference and angle\.
 The network route is perpendicular to security.
 ```
 
-Explanation: No geometric relation exists\.
+Explanation: Security is not a named geometric line\, segment\, axis\, or plane\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -107795,9 +107797,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 332 with pdftoppm and visually inspected. Findings: PERPENDICULAR (adj) is a distinct ninth row; its wrapped headword, spelling, POS, columns, row boundaries, printed page 2-1-P4, approved meaning, and STE example are clear.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 332,
     "printed_page": "2-1-P4",
@@ -107807,8 +107809,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P332-009",
@@ -167562,7 +167563,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `161f9698b8ca55aadb83b8752876713e0452eb6294a5dd4331fbcf442e81b8b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `698ccad10efb384b7a6fbcc57dbdf14fe24080930fc54f6bee25df95e1d82414`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `3754a826b567d81c11d9a5abccf09b7ecce8e00d9cc1a673677e27f152e4e80d`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
 
