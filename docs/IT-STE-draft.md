@@ -158520,11 +158520,11 @@ Term: unscrew; POS: v.
 
 Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
 
-Definition: Release a physical threaded fastener by rotation in the specified direction\.
+Definition: Release a threaded fastener by turning it\, usually to loosen or remove it\.
 
 Domains: procedures\-runbooks
 
-Rationale: The meaning includes a following\-row fitness phrase\; verify source boundaries before settling the hardware sense\.
+Rationale: The authenticated page separates the three alternatives LOOSEN\, TURN\, and REMOVE from the following UNserviceable row\. Keep the sense limited to a physical threaded fastener\; the direction and result depend on the component and procedure\. See docs\/it\-ste\-research\/W1\-D\-P417\-008\-009\.md\.
 
 Contextual alternatives:
 
@@ -158558,9 +158558,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Fitness phrase apparently overlaps the following row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered page 417 with pdftoppm at 150 dpi. Findings: row 8 is unscrew (v), its alternatives are LOOSEN (v), TURN (v), and REMOVE (v), and a horizontal rule separates it from UNSERVICEABLE row 9.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 417,
     "printed_page": "2-1-U5",
@@ -158594,11 +158594,11 @@ Term: UNSERVICEABLE; POS: adj.
 
 Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
 
-Definition: Not fit for a specified equipment function under an identified inspection or test criterion\.
+Definition: Not fit for its intended equipment function\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped row needs verification and must not equate every degraded software state with unusable hardware\.
+Rationale: The authenticated page shows UNSERVICEABLE \(adj\) with the source meaning ‘Not fit for its purpose’ and a separate row from unscrew\. For IT usage\, retain an equipment\-function boundary and do not apply the label to every degraded software state\; an inspection or test can provide the supporting evidence\. See docs\/it\-ste\-research\/W1\-D\-P417\-008\-009\.md\.
 
 Contextual alternatives:
 
@@ -158632,9 +158632,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered page 417 with pdftoppm at 150 dpi. Findings: row 9 is UNSERVICEABLE (adj), its meaning is Not fit for its purpose, and horizontal rules separate it from unscrew and unstable.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 417,
     "printed_page": "2-1-U5",
@@ -158644,8 +158644,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P417-009",
@@ -167572,7 +167571,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `9778eb06938c831caab1e4486da339c11bff0065aff365de7aca98bf7245dbc2`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `75e05707de9205889a0e667702b64c6b0f8e4c76f4340c31984a4afed8014025`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 
