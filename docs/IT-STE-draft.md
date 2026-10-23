@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 77,
+    "needs-review": 75,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1450
+    "restricted": 1452
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -144213,13 +144213,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: STRUCTURALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: With respect to the physical framework or its load\-bearing condition\.
+Definition: In a way that concerns the arrangement or relationships of components in a defined system\, not its runtime behavior\.
 
-Domains: general
+Domains: software\-documentation
 
-Rationale: Source extraction is warned\; require explicit physical acceptance criteria\.
+Rationale: The authenticated page confirms STRUCTURALLY \(adv\) as a distinct row with the meaning related to the structure\. RFC 9110 describes HTTP messages and representations as defined arrangements of control data\, fields\, and content\, supporting a bounded organizational sense but not a claim about runtime safety or every system property\. Research note\: docs\/it\-ste\-research\/W1\-D\-P392\-003\-004\.md\.
 
 Contextual alternatives:
 
@@ -144230,10 +144230,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-The frame passes the specified load-bearing inspection.
+The specification describes how the message is structurally organized.
 ```
 
-Explanation: Uses a concrete acceptance check\.
+Explanation: Limits the adverb to documented arrangement and relationships rather than runtime behavior or an unlimited assurance\.
 
 #### Problematic example
 
@@ -144241,7 +144241,7 @@ Explanation: Uses a concrete acceptance check\.
 The application is structurally safe from all failures.
 ```
 
-Explanation: Transfers physical framing to an unlimited software assurance\.
+Explanation: Uses structural wording as an unsupported guarantee about runtime safety\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -144253,9 +144253,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 392 -l 392 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 392 (2-1-S26), STRUCTURALLY (adv) is a distinct ruled row with the meaning Related to the structure and its own example. The wrapped headword is complete, and horizontal rules separate the row from STRUCTURAL above and STRUCTURE below. This resolves layout only; it does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144265,8 +144265,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P392-003",
@@ -144287,19 +144286,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: STRUCTURE; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: The arrangement of identified components or fields into a defined whole\.
+Definition: An arrangement of identified components\, relationships\, or parts that forms a defined whole\.
 
-Domains: general
+Domains: software\-documentation
 
-Rationale: The arrangement sense maps to IT\, but a trailing subassembly fragment prevents a settled source interpretation\.
+Rationale: The authenticated page confirms STRUCTURE \(n\) as one row with two source senses\: a construction and the arrangement of something\. The bounded IT sense uses the arrangement meaning for documented components and relationships\. RFC 9110 describes messages and representations as organized sets of protocol elements\, supporting this organizational sense without implying runtime behavior\, security\, or every physical construction\. Research note\: docs\/it\-ste\-research\/W1\-D\-P392\-003\-004\.md\.
 
 Contextual alternatives:
 
-- arrangement
+- arrangement of components
 
-- organization of components
+- organization of fields and relationships
 
 #### Positive example
 
@@ -144327,9 +144326,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition ends with An assembly that is a, apparently overlapping SUBASSEMBLY."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 392 -l 392 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 392 (2-1-S26), STRUCTURE (n) is a distinct ruled row with two numbered meaning lines, A construction and The arrangement of something, and two corresponding examples. A horizontal rule separates it from SUBASSEMBLY below, so the trailing fragment in mechanical extraction belongs to the next row. This resolves layout only; it does not repair or approve the source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144339,8 +144338,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P392-004",
@@ -167587,7 +167585,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `e80583ea2b2c5157f21c2ff65d6a220395b4e47622f670654de32859545118cb`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `590357610fbfb995c914e0849a0524df79ca670190e4cf8a9eda67d5d9ead3f0`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d8fe55b8e96fa460c9629e11cea6f6c74e808ef920da43364222ea07af099693`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `dd3e32130ee560221070ed54abcfab512cd30c606626f0a9ed26c4b5f3a931fd`
 

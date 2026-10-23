@@ -254,24 +254,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "With respect to the physical framework or its load-bearing condition.",
+      "it_disposition": "restricted",
+      "it_definition": "In a way that concerns the arrangement or relationships of components in a defined system, not its runtime behavior.",
       "domains": [
-        "general"
+        "software-documentation"
       ],
-      "rationale": "Source extraction is warned; require explicit physical acceptance criteria.",
+      "rationale": "The authenticated page confirms STRUCTURALLY (adv) as a distinct row with the meaning related to the structure. RFC 9110 describes HTTP messages and representations as defined arrangements of control data, fields, and content, supporting a bounded organizational sense but not a claim about runtime safety or every system property. Research note: docs/it-ste-research/W1-D-P392-003-004.md.",
       "permitted_contextual_alternatives": [
         "with respect to the framework",
         "under the specified structural checks"
       ],
       "examples": {
         "positive": {
-          "text": "The frame passes the specified load-bearing inspection.",
-          "explanation": "Uses a concrete acceptance check."
+          "text": "The specification describes how the message is structurally organized.",
+          "explanation": "Limits the adverb to documented arrangement and relationships rather than runtime behavior or an unlimited assurance."
         },
         "problematic": {
           "text": "The application is structurally safe from all failures.",
-          "explanation": "Transfers physical framing to an unlimited software assurance."
+          "explanation": "Uses structural wording as an unsupported guarantee about runtime safety."
         }
       },
       "evidence": {
@@ -292,14 +292,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 392 -l 392 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 392 (2-1-S26), STRUCTURALLY (adv) is a distinct ruled row with the meaning Related to the structure and its own example. The wrapped headword is complete, and horizontal rules separate the row from STRUCTURAL above and STRUCTURE below. This resolves layout only; it does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "original example review"
         ]
       }
     },
@@ -316,15 +315,15 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "The arrangement of identified components or fields into a defined whole.",
+      "it_disposition": "restricted",
+      "it_definition": "An arrangement of identified components, relationships, or parts that forms a defined whole.",
       "domains": [
-        "general"
+        "software-documentation"
       ],
-      "rationale": "The arrangement sense maps to IT, but a trailing subassembly fragment prevents a settled source interpretation.",
+      "rationale": "The authenticated page confirms STRUCTURE (n) as one row with two source senses: a construction and the arrangement of something. The bounded IT sense uses the arrangement meaning for documented components and relationships. RFC 9110 describes messages and representations as organized sets of protocol elements, supporting this organizational sense without implying runtime behavior, security, or every physical construction. Research note: docs/it-ste-research/W1-D-P392-003-004.md.",
       "permitted_contextual_alternatives": [
-        "arrangement",
-        "organization of components"
+        "arrangement of components",
+        "organization of fields and relationships"
       ],
       "examples": {
         "positive": {
@@ -354,14 +353,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 392 -l 392 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 392 (2-1-S26), STRUCTURE (n) is a distinct ruled row with two numbered meaning lines, A construction and The arrangement of something, and two corresponding examples. A horizontal rule separates it from SUBASSEMBLY below, so the trailing fragment in mechanical extraction belongs to the next row. This resolves layout only; it does not repair or approve the source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "original example review"
         ]
       }
     },
