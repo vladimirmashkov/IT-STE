@@ -497,12 +497,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Send an identified item to a specified recipient for processing or review.",
+      "it_disposition": "restricted",
+      "it_definition": "Send a named item to a specified recipient or processing endpoint for review or processing.",
       "domains": [
         "general"
       ],
-      "rationale": "Submission is not acceptance or completion, and the source appears to overlap the next row.",
+      "rationale": "Visual verification confirms a separate submit (v) row with SEND (v); the extracted tail Following in an belongs to the following SUBSEQUENT row. WHATWG form-submission requirements support sending a form entry list to a specified action and distinguish submission from later processing or approval. Restrict this draft sense to a named item and recipient or endpoint; submission does not establish acceptance, authorization, completion, or success. See docs/it-ste-research/W1-D-P392-007-008.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "send for processing",
         "send for review"
@@ -535,14 +535,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows submit (v) as a separate row below submerge (v) and above SUBSEQUENT (adj); its source meaning is SEND (v), and the extracted Following in an fragment belongs to the next row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named item and recipient or processing endpoint; do not equate submission with acceptance, authorization, completion, or success"
         ]
       }
     },
@@ -559,12 +559,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Following an identified event without necessarily being the immediately next event.",
+      "it_disposition": "restricted",
+      "it_definition": "Following an identified event in a stated time or sequence, without meaning the immediate successor.",
       "domains": [
         "general"
       ],
-      "rationale": "The extraction warning requires review; use next only for the immediate successor.",
+      "rationale": "Visual verification confirms SUBSEQUENT (adj) as a separate wrapped-headword row below submit (v), with the meaning Following in an unspecified time or sequence and explicit guidance to use NEXT for immediate succession. Restrict this draft sense to an identified earlier event and stated sequence or timing context; do not use it to imply the next event, completion, causality, or a guaranteed deadline. See docs/it-ste-research/W1-D-P392-007-008.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "later",
         "following",
@@ -598,14 +598,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows SUBSEQUENT (adj) as a separate wrapped-headword row below submit (v); its meaning is Following in an unspecified time or sequence, with explicit source guidance to use NEXT for an immediate successor.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the earlier event and stated time or sequence before use; use next only for the immediate successor"
         ]
       }
     },

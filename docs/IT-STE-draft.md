@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 48,
+    "needs-review": 46,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1475
+    "restricted": 1477
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -144498,13 +144498,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: submit; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Send an identified item to a specified recipient for processing or review\.
+Definition: Send a named item to a specified recipient or processing endpoint for review or processing\.
 
 Domains: general
 
-Rationale: Submission is not acceptance or completion\, and the source appears to overlap the next row\.
+Rationale: Visual verification confirms a separate submit \(v\) row with SEND \(v\)\; the extracted tail Following in an belongs to the following SUBSEQUENT row\. WHATWG form\-submission requirements support sending a form entry list to a specified action and distinguish submission from later processing or approval\. Restrict this draft sense to a named item and recipient or endpoint\; submission does not establish acceptance\, authorization\, completion\, or success\. See docs\/it\-ste\-research\/W1\-D\-P392\-007\-008\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144538,9 +144538,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition includes Following in an, apparently a fragment of SUBSEQUENT."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows submit (v) as a separate row below submerge (v) and above SUBSEQUENT (adj); its source meaning is SEND (v), and the extracted Following in an fragment belongs to the next row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144551,7 +144551,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named item and recipient or processing endpoint; do not equate submission with acceptance, authorization, completion, or success"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P392-007",
@@ -144572,13 +144572,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SUBSEQUENT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Following an identified event without necessarily being the immediately next event\.
+Definition: Following an identified event in a stated time or sequence\, without meaning the immediate successor\.
 
 Domains: general
 
-Rationale: The extraction warning requires review\; use next only for the immediate successor\.
+Rationale: Visual verification confirms SUBSEQUENT \(adj\) as a separate wrapped\-headword row below submit \(v\)\, with the meaning Following in an unspecified time or sequence and explicit guidance to use NEXT for immediate succession\. Restrict this draft sense to an identified earlier event and stated sequence or timing context\; do not use it to imply the next event\, completion\, causality\, or a guaranteed deadline\. See docs\/it\-ste\-research\/W1\-D\-P392\-007\-008\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144614,9 +144614,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows SUBSEQUENT (adj) as a separate wrapped-headword row below submit (v); its meaning is Following in an unspecified time or sequence, with explicit source guidance to use NEXT for an immediate successor.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144627,7 +144627,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the earlier event and stated time or sequence before use; use next only for the immediate successor"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P392-008",
@@ -167575,7 +167575,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `a1e16b2c9cc9af50a2038390dbc5a9420158a00f9113b8eb1ca3271be8c39450`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `5bcd13b033c06f53c1cc572f993c26c4468345108abc5de8d673fa2cc9d83948`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
 
