@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 75,
+    "needs-review": 73,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1452
+    "restricted": 1454
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -148702,13 +148702,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: TELL; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Give specified information or an instruction to an identified person\.
+Definition: Give specified information or an instruction to an identified person or responsible system role\.
 
 Domains: support\-troubleshooting
 
-Rationale: The sense is useful for communication\, but the compact meaning also includes wording from the next row\.
+Rationale: The authenticated page confirms TELL \(v\) as a distinct row with two examples\: giving a warning to visitors and supplying an error code to a technician\. RFC 9110 describes messages as communicating sender intent and information to recipients\, supporting this bounded communication sense\. The definition does not imply that a server understands ordinary language or that an instruction is safe or executable\. Research note\: docs\/it\-ste\-research\/W1\-D\-P400\-007\-008\.md\.
 
 Contextual alternatives:
 
@@ -148742,9 +148742,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact meaning includes an apparent fragment of the following row; PDF verification outstanding."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 400 -l 400 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 400 (2-1-T2), TELL (v), TELLS, TOLD, TOLD is a distinct row with the meaning To give an order or supply information and two examples. A horizontal rule separates it from TEMPORARILY below. The layout confirms row and example association but does not repair the derivative source database.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 400,
     "printed_page": "2-1-T2",
@@ -148754,8 +148754,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P400-007",
@@ -148776,13 +148775,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: TEMPORARILY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: For a bounded interval with a stated end or reversal condition\.
 
 Domains: configuration
 
-Rationale: Wrapped extraction needs review\; operationally a temporary action still needs an expiry or restoration step\.
+Rationale: The authenticated page confirms TEMPORARILY \(adv\) as a distinct row with the meaning In a temporary manner and a cover\-attachment example\. RFC 9110 distinguishes current and desired resource states but does not define an expiry policy\; the draft therefore requires a stated end or restoration condition rather than treating temporary as an unspecified short duration\. Research note\: docs\/it\-ste\-research\/W1\-D\-P400\-007\-008\.md\.
 
 Contextual alternatives:
 
@@ -148816,9 +148815,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Visual inspection of a PNG rendered with pdftoppm -f 400 -l 400 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 400 (2-1-T2), TEMPORARILY (adv) is a distinct row with the wrapped headword, the meaning In a temporary manner, and its own cover example. A horizontal rule separates it from TEMPORARY (adj) below. The layout confirms spelling, POS, row, and example association but does not define a universal expiry policy.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 400,
     "printed_page": "2-1-T2",
@@ -148828,8 +148827,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or overlapping source row against PDF"
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P400-008",
@@ -167585,7 +167583,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d8fe55b8e96fa460c9629e11cea6f6c74e808ef920da43364222ea07af099693`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `81bcd060f0e9b163b8c595946f065881920f6721598d3a5c2adc8822e8915365`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 

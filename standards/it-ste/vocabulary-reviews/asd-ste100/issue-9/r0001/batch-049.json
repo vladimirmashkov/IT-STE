@@ -1498,12 +1498,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Give specified information or an instruction to an identified person.",
+      "it_disposition": "restricted",
+      "it_definition": "Give specified information or an instruction to an identified person or responsible system role.",
       "domains": [
         "support-troubleshooting"
       ],
-      "rationale": "The sense is useful for communication, but the compact meaning also includes wording from the next row.",
+      "rationale": "The authenticated page confirms TELL (v) as a distinct row with two examples: giving a warning to visitors and supplying an error code to a technician. RFC 9110 describes messages as communicating sender intent and information to recipients, supporting this bounded communication sense. The definition does not imply that a server understands ordinary language or that an instruction is safe or executable. Research note: docs/it-ste-research/W1-D-P400-007-008.md.",
       "permitted_contextual_alternatives": [
         "notify the operator",
         "instruct the administrator"
@@ -1536,14 +1536,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 400 -l 400 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 400 (2-1-T2), TELL (v), TELLS, TOLD, TOLD is a distinct row with the meaning To give an order or supply information and two examples. A horizontal rule separates it from TEMPORARILY below. The layout confirms row and example association but does not repair the derivative source database.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify flagged or overlapping source row against PDF"
+          "original example review"
         ]
       }
     },
@@ -1560,12 +1559,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "For a bounded interval with a stated end or reversal condition.",
       "domains": [
         "configuration"
       ],
-      "rationale": "Wrapped extraction needs review; operationally a temporary action still needs an expiry or restoration step.",
+      "rationale": "The authenticated page confirms TEMPORARILY (adv) as a distinct row with the meaning In a temporary manner and a cover-attachment example. RFC 9110 distinguishes current and desired resource states but does not define an expiry policy; the draft therefore requires a stated end or restoration condition rather than treating temporary as an unspecified short duration. Research note: docs/it-ste-research/W1-D-P400-007-008.md.",
       "permitted_contextual_alternatives": [
         "until the diagnostic ends",
         "for ten minutes"
@@ -1598,14 +1597,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Visual inspection of a PNG rendered with pdftoppm -f 400 -l 400 -png -r 150 from the authenticated ASD-STE100 Issue 9 PDF, SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: On physical page 400 (2-1-T2), TEMPORARILY (adv) is a distinct row with the wrapped headword, the meaning In a temporary manner, and its own cover example. A horizontal rule separates it from TEMPORARY (adj) below. The layout confirms spelling, POS, row, and example association but does not define a universal expiry policy.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify flagged or overlapping source row against PDF"
+          "original example review"
         ]
       }
     },
