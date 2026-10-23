@@ -99,6 +99,11 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(radioactive["evidence"]["extraction_warnings"], ["wrapped-headword"])
         self.assertTrue(radioactive["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertIn("without identifying their sensing technology", radioactive["rationale"])
+        real = by_id["D-P351-001"]
+        self.assertEqual(real["it_disposition"], "needs-review")
+        self.assertTrue(real["evidence"]["mechanical_ambiguities"])
+        self.assertTrue(real["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("not automatically true or verified", real["rationale"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

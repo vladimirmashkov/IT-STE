@@ -117975,7 +117975,7 @@ Definition: Provisionally\, corresponding to an actual observed state rather tha
 
 Domains: software\-documentation
 
-Rationale: The exact adjective row is visually confirmed as a separate row with AGREE \(v\) in the alternatives column and a gauge example\, but that source mapping does not establish whether the IT sense is actual\, genuine\, verified\, or non\-simulated\. RFC 9110 provides related representation\-state and validator concepts without selecting one of those senses\; retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P351\-001\.md\.
+Rationale: The exact adjective row is visually confirmed as a separate row with AGREE \(v\) in the alternatives column and a gauge example\, but that source mapping does not establish whether the IT sense is actual\, genuine\, verified\, or non\-simulated\. RFC 9110 provides related representation\-state and validator concepts without selecting one of those senses\. New JCGM VIM3 evidence separates measured and true quantity values\; Prometheus counters\/gauges have defined observation semantics\, including counter resets\, not a correctness guarantee\. An observed value is not automatically true or verified\. Retain needs\-review until the IT object\, intended contrast and comparison method are specified\. Research note\: docs\/it\-ste\-research\/W1\-D\-P351\-001\.md\.
 
 Contextual alternatives:
 
@@ -167563,7 +167563,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `19fbd5774bf495bac0d9885d6da6df9a0b79ca089020766708734a56744e09ca`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `f5efd07e6b636208138bb3d23c113307d89c8b3e9a4ba48fe6eab9ad7c51bcc4`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `090b382e55870397708dd45dc43edce857e8603af41935bce9d953c35de4c5ca`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-040.json` SHA-256: `9725bab3b75cd7b783b5714a46002a448b86746cecaa36b9642865756abdd935`
 
