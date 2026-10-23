@@ -135,24 +135,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Meeting all stated operational acceptance conditions.",
+      "it_disposition": "restricted",
+      "it_definition": "Meeting all stated acceptance conditions for a named IT service property within the specified assessment scope.",
       "domains": [
         "general"
       ],
-      "rationale": "Provisional acceptance sense pending resolution of the extraction warning.",
+      "rationale": "Authenticated page 368 confirms the separate adjective row and complete meaning. Restrict satisfactory to stated conditions for a named service property and assessment scope; for latency, identify the measured requests, measurement point, threshold, target proportion and time window. Google SRE guidance distinguishes SLI specification from implementation and documents coverage limits. Passing selected tests is not automatically equivalent to meeting all operational conditions, and meeting a latency target does not establish overall service health. See docs/it-ste-research/W1-D-P368.md.",
       "permitted_contextual_alternatives": [
-        "meets the acceptance criteria",
-        "passes the specified tests"
+        "meets all stated criteria for the named property and assessment scope",
+        "meets the specified service-level objective for the stated measurement window"
       ],
       "examples": {
         "positive": {
-          "text": "The response time meets the 200 ms limit.",
-          "explanation": "Names a measurable acceptance condition."
+          "text": "During the last 24 hours, 99.5% of checkout requests measured at the gateway completed within 200 ms; the stated target is at least 99%.",
+          "explanation": "Illustrates a bounded latency result with request scope, measurement point, threshold, proportion and window. The figures are illustrative, not project measurements or recommended targets; this result does not establish that every service property is satisfactory."
         },
         "problematic": {
           "text": "The service is satisfactory.",
-          "explanation": "Does not define the assessed property."
+          "explanation": "Omits the assessed property, acceptance conditions, measurement scope and time window; it is not a bounded operational conclusion."
         }
       },
       "evidence": {
@@ -173,14 +173,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2; existing local pdftoppm single-page rendering visually rechecked on 2026-10-23 after source doctor passed. Findings: row 5 SATISFACTORY has (adj) below the headword and its own Agrees with all that is necessary definition, with a 3 mm clearance example. Horizontal rules separate it from SATISFACTORILY above and saturate below. See docs/it-ste-research/W1-D-P368.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Validate actual acceptance conditions, measurement coverage and the scope of any service-level conclusion"
         ]
       }
     },

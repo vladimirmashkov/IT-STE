@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 63,
+    "needs-review": 62,
     "not-applicable": 148,
     "prohibited": 406,
-    "restricted": 1461
+    "restricted": 1462
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -129230,27 +129230,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SATISFACTORY; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Meeting all stated operational acceptance conditions\.
+Definition: Meeting all stated acceptance conditions for a named IT service property within the specified assessment scope\.
 
 Domains: general
 
-Rationale: Provisional acceptance sense pending resolution of the extraction warning\.
+Rationale: Authenticated page 368 confirms the separate adjective row and complete meaning\. Restrict satisfactory to stated conditions for a named service property and assessment scope\; for latency\, identify the measured requests\, measurement point\, threshold\, target proportion and time window\. Google SRE guidance distinguishes SLI specification from implementation and documents coverage limits\. Passing selected tests is not automatically equivalent to meeting all operational conditions\, and meeting a latency target does not establish overall service health\. See docs\/it\-ste\-research\/W1\-D\-P368\.md\.
 
 Contextual alternatives:
 
-- meets the acceptance criteria
+- meets all stated criteria for the named property and assessment scope
 
-- passes the specified tests
+- meets the specified service\-level objective for the stated measurement window
 
 #### Positive example
 
 ```
-The response time meets the 200 ms limit.
+During the last 24 hours, 99.5% of checkout requests measured at the gateway completed within 200 ms; the stated target is at least 99%.
 ```
 
-Explanation: Names a measurable acceptance condition\.
+Explanation: Illustrates a bounded latency result with request scope\, measurement point\, threshold\, proportion and window\. The figures are illustrative\, not project measurements or recommended targets\; this result does not establish that every service property is satisfactory\.
 
 #### Problematic example
 
@@ -129258,7 +129258,7 @@ Explanation: Names a measurable acceptance condition\.
 The service is satisfactory.
 ```
 
-Explanation: Does not define the assessed property\.
+Explanation: Omits the assessed property\, acceptance conditions\, measurement scope and time window\; it is not a bounded operational conclusion\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -129270,9 +129270,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 368 / printed 2-1-S2; existing local pdftoppm single-page rendering visually rechecked on 2026-10-23 after source doctor passed. Findings: row 5 SATISFACTORY has (adj) below the headword and its own Agrees with all that is necessary definition, with a 3 mm clearance example. Horizontal rules separate it from SATISFACTORILY above and saturate below. See docs/it-ste-research/W1-D-P368.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 368,
     "printed_page": "2-1-S2",
@@ -129283,7 +129283,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Validate actual acceptance conditions, measurement coverage and the scope of any service-level conclusion"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P368-005",
@@ -167569,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `73093ac8dc316fa197c2ce7bd85e61fb3db1fcecf4abbc2c6db20d36c06c1989`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `bd1838b59dbad7efa0f257bed34e3609e01b4ed6fac52abdec8b79904615af0e`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
 

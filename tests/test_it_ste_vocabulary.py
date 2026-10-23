@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1461, "prohibited": 406,
-                             "not-applicable": 148, "needs-review": 63},
+            "dispositions": {"allowed": 118, "restricted": 1462, "prohibited": 406,
+                             "not-applicable": 148, "needs-review": 62},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -138,6 +138,15 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(by_id["D-P368-004"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
         self.assertIn("not a general recovery", by_id["D-P368-004"]["rationale"])
         self.assertIn("named test", by_id["D-P368-004"]["permitted_contextual_alternatives"][1])
+        satisfactory = by_id["D-P368-005"]
+        self.assertEqual(satisfactory["it_disposition"], "restricted")
+        self.assertEqual(satisfactory["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertTrue(satisfactory["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("named IT service property", satisfactory["it_definition"])
+        self.assertNotIn("passes the specified tests", satisfactory["permitted_contextual_alternatives"])
+        self.assertIn("last 24 hours", satisfactory["examples"]["positive"]["text"])
+        self.assertIn("measured at the gateway", satisfactory["examples"]["positive"]["text"])
+        self.assertIn("not project measurements", satisfactory["examples"]["positive"]["explanation"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 
