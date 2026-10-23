@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 104,
+    "needs-review": 103,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1423
+    "restricted": 1424
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -95473,13 +95473,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: miscellaneous; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes items grouped together without a shared named category\.
+Definition: Describes an explicitly defined residual group of items without a shared named category\.
 
 Domains: user\-interface
 
-Rationale: The wrapped row needs source review\; miscellaneous labels also hide useful navigation structure\.
+Rationale: The authenticated page isolates the wrapped miscellaneous \(adj\) row with OTHER and ALL alternatives\. W3C requires labels to make a control\'s purpose clear\; restrict this term to a defined residual UI\/documentation category and do not use it for an unbounded deletion or unspecified item set\. See \`docs\/it\-ste\-research\/W1\-D\-P311\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -95513,9 +95513,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 311 -l 311 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-311-iter5; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: miscellaneous (adj) is a distinct wrapped row after MINUS (prep) and before misrigged (adj); OTHER (adj) and ALL (adj) are its alternatives, and its own examples are separate from adjacent rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 311,
     "printed_page": "2-1-M7",
@@ -95525,8 +95525,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P311-005",
@@ -167552,7 +167551,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `f68d370e3dba60524fc1f35d377c3bf6342945fd90bff120a89e91bde945e196`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `5e14fe8a15b5b93baaaa8e9b74c7502bbbf528046d199b6928c5a780e2f650e1`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 

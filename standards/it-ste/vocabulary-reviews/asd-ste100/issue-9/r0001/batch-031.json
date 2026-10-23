@@ -1617,12 +1617,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes items grouped together without a shared named category.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes an explicitly defined residual group of items without a shared named category.",
       "domains": [
         "user-interface"
       ],
-      "rationale": "The wrapped row needs source review; miscellaneous labels also hide useful navigation structure.",
+      "rationale": "The authenticated page isolates the wrapped miscellaneous (adj) row with OTHER and ALL alternatives. W3C requires labels to make a control's purpose clear; restrict this term to a defined residual UI/documentation category and do not use it for an unbounded deletion or unspecified item set. See `docs/it-ste-research/W1-D-P311.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "other supported formats",
         "remaining log files"
@@ -1655,14 +1655,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 311 -l 311 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-311-iter5; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: miscellaneous (adj) is a distinct wrapped row after MINUS (prep) and before misrigged (adj); OTHER (adj) and ALL (adj) are its alternatives, and its own examples are separate from adjacent rows.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
