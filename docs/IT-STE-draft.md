@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 51,
+    "needs-review": 49,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1472
+    "restricted": 1474
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -144059,13 +144059,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: STRONG; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, able to withstand a specified physical load or exert a specified force\.
+Definition: Having a specified physical load\, force\, or rating that a named IT component can withstand or exert\.
 
 Domains: general
 
-Rationale: The compact definition includes a probable fragment from the next row\; cryptographic strength is not inferred\.
+Rationale: Visual verification confirms a separate STRONG \(adj\) row with the meaning With much strength\, power\, or concentration and a wind\/aircraft example\; the extracted tail Related to the structure belongs to the following STRUCTURAL row\, not to STRONG\. Lenovo\'s official SR650 V3 rack procedure identifies named hardware components and load\/stability conditions\, while NIST SP 800\-63\-4 uses strength for digital authentication assurance and password resistance\. Restrict this draft sense to a named physical IT component and specified load\, force\, or rating\; do not make an unqualified password\, security\, availability\, or reliability claim\. See docs\/it\-ste\-research\/W1\-D\-P392\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144099,9 +144099,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition ends with Related to the structure, apparently overlapping the following adjective row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows STRONG (adj) as a separate row above STRUCTURAL (adj); its source meaning is With much strength, power, or concentration, and the extracted Related to the structure tail is not part of the row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144112,7 +144112,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named component and load, force, or rating; do not use strong as an unqualified security, password, or availability claim"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P392-001",
@@ -144133,13 +144133,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: STRUCTURAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Related to the physical framework of IT equipment\.
 
 Domains: general
 
-Rationale: The wrapped\-headword warning requires review\; software structural typing is not automatically included\.
+Rationale: Visual verification confirms STRUCTURAL \(adj\) as a separate row immediately below STRONG \(adj\)\; its wrapped headword is a display wrap\, and the source meaning is Related to the structure\. Lenovo\'s official rack procedure supports naming physical rails\, sides\, latches and other hardware relationships\. Restrict this draft sense to a documented physical framework\, arrangement\, or relationship of named IT equipment\; software type semantics and runtime safety are outside this sense\. See docs\/it\-ste\-research\/W1\-D\-P392\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -144173,9 +144173,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows STRUCTURAL (adj) as a separate row below STRONG (adj), with a two-line wrapped headword and the meaning Related to the structure. The wrapped headword is a display artifact, not an unresolved row boundary.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 392,
     "printed_page": "2-1-S26",
@@ -144186,7 +144186,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named physical framework or component relationship; do not imply runtime safety, software type semantics, or complete acceptance"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P392-002",
@@ -167575,7 +167575,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d8fe55b8e96fa460c9629e11cea6f6c74e808ef920da43364222ea07af099693`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `e54544577830afc117a321f0dd54c310a0c666836e72b4133b22998d2873b525`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
 

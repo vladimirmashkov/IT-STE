@@ -130,12 +130,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, able to withstand a specified physical load or exert a specified force.",
+      "it_disposition": "restricted",
+      "it_definition": "Having a specified physical load, force, or rating that a named IT component can withstand or exert.",
       "domains": [
         "general"
       ],
-      "rationale": "The compact definition includes a probable fragment from the next row; cryptographic strength is not inferred.",
+      "rationale": "Visual verification confirms a separate STRONG (adj) row with the meaning With much strength, power, or concentration and a wind/aircraft example; the extracted tail Related to the structure belongs to the following STRUCTURAL row, not to STRONG. Lenovo's official SR650 V3 rack procedure identifies named hardware components and load/stability conditions, while NIST SP 800-63-4 uses strength for digital authentication assurance and password resistance. Restrict this draft sense to a named physical IT component and specified load, force, or rating; do not make an unqualified password, security, availability, or reliability claim. See docs/it-ste-research/W1-D-P392.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "able to withstand the specified load",
         "high-force, with a stated value"
@@ -168,14 +168,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows STRONG (adj) as a separate row above STRUCTURAL (adj); its source meaning is With much strength, power, or concentration, and the extracted Related to the structure tail is not part of the row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named component and load, force, or rating; do not use strong as an unqualified security, password, or availability claim"
         ]
       }
     },
@@ -192,12 +192,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Related to the physical framework of IT equipment.",
       "domains": [
         "general"
       ],
-      "rationale": "The wrapped-headword warning requires review; software structural typing is not automatically included.",
+      "rationale": "Visual verification confirms STRUCTURAL (adj) as a separate row immediately below STRONG (adj); its wrapped headword is a display wrap, and the source meaning is Related to the structure. Lenovo's official rack procedure supports naming physical rails, sides, latches and other hardware relationships. Restrict this draft sense to a documented physical framework, arrangement, or relationship of named IT equipment; software type semantics and runtime safety are outside this sense. See docs/it-ste-research/W1-D-P392.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "framework-related",
         "load-bearing, where applicable"
@@ -230,14 +230,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 392 / printed 2-1-S26 shows STRUCTURAL (adj) as a separate row below STRONG (adj), with a two-line wrapped headword and the meaning Related to the structure. The wrapped headword is a display artifact, not an unresolved row boundary.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named physical framework or component relationship; do not imply runtime safety, software type semantics, or complete acceptance"
         ]
       }
     },
