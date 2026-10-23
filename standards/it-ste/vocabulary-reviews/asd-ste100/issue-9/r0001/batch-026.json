@@ -606,12 +606,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Not dependent on a specified other operation or resource.",
       "domains": [
         "data-storage"
       ],
-      "rationale": "The meaning cell apparently includes a fragment of independently; source review is required.",
+      "rationale": "Visual inspection confirms the separate adjective row and its own `INDEPENDENTLY (adv)` alternative. In IT documentation, use independent only when the dependency or failure dimension is named; AWS defines fault isolation by an explicit boundary, while Kubernetes failure-domain spreading reduces correlated risk without proving independence. See docs/it-ste-research/W1-D-P282.md.",
       "permitted_contextual_alternatives": [
         "not dependent on",
         "separate from"
@@ -644,14 +644,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 282 -l 282 -png -r 180 and visually inspected physical page 282. Findings: row 5 is bounded by incur (v) above and INDEPENDENTLY (adv) below; it reads independent (adj), shows `INDEPENDENTLY (adv)` as its alternative, and has the operation example in its own row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },
@@ -668,12 +667,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Without depending on an explicitly named operation or resource.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "Wrapped-headword warning requires source review; independence must name its dimension.",
+      "rationale": "Visual inspection confirms a separate wrapped adverb row with `Without a relation with` and its own emergency-system example. Use independently only when the action and excluded dependency or failure dimension are explicit; do not infer failure independence from topology or naming alone. See docs/it-ste-research/W1-D-P282.md.",
       "permitted_contextual_alternatives": [
         "without relying on",
         "separately"
@@ -706,14 +705,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 282 -l 282 -png -r 180 and visually inspected physical page 282. Findings: row 6 follows independent (adj), shows the wrapped two-line headword INDEPENDENTLY (adv), and has `Without a relation with` plus the emergency-system example in its own row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },

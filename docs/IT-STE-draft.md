@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 128,
+    "needs-review": 126,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1401
+    "restricted": 1403
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -79419,13 +79419,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: independent; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Not dependent on a specified other operation or resource\.
 
 Domains: data\-storage
 
-Rationale: The meaning cell apparently includes a fragment of independently\; source review is required\.
+Rationale: Visual inspection confirms the separate adjective row and its own \`INDEPENDENTLY \(adv\)\` alternative\. In IT documentation\, use independent only when the dependency or failure dimension is named\; AWS defines fault isolation by an explicit boundary\, while Kubernetes failure\-domain spreading reduces correlated risk without proving independence\. See docs\/it\-ste\-research\/W1\-D\-P282\.md\.
 
 Contextual alternatives:
 
@@ -79459,9 +79459,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the following adverb definition; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 282 -l 282 -png -r 180 and visually inspected physical page 282. Findings: row 5 is bounded by incur (v) above and INDEPENDENTLY (adv) below; it reads independent (adj), shows `INDEPENDENTLY (adv)` as its alternative, and has the operation example in its own row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 282,
     "printed_page": "2-1-I8",
@@ -79471,8 +79471,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P282-005",
@@ -79493,13 +79492,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INDEPENDENTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Without depending on an explicitly named operation or resource\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Wrapped\-headword warning requires source review\; independence must name its dimension\.
+Rationale: Visual inspection confirms a separate wrapped adverb row with \`Without a relation with\` and its own emergency\-system example\. Use independently only when the action and excluded dependency or failure dimension are explicit\; do not infer failure independence from topology or naming alone\. See docs\/it\-ste\-research\/W1\-D\-P282\.md\.
 
 Contextual alternatives:
 
@@ -79533,9 +79532,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 282 -l 282 -png -r 180 and visually inspected physical page 282. Findings: row 6 follows independent (adj), shows the wrapped two-line headword INDEPENDENTLY (adv), and has `Without a relation with` plus the emergency-system example in its own row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 282,
     "printed_page": "2-1-I8",
@@ -79545,8 +79544,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P282-006",
@@ -167568,7 +167566,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `29779611fe3f60c6b685d38452fb830d025ddedee6af8ee0cc556cffa64f7214`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `f10b27abe9face511c90e0bdb82b73f6520cfd48706f21cad6dfa638e77a3100`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `c953df704322afa13595ba7c22e6c24594417f0d4560d3577473ce49fd4cc725`
 
