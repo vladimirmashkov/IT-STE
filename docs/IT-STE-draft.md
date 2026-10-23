@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 53,
+    "needs-review": 52,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1470
+    "restricted": 1471
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -138922,13 +138922,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: spanwise; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, oriented along the span of a physical structure\.
+Definition: Describing a direction or movement along the named span of an identified physical IT structure\.
 
 Domains: general
 
-Rationale: The source technical\-noun cross\-reference does not establish a general IT installation axis\.
+Rationale: Visual verification confirms a separate spanwise \(adj\) row whose meaning column contains the technical\-noun cross\-reference SPAN \(TN\)\, with a physical example about movement along the span\; this is a semantic scope question\, not a row\-boundary error\. NASA\'s technical geometry guidance defines a span between identified structural endpoints and describes geometry along the span\, while Lenovo\'s official SR650 V3 rack procedure uses named rails\, server sides and front\/rear references for controlled hardware movement without using spanwise for software behavior\. Restrict this draft sense to a named physical IT structure and its documented span or axis\; do not use it for processes\, data\, network traffic\, or an unspecified installation direction\. See docs\/it\-ste\-research\/W1\-D\-P384\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -138939,10 +138939,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Describe the bracket position along axis X in the installation drawing.
+Describe the bracket position spanwise along the named rail span in the installation drawing.
 ```
 
-Explanation: Uses an explicit coordinate reference\.
+Explanation: Names the physical structure and reference direction\.
 
 #### Problematic example
 
@@ -138962,9 +138962,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "SPAN technical-noun cross-reference leaves the structural axis and scope unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 384 / printed 2-1-S18 shows spanwise (adj) as a separate row between spacing (n) and sparingly (adv); its meaning column contains SPAN (TN), and its examples refer to movement along the span. The cross-reference leaves semantic scope open but is not a row-boundary error.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 384,
     "printed_page": "2-1-S18",
@@ -138975,7 +138975,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the physical structure and named span or axis before using this adjective; do not apply it to software, data, or network behavior"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P384-005",
@@ -167571,7 +167571,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `d491be2d4151ec0a1b2e1ca3c882f994af514f9926a19f808a712d69ae3ea619`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `5b0076db0ff64b2a8e34e5868bdf0a8e3e3df21d68951abddc8e38176f19449c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `dd7bc63c70a1dbec25f3031200d3a91c4dc6e27413efec7597679ce1679109c9`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `e80583ea2b2c5157f21c2ff65d6a220395b4e47622f670654de32859545118cb`
 
