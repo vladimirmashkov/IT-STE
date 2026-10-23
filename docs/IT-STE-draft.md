@@ -158372,11 +158372,11 @@ Term: UNSATISFAC\- TORILY; POS: adv.
 
 Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
 
-Definition: In a way that fails stated acceptance criteria for a measured operation\.
+Definition: In a manner that does not meet a stated requirement or acceptance criterion\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped headword and apparent following\-row overlap require review\; replace vague judgment with evidence\.
+Rationale: The authenticated page confirms a distinct row with the meaning ‘In an unsatisfactory manner’\. In IT writing\, state the unmet requirement or acceptance criterion instead of relying on an unqualified quality judgment\. See docs\/it\-ste\-research\/W1\-D\-P417\-006\-007\.md\.
 
 Contextual alternatives:
 
@@ -158412,9 +158412,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Wrapped headword and apparent following-row definition overlap."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered page 417 with pdftoppm at 150 dpi. Findings: row 6 is UNSATISFAC-TORILY (adv), its meaning is In an unsatisfactory manner, and the next row is separated by a rule.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 417,
     "printed_page": "2-1-U5",
@@ -158424,8 +158424,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P417-006",
@@ -158448,11 +158447,11 @@ Term: UNSATISFAC\- TORY; POS: adj.
 
 Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
 
-Definition: Failing an explicitly identified operational or performance requirement\.
+Definition: Not meeting a stated requirement or acceptance criterion\.
 
 Domains: monitoring\-alerts
 
-Rationale: The wrapped spelling is retained as source metadata\, not promoted as an IT spelling\.
+Rationale: The authenticated page confirms a distinct row with the meaning ‘Not satisfactory’\. In IT writing\, identify the unmet requirement or acceptance criterion rather than use a subjective label alone\. See docs\/it\-ste\-research\/W1\-D\-P417\-006\-007\.md\.
 
 Contextual alternatives:
 
@@ -158486,9 +158485,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered page 417 with pdftoppm at 150 dpi. Findings: row 7 is UNSATISFAC-TORY (adj), its meaning is Not satisfactory, and the row is separated from rows 6 and 8.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 417,
     "printed_page": "2-1-U5",
@@ -158498,8 +158497,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P417-007",
@@ -167574,7 +167572,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `4b4c5666d149ab60ba3ac055d7f1af88bafb64d933996acd231329d288a498ee`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `9778eb06938c831caab1e4486da339c11bff0065aff365de7aca98bf7245dbc2`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 
