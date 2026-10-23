@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 107,
+    "needs-review": 106,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1421
+    "restricted": 1422
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -94616,13 +94616,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: mesh; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Engage the teeth of interacting hardware components\; not combine network services\.
+Definition: Engage the teeth of interacting mechanical components\; not connect or combine software services\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The compact source also contains WEATHER from the next row\, so the sense boundary is unresolved\.
+Rationale: The authenticated page shows a distinct mesh row with a gear example\; restrict the verb to physical toothed components and use an exact networking or service term for software systems\.
 
 Contextual alternatives:
 
@@ -94654,9 +94654,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact alternatives include WEATHER from the adjacent meteorological row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 310 -l 310 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-310; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: mesh (v) is a separate row with ENGAGE (v) and the gear example, followed by a distinct meteorological (adj) row with WEATHER (n); the compact adjacent alternative is a row-boundary extraction artifact.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 310,
     "printed_page": "2-1-M6",
@@ -167554,7 +167554,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `d1a03dde39572ff242cefd3c9e1afe00a278b416dff7df6c0e7e91fc478144b9`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `ce66eff5059b1a955ed5bea6b75e666d64431002c7222d097a403dca63664086`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 
