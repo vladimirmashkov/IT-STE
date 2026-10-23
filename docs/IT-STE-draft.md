@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 99,
+    "needs-review": 98,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1428
+    "restricted": 1429
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -96797,13 +96797,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MORE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Indicates an additional quantity relative to a stated configuration baseline\.
+Definition: Specifies an additional quantity of a named resource or property relative to a stated baseline\.
 
 Domains: configuration
 
-Rationale: The compact source describes a large quantity without a comparison\; the comparative sense needs source\-boundary review\.
+Rationale: The authenticated page isolates \`MORE \(adj\)\` with \`A large quantity of\` between MOOR and MORE \(adv\)\; its shim example is separate\, while the compact source omits the comparative relation\. Kubernetes resource documentation names resource types\, requests\/limits\, units\, and baselines\, and Prometheus query documentation represents measured values and ranges explicitly\. Restrict use to a named resource or property and stated comparator\/baseline\; do not use it as an unbounded quantity request\. See \`docs\/it\-ste\-research\/W1\-D\-P313\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -96837,9 +96837,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact meaning describes a large quantity but omits the comparative relation expected for MORE."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 313 -l 313 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-10-page-313; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MORE (adj) is a distinct row after MOOR (v) and before MORE (adv); its meaning is A large quantity of and its add-more-shims example is separate from the neighboring adverb row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 313,
     "printed_page": "2-1-M9",
@@ -96849,8 +96849,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording and row boundaries against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P313-002",
@@ -167549,7 +167548,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `edb29f102a51c1eb809dfaf51cb915b6c07ceed54fc040737a756992020dd42d`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `bc5ded08d6a1bea7afa205dc2d7d93357bf4b9382493e948472e9645ec1306a2`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-033.json` SHA-256: `5c3cbcf6bcd3bb665542eecdc5e506344b322f9fd601f9a939eb888115fa90f3`
 
