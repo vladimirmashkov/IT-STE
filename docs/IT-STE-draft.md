@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 87,
+    "needs-review": 86,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1440
+    "restricted": 1441
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -109006,17 +109006,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PNEUMATIC; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes physical equipment operated by gas pressure\.
+Definition: Describes physical equipment operated by gas pressure or compressed gas\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The compact source includes the following adverbial wording\; no software transport sense is proposed\.
+Rationale: Use only for physical equipment that uses gas or compressed gas as its operating power\; do not apply it to an API\, protocol\, or software transport\. The compact source includes the following PNEUMATICALLY wording as a separate mechanical ambiguity\. See docs\/it\-ste\-research\/W1\-D\-P334\-006\.md\.
 
 Contextual alternatives:
 
 - gas\-pressure operated
+
+- compressed\-gas powered
 
 #### Positive example
 
@@ -109024,7 +109026,7 @@ Contextual alternatives:
 The pneumatic actuator moves the access panel.
 ```
 
-Explanation: Names a physical mechanism\.
+Explanation: Names physical equipment and its gas\-powered mechanism\.
 
 #### Problematic example
 
@@ -109032,7 +109034,7 @@ Explanation: Names a physical mechanism\.
 The pneumatic API is faster.
 ```
 
-Explanation: No gas\-powered function is present\.
+Explanation: An API has no gas\-powered mechanism\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -109044,9 +109046,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source includes the following PNEUMATICALLY wording."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 334 with pdftoppm and visually inspected. Findings: PNEUMATIC (adj) is a distinct sixth row with spelling, POS, columns, row boundaries, printed page 2-1-P6, approved meaning, and STE example clear; PNEUMATICALLY (adv) follows as a separate row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 334,
     "printed_page": "2-1-P6",
@@ -109056,8 +109058,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P334-006",
@@ -167565,7 +167566,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `3754a826b567d81c11d9a5abccf09b7ecce8e00d9cc1a673677e27f152e4e80d`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `da16752102e9eacbaf835ce8b154d239607e83978b8000e7fa135b7a4addd135`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `8cda7b4e6e83d596bfc18d17060b4c1415da19af441d6b40ba3f757713b2c0c0`
 

@@ -543,23 +543,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes physical equipment operated by gas pressure.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes physical equipment operated by gas pressure or compressed gas.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The compact source includes the following adverbial wording; no software transport sense is proposed.",
+      "rationale": "Use only for physical equipment that uses gas or compressed gas as its operating power; do not apply it to an API, protocol, or software transport. The compact source includes the following PNEUMATICALLY wording as a separate mechanical ambiguity. See docs/it-ste-research/W1-D-P334-006.md.",
       "permitted_contextual_alternatives": [
-        "gas-pressure operated"
+        "gas-pressure operated",
+        "compressed-gas powered"
       ],
       "examples": {
         "positive": {
           "text": "The pneumatic actuator moves the access panel.",
-          "explanation": "Names a physical mechanism."
+          "explanation": "Names physical equipment and its gas-powered mechanism."
         },
         "problematic": {
           "text": "The pneumatic API is faster.",
-          "explanation": "No gas-powered function is present."
+          "explanation": "An API has no gas-powered mechanism."
         }
       },
       "evidence": {
@@ -580,14 +581,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 334 with pdftoppm and visually inspected. Findings: PNEUMATIC (adj) is a distinct sixth row with spelling, POS, columns, row boundaries, printed page 2-1-P6, approved meaning, and STE example clear; PNEUMATICALLY (adv) follows as a separate row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+          "original example review"
         ]
       }
     },
