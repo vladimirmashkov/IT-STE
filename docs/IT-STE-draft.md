@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 110,
+    "needs-review": 108,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1418
+    "restricted": 1420
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -93616,13 +93616,13 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: MATT \(or MATTE\); POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: A display coating that reduces reflected glare on a workstation screen\.
 
 Domains: user\-interface
 
-Rationale: A surface finish is relevant to hardware selection\, not a metaphor for subdued interface colors\.
+Rationale: The authenticated PDF confirms a distinct MATT \(or MATTE\) \(adj\) row with the meaning Not glossy\. Retain a bounded physical display\-finish sense for IT use\; it may support viewing conditions but does not mean subdued interface colors or other software properties\. See docs\/it\-ste\-research\/W1\-D\-P308\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -93654,9 +93654,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 308 -l 308 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-308; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct MATT (or MATTE) (adj) row follows the MATING (adj) row and has its own Not glossy meaning and example; the wrapped headword does not merge rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 308,
     "printed_page": "2-1-M4",
@@ -93666,8 +93666,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P308-005",
@@ -94043,13 +94042,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MECHANICAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Describes moving hardware assemblies in computing equipment\, such as drive actuators\.
 
 Domains: cloud\-infrastructure
 
-Rationale: The compact source includes wording matching the following adverb\; keep the physical sense provisional\.
+Rationale: The authenticated PDF confirms a distinct MECHANICAL \(adj\) row with the meaning Related to or operated with a mechanism\, followed by a separate MECHANICALLY \(adv\) row\. Retain a bounded physical mechanism sense for IT infrastructure\; do not extend it to undefined software\/API behavior\. See docs\/it\-ste\-research\/W1\-D\-P309\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -94083,9 +94082,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact meaning includes the adjacent MECHANICALLY definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 309 -l 309 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-309; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct MECHANICAL (adj) row has the Related to or operated with a mechanism meaning and its own example, followed by a separate MECHANICALLY (adv) row; the adjacent extraction is not a row-boundary merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 309,
     "printed_page": "2-1-M5",
@@ -94095,8 +94094,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P309-003",
@@ -167557,7 +167555,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `ee129bfc8b3428043cda4eb69cea852a512ca99b8757744f39504e343d838f99`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `d4e5fb1aa932e0721a6bf616b5d84b275d87d7c4f64b0c252968b4503774a34c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 
