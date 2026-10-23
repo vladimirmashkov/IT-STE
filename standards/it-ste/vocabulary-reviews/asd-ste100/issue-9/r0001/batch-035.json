@@ -1671,24 +1671,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Describes storage intended to retain data without a predefined expiry time.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a storage or retention condition with no configured end time; it does not mean immutable, durable, or impossible to delete.",
       "domains": [
         "data-storage"
       ],
-      "rationale": "The source includes the following adverbial definition; no indefinite-retention or indestructibility guarantee is settled.",
+      "rationale": "The authenticated ASD page separates `PERMANENT (adj)` (`Without a limit in time`) from the following `PERMANENTLY (adv)` row; the wrapped source meaning and row boundary are visually confirmed. AWS S3 Object Lock distinguishes fixed/variable retention periods and legal holds, with objects becoming deletable after a retention period unless a hold remains; Kubernetes distinguishes Retain and Delete reclaim policies and requires explicit cleanup behavior. Restrict the IT sense to an explicitly configured retention condition and reject implications of immutability, durability, or indestructibility. See `docs/it-ste-research/W1-D-P332-004.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "without configured expiry",
-        "retained until explicit deletion"
+        "retained until explicit deletion",
+        "no automatic expiry"
       ],
       "examples": {
         "positive": {
           "text": "This bucket has no configured expiry; authorized deletion remains possible.",
-          "explanation": "States the actual lifecycle behavior."
+          "explanation": "States the retention configuration separately from deletion authority."
         },
         "problematic": {
           "text": "Permanent storage can never lose data.",
-          "explanation": "Confuses retention policy with durability."
+          "explanation": "Confuses retention policy with durability or indestructibility."
         }
       },
       "evidence": {
@@ -1709,14 +1710,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 332 -l 332 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-18-page-332; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: PERMANENT (adj) is a distinct fourth row on printed page 2-1-P4 with `Without a limit in time`; PERMANENTLY (adv) follows in a separate row with `In a permanent manner`. The row boundaries, spelling, POS, columns, and layout are verified.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },

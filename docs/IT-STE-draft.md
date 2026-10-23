@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 91,
+    "needs-review": 90,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1436
+    "restricted": 1437
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -107390,13 +107390,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PERMANENT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Describes storage intended to retain data without a predefined expiry time\.
+Definition: Describes a storage or retention condition with no configured end time\; it does not mean immutable\, durable\, or impossible to delete\.
 
 Domains: data\-storage
 
-Rationale: The source includes the following adverbial definition\; no indefinite\-retention or indestructibility guarantee is settled\.
+Rationale: The authenticated ASD page separates \`PERMANENT \(adj\)\` \(\`Without a limit in time\`\) from the following \`PERMANENTLY \(adv\)\` row\; the wrapped source meaning and row boundary are visually confirmed\. AWS S3 Object Lock distinguishes fixed\/variable retention periods and legal holds\, with objects becoming deletable after a retention period unless a hold remains\; Kubernetes distinguishes Retain and Delete reclaim policies and requires explicit cleanup behavior\. Restrict the IT sense to an explicitly configured retention condition and reject implications of immutability\, durability\, or indestructibility\. See \`docs\/it\-ste\-research\/W1\-D\-P332\-004\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -107404,13 +107404,15 @@ Contextual alternatives:
 
 - retained until explicit deletion
 
+- no automatic expiry
+
 #### Positive example
 
 ```
 This bucket has no configured expiry; authorized deletion remains possible.
 ```
 
-Explanation: States the actual lifecycle behavior\.
+Explanation: States the retention configuration separately from deletion authority\.
 
 #### Problematic example
 
@@ -107418,7 +107420,7 @@ Explanation: States the actual lifecycle behavior\.
 Permanent storage can never lose data.
 ```
 
-Explanation: Confuses retention policy with durability\.
+Explanation: Confuses retention policy with durability or indestructibility\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -107430,9 +107432,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source includes the following PERMANENTLY definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 332 -l 332 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-18-page-332; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: PERMANENT (adj) is a distinct fourth row on printed page 2-1-P4 with `Without a limit in time`; PERMANENTLY (adv) follows in a separate row with `In a permanent manner`. The row boundaries, spelling, POS, columns, and layout are verified.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 332,
     "printed_page": "2-1-P4",
@@ -107442,8 +107444,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P332-004",
@@ -167559,7 +167560,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `161f9698b8ca55aadb83b8752876713e0452eb6294a5dd4331fbcf442e81b8b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `1c7fbc84b211d3db038fd153179364ffd4a25fd8937609315196387ca448135c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `fab3da40a34d5134924b130835ce8d16fbe16d8ae23c132532532c55b96291b1`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
 
