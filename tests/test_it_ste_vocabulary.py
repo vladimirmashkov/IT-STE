@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1455, "prohibited": 403,
-                             "not-applicable": 148, "needs-review": 72},
+            "dispositions": {"allowed": 118, "restricted": 1455, "prohibited": 404,
+                             "not-applicable": 148, "needs-review": 71},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -74,6 +74,12 @@ class VocabularyTests(unittest.TestCase):
         self.assertTrue(progress["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertIn("failure, or cancellation", progress["rationale"])
         self.assertIn("export job 42", progress["examples"]["positive"]["text"])
+        precautionary = by_id["D-P336-009"]
+        self.assertEqual(precautionary["it_disposition"], "prohibited")
+        self.assertEqual(precautionary["evidence"]["extraction_warnings"], ["wrapped-headword"])
+        self.assertTrue(precautionary["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("PRECAUTION (n)", precautionary["rationale"])
+        self.assertNotIn("precautionary", precautionary["examples"]["positive"]["text"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

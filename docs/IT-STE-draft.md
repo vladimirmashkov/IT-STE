@@ -4257,9 +4257,9 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 72,
+    "needs-review": 71,
     "not-applicable": 148,
-    "prohibited": 403,
+    "prohibited": 404,
     "restricted": 1455
   },
   "next_entry_id": null,
@@ -110290,27 +110290,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: precautionary; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: prohibited.
 
 Definition: Describes an action intended to reduce an identified task risk\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped extraction requires review\; intent does not prove effectiveness\.
+Rationale: Do not use precautionary as an adjective in this draft runbook sense\. The authenticated PDF gives PRECAUTION \(n\) as the contextual alternative\; Google and Microsoft procedure guidance support naming the action and its context instead of relying on an intent label\. Rewrite as a direct instruction\, or use the noun precaution with an explicit action and risk where appropriate\; neither intent nor the label proves effectiveness\. This is an editorial draft prohibition\, not a universal ban or automatic inheritance of ASD status\. See docs\/it\-ste\-research\/W1\-D\-P336\-008\.md\.
 
 Contextual alternatives:
 
-- preventive
+- as a precaution\, with an explicit action and risk
 
-- intended to reduce the stated risk
+- state the preventive action directly
 
 #### Positive example
 
 ```
-The precautionary read-only check detects an incorrect target before deletion.
+Before deletion, compare the displayed target ID with the approved target ID.
 ```
 
-Explanation: Names action\, hazard\, and purpose\.
+Explanation: Replaces the adjective with a named check and timing\; this illustrative rewrite does not prove the check effective or authorize deletion\.
 
 #### Problematic example
 
@@ -110330,9 +110330,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 336 -l 336 -singlefile -png -r 150 and visually inspected physical page 336. Findings: row 9 is precautionary (adj), after PRECAUTION (n) and before precede (v), with PRECAUTION (n) in its alternative column; horizontal rules separate its STE noun rewrite and non-STE adjective example. The headword is on one line with (adj) below.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 336,
     "printed_page": "2-1-P8",
@@ -110343,7 +110343,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+      "Source row boundaries and typography visually verified; retain editorial source interpretation review."
     ],
     "row_on_page": 9,
     "source_entry_id": "D-P336-009",
@@ -167557,7 +167557,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `3754a826b567d81c11d9a5abccf09b7ecce8e00d9cc1a673677e27f152e4e80d`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5d37783fd9bb1a6a9302acebc79014fe754deebf8d96f0d141c657baae4f1d47`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `b1d85ad2a2fa1b0cffc0a7da929a0efb345bb9d1ad80bf284a7b245c217c50a0`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c693ce41baa27b6e58984eff6ab023ce7a2c727efe54dd753e5eec74d09baf38`
 

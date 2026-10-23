@@ -1611,20 +1611,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "prohibited",
       "it_definition": "Describes an action intended to reduce an identified task risk.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped extraction requires review; intent does not prove effectiveness.",
+      "rationale": "Do not use precautionary as an adjective in this draft runbook sense. The authenticated PDF gives PRECAUTION (n) as the contextual alternative; Google and Microsoft procedure guidance support naming the action and its context instead of relying on an intent label. Rewrite as a direct instruction, or use the noun precaution with an explicit action and risk where appropriate; neither intent nor the label proves effectiveness. This is an editorial draft prohibition, not a universal ban or automatic inheritance of ASD status. See docs/it-ste-research/W1-D-P336-008.md.",
       "permitted_contextual_alternatives": [
-        "preventive",
-        "intended to reduce the stated risk"
+        "as a precaution, with an explicit action and risk",
+        "state the preventive action directly"
       ],
       "examples": {
         "positive": {
-          "text": "The precautionary read-only check detects an incorrect target before deletion.",
-          "explanation": "Names action, hazard, and purpose."
+          "text": "Before deletion, compare the displayed target ID with the approved target ID.",
+          "explanation": "Replaces the adjective with a named check and timing; this illustrative rewrite does not prove the check effective or authorize deletion."
         },
         "problematic": {
           "text": "Use precautionary mode.",
@@ -1649,14 +1649,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 336 -l 336 -singlefile -png -r 150 and visually inspected physical page 336. Findings: row 9 is precautionary (adj), after PRECAUTION (n) and before precede (v), with PRECAUTION (n) in its alternative column; horizontal rules separate its STE noun rewrite and non-STE adjective example. The headword is on one line with (adj) below.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+          "Source row boundaries and typography visually verified; retain editorial source interpretation review."
         ]
       }
     },
