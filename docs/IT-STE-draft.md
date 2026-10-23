@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 132,
+    "needs-review": 130,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1397
+    "restricted": 1399
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -77656,13 +77656,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: IN; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Within a named location\, condition\, interval\, or boundary\.
 
 Domains: general
 
-Rationale: The cell ends with an apparent fragment from in front of\; source boundary review is needed\.
+Rationale: Visual inspection confirms row 1 and separates the broad IN row from IN FRONT OF below\. In IT text\, use in only with an explicit container\, condition\, time interval\, or limit\; RFC 3986 and RFC 9110 show that hierarchy and request context determine the relation\. See docs\/it\-ste\-research\/W1\-D\-P279\.md\.
 
 Contextual alternatives:
 
@@ -77696,9 +77696,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the adjacent row definition; source boundaries not checked against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 279 -l 279 -png -r 180 and visually inspected physical page 279. Findings: row 1 is bounded by the page header and IN FRONT OF (prep) below; it reads IN (prep) and contains the separate location, position, condition, time, and limits examples.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 279,
     "printed_page": "2-1-I5",
@@ -77730,13 +77730,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: IN FRONT OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Ahead of a named reference object in an explicitly stated spatial frame\.
 
 Domains: procedures\-runbooks
 
-Rationale: A wrapped\-headword warning and the extra word Occurring suggest adjacent\-row overlap\.
+Rationale: Visual inspection confirms row 2 and its exact source meaning \`In a position ahead of\`\; the row is separate from IN and IN PROGRESS\. In IT runbooks\, use in front of only with a named reference\, direction\, and traffic or sequence frame\; RFC 9110 and NGINX document proxy\/intermediary positions and forwarding paths without making the relation implicit\. See docs\/it\-ste\-research\/W1\-D\-P279\.md\.
 
 Contextual alternatives:
 
@@ -77772,9 +77772,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes a fragment of the adjacent row definition; source boundaries not checked against PDF."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered with pdftoppm -f 279 -l 279 -png -r 180 and visually inspected physical page 279. Findings: row 2 follows IN (prep), precedes IN PROGRESS (adv), and shows IN FRONT OF (prep) with `In a position ahead of` and its own wheel-placement example; the headword is wrapped across two lines.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 279,
     "printed_page": "2-1-I5",
@@ -167568,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `676223a391cd26b0955495796c5e91d79f8cb74188462e6df8c64c8737c2eab6`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `d5e65e07adf92511bd73162b68ab47d2f7e954b4a979373163213f845086ee9b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `76bccdc52667eea2f4559a1a79d84d60aef0a9922e2249c4bd4530b65a8201c7`
 
