@@ -612,20 +612,19 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, having shallow marks on a physical equipment surface.",
+      "it_disposition": "restricted",
+      "it_definition": "Having scratch marks on the end face of a fiber-optic connector, as identified by the specified inspection method.",
       "domains": [
         "general"
       ],
-      "rationale": "A technical-noun reference alone does not define severity or serviceability.",
+      "rationale": "Authenticated page 369 confirms the adjective's SCRATCH technical-noun reference and physical surface example, not a shallow-depth definition. FOA explicitly describes scratched fiber-optic connector end faces, inspection and recorded observations. Restrict to that observed physical condition under the specified inspection method; do not infer depth, optical performance, rejection, repair or serviceability from the adjective alone. Surface-damaged is broader than scratched. See docs/it-ste-research/W1-D-P369.md; the distinct scored entry remains unresolved.",
       "permitted_contextual_alternatives": [
-        "marked by scratches",
-        "surface-damaged"
+        "with scratch marks on the inspected connector end face"
       ],
       "examples": {
         "positive": {
-          "text": "Record the visible scratches on the monitor cover.",
-          "explanation": "Describes an inspectable condition without assuming failure."
+          "text": "Record the scratches identified on the end face of connector C1 in the inspection report.",
+          "explanation": "Records a named connector's observed condition, not a pass/fail or repair decision. The applicable procedure must supply the inspection method and safety controls; C1 is an illustrative identifier, not an actual inspected component."
         },
         "problematic": {
           "text": "The scratched database cannot start.",
@@ -650,14 +649,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 369 / printed 2-1-S3, rendered locally with pdftoppm and visually inspected on 2026-10-23 after source doctor passed. Findings: separate row 2 scratched (adj), bounded by scrape above and screw below, has SCRATCH (TN) and paired physical surface-repair examples. The STE rewrite names surfaces with scratches; neither the row nor cross-reference specifies depth or IT equipment acceptance limits. See docs/it-ste-research/W1-D-P369.md.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Validate the actual connector inspection method and safety controls; assess acceptance or serviceability separately under the applicable procedure"
         ]
       }
     },

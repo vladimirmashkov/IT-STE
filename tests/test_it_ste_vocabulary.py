@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 118, "restricted": 1462, "prohibited": 406,
-                             "not-applicable": 148, "needs-review": 62},
+            "dispositions": {"allowed": 118, "restricted": 1463, "prohibited": 406,
+                             "not-applicable": 148, "needs-review": 61},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -154,6 +154,15 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(scored["permitted_contextual_alternatives"], ["damaged by a groove"])
         self.assertIn("does not define scored", scored["rationale"])
         self.assertIn("not a pass/fail rule", scored["examples"]["positive"]["explanation"])
+        scratched = by_id["D-P369-002"]
+        self.assertEqual(scratched["it_disposition"], "restricted")
+        self.assertTrue(scratched["evidence"]["mechanical_ambiguities"])
+        self.assertTrue(scratched["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertIn("fiber-optic connector", scratched["it_definition"])
+        self.assertNotIn("shallow", scratched["it_definition"])
+        self.assertNotIn("surface-damaged", scratched["permitted_contextual_alternatives"])
+        self.assertIn("inspection report", scratched["examples"]["positive"]["text"])
+        self.assertIn("distinct scored entry remains unresolved", scratched["rationale"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 

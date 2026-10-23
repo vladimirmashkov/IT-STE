@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 62,
+    "needs-review": 61,
     "not-applicable": 148,
     "prohibited": 406,
-    "restricted": 1462
+    "restricted": 1463
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -129802,27 +129802,25 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: scratched; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, having shallow marks on a physical equipment surface\.
+Definition: Having scratch marks on the end face of a fiber\-optic connector\, as identified by the specified inspection method\.
 
 Domains: general
 
-Rationale: A technical\-noun reference alone does not define severity or serviceability\.
+Rationale: Authenticated page 369 confirms the adjective\'s SCRATCH technical\-noun reference and physical surface example\, not a shallow\-depth definition\. FOA explicitly describes scratched fiber\-optic connector end faces\, inspection and recorded observations\. Restrict to that observed physical condition under the specified inspection method\; do not infer depth\, optical performance\, rejection\, repair or serviceability from the adjective alone\. Surface\-damaged is broader than scratched\. See docs\/it\-ste\-research\/W1\-D\-P369\.md\; the distinct scored entry remains unresolved\.
 
 Contextual alternatives:
 
-- marked by scratches
-
-- surface\-damaged
+- with scratch marks on the inspected connector end face
 
 #### Positive example
 
 ```
-Record the visible scratches on the monitor cover.
+Record the scratches identified on the end face of connector C1 in the inspection report.
 ```
 
-Explanation: Describes an inspectable condition without assuming failure\.
+Explanation: Records a named connector\'s observed condition\, not a pass\/fail or repair decision\. The applicable procedure must supply the inspection method and safety controls\; C1 is an illustrative identifier\, not an actual inspected component\.
 
 #### Problematic example
 
@@ -129842,9 +129840,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "SCRATCH technical-noun cross-reference leaves the adjective's exact scope and acceptance limits unresolved."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 369 / printed 2-1-S3, rendered locally with pdftoppm and visually inspected on 2026-10-23 after source doctor passed. Findings: separate row 2 scratched (adj), bounded by scrape above and screw below, has SCRATCH (TN) and paired physical surface-repair examples. The STE rewrite names surfaces with scratches; neither the row nor cross-reference specifies depth or IT equipment acceptance limits. See docs/it-ste-research/W1-D-P369.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 369,
     "printed_page": "2-1-S3",
@@ -129855,7 +129853,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Validate the actual connector inspection method and safety controls; assess acceptance or serviceability separately under the applicable procedure"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P369-002",
@@ -167567,7 +167565,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `a255ddcd537f7e72a55cf4d54b3e6b1d6a073d2ba5543cad6aa29d62bfd97db2`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `aa0fb7c17746408e9c7459cf13891519435406ce7d43cce449197eddfd65c161`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `2b5040720330b4e2ff9ba29560f6d08daa39a4f16b678c84d5f5591489815d4c`
 
