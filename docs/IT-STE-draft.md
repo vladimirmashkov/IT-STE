@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 116,
-    "needs-review": 126,
+    "needs-review": 125,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1403
+    "restricted": 1404
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -82593,13 +82593,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INTERCHANGE\- ABLE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Capable of replacing each other under explicitly stated constraints\.
+Definition: Capable of replacing one another within stated compatibility limits and intended use\.
 
 Domains: support\-troubleshooting
 
-Rationale: The raw headword contains a separated hyphen and a wrapped\-headword warning\.
+Rationale: The authenticated PDF confirms a separate wrapped adjective row for INTERCHANGE\- \/ ABLE \(adj\)\, with the ASD meaning That you can interchange\. For IT documentation\, retain the sense only within stated compatibility limits and intended use\. See docs\/it\-ste\-research\/W1\-D\-P287\.md for the bounded draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -82633,9 +82633,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 287 -l 287 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-287; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct wrapped INTERCHANGE- / ABLE (adj) row, followed by separate interconnect and INTERFACE rows.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 287,
     "printed_page": "2-1-I13",
@@ -82644,9 +82644,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "scope": "exact entry; meaning/alternatives only; no --full"
     },
     "review_required": [
-      "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "editorial sense and scope review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P287-001",
@@ -167568,7 +167566,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `c953df704322afa13595ba7c22e6c24594417f0d4560d3577473ce49fd4cc725`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-027.json` SHA-256: `32f60608e6443cf53947640906bab053d9d521e33a6ae8c81af59aa540983914`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `8c58c3854abb6a889baa24d6ead3943ff6d5f0fa34f5ff2a6a85f3cd1d82f8b9`
 

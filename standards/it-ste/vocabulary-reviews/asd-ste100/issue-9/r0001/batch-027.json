@@ -779,12 +779,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Capable of replacing each other under explicitly stated constraints.",
+      "it_disposition": "restricted",
+      "it_definition": "Capable of replacing one another within stated compatibility limits and intended use.",
       "domains": [
         "support-troubleshooting"
       ],
-      "rationale": "The raw headword contains a separated hyphen and a wrapped-headword warning.",
+      "rationale": "The authenticated PDF confirms a separate wrapped adjective row for INTERCHANGE- / ABLE (adj), with the ASD meaning That you can interchange. For IT documentation, retain the sense only within stated compatibility limits and intended use. See docs/it-ste-research/W1-D-P287.md for the bounded draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "mutually replaceable",
         "usable in either position"
@@ -817,14 +817,12 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 287 -l 287 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-287; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct wrapped INTERCHANGE- / ABLE (adj) row, followed by separate interconnect and INTERFACE rows.",
+          "visual_verification_performed": true
         },
         "review_required": [
-          "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "editorial sense and scope review"
         ]
       }
     },
