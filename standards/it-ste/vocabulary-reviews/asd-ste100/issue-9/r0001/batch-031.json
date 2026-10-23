@@ -1556,12 +1556,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Introduces a quantity to subtract from a previously stated quantity.",
+      "it_disposition": "allowed",
+      "it_definition": "Expresses subtraction between explicitly identified quantities.",
       "domains": [
         "software-documentation"
       ],
-      "rationale": "The compact source includes OTHER from the next row; retain a provisional arithmetic interpretation only.",
+      "rationale": "The authenticated page isolates MINUS (prep) with the meaning `With the subtraction of`; Python and PostgreSQL document subtraction as a numeric operation. Allow the bounded arithmetic sense when both quantities are explicit, and do not extend it to vague comparison or procedural wording. See `docs/it-ste-research/W1-D-P311.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "less",
         "subtract"
@@ -1594,14 +1594,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 311 -l 311 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-311-iter4; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MINUS (prep) is a distinct row after minor (adj) and before miscellaneous (adj); its meaning is With the subtraction of, its STE example ends with PLUS OR MINUS 2.7 bar, and OTHER belongs to the following miscellaneous row, not MINUS.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },

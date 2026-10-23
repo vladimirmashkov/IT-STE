@@ -4256,8 +4256,8 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "batch_count": 55,
   "candidates": 2196,
   "dispositions": {
-    "allowed": 117,
-    "needs-review": 105,
+    "allowed": 118,
+    "needs-review": 104,
     "not-applicable": 148,
     "prohibited": 403,
     "restricted": 1423
@@ -95400,13 +95400,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: MINUS; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: allowed.
 
-Definition: Introduces a quantity to subtract from a previously stated quantity\.
+Definition: Expresses subtraction between explicitly identified quantities\.
 
 Domains: software\-documentation
 
-Rationale: The compact source includes OTHER from the next row\; retain a provisional arithmetic interpretation only\.
+Rationale: The authenticated page isolates MINUS \(prep\) with the meaning \`With the subtraction of\`\; Python and PostgreSQL document subtraction as a numeric operation\. Allow the bounded arithmetic sense when both quantities are explicit\, and do not extend it to vague comparison or procedural wording\. See \`docs\/it\-ste\-research\/W1\-D\-P311\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -95440,9 +95440,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact meaning includes OTHER from the adjacent miscellaneous row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 311 -l 311 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/page-311-iter4; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: MINUS (prep) is a distinct row after minor (adj) and before miscellaneous (adj); its meaning is With the subtraction of, its STE example ends with PLUS OR MINUS 2.7 bar, and OTHER belongs to the following miscellaneous row, not MINUS.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 311,
     "printed_page": "2-1-M7",
@@ -95452,8 +95452,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 4,
     "source_entry_id": "D-P311-004",
@@ -167553,7 +167552,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `2526cde1c7d73726d9e0185d6406ea62233c9a5f3b416c28e9cc067f57f7c4b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `bd35cbff5857827cd5ac4975c84e86f77956ef8bdc50fd87e5a5400a0c2b6db7`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `f68d370e3dba60524fc1f35d377c3bf6342945fd90bff120a89e91bde945e196`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-032.json` SHA-256: `6c37c506f1c85b3257e5538af0e28161f8fbf28b82458ba4913e9b221896a7df`
 
