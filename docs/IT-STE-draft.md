@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 98,
+    "needs-review": 97,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1429
+    "restricted": 1430
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -102567,13 +102567,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: opportunity; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: An available occasion to perform a named maintenance action under stated conditions\.
+Definition: Names an approved time interval or maintenance condition in which a scheduled action can be performed\.
 
 Domains: procedures\-runbooks
 
-Rationale: The retrieved source contains an accuracy instruction rather than a clear sense\; this scheduling interpretation remains provisional\.
+Rationale: The authenticated page isolates \`opportunity \(n\)\` with \`If it is possible\, be accurate\.\` and separates the STE replacement example from the non\-STE \`first opportunity\` example\. AWS Maintenance Windows defines explicit schedules\, durations\, targets\, and tasks for potentially disruptive actions\, while Kubernetes upgrade guidance requires planned deployment\-specific maintenance procedures\. Restrict \`opportunity\` to a named approved interval or condition\; do not use an unspecified \`next opportunity\` for operational scheduling\. See \`docs\/it\-ste\-research\/W1\-D\-P322\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -102607,9 +102607,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source gives an accuracy instruction but no unambiguous sense definition."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 322 -l 322 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-11-page-322; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: opportunity (n) is a distinct row after operational (adj), with `If it is possible, be accurate.` in the approved-meaning column and separate STE and non-STE examples; the row is on printed page 2-1-O4.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 322,
     "printed_page": "2-1-O4",
@@ -102619,8 +102619,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P322-007",
@@ -167552,7 +167551,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-033.json` SHA-256: `5c3cbcf6bcd3bb665542eecdc5e506344b322f9fd601f9a939eb888115fa90f3`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `0d5eafb2d42d100977ce17d745bcf8a740c5f818e430a33e3e906b2bc61dba88`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `7c4bb137d980e30715deaa18fa9831b7a2d26258bc8f4a1bc5ef30a37692bc17`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `8b1e5dc42caa3b89f2b6fa4956c8b31598dc74183d5e823cac78f2f475ef932f`
 

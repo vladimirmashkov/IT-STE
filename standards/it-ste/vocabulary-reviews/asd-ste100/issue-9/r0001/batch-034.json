@@ -130,12 +130,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "An available occasion to perform a named maintenance action under stated conditions.",
+      "it_disposition": "restricted",
+      "it_definition": "Names an approved time interval or maintenance condition in which a scheduled action can be performed.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The retrieved source contains an accuracy instruction rather than a clear sense; this scheduling interpretation remains provisional.",
+      "rationale": "The authenticated page isolates `opportunity (n)` with `If it is possible, be accurate.` and separates the STE replacement example from the non-STE `first opportunity` example. AWS Maintenance Windows defines explicit schedules, durations, targets, and tasks for potentially disruptive actions, while Kubernetes upgrade guidance requires planned deployment-specific maintenance procedures. Restrict `opportunity` to a named approved interval or condition; do not use an unspecified `next opportunity` for operational scheduling. See `docs/it-ste-research/W1-D-P322.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "maintenance window",
         "permitted interval"
@@ -168,14 +168,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 322 -l 322 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-11-page-322; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: opportunity (n) is a distinct row after operational (adj), with `If it is possible, be accurate.` in the approved-meaning column and separate STE and non-STE examples; the row is on printed page 2-1-O4.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
