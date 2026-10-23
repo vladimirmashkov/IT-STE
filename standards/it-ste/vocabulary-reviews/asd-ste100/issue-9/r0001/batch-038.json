@@ -366,20 +366,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In a way that preserves a specified ratio between quantities; this reading is provisional.",
+      "it_disposition": "restricted",
+      "it_definition": "In a way that maintains a specified ratio between named quantities when allocating or scaling a configuration.",
       "domains": [
         "configuration"
       ],
-      "rationale": "The wrapped-headword warning remains unresolved. Even in a provisional example, specify the ratio and avoid implying that all scaling is linear.",
+      "rationale": "The authenticated page confirms that proportionally (adv) is a distinct first row with RELATION (n) as its source alternative; the wrapped-headword warning is a mechanical extraction artifact. Restrict the draft sense to an explicit ratio between named quantities in configuration or scaling, and reject unspecified global scaling. See docs/it-ste-research/W1-D-P344-001.md for the bounded evidence and research.",
       "permitted_contextual_alternatives": [
         "by the stated ratio",
         "using the stated allocation formula"
       ],
       "examples": {
         "positive": {
-          "text": "Allocate test workers in a 2-to-1 ratio between regions A and B.",
-          "explanation": "States the intended relationship without relying on the unresolved source layout."
+          "text": "Allocate test workers proportionally in a 2-to-1 ratio between regions A and B.",
+          "explanation": "Names the quantities, ratio, and configuration allocation."
         },
         "problematic": {
           "text": "Increase everything proportionally.",
@@ -404,14 +404,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 344 with pdftoppm -f 344 -l 344 -png -r 180 and visually inspected. Findings: proportionally (adv) is a distinct first row with clear spelling, POS, columns, row boundary, printed page 2-1-P16, source alternative RELATION (n), and STE/non-STE examples; the apparent wrapped-headword warning is not present in the authenticated PDF layout.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row-boundary and layout verification before settling the sense"
+          "original example review"
         ]
       }
     },

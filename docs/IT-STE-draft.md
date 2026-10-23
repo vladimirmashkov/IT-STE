@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 81,
+    "needs-review": 80,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1446
+    "restricted": 1447
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -114718,13 +114718,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: proportionally; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: In a way that preserves a specified ratio between quantities\; this reading is provisional\.
+Definition: In a way that maintains a specified ratio between named quantities when allocating or scaling a configuration\.
 
 Domains: configuration
 
-Rationale: The wrapped\-headword warning remains unresolved\. Even in a provisional example\, specify the ratio and avoid implying that all scaling is linear\.
+Rationale: The authenticated page confirms that proportionally \(adv\) is a distinct first row with RELATION \(n\) as its source alternative\; the wrapped\-headword warning is a mechanical extraction artifact\. Restrict the draft sense to an explicit ratio between named quantities in configuration or scaling\, and reject unspecified global scaling\. See docs\/it\-ste\-research\/W1\-D\-P344\-001\.md for the bounded evidence and research\.
 
 Contextual alternatives:
 
@@ -114735,10 +114735,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Allocate test workers in a 2-to-1 ratio between regions A and B.
+Allocate test workers proportionally in a 2-to-1 ratio between regions A and B.
 ```
 
-Explanation: States the intended relationship without relying on the unresolved source layout\.
+Explanation: Names the quantities\, ratio\, and configuration allocation\.
 
 #### Problematic example
 
@@ -114758,9 +114758,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 344 with pdftoppm -f 344 -l 344 -png -r 180 and visually inspected. Findings: proportionally (adv) is a distinct first row with clear spelling, POS, columns, row boundary, printed page 2-1-P16, source alternative RELATION (n), and STE/non-STE examples; the apparent wrapped-headword warning is not present in the authenticated PDF layout.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 344,
     "printed_page": "2-1-P16",
@@ -114770,8 +114770,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row-boundary and layout verification before settling the sense"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P344-001",
@@ -167569,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `c693ce41baa27b6e58984eff6ab023ce7a2c727efe54dd753e5eec74d09baf38`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `1620932b1ba89f137545efce5241352f5b057c5c143872acaadc7ac1166c637d`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `f4349be6c1509deb981741c4f2d001f6058497a6be69932b74adc7c200a19406`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `fe087a53d5ca67a874e39b79a63f047d7f351b2d2201b5b8cf83ad4c6be0c9a2`
 
