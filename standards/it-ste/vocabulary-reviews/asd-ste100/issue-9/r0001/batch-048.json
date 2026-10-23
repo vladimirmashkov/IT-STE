@@ -1337,12 +1337,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Provisionally, meeting the stated minimum resource or capacity requirement.",
+      "it_disposition": "restricted",
+      "it_definition": "Meeting a named minimum resource, capacity, or acceptance criterion.",
       "domains": [
         "general"
       ],
-      "rationale": "The definition appears duplicated across adjacent rows; sufficiency needs a measurable requirement.",
+      "rationale": "Visual verification confirms a separate SUFFICIENT (adj) row with the meaning Not less (or more) than necessary and a clamp/friction example; the repeated wording in extraction is not a row-boundary error. Kubernetes' official resource documentation distinguishes explicit resource requests, limits, measured units and enforcement behavior. Restrict this draft adjective to a named measurable minimum, capacity, or acceptance criterion; vague sufficiency does not establish readiness, safety, availability, or completion. See docs/it-ste-research/W1-D-P394-006-007.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "at least the required amount",
         "meets the stated minimum"
@@ -1375,14 +1375,14 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 394 / printed 2-1-S28 shows SUFFICIENT (adj) as a separate row above SUFFICIENTLY (adv); its meaning is Not less (or more) than necessary, and its friction example is bounded to a clamp adjustment.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named quantity, minimum, capacity, or acceptance criterion before use; do not use vague sufficiency as a readiness or safety claim"
         ]
       }
     },
@@ -1399,12 +1399,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "To the degree needed to meet a specified measurable criterion.",
+      "it_disposition": "restricted",
+      "it_definition": "To the degree needed to meet a named measurable criterion.",
       "domains": [
         "general"
       ],
-      "rationale": "The source warning requires review; a degree adverb cannot replace the criterion.",
+      "rationale": "Visual verification confirms SUFFICIENTLY (adv) as a separate wrapped-headword row with the same source meaning, Not less (or more) than necessary; its paint-softness example is distinct from SUFFICIENT. Kubernetes' resource requests and limits demonstrate that an IT threshold must identify a quantity and enforcement context. Restrict this draft adverb to a named measurable criterion and stated stopping/acceptance condition; it does not replace the criterion or prove safety. See docs/it-ste-research/W1-D-P394-006-007.md for the bounded evidence.",
       "permitted_contextual_alternatives": [
         "to the required degree",
         "until the stated threshold is met"
@@ -1437,14 +1437,14 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 394 / printed 2-1-S28 shows SUFFICIENTLY (adv) as a separate two-line wrapped-headword row below SUFFICIENT (adj); its meaning is Not less (or more) than necessary, and its example names a measurable softness condition.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+          "Confirm the named measurable criterion and stopping/acceptance condition; do not use this adverb as a substitute for the criterion"
         ]
       }
     },

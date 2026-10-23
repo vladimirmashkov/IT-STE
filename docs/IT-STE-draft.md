@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 44,
+    "needs-review": 42,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1479
+    "restricted": 1481
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -145508,13 +145508,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SUFFICIENT; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, meeting the stated minimum resource or capacity requirement\.
+Definition: Meeting a named minimum resource\, capacity\, or acceptance criterion\.
 
 Domains: general
 
-Rationale: The definition appears duplicated across adjacent rows\; sufficiency needs a measurable requirement\.
+Rationale: Visual verification confirms a separate SUFFICIENT \(adj\) row with the meaning Not less \(or more\) than necessary and a clamp\/friction example\; the repeated wording in extraction is not a row\-boundary error\. Kubernetes\' official resource documentation distinguishes explicit resource requests\, limits\, measured units and enforcement behavior\. Restrict this draft adjective to a named measurable minimum\, capacity\, or acceptance criterion\; vague sufficiency does not establish readiness\, safety\, availability\, or completion\. See docs\/it\-ste\-research\/W1\-D\-P394\-006\-007\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -145548,9 +145548,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Definition repeats Not less (or more) than before the following adverb; row-boundary verification is required."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 394 / printed 2-1-S28 shows SUFFICIENT (adj) as a separate row above SUFFICIENTLY (adv); its meaning is Not less (or more) than necessary, and its friction example is bounded to a clamp adjustment.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 394,
     "printed_page": "2-1-S28",
@@ -145561,7 +145561,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named quantity, minimum, capacity, or acceptance criterion before use; do not use vague sufficiency as a readiness or safety claim"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P394-006",
@@ -145582,13 +145582,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SUFFICIENTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: To the degree needed to meet a specified measurable criterion\.
+Definition: To the degree needed to meet a named measurable criterion\.
 
 Domains: general
 
-Rationale: The source warning requires review\; a degree adverb cannot replace the criterion\.
+Rationale: Visual verification confirms SUFFICIENTLY \(adv\) as a separate wrapped\-headword row with the same source meaning\, Not less \(or more\) than necessary\; its paint\-softness example is distinct from SUFFICIENT\. Kubernetes\' resource requests and limits demonstrate that an IT threshold must identify a quantity and enforcement context\. Restrict this draft adverb to a named measurable criterion and stated stopping\/acceptance condition\; it does not replace the criterion or prove safety\. See docs\/it\-ste\-research\/W1\-D\-P394\-006\-007\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -145622,9 +145622,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm single-page rendering; authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431. Findings: physical PDF page 394 / printed 2-1-S28 shows SUFFICIENTLY (adv) as a separate two-line wrapped-headword row below SUFFICIENT (adj); its meaning is Not less (or more) than necessary, and its example names a measurable softness condition.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 394,
     "printed_page": "2-1-S28",
@@ -145635,7 +145635,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Confirm the named measurable criterion and stopping/acceptance condition; do not use this adverb as a substitute for the criterion"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P394-007",
@@ -167575,7 +167575,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `45e15f382f106fb06474ed3babcbd079e70d22ed022c2af355084a671fde84d1`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d7b67ea6a0609ebb41b18254f455906d95abb9e1f37943e69f8fb451b86e71cf`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d68ecccc694c10d187203a0422e781e70963fae562eba9896bb5da175a709844`
 
