@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 116,
+    "needs-review": 114,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1412
+    "restricted": 1414
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -90376,13 +90376,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: long \(no longer\); POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Not continuing at the stated present time or after an identified event\.
 
 Domains: release\-notes
 
-Rationale: Wrapped\-headword warning and a following\-row fragment require source\-boundary review\.
+Rationale: The authenticated PDF confirms a distinct long \(no longer\) \(adv\) row with NOT…AT THIS TIME and UNTIL…NOT alternatives\. Retain a bounded cessation\/status sense for IT use\; state the cutoff or triggering event\, and do not infer revocation\, safety\, or containment from no longer alone\. See docs\/it\-ste\-research\/W1\-D\-P303\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -90418,9 +90418,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 303 -l 303 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-303; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct long (no longer) (adv) row contains the NOT…AT THIS TIME and UNTIL…NOT alternatives and two examples, followed by a separate LONGITUDINAL (adj) row; the extracted Related to the text is not a row-boundary merge.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 303,
     "printed_page": "2-1-L9",
@@ -90430,8 +90430,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 1,
     "source_entry_id": "D-P303-001",
@@ -90452,13 +90451,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: LONGITUDINAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Related to the stated lengthwise axis of a physical component\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning and an apparent following\-adverb definition require review\.
+Rationale: The authenticated PDF confirms a distinct LONGITUDINAL \(adj\) row with the alternative Related to the longitudinal axis\. Retain the physical\-axis scope for IT procedures\; do not extend it to undefined software\, authentication\, or security properties\. See docs\/it\-ste\-research\/W1\-D\-P303\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -90494,9 +90493,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Meaning cell apparently includes wording from the following row; PDF boundaries not checked."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 303 -l 303 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-303; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: separate LONGITUDINAL (adj) row follows the long (no longer) (adv) row and has its own meaning and example, followed by a distinct LONGITUDINALLY (adv) row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 303,
     "printed_page": "2-1-L9",
@@ -90506,8 +90505,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P303-002",
@@ -167559,7 +167557,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-028.json` SHA-256: `1e31339585355b38d82ca89e675b673226355a1cbaaf05a12b37e50bfd24b6b4`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `9af0a77c5ad875571945f714befbb6da78efef7159ac39bc0022c6834464e2bf`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `03e2a65e638dafa8db5ad2a43b9bc43eb644073a35176f9a527003e2c649ae13`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `862206d4fc9b8e4c27bc7a9238888f59d0e5e98a1f16e435ed5dcc9dd03e8dde`
 

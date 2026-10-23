@@ -2322,12 +2322,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Not continuing at the stated present time or after an identified event.",
       "domains": [
         "release-notes"
       ],
-      "rationale": "Wrapped-headword warning and a following-row fragment require source-boundary review.",
+      "rationale": "The authenticated PDF confirms a distinct long (no longer) (adv) row with NOT…AT THIS TIME and UNTIL…NOT alternatives. Retain a bounded cessation/status sense for IT use; state the cutoff or triggering event, and do not infer revocation, safety, or containment from no longer alone. See docs/it-ste-research/W1-D-P303.md for the draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "not now",
         "has stopped"
@@ -2362,14 +2362,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 303 -l 303 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-303; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct long (no longer) (adv) row contains the NOT…AT THIS TIME and UNTIL…NOT alternatives and two examples, followed by a separate LONGITUDINAL (adj) row; the extracted Related to the text is not a row-boundary merge.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },
@@ -2386,12 +2385,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Related to the stated lengthwise axis of a physical component.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped-headword warning and an apparent following-adverb definition require review.",
+      "rationale": "The authenticated PDF confirms a distinct LONGITUDINAL (adj) row with the alternative Related to the longitudinal axis. Retain the physical-axis scope for IT procedures; do not extend it to undefined software, authentication, or security properties. See docs/it-ste-research/W1-D-P303.md for the draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "lengthwise",
         "along the stated axis"
@@ -2426,14 +2425,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 303 -l 303 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-303; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: separate LONGITUDINAL (adj) row follows the long (no longer) (adv) row and has its own meaning and example, followed by a distinct LONGITUDINALLY (adv) row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     }
