@@ -2330,12 +2330,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Apply a limited amount of liquid to a physical cleaning material for equipment maintenance.",
+      "it_disposition": "restricted",
+      "it_definition": "Apply a specified liquid to a named cleaning material for permitted equipment maintenance.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "The source includes the following duration definition, so retain the maintenance sense provisionally and defer method safety to the manufacturer.",
+      "rationale": "The authenticated page isolates `moisten (v)` with `MOIST (adj)` and a cloth-and-solvent example; the compact extraction also includes the adjacent MOMENTARILY definition. Manufacturer guidance supports moistening a specified cloth while keeping liquid away from openings and never spraying directly on equipment. Restrict use to a named cleaning material, specified liquid, and applicable manufacturer procedure; do not use it to direct liquid onto a server or other equipment. See `docs/it-ste-research/W1-D-P310.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "dampen the cleaning cloth"
       ],
@@ -2367,14 +2367,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 312 -l 312 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-8-page-312; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: moisten (v) is a distinct row after MOIST (adj) and before MOMENTARILY (adv); its MOIST (adj) alternative and cloth-with-solvent example are separate from the adjacent duration row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source row boundaries and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },
