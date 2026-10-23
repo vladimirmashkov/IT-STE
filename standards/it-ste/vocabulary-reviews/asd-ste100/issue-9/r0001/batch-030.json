@@ -71,12 +71,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
+      "it_disposition": "restricted",
       "it_definition": "Along a specified lengthwise axis of physical equipment.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped-headword warning requires source review; this is not a time-series research sense.",
+      "rationale": "The authenticated PDF confirms a distinct LONGITUDINALLY (adv) row with the meaning In a longitudinal direction. Retain the physical-axis scope for IT procedures; do not extend it to undefined time-series, software, authentication, or security meanings. See docs/it-ste-research/W1-D-P303.md for the draft decision and evidence.",
       "permitted_contextual_alternatives": [
         "lengthwise",
         "along the stated axis"
@@ -109,14 +109,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 303 -l 303 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-303; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct LONGITUDINALLY (adv) row follows the LONGITUDINAL (adj) row and has its own In a longitudinal direction meaning and example.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "source row boundary and typography review against cited PDF page"
+          "original example review"
         ]
       }
     },

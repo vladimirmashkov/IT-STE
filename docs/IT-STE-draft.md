@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 117,
-    "needs-review": 114,
+    "needs-review": 113,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1414
+    "restricted": 1415
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -90637,13 +90637,13 @@ Batch source, sequence, domain registry, rights, and review metadata:
 
 Term: LONGITUDINALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Along a specified lengthwise axis of physical equipment\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning requires source review\; this is not a time\-series research sense\.
+Rationale: The authenticated PDF confirms a distinct LONGITUDINALLY \(adv\) row with the meaning In a longitudinal direction\. Retain the physical\-axis scope for IT procedures\; do not extend it to undefined time\-series\, software\, authentication\, or security meanings\. See docs\/it\-ste\-research\/W1\-D\-P303\.md for the draft decision and evidence\.
 
 Contextual alternatives:
 
@@ -90677,9 +90677,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 303 -l 303 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/asd-issue-9-page-303; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: distinct LONGITUDINALLY (adv) row follows the LONGITUDINAL (adj) row and has its own In a longitudinal direction meaning and example.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 303,
     "printed_page": "2-1-L9",
@@ -90689,8 +90689,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "source row boundary and typography review against cited PDF page"
+      "original example review"
     ],
     "row_on_page": 3,
     "source_entry_id": "D-P303-003",
@@ -167559,7 +167558,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-029.json` SHA-256: `03e2a65e638dafa8db5ad2a43b9bc43eb644073a35176f9a527003e2c649ae13`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `862206d4fc9b8e4c27bc7a9238888f59d0e5e98a1f16e435ed5dcc9dd03e8dde`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-030.json` SHA-256: `b46132e51074f1cdfdb42a0b7dcfc3b6d429eb3dc177f596cc22352b07e54391`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-031.json` SHA-256: `ee129bfc8b3428043cda4eb69cea852a512ca99b8757744f39504e343d838f99`
 
