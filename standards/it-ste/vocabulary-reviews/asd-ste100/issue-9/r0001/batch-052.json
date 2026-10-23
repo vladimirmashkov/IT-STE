@@ -2093,12 +2093,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Presenting a specified risk under defined operating conditions.",
+      "it_disposition": "restricted",
+      "it_definition": "Presenting a specified security risk under identified conditions.",
       "domains": [
         "security"
       ],
-      "rationale": "The compact source includes a fragment from the next row; a settled safety assessment needs a named hazard.",
+      "rationale": "The authenticated page confirms that the apparent following-row fragment belongs to UNSATISFACTORILY, not unsafe. Use this security sense only when the affected asset or operation, the condition, and the concrete risk or consequence are identified; NIST risk terminology and OWASP threat-modeling guidance support that evidence boundary. See docs/it-ste-research/W1-D-P417-005.md.",
       "permitted_contextual_alternatives": [
         "exposes the signing key",
         "can cause data loss"
@@ -2127,18 +2127,17 @@
         },
         "extraction_warnings": [],
         "mechanical_ambiguities": [
-          "Apparent following-row manner fragment."
+          "Apparent following-row manner fragment; visually resolved as the next row's fragment."
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered page 417 with pdftoppm at 180 dpi. Findings: row 5 is unsafe (adj), DANGEROUS (adj) is its alternative, and the following In an unsatisfactory fragment belongs to UNSATISFACTORILY (adv).",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "verify flagged or ambiguous source row against PDF"
+          "original example review"
         ]
       }
     },

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 39,
+    "needs-review": 38,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1482
+    "restricted": 1483
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -158297,13 +158297,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: unsafe; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Presenting a specified risk under defined operating conditions\.
+Definition: Presenting a specified security risk under identified conditions\.
 
 Domains: security
 
-Rationale: The compact source includes a fragment from the next row\; a settled safety assessment needs a named hazard\.
+Rationale: The authenticated page confirms that the apparent following\-row fragment belongs to UNSATISFACTORILY\, not unsafe\. Use this security sense only when the affected asset or operation\, the condition\, and the concrete risk or consequence are identified\; NIST risk terminology and OWASP threat\-modeling guidance support that evidence boundary\. See docs\/it\-ste\-research\/W1\-D\-P417\-005\.md\.
 
 Contextual alternatives:
 
@@ -158334,12 +158334,12 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
   "evidence": {
     "extraction_warnings": [],
     "mechanical_ambiguities": [
-      "Apparent following-row manner fragment."
+      "Apparent following-row manner fragment; visually resolved as the next row's fragment."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered page 417 with pdftoppm at 180 dpi. Findings: row 5 is unsafe (adj), DANGEROUS (adj) is its alternative, and the following In an unsatisfactory fragment belongs to UNSATISFACTORILY (adv).",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 417,
     "printed_page": "2-1-U5",
@@ -158349,8 +158349,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P417-005",
@@ -167575,7 +167574,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `3501a617e5decc6cb506c561082213cb6cfc4398f5d08f947da197bd70adad2c`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `4b4c5666d149ab60ba3ac055d7f1af88bafb64d933996acd231329d288a498ee`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 
