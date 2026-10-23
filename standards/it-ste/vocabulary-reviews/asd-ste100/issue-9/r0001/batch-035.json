@@ -1733,15 +1733,16 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Without an intended automatic reversal within a stated lifecycle.",
+      "it_disposition": "restricted",
+      "it_definition": "Describes a state or action intended to continue without automatic reversal under a stated policy; it does not prove that every copy is deleted or immutable.",
       "domains": [
         "data-storage"
       ],
-      "rationale": "Wrapped extraction needs review, and irreversibility must be distinguished from current configuration.",
+      "rationale": "The authenticated ASD page separates `PERMANENTLY (adv)` (`In a permanent manner`) from `PERMANENT (adj)`; the wrapped headword and row boundary are visually confirmed. AWS S3 distinguishes a permanent versioned DELETE from a simple delete marker and distinguishes retention periods from legal holds; Kubernetes distinguishes Retain, Delete, and explicit cleanup of storage assets. Restrict the IT sense to a stated policy and authorized operation, without claiming universal deletion, irreversibility, immutability, or durability. See `docs/it-ste-research/W1-D-P332-005.md`; keep this as draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "without automatic expiry",
-        "irreversibly, only when verified"
+        "irreversibly, only when verified",
+        "until the authorized policy change"
       ],
       "examples": {
         "positive": {
@@ -1750,7 +1751,7 @@
         },
         "problematic": {
           "text": "This permanently deletes every copy.",
-          "explanation": "Requires evidence about replicas, backups, and retention that is not supplied."
+          "explanation": "Requires evidence about replicas, backups, deletion results, and retention that is not supplied."
         }
       },
       "evidence": {
@@ -1771,14 +1772,13 @@
         "mechanical_ambiguities": [],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "pdftoppm -f 332 -l 332 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-19-page-332; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: PERMANENTLY (adv) is a distinct fifth row on printed page 2-1-P4 with `In a permanent manner`; PERMANENT (adj) is the preceding separate row and permissible (adj) follows. The wrapped headword, spelling, POS, columns, row boundaries, and layout are verified.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+          "original example review"
         ]
       }
     },

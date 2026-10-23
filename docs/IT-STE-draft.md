@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 90,
+    "needs-review": 89,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1437
+    "restricted": 1438
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -107465,19 +107465,21 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PERMANENTLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Without an intended automatic reversal within a stated lifecycle\.
+Definition: Describes a state or action intended to continue without automatic reversal under a stated policy\; it does not prove that every copy is deleted or immutable\.
 
 Domains: data\-storage
 
-Rationale: Wrapped extraction needs review\, and irreversibility must be distinguished from current configuration\.
+Rationale: The authenticated ASD page separates \`PERMANENTLY \(adv\)\` \(\`In a permanent manner\`\) from \`PERMANENT \(adj\)\`\; the wrapped headword and row boundary are visually confirmed\. AWS S3 distinguishes a permanent versioned DELETE from a simple delete marker and distinguishes retention periods from legal holds\; Kubernetes distinguishes Retain\, Delete\, and explicit cleanup of storage assets\. Restrict the IT sense to a stated policy and authorized operation\, without claiming universal deletion\, irreversibility\, immutability\, or durability\. See \`docs\/it\-ste\-research\/W1\-D\-P332\-005\.md\`\; keep this as draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
 - without automatic expiry
 
 - irreversibly\, only when verified
+
+- until the authorized policy change
 
 #### Positive example
 
@@ -107493,7 +107495,7 @@ Explanation: Explains the continuing state and change authority\.
 This permanently deletes every copy.
 ```
 
-Explanation: Requires evidence about replicas\, backups\, and retention that is not supplied\.
+Explanation: Requires evidence about replicas\, backups\, deletion results\, and retention that is not supplied\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -107505,9 +107507,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "pdftoppm -f 332 -l 332 -png -r 180 .local/sources/ASD-STE100-issue-9.pdf .local/review-images/iteration-19-page-332; authenticated PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; Findings: PERMANENTLY (adv) is a distinct fifth row on printed page 2-1-P4 with `In a permanent manner`; PERMANENT (adj) is the preceding separate row and permissible (adj) follows. The wrapped headword, spelling, POS, columns, row boundaries, and layout are verified.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 332,
     "printed_page": "2-1-P4",
@@ -107517,8 +107519,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Verify source wording, row boundaries, and typography against the cited PDF page; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 5,
     "source_entry_id": "D-P332-005",
@@ -167560,7 +167561,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-034.json` SHA-256: `161f9698b8ca55aadb83b8752876713e0452eb6294a5dd4331fbcf442e81b8b7`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `fab3da40a34d5134924b130835ce8d16fbe16d8ae23c132532532c55b96291b1`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `1c0171fccafdd1d55cb446f18eaeadd4ccef9e1d259364f87df0e8ed6aedf5fb`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `6212721a920d40e4f51d2a05ea1e94eda9caff2ec88b0c8d7ae226a0fae1131b`
 
