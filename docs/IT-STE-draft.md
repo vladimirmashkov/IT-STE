@@ -159925,7 +159925,7 @@ Definition: Toward the source of a specified data flow or dependency path\.
 
 Domains: networking
 
-Rationale: The retrieved adverb row repeats a fragment apparently from the next row\; direction must be anchored to one flow\.
+Rationale: The source meaning is direction opposite to the named flow\; the IT sense must name the flow or endpoint so upstream is not mistaken for authority or priority\. See docs\/it\-ste\-research\/W1\-D\-P419\-006\-007\.md\: RFC 7230 defines upstream\/downstream relative to message flow\, while the operational scope remains an IT\-STE draft editorial constraint\.
 
 Contextual alternatives:
 
@@ -159959,9 +159959,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Repeated direction fragment appears to overlap the following upstream-of row."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local page 419 with pdftoppm. Findings: separate ruled row 6 is UPSTREAM (adv), with the In a direction opposite to the flow meaning; spelling, POS, columns, row boundary, and probe/temperature example match the exact entry. The repeated extracted fragment is not present in the PDF row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 419,
     "printed_page": "2-1-U7",
@@ -159971,8 +159971,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P419-006",
@@ -159999,7 +159998,7 @@ Definition: Located before a named component along an explicitly defined process
 
 Domains: networking
 
-Rationale: Wrapped extraction needs review\; source\-side position is relational and not the same as greater authority\.
+Rationale: The source phrase expresses a position opposite to the flow relative to a named component\; the IT sense must identify that component and reference flow\, not authority or priority\. See docs\/it\-ste\-research\/W1\-D\-P419\-006\-007\.md\: RFC 7230 and NGINX document directional flow and upstream server roles\, while the operational scope remains an IT\-STE draft editorial constraint\.
 
 Contextual alternatives:
 
@@ -160033,9 +160032,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     ],
     "mechanical_ambiguities": [],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered local page 419 with pdftoppm. Findings: separate ruled row 7 is UPSTREAM OF (prep), with the In a direction opposite to the flow meaning and the connection/valve example; spelling, POS, columns, wrapped headword, and row boundary match the exact entry.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 419,
     "printed_page": "2-1-U7",
@@ -160045,8 +160044,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 7,
     "source_entry_id": "D-P419-007",
@@ -167581,7 +167579,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `25775f941294a3cb9d495825c2ec4b99e0eae397b3ab11965bca8802abca2bd6`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `2f00c63e446ade0b5846e1a5e53fdb42e6b8ce6d67f32f8f895a91b0136cbb6d`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-054.json` SHA-256: `d59b2d08df87c9fcb1ff97d74bd8fd9db9aade67c4393aef1413d8e02eb90b90`
 
