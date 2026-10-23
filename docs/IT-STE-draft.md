@@ -157804,7 +157804,7 @@ Definition: Free of a specified physical blockage\; no claim of unrestricted net
 
 Domains: networking
 
-Rationale: The compact source lists both clogged and clear\, which need PDF context before interpretation\.
+Rationale: The authenticated page confirms one unobstructed \(adj\) row with two distinct alternatives\: CLOGGED \(adj\) for drain openings and CLEAR \(adj\) for a line of sight\. The physical source supports a bounded absence\-of\-obstruction description\, but Kubernetes Service documentation describes network endpoints and reachability rather than an unobstructed network path or authorization state\. Keep the draft physical meaning and reject unrestricted connectivity\, authentication\, or security inferences\; direct IT hardware evidence and editorial scope review remain pending\. See docs\/it\-ste\-research\/W1\-D\-P416\-006\.md\.
 
 Contextual alternatives:
 
@@ -157835,12 +157835,12 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
   "evidence": {
     "extraction_warnings": [],
     "mechanical_ambiguities": [
-      "Contrasting clogged and clear cues need source context."
+      "The compact extraction lists both CLOGGED and CLEAR alternatives; the authenticated PDF confirms both belong to the unobstructed row but they describe different physical contexts."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 416 with pdftoppm -f 416 -l 416 -singlefile -png -r 150 and visually inspected. Findings: unobstructed (adj) is one ruled row; CLOGGED (adj) applies to drain openings, CLEAR (adj) applies to a view, and the row is separated from unnecessary above and unpack below.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 416,
     "printed_page": "2-1-U4",
@@ -157850,8 +157850,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "verify flagged or ambiguous source row against PDF"
+      "original example review"
     ],
     "row_on_page": 6,
     "source_entry_id": "D-P416-006",
@@ -167576,7 +167575,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `25775f941294a3cb9d495825c2ec4b99e0eae397b3ab11965bca8802abca2bd6`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `3501a617e5decc6cb506c561082213cb6cfc4398f5d08f947da197bd70adad2c`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 
