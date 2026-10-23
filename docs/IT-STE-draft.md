@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 118,
-    "needs-review": 85,
+    "needs-review": 84,
     "not-applicable": 148,
     "prohibited": 403,
-    "restricted": 1442
+    "restricted": 1443
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -110215,13 +110215,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: PRECAUTION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A specific action taken to prevent injury or damage during an IT task\.
+Definition: A specific action taken to prevent an identified injury\, damage\, loss\, or service impact\.
 
 Domains: procedures\-runbooks
 
-Rationale: The compact source repeats the next row\'s headword\; keep the prevention scope provisional\.
+Rationale: Use only for a concrete preventive action whose hazard\, loss\, damage\, or service impact is identifiable\; do not use a vague instruction as a precaution\. The authenticated page confirms PRECAUTION is a separate row before precautionary\, while the compact source retains that mechanical ambiguity\. The bounded draft decision and external evidence are recorded in docs\/it\-ste\-research\/W1\-D\-P336\-008\.md\.
 
 Contextual alternatives:
 
@@ -110229,13 +110229,15 @@ Contextual alternatives:
 
 - preventive action
 
+- risk\-reduction step
+
 #### Positive example
 
 ```
 As a precaution, verify the restore point before changing retention.
 ```
 
-Explanation: Names a concrete preventive action\.
+Explanation: Identifies the preventive action and the retention change whose service\-impact risk it reduces\.
 
 #### Problematic example
 
@@ -110243,7 +110245,7 @@ Explanation: Names a concrete preventive action\.
 Take precautions.
 ```
 
-Explanation: No required action or hazard is identified\.
+Explanation: Does not identify the hazard\, required action\, timing\, or acceptance condition\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -110255,9 +110257,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "Compact source includes the following precautionary row headword."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 336 with pdftoppm and visually inspected. Findings: PRECAUTION (n) is a distinct eighth row with clear spelling, POS, columns, row boundaries, printed page, approved meaning, and STE example; precautionary (adj) follows as a separate row.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 336,
     "printed_page": "2-1-P8",
@@ -110267,8 +110269,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+      "original example review"
     ],
     "row_on_page": 8,
     "source_entry_id": "D-P336-008",
@@ -167567,7 +167568,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-035.json` SHA-256: `3754a826b567d81c11d9a5abccf09b7ecce8e00d9cc1a673677e27f152e4e80d`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `8044ec98162945b14b9abd6ec03abdbea3ef6f965073e9e6a326902b69ead2e4`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-036.json` SHA-256: `5fb3d8adbcaa10a56247fde08ea2dc9c3387dc15e0681741896dc01ca8fc9bea`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `8cda7b4e6e83d596bfc18d17060b4c1415da19af441d6b40ba3f757713b2c0c0`
 

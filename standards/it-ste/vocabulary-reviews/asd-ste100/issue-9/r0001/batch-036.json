@@ -1549,24 +1549,25 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A specific action taken to prevent injury or damage during an IT task.",
+      "it_disposition": "restricted",
+      "it_definition": "A specific action taken to prevent an identified injury, damage, loss, or service impact.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The compact source repeats the next row's headword; keep the prevention scope provisional.",
+      "rationale": "Use only for a concrete preventive action whose hazard, loss, damage, or service impact is identifiable; do not use a vague instruction as a precaution. The authenticated page confirms PRECAUTION is a separate row before precautionary, while the compact source retains that mechanical ambiguity. The bounded draft decision and external evidence are recorded in docs/it-ste-research/W1-D-P336-008.md.",
       "permitted_contextual_alternatives": [
         "protective step",
-        "preventive action"
+        "preventive action",
+        "risk-reduction step"
       ],
       "examples": {
         "positive": {
           "text": "As a precaution, verify the restore point before changing retention.",
-          "explanation": "Names a concrete preventive action."
+          "explanation": "Identifies the preventive action and the retention change whose service-impact risk it reduces."
         },
         "problematic": {
           "text": "Take precautions.",
-          "explanation": "No required action or hazard is identified."
+          "explanation": "Does not identify the hazard, required action, timing, or acceptance condition."
         }
       },
       "evidence": {
@@ -1587,14 +1588,13 @@
         ],
         "source_interpretation_status": "mechanically-extracted-unreviewed",
         "pdf_layout_check": {
-          "performed": false,
-          "method": null,
-          "visual_verification_performed": false
+          "performed": true,
+          "method": "Authenticated ASD-STE100 Issue 9/r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; rendered physical page 336 with pdftoppm and visually inspected. Findings: PRECAUTION (n) is a distinct eighth row with clear spelling, POS, columns, row boundaries, printed page, approved meaning, and STE example; precautionary (adj) follows as a separate row.",
+          "visual_verification_performed": true
         },
         "review_required": [
           "editorial sense and scope review",
-          "original example review",
-          "Resolve source interpretation and verify cited PDF row boundaries and typography; not performed in this batch."
+          "original example review"
         ]
       }
     },
