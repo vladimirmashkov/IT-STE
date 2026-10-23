@@ -128264,13 +128264,11 @@ Definition: Flowing continuously\, provisionally describing water used in a phys
 
 Domains: general
 
-Rationale: The exact source provides FLUSH as an alternative but does not resolve a software operating\-state sense\.
+Rationale: Authenticated page 365 confirms running \(adj\) for flowing water\, separate from run \(v\)\; FLUSH rewrites the cleaning action\, not a software state\. Kubernetes distinguishes Pod phase Running\, container state and readiness\; Running is not a readiness or general health guarantee\. Remove operating as a cross\-sense alternative\. Keep needs\-review because the physical cleaning sense still lacks a supported IT equipment\/procedure scope\; any software sense needs separate review\. See docs\/it\-ste\-research\/W1\-D\-P365\.md\.
 
 Contextual alternatives:
 
 - flowing water\, in hardware cleaning
-
-- operating\, for an independently scoped process state
 
 #### Positive example
 
@@ -128286,7 +128284,7 @@ Explanation: Keeps the provisional physical sense bounded\.
 Running means the process is healthy.
 ```
 
-Explanation: A process state does not establish health and is not supported by this retrieved sense\.
+Explanation: Conflates a state label with a health guarantee\. Kubernetes Pod phase Running is distinct from container state and readiness\; this water\-related adjective supplies no software\-state definition\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -128298,9 +128296,9 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
       "The retrieved adjective is linked to FLUSH, not software execution; source sense and IT extension require review."
     ],
     "pdf_layout_check": {
-      "method": null,
-      "performed": false,
-      "visual_verification_performed": false
+      "method": "Authenticated ASD-STE100 Issue 9 r0001 PDF SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431, physical page 365 / printed 2-1-R17, rendered locally with pdftoppm and visually inspected on 2026-10-23. Findings: bottom row 11 running (adj) is separated by a horizontal rule from run (v); FLUSH (v) and the pipe/water cleaning examples belong to running. OPERATE belongs to the separate run row. See docs/it-ste-research/W1-D-P365.md.",
+      "performed": true,
+      "visual_verification_performed": true
     },
     "physical_pdf_page": 365,
     "printed_page": "2-1-R17",
@@ -128311,7 +128309,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Resolve extraction warnings or sense ambiguity against the source PDF before settling disposition"
+      "Establish a supported physical IT equipment cleaning scope and manufacturer procedure; review any software-state sense separately"
     ],
     "row_on_page": 11,
     "source_entry_id": "D-P365-011",
@@ -167569,7 +167567,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-041.json` SHA-256: `efd31f9650be53fff471c46e8213340f6369939d2f4e0ae09acde7aeb138985b`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `ece519517352bada41e2aa3ed2c1edded0a809fba90f7a52db14e99fa87440b7`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `944c5ed85a5e16183fdb8da12f25da12c4f1f751fc299bbef45744d690d51f3a`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `f6b4a99e65166ddc0ce6d54ae4c76719b3d08759edf7a5470b5909fdbaafce0b`
 

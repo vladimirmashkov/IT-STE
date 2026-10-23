@@ -121,6 +121,13 @@ class VocabularyTests(unittest.TestCase):
         self.assertNotIn("correct under the repair procedure", rework["permitted_contextual_alternatives"])
         self.assertNotIn("replace the faulty assembly", rework["permitted_contextual_alternatives"])
         self.assertIn("server cable harness", rework["examples"]["positive"]["text"])
+        running = by_id["D-P365-011"]
+        self.assertEqual(running["it_disposition"], "needs-review")
+        self.assertEqual(running["part_of_speech_as_extracted"], "adj")
+        self.assertTrue(running["evidence"]["mechanical_ambiguities"])
+        self.assertTrue(running["evidence"]["pdf_layout_check"]["visual_verification_performed"])
+        self.assertEqual(running["permitted_contextual_alternatives"], ["flowing water, in hardware cleaning"])
+        self.assertIn("not a readiness or general health guarantee", running["rationale"])
         for identifier in ("D-P285-003", "D-P333-004", "D-P338-010", "D-P347-001", "D-P407-009"):
             self.assertIn("are permitted to", by_id[identifier]["examples"]["positive"]["text"])
 
