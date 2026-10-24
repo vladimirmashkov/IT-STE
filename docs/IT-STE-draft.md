@@ -1642,13 +1642,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Retain necessary grammar and spell out authored contractions while allowing a valid imperative and verbs without objects.",
+          "rationale": "Retain necessary grammar and spell out authored contractions while allowing a valid imperative and verbs without objects; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Deleting required sentence parts and contracting words can reduce clarity.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Permit contextual fragments and preserve exact strings rather than expand logs or syntax mechanically.",
+          "rationale": "Permit contextual fragments and preserve exact strings rather than expand logs or syntax mechanically; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source requires sentence parts to be retained rather than omitted for brevity.",
           "target_field": "exceptions"
         }
@@ -1667,13 +1667,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Apply standard English to the actual IT construction, preserving distinctions among specific, general, and new referents.",
+          "rationale": "Apply standard English to the actual IT construction, preserving distinctions among specific, general, and new referents; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Articles and demonstratives help identify nouns and their intended specificity.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Do not impose a blanket identifier-based article rule; judge the complete construction and preserve syntax.",
+          "rationale": "Do not impose a blanket identifier-based article rule; judge the complete construction and preserve syntax; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source gives particular article treatment for names followed by alphanumeric identifiers.",
           "target_field": "exceptions"
         }
@@ -1692,7 +1692,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Retain the source guidance as a contextual clarity test, not mechanical insertion or a fabricated source rule.",
+          "rationale": "Retain the source guidance as a contextual clarity test, not mechanical insertion or a fabricated source rule; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The conjunction that can help readers locate a subordinate-clause boundary.",
           "target_field": "text"
         }
@@ -1815,19 +1815,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Apply lists to IT alternatives, prerequisites, fields, and actions when they improve scanning rather than require a list for every series.",
+          "rationale": "Apply lists to IT alternatives, prerequisites, fields, and actions when they improve scanning rather than require a list for every series; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Separating a complex series into visible items improves access to its content.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Require clear lead-ins and parallel items while distinguishing logical levels and meaningful ordering in IT formats.",
+          "rationale": "Require clear lead-ins and parallel items while distinguishing logical levels and meaningful ordering in IT formats; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Every item must fit the introductory wording and use a consistent grammatical and visual pattern.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Retain consistent presentation but let the governing format determine syntax and punctuation without modifying exact literals.",
+          "rationale": "Retain consistent presentation but let the governing format determine syntax and punctuation without modifying exact literals; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source demonstrates particular list layouts and punctuation conventions.",
           "target_field": "exceptions"
         }
@@ -168713,9 +168713,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0010.json` SHA-256: `62dee2dcc1ce0aa1e37989d1925f6dceaa81946a4d266830b49a0445ec9215fc`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0011.json` SHA-256: `12c28984c7ca8c5e6c81916a305d7aaa04f72b17c7c716019e655f83d6fa6cae`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0011.json` SHA-256: `49487ad0e3c393f192bef8448178ab6ce808ac64fb9ecd269ce8fd002dbcf1a2`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0012.json` SHA-256: `0415ebacdd98b087b8092d6253488f6734d9e49014cc989bf119d48577cd9960`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0012.json` SHA-256: `dac833f0302557a9b7fe5d641e8e721d1d3af5b2cb4a3e6df5b85ce83069ebc0`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0013.json` SHA-256: `21cb59bfa2b40117e803a56cd9229cdc216d9b4e48a2c58b2e4b602b1f0d10dd`
 
