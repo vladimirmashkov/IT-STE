@@ -51,6 +51,20 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 18/38 — batch052 / physical PDF page 415
+
+- `D-P415-004` (`unintentional`, adj) — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 415 / printed page `2-1-U3`, exact locator `entry D-P415-004`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval identifies `unintentional (adj)` → `ACCIDENTAL (adj)` with the guard/control-switch example. Fresh visual inspection confirms the row boundary and displayed alternative.
+
+- `D-P415-005` (`unintentionally`, adv) — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 415 / printed page `2-1-U3`, exact locator `entry D-P415-005`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval identifies the separate wrapped `unintentionally (adv)` row → `ACCIDENTALLY (adv)` with the rain-repellent example. Fresh visual inspection confirms the row boundary, POS, wrapping, and displayed alternative; the mechanical `wrapped-headword` warning remains preserved.
+
+- External evidence actually inspected: RFC 4949 §4 entries for intentional/accidental threats, human error, audit service, and security audit trail; NIST SP 800-86 on forensic sources and investigation; NIST SP 800-61 Rev. 3 on incident-response scope; and CISA's *Insider Threat Mitigation Guide* on intentional versus unintentional insider incidents. These sources support separating actor attribution, evidence, observed action, and intent. They do not establish that logs, forensic artifacts, observed or malware behavior, or unexplained events prove an actor's intent. RFC 4949 is Informational and dated 2007; NIST SP 800-86 is practical forensic guidance from 2006; NIST SP 800-61 Rev. 3 and CISA provide process/context guidance, not a lexical authority or proof of a particular actor's mental state.
+
+- Fact versus editorial inference: the ASD rows, source pins, page layout, alternatives, examples, and source descriptions are facts from the inspected materials. Retaining bounded provisional meanings — `unintentional` for an action not intended by the responsible actor where the intent assessment is supported, and `unintentionally` for an action occurring without the actor intending the result, with actor and evidence identified — is an editorial inference. The actor/evidence guard is justified; a disposition change is not. Both records remain `status: draft` / `review_status: editorial-review-needed`; no canonical batch field changed.
+
+- Validation for this slice: passed batch-052 vocabulary check (40 candidates; 11 needs-review), adaptation, corpus, all-batch vocabulary check, document build/check, 118 unit tests with `ResourceWarning` treated as errors, authenticated source doctor, project diagnostics with no errors or warnings, `git diff --check`, and canonical offset-0 queue/count recomputation. These checks establish draft structure/provenance only, not vocabulary approval. Counts remain 2,196 records / 55 batches: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review. The next live offset-0 queue item is `D-P206-001`; do not start it in this run. See [W1-D-P415-004-005](W1-D-P415-004-005.md).
+
 ### Resolution slice 17/38 — batch052 / physical PDF page 413
 
 - `D-P413-009` — old disposition: `needs-review`; new disposition: `needs-review`.
