@@ -6,7 +6,7 @@ URLs are deduplicated and linked to the notes that cite them. It is a provenance
 not a claim that every source was re-fetched during this update, nor ASD guidance or vocabulary approval.
 
 - Research notes scanned: 122
-- Unique external URLs: 251
+- Unique external URLs: 266
 - Generated from the tracked notes; unavailable sources remain listed with the limitations recorded in those notes.
 
 ## Sources
@@ -262,3 +262,21 @@ not a claim that every source was re-fetched during this update, nor ASD guidanc
 249. <https://www.w3.org/WAI/ARIA/apg/patterns/listbox/> — cited in `W1-D-P372.md`
 250. <https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html> — cited in `W1-D-P308.md`
 251. <https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html> — cited in `W1-D-P397-005-006.md`
+
+## Sources indexed from the 11-record domain-mapping study
+
+252. <https://www.nrc.gov/about-nrc/radiation/health-effects/radiation-basics.html> — attempted for `it-domain-11-classification.md`; HTTP 403, not used as evidence
+253. <https://www.nist.gov/pml/owm/metric-si/si-units> — cited in `it-domain-11-classification.md`
+254. <https://www.rfc-editor.org/rfc/rfc3339> — cited in `it-domain-11-classification.md`
+255. <https://scikit-learn.org/stable/modules/model_evaluation.html> — cited in `it-domain-11-classification.md`
+256. <https://www.nsk.com/eu-en/tools-resources/troubleshooting/damage-by-type/scoring> — cited in `it-domain-11-classification.md`
+257. <https://cloud.google.com/architecture/framework/performance-optimization> — cited in `it-domain-11-classification.md`
+258. <https://www.itu.int/rec/T-REC-L.301> — cited in `it-domain-11-classification.md`
+259. <https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-6/> — cited in `it-domain-11-classification.md`
+260. <https://www.w3.org/TR/SVG2/coords.html> — cited in `it-domain-11-classification.md`
+261. <https://www.w3.org/TR/css-transforms-1/> — cited in `it-domain-11-classification.md`
+262. <https://csrc.nist.gov/glossary/term/symmetric_key_algorithm> — cited in `it-domain-11-classification.md`
+263. <https://www.rfc-editor.org/rfc/rfc1122.html> — cited in `it-domain-11-classification.md`
+264. <https://learn.microsoft.com/en-us/windows-server/get-started/hardware-requirements> — cited in `it-domain-11-classification.md`
+265. <https://www.rfc-editor.org/rfc/rfc9110.html#section-3.7> — cited in `it-domain-11-classification.md`
+266. <https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/tasks.html#relationships> — cited in `it-domain-11-classification.md`

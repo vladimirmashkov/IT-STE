@@ -5,11 +5,11 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 21/36
-Requested iterations: 36 (user-authorized); this run executes slice 21/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–21/36
-Processed records: 64
-Disposition changes: 24 records changed from `needs-review` to `restricted`
+Last checkpoint: 2026-10-24, after the 11-record domain-mapping study
+Requested iterations: 36 (user-authorized); domain-mapping follow-up covers the remaining 11 records as one bounded register update, not 11 forced canonical dispositions
+Completed slices: 22 legacy classification slices + new-policy slices 1–22/36 + one 11-record domain-mapping study
+Processed records: 75 unique records including the 11-record study
+Disposition changes: 24 records changed from `needs-review` to `restricted`; the 11-record study made no canonical disposition changes
 Remaining `needs-review`: 11
 
 ## Purpose and evidence policy
@@ -51,7 +51,7 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 21/36:
+Fresh canonical counts after the 11-record domain-mapping study:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
@@ -60,9 +60,21 @@ Fresh canonical counts after new-policy slice 21/36:
 - `not-applicable`: `148`;
 - `needs-review`: `11`.
 
-The 11 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, `D-P413-006`, `D-P413-009`, `D-P413-010`, `D-P415-004`, and `D-P415-005` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 11 remaining records are listed in `needs-review-38.md`; this log retains the frozen baseline and records each disposition result. The domain-mapping register `it-domain-11-classification.md` maps every remaining record to plausible IT domains and bounded candidate senses, but intentionally leaves all 11 at `needs-review`. The study is one coherent bounded follow-up because its question was cross-record domain coverage and schema/owner boundaries, not 11 independent disposition decisions. No Reddit or Stack Overflow source was used. The legacy table above remains historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation and exclusion of the documented earlier blockers, inspect only the next authorized active slice; new-policy slice 22/36 is complete and slice 23/36 was not started.
+Exact next policy question: obtain owner decisions on facility-equipment scope, the `real` contrast, and schema treatment of split senses; then research one fresh bounded page slice only. Do not force any of the 11 records out of `needs-review` merely to reduce the count.
+
+### IT-domain mapping study — remaining 11 records — 2026-10-24
+
+- Run/scope: one user-requested bounded cross-record domain-mapping study covering `D-P349-003`, `D-P351-001`, `D-P368-010`, `D-P391-003`, `D-P391-005`, `D-P397-005`, `D-P397-006`, `D-P397-007`, `D-P416-006`, `D-P419-006`, and `D-P419-007`; pages `349`, `351`, `368`, `391`, `397`, `416`, and `419`; batches `038`, `039`, `043`, `047`, `049`, `052`, and `053`.
+- Old/new: every selected record remains `needs-review` → `needs-review`; no canonical JSON or generated vocabulary fields changed. All remain `status: draft` / `review_status: editorial-review-needed`.
+- ASD evidence: authenticated ASD-STE100 Issue 9, revision `r0001`, PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact entry/page provenance and prior visual findings are preserved in the baseline register and [it-domain-11-classification](it-domain-11-classification.md). The register records the distinct rows and POS for all 11.
+- IT question: which all-IT domains can support a bounded sense, which meanings must be excluded, and which records require a schema-supported split? The domain matrix identifies `HW`, `MAINT`, `RISK`, `DATA`, `OBS`, `SW`, `REL`, `AI`, `TEST`, `PHYS`, `UI`, `DOC`, `LANG`, `NET`, `DIST`, and `DEV` as applicable only with named objects, relations, methods, frames, or acceptance criteria. ITIL is used only as a service-management frame; it does not define protocol, geometry, cryptographic, or programming meanings.
+- Sources actually inspected: EPA, AWS, JCGM/BIPM VIM, Prometheus, RFC 9110, NSK, scikit-learn, NIST AI RMF, Google Cloud, ITU-T, Unicode, W3C SVG/CSS/WCAG, Kubernetes, RFC 1122, RFC 791, Microsoft, NGINX, and Apache Airflow. URLs and source-specific findings/limitations are in the register and indexed in `external-sources.md`. NRC was attempted but returned HTTP 403 and was not used as evidence. No Reddit or Stack Overflow source was used, including for discovery.
+- Decision: retain `needs-review` for all 11. `scored`, `strain`, and `stress` are strong split proposals; `real`, `SYMBOL`, and symmetry terms may also require splits. `UPSTREAM`/`UPSTREAM OF`, geometric symmetry, physical `unobstructed`, and a named radioactive facility item may become `restricted` only after owner/schema or direct-evidence gaps are closed. `allowed` is rejected for ambiguity, `prohibited` and `not-applicable` are rejected because each has at least one plausible IT domain, and a forced `restricted` decision is rejected where the sense boundary is not yet represented safely.
+- Research files changed: `docs/it-ste-it-domain-matrix.md`, `docs/it-ste-research/it-domain-11-classification.md`, `docs/it-ste-research/needs-review-38.md`, this log, `docs/it-ste-draft-handoff.md`, and `docs/it-ste-research/external-sources.md`. No canonical records changed. No commit was authorized; changes remain uncommitted for review.
+- Validation status at checkpoint: adaptation, corpus, vocabulary, document build/check, 118 unit tests with `ResourceWarning` as errors, authenticated source doctor, project diagnostics, and `git diff --check` all passed after this study. These checks validate repository consistency, not vocabulary approval. Full Git inventory review remains to be recorded before reporting completion.
+- Next action: owner review of the domain matrix and split-policy questions; then fresh offset-0 recomputation and one bounded source-backed page slice. Resume pointer is the 11 IDs above, not an offset alone.
 
 ### New-policy classification slice 22/36 — `D-P419-006` / `D-P419-007`
 

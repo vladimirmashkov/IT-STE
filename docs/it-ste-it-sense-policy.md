@@ -27,7 +27,7 @@ The intended IT scope covers all of these domains, provided that the sense is ev
 11. **User interfaces, accessibility, and technical communication** — controls, labels, layout, geometry, content, accessibility, procedures, runbooks, and support instructions.
 12. **Support and maintenance** — troubleshooting, diagnosis, service actions, replacement, cleaning, repair boundaries, and escalation.
 
-Physical IT is in scope, but only for a named component, surface, device, facility system, or documented procedure. A physical aviation sense must not be transferred to cloud, software, data, or networking by analogy alone.
+Physical IT is in scope, but only for a named component, surface, device, facility system, or documented procedure. A physical aviation sense must not be transferred to cloud, software, data, or networking by analogy alone. The detailed domain/object/boundary matrix is maintained in [`docs/it-ste-it-domain-matrix.md`](it-ste-it-domain-matrix.md).
 
 ## Sense profile
 
