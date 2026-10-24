@@ -2281,12 +2281,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Release a threaded fastener by turning it, usually to loosen or remove it.",
+      "it_disposition": "restricted",
+      "it_definition": "Release a named physical threaded fastener by turning it under the applicable equipment service procedure.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The authenticated page separates the three alternatives LOOSEN, TURN, and REMOVE from the following UNserviceable row. Keep the sense limited to a physical threaded fastener; the direction and result depend on the component and procedure. See docs/it-ste-research/W1-D-P417-008-009.md.",
+      "rationale": "The authenticated page separates the three alternatives LOOSEN, TURN, and REMOVE from the following UNserviceable row. Microsoft’s official Surface Service Guide Center documents IT-device disassembly, reassembly, and repair procedures; the draft sense is therefore limited to releasing a named physical threaded fastener under the applicable procedure. Do not extend it to changing permissions, configuration, data, or other nonphysical objects. `allowed` is rejected because the physical target and governing procedure must be named; `prohibited` and `not-applicable` are rejected because bounded hardware-maintenance use is evidenced. See docs/it-ste-research/W1-D-P417-008-009.md.",
       "permitted_contextual_alternatives": [
         "loosen the screw",
         "remove the threaded fastener"
@@ -2343,12 +2343,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Not fit for its intended equipment function.",
+      "it_disposition": "restricted",
+      "it_definition": "Not fit for a named physical IT equipment function after the specified inspection or acceptance test.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The authenticated page shows UNSERVICEABLE (adj) with the source meaning ‘Not fit for its purpose’ and a separate row from unscrew. For IT usage, retain an equipment-function boundary and do not apply the label to every degraded software state; an inspection or test can provide the supporting evidence. See docs/it-ste-research/W1-D-P417-008-009.md.",
+      "rationale": "The authenticated page shows UNSERVICEABLE (adj) with the source meaning ‘Not fit for its purpose’ and a separate row from unscrew. NIST SP 800-160 Rev. 1 identifies system components, requirements, specifications, inspection, verification, and validation as bounded engineering concepts, while NIST SP 800-115 describes testing that verifies compliance with stated requirements. Adapt the source only to a named physical IT equipment function with recorded inspection or acceptance evidence; do not label every degraded software service, network endpoint, or unmeasured quality concern unserviceable. `allowed` is rejected because the object and acceptance boundary must be explicit; `prohibited` and `not-applicable` are rejected because bounded physical-equipment use is relevant and evidenced. See docs/it-ste-research/W1-D-P417-008-009.md.",
       "permitted_contextual_alternatives": [
         "not fit for the specified function",
         "failed the hardware inspection"

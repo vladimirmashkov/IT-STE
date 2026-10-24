@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 13,
+    "needs-review": 11,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1508
+    "restricted": 1510
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -158535,13 +158535,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: unscrew; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Release a threaded fastener by turning it\, usually to loosen or remove it\.
+Definition: Release a named physical threaded fastener by turning it under the applicable equipment service procedure\.
 
 Domains: procedures\-runbooks
 
-Rationale: The authenticated page separates the three alternatives LOOSEN\, TURN\, and REMOVE from the following UNserviceable row\. Keep the sense limited to a physical threaded fastener\; the direction and result depend on the component and procedure\. See docs\/it\-ste\-research\/W1\-D\-P417\-008\-009\.md\.
+Rationale: The authenticated page separates the three alternatives LOOSEN\, TURN\, and REMOVE from the following UNserviceable row\. Microsoft’s official Surface Service Guide Center documents IT\-device disassembly\, reassembly\, and repair procedures\; the draft sense is therefore limited to releasing a named physical threaded fastener under the applicable procedure\. Do not extend it to changing permissions\, configuration\, data\, or other nonphysical objects\. \`allowed\` is rejected because the physical target and governing procedure must be named\; \`prohibited\` and \`not\-applicable\` are rejected because bounded hardware\-maintenance use is evidenced\. See docs\/it\-ste\-research\/W1\-D\-P417\-008\-009\.md\.
 
 Contextual alternatives:
 
@@ -158609,13 +158609,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: UNSERVICEABLE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Not fit for its intended equipment function\.
+Definition: Not fit for a named physical IT equipment function after the specified inspection or acceptance test\.
 
 Domains: procedures\-runbooks
 
-Rationale: The authenticated page shows UNSERVICEABLE \(adj\) with the source meaning ‘Not fit for its purpose’ and a separate row from unscrew\. For IT usage\, retain an equipment\-function boundary and do not apply the label to every degraded software state\; an inspection or test can provide the supporting evidence\. See docs\/it\-ste\-research\/W1\-D\-P417\-008\-009\.md\.
+Rationale: The authenticated page shows UNSERVICEABLE \(adj\) with the source meaning ‘Not fit for its purpose’ and a separate row from unscrew\. NIST SP 800\-160 Rev\. 1 identifies system components\, requirements\, specifications\, inspection\, verification\, and validation as bounded engineering concepts\, while NIST SP 800\-115 describes testing that verifies compliance with stated requirements\. Adapt the source only to a named physical IT equipment function with recorded inspection or acceptance evidence\; do not label every degraded software service\, network endpoint\, or unmeasured quality concern unserviceable\. \`allowed\` is rejected because the object and acceptance boundary must be explicit\; \`prohibited\` and \`not\-applicable\` are rejected because bounded physical\-equipment use is relevant and evidenced\. See docs\/it\-ste\-research\/W1\-D\-P417\-008\-009\.md\.
 
 Contextual alternatives:
 
@@ -167590,7 +167590,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `f5abedb2c18536171f9d4407c20605940e64f3e41266bc70e9ec0295d55bd106`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `d5163d2768df5105a104af7b92d17d857098f77199cea8267bb13281327d8957`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 

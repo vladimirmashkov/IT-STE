@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 19/36
-Requested iterations: 36 (user-authorized); this run executes slice 19/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–19/36
-Processed records: 60
-Disposition changes: 20 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 15
+Last checkpoint: 2026-10-24, after new-policy slice 21/36
+Requested iterations: 36 (user-authorized); this run executes slice 21/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–21/36
+Processed records: 64
+Disposition changes: 24 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 11
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,29 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 18/36:
+Fresh canonical counts after new-policy slice 21/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,506`;
+- `restricted`: `1,510`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `15`.
+- `needs-review`: `11`.
 
 The 15 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, `D-P413-006`, `D-P413-009`, `D-P413-010`, `D-P415-004`, and `D-P415-005` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation and exclusion of the documented earlier blockers, inspect only the next active pair `D-P417-008` / `D-P417-009`, batch `052`, physical PDF page `417`; do not start slice 21/36 here.
+Exact next policy question: after fresh offset-0 recomputation and exclusion of the documented earlier blockers, inspect only the next authorized active slice; this run stops before slice 22/36.
+
+### New-policy classification slice 21/36 — `D-P417-008` / `D-P417-009`
+
+- Run/slice: user-authorized new-policy classification slice 21/36; batch `052`; physical PDF page `417`; POS `v` (`unscrew`) and `adj` (`UNSERVICEABLE`). Fresh offset-0 canonical recomputation selected exactly these two adjacent records after slice 20; slice 22 was not started.
+- Old/new: both changed from `needs-review` to `restricted`. They remain `status: draft` / `review_status: editorial-review-needed`; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: ASD-STE100 Issue 9 (2025-01-15), revision `r0001`, exact locators `entry D-P417-008` and `entry D-P417-009`, physical PDF page `417` / printed page `2-1-U5`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Exact retrieval and authenticated 150-dpi visual review confirm row 8 `unscrew`, its `LOOSEN`/`TURN`/`REMOVE` alternatives and physical fastener examples, row 9 `UNSERVICEABLE`, its meaning `Not fit for its purpose`, and the horizontal rules separating both rows from neighbors. The retained wrapped-headword warning is extraction evidence, not an approval signal.
+- IT question and decision: `unscrew` is restricted to releasing a named physical threaded fastener under an equipment service procedure; `UNSERVICEABLE` is restricted to a named physical IT equipment function that fails a specified inspection or acceptance test. Microsoft’s official Surface repair documentation supports the physical IT procedure context. NIST SP 800-160 Rev. 1 supports bounded component/function and inspection/verification terminology; NIST SP 800-115 supports testing against stated requirements. `allowed` is rejected because the object/procedure or acceptance boundary must be named; `prohibited` and `not-applicable` are rejected because bounded physical IT use is relevant. Logical access, configuration, data, software-service health, network availability, and generic quality meanings remain excluded.
+- External evidence actually inspected: Microsoft, [Surface Service Guide Center](https://learn.microsoft.com/en-us/surface/service-guides), accessed 2026-10-24; NIST SP 800-160 Vol. 1 Rev. 1, [official publication page](https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final), final November 2022, accessed 2026-10-24; and NIST SP 800-115, [official publication page](https://csrc.nist.gov/pubs/sp/800/115/final), final September 2008, accessed 2026-10-24. Limits: Microsoft does not define `unscrew`; NIST does not define `unserviceable` or a universal acceptance threshold; SP 800-115 is dated security-testing guidance.
+- Canonical changes: updated only the two selected records’ draft disposition, domains, definition, and rationale; preserved source pins, warnings, fixed retrieval commands, visual evidence, raw metadata, rights, `status: draft`, and `review_status: editorial-review-needed`. Detailed evidence is in [W1-D-P417-008-009](W1-D-P417-008-009.md).
+- Validation/commit: affected batch-052 check, adaptation, corpus, all-batch vocabulary check, document build/check, 118 unit tests with `ResourceWarning` as errors, authenticated source doctor, project diagnostics, `git diff --check`, exact ASD entry/page retrieval, and fresh offset-0 queue/count recomputation follow this edit. These checks are not semantic approval.
+- Next action: stop after slice 21/36. Do not start slice 22/36.
 
 ### New-policy classification slice 20/36 — `D-P417-006` / `D-P417-007`
 
