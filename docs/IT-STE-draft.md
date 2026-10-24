@@ -1930,13 +1930,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require truthful, useful connections without inserting connectors where the relationship is already evident.",
+          "rationale": "Require truthful, useful connections without inserting connectors where the relationship is already evident; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Transitions show how an idea in one sentence relates to an idea in another.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Name the actual referent when competing antecedents would make a transition ambiguous.",
+          "rationale": "Name the actual referent when competing antecedents would make a transition ambiguous; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A demonstrative can accompany a connecting phrase only if the reference is understandable.",
           "target_field": "text"
         }
@@ -1955,13 +1955,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Use canonical IT terms as anchors within prose and locally retrievable units rather than vary terms for style.",
+          "rationale": "Use canonical IT terms as anchors within prose and locally retrievable units rather than vary terms for style; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Recurring key terms and phrases connect successive statements into a logical explanation.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Retain purposeful repetition but avoid a mechanical repetition requirement when context is already clear.",
+          "rationale": "Retain purposeful repetition but avoid a mechanical repetition requirement when context is already clear; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Repetition supports continuity between information already introduced and later detail.",
           "target_field": "exceptions"
         }
@@ -1980,13 +1980,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Make reference clarity explicit for independently consumed IT content and require a specific referent when ambiguity remains.",
+          "rationale": "Make reference clarity explicit for independently consumed IT content and require a specific referent when ambiguity remains; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Pronouns help readability only when readers can identify the intended noun.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Do not import that inventory as IT vocabulary or substitute inaccurate personal pronouns.",
+          "rationale": "Do not import that inventory as IT vocabulary or substitute inaccurate personal pronouns; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source restricts pronouns through its own dictionary inventory.",
           "target_field": "exceptions"
         }
@@ -2005,7 +2005,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Name the action, state, or condition behind a consequence, including explanations after prohibitions.",
+          "rationale": "Name the action, state, or condition behind a consequence, including explanations after prohibitions; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The demonstrative this needs an identifiable referent, especially when surrounding advice can create ambiguity.",
           "target_field": "text"
         }
@@ -2117,19 +2117,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Use a step-level execution boundary plus a preference for one principal instruction per sentence, rather than silently replace the source's sentence unit with a step unit.",
+          "rationale": "Use a step-level execution boundary plus a preference for one principal instruction per sentence, rather than silently replace the source's sentence unit with a step unit; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Limiting a sentence to one instruction reduces the burden of following procedural actions.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Retain simultaneous actions and extend justified grouping to atomic, conventionally inseparable, and immediately coupled IT operations.",
+          "rationale": "Retain simultaneous actions and extend justified grouping to atomic, conventionally inseparable, and immediately coupled IT operations; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Actions that occur together can require more than one instruction in the same unit.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Keep coupled actions, system results, limits, and required verification local without permitting dense independent instruction chains.",
+          "rationale": "Keep coupled actions, system results, limits, and required verification local without permitting dense independent instruction chains; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A work step can contain multiple sentences for simultaneous actions or an immediate result.",
           "target_field": "text"
         }
@@ -168717,9 +168717,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0012.json` SHA-256: `dac833f0302557a9b7fe5d641e8e721d1d3af5b2cb4a3e6df5b85ce83069ebc0`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0013.json` SHA-256: `21cb59bfa2b40117e803a56cd9229cdc216d9b4e48a2c58b2e4b602b1f0d10dd`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0013.json` SHA-256: `330f5491b371b7ee22f50c713bce06b1b009dd6877ac55c8f763368e2ca78573`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0014.json` SHA-256: `f3727c14989e5b3e95f3eca23c67f1ad8a941cff241ad4886b0bab41838b5f27`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0014.json` SHA-256: `81967d14288bcbb1f0becf69dedcae3f49a59c15f93e56342f231395a90ca199`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0015.json` SHA-256: `72d3a2170de1e14ce642bce499fdf4dc2abf8d2e0c61eb8e0c8ba136198a3401`
 
