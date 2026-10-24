@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # IT-STE independent IT-sense classification
 
-Use this project-local skill when the task is to decide whether an ASD-derived word belongs in IT-STE, what IT domain and sense it has, and whether it should be retained, restricted, excluded, or split. ASD-STE100 is provenance and source evidence; it is not the IT ontology and its aviation categories are not automatic IT decisions.
+Use this project-local skill when the task is to decide whether an ASD-derived word belongs in IT-STE, what IT domain and sense it has, and whether it should be retained, restricted, excluded, or split. Read `docs/it-ste-it-sense-policy.md` before classification. ASD-STE100 is provenance and source evidence; it is not the IT ontology and its aviation categories are not automatic IT decisions.
 
 This skill is intentionally manual-only. The caller must explicitly request the run and provide a bounded iteration count or an explicit bounded ID/page slice.
 
@@ -107,7 +107,7 @@ Write the log before or together with the canonical change so an interrupted run
 
 ## Bounded execution
 
-1. Read `AGENTS.md`, only the Current checkpoint in `docs/it-ste-draft-handoff.md`, `docs/it-ste-research-method.md`, the baseline register, the classification log, and the active note(s).
+1. Read `AGENTS.md`, `docs/it-ste-it-sense-policy.md`, only the Current checkpoint in `docs/it-ste-draft-handoff.md`, `docs/it-ste-research-method.md`, the baseline register, the classification log, and the active note(s).
 2. Capture the complete initial Git status/index/diff/name-status inventory. Require a clean nonignored worktree unless the user explicitly identifies and authorizes an existing classification run to resume.
 3. Recompute canonical counts and the offset-0 queue. Treat checkpoint counts and pointers as stale if they differ.
 4. Select one coherent slice: normally one physical PDF page and no more than two related records; a grammatical trio is allowed only when the third row is necessary to resolve the selected question. Do not repeat a completed blocked slice without genuinely new evidence or an explicit owner decision.

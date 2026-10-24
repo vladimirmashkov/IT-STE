@@ -3,6 +3,7 @@
 State: active
 Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
+Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
 Last checkpoint: 2026-10-24, after legacy-import reconciliation
 Requested iterations: not set; use an explicit bounded count for each run
