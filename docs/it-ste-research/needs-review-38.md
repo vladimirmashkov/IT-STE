@@ -253,6 +253,26 @@ Validation for slice 9/38: affected batch-042 check; adaptation; corpus; all-bat
 - Fact versus editorial inference: ASD layout, exact entry data and Lenovo procedure findings are facts. Keeping both records `needs-review` is the editorial inference because acceptance requires a named component and complete applicable criteria; selected checks cannot justify a universal lexical disposition. Preserve existing wording, examples, rationale, IDs, source pins, draft status and editorial-review-needed status. No canonical JSON or generated Markdown changed; no approval, release or publication is implied.
 - Validation for slice 11/38: affected batch-044 check; adaptation; corpus; all-batch vocabulary; document build/check; unit tests with `ResourceWarning` treated as errors; authenticated source doctor; diagnostics; `git diff --check`; exact ASD entry/page retrieval; fresh physical-page visual review; external-source inspection; and canonical queue/count recomputation. Current counts are 2,196 records / 55 batches: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review. The next queue record after this slice is `D-P379-002`, batch 044, physical page 379. Detailed evidence is in [W1-D-P374](W1-D-P374.md). This is not vocabulary approval.
 
+### Register reconciliation — previously committed slices
+
+The following entries were researched and committed in their linked slice notes, but their old/new rows were added to this aggregate register during reconciliation. No new disposition is introduced here; each remains `needs-review`.
+
+- `D-P391-003` — old: `needs-review`; new: `needs-review`; see `W1-D-P391.md`, commit `a3cd0cf`.
+- `D-P391-005` — old: `needs-review`; new: `needs-review`; see `W1-D-P391.md`, commit `a3cd0cf`.
+- `D-P397-005` — old: `needs-review`; new: `needs-review`; see `W1-D-P397-005-006.md`, commit `c8a00d4`.
+- `D-P397-006` — old: `needs-review`; new: `needs-review`; see `W1-D-P397-005-006.md`, commit `c8a00d4`.
+- `D-P397-007` — old: `needs-review`; new: `needs-review`; see `W1-D-P397-005-006.md`, commit `c8a00d4`.
+- `D-P398-001` — old: `needs-review`; new: `needs-review`; see `W1-D-P398-001.md`, commit `8651ffc`.
+- `D-P415-004` — old: `needs-review`; new: `needs-review`; see `W1-D-P415-004-005.md`, commit `e956610`.
+- `D-P415-005` — old: `needs-review`; new: `needs-review`; see `W1-D-P415-004-005.md`, commit `e956610`.
+- `D-P416-006` — old: `needs-review`; new: `needs-review`; see `W1-D-P416-006.md`, commit `efc090c`.
+- `D-P417-006` — old: `needs-review`; new: `needs-review`; see `W1-D-P417-006-007.md`, commit `d4be85a`.
+- `D-P417-007` — old: `needs-review`; new: `needs-review`; see `W1-D-P417-006-007.md`, commit `d4be85a`.
+- `D-P417-008` — old: `needs-review`; new: `needs-review`; see `W1-D-P417-008-009.md`, commit `7bdcb63`.
+- `D-P417-009` — old: `needs-review`; new: `needs-review`; see `W1-D-P417-008-009.md`, commit `7bdcb63`.
+- `D-P419-006` — old: `needs-review`; new: `needs-review`; see `W1-D-P419-006-007.md`, commit `de5fb40`.
+- `D-P419-007` — old: `needs-review`; new: `needs-review`; see `W1-D-P419-006-007.md`, commit `de5fb40`.
+
 Each subsequent change must add an entry here or in the linked per-slice research note with:
 
 - canonical ID and previous/new disposition;
