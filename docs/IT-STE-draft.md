@@ -1111,7 +1111,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Prefer simple constructions but retain meaningful IT aspect, time, and modality rather than a source whitelist.",
+          "rationale": "Prefer simple constructions but retain meaningful IT aspect, time, and modality rather than a source whitelist; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A limited set of simple verb constructions reduces linguistic complexity.",
           "target_field": "text"
         }
@@ -1130,7 +1130,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Disambiguate state and action using technical context and permitted IT lexical forms.",
+          "rationale": "Disambiguate state and action using technical context and permitted IT lexical forms; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A past participle can describe a condition rather than a passive event.",
           "target_field": "text"
         }
@@ -1149,13 +1149,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Remove redundant auxiliaries but retain perfect aspect and other auxiliaries when meaning requires them.",
+          "rationale": "Remove redundant auxiliaries but retain perfect aspect and other auxiliaries when meaning requires them; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Auxiliary chains can make verb constructions unnecessarily complex.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "An IT completion or present-result distinction must not disappear to satisfy a blanket auxiliary ban.",
+          "rationale": "An IT completion or present-result distinction must not disappear to satisfy a blanket auxiliary ban; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source excludes perfect constructions made with have.",
           "target_field": "exceptions"
         }
@@ -1174,13 +1174,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Review function and clarity, permitting established nouns, clear modifiers, and meaningful progressive aspect.",
+          "rationale": "Review function and clarity, permitting established nouns, clear modifiers, and meaningful progressive aspect; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Forms ending in ing can function as nouns, modifiers, or parts of verb constructions.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Do not transfer that restriction to IT prose describing an ongoing process.",
+          "rationale": "Do not transfer that restriction to IT prose describing an ongoing process; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source restricts ing forms to particular technical nominal functions.",
           "target_field": "exceptions"
         }
@@ -1281,13 +1281,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Name verified IT actors and retain reader imperatives, while extending legitimate passive contexts to irrelevant, protected, and object-focused agency.",
+          "rationale": "Name verified IT actors and retain reader imperatives, while extending legitimate passive contexts to irrelevant, protected, and object-focused agency; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Active voice exposes the actor and action; unknown agency can justify passive description.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Permit additional justified IT contexts without losing operational responsibility or inventing an actor.",
+          "rationale": "Permit additional justified IT contexts without losing operational responsibility or inventing an actor; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source narrows passive permission to descriptive writing with unknown agency.",
           "target_field": "exceptions"
         }
@@ -168705,9 +168705,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0006.json` SHA-256: `56c37f94f951034e76598e47c43fe5e2dec1617cee854840bfda50294ad86aee`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0007.json` SHA-256: `721ef4ab44337af9ae4a698f75e8960d29ee1937fae6bb1999b9bfade2e3e1ce`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0007.json` SHA-256: `9bc4484d4975d075d783e59b1e2d13d098967b199a66a3513dcd2b5912cd0c1b`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0008.json` SHA-256: `0124c59c3ef619b99b081bbdfedb923d27089fc83cb1bad75aaa574fe3f33415`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0008.json` SHA-256: `c077d3c7c3cae2fc8ec6aaa94362f6cc8aa392034e84d7e26e0e90878b45329c`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0009.json` SHA-256: `c961136da4f4e3ff6dd5e8fc99c4ea6f59423ecae73186cec3cd5cac4c318cca`
 
