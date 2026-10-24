@@ -2234,25 +2234,25 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Use a reader imperative for IT procedural actions and distinguish passive capability statements from actual instructions.",
+          "rationale": "Use a reader imperative for IT procedural actions and distinguish passive capability statements from actual instructions; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Instructions should make the reader's required action direct rather than obscure it in passive wording.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Name non-reader actors and preserve automatic system behavior rather than incorrectly assign their actions to the reader.",
+          "rationale": "Name non-reader actors and preserve automatic system behavior rather than incorrectly assign their actions to the reader; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Unclear instruction wording can leave responsibility and timing uncertain.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Keep prerequisites first and avoid emphatic must, while retaining the semantic distinctions among instruction, permission, and obligation.",
+          "rationale": "Keep prerequisites first and avoid emphatic must, while retaining the semantic distinctions among instruction, permission, and obligation; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A condition can precede the imperative, and added obligation wording is not needed simply to emphasize an instruction.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Preserve required safety, security, and policy modality under the governing content type rather than impose a blanket ban on must.",
+          "rationale": "Preserve required safety, security, and policy modality under the governing content type rather than impose a blanket ban on must; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Safety wording can require obligation language even where routine instruction wording does not.",
           "target_field": "exceptions"
         }
@@ -2360,19 +2360,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adopt",
-          "rationale": "Retain prerequisite-first ordering for IT reader actions, with explicit scope and a stop path when continuation is blocked.",
+          "rationale": "Retain prerequisite-first ordering for IT reader actions, with explicit scope and a stop path when continuation is blocked; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Information that determines whether an instruction applies must be read before the instruction.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Use the comma for short clauses, but allow sentences, lists, and control flow for complex conditions instead of forcing one overloaded sentence.",
+          "rationale": "Use the comma for short clauses, but allow sentences, lists, and control flow for complex conditions instead of forcing one overloaded sentence; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A comma separates a preceding descriptive condition from its command.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Distinguish genuine prerequisites from later observations so that condition-first ordering does not misrepresent when facts become knowable.",
+          "rationale": "Distinguish genuine prerequisites from later observations so that condition-first ordering does not misrepresent when facts become knowable; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The preceding statement gives information needed before action, rather than information that results from action.",
           "target_field": "exceptions"
         }
@@ -168721,9 +168721,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0014.json` SHA-256: `81967d14288bcbb1f0becf69dedcae3f49a59c15f93e56342f231395a90ca199`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0015.json` SHA-256: `72d3a2170de1e14ce642bce499fdf4dc2abf8d2e0c61eb8e0c8ba136198a3401`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0015.json` SHA-256: `7fe5e850d9a4e81cfb762cc0dca6b97c0a13e39c5e8279c25c1b3f465ee538b9`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0016.json` SHA-256: `2b498f22a734b9f95fe32d359281b41c9adf53080c0f1d92e7d4fae243b1fdf3`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0016.json` SHA-256: `f9b703114404758495ff042f1a3189db7edd8f2ff56e206938efc63193164370`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0017.json` SHA-256: `cb9e6504d9004cda1b68b0b7a83ac8ab981c7ca97cfb4561cd29ef6ed90ab419`
 
