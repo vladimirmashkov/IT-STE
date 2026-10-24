@@ -2746,7 +2746,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Retain coherent grouping while recognizing IT reference entries, tables, cards, and messages as equivalent structural units.",
+          "rationale": "Retain coherent grouping while recognizing IT reference entries, tables, cards, and messages as equivalent structural units; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Paragraph boundaries group related information and reveal the logical sequence of an explanation.",
           "target_field": "text"
         }
@@ -2765,13 +2765,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require one primary topic and early identification unless an accompanying container already provides it.",
+          "rationale": "Require one primary topic and early identification unless an accompanying container already provides it; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A paragraph develops one topic, introduced by an opening that guides the reader through its supporting information.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Retain the bridging function locally when needed, consistently with 0013, without treating a supporting reference as delegated provenance.",
+          "rationale": "Retain the bridging function locally when needed, consistently with 0013, without treating a supporting reference as delegated provenance; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The topic opening connects new information with the information that came before it.",
           "target_field": "text"
         }
@@ -2790,13 +2790,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Split IT blocks when topic, task, detail, retrieval, or scanning needs require a new unit.",
+          "rationale": "Split IT blocks when topic, task, detail, retrieval, or scanning needs require a new unit; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Overlong paragraphs weaken logical grouping and make it harder to maintain reader attention.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Do not impose that universal ceiling across IT formats; use meaningful boundaries without losing mandatory context.",
+          "rationale": "Do not impose that universal ceiling across IT formats; use meaningful boundaries without losing mandatory context; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source applies a fixed ceiling of six sentences to a paragraph.",
           "target_field": "exceptions"
         }
@@ -2899,25 +2899,25 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require assessed IT risks and a governing classification, with escalation when the basis for selection is missing.",
+          "rationale": "Require assessed IT risks and a governing classification, with escalation when the basis for selection is missing; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "An accurate assessment precedes selection of a word that identifies the risk level.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Consider physical harm, data loss, compromise, and disruption together without allowing a minor outcome to mask a more serious risk.",
+          "rationale": "Consider physical harm, data loss, compromise, and disruption together without allowing a minor outcome to mask a more serious risk; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Different kinds of harmful outcome can require different risk treatment, including when risks coexist.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Those meanings are not a universal IT scale; retain any applicable governing safety classification instead of inventing replacements.",
+          "rationale": "Those meanings are not a universal IT scale; retain any applicable governing safety classification instead of inventing replacements; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source uses warning and caution with defined physical-harm and equipment-damage meanings.",
           "target_field": "exceptions"
         },
         {
           "disposition": "adapt",
-          "rationale": "Require textual meaning and governing publication and accessibility treatment, not universal uppercase or visual-only coding.",
+          "rationale": "Require textual meaning and governing publication and accessibility treatment, not universal uppercase or visual-only coding; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A recognizable risk word introduces the protective content in the publication's presentation.",
           "target_field": "text"
         }
@@ -168729,9 +168729,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0018.json` SHA-256: `300fc3b2f91fa6daaeeadf5921aeeadf95ac9cdbdfd0adc2e72abcaaf6720714`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0019.json` SHA-256: `b5f915ee9ddae562cb48de00237f2add53e12bd73aaa8612055b6eee480ddaa6`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0019.json` SHA-256: `80e6baa3720867bde450728c507dbc996261e3c111e179942747020c4a9d83cd`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0020.json` SHA-256: `e4ffa6ed048bfcc307f2c56d91c3fe216ab632b9b20d5d1a064dfb35dc0ddb0a`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0020.json` SHA-256: `3ac6efb2c2ea1ccd24d86288847e25a28960cc868eca5da7db1d99ec661e5bfe`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0021.json` SHA-256: `bdab0e7b6c9efbab6350c5078296c132be57dcdbd042563a5b82259340b0e58b`
 
