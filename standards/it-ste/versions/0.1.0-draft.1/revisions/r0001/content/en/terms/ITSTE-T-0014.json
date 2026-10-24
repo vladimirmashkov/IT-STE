@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-T-0014",
+  "kind": "term",
+  "language": "en",
+  "status": "draft",
+  "origin": "original",
+  "term": "resilience",
+  "part_of_speech": "noun",
+  "definition": "The ability of a service or system to continue essential operation, possibly in a degraded state, and recover within specified limits after disruption.",
+  "domains": ["general"],
+  "usage": "restricted",
+  "rationale": "Use this noun for a service or system capability that limits the effect of a disruption by continuing essential operation, adapting or operating in a degraded state when necessary, and recovering within specified limits. Resilience is not the normal ability to perform an agreed function when required, a backup, a redundant component, a failover mechanism, a continuity or recovery plan, a recovery metric or target, or a monitoring tool. Do not reduce the term to security-only cyber resilience or an unqualified claim of robustness.",
+  "alternatives": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "The service resilience allows the notification service to continue in degraded mode and recover after the primary region fails.",
+        "rationale": "Names continued essential operation and recovery after a disruption without equating resilience with a backup or tool."
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "The resilience is the backup schedule.",
+        "rationale": "Conflates a system capability with a continuity or recovery planning artifact."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-SERVICE-RESILIENCE-2026",
+      "locator": {
+        "section": "ITIL Service (Version 5) listing"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that the noun identifies the ability to continue essential operation, possibly in a degraded state, and recover within specified limits after disruption.",
+      "Keep the noun distinct from availability, normal service performance, continuity or recovery plans, backups, redundancy, failover mechanisms, recovery metrics or targets, monitoring tools, and generic robustness claims.",
+      "Confirm that the inspected PeopleCert page supports the ITIL operational-resilience and continuity context, while the directly inspected NIST evidence does not establish a complete ITIL glossary definition."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      }
+    ],
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
+  }
+}

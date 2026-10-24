@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-T-0013",
+  "kind": "term",
+  "language": "en",
+  "status": "draft",
+  "origin": "original",
+  "term": "availability",
+  "part_of_speech": "noun",
+  "definition": "The ability of a managed service or service component to perform its agreed function when required.",
+  "domains": ["general"],
+  "usage": "restricted",
+  "rationale": "Use this noun for the ability or state of a managed service or component to provide its agreed function when it is required. Availability is not an access permission, capacity, uptime percentage, metric, measurement result, service level target, monitoring tool, or monitoring result. Keep it separate from resilience: availability concerns the required function when required, while resilience concerns continuing or recovering after disruption. Do not use it to name a backup, failover mechanism, continuity plan, or authority.",
+  "alternatives": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "The service availability decreases when users cannot obtain the agreed reporting function during the required operating period.",
+        "rationale": "Names the service ability and the required function without replacing it with a percentage, target, or monitoring result."
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "The availability monitor is 99.9 percent.",
+        "rationale": "Conflates the availability property with a monitoring tool and a numerical measurement or target."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-SERVICE-RESILIENCE-2026",
+      "locator": {
+        "section": "ITIL Service (Version 5) listing"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that the noun identifies the ability of a managed service or component to perform its agreed function when required.",
+      "Keep the noun distinct from resilience, continuity planning, recovery, access permission, capacity, uptime or percentage metrics, service level targets, monitoring tools, and measurement results.",
+      "Confirm that the inspected PeopleCert page supports the ITIL service and operational-reliability context, while the directly inspected NIST evidence does not establish a complete ITIL glossary definition."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      }
+    ],
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
+  }
+}
