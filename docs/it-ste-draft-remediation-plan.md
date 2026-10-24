@@ -4,9 +4,9 @@ This is a bounded-work plan for the IT-STE draft. It records sequencing and stop
 
 ## Current boundary
 
-- `HEAD` is `2aeb2ee` (`Record ITIL term gaps`). The working tree contains an interrupted implementation of the first W3 term-contract slice; it must be reviewed and closed before a new bounded slice edits the same files.
-- The interrupted slice implements draft-only original IT term records and materializes `ITSTE-T-0001` (`service`, noun) and `ITSTE-T-0002` (`alert`, noun). It must not change the five inspected ASD-derived rows or the fixed 2,196-row source sequence.
-- The canonical ASD queue must be recomputed before every slice. At this recovery point it is empty: 2,196 records / 55 batches, 120 allowed, 1,510 restricted, 407 prohibited, 159 not-applicable, 0 needs-review.
+- Recovery Block 0 was closed in `b1fe909` (`Add draft IT-only term contract`) after reviewing the interrupted implementation of the first W3 term-contract slice.
+- The current W3 slice adds only the draft-only original IT term records `ITSTE-T-0003` (`problem`, noun) and `ITSTE-T-0004` (`incident`, noun). It must not change the five inspected ASD-derived rows or the fixed 2,196-row source sequence.
+- The canonical ASD queue must be recomputed before every slice. At this slice it is empty: 2,196 records / 55 batches, 120 allowed, 1,510 restricted, 407 prohibited, 159 not-applicable, 0 needs-review.
 - If the queue becomes non-empty, W1 takes precedence over W2/W3. A queue offset is never a resume pointer; record exact IDs, pages, evidence notes, and the next action.
 
 ## Work blocks
@@ -24,8 +24,8 @@ Recompute the queue from offset 0. If unresolved rows exist, process one physica
 Use one related pair per iteration. Each pair is a research scope, not a promise to materialize records. Create a draft original term only when the inspected evidence supports a bounded sense/POS and the term remains distinct from existing ASD-derived meanings. Otherwise record the candidate as blocked or unresolved.
 
 1. **Completed recovery slice:** `service` noun and `alert` noun — `ITSTE-T-0001` and `ITSTE-T-0002`.
-2. **Next slice:** `problem` and `incident` — `ITSTE-T-0003` and `ITSTE-T-0004` only if their service-management boundaries remain distinct from general/security senses.
-3. `known error` and `workaround` — use Problem Management evidence; distinguish a recorded cause/workaround from a root-cause fix.
+2. **Completed bounded slice:** `problem` and `incident` — `ITSTE-T-0003` and `ITSTE-T-0004`, retained as restricted draft senses with explicit human-review criteria and no ASD provenance.
+3. **Next slice:** `known error` and `workaround` — use Problem Management evidence; distinguish a recorded cause/workaround from a root-cause fix.
 4. `service request` and `service desk` — use dedicated Service Request Management/Service Desk evidence; do not equate a desk with a queue, team, or escalation authority.
 5. `configuration item` and `IT asset` — separate configuration relationships and attributes from ownership and financial lifecycle.
 6. `service level agreement` and `service level target` — distinguish documented commitments/responsibilities from measurable targets and indicators.

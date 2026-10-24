@@ -27,11 +27,16 @@ class RenderingTests(unittest.TestCase):
             self.assertIn(f"\n## {identifier}\n", text)
             self.assertIn(f"[{identifier}](#{identifier.lower()})", text)
         self.assertEqual(text.count("\n## ITSTE-R-"), 31)
-        for identifier in ("ITSTE-T-0001", "ITSTE-T-0002"):
+        for identifier in ("ITSTE-T-0001", "ITSTE-T-0002", "ITSTE-T-0003", "ITSTE-T-0004"):
             self.assertIn(f"{identifier}", text)
         self.assertIn("Canonical draft terms", text)
-        self.assertIn(document.escaped("The service provides status information for the payment queue."), text)
-        self.assertIn(document.escaped("The monitoring alert identifies a queue depth above 500 jobs."), text)
+        for example in (
+            "The service provides status information for the payment queue.",
+            "The monitoring alert identifies a queue depth above 500 jobs.",
+            "The problem caused repeated timeouts in the payment service.",
+            "The incident reduced payment-service response quality for new orders.",
+        ):
+            self.assertIn(document.escaped(example), text)
         batches, summary = vocabulary.checked_all()
         entries = [item["entry_id"] for batch in batches for item in batch["decisions"]]
         self.assertEqual(re.findall(r"^### (D-P\d+-\d+)$", text, re.MULTILINE), entries)
