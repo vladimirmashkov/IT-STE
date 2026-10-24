@@ -1388,7 +1388,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Prefer an applicable IT verb while retaining genuine concepts and exact external names; do not infer verb admission from a noun.",
+          "rationale": "Prefer an applicable IT verb while retaining genuine concepts and exact external names; do not infer verb admission from a noun; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A permitted verb can express an action more directly than noun-based wording.",
           "target_field": "text"
         }
@@ -1489,7 +1489,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require concrete IT focus and preserve relationships and constraints during splitting.",
+          "rationale": "Require concrete IT focus and preserve relationships and constraints during splitting; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Short clear sentences should communicate accurate instructions and information.",
           "target_field": "text"
         }
@@ -1508,13 +1508,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Keep action focus and prerequisites intact, allowing validated local limits rather than a universal ceiling.",
+          "rationale": "Keep action focus and prerequisites intact, allowing validated local limits rather than a universal ceiling; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Procedural sentences should be easy to understand during execution.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "IT procedure length must not override atomicity or required safety and security context.",
+          "rationale": "IT procedure length must not override atomicity or required safety and security context; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source applies a twenty-word procedural ceiling, including protective instructions.",
           "target_field": "exceptions"
         }
@@ -1533,13 +1533,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Use the same meaning-preserving focus for descriptions and require scoped measurement for any local limit.",
+          "rationale": "Use the same meaning-preserving focus for descriptions and require scoped measurement for any local limit; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Descriptive sentences also benefit from concise structure.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "No universal descriptive count is imposed across IT formats.",
+          "rationale": "No universal descriptive count is imposed across IT formats; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source sets a twenty-five-word descriptive maximum.",
           "target_field": "text"
         }
@@ -168709,9 +168709,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0008.json` SHA-256: `c077d3c7c3cae2fc8ec6aaa94362f6cc8aa392034e84d7e26e0e90878b45329c`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0009.json` SHA-256: `c961136da4f4e3ff6dd5e8fc99c4ea6f59423ecae73186cec3cd5cac4c318cca`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0009.json` SHA-256: `793c142c021a50ab248ccb7ae62313037192fee99e4cafc36cc60f5a374af23f`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0010.json` SHA-256: `df0242ad323be1a1bfcbfda614220ba244029526a4c87bd109462f87b6cd7962`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0010.json` SHA-256: `62dee2dcc1ce0aa1e37989d1925f6dceaa81946a4d266830b49a0445ec9215fc`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0011.json` SHA-256: `12c28984c7ca8c5e6c81916a305d7aaa04f72b17c7c716019e655f83d6fa6cae`
 

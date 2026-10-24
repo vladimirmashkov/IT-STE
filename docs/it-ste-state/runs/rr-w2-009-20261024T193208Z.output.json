@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "run_id": "rr-w2-009-20261024T193208Z",
+  "status": "done",
+  "decision": "Resolved as draft: retain ITSTE-R-0009 and ITSTE-R-0010 normative text and examples; record direct-verb, focused-sentence, prerequisite, branch, modality, literal, and scoped-length boundaries through the research note, with no vocabulary approval or release authorization.",
+  "evidence_refs": [
+    "docs/it-ste-research/W2-editorial-review.md",
+    "ASD-STE100 Issue 9, authenticated derivative r0001, source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; blocks 3.7, 4.1, 5.1, 6.3",
+    "https://developers.google.com/tech-writing/one/clear-sentences",
+    "https://developers.google.com/tech-writing/one/short-sentences",
+    "https://developers.google.com/tech-writing/one/active-voice",
+    "https://www.rfc-editor.org/rfc/rfc2119",
+    ".local/it-ste-state/rr-w2-009-20261024T193208Z/"
+  ],
+  "changed_paths": [
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0009.json",
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0010.json",
+    "docs/it-ste-research/W2-editorial-review.md",
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/IT-STE-draft.md"
+  ],
+  "validations": [
+    {
+      "name": "it_ste_adaptation.py check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/adaptation-check.log"
+    },
+    {
+      "name": "it_ste_corpus.py check",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "31 draft pilot rules and canonical draft terms; structure and provenance only",
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/corpus-check.log"
+    },
+    {
+      "name": "it_ste_vocabulary.py check --compact-json",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "2196 records; 120 allowed, 1510 restricted, 407 prohibited, 159 not-applicable; 0 remaining",
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/vocabulary-check.json"
+    },
+    {
+      "name": "it_ste_document.py build",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/document-build.log"
+    },
+    {
+      "name": "it_ste_document.py check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/document-check.log"
+    },
+    {
+      "name": "asd_ste100_local.py doctor",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "Issue 9 derivative authenticated; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431",
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/asd-doctor.log"
+    },
+    {
+      "name": "unittest discover",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "119 tests, OK",
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/unittest.log"
+    },
+    {
+      "name": "project diagnostics",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "no errors or warnings"
+    },
+    {
+      "name": "git diff --check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-009-20261024T193208Z/diff-check.log"
+    }
+  ],
+  "next": {
+    "action": "After finish and the authorized slice commit, invoke it-ste-release-readiness resume.",
+    "phase": "w2",
+    "skill": "it-ste-w2-editorial-slice",
+    "scope": {
+      "kind": "w2-theme",
+      "theme": "source-facets-rights",
+      "ids": [
+        "ITSTE-R-0011",
+        "ITSTE-R-0012"
+      ],
+      "paths": [
+        "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0011.json",
+        "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0012.json"
+      ]
+    },
+    "resume_policy": "auto"
+  },
+  "commit": {
+    "authorized": true,
+    "mode": "auto",
+    "message": "Review focused sentence rules",
+    "paths": [
+      "docs/IT-STE-draft.md",
+      "docs/it-ste-draft-handoff.md",
+      "docs/it-ste-release-readiness-plan.md",
+      "docs/it-ste-research/W2-editorial-review.md",
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/selector.json",
+      "docs/it-ste-state/runs/rr-w2-009-20261024T193208Z.input.json",
+      "docs/it-ste-state/runs/rr-w2-009-20261024T193208Z.output.json",
+      "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0009.json",
+      "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0010.json"
+    ]
+  }
+}
