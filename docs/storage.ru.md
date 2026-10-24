@@ -59,7 +59,7 @@ standards/<standard>/versions/<version>/revisions/<revision>/
 - `source_refs` — ссылки `{source_id, locator}` на метаданные источника и точное место в нём: правило, раздел или страницу.
 - `rights` — лицензия и её URL, права на распространение и адаптацию, атрибуция и основания этих прав. Лицензия не выводится автоматически из имени каталога.
 
-Для правила отдельно хранятся `title`, нормативный `text`, область применения `applies_to` и положительные/отрицательные `examples`. Для термина — `term`, `part_of_speech`, `definition`, `usage`, `alternatives`, `examples`. `usage`: `allowed`, `restricted` или `prohibited`; `alternatives` — ID терминов того же снимка и языка.
+Для правила отдельно хранятся `title`, нормативный `text`, область применения `applies_to` и положительные/отрицательные `examples`. Для оригинального IT-only термина — `term`, `part_of_speech`, `definition`, `domains`, `usage`, `rationale`, `alternatives`, `examples`, `review` и внешние `source_refs`. `usage`: `allowed`, `restricted` или `prohibited`; `alternatives` — ID терминов того же снимка и языка. IT-only термин использует `origin: original` и не должен ссылаться на ASD source ID или ASD rights attribution.
 
 Ссылка на запись всегда содержит все координаты:
 

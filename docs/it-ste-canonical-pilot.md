@@ -28,7 +28,7 @@ standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/
   content/en/rules/ITSTE-R-0031.json
 ```
 
-The initial three-rule pilot has been expanded to all 31 reviewed target IDs. Each rule now has original English draft text, exceptions, positive/negative examples, source-facet dispositions, and review criteria. Coverage deliberately remains partial because the controlled vocabulary is incomplete. Profile identity is retained because the record contract has not changed. Planned targets are not mutated into canonical records. `catalog.json` remains unchanged with empty release lists. English is authoritative; translations are outside this pilot profile, not prohibited by the project.
+The initial three-rule pilot has been expanded to all 31 reviewed target IDs. Each rule now has original English draft text, exceptions, positive/negative examples, source-facet dispositions, and review criteria. Coverage deliberately remains partial because the controlled vocabulary is incomplete. Profile identity is retained because the rule record contract has not changed. Planned rule targets are not mutated into canonical records. The snapshot now also contains two original IT-only draft term records, `ITSTE-T-0001` and `ITSTE-T-0002`; they use external ITIL reference metadata and never use ASD source provenance. `catalog.json` remains unchanged with empty release lists. English is authoritative; translations are outside this pilot profile, not prohibited by the project.
 
 Each JSON object has exactly the fields specified below. Unknown fields and `template` markers are errors. Files are UTF-8 without BOM, LF-only, with a final newline. Duplicate JSON keys and non-JSON numeric constants are rejected. Member paths are relative to the snapshot, cannot contain traversal or escape through symlinks, and cannot alias another member. Language, ID, and filename must agree. Files under `content/` and `sources/` must be explicitly listed; unlisted files there are errors.
 
@@ -42,14 +42,16 @@ The manifest has these fields only:
 | `standard`, `version`, `revision` | `it-ste`, `0.1.0-draft.1`, `r0001`, agreeing with the full repository path |
 | `status`, `released_at` | `draft`, `null`; released manifests are rejected |
 | `primary_language`, `languages`, `language_coverage` | `en`, `["en"]`, `{"en":"partial"}` |
-| `records` | Nonempty, unique relative JSON paths `content/en/rules/<id>.json` |
-| `sources` | Exactly `sources/ASDSTE-SOURCE-ISSUE9-R0001.json` |
+| `records` | Nonempty, unique relative JSON paths `content/en/rules/ITSTE-R-NNNN.json` or `content/en/terms/ITSTE-T-NNNN.json` |
+| `sources` | Exactly one canonical ASD source path plus zero or more `sources/ITIL-SOURCE-*.json` external-reference paths |
 | `relations`, `supersedes` | Both `null`; no invented ASD canonical relation endpoints |
 | `plan` | Object with `path`, `manifest_sha256`, `map_sha256`, `targets_sha256`, `domain_registry_sha256` |
 
-The plan path is `standards/it-ste/adaptation-plans/asd-ste100/issue-9/r0001/manifest.json`. Its pins must match the authenticated current plan, not merely have a valid hash shape. The validator first runs the existing adaptation-plan checks, then compares all pins. A changed plan makes the pilot stale until the affected records are reviewed and their pins deliberately updated; there is no automatic resealing command for this profile.
+The plan path is `standards/it-ste/adaptation-plans/asd-ste100/issue-9/r0001/manifest.json`. Its pins must match the authenticated current plan, not merely have a valid hash shape. The validator first runs the existing adaptation-plan checks, then compares all pins. A changed plan makes the ASD-derived rule portion of the pilot stale until the affected records are reviewed and their pins deliberately updated; there is no automatic resealing command for this profile. External ITIL reference metadata is validated separately and does not alter ASD plan pins.
 
 These checks bind the pilot to one exact plan state, not an immutable historical plan archive. Before changing the plan, preserve the old state in Git and arrange any future historical-snapshot resolution explicitly. Never repin a released snapshot in place.
+
+The canonical ASD source metadata remains required for the rule portion. External ITIL source metadata uses `standard: "itil"`, a publisher, URL, retrieval date, reference-only status, and explicit unknown downstream rights. It supports a draft IT-only term but is not ASD provenance, an ITIL glossary license, or an approval decision.
 
 ## Source metadata and rights boundary
 
@@ -110,6 +112,23 @@ Every reference has at least one facet object:
 
 A `not-applicable` facet does not remove the parent source allocation. The validator checks field structure and complete block coverage, not that an editor enumerated every semantic facet or correctly judged equivalence. Supporting target references do not imply delegated provenance. Actual facet delegation and cross-snapshot canonical relations are outside this first profile and need a later explicit contract, not inference from prose IDs.
 
+## Original IT-only term record
+
+An IT-only term is an original, sense- and part-of-speech-bound draft record. Its fields are closed and validated as follows:
+
+| Field | Contract |
+| --- | --- |
+| `schema_version`, `kind`, `language` | `1.1.0`, `term`, `en` |
+| `id`, `status`, `origin`, `translation_of` | `ITSTE-T-NNNN`, `draft`, `original`, `null` |
+| `term`, `part_of_speech`, `definition` | Nonempty lexical form, supported POS, and one bounded English meaning |
+| `domains`, `usage`, `rationale`, `alternatives` | Registered domain IDs; `allowed`, `restricted`, or `prohibited`; explicit boundary rationale; other canonical term IDs only |
+| `examples` | Nonempty `allowed` and `not_allowed` arrays of prose `text`/`rationale` objects |
+| `source_refs` | Nonempty `{source_id, locator}` references to validated external ITIL metadata only; ASD source IDs are forbidden |
+| `review` | `mode: human`, `automation: structure-only`, nonempty criteria strings |
+| `rights` | Original IT-STE wording/examples under CC BY-SA 4.0 with IT-STE attribution only; external source rights remain separate |
+
+The term contract intentionally separates lexical identity from source-row review. A term can reuse a spelling from an ASD row only as an independently authored IT sense or POS record. It does not change the fixed 2,196-row source sequence, inherit ASD approval, or approve the spelling outside its recorded domain and usage.
+
 ## Examples: prose versus literals
 
 Each example has exactly `segments` and `rationale`. Segments concatenate **without inserted spaces** to form the example; spaces are included in segment text deliberately. Segment kinds:
@@ -147,6 +166,6 @@ The records contain explicit human-review criteria. Before approval, review sour
 
 The validator checks paths, closed fields, encoding, source and plan authentication, full allocated-source coverage, domains, rights shape, literal digests, and presence of examples and review criteria. It does **not** check arbitrary prose, infer English language from strings, prove translations equivalent, execute commands, certify accessibility or legal rights, evaluate example correctness, approve a vocabulary, release a snapshot, or produce training data. Empty release catalogs and draft status are intentional. This profile rejects release fields but does not implement a general release workflow.
 
-`python3 tools/it_ste_document.py build` generates [one Markdown draft](IT-STE-draft.md) from all 31 manifest-listed rules and the first [vocabulary review batch](it-ste-vocabulary.md). Its `check` command detects stale output without writing. The document is a derived editorial view, not independently editable canonical content or a released corpus. Further work must define a general canonical schema, release checks and record hashes, complete lexical dependencies, reviewed translations, released LLM views, and a separate SFT rights and quality gate. Do not train on these drafts or planning documents as if they were an approved standard.
+`python3 tools/it_ste_document.py build` generates [one Markdown draft](IT-STE-draft.md) from all manifest-listed rules and original IT-only draft terms plus all [vocabulary review batches](it-ste-vocabulary.md). Its `check` command detects stale output without writing. The document is a derived editorial view, not independently editable canonical content or a released corpus. Further work must define general release checks and record hashes, complete lexical dependencies, reviewed translations, released LLM views, and a separate SFT rights and quality gate. Do not train on these drafts or planning documents as if they were an approved standard.
 
 Original project text: IT-STE contributors, [CC BY-SA 4.0](../LICENSE-CONTENT.md). ASD source ownership and [derivative-permission limits](permissions/asd-ste100-issue-9-derivatives.md) remain separate. This work is independent and not official ASD guidance.

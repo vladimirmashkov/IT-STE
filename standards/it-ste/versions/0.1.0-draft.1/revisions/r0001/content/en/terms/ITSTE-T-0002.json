@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-T-0002",
+  "kind": "term",
+  "language": "en",
+  "status": "draft",
+  "origin": "original",
+  "term": "alert",
+  "part_of_speech": "noun",
+  "definition": "A monitoring signal that indicates a condition requiring attention.",
+  "domains": ["monitoring-alerts"],
+  "usage": "restricted",
+  "rationale": "Use this noun for a monitoring signal with a stated condition. Keep it separate from the ASD-derived alert verb, an event, an incident, and the action that delivers a notification.",
+  "alternatives": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "The monitoring alert identifies a queue depth above 500 jobs.",
+        "rationale": "Names the signal, monitored condition, and threshold."
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "The alert fixes the database.",
+        "rationale": "Conflates a monitoring signal with a repair operation."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-MONITORING-2026",
+      "locator": {
+        "section": "What will you learn? / Key concepts"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that the noun names a monitoring signal and a stated condition or threshold.",
+      "Keep the noun distinct from event, incident, notification delivery, and repair action.",
+      "Confirm that the public ITIL practice page supports the monitoring context but does not establish a complete universal glossary definition."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      }
+    ],
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
+  }
+}

@@ -4,7 +4,7 @@ State: in-progress
 
 Question and scope: Which ITIL/service-management terms should be covered by the IT-STE documentation standard, and which existing ASD-derived rows need a new IT sense or part of speech? This slice covers GOV service management and its direct relations to support, change, configuration, asset, service-level, availability, resilience, and improvement language. It does not define API, protocol, cryptographic, software-runtime, UI, or physical meanings. The table below is a draft research inventory, not a canonical vocabulary or an approval list.
 
-Canonical records: existing ASD-derived review rows inspected for lexical collisions and possible split proposals:
+Canonical records and source-row collisions inspected:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json` — `D-P159-009` `alert` (v), sequence 89.
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` — `D-P280-005` `INCIDENT` (n), sequence 996.
@@ -12,7 +12,12 @@ Canonical records: existing ASD-derived review rows inspected for lexical collis
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-040.json` — `D-P357-002` `RELEASE` (v), sequence 1581.
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` — `D-P374-004` `service` (v), sequence 1722.
 
-The exact records remain `status: draft` and `review_status: editorial-review-needed`. No record was edited in this slice because the current vocabulary review schema cannot represent a safe multi-sense/POS split and the general canonical term contract is not yet implemented. `ITSTE-T-*` IDs are therefore intentionally not assigned.
+Canonical draft IT-only records materialized from the bounded pair:
+
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/terms/ITSTE-T-0001.json` — `service` (noun), `origin: original`, `usage: restricted`.
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/terms/ITSTE-T-0002.json` — `alert` (noun), `origin: original`, `usage: restricted`.
+
+The five ASD-derived rows remain unchanged with `status: draft` and `review_status: editorial-review-needed`. The two new term records are also `status: draft`, have project-only rights, and reference only external ITIL metadata; they do not inherit ASD provenance or source-row sequence numbers. They are not approved vocabulary.
 
 Source evidence: ASD-STE100 Issue 9, revision `r0001`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`.
 
@@ -60,8 +65,8 @@ Useful controlled substitutions and exclusions are explicit: use `maintain` or `
 
 Fact versus inference: the ASD headwords, POS, meanings, page coordinates, and visual row findings are source facts. PeopleCert's practice names and public-page descriptions are external source facts. The proposed senses, split proposals, substitutions, and admission categories are editorial draft inferences for the IT-STE domain matrix. They are not official ASD or ITIL guidance, approval, release, publication, canonicalization, or SFT authorization.
 
-Remaining uncertainty / escalation: PeopleCert's public pages expose practice overviews but not the complete detailed ITIL glossary/practice guides; therefore `service request`, `service desk`, `IT asset`, `service level agreement`, `service level target`, `availability`, `resilience`, `continual improvement`, `change authority`, and `deployment` remain unresolved candidates. The current storage/pilot contract also does not yet implement general `term` records or multi-sense/POS relations. No canonical `ITSTE-T-*` record should be created until that contract and its validator are agreed.
+Remaining uncertainty / escalation: PeopleCert's public pages expose practice overviews but not the complete detailed ITIL glossary/practice guides; therefore `service request`, `service desk`, `IT asset`, `service level agreement`, `service level target`, `availability`, `resilience`, `continual improvement`, `change authority`, and `deployment` remain unresolved candidates. The term contract now supports original IT-only draft records with external ITIL references, but broader source/version policy, term relations, and multi-sense review still require editorial review. No term is approved, released, or ready for SFT.
 
-Applied changes and validation: this note was added as a non-canonical research inventory; no ASD-derived vocabulary row, generated Markdown, source pin, disposition count, or canonical term record was changed. Affected batch checks for `003`, `025`, `037`, `040`, and `044`, full adaptation, corpus, vocabulary, document build/check, 118 unit tests with `ResourceWarning` as errors, authenticated source `doctor`, project diagnostics, and `git diff --check` all passed. Offset-0 recomputation remains `2,196` records with `0` unresolved entries; these are structure/provenance checks, not vocabulary approval.
+Applied changes and validation: implemented the draft-only IT-only term contract, added external ITIL reference metadata, materialized `ITSTE-T-0001` (`service` noun) and `ITSTE-T-0002` (`alert` noun), recorded the bounded execution plan, and regenerated the derived Markdown. No ASD vocabulary batch row, fixed source sequence, or ASD source metadata was changed. Authenticated source `doctor`, adaptation, corpus, full vocabulary, document build/check, 119 unit tests with `ResourceWarning` as errors, project diagnostics, and `git diff --check` passed. Offset-0 ASD recomputation remains `2,196` records with `0` unresolved entries; structural validation is not vocabulary approval.
 
-Next action: run a separate bounded W3 slice for `change`/`release`/`deployment` plus `configuration item`/`IT asset`, retrieve only the selected current rows and authoritative sources, and propose the term-record contract needed for safe sense/POS splits without assigning canonical IDs.
+Next action: use the new term contract for one bounded related pair, `problem` and `incident`; retrieve only their current ASD rows and the inspected Problem Management evidence, then materialize `ITSTE-T-0003` and `ITSTE-T-0004` only if their service-management boundaries remain distinct from the existing general/security senses.

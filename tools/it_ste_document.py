@@ -67,16 +67,21 @@ def render():
     manifest = corpus.load_json(manifest_path)
 
     snapshot = manifest_path.parent
-    rules = [corpus.load_json(snapshot / name) for name in manifest["records"]]
-    if count != 31 or len(rules) != 31 or any(r["status"] != "draft" for r in rules):
-        raise DocumentError("Expected all 31 DRAFT rules")
-    lines = [BANNER, ("> DRAFT: all 31 rules require human review. This is not a release, "
-             "a complete vocabulary, a conformance checker, or official ASD guidance."),
+    records = [corpus.load_json(snapshot / name) for name in manifest["records"]]
+    rules = [record for name, record in zip(manifest["records"], records) if "/rules/" in name]
+    terms = [record for name, record in zip(manifest["records"], records) if "/terms/" in name]
+    if (count != len(rules) or len(rules) != 31
+            or any(record["status"] != "draft" for record in rules + terms)):
+        raise DocumentError("Expected all 31 DRAFT rules and draft terms")
+    lines = [BANNER, (f"> DRAFT: all {len(rules)} rules and {len(terms)} canonical IT-only terms require human review. "
+             "This is not a release, a complete vocabulary, a conformance checker, or official ASD guidance."),
              "Edit canonical records and the vocabulary batches, then rebuild; never edit this snapshot.",
              f"Version: {escaped(manifest['version'])}; revision: {escaped(manifest['revision'])}.",
              "## Contents"]
     for rule in rules:
         lines.append(f"- [{rule['id']}](#{rule['id'].lower()}) — {escaped(rule['title'])}")
+    if terms:
+        lines.append("- [Canonical draft terms](#canonical-draft-terms)")
     lines += ["- [Vocabulary candidates](#vocabulary-candidates)",
               "- [Snapshot provenance](#snapshot-provenance)"]
     for rule in rules:
@@ -94,6 +99,24 @@ def render():
                   ("Source: ASD-STE100 Issue 9; locators below use physical PDF pages. "
                   "Facet dispositions describe adaptations, not source approval."),
                   metadata({k: rule[k] for k in ("source_refs", "review", "rights")})]
+    if terms:
+        lines += ["## Canonical draft terms",
+                  ("These original IT-STE term records are draft and sense/POS-bound. "
+                   "Their external source metadata is not ASD provenance; human review remains required.")]
+        for term in terms:
+            lines += [f"### {term['id']}",
+                      f"Term: {escaped(term['term'])}; POS: {escaped(term['part_of_speech'])}.",
+                      "Definition: " + escaped(term["definition"]),
+                      "Usage: " + escaped(term["usage"]),
+                      "Domains: " + ", ".join(escaped(value) for value in term["domains"]),
+                      "Rationale: " + escaped(term["rationale"])]
+            for key, title in (("allowed", "Positive examples"), ("not_allowed", "Negative examples")):
+                lines.append(f"### {title}")
+                for item in term["examples"][key]:
+                    lines += [escaped(item["text"]), "Rationale: " + escaped(item["rationale"])]
+            lines += ["### Provenance and review",
+                      "External reference metadata is evidence for the draft IT sense, not ASD provenance.",
+                      metadata({k: term[k] for k in ("source_refs", "review", "rights")})]
     lines += ["## Vocabulary candidates",
               (f"First {summary['candidates']} source rows across {summary['batch_count']} batches; "
               f"{summary['remaining']} pending of {summary['total']} source rows. "

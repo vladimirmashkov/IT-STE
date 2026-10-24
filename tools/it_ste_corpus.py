@@ -32,6 +32,11 @@ PROJECT = {"name": "IT-STE contributors", "url": adaptation.PROJECT_URL}
 SOURCE_ID = "ASDSTE-SOURCE-ISSUE9-R0001"
 SCOPE = "original IT-STE wording and examples only; ASD source rights remain separate"
 MARKER = re.compile(r"\b(?:TODO|TBD|FIXME|PLACEHOLDER)\b|\{\{|\}\}|<[^>\n]+>|\[(?:insert|replace)\b", re.IGNORECASE)
+TERM_ID_RE = re.compile(r"ITSTE-T-[0-9]{4}")
+EXTERNAL_SOURCE_ID_RE = re.compile(r"ITIL-SOURCE-[A-Z0-9-]+")
+TERM_PARTS_OF_SPEECH = {"noun", "verb", "adjective", "adverb", "phrase"}
+TERM_USAGES = {"allowed", "restricted", "prohibited"}
+ORIGINAL_SCOPE = "original IT-STE wording and examples only; external source rights remain separate"
 
 
 class CorpusError(RuntimeError):
@@ -191,6 +196,101 @@ def validate_rights(rights):
         relative_path(path, ROOT)
 
 
+def validate_original_rights(rights):
+    fields(rights, "license license_url redistribution adaptation attribution evidence scope", "term rights")
+    expected = {
+        "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed", "adaptation": "allowed", "scope": ORIGINAL_SCOPE,
+    }
+    for key, value in expected.items():
+        require(rights[key] == value, f"term rights: unexpected {key}")
+    require(rights["attribution"] == [PROJECT], "term rights: require IT-STE attribution only")
+    evidence = strings(rights["evidence"], "term rights.evidence", unique=True)
+    require(set(evidence) == {"LICENSE-CONTENT.md"}, "term rights: unexpected evidence paths")
+    for path in evidence:
+        relative_path(path, ROOT)
+
+
+def validate_external_source(source):
+    fields(source, "schema_version id standard version revision title url retrieved_at publisher status rights notice",
+           "external source")
+    require(source["schema_version"] == "1.1.0", "external source: unexpected schema_version")
+    require(EXTERNAL_SOURCE_ID_RE.fullmatch(source["id"]), "external source: invalid ID")
+    require(source["standard"] == "itil", "external source: only ITIL references are accepted here")
+    for key in ("version", "revision", "title", "url", "retrieved_at", "status", "notice"):
+        text(source[key], f"external source.{key}")
+    require(source["url"].startswith("https://"), "external source: URL must use HTTPS")
+    require(re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", source["retrieved_at"]),
+            "external source: retrieved_at must be an ISO date")
+    fields(source["publisher"], "name url", "external source.publisher")
+    text(source["publisher"]["name"], "external source.publisher.name")
+    text(source["publisher"]["url"], "external source.publisher.url")
+    fields(source["rights"], "license license_url redistribution adaptation attribution evidence",
+           "external source.rights")
+    require(source["rights"]["license"] is None and source["rights"]["license_url"] is None,
+            "external source.rights: unknown license must remain explicit")
+    require(source["rights"]["redistribution"] == "unknown" and source["rights"]["adaptation"] == "unknown",
+            "external source.rights: unknown downstream rights must remain explicit")
+    require(source["rights"]["attribution"] == [source["publisher"]],
+            "external source.rights: publisher attribution is required")
+    evidence = strings(source["rights"]["evidence"], "external source.rights.evidence", unique=True)
+    for path in evidence:
+        relative_path(path, ROOT)
+
+
+def validate_term_examples(examples):
+    fields(examples, "allowed not_allowed", "term examples")
+    for category, items in examples.items():
+        require(isinstance(items, list) and bool(items), f"term examples.{category}: require examples")
+        for example in items:
+            fields(example, "text rationale", "term example")
+            text(example["text"], "term example.text")
+            text(example["rationale"], "term example.rationale")
+
+
+def validate_term_refs(refs, external_sources):
+    require(isinstance(refs, list) and bool(refs), "term source_refs: require external references")
+    seen = set()
+    for ref in refs:
+        fields(ref, "source_id locator", "term source_ref")
+        source_id = ref["source_id"]
+        require(source_id in external_sources, "term source_ref: ASD or unknown provenance is forbidden")
+        locator = ref["locator"]
+        fields(locator, "section", "term locator")
+        text(locator["section"], "term locator.section")
+        key = (source_id, locator["section"])
+        require(key not in seen, "term source_refs: duplicate locator")
+        seen.add(key)
+
+
+def validate_term(term, domains, external_sources):
+    fields(term, "schema_version id kind language status origin term part_of_speech definition domains usage "
+           "rationale alternatives examples translation_of source_refs review rights", "term")
+    for key, expected in {"schema_version": "1.1.0", "kind": "term", "language": "en",
+                          "status": "draft", "origin": "original", "translation_of": None}.items():
+        require(term[key] == expected, f"term: unexpected {key}")
+    identifier = term["id"]
+    require(isinstance(identifier, str) and TERM_ID_RE.fullmatch(identifier),
+            "term: ID must use the ITSTE-T-NNNN namespace")
+    for key in ("term", "definition", "rationale"):
+        text(term[key], f"term.{key}")
+    require(term["part_of_speech"] in TERM_PARTS_OF_SPEECH, "term: unsupported part of speech")
+    applied = strings(term["domains"], "term.domains", unique=True)
+    require(set(applied) <= domains, "term.domains: unknown domain IDs")
+    require(term["usage"] in TERM_USAGES, "term: invalid usage")
+    alternatives = strings(term["alternatives"], "term.alternatives", unique=True, nonempty=False)
+    require(all(TERM_ID_RE.fullmatch(value) and value != identifier for value in alternatives),
+            "term.alternatives: require other canonical term IDs")
+    validate_term_examples(term["examples"])
+    validate_term_refs(term["source_refs"], external_sources)
+    fields(term["review"], "mode automation criteria", "term review")
+    require(term["review"]["mode"] == "human" and term["review"]["automation"] == "structure-only",
+            "term review: human, structure-only review is required")
+    strings(term["review"]["criteria"], "term review.criteria")
+    validate_original_rights(term["rights"])
+    return identifier
+
+
 def validate_examples(examples):
     fields(examples, "allowed not_allowed", "examples")
     for category, items in examples.items():
@@ -276,7 +376,7 @@ def validate_rule(rule, targets, blocks, domains):
 
 
 def check(manifest=DEFAULT_MANIFEST):
-    """Return the materialized rule count; raise CorpusError for invalid data or IO."""
+    """Validate draft rules and IT-only terms; return the materialized rule count."""
     try:
         return _check(manifest)
     except CorpusError:
@@ -314,10 +414,18 @@ def _check(manifest):
     for group in ("records", "sources"):
         names = strings(data[group], group, unique=True)
         if group == "sources":
-            require(names == [f"sources/{SOURCE_ID}.json"], "Require the canonical source path")
+            require(f"sources/{SOURCE_ID}.json" in names, "Require the canonical source path")
+            require(all(
+                name == f"sources/{SOURCE_ID}.json"
+                or re.fullmatch(r"sources/ITIL-SOURCE-[A-Z0-9-]+\.json", name)
+                for name in names
+            ), "Sources require canonical ASD or ITIL reference paths")
         else:
-            require(all(re.fullmatch(r"content/en/rules/ITSTE-R-[0-9]{4}\.json", name) for name in names),
-                    "Records require canonical content/en/rules/<id>.json paths")
+            require(all(
+                re.fullmatch(r"content/en/rules/ITSTE-R-[0-9]{4}\.json", name)
+                or re.fullmatch(r"content/en/terms/ITSTE-T-[0-9]{4}\.json", name)
+                for name in names
+            ), "Records require canonical rule or term paths")
         declared.update(snapshot / name for name in names)
         resolved = [relative_path(name, snapshot) for name in names]
         require(all(member == snapshot / name for name, member in zip(names, resolved)),
@@ -339,17 +447,39 @@ def _check(manifest):
                         pending.append(child)
                     else:
                         require(child in declared, f"Unlisted snapshot file: {child}")
-    validate_source(load_json(groups[1][0]))
+    source_records = {}
+    external_sources = {}
+    for name, member in zip(data["sources"], groups[1]):
+        source = load_json(member)
+        source_id = source.get("id")
+        require(isinstance(source_id, str) and source_id not in source_records,
+                "Sources require unique IDs")
+        require(name == f"sources/{source_id}.json", "Source filename must match its ID")
+        if source_id == SOURCE_ID:
+            validate_source(source)
+        else:
+            validate_external_source(source)
+            external_sources[source_id] = source
+        source_records[source_id] = source
+    require(SOURCE_ID in source_records, "Canonical ASD source metadata is missing")
     targets = {item["id"]: item for item in load_json(adaptation.PLAN_TARGETS)["targets"]}
     blocks = {item["id"]: item for item in adaptation.source_blocks()}
     domains = adaptation.domain_ids()
-    identifiers = []
+    rule_identifiers = []
+    term_identifiers = []
     for name, member in zip(data["records"], groups[0]):
-        identifier = validate_rule(load_json(member), targets, blocks, domains)
-        require(name == f"content/en/rules/{identifier}.json", "Rule filename must match its ID")
-        identifiers.append(identifier)
-    require(len(identifiers) == len(set(identifiers)), "Duplicate rule IDs")
-    return len(identifiers)
+        record = load_json(member)
+        if "/rules/" in name:
+            identifier = validate_rule(record, targets, blocks, domains)
+            require(name == f"content/en/rules/{identifier}.json", "Rule filename must match its ID")
+            rule_identifiers.append(identifier)
+        else:
+            identifier = validate_term(record, domains, external_sources)
+            require(name == f"content/en/terms/{identifier}.json", "Term filename must match its ID")
+            term_identifiers.append(identifier)
+    require(len(rule_identifiers) == len(set(rule_identifiers)), "Duplicate rule IDs")
+    require(len(term_identifiers) == len(set(term_identifiers)), "Duplicate term IDs")
+    return len(rule_identifiers)
 
 
 def main(argv=None):
@@ -363,7 +493,7 @@ def main(argv=None):
     except CorpusError as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 2
-    print(f"PASS: {count} draft pilot rules; structure and provenance only. "
+    print(f"PASS: {count} draft pilot rules and canonical draft terms; structure and provenance only. "
           "No prose conformance, editorial correctness, or tool-command verification.")
     return 0
 

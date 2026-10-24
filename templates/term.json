@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "template": true,
   "id": "ITSTE-T-0001",
   "kind": "term",
@@ -9,11 +9,38 @@
   "term": "<term>",
   "part_of_speech": "noun",
   "definition": "<one precisely defined meaning>",
-  "usage": "allowed",
+  "domains": ["general"],
+  "usage": "restricted",
+  "rationale": "<why this meaning and boundary are needed>",
   "alternatives": [],
-  "examples": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "<positive example>",
+        "rationale": "<why the example is bounded and useful>"
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "<negative example>",
+        "rationale": "<why the example is ambiguous or outside the term boundary>"
+      }
+    ]
+  },
   "translation_of": null,
-  "source_refs": [],
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-<PUBLISHER>-<YEAR>",
+      "locator": {
+        "section": "<exact inspected section>"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": ["<human review criterion>"]
+  },
   "rights": {
     "license": "CC-BY-SA-4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -25,8 +52,7 @@
         "url": "https://github.com/vladimirmashkov/IT-STE"
       }
     ],
-    "evidence": [
-      "LICENSE-CONTENT.md"
-    ]
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
   }
 }

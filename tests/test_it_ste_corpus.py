@@ -28,8 +28,18 @@ class PilotIntegrationTests(unittest.TestCase):
             self.assertEqual(corpus.check(), 31)
         snapshot = corpus.ROOT / corpus.DEFAULT_MANIFEST.parent
         manifest = corpus.load_json(snapshot / "manifest.json")
-        identifiers = {corpus.load_json(snapshot / name)["id"] for name in manifest["records"]}
-        self.assertEqual(identifiers, {f"ITSTE-R-{number:04d}" for number in range(1, 32)})
+        rule_names = [name for name in manifest["records"] if "/rules/" in name]
+        term_names = [name for name in manifest["records"] if "/terms/" in name]
+        rule_identifiers = {corpus.load_json(snapshot / name)["id"] for name in rule_names}
+        term_records = [corpus.load_json(snapshot / name) for name in term_names]
+        self.assertEqual(rule_identifiers, {f"ITSTE-R-{number:04d}" for number in range(1, 32)})
+        self.assertEqual({record["id"] for record in term_records}, {"ITSTE-T-0001", "ITSTE-T-0002"})
+        self.assertTrue(all(record["status"] == "draft" and record["origin"] == "original"
+                            for record in term_records))
+        self.assertTrue(all(
+            all(ref["source_id"].startswith("ITIL-SOURCE-") for ref in record["source_refs"])
+            for record in term_records
+        ))
         catalog = corpus.load_json(corpus.ROOT / "catalog.json")
         for standard in catalog["standards"]:
             if standard["id"] == manifest["standard"]:
@@ -42,7 +52,7 @@ class PilotIntegrationTests(unittest.TestCase):
         snapshot = corpus.ROOT / corpus.DEFAULT_MANIFEST.parent
         manifest = corpus.load_json(snapshot / "manifest.json")
         records = {rule["id"]: rule for rule in (
-            corpus.load_json(snapshot / name) for name in manifest["records"]
+            corpus.load_json(snapshot / name) for name in manifest["records"] if "/rules/" in name
         )}
         locators = [ref["locator"] for rule in records.values() for ref in rule["source_refs"]]
         self.assertEqual(len(locators), 61)
@@ -172,6 +182,47 @@ class CorpusTests(unittest.TestCase):
         self.write(self.path.parent / "content/en/rules/ITSTE-R-0001.json", self.rule)
         self.write(self.path.parent / f"sources/{corpus.SOURCE_ID}.json", self.source)
 
+    def add_valid_term(self):
+        source_id = "ITIL-SOURCE-TEST-2026"
+        source = {
+            "schema_version": "1.1.0", "id": source_id, "standard": "itil",
+            "version": "ITIL 4", "revision": "web-2026-10-24", "title": "Test reference",
+            "url": "https://example.test/itil", "retrieved_at": "2026-10-24",
+            "publisher": {"name": "Test publisher", "url": "https://example.test"},
+            "status": "reference-only",
+            "rights": {
+                "license": None, "license_url": None, "redistribution": "unknown",
+                "adaptation": "unknown", "attribution": [{"name": "Test publisher", "url": "https://example.test"}],
+                "evidence": ["LICENSE-CONTENT.md"],
+            },
+            "notice": "Reference metadata only; no source text copied.",
+        }
+        term = {
+            "schema_version": "1.1.0", "id": "ITSTE-T-0001", "kind": "term", "language": "en",
+            "status": "draft", "origin": "original", "term": "service", "part_of_speech": "noun",
+            "definition": "A managed IT capability with a stated outcome.", "domains": ["general"],
+            "usage": "restricted", "rationale": "Keep the named service boundary.", "alternatives": [],
+            "examples": {
+                "allowed": [{"text": "The service provides status information.", "rationale": "Names an outcome."}],
+                "not_allowed": [{"text": "The service is good.", "rationale": "The claim is unbounded."}],
+            },
+            "translation_of": None,
+            "source_refs": [{"source_id": source_id, "locator": {"section": "Test section"}}],
+            "review": {"mode": "human", "automation": "structure-only",
+                       "criteria": ["Review the named service and outcome."]},
+            "rights": {
+                "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+                "redistribution": "allowed", "adaptation": "allowed", "attribution": [copy.deepcopy(corpus.PROJECT)],
+                "evidence": ["LICENSE-CONTENT.md"], "scope": corpus.ORIGINAL_SCOPE,
+            },
+        }
+        self.manifest["records"].append("content/en/terms/ITSTE-T-0001.json")
+        self.manifest["sources"].append(f"sources/{source_id}.json")
+        self.write(self.path.parent / f"sources/{source_id}.json", source)
+        self.write(self.path.parent / "content/en/terms/ITSTE-T-0001.json", term)
+        self.save()
+        return term, self.path.parent / "content/en/terms/ITSTE-T-0001.json"
+
     def reject(self):
         self.save()
         with self.assertRaises(corpus.CorpusError):
@@ -184,6 +235,20 @@ class CorpusTests(unittest.TestCase):
         self.rule["source_refs"][0]["facets"][0]["disposition"] = "not-applicable"
         self.save()
         self.assertEqual(corpus.check(self.path), 1)
+
+    def test_original_term_requires_external_provenance_and_project_rights(self):
+        term, path = self.add_valid_term()
+        self.assertEqual(corpus.check(self.path), 1)
+        for mutation in (
+            lambda value: value["source_refs"][0].update(source_id=corpus.SOURCE_ID),
+            lambda value: value["rights"].update(attribution=[copy.deepcopy(corpus.PROJECT), copy.deepcopy(corpus.OWNER)]),
+            lambda value: value.update(origin="adaptation"),
+        ):
+            with self.subTest(mutation=mutation):
+                mutated = copy.deepcopy(term)
+                mutation(mutated)
+                self.write(path, mutated)
+                self.reject()
 
     def test_manifest_closed_identity_language_and_draft_constraints(self):
         original = copy.deepcopy(self.manifest)

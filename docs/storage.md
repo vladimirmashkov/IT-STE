@@ -59,7 +59,7 @@ One UTF-8 JSON file stores one rule or one term sense in one language. Do not ma
 - `source_refs` contains `{source_id, locator}` references to source metadata and an exact rule, section, or page location.
 - `rights` contains the license and URL, redistribution and adaptation rights, attribution, and evidence for those rights. Never infer a license from the directory name.
 
-A rule separately stores `title`, normative `text`, `applies_to`, and permitted/prohibited `examples`. A term stores `term`, `part_of_speech`, `definition`, `usage`, `alternatives`, and `examples`. `usage` is `allowed`, `restricted`, or `prohibited`. `alternatives` contains term IDs from the same snapshot and language.
+A rule separately stores `title`, normative `text`, `applies_to`, and permitted/prohibited `examples`. An original IT-only term stores `term`, `part_of_speech`, `definition`, `domains`, `usage`, `rationale`, `alternatives`, `examples`, `review`, and external `source_refs`. `usage` is `allowed`, `restricted`, or `prohibited`; `alternatives` contains term IDs from the same snapshot and language. IT-only terms use `origin: original` and must not use ASD source IDs or ASD-derived rights attribution.
 
 A record reference always includes every coordinate:
 
