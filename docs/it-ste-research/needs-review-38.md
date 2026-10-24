@@ -51,6 +51,18 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 16/38 — batch052 / physical PDF page 413
+
+- `D-P413-005` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 413 / printed page `2-1-U1`, exact locator `entry D-P413-005`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval reports `uncoil (v)` with `UNWIND (v)` and no extraction warnings. Fresh visual review confirms row 5 and the distinct cable example `UNWIND THE CABLES CAREFULLY`; the adjacent `CLEAN` material belongs to the following row.
+  External evidence actually inspected: NASA Technical Standards System, NASA-STD-8739.4A with Change 4, active record dated 2022-04-13, `https://standards.nasa.gov/standard/NASA/NASA-STD-87394` (accessed 2026-10-24), states that its scope is interconnecting cable and harness assemblies for electrical, electronic, and electromechanical components. This confirms the physical hardware/cabling domain, but the inspected record does not provide bend-radius/torsion limits or a general IT-STE wording rule. Cisco returned HTTP 403; the attempted CommScope/Panduit locations returned 404 and are not evidence. Fact versus inference: ASD row/layout and NASA scope are facts; retaining the bounded physical wording and unresolved disposition is an editorial inference.
+
+- `D-P413-006` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 413 / printed page `2-1-U1`, exact locator `entry D-P413-006`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval reports `uncontaminated (adj)` with `CLEAN (adj)` and `CONTAMINATION (n)` plus the preserved `wrapped-headword` warning. Fresh visual review confirms row 6 and the separate contamination continuation/reference.
+  External evidence actually inspected: NASA Technical Standards System, NASA-STD-6016C with Change 1, active record dated 2023-11-15, `https://standards.nasa.gov/standard/NASA/NASA-STD-6016` (accessed 2026-10-24), states that materials/processes for flight hardware and interfacing equipment are controlled to prevent damage or contamination of flight hardware. This supports a physical-hardware contamination boundary, but not the headword definition, an IT vocabulary rule, or data/malware claims. Microsoft Learn Azure data security/encryption best practices, `https://learn.microsoft.com/en-us/azure/security/fundamentals/data-encryption-best-practices` (accessed 2026-10-24), was also inspected and separates data states/security controls from physical cleanliness. Fact versus inference: ASD row/layout and the NASA/Azure scopes are facts; retaining the narrow physical wording and unresolved disposition is an editorial inference.
+
+Validation for this slice: passed the explicit batch-052 check (40 batch-local candidates; 11 needs-review), adaptation, corpus, all-batch vocabulary, document build/check, 118 unit tests with `ResourceWarning` treated as errors, authenticated source doctor, project diagnostics (no errors/warnings), `git diff --check`, and canonical offset-0 queue/count recomputation. The global next queue item is `D-P206-001`; counts remain 2,196 records: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review. Both records remain `draft` / `editorial-review-needed`; this is not vocabulary approval.
+
 ### Iteration 29 — batch012 / physical PDF page 209
 
 - `D-P209-004` — old disposition: `needs-review`; new disposition: `needs-review`.
