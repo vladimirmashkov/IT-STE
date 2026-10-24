@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 19,
+    "needs-review": 17,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1502
+    "restricted": 1504
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -156312,13 +156312,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: undamaged; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Without observed physical damage under a named inspection scope\.
+Definition: Without observed physical damage on a named component or area after the specified inspection procedure\.
 
 Domains: procedures\-runbooks
 
-Rationale: The retrieved meaning includes an apparent fragment from the next row\; visible condition alone does not prove functionality\. NASA\-STD\-6016C supports a physical hardware damage\/contamination boundary but does not settle a general IT vocabulary sense\; see docs\/it\-ste\-research\/W1\-D\-P413\-009\-010\.md\.
+Rationale: The authenticated row is a physical condition sense\, and NASA\-STD\-6016C supports controlling materials and processes to prevent damage to flight hardware\. Restrict the term to a named component or area and an inspection procedure\; visible condition alone does not prove functionality or data integrity\. See docs\/it\-ste\-research\/W1\-D\-P413\-009\-010\.md\.
 
 Contextual alternatives:
 
@@ -156385,13 +156385,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: UNDEMANDED; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Occurring without an identified initiating request or apparent cause\, pending source clarification\.
+Definition: Occurring without a recorded request or identified apparent cause in a named protocol or operational event\.
 
 Domains: support\-troubleshooting
 
-Rationale: The unusual headword and wrapped extraction require verification before choosing between uncommanded\, unsolicited\, and unexplained behavior\. RFC 6455 uses unsolicited for a protocol message sent without a preceding request\, but that is not evidence that this source headword is a safe general IT term\; see docs\/it\-ste\-research\/W1\-D\-P413\-009\-010\.md\.
+Rationale: The authenticated row defines an event without an apparent cause\. RFC 6455 provides a bounded protocol example\: an unsolicited Pong can be sent without an expected response\, while TCP documents asynchronous events and user calls\. Restrict this unusual headword to a named protocol or operational event and do not infer command semantics\, intent\, or maliciousness\; see docs\/it\-ste\-research\/W1\-D\-P413\-009\-010\.md\.
 
 Contextual alternatives:
 
@@ -167590,7 +167590,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `f738c1b6f1ec4e5351e1b534e3d179467f5713b83c2783c4fc9e12a8727d0eb2`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `89e9e64226d907c2b57996f31a8f0a98dc1328971525984d517f656b87412fa3`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 

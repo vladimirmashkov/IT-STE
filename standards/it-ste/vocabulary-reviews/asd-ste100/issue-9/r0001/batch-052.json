@@ -429,12 +429,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Without observed physical damage under a named inspection scope.",
+      "it_disposition": "restricted",
+      "it_definition": "Without observed physical damage on a named component or area after the specified inspection procedure.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The retrieved meaning includes an apparent fragment from the next row; visible condition alone does not prove functionality. NASA-STD-6016C supports a physical hardware damage/contamination boundary but does not settle a general IT vocabulary sense; see docs/it-ste-research/W1-D-P413-009-010.md.",
+      "rationale": "The authenticated row is a physical condition sense, and NASA-STD-6016C supports controlling materials and processes to prevent damage to flight hardware. Restrict the term to a named component or area and an inspection procedure; visible condition alone does not prove functionality or data integrity. See docs/it-ste-research/W1-D-P413-009-010.md.",
       "permitted_contextual_alternatives": [
         "with no visible damage",
         "not damaged in the inspected area"
@@ -490,12 +490,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Occurring without an identified initiating request or apparent cause, pending source clarification.",
+      "it_disposition": "restricted",
+      "it_definition": "Occurring without a recorded request or identified apparent cause in a named protocol or operational event.",
       "domains": [
         "support-troubleshooting"
       ],
-      "rationale": "The unusual headword and wrapped extraction require verification before choosing between uncommanded, unsolicited, and unexplained behavior. RFC 6455 uses unsolicited for a protocol message sent without a preceding request, but that is not evidence that this source headword is a safe general IT term; see docs/it-ste-research/W1-D-P413-009-010.md.",
+      "rationale": "The authenticated row defines an event without an apparent cause. RFC 6455 provides a bounded protocol example: an unsolicited Pong can be sent without an expected response, while TCP documents asynchronous events and user calls. Restrict this unusual headword to a named protocol or operational event and do not infer command semantics, intent, or maliciousness; see docs/it-ste-research/W1-D-P413-009-010.md.",
       "permitted_contextual_alternatives": [
         "without a recorded request",
         "with no identified cause"

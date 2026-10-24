@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 15/36
-Requested iterations: 36 (user-authorized); this run executes slice 15/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–15/36
-Processed records: 54
-Disposition changes: 14 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 21
+Last checkpoint: 2026-10-24, after new-policy slice 17/36
+Requested iterations: 36 (user-authorized); this run executes slice 17/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–17/36
+Processed records: 58
+Disposition changes: 18 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 17
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,30 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 16/36:
+Fresh canonical counts after new-policy slice 17/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,502`;
+- `restricted`: `1,504`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `19`.
+- `needs-review`: `17`.
 
-The 19 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, and `D-P413-006` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 17 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, `D-P413-006`, `D-P413-009`, and `D-P413-010` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P349-003`, batch 038, physical PDF page 349, as new-policy slice 17/36; do not start slice 17/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only the next live-queue record(s); do not start slice 18/36 here.
+
+### New-policy classification slice 17/36 — `D-P413-009` / `D-P413-010`
+
+- Run/slice: user-authorized new-policy classification slice 17/36; batch `052`; physical PDF page `413`; POS `adj` (`undamaged`) and `adj` (`UNDEMANDED`). Fresh offset-0 canonical recomputation selected exactly these two records after slice 16; slice 18 was not started.
+- Old/new: `D-P413-009` and `D-P413-010` changed from `needs-review` to `restricted`. Both remain `status: draft` / `review_status: editorial-review-needed`; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, exact locators `entry D-P413-009` and `entry D-P413-010`, sequences `2047` and `2048`, printed page `2-1-U1`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Doctor, exact entries, bounded page retrieval, and visual page-413 review passed. Row 9 is `undamaged` → `NOT DAMAGED`; row 10 is the separate wrapped `UNDEMANDED` entry meaning `That occurs without an apparent cause`. Mechanical warnings and ambiguity history remain preserved.
+- IT question and exclusions: can the physical condition and protocol/event senses be bounded for IT? `undamaged` is limited to observed physical damage on a named component or area after a specified inspection procedure. `UNDEMANDED` is limited to a named protocol or operational event without a recorded request or identified apparent cause. Excluded are functionality, data integrity, malware, malicious intent, and unqualified synonym claims for `uncommanded`, `unsolicited`, or `unexpected`.
+- External evidence actually inspected: NASA-STD-6016C w/Change 1 (NASA Technical Standards System, active, change 2023-11-15, https://standards.nasa.gov/standard/NASA/NASA-STD-6016, accessed 2026-10-24) for physical hardware damage/contamination controls; RFC 6455 §5.5.3 (IETF Standards Track, https://www.rfc-editor.org/rfc/rfc6455.html#section-5.5.3, accessed 2026-10-24) for an unsolicited WebSocket Pong without an expected response; and RFC 793 §3.9 (IETF protocol specification, https://www.rfc-editor.org/rfc/rfc793.html#section-3.9, accessed 2026-10-24) for protocol events including user calls, arriving segments, and timeouts. Limits: NASA is spacecraft-scope evidence; RFC 6455 is WebSocket-specific; RFC 793 is historical; none is an IT dictionary or approval authority.
+- Alternatives and decision: resolve both as `restricted` draft senses. Reject `allowed` because each requires a named object/event and inspection or evidentiary boundary; reject `prohibited` and `not-applicable` because physical IT, protocols, and operations are in policy scope and have supported uses. The source findings are facts; the restricted definitions and disposition are draft policy/editorial inferences.
+- Canonical changes: updated only the two selected records' disposition, definition, rationale, and note linkage; preserved IDs, sequence, source pins, warnings, raw metadata, rights, fixed retrieval commands, authenticated visual evidence, draft statuses, and no hand-edited generated output. Detailed evidence is in [W1-D-P413-009-010](W1-D-P413-009-010.md).
+- Validation/commit: final results are recorded in the handoff after all affected/full checks, diagnostics, source doctor, diff review, and queue recomputation. Automatic commit includes only the two canonical records' batch, this note, this classification log, the needs-review register, the handoff, the generated draft, and affected test expectations.
+- Next action: after this slice, fresh offset-0 recomputation identifies only `D-P349-003`, batch `038`, physical PDF page `349`, as the next separately authorized live-queue slice; do not start slice 18 in this run.
 
 ### New-policy classification slice 16/36 — `D-P413-005` / `D-P413-006`
 
