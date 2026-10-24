@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 10/36
-Requested iterations: 36 (user-authorized); this run executes slice 10/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–10/36
-Processed records: 51
-Disposition changes: 11 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 25
+Last checkpoint: 2026-10-24, after new-policy slice 12/36
+Requested iterations: 36 (user-authorized); this run executes slice 12/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–12/36
+Processed records: 53
+Disposition changes: 13 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 22
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,18 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 10/36:
+Fresh canonical counts after new-policy slice 12/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,495`;
+- `restricted`: `1,499`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `25`.
+- `needs-review`: `22`.
 
-The 25 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; slice 9 changed only `D-P365-011` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 22 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; slices 11–12 classified `D-P374-005` / `D-P374-006` and `D-P379-002` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P374-005` / `D-P374-006` (batch 044, physical PDF page 374), and do not start slice 11/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P383-001` (batch 046, physical PDF page 383), and do not start slice 13/36 here.
 
 ### New-policy classification slice 10/36 — `D-P368-010`
 
@@ -185,3 +185,14 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Decision and canonical changes: the restricted definition now covers continuously flowing water only on a named detached/removable washable component under an applicable manufacturer procedure; the corresponding named OT asset/component procedure; or a named software platform/API state documented as `Running`. It rejects `allowed` as unsafe without an object/procedure/platform contract, rejects `prohibited` and `not-applicable` because all three bounded uses are relevant, and rejects `operating`, `healthy`, `ready`, `available`, and `safe` as unbounded alternatives. Updated only the selected record's disposition, definition, domains, rationale, alternatives, examples, and review-required text; preserved IDs, sequence, source pins, fixed locator, warnings/ambiguity, raw metadata, rights, and draft statuses.
 - Validation/commit: affected batch-042 check first; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor before and after validation; diagnostics with no errors or warnings; `git diff --check`; exact ASD entry/page review; and offset-0 queue/count recomputation passed for this run. The automatic commit includes only the reviewed slice files.
 - Next action: stop after slice 10/36; after fresh offset-0 recomputation, the next authorized run must inspect only `D-P374-005` / `D-P374-006` (batch `044`, physical PDF page `374`); do not start slice 11 here.
+
+### New-policy classification slice 12/36 — `D-P379-002`
+
+- Run/slice: user-authorized new-policy slice 12/36; batch `045`; physical PDF page `379`; POS `v` (`skid`). Fresh offset-0 canonical recomputation selected only this record after slice 11; slice 13 was not started.
+- Old/new: `D-P379-002` changed from `needs-review` to `restricted`. It remains `status: draft` / `review_status: editorial-review-needed`; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: Issue 9, revision `r0001`, exact locator `entry D-P379-002`, sequence `1765`, printed page `2-1-S13`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; doctor and exact entry/page retrieval passed. Visual inspection confirms `skid (v)` is row 2 with `SKID (TN)` and a car-skidding example; the neighboring `slide (v)` row separately maps to `MOVE (v)` and uses a computer-movement example. The cross-reference does not establish an IT verb sense, and the mechanical source remains unreviewed.
+- IT question and exclusions: under the all-domain policy, can `skid` name useful unintended sliding of physical IT equipment beyond aviation? Yes, but only for named IT hardware, a named support surface, and an identified handling or installation procedure with an observable unintended event. Excluded are controlled rail movement, database or network transfer, software state, general transport, unbounded traction physics, and aviation-only scope.
+- External evidence actually inspected: Lenovo ThinkSystem SR650 V3, official “Install the server to rack,” `https://pubs.lenovo.com/sr650-v3/install_the_server_to_rail`, accessed 2026-10-24; it specifies three-person lifting, fully extended rails, controlled placement, sliding the server into the rack, latch engagement, rack stability and securing. It is primary product procedure evidence for bounded physical IT handling, but uses `slide` for intended rail movement and does not define `skid`. Lenovo ThinkSystem SR650 V3, official “Installation Guidelines,” `https://pubs.lenovo.com/sr650-v3/installation_guidelines`, accessed 2026-10-24; it requires stable/flat work areas and precautions against slipping during lifting. It is product-specific safety guidance, not universal lexical authority or an acceptance criterion.
+- Decision and canonical changes: changed only `D-P379-002`'s disposition, definition, domains, rationale, contextual alternative, examples and review-required list. The restricted draft definition is unintended sliding of named physical IT equipment across a named support surface during a specified handling or installation procedure. `slide unintentionally` and `lose traction` remain contextual alternatives; `slide` is preferred for controlled rail motion. IDs, sequence, source pins, fixed locator, warnings/ambiguity, raw metadata, rights and draft statuses were preserved.
+- Validation/commit: affected batch-045 check first; adaptation; corpus; all-batch vocabulary check; document build/check; unit tests with `ResourceWarning` as errors; authenticated source doctor before and after validation; diagnostics with no errors or warnings; `git diff --check`; exact ASD entry/page review; and offset-0 queue/count recomputation passed for this run. Automatic commit includes only reviewed slice files.
+- Next action: stop after slice 12/36; after fresh offset-0 recomputation, the next authorized run must inspect only `D-P383-001` (batch `046`, physical PDF page `383`); do not start slice 13 here.

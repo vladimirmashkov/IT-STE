@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 23,
+    "needs-review": 22,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1498
+    "restricted": 1499
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -135397,13 +135397,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: skid; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, slide unintentionally across a physical supporting surface\.
+Definition: Slide unintentionally across a named physical IT support surface during a specified handling or installation procedure\.
 
-Domains: general
+Domains: procedures\-runbooks, support\-troubleshooting
 
-Rationale: Visual verification confirms that the ASD row is skid \(v\) with the cross\-reference SKID \(TN\) and a car\-skidding example\; it does not establish an IT verb sense\. Lenovo\'s official server\-rack procedure uses slide for controlled hardware movement and documents separate lifting\/rail safety conditions\, which supports the contextual alternative but not this headword\. Retain needs\-review pending a competent IT source or owner decision on whether accidental hardware sliding is a publishable sense\.
+Rationale: Visual verification confirms that the ASD row is skid \(v\) with the cross\-reference SKID \(TN\) and a car\-skidding example\; it does not establish an IT sense\. Lenovo\'s official server\-rack procedure identifies a physical IT object\, rail\-guided movement\, stability hazards\, slipping precautions\, and a stop\/secure boundary\. Under the all\-domain policy\, this supports a restricted physical\-hardware\/procedure sense\, not a general movement term\, controlled rail motion\, database transfer\, network operation\, or aviation\-only usage\. The component\, support surface\, handling or installation procedure\, and observable unintended movement must be explicit\.
 
 Contextual alternatives:
 
@@ -135411,13 +135411,15 @@ Contextual alternatives:
 
 - lose traction
 
+- move unexpectedly during hardware handling
+
 #### Positive example
 
 ```
-Stop moving the chassis if it slides on the platform.
+If the server starts to skid on the installation platform, stop the handling procedure and secure it.
 ```
 
-Explanation: Describes observable motion and a stopping condition\.
+Explanation: Names physical IT equipment\, an installation surface and procedure\, observable unintended movement\, and a bounded response\.
 
 #### Problematic example
 
@@ -135425,7 +135427,7 @@ Explanation: Describes observable motion and a stopping condition\.
 Skid the database onto another host.
 ```
 
-Explanation: Does not describe an IT transfer operation\.
+Explanation: Does not describe unintended movement of physical IT equipment during a hardware procedure\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -135449,8 +135451,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     },
     "review_required": [
       "editorial sense and scope review",
-      "original example review",
-      "Find a competent IT source or owner decision for an accidental physical-hardware sliding sense before changing disposition"
+      "original example review"
     ],
     "row_on_page": 2,
     "source_entry_id": "D-P379-002",
@@ -167571,7 +167572,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `967b2b8c2c9152f44667627c540866d950b593faed8a1af737cf35ddcf525af0`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `d491be2d4151ec0a1b2e1ca3c882f994af514f9926a19f808a712d69ae3ea619`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `25b925d8a6da3df8fad7f24425d30a894d73c4748ab9b83bca6c2ea6e171425f`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `cd79512de294312a3f89ec12edc9d331e2f94b2d50e136fb4d12b51eb863a8af`
 
