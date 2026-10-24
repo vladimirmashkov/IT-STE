@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-T-0016",
+  "kind": "term",
+  "language": "en",
+  "status": "draft",
+  "origin": "original",
+  "term": "change authority",
+  "part_of_speech": "phrase",
+  "definition": "A person or group authorized to approve a change within a specified scope.",
+  "domains": ["general"],
+  "usage": "restricted",
+  "rationale": "Use this phrase for the person or group with delegated authority to approve a change within a defined scope. The scope can be based on the change type, risk, service, environment, or another governance rule. The phrase does not name the change request, change record, requester, implementer, change schedule, approval record, tool, or a particular board, and it does not imply authority to execute the change.",
+  "alternatives": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "The change authority approves the low-risk production change within its delegated scope.",
+        "rationale": "Identifies the approving role and the scope of its authorization without making it the implementer."
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "The change authority is the change schedule.",
+        "rationale": "Conflates an approving role or group with a schedule that records planned changes."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-SERVICE-RESILIENCE-2026",
+      "locator": {
+        "section": "ITIL 4 Practitioner: Change Enablement listing"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that the phrase names a person or group authorized to approve a change within a specified scope.",
+      "Keep the phrase distinct from the change request, change record, requester, implementer, change schedule, approval record, tool, particular board, and execution authority.",
+      "Confirm that the inspected PeopleCert page supports change authorization in the Change Enablement context, while the ASD authority row remains a separate lexical source record and does not provide ITIL provenance."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      }
+    ],
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
+  }
+}
