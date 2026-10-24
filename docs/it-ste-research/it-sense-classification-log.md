@@ -5,9 +5,9 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 9/36
-Requested iterations: 36 (user-authorized); this run executes slice 9/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–9/36
+Last checkpoint: 2026-10-24, after new-policy slice 10/36
+Requested iterations: 36 (user-authorized); this run executes slice 10/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–10/36
 Processed records: 51
 Disposition changes: 11 records changed from `needs-review` to `restricted`
 Remaining `needs-review`: 25
@@ -51,18 +51,29 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 9/36:
+Fresh canonical counts after new-policy slice 10/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
 - `restricted`: `1,495`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `26`.
+- `needs-review`: `25`.
 
-The 25 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7 and 8 intentionally left their selected records unresolved; slice 9 changed only `D-P365-011` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 25 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; slice 9 changed only `D-P365-011` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P349-003` (batch 038, physical PDF page 349), and do not start slice 10/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P374-005` / `D-P374-006` (batch 044, physical PDF page 374), and do not start slice 11/36 here.
+
+### New-policy classification slice 10/36 — `D-P368-010`
+
+- Run/slice: user-authorized new-policy slice 10/36; batch `043`; physical PDF page `368`; POS `adj` (`scored`). Fresh offset-0 canonical recomputation selected `D-P368-010` after excluding all prior policy slices, including the unresolved `D-P349-003` and `D-P351-001`; slice 11 was not started.
+- Old/new: `D-P368-010` remains `needs-review` → `needs-review`, `status: draft` / `review_status: editorial-review-needed`; no canonical or generated content changed.
+- ASD evidence: Issue 9, revision `r0001`, exact locator `entry D-P368-010`, sequence `1687`, printed page `2-1-S2`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; doctor, exact entry, and page retrieval passed. The row is `scored (adj)` with `SCORE (TN)` and bearing-race examples; visual findings confirm row separation and that the source is physical damage, not numeric scoring. The mechanical source remains unreviewed.
+- IT question and exclusions: can the physical bearing-damage sense be bounded to named IT hardware without conflating numeric scoring, ratings, or designed grooves? Excluded are unqualified connector/server claims, generic groove observations as damage, and any pass/fail or replacement instruction without the equipment procedure.
+- External evidence actually inspected: NSK, “Scoring | NSK Europe,” official manufacturer guidance, `https://www.nsk.com/eu-en/tools-resources/troubleshooting/damage-by-type/scoring`, accessed 2026-10-24; defines scoring on bearing raceway/roller surfaces and causes/countermeasures, but does not identify IT equipment or its acceptance criteria. Fiber Optic Association, “Visual Inspection And Cleaning Of Connectors,” `https://www.thefoa.org/tech/ref/testing/test/scope.html`, accessed 2026-10-24; documents connector scratches/chips and inspection, but does not define `scored`. Cisco’s related page returned HTTP 403 and is not used as evidence.
+- Decision and canonical changes: remain blocked at `needs-review`; the new NSK evidence supports the physical mechanism but does not close the missing named-IT-equipment linkage. No canonical fields changed; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- Validation/commit: affected batch-043 check; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor before and after evidence use; diagnostics; `git diff --check`; exact ASD entry/page retrieval; and fresh offset-0 queue/count recomputation are recorded for this run. Automatic commit includes only the note, handoff, and classification log.
+- Next action: stop after slice 10/36; after fresh offset-0 recomputation, inspect only `D-P374-005` / `D-P374-006`, batch `044`, physical PDF page `374`; do not start slice 11 here.
 
 ## Required entry format for future slices
 
@@ -173,4 +184,4 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - External evidence actually inspected: Apple, “How to clean your Apple products,” official manufacturer guidance, `https://support.apple.com/en-us/103258`, accessed 2026-10-24; it establishes product-specific cleaning and moisture boundaries but not flowing water for electronics or universal IT procedures. NIST SP 800-82 Rev. 3, `https://csrc.nist.gov/pubs/sp/800/82/r3/final`, September 2023; it establishes OT as physical-environment control/monitoring systems but does not authorize cleaning. Kubernetes Authors, “Pod Lifecycle,” `https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/`, accessed 2026-10-24; it distinguishes Pod phase Running from container state/readiness and warns against overinterpretation. Kubernetes Authors, “Configure Liveness, Readiness and Startup Probes,” `https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/`, accessed 2026-10-24; it establishes that running and readiness/liveness are distinct, but is connected documentation rather than independent corroboration.
 - Decision and canonical changes: the restricted definition now covers continuously flowing water only on a named detached/removable washable component under an applicable manufacturer procedure; the corresponding named OT asset/component procedure; or a named software platform/API state documented as `Running`. It rejects `allowed` as unsafe without an object/procedure/platform contract, rejects `prohibited` and `not-applicable` because all three bounded uses are relevant, and rejects `operating`, `healthy`, `ready`, `available`, and `safe` as unbounded alternatives. Updated only the selected record's disposition, definition, domains, rationale, alternatives, examples, and review-required text; preserved IDs, sequence, source pins, fixed locator, warnings/ambiguity, raw metadata, rights, and draft statuses.
 - Validation/commit: affected batch-042 check first; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor before and after validation; diagnostics with no errors or warnings; `git diff --check`; exact ASD entry/page review; and offset-0 queue/count recomputation passed for this run. The automatic commit includes only the reviewed slice files.
-- Next action: stop after slice 9/36; after fresh offset-0 recomputation, the next authorized run must inspect only `D-P349-003` (batch `038`, physical PDF page `349`); do not start slice 10 here.
+- Next action: stop after slice 10/36; after fresh offset-0 recomputation, the next authorized run must inspect only `D-P374-005` / `D-P374-006` (batch `044`, physical PDF page `374`); do not start slice 11 here.
