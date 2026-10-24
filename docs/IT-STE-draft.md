@@ -601,7 +601,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Recognize IT specifications, schemas, products, and maintained glossaries as scoped authorities.",
+          "rationale": "Recognize IT specifications, schemas, products, and maintained glossaries as scoped authorities; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Established subject-field terminology takes precedence over a newly chosen name.",
           "target_field": "text"
         }
@@ -620,7 +620,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require stable concept names while explicitly mapping legitimate layer and version differences.",
+          "rationale": "Require stable concept names while explicitly mapping legitimate layer and version differences; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Changing the name of one item can make references inconsistent.",
           "target_field": "text"
         }
@@ -721,13 +721,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Select the shortest unambiguous IT term against audience understanding and necessary distinctions.",
+          "rationale": "Select the shortest unambiguous IT term against audience understanding and necessary distinctions; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "When no approved name exists, a short understandable term should be selected.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "A fixed three-word limit could erase necessary IT distinctions or external names.",
+          "rationale": "A fixed three-word limit could erase necessary IT distinctions or external names; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source places a small numeric ceiling on a newly selected term.",
           "target_field": "exceptions"
         }
@@ -746,7 +746,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Avoid slang and unexplained internal nicknames while permitting established or clearly defined specialist terminology.",
+          "rationale": "Avoid slang and unexplained internal nicknames while permitting established or clearly defined specialist terminology; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Regional and narrowly understood expressions hinder readers outside their originating group.",
           "target_field": "text"
         }
@@ -168697,9 +168697,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0002.json` SHA-256: `b10c827ae9fd29cee62f2dedb248f1228f9e968b3c31a374e3dc1768fb606bda`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0003.json` SHA-256: `474f16837085986694c872f71df606d500f8572d10efddd368b407c1ec0427f9`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0003.json` SHA-256: `a4b329d4b60dec19e4a4a57f85371b9e4df1d65d791ae8b9d16918fe75c09bb4`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0004.json` SHA-256: `6389e3b0dc9d4a49d8cfa9c0b1124231bfa8fb2f9906a39520f4eda387aaf0c1`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0004.json` SHA-256: `98202a961bd38f6b47c88ec09961d27fee769dedebf7f9caa79348ef87948093`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0005.json` SHA-256: `0626d6944149eeb5592aa04ca7bb41dac293cc1037e352363a0f29ceabe9e60c`
 
