@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 15,
+    "needs-review": 13,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1506
+    "restricted": 1508
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -158387,13 +158387,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: UNSATISFAC\- TORILY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: In a manner that does not meet a stated requirement or acceptance criterion\.
 
 Domains: monitoring\-alerts
 
-Rationale: The authenticated page confirms a distinct row with the meaning ‘In an unsatisfactory manner’\. In IT writing\, state the unmet requirement or acceptance criterion instead of relying on an unqualified quality judgment\. See docs\/it\-ste\-research\/W1\-D\-P417\-006\-007\.md\.
+Rationale: The authenticated page confirms a distinct row with the meaning ‘In an unsatisfactory manner’\. Restrict this IT use to a named\, verifiable requirement or acceptance criterion\; an unqualified quality judgment is not sufficiently precise\. NIST systems\-engineering and testing guidance supports requirements\, assessment criteria\, and verification boundaries\. See docs\/it\-ste\-research\/W1\-D\-P417\-006\-007\.md\.
 
 Contextual alternatives:
 
@@ -158462,13 +158462,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: UNSATISFAC\- TORY; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
 Definition: Not meeting a stated requirement or acceptance criterion\.
 
 Domains: monitoring\-alerts
 
-Rationale: The authenticated page confirms a distinct row with the meaning ‘Not satisfactory’\. In IT writing\, identify the unmet requirement or acceptance criterion rather than use a subjective label alone\. See docs\/it\-ste\-research\/W1\-D\-P417\-006\-007\.md\.
+Rationale: The authenticated page confirms a distinct row with the meaning ‘Not satisfactory’\. Restrict this IT use to a named\, verifiable requirement or acceptance criterion\; a subjective label alone does not establish the defect\. NIST systems\-engineering and testing guidance supports requirements\, assessment criteria\, and verification boundaries\. See docs\/it\-ste\-research\/W1\-D\-P417\-006\-007\.md\.
 
 Contextual alternatives:
 
@@ -167590,7 +167590,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `4ab5ba67f49347d263e8f2a314e749548deedac54750bad8c88d7c9848c35541`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `f5abedb2c18536171f9d4407c20605940e64f3e41266bc70e9ec0295d55bd106`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 
