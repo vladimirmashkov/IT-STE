@@ -51,6 +51,20 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 17/38 — batch052 / physical PDF page 413
+
+- `D-P413-009` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 413 / printed page `2-1-U1`, exact locator `entry D-P413-009`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval identifies `undamaged (adj)` with `NOT DAMAGED` and the skin example. Visual verification confirms row 9 is separate from the following `UNDEMANDED` row; the preserved mechanical ambiguity is not a current row-boundary blocker.
+  External evidence actually inspected: NASA Technical Standards System, NASA-STD-6016C with Change 1, active official record dated 2023-11-15, `https://standards.nasa.gov/standard/NASA/NASA-STD-6016` (accessed 2026-10-24), requires controls to prevent damage to or contamination of flight hardware. This supports a physical hardware/materials scope, but not a general IT definition or functionality/data-integrity claim. Fact versus inference: the ASD row, NASA scope, and bounded physical wording are facts/inferences respectively; the evidence does not justify changing the disposition.
+
+- `D-P413-010` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 413 / printed page `2-1-U1`, exact locator `entry D-P413-010`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval identifies the distinct wrapped `UNDEMANDED (adj)` row, meaning `That occurs without an apparent cause`, with the movement example and no non-STE example. Visual verification confirms the row boundary and wrapping; the preserved `wrapped-headword` warning remains.
+  External evidence actually inspected: IETF Standards Track RFC 6455, section 5.5.3, `https://www.rfc-editor.org/rfc/rfc6455.html#section-5.5.3` (accessed 2026-10-24), says an unsolicited WebSocket Pong may be sent without an expected response. This is a protocol-specific message/request scope, not evidence that `unsolicited`, `uncommanded`, or `unexpected` is a general equivalent of the source sense. Fact versus inference: the RFC wording and protocol scope are facts; retaining `without a recorded request` / `with no identified cause` and leaving the disposition unresolved are editorial inferences.
+
+Resolution: No canonical batch fields changed. Both records remain `status: draft` / `review_status: editorial-review-needed` / `needs-review`; the evidence supports bounded draft wording but does not establish a safe disposition change or vocabulary approval. See [W1-D-P413-009-010](W1-D-P413-009-010.md) for the compact research note.
+
+Validation for this slice: passed batch-052 check (40 candidates; 11 needs-review), adaptation, corpus, all-batch vocabulary check, document build/check, 118 unit tests with `ResourceWarning` treated as errors, authenticated source doctor, project diagnostics (no errors/warnings), `git diff --check`, and canonical offset-0 queue/count recomputation. Counts remain 2,196 records / 55 batches: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review; next live item is `D-P206-001`. These checks are structure/provenance validation only, not vocabulary approval.
+
 ### Resolution slice 16/38 — batch052 / physical PDF page 413
 
 - `D-P413-005` — old disposition: `needs-review`; new disposition: `needs-review`.
