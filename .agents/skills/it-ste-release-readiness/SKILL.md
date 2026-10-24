@@ -14,17 +14,20 @@ Accept one explicit mode:
 
 ```text
 /it-ste-release-readiness bootstrap
+/it-ste-release-readiness resume
+/it-ste-release-readiness resume --iterations=3
 /it-ste-release-readiness --phase=w2 --iterations=3
 /it-ste-release-readiness --phase=vocabulary --iterations=1
 /it-ste-release-readiness --phase=gates --scope=rights
 /it-ste-release-readiness --phase=candidate
 ```
 
-- `bootstrap` validates/creates the supporting skills and records the plan state.
+- `bootstrap` validates/creates the supporting skills and records the plan state; it does not start a remediation slice.
+- `resume` reads the plan and handoff checkpoints, skips only work explicitly recorded as completed, selects the next unfinished phase/slice, and runs one bounded slice by default. `--iterations=N` repeats that process strictly sequentially, stopping at the first blocker.
 - `w2`, `vocabulary`, and `gates` require a positive bounded iteration count or one explicit bounded scope.
 - `candidate` is refused unless the plan records passing Phases 1–5 and the user explicitly requests a release candidate.
 - Do not accept an unbounded `run all` request without converting it into explicit sequential phases and iteration counts recorded in the plan.
-- The current user authorization permits multiple automatic commits for the requested run, but every future run must still verify explicit authorization in its invocation/context.
+- The current user authorization permits multiple automatic commits for the requested run, but every future run must still verify explicit authorization in the invocation/context.
 
 Supporting skills:
 
@@ -60,7 +63,8 @@ Run exactly one bounded stage at a time. Never begin stage N+1 before stage N ha
 ### A. Select and delegate
 
 - Read the relevant supporting skill in full before acting.
-- Select one exact W2 theme, vocabulary batch/theme group, gate scope, or candidate scope.
+- In `resume` mode, inspect the plan/checkpoint and skip only phases/slices with an explicit completed result and commit; never infer completion from an empty queue or a passing structural check.
+- Select one exact W2 theme, vocabulary batch/theme group, gate scope, or candidate scope. If the next slice cannot be selected without guessing, stop and ask for an explicit bounded scope.
 - Record IDs/paths, excluded meanings, evidence boundary, expected allowed paths, and one next action in the plan/checkpoint before editing.
 - Do not reuse stale queue offsets, counts, IDs, or cached chat context.
 
