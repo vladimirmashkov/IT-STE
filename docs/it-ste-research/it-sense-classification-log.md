@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 13/36
-Requested iterations: 36 (user-authorized); this run executes slice 13/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–13/36
-Processed records: 53
-Disposition changes: 13 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 22
+Last checkpoint: 2026-10-24, after new-policy slice 15/36
+Requested iterations: 36 (user-authorized); this run executes slice 15/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–15/36
+Processed records: 54
+Disposition changes: 14 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 21
 
 ## Purpose and evidence policy
 
@@ -38,7 +38,7 @@ The following completed slices were researched and committed before this log was
 | 12 | `D-P379-002` | unchanged `needs-review` | `14c7bf7`, register reference `03ebe72` |
 | 13 | `D-P391-003/005` | unchanged `needs-review` | `a3cd0cf` |
 | 14 | `D-P397-005/006/007` | unchanged `needs-review` | `c8a00d4` |
-| 15 | `D-P398-001` | unchanged `needs-review` | `8651ffc` |
+| 15 | `D-P398-001` | unchanged `needs-review` | `8651ffc` (legacy import; superseded by new-policy slice 15) |
 | 16 | `D-P413-005/006` | unchanged `needs-review` | `4d8d10a` |
 | 17 | `D-P413-009/010` | unchanged `needs-review` | `71aed85` |
 | 18 | `D-P415-004/005` | unchanged `needs-review` | `e956610` |
@@ -51,18 +51,18 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 13/36:
+Fresh canonical counts after new-policy slice 15/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,499`;
+- `restricted`: `1,500`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `22`.
+- `needs-review`: `21`.
 
-The 22 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; slices 11–12 classified `D-P374-005` / `D-P374-006` and `D-P379-002` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 21 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001` is now restricted with a documented split proposal, not a vocabulary approval or release decision. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P397-005` / `D-P397-006` / `D-P397-007` (batch 049, physical PDF page 397), if all remain `needs-review`, and do not start slice 14/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P413-005` / `D-P413-006`, batch 052, physical PDF page 413, as new-policy slice 16/36; do not start slice 16/36 here.
 
 ### New-policy classification slice 10/36 — `D-P368-010`
 
@@ -207,3 +207,15 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Decision and limits: retain `needs-review` for both records. The evidence separates physical engineering senses from software operations but provides no named IT object, component procedure, force/deformation limit, liquid-processing context, or independently justified software sense. `restricted` or `allowed` would overstate the evidence; `prohibited` or `not-applicable` would discard plausible physical-IT follow-up without resolving the missing scope. No vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
 - Validation/commit: affected batch-047 check; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor; project diagnostics; `git diff --check`; exact ASD entry/page retrieval; visual page review; and offset-0 queue/count recomputation passed. Automatic commit includes only the research note, handoff, and classification log.
 - Next action: stop after slice 13/36; after fresh offset-0 recomputation, inspect only `D-P397-005` / `D-P397-006` / `D-P397-007`, batch `049`, physical PDF page `397`, if all remain `needs-review`; do not start slice 14 here.
+
+### New-policy classification slice 15/36 — `D-P398-001`
+
+- Run/slice: user-authorized new-policy slice 15/36; batch `049`; physical PDF page `398`; POS `adj` (`SYNCHRONIZED`). Fresh canonical validation and the requested bounded scope selected only `D-P398-001`; slice 16 was not started.
+- Old/new: `D-P398-001` changed from `needs-review` to `restricted`; it remains `status: draft` / `review_status: editorial-review-needed`. No vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, exact locator `entry D-P398-001`, sequence `1931`, printed page `2-1-S32`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; doctor, exact entry, bounded page retrieval and the authenticated 150-dpi page-398 visual review passed. The row is a distinct wrapped `SYNCHRONIZED (adj)` entry with two meanings and separate rotor/timer examples; the horizontal boundary before `SYSTEM` is clear. The mechanical `wrapped-headword` warning remains preserved.
+- IT question and exclusions: can the ASD timing and agreement senses be represented safely across named clock, replicated-data, and configuration profiles without implying generic equality, zero lag, correctness, completeness, or durability? Excluded are unqualified “the nodes are synchronized” claims, application-data equality inferred from replication acknowledgment, durability inferred from visibility, and configuration convergence without a named datastore/state and commit or validation condition.
+- External evidence actually inspected: RFC 5905 (IETF Standards Track, 2010, https://www.rfc-editor.org/rfc/rfc5905.html, accessed 2026-10-24), §§1, 2, 4, 8, 10–11, defines clock synchronization to UTC and offset/error/synchronization-distance measures; limit: time protocol, not a universal data/configuration lexicon. PostgreSQL 18 official documentation, “Log-Shipping Standby Servers” (https://www.postgresql.org/docs/current/warm-standby.html, accessed 2026-10-24), §§26.2.2, 26.2.5, 26.2.8–26.2.8.4, distinguishes asynchronous lag, WAL receipt/replay visibility, synchronous confirmation and durability; limit: PostgreSQL-specific implementation evidence. RFC 6241 (IETF Standards Track, 2011, https://www.rfc-editor.org/rfc/rfc6241.html, accessed 2026-10-24), §§1.1, 1.4, 5.1, 7.2–7.5, 8.3, 8.6–8.7 and Appendices E.1–E.2, defines configuration datastores, candidate/running state, validation, commit, locks, rollback and multi-device update semantics; limit: network-device configuration protocol.
+- Alternatives and decision: retaining one broad data-storage meaning was rejected because it conflates the two ASD senses and three different IT contracts. Narrowing to replicated data was rejected because it drops clock and configuration uses. Creating separate canonical records is semantically preferable but not representable without schema changes. Apply the policy’s split-proposal mapping: one `restricted` draft record with explicit clock/tolerance, replicated-data checkpoint/visibility, and configuration-datastore/commit profiles; do not imply equality, zero lag, correctness, completeness, or durability.
+- Canonical changes: updated only the selected record’s definition, domains, alternatives, rationale and disposition; preserved ID, sequence, source pins, wrapped-headword warning, raw metadata, rights, fixed retrieval command, authenticated visual evidence, `status: draft` and `review_status: editorial-review-needed`. No generated Markdown was edited by hand.
+- Validation/commit: affected batch-049 check; adaptation; corpus; all-batch vocabulary check; document build/check; unit tests with `ResourceWarning` as errors; authenticated source doctor; project diagnostics; `git diff --check`; exact ASD entry/page retrieval; authenticated page-398 visual findings; external RFC/PostgreSQL/RFC 6241 inspection; and fresh offset-0 count/queue recomputation are recorded in the handoff. Counts after the change are 2,196 total: 120 allowed, 1,500 restricted, 407 prohibited, 148 not-applicable, 21 needs-review.
+- Next action: stop after new-policy slice 15/36. A future separately authorized run must recompute offset 0 and inspect only `D-P413-005` / `D-P413-006`, batch 052, physical PDF page 413; do not start slice 16/36 here.

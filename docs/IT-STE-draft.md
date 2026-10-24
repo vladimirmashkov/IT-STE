@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 22,
+    "needs-review": 21,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1499
+    "restricted": 1500
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -147710,19 +147710,21 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SYNCHRONIZED; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: In agreement for specified data or timing within a stated tolerance or checkpoint\.
+Definition: Having the required correspondence for a named clock\, replicated data checkpoint\, or configuration datastore under a stated tolerance or commit condition\.
 
-Domains: data\-storage
+Domains: monitoring\-alerts, data\-storage, configuration
 
-Rationale: The extracted row has a warning and two senses\; data agreement and simultaneous operation must remain distinct\. Page 398 confirms the separate wrapped headword row and both examples\. RFC 5905 defines synchronization as reducing clock differences within stated error\/tolerance measures\, while PostgreSQL documents replication lag and synchronous commit as distinct data\-replication and durability conditions\; neither selects one bounded IT\-STE sense\. See docs\/it\-ste\-research\/W1\-D\-P398\-001\.md\.
+Rationale: The extracted row has a warning and two ASD senses\; simultaneous operation and agreement must remain separate\. Page 398 confirms the distinct wrapped row\, meanings\, examples\, and boundary before SYSTEM\. Apply the policy as a documented split proposal\: \(1\) a named system clock synchronized to a reference within an explicit error\/tolerance contract\; \(2\) a named replicated data set corresponding through an explicit WAL\/transaction\/checkpoint or visibility condition\; and \(3\) a named configuration datastore corresponding to a specified desired\/running\/candidate state under an explicit commit or validation condition\. RFC 5905 defines clock synchronization relative to UTC and quantifies offset\, dispersion\, jitter\, and synchronization distance\. PostgreSQL documents asynchronous lag\, synchronous confirmation\, WAL replay visibility\, and the fact that synchronization\/durability conditions are not generic equality\. RFC 6241 defines separate configuration datastores\, candidate\/running commit\, validation\, locking\, and rollback semantics\. The current schema cannot represent three independent profiles\, so retain one restricted record with the split proposal and do not imply zero lag\, equality\, correctness\, or durability\. See docs\/it\-ste\-research\/W1\-D\-P398\-001\.md\.
 
 Contextual alternatives:
 
-- at the same replication checkpoint
+- time\-synchronized within the stated tolerance
 
-- within the clock tolerance
+- corresponding at the named replication checkpoint
+
+- matching the specified configuration state
 
 #### Positive example
 
@@ -167580,7 +167582,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d7b67ea6a0609ebb41b18254f455906d95abb9e1f37943e69f8fb451b86e71cf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `a86b5f161d430bd429a77246227134b7c22612ab019a52e05a90b52edc3d56b4`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d660710f1602cca04a13d08199ea393e400e6a43c4bce80c3617f10e6c884eda`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 

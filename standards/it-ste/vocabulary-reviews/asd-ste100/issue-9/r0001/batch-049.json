@@ -668,15 +668,18 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "In agreement for specified data or timing within a stated tolerance or checkpoint.",
+      "it_disposition": "restricted",
+      "it_definition": "Having the required correspondence for a named clock, replicated data checkpoint, or configuration datastore under a stated tolerance or commit condition.",
       "domains": [
-        "data-storage"
+        "monitoring-alerts",
+        "data-storage",
+        "configuration"
       ],
-      "rationale": "The extracted row has a warning and two senses; data agreement and simultaneous operation must remain distinct. Page 398 confirms the separate wrapped headword row and both examples. RFC 5905 defines synchronization as reducing clock differences within stated error/tolerance measures, while PostgreSQL documents replication lag and synchronous commit as distinct data-replication and durability conditions; neither selects one bounded IT-STE sense. See docs/it-ste-research/W1-D-P398-001.md.",
+      "rationale": "The extracted row has a warning and two ASD senses; simultaneous operation and agreement must remain separate. Page 398 confirms the distinct wrapped row, meanings, examples, and boundary before SYSTEM. Apply the policy as a documented split proposal: (1) a named system clock synchronized to a reference within an explicit error/tolerance contract; (2) a named replicated data set corresponding through an explicit WAL/transaction/checkpoint or visibility condition; and (3) a named configuration datastore corresponding to a specified desired/running/candidate state under an explicit commit or validation condition. RFC 5905 defines clock synchronization relative to UTC and quantifies offset, dispersion, jitter, and synchronization distance. PostgreSQL documents asynchronous lag, synchronous confirmation, WAL replay visibility, and the fact that synchronization/durability conditions are not generic equality. RFC 6241 defines separate configuration datastores, candidate/running commit, validation, locking, and rollback semantics. The current schema cannot represent three independent profiles, so retain one restricted record with the split proposal and do not imply zero lag, equality, correctness, or durability. See docs/it-ste-research/W1-D-P398-001.md.",
       "permitted_contextual_alternatives": [
-        "at the same replication checkpoint",
-        "within the clock tolerance"
+        "time-synchronized within the stated tolerance",
+        "corresponding at the named replication checkpoint",
+        "matching the specified configuration state"
       ],
       "examples": {
         "positive": {
