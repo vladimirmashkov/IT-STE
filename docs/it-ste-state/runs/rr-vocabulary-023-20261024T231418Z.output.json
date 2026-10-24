@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-023-20261024T231418Z",
+  "status": "done",
+  "decision": "Recorded vocabulary batch 023 as an unchanged draft editorial review: 40 exact ASD rows were retrieved and structurally reviewed with 2 allowed, 25 restricted, 8 prohibited, and 5 not-applicable dispositions. All records remain status draft and review_status editorial-review-needed. No vocabulary approval, release, publication, conformance, or SFT authorization is implied.",
+  "evidence_refs": [
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-023.json",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/asd-doctor.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/exact-entry-retrievals.jsonl",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/batch-023-check.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/adaptation-check.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/corpus-check.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/vocabulary-check.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/document-build.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/document-check.log",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/tests.log"
+  ],
+  "changed_paths": [
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-vocabulary-023-20261024T231418Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-023-20261024T231418Z.output.json",
+    ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/"
+  ],
+  "validations": [
+    {
+      "name": "affected vocabulary batch check",
+      "status": "passed",
+      "result": "40 candidates; 2 allowed, 25 restricted, 8 prohibited, 5 not-applicable; 1276 remaining; next_entry_id D-P269-004",
+      "command": "python3 tools/it_ste_vocabulary.py check --batch standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-023.json --compact-json",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/batch-023-check.log"
+    },
+    {
+      "name": "exact ASD entry retrievals",
+      "status": "passed",
+      "result": "40/40 requested source IDs returned matching exact IDs",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/exact-entry-retrievals.jsonl"
+    },
+    {
+      "name": "ASD source doctor",
+      "status": "passed",
+      "result": "Authenticated derivative index and manifest; source PDF hash verified; 53 rules, 8 guidance blocks, 2196 dictionary rows",
+      "command": "python3 tools/asd_ste100_local.py doctor",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/asd-doctor.log"
+    },
+    {
+      "name": "adaptation check",
+      "status": "passed",
+      "result": "61 reviewed assessments; 31 planned IT-STE targets",
+      "command": "python3 tools/it_ste_adaptation.py check",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/adaptation-check.log"
+    },
+    {
+      "name": "corpus check",
+      "status": "passed",
+      "result": "31 draft pilot rules and canonical draft terms; structure and provenance only",
+      "command": "python3 tools/it_ste_corpus.py check",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/corpus-check.log"
+    },
+    {
+      "name": "aggregate vocabulary check",
+      "status": "passed",
+      "result": "2196 records across 55 batches; 120 allowed, 1510 restricted, 407 prohibited, 159 not-applicable; empty offset-0 queue",
+      "command": "python3 tools/it_ste_vocabulary.py check --compact-json",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/vocabulary-check.log"
+    },
+    {
+      "name": "document build",
+      "status": "passed",
+      "result": "Draft build completed; no release or vocabulary approval implied",
+      "command": "python3 tools/it_ste_document.py build",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/document-build.log"
+    },
+    {
+      "name": "document check",
+      "status": "passed",
+      "result": "Draft document check completed; no release or vocabulary approval implied",
+      "command": "python3 tools/it_ste_document.py check",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/document-check.log"
+    },
+    {
+      "name": "full test suite",
+      "status": "passed",
+      "result": "119 tests, OK",
+      "command": "python3 -W error::ResourceWarning -m unittest discover -s tests",
+      "log": ".local/it-ste-state/rr-vocabulary-023-20261024T231418Z/tests.log"
+    },
+    {
+      "name": "editor diagnostics",
+      "status": "passed",
+      "result": "No errors or warnings"
+    }
+  ],
+  "next": {
+    "action": "After finish and the authorized state/checkpoint commit, invoke it-ste-release-readiness resume to select vocabulary batch 024.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "scope": {
+      "kind": "vocabulary-batch",
+      "batch": "024"
+    },
+    "resume_policy": "auto"
+  }
+}
