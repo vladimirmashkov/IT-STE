@@ -2228,25 +2228,31 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "A chosen outcome reached through an identified evaluation, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "A recorded choice reached through an identified evaluation for a named IT design, operation, policy, or automated action; the decision is distinct from its execution and must not imply success or correctness.",
       "domains": [
+        "software-documentation",
+        "procedures-runbooks",
+        "configuration",
+        "security",
+        "cloud-infrastructure",
         "ai-automation",
         "logs-events"
       ],
-      "rationale": "Authenticated PDF visual inspection confirms that DECISION (n) is row 4 and that the appended REMOVE fragment belongs to the following decontamination row. The source boundary is resolved, but the proposed AI/logs decision sense needs substantive IT evidence and scope review. See `docs/it-ste-research/W1-D-P209.md`; keep this as draft/editorial-review-needed.",
+      "rationale": "Authenticated PDF visual inspection confirms that DECISION (n) is row 4 and that the appended REMOVE fragment belongs to the following decontamination row. ADR guidance defines an architectural decision as a justified design choice and supports decision records/logs for software and hardware; NIST AI RMF supports identified evaluation and governance contexts for AI systems. Apply this bounded sense only when the IT object or policy, evaluation basis, and responsible record are named; do not use it for an unexplained outcome, automatic correctness, or the execution itself. `restricted` is selected over `allowed` because the sense is polysemous and requires explicit decision/evidence boundaries; `prohibited` and `not-applicable` would reject evidenced IT uses. See `docs/it-ste-research/W1-D-P209.md`; this remains draft/editorial-review-needed.",
       "permitted_contextual_alternatives": [
         "selected outcome",
-        "recorded choice"
+        "recorded choice",
+        "architectural decision"
       ],
       "examples": {
         "positive": {
-          "text": "Record the decision, reviewer, and evidence before executing failover.",
-          "explanation": "Separates the choice from its execution and preserves provenance."
+          "text": "Record the decision, reviewer, evaluation basis, and evidence before executing failover.",
+          "explanation": "Names the decision record and separates the choice from execution without claiming that failover will succeed."
         },
         "problematic": {
-          "text": "The decision explains itself.",
-          "explanation": "Offers no basis, actor, or auditable reasoning."
+          "text": "The automated decision is correct.",
+          "explanation": "Claims correctness without naming criteria, evidence, actor, or evaluation scope."
         }
       },
       "evidence": {

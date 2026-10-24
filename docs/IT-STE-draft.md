@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 34,
+    "needs-review": 33,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1487
+    "restricted": 1488
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -39755,13 +39755,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: DECISION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: A chosen outcome reached through an identified evaluation\, provisionally\.
+Definition: A recorded choice reached through an identified evaluation for a named IT design\, operation\, policy\, or automated action\; the decision is distinct from its execution and must not imply success or correctness\.
 
-Domains: ai\-automation, logs\-events
+Domains: software\-documentation, procedures\-runbooks, configuration, security, cloud\-infrastructure, ai\-automation, logs\-events
 
-Rationale: Authenticated PDF visual inspection confirms that DECISION \(n\) is row 4 and that the appended REMOVE fragment belongs to the following decontamination row\. The source boundary is resolved\, but the proposed AI\/logs decision sense needs substantive IT evidence and scope review\. See \`docs\/it\-ste\-research\/W1\-D\-P209\.md\`\; keep this as draft\/editorial\-review\-needed\.
+Rationale: Authenticated PDF visual inspection confirms that DECISION \(n\) is row 4 and that the appended REMOVE fragment belongs to the following decontamination row\. ADR guidance defines an architectural decision as a justified design choice and supports decision records\/logs for software and hardware\; NIST AI RMF supports identified evaluation and governance contexts for AI systems\. Apply this bounded sense only when the IT object or policy\, evaluation basis\, and responsible record are named\; do not use it for an unexplained outcome\, automatic correctness\, or the execution itself\. \`restricted\` is selected over \`allowed\` because the sense is polysemous and requires explicit decision\/evidence boundaries\; \`prohibited\` and \`not\-applicable\` would reject evidenced IT uses\. See \`docs\/it\-ste\-research\/W1\-D\-P209\.md\`\; this remains draft\/editorial\-review\-needed\.
 
 Contextual alternatives:
 
@@ -39769,21 +39769,23 @@ Contextual alternatives:
 
 - recorded choice
 
+- architectural decision
+
 #### Positive example
 
 ```
-Record the decision, reviewer, and evidence before executing failover.
+Record the decision, reviewer, evaluation basis, and evidence before executing failover.
 ```
 
-Explanation: Separates the choice from its execution and preserves provenance\.
+Explanation: Names the decision record and separates the choice from execution without claiming that failover will succeed\.
 
 #### Problematic example
 
 ```
-The decision explains itself.
+The automated decision is correct.
 ```
 
-Explanation: Offers no basis\, actor\, or auditable reasoning\.
+Explanation: Claims correctness without naming criteria\, evidence\, actor\, or evaluation scope\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -167493,7 +167495,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `1d43e14e50a92b5c99fd950c80c53c3e23b4f65abb68d2ad2719f7ed61cc23cd`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `d7920fc97979ea745a2fcca7d07bd806bd7517b78195dee3091743cde2316f5f`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `c63a71273c6900a8b4641fb6836d03f4c2c41d7f7d5d2bccaeb3438fcc273ca8`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b42a3e32923d3092401ec29b77a0fd4b0a2b6287a5c88bd797129ace0161b49e`
 
