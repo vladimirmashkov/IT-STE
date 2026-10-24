@@ -34,7 +34,7 @@ class PilotIntegrationTests(unittest.TestCase):
         term_records = [corpus.load_json(snapshot / name) for name in term_names]
         self.assertEqual(rule_identifiers, {f"ITSTE-R-{number:04d}" for number in range(1, 32)})
         self.assertEqual({record["id"] for record in term_records},
-                         {f"ITSTE-T-{number:04d}" for number in range(1, 9)})
+                         {f"ITSTE-T-{number:04d}" for number in range(1, 11)})
         self.assertTrue(all(record["status"] == "draft" and record["origin"] == "original"
                             for record in term_records))
         self.assertTrue(all(
