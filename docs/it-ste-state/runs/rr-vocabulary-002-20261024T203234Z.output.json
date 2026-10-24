@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-002-20261024T203234Z",
+  "status": "stopped",
+  "decision": "Paused at the user-selected vocabulary-gate boundary before reviewing batch 002. No vocabulary disposition, canonical term, source row, approval, release, publication, conformance, or SFT decision was made.",
+  "evidence_refs": [
+    "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.input.json",
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-draft-handoff.md"
+  ],
+  "changed_paths": [],
+  "validations": [
+    {
+      "name": "resume state validation",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "batch 002 remains the exact next bounded vocabulary group; no batch content was changed"
+    }
+  ],
+  "next": {
+    "action": "Explicitly resume the vocabulary gate to review batch 002 one bounded group at a time; this is not vocabulary approval.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "scope": {
+      "kind": "vocabulary-batch",
+      "batch": "002",
+      "ids": [],
+      "paths": [
+        "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json"
+      ],
+      "excluded": []
+    },
+    "read_set": [
+      {
+        "path": "docs/it-ste-draft-handoff.md",
+        "selector": "#current-checkpoint-read-before-historical-baseline"
+      },
+      {
+        "path": "docs/it-ste-release-readiness-plan.md",
+        "selector": "#current-checkpoint"
+      },
+      {
+        "path": "docs/it-ste-research-method.md",
+        "selector": "#bounded-research-and-decision-loop"
+      },
+      {
+        "path": "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json",
+        "selector": "$"
+      }
+    ],
+    "allowed_paths": [
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/selector.json",
+      "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.input.json",
+      "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.output.json",
+      "docs/it-ste-draft-handoff.md",
+      "docs/it-ste-release-readiness-plan.md",
+      "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json"
+    ],
+    "resume_policy": "auto"
+  },
+  "commit": {
+    "authorized": true,
+    "mode": "auto",
+    "message": "Pause at vocabulary gate",
+    "paths": [
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/selector.json",
+      "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.input.json",
+      "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.output.json"
+    ]
+  }
+}

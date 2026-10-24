@@ -2,16 +2,20 @@
   "schema": 1,
   "workflow": "it-ste-release-readiness",
   "branch": "remediation/release-readiness",
-  "status": "ready",
+  "status": "stopped",
   "phase": "vocabulary",
   "skill": "it-ste-vocabulary-gate-slice",
   "selector": "docs/it-ste-state/selector.json",
   "resume_policy": "auto",
   "active_run": null,
   "scope": {
-    "kind": "automatic-selector",
-    "phase": "vocabulary",
-    "cursor": 1
+    "kind": "vocabulary-batch",
+    "batch": "002",
+    "ids": [],
+    "paths": [
+      "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json"
+    ],
+    "excluded": []
   },
   "read_set": [
     {
@@ -25,11 +29,20 @@
     {
       "path": "docs/it-ste-research-method.md",
       "selector": "#bounded-research-and-decision-loop"
+    },
+    {
+      "path": "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json",
+      "selector": "$"
     }
   ],
   "allowed_paths": [
     "docs/it-ste-state/current.json",
-    "docs/it-ste-state/selector.json"
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.output.json",
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json"
   ],
   "counts": {
     "records": 2196,
@@ -42,14 +55,14 @@
     "queue": "empty",
     "source": "checkpoint; recompute before use"
   },
-  "next_action": "Automatically select the next vocabulary slice from selector.json.",
+  "next_action": "Explicitly resume the vocabulary gate to review batch 002 one bounded group at a time; this is not vocabulary approval.",
   "authorization": {
     "auto_commit": "per-resume-invocation"
   },
   "last_run": {
-    "id": "rr-vocabulary-001-20261024T202742Z",
-    "input": "docs/it-ste-state/runs/rr-vocabulary-001-20261024T202742Z.input.json",
-    "output": "docs/it-ste-state/runs/rr-vocabulary-001-20261024T202742Z.output.json"
+    "id": "rr-vocabulary-002-20261024T203234Z",
+    "input": "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.input.json",
+    "output": "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.output.json"
   },
-  "last_output": "docs/it-ste-state/runs/rr-vocabulary-001-20261024T202742Z.output.json"
+  "last_output": "docs/it-ste-state/runs/rr-vocabulary-002-20261024T203234Z.output.json"
 }
