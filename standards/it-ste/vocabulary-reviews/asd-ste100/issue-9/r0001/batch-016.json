@@ -1907,24 +1907,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Concerning electricity in physical hardware or its supply.",
+      "it_disposition": "restricted",
+      "it_definition": "Concerning electricity in a named IT device, component, circuit, power connection, or supply; this does not state electrical safety or regulatory compliance.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The extracted cell includes the start of the adjacent adverb definition; alignment needs review.",
+      "rationale": "The authenticated PDF confirms a separate ELECTRICAL (adj) row with the meaning Related to electricity; the extracted adjacent-adverb fragment is a row-boundary artifact. HSE describes electrical hazards, equipment testing, standards, and controls, while NIST Electronics covers electronic components and power grids. With physical IT included in policy, retain this restricted draft sense only for a named IT hardware object or electrical supply/property; it does not assert electrical safety, engineering approval, or regulatory compliance. See docs/it-ste-research/W1-D-P230.md.",
       "permitted_contextual_alternatives": [
-        "power-related",
-        "concerning electricity"
+        "related to electrical power",
+        "concerning the named electrical property"
       ],
       "examples": {
         "positive": {
-          "text": "The electrical inspection includes the rack power connections.",
-          "explanation": "Gives a provisional physical scope."
+          "text": "Measure the electrical input at the server power connection before the hardware test.",
+          "explanation": "Names an IT hardware object and an electrical property without claiming a safety certification."
         },
         "problematic": {
           "text": "The electrical configuration key is secure.",
-          "explanation": "Does not identify an electrical property or security control."
+          "explanation": "Applies a physical electrical adjective to software metadata and makes no meaningful hardware claim."
         }
       },
       "evidence": {
@@ -1968,24 +1968,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "By means of electrical power or an electrical connection.",
+      "it_disposition": "restricted",
+      "it_definition": "By means of electricity or an electrical connection in a named IT device, component, circuit, or control; this does not state electrical safety or regulatory compliance.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "Wrapped-headword warning and trailing adjacent-row fragment require source review.",
+      "rationale": "The authenticated PDF confirms the wrapped ELECTRICALLY (adv) row with the meaning Related to or operated by electricity; ELECTROMAGNETIC begins the next row. HSE covers physical electrical equipment and controls, and NIST Electronics covers electronic components and power systems. With physical IT included in policy, retain this restricted draft sense only when the named IT hardware mechanism or connection is explicit; it does not assert electrical safety, engineering approval, or regulatory compliance. See docs/it-ste-research/W1-D-P230.md.",
       "permitted_contextual_alternatives": [
-        "by electrical power",
-        "through an electrical connection"
+        "using the named electrical connection",
+        "by electrical power"
       ],
       "examples": {
         "positive": {
-          "text": "The latch is electrically operated by the test controller.",
-          "explanation": "Names a provisional actuation mechanism."
+          "text": "The storage device is electrically controlled by the hardware controller.",
+          "explanation": "Names an IT hardware mechanism and avoids implying a safety or compliance result."
         },
         "problematic": {
           "text": "The file is electrically valid.",
-          "explanation": "Provides no meaningful electrical property of stored data."
+          "explanation": "Applies a physical mechanism adverb to stored data without naming an electrical hardware operation."
         }
       },
       "evidence": {

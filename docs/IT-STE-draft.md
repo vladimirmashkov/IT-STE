@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 32,
+    "needs-review": 30,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1489
+    "restricted": 1491
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -51276,27 +51276,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: ELECTRICAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Concerning electricity in physical hardware or its supply\.
+Definition: Concerning electricity in a named IT device\, component\, circuit\, power connection\, or supply\; this does not state electrical safety or regulatory compliance\.
 
 Domains: procedures\-runbooks
 
-Rationale: The extracted cell includes the start of the adjacent adverb definition\; alignment needs review\.
+Rationale: The authenticated PDF confirms a separate ELECTRICAL \(adj\) row with the meaning Related to electricity\; the extracted adjacent\-adverb fragment is a row\-boundary artifact\. HSE describes electrical hazards\, equipment testing\, standards\, and controls\, while NIST Electronics covers electronic components and power grids\. With physical IT included in policy\, retain this restricted draft sense only for a named IT hardware object or electrical supply\/property\; it does not assert electrical safety\, engineering approval\, or regulatory compliance\. See docs\/it\-ste\-research\/W1\-D\-P230\.md\.
 
 Contextual alternatives:
 
-- power\-related
+- related to electrical power
 
-- concerning electricity
+- concerning the named electrical property
 
 #### Positive example
 
 ```
-The electrical inspection includes the rack power connections.
+Measure the electrical input at the server power connection before the hardware test.
 ```
 
-Explanation: Gives a provisional physical scope\.
+Explanation: Names an IT hardware object and an electrical property without claiming a safety certification\.
 
 #### Problematic example
 
@@ -51304,7 +51304,7 @@ Explanation: Gives a provisional physical scope\.
 The electrical configuration key is secure.
 ```
 
-Explanation: Does not identify an electrical property or security control\.
+Explanation: Applies a physical electrical adjective to software metadata and makes no meaningful hardware claim\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -51349,27 +51349,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: ELECTRICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: By means of electrical power or an electrical connection\.
+Definition: By means of electricity or an electrical connection in a named IT device\, component\, circuit\, or control\; this does not state electrical safety or regulatory compliance\.
 
 Domains: procedures\-runbooks
 
-Rationale: Wrapped\-headword warning and trailing adjacent\-row fragment require source review\.
+Rationale: The authenticated PDF confirms the wrapped ELECTRICALLY \(adv\) row with the meaning Related to or operated by electricity\; ELECTROMAGNETIC begins the next row\. HSE covers physical electrical equipment and controls\, and NIST Electronics covers electronic components and power systems\. With physical IT included in policy\, retain this restricted draft sense only when the named IT hardware mechanism or connection is explicit\; it does not assert electrical safety\, engineering approval\, or regulatory compliance\. See docs\/it\-ste\-research\/W1\-D\-P230\.md\.
 
 Contextual alternatives:
 
-- by electrical power
+- using the named electrical connection
 
-- through an electrical connection
+- by electrical power
 
 #### Positive example
 
 ```
-The latch is electrically operated by the test controller.
+The storage device is electrically controlled by the hardware controller.
 ```
 
-Explanation: Names a provisional actuation mechanism\.
+Explanation: Names an IT hardware mechanism and avoids implying a safety or compliance result\.
 
 #### Problematic example
 
@@ -51377,7 +51377,7 @@ Explanation: Names a provisional actuation mechanism\.
 The file is electrically valid.
 ```
 
-Explanation: Provides no meaningful electrical property of stored data\.
+Explanation: Applies a physical mechanism adverb to stored data without naming an electrical hardware operation\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -167503,7 +167503,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json` SHA-256: `dae8a3c05877aa6846527c01060f4f6ab51addb8605fdbca9bde71cf736c3e9c`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `1b7558717a08fe4ea4de180eaab85e653738eaf124670468ff6740c55fc6ff5a`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json` SHA-256: `7eb33cdd649559a772ba7864a304a4006a9477f684e0ccb20a3881de9c576299`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-017.json` SHA-256: `7a57946b872c6f13395df2c14f9574440f6f862f58c4359aaec334b53fc70ac9`
 
