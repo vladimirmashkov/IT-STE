@@ -2296,24 +2296,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Removal of unwanted physical substances under an identified maintenance procedure, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Removal of physical contamination from a named IT component, surface, device, or connector under a documented maintenance procedure; not media sanitization, cloud data deletion, or malware remediation.",
       "domains": [
-        "cloud-infrastructure"
+        "procedures-runbooks"
       ],
-      "rationale": "Authenticated PDF visual inspection confirms that decontamination (n) is row 5 with the wrapped headword and the alternatives REMOVE CONTAMINATION and CLEAN (v); the preceding REMOVE fragment is part of this row, not the DECISION definition. The physical source sense is bounded, but the cloud-infrastructure scope and possible malware/data-sanitization senses need substantive evidence. See `docs/it-ste-research/W1-D-P209.md`; keep this as draft/editorial-review-needed.",
+      "rationale": "Authenticated PDF visual inspection confirms that decontamination (n) is row 5 with the wrapped headword and the alternatives REMOVE CONTAMINATION and CLEAN (v); the preceding REMOVE fragment is part of this row, not the DECISION definition. The policy permits physical IT only for a named component or documented procedure. Apple documents cleaning procedures and restrictions for computer hardware, displays, peripherals, and cables, which supports a bounded physical-maintenance sense. NIST SP 800-88 Rev. 2 defines media sanitization as making access to target data infeasible, and AWS documents cloud data protection separately; neither supports extending decontamination to media sanitization, cloud deletion, or malware response. `restricted` is therefore justified for physical IT maintenance only; see `docs/it-ste-research/W1-D-P209.md`.",
       "permitted_contextual_alternatives": [
-        "removal of physical residue",
-        "hardware cleaning under the stated procedure"
+        "removal of physical residue from the named hardware",
+        "hardware cleaning under the stated maintenance procedure"
       ],
       "examples": {
         "positive": {
           "text": "Record completion of the connector decontamination procedure before inspection.",
-          "explanation": "Names a bounded physical procedure and follow-up."
+          "explanation": "Names the physical IT object, maintenance procedure, and follow-up."
         },
         "problematic": {
           "text": "Run decontamination on every customer account.",
-          "explanation": "Does not identify a substance, software threat, or permissible operation."
+          "explanation": "Applies a physical-maintenance term to cloud data without a named physical object or procedure."
         }
       },
       "evidence": {

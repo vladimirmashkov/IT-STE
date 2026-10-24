@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 33,
+    "needs-review": 32,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1488
+    "restricted": 1489
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -39830,19 +39830,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: decontamination; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Removal of unwanted physical substances under an identified maintenance procedure\, provisionally\.
+Definition: Removal of physical contamination from a named IT component\, surface\, device\, or connector under a documented maintenance procedure\; not media sanitization\, cloud data deletion\, or malware remediation\.
 
-Domains: cloud\-infrastructure
+Domains: procedures\-runbooks
 
-Rationale: Authenticated PDF visual inspection confirms that decontamination \(n\) is row 5 with the wrapped headword and the alternatives REMOVE CONTAMINATION and CLEAN \(v\)\; the preceding REMOVE fragment is part of this row\, not the DECISION definition\. The physical source sense is bounded\, but the cloud\-infrastructure scope and possible malware\/data\-sanitization senses need substantive evidence\. See \`docs\/it\-ste\-research\/W1\-D\-P209\.md\`\; keep this as draft\/editorial\-review\-needed\.
+Rationale: Authenticated PDF visual inspection confirms that decontamination \(n\) is row 5 with the wrapped headword and the alternatives REMOVE CONTAMINATION and CLEAN \(v\)\; the preceding REMOVE fragment is part of this row\, not the DECISION definition\. The policy permits physical IT only for a named component or documented procedure\. Apple documents cleaning procedures and restrictions for computer hardware\, displays\, peripherals\, and cables\, which supports a bounded physical\-maintenance sense\. NIST SP 800\-88 Rev\. 2 defines media sanitization as making access to target data infeasible\, and AWS documents cloud data protection separately\; neither supports extending decontamination to media sanitization\, cloud deletion\, or malware response\. \`restricted\` is therefore justified for physical IT maintenance only\; see \`docs\/it\-ste\-research\/W1\-D\-P209\.md\`\.
 
 Contextual alternatives:
 
-- removal of physical residue
+- removal of physical residue from the named hardware
 
-- hardware cleaning under the stated procedure
+- hardware cleaning under the stated maintenance procedure
 
 #### Positive example
 
@@ -39850,7 +39850,7 @@ Contextual alternatives:
 Record completion of the connector decontamination procedure before inspection.
 ```
 
-Explanation: Names a bounded physical procedure and follow\-up\.
+Explanation: Names the physical IT object\, maintenance procedure\, and follow\-up\.
 
 #### Problematic example
 
@@ -39858,7 +39858,7 @@ Explanation: Names a bounded physical procedure and follow\-up\.
 Run decontamination on every customer account.
 ```
 
-Explanation: Does not identify a substance\, software threat\, or permissible operation\.
+Explanation: Applies a physical\-maintenance term to cloud data without a named physical object or procedure\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -167495,7 +167495,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `1d43e14e50a92b5c99fd950c80c53c3e23b4f65abb68d2ad2719f7ed61cc23cd`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `c63a71273c6900a8b4641fb6836d03f4c2c41d7f7d5d2bccaeb3438fcc273ca8`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `a2a2e6b3c09eed25f5f6cbe925d3ac67b62cc97e9f84406f6d70d1f15c563774`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b42a3e32923d3092401ec29b77a0fd4b0a2b6287a5c88bd797129ace0161b49e`
 
