@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 120, "restricted": 1496, "prohibited": 407,
-                             "not-applicable": 148, "needs-review": 25},
+            "dispositions": {"allowed": 120, "restricted": 1498, "prohibited": 407,
+                             "not-applicable": 148, "needs-review": 23},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -191,9 +191,12 @@ class VocabularyTests(unittest.TestCase):
         self.assertIn("configured URL-to-file mapping", serve["it_definition"])
         self.assertIn("HEAD, conditional responses and errors", serve["rationale"])
         serviceability = by_id["D-P374-005"]
-        self.assertEqual(serviceability["it_disposition"], "needs-review")
-        self.assertIn("not a complete operating-acceptance criterion", serviceability["rationale"])
-        self.assertIn("not proof of every operating requirement", serviceability["examples"]["positive"]["explanation"])
+        self.assertEqual(serviceability["it_disposition"], "restricted")
+        self.assertIn("Physical IT/support is in scope", serviceability["rationale"])
+        self.assertIn("does not claim", serviceability["examples"]["positive"]["explanation"])
+        serviceable = by_id["D-P374-006"]
+        self.assertEqual(serviceable["it_disposition"], "restricted")
+        self.assertIn("named IT hardware operation", serviceable["it_definition"])
         for decision in (serve, serviceability):
             self.assertTrue(decision["evidence"]["mechanical_ambiguities"])
             self.assertTrue(decision["evidence"]["pdf_layout_check"]["visual_verification_performed"])

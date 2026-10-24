@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 25,
+    "needs-review": 23,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1496
+    "restricted": 1498
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -132285,13 +132285,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: serviceability; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Provisionally\, the condition of meeting a hardware component\'s operating requirements\.
+Definition: Condition in which a named IT hardware component meets its applicable operating and acceptance requirements under the specified procedure\.
 
 Domains: general
 
-Rationale: Authenticated page 374 resolves the overlap\: SERVICEABLE belongs to this noun row\; Correct or satisfactory belongs to the next adjective row\. Lenovo\'s fan procedure establishes seating and installation constraints\, not a complete operating\-acceptance criterion\. Keep needs\-review until a named hardware component\'s full applicable requirements and the intended noun scope are established\; selected checks alone do not prove general fitness or future reliability\. See docs\/it\-ste\-research\/W1\-D\-P374\.md\.
+Rationale: Authenticated page 374 resolves the overlap\: SERVICEABLE belongs to this noun row\; Correct or satisfactory belongs to the next adjective row\. Physical IT\/support is in scope\, so retain a restricted sense for a named component assessed under its applicable operating and acceptance procedure\. Do not generalize a component\'s criteria\, treat installation or selected operating checks as complete acceptance\, imply compatibility\, or guarantee future reliability\. See docs\/it\-ste\-research\/W1\-D\-P374\.md\.
 
 Contextual alternatives:
 
@@ -132302,10 +132302,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Record whether the replacement fan passes its operating checks.
+Record the replacement fan's serviceability against the named procedure's operating and acceptance criteria.
 ```
 
-Explanation: Records only the named checks\' result\; the applicable procedure must identify them and their limits\. Passing selected checks is not proof of every operating requirement\, future reliability or complete serviceability\.
+Explanation: Names the component and governing criteria\. The record does not claim that selected checks prove every operating requirement\, compatibility\, complete serviceability or future reliability\.
 
 #### Problematic example
 
@@ -132359,13 +132359,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SERVICEABLE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Fit for a specified IT hardware operation under stated acceptance criteria\.
+Definition: Fit for a named IT hardware operation under the applicable acceptance criteria and procedure\.
 
 Domains: general
 
-Rationale: Visual verification resolves the wrapped\-headword and adjacent\-row ambiguity\: SERVICEABLE \(adj\) is a separate row with the approved meaning Correct or satisfactory\. A draft IT use may be restricted to a named component and documented acceptance criteria\; it must not imply compatibility or full operating acceptance\. The noun\'s scope remains unresolved\; see the page\-374 research note\.
+Rationale: Visual verification resolves the wrapped\-headword and adjacent\-row ambiguity\: SERVICEABLE \(adj\) is a separate row with the approved meaning Correct or satisfactory\. Physical IT\/support is in scope\, and the adjective can therefore be restricted to a named component\, operation and applicable acceptance procedure\. It must not imply universal compatibility\, complete operating acceptance from selected checks\, or future reliability\; see the page\-374 research note\.
 
 Contextual alternatives:
 
@@ -132376,10 +132376,10 @@ Contextual alternatives:
 #### Positive example
 
 ```
-Use a power supply that passes the specified load test.
+Use a power supply that is serviceable for the specified server operation under the documented load criteria.
 ```
 
-Explanation: Gives an acceptance criterion\.
+Explanation: Names the operation and applicable criterion\; serviceable does not establish compatibility with every server or complete acceptance beyond the documented scope\.
 
 #### Problematic example
 
@@ -167569,7 +167569,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `8663e22d801977f746a5c34f01e969443d914c5ed297972193ae751389290f6f`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `967b2b8c2c9152f44667627c540866d950b593faed8a1af737cf35ddcf525af0`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-045.json` SHA-256: `d491be2d4151ec0a1b2e1ca3c882f994af514f9926a19f808a712d69ae3ea619`
 
