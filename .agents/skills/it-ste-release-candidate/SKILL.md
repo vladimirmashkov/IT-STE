@@ -10,7 +10,7 @@ Use only when the dispatcher supplies an exact candidate input, the branch is `r
 
 ## Compact contract
 
-1. Read `current.json` and one input containing candidate scope/version, exact manifest/hash set, passing gate output references, read set, allowlist, clean baseline, and explicit commit authorization. Missing/stale gates are an immediate `blocked` output; do not scan all history.
+1. Read `current.json` and one explicitly authorized input containing candidate scope/version, exact manifest/hash set, passing gate output references, read set, allowlist, clean baseline, and commit authorization. The automatic selector stops before this input; missing/stale gates are an immediate `blocked` output; do not scan all history.
 2. Inspect only the exact candidate files/hashes and the specific release/catalog tooling commands identified by the input. Do not guess version semantics or read an entire tooling tree.
 3. Re-run the affected and standard checks from the compact protocol, ASD doctor, diagnostics, and Git review. Generate artifacts only through repository tooling; keep draft notices, ASD ownership, source rights, language scope, and limitations. Never copy the private PDF, local renderings, or protected external text.
 4. Write one compact output with candidate manifest/hash refs, validation statuses, exact changed paths, and `release-candidate` decision; run `finish`. Commit one explicit-path package only when all preconditions and input authorization pass.

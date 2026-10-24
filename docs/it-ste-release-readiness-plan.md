@@ -7,9 +7,9 @@ This plan governs the branch `remediation/release-readiness`. It is an execution
 - Base state: W3 ITIL/service-management inventory is bounded and complete through `ITSTE-T-0018`; the branch starts from commit `99c1091`.
 - Canonical state: 2,196 ASD records across 55 batches; `120 allowed`, `1,510 restricted`, `407 prohibited`, `159 not-applicable`, `0 needs-review`; offset-0 queue is empty. These are structural draft dispositions, not approval.
 - Draft state: 31 canonical rules and 18 original IT-only terms remain `draft`; canonical English coverage is `partial`; external PeopleCert metadata is `reference-only`; the release catalog is unreleased.
-- Active phase: Phase 1 W2 editorial/technical review after completed bootstrap. The next bounded work must be selected explicitly from a W2 thematic slice or, by deliberate choice, Phase 2 vocabulary review.
-- Exact next action: run `it-ste-release-readiness resume`; it reads only `docs/it-ste-state/current.json` and returns `needs-scope` until one explicit Phase 1 W2 theme/ID set is supplied. Use `resume --phase=w2 --scope=<stable-theme-or-IDs>` or create the bounded input; use `resume --iterations=N` only for a deliberately bounded sequential run. Do not begin a release candidate until Phases 1–5 have recorded passing gates.
-- State source: `docs/it-ste-state/current.json` plus the selected run input/output, the root `AGENTS.md`, and only selectors named by that input. Do not reconstruct progress from chat history or scan the full plan/history.
+- Active phase: Phase 1 W2 editorial/technical review after completed bootstrap. The next bounded work is selected deterministically by `docs/it-ste-state/selector.json`; it must not be reconstructed from chat or history.
+- Exact next action: run `it-ste-release-readiness resume`; it reads only compact state, automatically selects the next bounded slice from `docs/it-ste-state/selector.json`, and repeats until the first blocker/owner decision or safety boundary. `resume --iterations=N` is only an optional upper bound; a later resume continues from the same cursor. Do not begin a release candidate until Phases 1–5 have recorded passing gates.
+- State source: `docs/it-ste-state/current.json`, `selector.json`, and the selected run input/output, plus only selectors named by that input. Do not reconstruct progress from chat history or scan the full plan/history.
 
 ## Objective
 

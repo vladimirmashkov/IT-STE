@@ -16,7 +16,7 @@ Use under `it-ste-release-readiness` or for an explicitly bounded W2 request. Th
 
 ## Method
 
-1. Start the input with `tools/it_ste_resume.py begin`; capture the baseline and recompute canonical counts/queue.
+1. Confirm that `current.json.active_run` points to this input; dispatcher `next` already activated it. Use `begin` only for a manually supplied recovery input. Capture the baseline and recompute canonical counts/queue.
 2. Inspect only the selected records and competent primary/expert sources. Fetch sources directly; record URL, publisher, version/date, section, finding, competence, limitation, and fact-versus-inference.
 3. Compare current wording with alternatives, including unchanged wording. Preserve technical meaning, actors, conditions, modality, limits, safety/security context, schema, IDs, source pins, rights, `status: draft`, and `review_status: editorial-review-needed`.
 4. Maintain one compact active note, normally `docs/it-ste-research/W2-editorial-review.md`. Do not touch ASD rows merely to add an IT sense and never hand-edit generated Markdown.

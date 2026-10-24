@@ -10,8 +10,8 @@ Use under `it-ste-release-readiness` or for one explicit scope: `rights`, `langu
 
 ## Compact execution
 
-1. Read `current.json` and one input with exact `phase`, gate scope, question, criteria, read set, allowlist, baseline, and per-run commit authorization. If scope/input is missing, return `needs-scope` without reading the full plan or source registry.
-2. Run `begin`, require branch/clean ownership rules, and inspect only the relevant manifest, source metadata, gate note, generated artifact/hash, and directly fetched competent sources named in the input.
+1. Read `current.json` and the dispatcher-created input with exact `phase`, gate scope, question, criteria, read set, allowlist, baseline, and per-run commit authorization. `next` already activated it; if the selector stops, return the recorded `needs-scope` without reading the full plan or source registry.
+2. Require branch/clean ownership rules and inspect only the relevant manifest, source metadata, gate note, generated artifact/hash, and directly fetched competent sources named in the input.
 3. Evaluate exactly one gate:
    - `rights`: ASD derivative permission/attribution, original IT-STE rights, external URL/version/scope/downstream rights, copied-text exclusion, and manifest/source consistency;
    - `language`: required release languages, translation inventory/review/equivalence, English authority, and representability of `partial` coverage;

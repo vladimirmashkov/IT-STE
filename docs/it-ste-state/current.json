@@ -2,12 +2,14 @@
   "schema": 1,
   "workflow": "it-ste-release-readiness",
   "branch": "remediation/release-readiness",
-  "status": "needs-scope",
+  "status": "ready",
   "phase": "w2",
   "skill": "it-ste-w2-editorial-slice",
+  "selector": "docs/it-ste-state/selector.json",
+  "resume_policy": "auto",
   "active_run": null,
   "scope": {
-    "kind": "w2-theme",
+    "kind": "automatic-selector",
     "theme": null,
     "ids": [],
     "paths": [],
@@ -28,9 +30,8 @@
     }
   ],
   "allowed_paths": [
-    "docs/it-ste-research/W2-editorial-review.md",
-    "docs/it-ste-draft-handoff.md",
-    "docs/it-ste-release-readiness-plan.md"
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/selector.json"
   ],
   "counts": {
     "records": 2196,
@@ -43,9 +44,9 @@
     "queue": "empty",
     "source": "checkpoint; recompute before use"
   },
-  "next_action": "Provide one explicit W2 theme or exact IDs, create a run input, and do not infer scope from history.",
+  "next_action": "Automatically select the next W2 slice from selector.json; stop only at a blocker, owner gate, or candidate authorization boundary.",
   "authorization": {
-    "auto_commit": "explicit-per-run"
+    "auto_commit": "per-resume-invocation"
   },
   "last_run": null,
   "last_output": null
