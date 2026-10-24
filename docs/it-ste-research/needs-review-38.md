@@ -51,6 +51,18 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 21/38 — batch052 / physical PDF page 417
+
+- `D-P417-008` (`unscrew`, v) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `Release a threaded fastener by turning it, usually to loosen or remove it.` New draft IT wording: unchanged; retained because the evidence supports a bounded physical threaded-fastener operation and does not justify a broader rotation/change/remove sense.
+
+- `D-P417-009` (`UNSERVICEABLE`, adj) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `Not fit for its intended equipment function.` New draft IT wording: unchanged; retained because the evidence supports an equipment-function boundary but does not justify extending the hardware-oriented source sense to every degraded software service.
+
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, physical PDF page 417 / printed page `2-1-U5`, exact locators `entry D-P417-008` and `entry D-P417-009`, sequences 2078–2079, rows 8–9, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Exact retrieval identifies `unscrew (v)` with alternatives `LOOSEN (v)`, `TURN (v)`, and `REMOVE (v)`, and `UNSERVICEABLE (adj)` with `Not fit for its purpose`. Authenticated page rendering inspected on 2026-10-24 confirms row 8's separation from row 9 and row 9's separation from `unstable`; the retained `wrapped-headword` warning is extraction evidence, not a source approval decision.
+
+- External evidence actually inspected: NIST SP 800-160 Vol. 1 Rev. 1 (November 2022) for bounded engineering component/function terminology, and 14 CFR §43.13 as reproduced by Cornell LII, which requires manufacturer instructions or acceptable maintenance methods/tools/equipment/test apparatus and preservation of an aircraft/component's original or properly altered condition. The latter is a reliable hardware-maintenance/serviceability source but aviation-specific; neither source defines ASD vocabulary or controls disposition. The attempted eCFR §43.10 page returned an automated-access challenge and is not used as evidence.
+
+- Rationale: retaining the current wording and unresolved dispositions is the best-supported draft outcome. `unscrew` remains limited to releasing a threaded fastener, while `UNSERVICEABLE` remains limited to fitness for an intended equipment function. The additional hardware-serviceability evidence strengthens the boundary rationale but does not justify a disposition change, approval, release, or SFT readiness. See [W1-D-P417-008-009](W1-D-P417-008-009.md).
+
 ### Resolution slice 20/38 — batch052 / physical PDF page 417
 
 - `D-P417-006` (`UNSATISFAC- TORILY`, adv) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `In a manner that does not meet a stated requirement or acceptance criterion.` New draft IT wording: unchanged; retained because the evidence supports a named, observable requirement or acceptance criterion and does not support an unrestricted quality judgment.
