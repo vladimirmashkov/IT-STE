@@ -4216,19 +4216,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Apply the principle to IT roles, accessibility, and unsupported assumptions about personal characteristics.",
+          "rationale": "Apply the principle to IT roles, accessibility, and unsupported assumptions about personal characteristics; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Inclusive technical communication avoids bias and uses respectful, non-discriminatory descriptions of people.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Respect known pronouns, permit relevant accurate personal characteristics, and use neutral role terms or singular they when gender is unknown or irrelevant rather than impose a blanket ban.",
+          "rationale": "Respect known pronouns, permit relevant accurate personal characteristics, and use neutral role terms or singular they when gender is unknown or irrelevant rather than impose a blanket ban; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source excludes gender-specific pronouns and restricts gendered person terms to necessary contexts.",
           "target_field": "exceptions"
         },
         {
           "disposition": "adapt",
-          "rationale": "Require applicable accessibility and inclusion guidance while preserving exact names and external syntax through explicit mappings and escalation of conflicts.",
+          "rationale": "Require applicable accessibility and inclusion guidance while preserving exact names and external syntax through explicit mappings and escalation of conflicts; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source refers writers to applicable international, national, company, or industry inclusion guidance.",
           "target_field": "text"
         }
@@ -168753,7 +168753,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0030.json` SHA-256: `c5567608e7d674e54cf5cb3becdeb1e297a945f9580a3c4d95723bde06135410`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0031.json` SHA-256: `fb6e9b3bd6e89e267e9db206fa9161008febb649dbd91c474d820de89bf57729`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0031.json` SHA-256: `310cbb4d4a62ac5ec20276f888399b584324c27439e485fbbaaefe1f70872903`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/terms/ITSTE-T-0001.json` SHA-256: `a4df62a626abb029a777ec5d401f6432cd32578eb9cdcf0dd22d9cb75845ff6b`
 

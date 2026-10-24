@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "run_id": "rr-w2-031-20261024T202302Z",
+  "status": "done",
+  "decision": "Resolved as draft: retain ITSTE-R-0031 normative text, examples, rights metadata, and source pins; record respectful-language, known-pronoun, accessibility-guidance, exact-name, and mapping boundaries through the research note, with no vocabulary approval or release authorization.",
+  "evidence_refs": [
+    "docs/it-ste-research/W2-editorial-review.md",
+    "ASD-STE100 Issue 9, authenticated derivative r0001, source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; guidance GR-7",
+    "https://developers.google.com/style/word-list",
+    "https://developers.google.com/tech-writing/one/audience",
+    ".local/it-ste-state/rr-w2-031-20261024T202302Z/"
+  ],
+  "changed_paths": [
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0031.json",
+    "docs/it-ste-research/W2-editorial-review.md",
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/IT-STE-draft.md"
+  ],
+  "validations": [
+    {
+      "name": "it_ste_adaptation.py check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/adaptation-check.log"
+    },
+    {
+      "name": "it_ste_corpus.py check",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "31 draft pilot rules and canonical draft terms; structure and provenance only",
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/corpus-check.log"
+    },
+    {
+      "name": "it_ste_vocabulary.py check --compact-json",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "2196 records; 120 allowed, 1510 restricted, 407 prohibited, 159 not-applicable; 0 remaining",
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/vocabulary-check.json"
+    },
+    {
+      "name": "it_ste_document.py build",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/document-build.log"
+    },
+    {
+      "name": "it_ste_document.py check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/document-check.log"
+    },
+    {
+      "name": "asd_ste100_local.py doctor",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "Issue 9 derivative authenticated; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431",
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/asd-doctor.log"
+    },
+    {
+      "name": "unittest discover",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "119 tests, OK",
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/unittest.log"
+    },
+    {
+      "name": "project diagnostics",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "no errors or warnings"
+    },
+    {
+      "name": "git diff --check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-w2-031-20261024T202302Z/diff-check.log"
+    }
+  ],
+  "next": {
+    "action": "After finish and the authorized slice commit, invoke it-ste-release-readiness next to expose the vocabulary phase boundary.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "scope": {
+      "kind": "automatic-selector",
+      "phase": "vocabulary",
+      "cursor": 0
+    },
+    "resume_policy": "auto"
+  },
+  "commit": {
+    "authorized": true,
+    "mode": "auto",
+    "message": "Review inclusive language rule",
+    "paths": [
+      "docs/IT-STE-draft.md",
+      "docs/it-ste-draft-handoff.md",
+      "docs/it-ste-release-readiness-plan.md",
+      "docs/it-ste-research/W2-editorial-review.md",
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/selector.json",
+      "docs/it-ste-state/runs/rr-w2-031-20261024T202302Z.input.json",
+      "docs/it-ste-state/runs/rr-w2-031-20261024T202302Z.output.json",
+      "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0031.json"
+    ]
+  }
+}
