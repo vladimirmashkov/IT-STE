@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-001-20261024T202742Z",
+  "status": "done",
+  "decision": "Recorded batch 001 as an unchanged draft vocabulary review: 40 exact ASD rows were retrieved and structurally reviewed; dispositions remain 1 allowed, 25 restricted, 10 prohibited, and 4 not-applicable. No vocabulary approval, release, publication, conformance, or SFT authorization is implied.",
+  "evidence_refs": [
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-001.json",
+    "ASD-STE100 Issue 9, authenticated derivative r0001, source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431; batch rows D-P149-001 through D-P154-006",
+    ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/exact-entry-summary.json",
+    ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/"
+  ],
+  "changed_paths": [
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md"
+  ],
+  "validations": [
+    {
+      "name": "affected vocabulary batch check",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "40 candidates; 1 allowed, 25 restricted, 10 prohibited, 4 not-applicable; 2156 remaining",
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/batch-check.json"
+    },
+    {
+      "name": "exact entry retrieval",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "40 exact entries retrieved; 4 extraction warnings and 10 mechanical ambiguities preserved",
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/exact-entry-summary.json"
+    },
+    {
+      "name": "full vocabulary structural check",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "2196 records; 120 allowed, 1510 restricted, 407 prohibited, 159 not-applicable; 0 remaining",
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/vocabulary-full-check.json"
+    },
+    {
+      "name": "asd_ste100_local.py doctor",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "Issue 9 derivative authenticated; source SHA-256 d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431",
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/asd-doctor.log"
+    },
+    {
+      "name": "it_ste_document.py build/check",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "draft build and check; no release or vocabulary approval implied",
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/"
+    },
+    {
+      "name": "unittest discover",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "119 tests, OK",
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/unittest.log"
+    },
+    {
+      "name": "project diagnostics",
+      "status": "pass",
+      "exit_status": 0,
+      "summary": "no errors or warnings"
+    },
+    {
+      "name": "git diff --check",
+      "status": "pass",
+      "exit_status": 0,
+      "log": ".local/it-ste-state/rr-vocabulary-001-20261024T202742Z/diff-check.log"
+    }
+  ],
+  "next": {
+    "action": "After finish and the authorized state/checkpoint commit, invoke it-ste-release-readiness resume.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "scope": {
+      "kind": "vocabulary-batch",
+      "batch": "002",
+      "ids": [],
+      "paths": [
+        "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json"
+      ],
+      "excluded": []
+    },
+    "resume_policy": "auto"
+  },
+  "commit": {
+    "authorized": true,
+    "mode": "auto",
+    "message": "Review vocabulary batch 001",
+    "paths": [
+      "docs/it-ste-draft-handoff.md",
+      "docs/it-ste-release-readiness-plan.md",
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/selector.json",
+      "docs/it-ste-state/runs/rr-vocabulary-001-20261024T202742Z.input.json",
+      "docs/it-ste-state/runs/rr-vocabulary-001-20261024T202742Z.output.json"
+    ]
+  }
+}
