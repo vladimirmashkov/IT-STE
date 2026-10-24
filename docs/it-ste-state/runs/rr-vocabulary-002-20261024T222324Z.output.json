@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-002-20261024T222324Z",
+  "status": "blocked",
+  "decision": "BLOCKED: batch-002 remains a bounded draft editorial review with 40 exact records and no canonical vocabulary changes. The affected and aggregate vocabulary checks passed, but the full test suite is blocked by the pre-existing ignored macOS artifact standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/.DS_Store; preserve selector cursor 1 and retry this exact batch after the fixture is resolved.",
+  "evidence_refs": [
+    "docs/it-ste-state/runs/rr-vocabulary-002-20261024T222324Z.input.json",
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json",
+    "docs/it-ste-draft-handoff.md#current-checkpoint-read-before-historical-baseline",
+    "docs/it-ste-release-readiness-plan.md#current-checkpoint",
+    "docs/it-ste-research-method.md#bounded-research-and-decision-loop",
+    "tools/asd_ste100_local.py",
+    "tools/it_ste_vocabulary.py"
+  ],
+  "changed_paths": [
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/runs/rr-vocabulary-002-20261024T222324Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-002-20261024T222324Z.output.json"
+  ],
+  "validations": [
+    {
+      "name": "ASD source doctor",
+      "status": "passed",
+      "detail": "Authenticated ASD-STE100 Issue 9 derivative and verified local PDF SHA-256."
+    },
+    {
+      "name": "Exact source retrieval",
+      "status": "passed",
+      "detail": "All 40 selected entry IDs matched headword, part of speech, PDF page, and extraction warnings."
+    },
+    {
+      "name": "Affected batch check",
+      "status": "passed",
+      "detail": "batch-002: 40 candidates; 3 allowed, 19 restricted, 12 prohibited, 6 not-applicable; 2,116 remain."
+    },
+    {
+      "name": "Aggregate vocabulary check",
+      "status": "passed",
+      "detail": "55 contiguous draft batches; 2,196 records; 120 allowed, 1,510 restricted, 407 prohibited, 159 not-applicable."
+    },
+    {
+      "name": "Targeted vocabulary tests",
+      "status": "passed",
+      "detail": "21 tests passed."
+    },
+    {
+      "name": "Full unit test suite",
+      "status": "blocked",
+      "detail": "119 tests ran; 3 corpus/document tests fail because ignored content/.DS_Store is an unlisted snapshot file."
+    },
+    {
+      "name": "Draft boundary",
+      "status": "passed",
+      "detail": "All selected records remain status=draft and review_status=editorial-review-needed; no approval, release, or canonical terms claimed."
+    }
+  ],
+  "next": {
+    "resume_policy": "retry",
+    "action": "Resolve the pre-existing ignored content/.DS_Store fixture without changing unrelated work, rerun the full test suite, then resume to retry batch-002; do not advance the vocabulary selector while blocked."
+  },
+  "commit": {
+    "authorized": true,
+    "policy": "per-resume-invocation",
+    "message": "Record blocked vocabulary batch 002",
+    "paths": [
+      "docs/it-ste-draft-handoff.md",
+      "docs/it-ste-release-readiness-plan.md",
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/runs/rr-vocabulary-002-20261024T222324Z.input.json",
+      "docs/it-ste-state/runs/rr-vocabulary-002-20261024T222324Z.output.json"
+    ]
+  }
+}
