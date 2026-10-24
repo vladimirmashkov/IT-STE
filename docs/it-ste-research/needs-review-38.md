@@ -51,6 +51,18 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 22/38 — batch053 / physical PDF page 419
+
+- `D-P419-006` (`UPSTREAM`, adv) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `Toward the source of a specified data flow or dependency path.` New draft IT wording: unchanged; retained because RFC 7230, NGINX documentation, and Apache Airflow documentation support a flow- or explicitly named dependency-relative direction, but do not justify unrestricted use or an `allowed` disposition.
+
+- `D-P419-007` (`UPSTREAM OF`, prep) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `Located before a named component along an explicitly defined processing flow.` New draft IT wording: unchanged; retained because the named component and explicit flow/dependency scope are justified, while the exact general IT wording, examples, and bidirectional/asymmetric-flow treatment still require editorial review.
+
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, physical PDF page 419 / printed page `2-1-U7`, exact locators `entry D-P419-006` and `entry D-P419-007`, sequences 2096–2097, rows 6–7, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Exact retrieval identifies `UPSTREAM (adv)` and `UPSTREAM OF (prep)` with “In a direction opposite to the flow”; page rendering confirms separate rows, POS labels, column alignment, row boundaries, and the probe/temperature and connection/valve examples. The extracted repeated fragment and wrapped-headword warning remain mechanical extraction evidence only.
+
+- External evidence actually inspected: [RFC 7230 §2.3](https://www.rfc-editor.org/rfc/rfc7230.html#section-2.3) (IETF Standards Track), which defines upstream/downstream relative to message flow; [NGINX upstream module documentation](https://nginx.org/en/docs/http/ngx_http_upstream_module.html), which documents upstream server groups and proxied requests; and [Apache Airflow Tasks — Relationships](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/tasks.html#relationships) (Apache Software Foundation, Airflow 3.3.2), which defines upstream tasks as directly preceding tasks in declared dependencies. RFC 7230 is HTTP-specific, NGINX is product-specific, and Airflow is workflow-specific; none is ASD authority or a universal IT-STE vocabulary rule.
+
+- Rationale: retaining both records as unresolved is the best-supported draft outcome. The evidence justifies requiring a named flow, endpoint, reference component, or explicitly declared dependency and rejecting authority, priority, hierarchy/parent, or unspecified-endpoint readings. It does not justify changing either disposition, approval, release, or SFT readiness. See [W1-D-P419-006-007](W1-D-P419-006-007.md).
+
 ### Resolution slice 21/38 — batch052 / physical PDF page 417
 
 - `D-P417-008` (`unscrew`, v) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `Release a threaded fastener by turning it, usually to loosen or remove it.` New draft IT wording: unchanged; retained because the evidence supports a bounded physical threaded-fastener operation and does not justify a broader rotation/change/remove sense.
