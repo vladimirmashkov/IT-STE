@@ -3016,25 +3016,25 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Apply actionable protection to IT data-loss and security hazards as well as physical hazards, with an identified operation and responsible actor.",
+          "rationale": "Apply actionable protection to IT data-loss and security hazards as well as physical hazards, with an identified operation and responsible actor; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Protective wording needs a precise preventive command or prohibition, not a vague appeal to caution.",
           "target_field": "text"
         },
         {
           "disposition": "adopt",
-          "rationale": "Retain condition-first ordering and require protection before exposure to the hazard, including a stop path for unsatisfied prerequisites.",
+          "rationale": "Retain condition-first ordering and require protection before exposure to the hazard, including a stop path for unsatisfied prerequisites; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A condition that the reader needs before a procedure or step must precede the dependent action.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "State the credible IT consequence while keeping the preventive action or condition at the start and preserving the protection in retrieved fragments.",
+          "rationale": "State the credible IT consequence while keeping the preventive action or condition at the start and preserving the protection in retrieved fragments; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Protective instructions connect prevention with an understandable harmful outcome.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Do not transfer those examples or infer universal IT severity labels; use the governing local classification and label this pilot's classification as illustrative.",
+          "rationale": "Do not transfer those examples or infer universal IT severity labels; use the governing local classification and label this pilot's classification as illustrative; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source illustrates safety instructions using its own warning presentation and physical-hazard contexts.",
           "target_field": "exceptions"
         }
@@ -3138,19 +3138,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Name the affected IT asset and credible consequence after the protection, while retaining the action as the primary instruction.",
+          "rationale": "Name the affected IT asset and credible consequence after the protection, while retaining the action as the primary instruction; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "An explanation helps readers understand the harmful result that a protective instruction is intended to prevent.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Preserve uncertainty and prohibit invented causes, probabilities, guarantees, or recovery assurances.",
+          "rationale": "Preserve uncertainty and prohibit invented causes, probabilities, guarantees, or recovery assurances; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The explanation can describe a possible outcome rather than promise that it always occurs.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Handle unknown or restricted IT details with truthful abstraction and escalation, without disclosing secrets or losing usable precautions.",
+          "rationale": "Handle unknown or restricted IT details with truthful abstraction and escalation, without disclosing secrets or losing usable precautions; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The explanation is supplied when the relevant risk information can be given.",
           "target_field": "exceptions"
         }
@@ -168733,9 +168733,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0020.json` SHA-256: `3ac6efb2c2ea1ccd24d86288847e25a28960cc868eca5da7db1d99ec661e5bfe`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0021.json` SHA-256: `bdab0e7b6c9efbab6350c5078296c132be57dcdbd042563a5b82259340b0e58b`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0021.json` SHA-256: `d3601594782780f07b04098a4e8523311583bd9e79579595e66905cbf150209f`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0022.json` SHA-256: `9cb3e067dc1803b78bbada26910dfc99d98a64f98e817077338772d9365d0518`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0022.json` SHA-256: `bcb6c6c19ebc9d1a88740d33b2b1d1e90d563880fadaf543eaf5e2be811ce6e6`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0023.json` SHA-256: `747c9c5f18e1b37ba6cdce91102cdc0bc22e31a1e5e7bad1b65c8a9fc0a02c3e`
 
