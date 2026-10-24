@@ -2045,19 +2045,21 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Toward a specified physical longitudinal centerline.",
+      "it_disposition": "restricted",
+      "it_definition": "Toward a specified longitudinal axis of a named physical component or technical diagram reference frame.",
       "domains": [
-        "procedures-runbooks"
+        "procedures-runbooks",
+        "software-documentation"
       ],
-      "rationale": "Visual inspection confirms the INBOARD (adv) row and separates it from INBOARD OF below. The authenticated source gives a physical longitudinal-axis sense; RFC 9110 uses upstream/downstream and request paths for IT traffic, so the draft network example remains substantively blocked and this record stays needs-review. See docs/it-ste-research/W1-D-P280.md.",
+      "rationale": "Visual inspection confirms the INBOARD (adv) row and separates it from INBOARD OF below. The authenticated source gives a longitudinal-axis sense. RFC 9110 and AWS security-group documentation use inbound/outbound and route/resource relations rather than inboard; SVG 2 and CSS Positioned Layout support only explicitly defined coordinate or reference frames. Restrict this draft sense to a named physical IT object or an explicitly axis-defined technical diagram; exclude generic network topology, firewall/database placement, cloud/software analogy, and unqualified UI prose. See docs/it-ste-research/W1-D-P280.md.",
       "permitted_contextual_alternatives": [
-        "toward the centerline"
+        "toward the stated centerline",
+        "toward the defined inner side"
       ],
       "examples": {
         "positive": {
-          "text": "Move the marked component toward the centerline shown in the hardware diagram.",
-          "explanation": "Offers a provisional physical direction."
+          "text": "Move the marked rack component inboard toward the longitudinal centerline shown in the hardware drawing.",
+          "explanation": "Names the physical object and the explicit axis."
         },
         "problematic": {
           "text": "Route traffic inboard.",
@@ -2106,19 +2108,21 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Nearer a stated longitudinal centerline than a named reference object.",
+      "it_disposition": "restricted",
+      "it_definition": "At a position nearer a specified longitudinal axis than a named reference object in the same physical or explicitly defined diagram frame.",
       "domains": [
+        "procedures-runbooks",
         "software-documentation"
       ],
-      "rationale": "Visual inspection confirms the wrapped INBOARD OF row and its physical longitudinal-axis meaning. No competent IT source inspected here supports extending this aerospace relation to generic network topology; the database/firewall example remains blocked and the draft stays needs-review. See docs/it-ste-research/W1-D-P280.md.",
+      "rationale": "Visual inspection confirms the wrapped INBOARD OF row and its physical longitudinal-axis meaning. RFC 9110 and AWS security-group documentation support route, endpoint, and resource relations but not generic inboard topology; SVG 2 and CSS Positioned Layout support a bounded diagram sense only when the coordinate or reference frame is explicit. Restrict this draft sense to named objects sharing a stated physical or technical-diagram axis; exclude generic network topology, firewall/database placement, cloud/software analogy, and unqualified UI prose. See docs/it-ste-research/W1-D-P280.md.",
       "permitted_contextual_alternatives": [
-        "nearer the centerline than"
+        "nearer the stated centerline than",
+        "on the inner side of, relative to the defined axis"
       ],
       "examples": {
         "positive": {
-          "text": "The marked connector is nearer the diagram's centerline than the power inlet.",
-          "explanation": "Gives a provisional explicit comparison."
+          "text": "The marked connector is inboard of the power inlet relative to the longitudinal centerline shown in the hardware drawing.",
+          "explanation": "Names both objects and the explicit reference axis."
         },
         "problematic": {
           "text": "The database is inboard of the firewall.",

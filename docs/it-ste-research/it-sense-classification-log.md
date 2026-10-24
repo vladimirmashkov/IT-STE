@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 5/36
-Requested iterations: 36 (user-authorized); this run executes slice 5/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–5/36
-Processed records: 48
-Disposition changes: 8 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 28
+Last checkpoint: 2026-10-24, after new-policy slice 6/36
+Requested iterations: 36 (user-authorized); this run executes slice 6/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–6/36
+Processed records: 50
+Disposition changes: 10 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 26
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,18 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 5/36:
+Fresh canonical counts after new-policy slice 6/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,493`;
+- `restricted`: `1,495`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `28`.
+- `needs-review`: `26`.
 
-The 28 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slice 5 resolved only the selected page-273 pair under the explicit physical-IT policy; it did not approve vocabulary or release content. The next run must recompute the canonical queue and select the next bounded question; it must not start slice 6 in this run.
+The 26 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slice 6 resolved only the selected page-280 pair under the explicit all-IT policy; it did not approve vocabulary or release content. Slice 7 was not started in this run.
 
-Exact next policy question: after fresh offset-0 recomputation, inspect only the next live record, currently expected to be `D-P280-003` / `D-P280-004`, batch 025, physical PDF page 280. Do not start slice 6/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P336-009`, the next live record, and do not start slice 7/36 here.
 
 ## Required entry format for future slices
 
@@ -128,3 +128,15 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Decision and limits: `restricted` is preferred over `allowed` because the named OT component and physical boundary are required; `not-applicable` is rejected because policy includes physical IT/OT; `prohibited` is rejected because the evidenced use is reviewable; retaining `needs-review` is no longer necessary under the new policy. No vocabulary approval, release, publication, canonicalization, or SFT readiness.
 - Validation/commit: full required validation, source doctor, exact ASD retrieval/page review, diagnostics, diff check, queue recomputation, and final worktree/index review are recorded in the handoff and completion report.
 - Next action: stop after slice 5/36; recompute offset 0 in the next run and inspect only the next live slice, expected `D-P280-003` / `D-P280-004`. Do not start slice 6/36.
+
+### New-policy classification slice 6/36 — `D-P280-003` / `D-P280-004`
+
+- Run/slice: user-authorized new-policy slice 6/36; batch `025`; physical PDF page `280`; POS `adv` (`INBOARD`) and `prep` (`INBOARD OF`).
+- Old/new: both records changed `needs-review` → `restricted`.
+- ASD evidence: Issue 9, revision `r0001`, exact entries `D-P280-003` / `D-P280-004`, printed page `2-1-I6`, sequences `994–995`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval and page retrieval passed. Visual findings confirm the second `INBOARD` row is the adverb with its own landing-gear example, and `INBOARD OF` is a separate wrapped-headword row with its own flap-track example; mechanical ambiguity and wrapped-headword warning remain preserved.
+- IT question and exclusions: can all-IT policy admit bounded inboard senses for a named physical IT object or an explicitly axis-defined technical diagram? Yes, but not generic network topology, firewall/database placement, cloud/software analogy, or unqualified UI prose.
+- Sources actually inspected: RFC 9110 (IETF Standards Track, June 2022, `https://www.rfc-editor.org/rfc/rfc9110.html`, §§3.7, 7.3, 7.6) for inbound/outbound and upstream/downstream route relations; AWS security-groups documentation (`https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html`) for named resources, inbound sources, outbound destinations, and firewall rules; W3C SVG 2 coordinate systems (`https://www.w3.org/TR/SVG2/coords.html`, §§8.1, 8.4, 8.6, 8.8) for explicit axes/viewports/reference frames; and W3C CSS Positioned Layout Level 3 (`https://www.w3.org/TR/css-position-3/`) for containing blocks/reference rectangles and physical/flow-relative positioning. RFC/AWS do not support generic `inboard`; SVG/CSS support only explicit diagram/reference-frame wording. CSS is a Working Draft, not a stable Recommendation. NASA aircraft-axis retrieval returned 404 and an FAA PDF was not substantively inspected; neither is evidence.
+- Canonical changes: bounded definitions, physical/UI-documentation domains, alternatives, examples, rationales, and `restricted` dispositions only. IDs, sequences, source pins, warnings, raw metadata, rights, fixed retrieval commands, `status: draft`, `review_status: editorial-review-needed`, and visual evidence were preserved. Generated Markdown was rebuilt, not edited by hand.
+- Decision and limits: `restricted` is preferred over `allowed` because a named object and explicit longitudinal/diagram axis are required; `prohibited`/`not-applicable` reject evidenced physical IT and technical-diagram uses. The earlier blocked decision is superseded by this bounded evidence-based draft classification. No vocabulary approval, release, publication, canonicalization, or SFT readiness.
+- Validation/commit: full required validation, authenticated source doctor, exact ASD retrieval/page review, diagnostics, diff check, queue/count recomputation, and final worktree/index review are recorded in the handoff and completion report.
+- Next action: stop after slice 6/36; in a future separately authorized run recompute offset 0 and begin only `D-P336-009` (slice 7). Do not start slice 7 here.

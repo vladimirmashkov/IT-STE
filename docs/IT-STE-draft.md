@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 28,
+    "needs-review": 26,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1493
+    "restricted": 1495
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -78168,25 +78168,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INBOARD; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Toward a specified physical longitudinal centerline\.
+Definition: Toward a specified longitudinal axis of a named physical component or technical diagram reference frame\.
 
-Domains: procedures\-runbooks
+Domains: procedures\-runbooks, software\-documentation
 
-Rationale: Visual inspection confirms the INBOARD \(adv\) row and separates it from INBOARD OF below\. The authenticated source gives a physical longitudinal\-axis sense\; RFC 9110 uses upstream\/downstream and request paths for IT traffic\, so the draft network example remains substantively blocked and this record stays needs\-review\. See docs\/it\-ste\-research\/W1\-D\-P280\.md\.
+Rationale: Visual inspection confirms the INBOARD \(adv\) row and separates it from INBOARD OF below\. The authenticated source gives a longitudinal\-axis sense\. RFC 9110 and AWS security\-group documentation use inbound\/outbound and route\/resource relations rather than inboard\; SVG 2 and CSS Positioned Layout support only explicitly defined coordinate or reference frames\. Restrict this draft sense to a named physical IT object or an explicitly axis\-defined technical diagram\; exclude generic network topology\, firewall\/database placement\, cloud\/software analogy\, and unqualified UI prose\. See docs\/it\-ste\-research\/W1\-D\-P280\.md\.
 
 Contextual alternatives:
 
-- toward the centerline
+- toward the stated centerline
+
+- toward the defined inner side
 
 #### Positive example
 
 ```
-Move the marked component toward the centerline shown in the hardware diagram.
+Move the marked rack component inboard toward the longitudinal centerline shown in the hardware drawing.
 ```
 
-Explanation: Offers a provisional physical direction\.
+Explanation: Names the physical object and the explicit axis\.
 
 #### Problematic example
 
@@ -78240,25 +78242,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: INBOARD OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Nearer a stated longitudinal centerline than a named reference object\.
+Definition: At a position nearer a specified longitudinal axis than a named reference object in the same physical or explicitly defined diagram frame\.
 
-Domains: software\-documentation
+Domains: procedures\-runbooks, software\-documentation
 
-Rationale: Visual inspection confirms the wrapped INBOARD OF row and its physical longitudinal\-axis meaning\. No competent IT source inspected here supports extending this aerospace relation to generic network topology\; the database\/firewall example remains blocked and the draft stays needs\-review\. See docs\/it\-ste\-research\/W1\-D\-P280\.md\.
+Rationale: Visual inspection confirms the wrapped INBOARD OF row and its physical longitudinal\-axis meaning\. RFC 9110 and AWS security\-group documentation support route\, endpoint\, and resource relations but not generic inboard topology\; SVG 2 and CSS Positioned Layout support a bounded diagram sense only when the coordinate or reference frame is explicit\. Restrict this draft sense to named objects sharing a stated physical or technical\-diagram axis\; exclude generic network topology\, firewall\/database placement\, cloud\/software analogy\, and unqualified UI prose\. See docs\/it\-ste\-research\/W1\-D\-P280\.md\.
 
 Contextual alternatives:
 
-- nearer the centerline than
+- nearer the stated centerline than
+
+- on the inner side of\, relative to the defined axis
 
 #### Positive example
 
 ```
-The marked connector is nearer the diagram's centerline than the power inlet.
+The marked connector is inboard of the power inlet relative to the longitudinal centerline shown in the hardware drawing.
 ```
 
-Explanation: Gives a provisional explicit comparison\.
+Explanation: Names both objects and the explicit reference axis\.
 
 #### Problematic example
 
@@ -167523,7 +167527,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `1d138d9adbf56d440398c577816ff6746b3778d7cef6ac724b1707dadbaa646b`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `e13bd111346d74730cfb77510e2a3d34af42302efbd3d3c7323e2b872880fa5b`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `80e2df497804c4b4077360289e037719a132200e570f10e6392addaa64fdd4cd`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-026.json` SHA-256: `b0c1185be8f1c08f8b66aaf3f68d1e90e607b7b87ca03c311a76aa1296e97dae`
 
