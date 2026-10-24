@@ -3976,19 +3976,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require explicit IT relationships and authoritative clarification when several readings remain possible.",
+          "rationale": "Require explicit IT relationships and authoritative clarification when several readings remain possible; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A with phrase can leave association, accompaniment, instrument, and condition relationships ambiguous.",
           "target_field": "text"
         },
         {
           "disposition": "adopt",
-          "rationale": "Keep condition-first instructions and preserve the actual operation rather than reduce it to an unspecific tool-use statement.",
+          "rationale": "Keep condition-first instructions and preserve the actual operation rather than reduce it to an unspecific tool-use statement; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A condition belongs before the dependent action, and a rewrite should retain the primary action verb.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "This rule addresses relationship clarity, not adoption of ASD's function-word inventory; clear with phrases remain possible without global lexical approval.",
+          "rationale": "This rule addresses relationship clarity, not adoption of ASD's function-word inventory; clear with phrases remain possible without global lexical approval; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source gives a restricted set of dictionary meanings for with.",
           "target_field": "exceptions"
         }
@@ -4007,7 +4007,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Retain clear possessives and require explicit relationships for confusing IT ownership or association chains, without banning apostrophes.",
+          "rationale": "Retain clear possessives and require explicit relationships for confusing IT ownership or association chains, without banning apostrophes; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Possessives are permitted when correctly formed and clear; an alternative construction can avoid uncertain usage.",
           "target_field": "text"
         }
@@ -4107,13 +4107,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Prefer clear English in IT prose while preserving exact external text and distinguishing examples from restatements.",
+          "rationale": "Prefer clear English in IT prose while preserving exact external text and distinguishing examples from restatements; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Latin abbreviations can be unfamiliar, so English expansions help readers understand the intended relationship.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Preserve those distinct functions and require complete operational or value specifications rather than merely expand an open-ended abbreviation.",
+          "rationale": "Preserve those distinct functions and require complete operational or value specifications rather than merely expand an open-ended abbreviation; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source illustrates abbreviations for examples, clarification, and continuation of a list.",
           "target_field": "text"
         }
@@ -168749,9 +168749,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0028.json` SHA-256: `0d368122fda8c9af474b1fd6240d93ed829bd2653619471fea60f7443b510fe7`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0029.json` SHA-256: `eac7a78a7e728c30e53648404dc40611ba57367dd8ee9106faa537ed1fadb1b7`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0029.json` SHA-256: `ded718389c58dc4617b9667a78f801ceae4fd99879a469db40f0391a37cc71b8`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0030.json` SHA-256: `a9317afe2e8392617cc91ab2d56f53d15275c71592fbbf1b1deb40effdd7b86c`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0030.json` SHA-256: `c5567608e7d674e54cf5cb3becdeb1e297a945f9580a3c4d95723bde06135410`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0031.json` SHA-256: `fb6e9b3bd6e89e267e9db206fa9161008febb649dbd91c474d820de89bf57729`
 
