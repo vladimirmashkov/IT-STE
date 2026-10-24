@@ -83,7 +83,7 @@ Version: 0\.1\.0\-draft\.1; revision: r0001.
 
 ### Admit vocabulary through documented IT meanings
 
-Use general words from the applicable reviewed English vocabulary and domain terms admitted for the intended IT context\. Before admitting a general word\, record its definition\, part of speech\, permitted forms\, and usage restrictions\. Before admitting a technical noun or verb\, also identify the domain concept or operation\, its terminology authority\, and the product or specification version when relevant\. A noun position\, a familiar spelling\, or use in source code is not admission evidence\. Prefer an admitted general expression when it conveys the same operation and distinctions clearly\; admit a specialized term when it names a necessary concept or operation more accurately\. Submit missing or disputed entries to the responsible lexical editor with the proposed meaning\, authority\, context\, and an example\. Until review resolves the entry\, identify the unresolved terminology and do not claim lexical conformance\.
+Use general words from the applicable reviewed English vocabulary and domain terms admitted for the intended IT context\. Before admitting a general word\, record its definition\, part of speech\, permitted forms\, and usage restrictions\. Before admitting a technical noun or verb\, also identify the applicable subject field or domain\, the concept or operation\, the terminology authority\, and the product or specification version when relevant\. A noun position\, a familiar spelling\, or use in source code is not admission evidence\. Prefer an admitted general expression when it conveys the same operation and distinctions clearly\; admit a specialized term when it names a necessary concept or operation more accurately\. Submit missing or disputed entries to the responsible lexical editor with the proposed meaning\, authority\, context\, and an example\. Until review resolves the entry\, identify the unresolved terminology and do not claim lexical conformance\.
 
 Applies to: general
 
@@ -182,7 +182,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require a concept, authority, and context for an IT noun entry.",
+          "rationale": "Require the applicable subject field or domain, concept, authority, and context for an IT noun entry; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Technical nouns identify domain concepts and can be collected in a terminology resource.",
           "target_field": "text"
         },
@@ -226,7 +226,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Admit IT operations with documented meaning and forms, preferring general wording only when the operation remains accurate.",
+          "rationale": "Admit IT operations with documented meaning and forms, preferring general wording only when the operation remains accurate; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Technical verbs name specialized processes and require controlled use.",
           "target_field": "text"
         },
@@ -337,7 +337,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Apply part-of-speech checks to reviewed IT lexical entries rather than the ASD dictionary.",
+          "rationale": "Apply part-of-speech checks to reviewed IT lexical entries rather than the ASD dictionary; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Lexical permission is tied to a grammatical function, not just a spelling.",
           "target_field": "text"
         },
@@ -168693,9 +168693,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/manifest.json` SHA-256: `0f6271539a66274b95b6dd6961857e5584d2f48f7baab6bd983da9f57f72d400`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0001.json` SHA-256: `55a2463cb843288dea1605c2599d99320ebca81982e4b8a3fccf8b9d6c5befe9`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0001.json` SHA-256: `1f06dd2e203ab4be3ff940fd3f278b7f7c057ed9068ad212892adddd9faeef87`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0002.json` SHA-256: `e9cc012ef8cef2b59f032fadd2afefbc185446d42e99db054fa419616ad24d8a`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0002.json` SHA-256: `b10c827ae9fd29cee62f2dedb248f1228f9e968b3c31a374e3dc1768fb606bda`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0003.json` SHA-256: `474f16837085986694c872f71df606d500f8572d10efddd368b407c1ec0427f9`
 
