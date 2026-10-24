@@ -2490,25 +2490,25 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Distinguish optional IT background from every item needed for execution, verification, or safe continuation, even when that item is phrased descriptively.",
+          "rationale": "Distinguish optional IT background from every item needed for execution, verification, or safe continuation, even when that item is phrased descriptively; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Notes supply descriptive assistance rather than required instructions, requirements, or limits.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Keep safety and security requirements in the mandatory flow with appropriate semantic presentation rather than simply rename a skippable note.",
+          "rationale": "Keep safety and security requirements in the mandatory flow with appropriate semantic presentation rather than simply rename a skippable note; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Readers can overlook notes, so protective content needs its proper procedural role and label.",
           "target_field": "text"
         },
         {
           "disposition": "adopt",
-          "rationale": "Retain the hidden-notes test and extend it to independently retrieved procedure fragments.",
+          "rationale": "Retain the hidden-notes test and extend it to independently retrieved procedure fragments; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Removing notes is a practical test of whether the procedure still contains its necessary information.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Place prerequisites before dependent actions and results or verification with their action, without treating every inline parenthetical identifier as a note.",
+          "rationale": "Place prerequisites before dependent actions and results or verification with their action, without treating every inline parenthetical identifier as a note; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Information essential to correct execution must be moved from a note into the appropriate work step.",
           "target_field": "exceptions"
         }
@@ -2617,19 +2617,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Order IT purpose, scope, prerequisites, and core concepts before dependent detail, while allowing optional detail to be deferred.",
+          "rationale": "Order IT purpose, scope, prerequisites, and core concepts before dependent detail, while allowing optional detail to be deferred; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Explanations should introduce information gradually so readers can build understanding.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Retain one principal subject per sentence when possible and require explicit relationships when multiple subjects are necessary; do not delegate this facet to the sentence-length target.",
+          "rationale": "Retain one principal subject per sentence when possible and require explicit relationships when multiple subjects are necessary; do not delegate this facet to the sentence-length target; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A sentence focused on one main subject is easier to assimilate before further information is added.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Extend the continuity principle to independent IT retrieval units without allowing progressive disclosure to hide required conditions or protection.",
+          "rationale": "Extend the continuity principle to independent IT retrieval units without allowing progressive disclosure to hide required conditions or protection; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Gradual explanation depends on readers having enough preceding context to understand each addition.",
           "target_field": "text"
         }
@@ -168725,9 +168725,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0016.json` SHA-256: `f9b703114404758495ff042f1a3189db7edd8f2ff56e206938efc63193164370`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0017.json` SHA-256: `cb9e6504d9004cda1b68b0b7a83ac8ab981c7ca97cfb4561cd29ef6ed90ab419`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0017.json` SHA-256: `99f15b517f5d75d87cd61bfd1fdabe0de24ef48aa2a1c370377939e13b693266`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0018.json` SHA-256: `5479e1f4ca76389583d679c676a8dfe65f4dd4140cc7b5d25a4f12d7461e809e`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0018.json` SHA-256: `300fc3b2f91fa6daaeeadf5921aeeadf95ac9cdbdfd0adc2e72abcaaf6720714`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0019.json` SHA-256: `b5f915ee9ddae562cb48de00237f2add53e12bd73aaa8612055b6eee480ddaa6`
 
