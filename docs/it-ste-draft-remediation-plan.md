@@ -5,7 +5,7 @@ This is a bounded-work plan for the IT-STE draft. It records sequencing and stop
 ## Current boundary
 
 - Recovery Block 0 was closed in `b1fe909` (`Add draft IT-only term contract`) after reviewing the interrupted implementation of the first W3 term-contract slice.
-- The current W3 slice adds only the draft-only original IT term records `ITSTE-T-0005` (`known error`, phrase) and `ITSTE-T-0006` (`workaround`, noun). It must not change the six inspected ASD-derived rows or the fixed 2,196-row source sequence.
+- The current W3 slice materializes only the draft-only original IT term records `ITSTE-T-0011` (`service level agreement`, phrase) and `ITSTE-T-0012` (`service level target`, phrase). It must not change the inspected ASD-derived rows or the fixed 2,196-row source sequence.
 - The canonical ASD queue must be recomputed before every slice. At this slice it is empty: 2,196 records / 55 batches, 120 allowed, 1,510 restricted, 407 prohibited, 159 not-applicable, 0 needs-review.
 - If the queue becomes non-empty, W1 takes precedence over W2/W3. A queue offset is never a resume pointer; record exact IDs, pages, evidence notes, and the next action.
 
@@ -28,8 +28,8 @@ Use one related pair per iteration. Each pair is a research scope, not a promise
 3. **Completed bounded slice:** `known error` and `workaround` — `ITSTE-T-0005` and `ITSTE-T-0006`, retained as restricted draft senses with a recorded-cause/interim-method boundary and no ASD provenance.
 4. **Completed bounded slice:** `service request` and `service desk` — `ITSTE-T-0007` and `ITSTE-T-0008`, retained as separate restricted draft phrases with explicit request/function boundaries and no ASD provenance.
 5. **Completed bounded slice:** `configuration item` and `IT asset` — `ITSTE-T-0009` and `ITSTE-T-0010`, retained as separate restricted draft phrases with explicit configuration-versus-asset lifecycle boundaries and no ASD provenance.
-6. **Next slice:** `service level agreement` and `service level target` — distinguish documented commitments/responsibilities from measurable targets and indicators.
-7. `availability` and `resilience` — distinguish ability to perform an agreed function from continuation/recovery after disruption.
+6. **Completed bounded slice:** `service level agreement` and `service level target` — `ITSTE-T-0011` and `ITSTE-T-0012`, retained as separate restricted draft phrases with explicit agreement-versus-target boundaries and no ASD provenance.
+7. **Next slice:** `availability` and `resilience` — distinguish ability to perform an agreed function from continuation/recovery after disruption.
 8. `continual improvement` and `change authority` — verify the practice boundary and the authority role before materialization.
 9. `release` noun and `deployment` — distinguish the available version/set of components from placing it or a change into a target environment; preserve the ASD `release` verb.
 

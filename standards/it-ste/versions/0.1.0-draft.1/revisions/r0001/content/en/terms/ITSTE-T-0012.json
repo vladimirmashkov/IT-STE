@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-T-0012",
+  "kind": "term",
+  "language": "en",
+  "status": "draft",
+  "origin": "original",
+  "term": "service level target",
+  "part_of_speech": "phrase",
+  "definition": "A measurable threshold or range for a service-level attribute under specified conditions and over a defined measurement period.",
+  "domains": ["general"],
+  "usage": "restricted",
+  "rationale": "Use this phrase for the value or range against which a service-level attribute is evaluated. State the relevant measurement conditions and period when they are needed to interpret the target. A target can be included in a service level agreement or used as an internal objective, but it is not the measuring indicator or metric, the measurement result, an SLI, an SLO in every context, the agreement, a dashboard, or a monitoring tool.",
+  "alternatives": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "The service level target is that 99 percent of eligible requests complete within two seconds during each reporting month.",
+        "rationale": "States a measurable threshold, the eligible requests, the performance condition, and the measurement period."
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "The service level target lists the provider responsibilities and breach consequences.",
+        "rationale": "Conflates an individual measurable target with the service level agreement that contains commitments and consequences."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-SERVICE-LEVEL-2026",
+      "locator": {
+        "section": "ITIL 4 Practitioner: Service level Management listing"
+      }
+    },
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-SERVICE-LEVEL-2026",
+      "locator": {
+        "section": "ITIL Version 5 / ITIL Service listing"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that the phrase names a measurable threshold or range with specified conditions and a defined measurement period.",
+      "Keep the phrase distinct from a service level agreement, indicator, metric, measurement result, SLI, SLO as a related reliability term, dashboard, monitoring tool, or generic performance claim.",
+      "Confirm that the inspected PeopleCert page supports a target-setting service-level context but does not establish a complete universal ITIL glossary definition."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      }
+    ],
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
+  }
+}

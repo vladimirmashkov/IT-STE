@@ -1,10 +1,45 @@
 # W3 — ITIL service-management terminology
-State: in-progress
+State: resolved-draft
 Current pair state: resolved-draft materialization
 
-Question and scope: Should `configuration item` and `IT asset` be admitted as two separate original IT-only draft phrases in the IT-STE documentation standard? This bounded slice covers a controlled service-support component with recorded attributes/relationships and an item of organizational value managed across an IT lifecycle. It does not equate either term with a CMDB, asset register, tool, arbitrary component, approval authority, or the other management context, and it does not define service-level, availability, resilience, change, release, deployment, API, protocol, cryptographic, software-runtime, UI, or physical meanings. The decisions below are draft research, not canonical vocabulary approval.
+Question and scope: Should `service level agreement` and `service level target` be admitted as two separate original IT-only draft phrases in the IT-STE documentation standard? This bounded slice covers a documented provider-consumer commitment with responsibilities, measurement conditions, and applicable consequences, and a measurable threshold or range for a service-level attribute under stated conditions and a defined period. It keeps the agreement separate from a target, indicator, metric, SLI, SLO, measurement result, contract artifact, dashboard, or monitoring tool, and does not define availability, resilience, change, release, deployment, API, protocol, cryptographic, software-runtime, UI, or physical meanings. The decisions below are draft research, not canonical vocabulary approval.
 
-## Current bounded slice — `configuration item` and `IT asset`
+## Current bounded slice — `service level agreement` and `service level target`
+
+Canonical records and source metadata:
+
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/terms/ITSTE-T-0011.json` — `ITSTE-T-0011`, `service level agreement` (phrase), `status: draft`, `origin: original`, `usage: restricted`.
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/terms/ITSTE-T-0012.json` — `ITSTE-T-0012`, `service level target` (phrase), `status: draft`, `origin: original`, `usage: restricted`.
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/sources/ITIL-SOURCE-PEOPLECERT-SERVICE-LEVEL-2026.json` — direct PeopleCert Service Level Management category reference metadata.
+
+ASD collision evidence and visual findings:
+
+- The authenticated ASD Issue 9, revision `r0001` derivative search (source PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`) found no exact `service level agreement` or `service level target` dictionary row. The exact dictionary searches for `agreement` and `target` produced no headword candidates; the broad `target` search only surfaced `D-P350-002` (`reach`) because `target` occurs in an example, not as a headword.
+- `D-P374-004` (`service`, verb, physical PDF page 374, printed page `2-1-S8`) has the approved alternative `SERVICING (n)` and is the physical-maintenance verb; it must not be broadened into the service-management noun or compound. `D-P298-005` (`LEVEL`, adjective, physical PDF page 298, printed page `2-1-L4`) means horizontal to a known datum; `D-P298-006` (`LEVEL`, noun) means a horizontal line, plane, surface, or condition; and `D-P298-007` (`level`, verb) has `LEVEL (adj)` as its alternative. These are component collisions only, not the proposed IT service-management phrase senses.
+- No page rendering was needed for this pair because there is no exact ASD compound row and no unresolved row-boundary, typography, wrapping, or column question. No ASD provenance is assigned to either original IT-only phrase.
+
+External evidence:
+
+- [PeopleCert ITIL certification category](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1); PeopleCert; current public category listing; accessed 2026-10-24; sections `ITIL 4 Practitioner: Service level Management` and `ITIL Version 5 / ITIL Service`. The page lists Service Level Management and describes business-based service targets, service utility/warranty/experience, SLA, and performance context. PeopleCert is the ITIL framework publisher/certification owner and the page is directly applicable to the service-level-management inventory. Limitation: it is a category/certification overview, not a complete official ITIL glossary or detailed practice guide; downstream rights are unknown.
+- [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198); IETF/RFC Editor; RFC 3198, Informational, November 2001; accessed 2026-10-24; section 3 `Terms`, printed pages 14–15. The directly inspected text distinguishes a documented negotiated SLA between a customer/consumer and provider from an SLO that partitions an SLA into individual metrics, parameters, values, and operational information. This is competent corroborating terminology evidence for the agreement-versus-target boundary. Limitation: it is an Informational RFC from 2001 and its scope is network policy management, not a current general ITIL glossary.
+- [Google SRE Book, Chapter 4: Service Level Objectives](https://sre.google/sre-book/service-level-objectives/); Chris Jones, John Wilkes, Niall Murphy, Cody Smith, and Google; 2017 book edition, current web chapter; accessed 2026-10-24; sections `Service Level Terminology`, `Indicators`, `Objectives`, and `Agreements`. The directly inspected chapter distinguishes a quantitative SLI, an SLO target or range measured by an SLI, and an SLA agreement whose contained objectives can have consequences; it also requires measurement conditions and windows for interpreting targets. This is competent expert practice evidence for the target/indicator/agreement boundary. Limitation: SRE reliability terminology is not ITIL normative terminology, and the page is CC BY-NC-ND 4.0; no source text or examples were copied.
+- RFC 3198 and Google SRE are recorded as evidence in this note only. The existing corpus contract accepts external source metadata with `standard: "itil"` and ITIL-shaped IDs only, so no non-ITIL source records or term references were invented and no schema/policy change was made.
+
+Alternatives and decision:
+
+- `service level agreement`: research classification `new-term`; materialize `ITSTE-T-0011` as a separate `phrase` with the bounded sense “a documented agreement between a service provider and a service consumer that states service commitments, responsibilities, measurement conditions, and applicable consequences.” Reject treating it as one target, indicator, metric, SLI, SLO, measurement result, generic contract artifact, dashboard, monitoring tool, service, or fulfilment action.
+- `service level target`: research classification `new-term`; materialize `ITSTE-T-0012` as a separate `phrase` with the bounded sense “a measurable threshold or range for a service-level attribute under specified conditions and over a defined measurement period.” Reject treating it as the agreement, a metric or indicator, a measurement result, an SLI, an SLO in every context, a dashboard, or a monitoring tool. The target may be included in an SLA or used internally; it is not universally synonymous with SLO.
+- The separate `phrase` POS is deliberate: each candidate names a multi-word service-management concept, while the records remain restricted to the bounded IT sense. Both records remain `status: draft`, `origin: original`, with original IT-STE wording/examples, project-only rights, and only the PeopleCert ITIL metadata in `source_refs`; no ASD row, source sequence, relation, multi-sense field, or contract change was introduced.
+
+Fact versus inference: ASD search results, exact IDs, headwords, POS labels, page coordinates, meanings, alternatives, and the no-candidate results are source facts. PeopleCert’s listing and practice context, RFC 3198’s SLA/SLO distinction, and Google SRE’s SLI/SLO/SLA and measurement-condition distinctions are external source facts. The phrase POS choices, bounded definitions, examples, exclusions, agreement-versus-target split, and draft materialization are editorial inferences for the IT-STE domain matrix. They are not official ASD or ITIL guidance, approval, release, publication, canonicalization, or SFT authorization.
+
+Remaining uncertainty / escalation: the complete ITIL glossary and detailed Service Level Management practice materials were not publicly inspected; the exact formal ITIL wording, the treatment of consequences in different service-management organizations, the boundary between ITIL target terminology and SRE SLO terminology, and downstream rights for the PeopleCert page remain for human review. No term is approved, released, published, or ready for SFT.
+
+Applied changes and validation: materialized `ITSTE-T-0011` (`service level agreement`, phrase) and `ITSTE-T-0012` (`service level target`, phrase) and added the reference-only PeopleCert metadata record. The affected full-path checks passed: `batch-029.json` reported 40 candidates (`2 allowed`, `13 prohibited`, `25 restricted`) and `batch-044.json` reported 40 candidates (`4 allowed`, `1 not-applicable`, `6 prohibited`, `29 restricted`); both retained `status: draft` and `review_status: editorial-review-needed`. Adaptation check passed (`53` rules, `8` recommendations, `61` reviewed blocks); corpus check passed (`31` draft rules and canonical terms); full vocabulary check passed with `2,196` records / `55` batches and `120 allowed`, `1,510 restricted`, `407 prohibited`, `159 not-applicable`, `0 needs-review`; document build and check passed; ASD `doctor` passed for Issue 9/r0001 and PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; the first unit-test run exposed one stale `range(1, 11)` term-ID assertion in `test_it_ste_corpus.py`, the expectation was corrected to `range(1, 13)`, and the rerun passed with `119` tests, `OK`; diagnostics reported no errors or warnings and `git diff --check` passed. Final Git inventory review found only the reviewed bounded-slice paths; they are ready for this run’s single explicit-path automatic commit.
+
+Next action: after this run’s single explicit-path automatic commit, resume the next W3 pair with `availability` and `resilience`.
+
+## Previous bounded slice — `configuration item` and `IT asset`
 
 Canonical records and source metadata:
 
@@ -34,7 +69,7 @@ Fact versus inference: the ASD search results, exact IDs, headwords, POS labels,
 
 Remaining uncertainty / escalation: the complete ITIL 4 glossary and detailed practice materials were not publicly inspected; the exact formal glossary wording, the boundary between CI and asset records in a particular organization, possible terminology changes between ITIL 4 and phased ITIL Version 5, and downstream rights for the PeopleCert pages remain for human review. No term is approved, released, published, or ready for SFT.
 
-## Previous bounded slice — `service request` and `service desk`
+## Earlier bounded slice — `service request` and `service desk`
 
 Canonical records and source metadata:
 
@@ -65,7 +100,7 @@ Remaining uncertainty / escalation: the complete ITIL 4 glossary and detailed pr
 
 ## Earlier bounded W3 inventory retained below (before the service request slice)
 
-The inventory below records the pre-service-request state and is retained for provenance; the current `configuration item` / `IT asset` decision is above.
+The inventory below records the pre-service-request state and is retained for provenance; the current `service level agreement` / `service level target` decision is above.
 
 Canonical records and source-row collisions inspected:
 
@@ -140,6 +175,6 @@ Earlier slice applied changes and validation: materialized `ITSTE-T-0005` (`know
 
 Previous slice applied changes and validation: materialized `ITSTE-T-0007` (`service request`, phrase) and `ITSTE-T-0008` (`service desk`, phrase) with two directly inspected PeopleCert ITIL 4 reference metadata records. No ASD vocabulary batch row, fixed source sequence, ASD source metadata, relation field, or contract field was changed. The affected full-path checks for `batch-041.json` and `batch-044.json` passed; adaptation, corpus, full vocabulary, document build/check, authenticated ASD `doctor`, `python3 -W error::ResourceWarning -m unittest discover -s tests` (**119 tests, OK**), project diagnostics (no errors/warnings), and `git diff --check` all passed.
 
-Current slice applied changes and validation: materialized `ITSTE-T-0009` (`configuration item`, phrase) and `ITSTE-T-0010` (`IT asset`, phrase) with two directly inspected PeopleCert ITIL 4 reference metadata records. No ASD vocabulary batch row, fixed source sequence, ASD source metadata, relation field, or contract field was changed. The affected full-path checks for `batch-004.json` and `batch-027.json` passed; adaptation, corpus, full vocabulary, document build/check, authenticated ASD `doctor`, `python3 -W error::ResourceWarning -m unittest discover -s tests` (**119 tests, OK**), project diagnostics (no errors/warnings), and `git diff --check` all passed. Offset-0 ASD recomputation after this slice remains `2,196` records across `55` batches: `120 allowed`, `1,510 restricted`, `407 prohibited`, `159 not-applicable`, `0 needs-review`; the queue is empty. Structural validation is not vocabulary approval.
+Previous slice applied changes and validation: materialized `ITSTE-T-0009` (`configuration item`, phrase) and `ITSTE-T-0010` (`IT asset`, phrase) with two directly inspected PeopleCert ITIL 4 reference metadata records. No ASD vocabulary batch row, fixed source sequence, ASD source metadata, relation field, or contract field was changed. The affected full-path checks for `batch-004.json` and `batch-027.json` passed; adaptation, corpus, full vocabulary, document build/check, authenticated ASD `doctor`, `python3 -W error::ResourceWarning -m unittest discover -s tests` (**119 tests, OK**), project diagnostics (no errors/warnings), and `git diff --check` all passed. Offset-0 ASD recomputation after that slice remained `2,196` records across `55` batches: `120 allowed`, `1,510 restricted`, `407 prohibited`, `159 not-applicable`, `0 needs-review`; the queue was empty. Structural validation is not vocabulary approval.
 
-Next action: use the new term contract for one bounded related pair, `service level agreement` and `service level target`; inspect dedicated Service Level Management evidence, preserve the distinction between documented commitments/responsibilities and measurable targets/indicators, then materialize the next IDs only if distinct bounded senses are supported.
+Next action: use the new term contract for one bounded related pair, `availability` and `resilience`; inspect competent availability/continuity evidence, preserve the distinction between ability to perform an agreed function and continuation/recovery after disruption, and materialize the next IDs only if distinct bounded senses are supported.
