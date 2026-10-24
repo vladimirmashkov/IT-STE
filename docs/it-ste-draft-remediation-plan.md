@@ -26,8 +26,8 @@ Use one related pair per iteration. Each pair is a research scope, not a promise
 1. **Completed recovery slice:** `service` noun and `alert` noun — `ITSTE-T-0001` and `ITSTE-T-0002`.
 2. **Completed bounded slice:** `problem` and `incident` — `ITSTE-T-0003` and `ITSTE-T-0004`, retained as restricted draft senses with explicit human-review criteria and no ASD provenance.
 3. **Completed bounded slice:** `known error` and `workaround` — `ITSTE-T-0005` and `ITSTE-T-0006`, retained as restricted draft senses with a recorded-cause/interim-method boundary and no ASD provenance.
-4. **Next slice:** `service request` and `service desk` — use dedicated Service Request Management/Service Desk evidence; do not equate a desk with a queue, team, or escalation authority.
-5. `configuration item` and `IT asset` — separate configuration relationships and attributes from ownership and financial lifecycle.
+4. **Completed bounded slice:** `service request` and `service desk` — `ITSTE-T-0007` and `ITSTE-T-0008`, retained as separate restricted draft phrases with explicit request/function boundaries and no ASD provenance.
+5. **Next slice:** `configuration item` and `IT asset` — separate configuration relationships and attributes from ownership and financial lifecycle.
 6. `service level agreement` and `service level target` — distinguish documented commitments/responsibilities from measurable targets and indicators.
 7. `availability` and `resilience` — distinguish ability to perform an agreed function from continuation/recovery after disruption.
 8. `continual improvement` and `change authority` — verify the practice boundary and the authority role before materialization.
