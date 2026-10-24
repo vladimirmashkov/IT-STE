@@ -51,6 +51,18 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Iteration 28 — batch012 / physical PDF page 206
+
+- `D-P206-001` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 206 / printed page `2-1-C24`, exact locator `entry D-P206-001`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval reports `critical (adj)` with `VERY IMPORTANT` and `CAREFUL (adj)` alternatives and no extraction warnings. Visual review of the authenticated page confirmed one row with separate alternatives and examples; mechanical extraction ambiguity remains historical evidence.
+  External evidence actually inspected: FIRST CVSS v4.0 specification (`https://www.first.org/cvss/v4.0/specification-document`, accessed 2026-10-24) defines `Critical` only as an optional CVSS qualitative severity rating for scores 9.0–10.0; this supports a distinct named policy taxonomy but not the ASD intent or ordinary importance. Fact versus inference: source row/layout and CVSS scope are facts; retaining the provisional ordinary-importance wording without a severity taxonomy and requiring accountable scope review are editorial inferences. No wording, examples, rationale, or canonical field changed.
+
+- `D-P206-003` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 206 / printed page `2-1-C24`, exact locator `entry D-P206-003`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval reports `curvature (n)` with separate `BEND (n)`, `CURVE (n)`, and `RADIUS (TN)` alternatives and no extraction warnings. Visual review confirmed row 3 and its separate examples; mechanical extraction ambiguity remains historical evidence.
+  External evidence actually inspected: WHATWG HTML Living Standard Canvas 2D (`https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-arc-dev`, accessed 2026-10-24) defines curves, arcs, and radius parameters; W3C SVG 2 Paths (`https://www.w3.org/TR/SVG2/paths.html`, accessed 2026-10-24), sections 9.1 and 9.3.6–9.3.8, describes path geometry and radii. These primary sources corroborate related geometry but do not establish `curvature` as the controlled IT-STE noun or resolve physical bend-radius scope. Fact versus inference: source row/layout and external geometry facts are facts; retaining the narrow provisional geometric wording and requiring accountable scope review are editorial inferences. No wording, examples, rationale, or canonical field changed.
+
+  Validation: affected batch-012 check; adaptation; corpus; all-batch vocabulary; document build/check; 118 unit tests with `ResourceWarning` treated as errors; authenticated source doctor before and after evidence use; diagnostics (no errors/warnings); `git diff --check`; and canonical queue/count recomputation passed. Fresh counts remain 2,196 records / 55 batches: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review. No canonical, generated, or test file changed; PDF and rendering remain ignored.
+
 ### Iteration 27 — batch011 / physical PDF page 201
 
 - `D-P201-004` — old disposition: `needs-review`; new disposition: `restricted`.
