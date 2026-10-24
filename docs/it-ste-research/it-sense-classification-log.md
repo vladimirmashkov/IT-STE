@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after the complete 11-record domain-evidence run
+Last checkpoint: 2026-10-24, after owner exclusion of all 11 domain-evidence records
 Requested iterations: all 11 records; executed as 9 sequential research groups
 Completed slices: 22 legacy classification slices + new-policy slices 1–22/36 + one domain-mapping study + 9 domain-evidence groups
 Processed records: 75 unique records, with all 11 re-screened across all matrix domains
-Disposition changes: 24 records changed from `needs-review` to `restricted`; the 11-record study made no canonical disposition changes
-Remaining `needs-review`: 11
+Disposition changes: 24 records changed from `needs-review` to `restricted`; 11 owner-approved records changed from `needs-review` to `not-applicable`
+Remaining `needs-review`: 0 for the frozen 38-record register; canonical needs-review count is now 0
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,26 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after the 11-record domain-mapping study:
+Fresh canonical counts after owner exclusion of the 11 records:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
 - `restricted`: `1,510`;
 - `prohibited`: `407`;
-- `not-applicable`: `148`;
-- `needs-review`: `11`.
+- `not-applicable`: `159`;
+- `needs-review`: `0`.
 
-The 11 remaining records are listed in `needs-review-38.md`; this log retains the frozen baseline and records each disposition result. The evidence matrix `it-domain-11-evidence-matrix.md` screens all 11 against all domains in `it-ste-it-domain-matrix.md`, records `applicable`/`not-applicable`/`unresolved` for each pair, and intentionally leaves all 11 canonical dispositions at `needs-review`. No Reddit or Stack Overflow source was used. The legacy table above remains historical and is not the new-policy sequence.
+The frozen baseline register records all 11 old/new results. The evidence matrix `it-domain-11-evidence-matrix.md` screens all 11 against all domains in `it-ste-it-domain-matrix.md`; its candidate evidence is preserved, but the owner decision excludes all 11 from the canonical IT-STE vocabulary as `not-applicable`. This does not ban the words from external standards or free technical documentation. No Reddit or Stack Overflow source was used. The legacy table above remains historical and is not the new-policy sequence.
 
-Exact next policy question: obtain owner decisions on facility-equipment scope, the selected `real` contrast, and schema treatment of split senses; then apply only justified canonical changes. Do not force any of the 11 records out of `needs-review` merely to reduce the count.
+Exact next policy question: review the generated draft and the canonical exclusion wording. No further evidence research is required for these 11 unless the owner reverses or narrows the exclusion policy.
+
+### Owner exclusion decision — all 11 records — 2026-10-24
+
+- Decision: the user/owner explicitly chose `not-applicable` for all 11 records because they are free, polysemous, or context-dependent words and should not be canonical IT-STE vocabulary entries. This is not a universal ban on English or on external standards, product names, APIs, or domain documentation.
+- Old/new for every ID: `D-P349-003`, `D-P351-001`, `D-P368-010`, `D-P391-003`, `D-P391-005`, `D-P397-005`, `D-P397-006`, `D-P397-007`, `D-P416-006`, `D-P419-006`, and `D-P419-007`: `needs-review` → `not-applicable`.
+- Canonical changes: only `it_disposition`, `it_definition`, and the decision rationale changed; `status: draft`, `review_status: editorial-review-needed`, IDs, sequence, ASD provenance, source pins, warnings, raw metadata, rights, and fixed retrieval locators were preserved.
+- Validation: affected batch checks for `038`, `039`, `043`, `047`, `049`, `052`, and `053` passed; full adaptation, corpus, vocabulary, document build/check, 118 unit tests, authenticated source doctor, project diagnostics, and `git diff --check` passed after the edits.
+- Next action: run affected batch checks and full project validation, then recompute counts and rebuild the draft. No approval, release, publication, or SFT readiness is implied.
 
 ### Complete 11-record domain-evidence run — 9 sequential groups — 2026-10-24
 

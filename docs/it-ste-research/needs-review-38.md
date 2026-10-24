@@ -51,6 +51,14 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Owner exclusion decision — remaining 11 records — 2026-10-24
+
+The owner decision supersedes the earlier unresolved domain-mapping result. Each record changed from `needs-review` to `not-applicable` in canonical JSON because the free/polysemous word is excluded from the canonical IT-STE vocabulary layer. This does not ban the word from external standards or free technical documentation.
+
+- `D-P349-003`, `D-P351-001`, `D-P368-010`, `D-P391-003`, `D-P391-005`, `D-P397-005`, `D-P397-006`, `D-P397-007`, `D-P416-006`, `D-P419-006`, and `D-P419-007`: old disposition `needs-review`; new disposition `not-applicable`.
+- Canonical `status: draft` and `review_status: editorial-review-needed` remain unchanged. ASD provenance, source pins, warnings, raw metadata, rights, IDs, and sequence values remain preserved.
+- The preceding domain-mapping result is retained as historical evidence and remains useful for explaining external technical usage; it is superseded only as the canonical disposition.
+
 ### IT-domain mapping register — remaining 11 records — 2026-10-24
 
 This bounded domain-mapping study preserves the current canonical disposition for every remaining record. It does not erase the frozen baseline or claim that a proposed domain sense is admitted to the vocabulary.

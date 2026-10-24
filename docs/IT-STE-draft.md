@@ -4257,8 +4257,7 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 11,
-    "not-applicable": 148,
+    "not-applicable": 159,
     "prohibited": 407,
     "restricted": 1510
   },
@@ -116727,13 +116726,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: RADIOACTIVE; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Having a physical property associated with radioactive material\; no general software sense is proposed\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free\, context\-dependent physical term\; external safety and facility terminology remains outside this vocabulary layer\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Visual inspection confirms RADIOACTIVE \(adj\) and its own physical\-radioactivity meaning\; it is separate from RADIALLY\. EPA documents radioactive americium in some ionization smoke detectors\, while AWS documents data\-center smoke sensors without identifying their sensing technology\. Those facts do not establish a radioactive item in this cloud\-infrastructure scope\, so needs\-review remains pending applicable equipment evidence and project\-scope review\. Hazard classification and handling require qualified safety documentation\; neither a detector label nor a software metaphor establishes a hazard\. See docs\/it\-ste\-research\/W1\-D\-P349\-002\.md\.
+Rationale: Visual inspection confirms RADIOACTIVE \(adj\) and its own physical\-radioactivity meaning\; it is separate from RADIALLY\. EPA documents radioactive americium in some ionization smoke detectors\, while AWS documents data\-center smoke sensors without identifying their sensing technology\. Those facts do not establish a canonical IT\-STE sense\, and the owner decision excludes this free\, context\-dependent term from the canonical vocabulary\; external safety and facility terminology remains permitted outside this vocabulary layer\. Hazard classification and handling require qualified safety documentation\; neither a detector label nor a software metaphor establishes a hazard\. See docs\/it\-ste\-research\/W1\-D\-P349\-002\.md\.
 
 Contextual alternatives:
 
@@ -117977,13 +117976,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: real; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Provisionally\, corresponding to an actual observed state rather than an assumption or simulation\; source sense is unresolved\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free and polysemous adjective\; precise terms such as measured\, current\, verified\, or production remain preferable\.
 
 Domains: software\-documentation
 
-Rationale: The exact adjective row is visually confirmed as a separate row with AGREE \(v\) in the alternatives column and a gauge example\, but that source mapping does not establish whether the IT sense is actual\, genuine\, verified\, or non\-simulated\. RFC 9110 provides related representation\-state and validator concepts without selecting one of those senses\. New JCGM VIM3 evidence separates measured and true quantity values\; Prometheus counters\/gauges have defined observation semantics\, including counter resets\, not a correctness guarantee\. An observed value is not automatically true or verified\. Retain needs\-review until the IT object\, intended contrast and comparison method are specified\. Research note\: docs\/it\-ste\-research\/W1\-D\-P351\-001\.md\.
+Rationale: The exact adjective row is visually confirmed as a separate row with AGREE \(v\) in the alternatives column and a gauge example\, but that source mapping does not establish whether the IT sense is actual\, genuine\, verified\, or non\-simulated\. RFC 9110 provides related representation\-state and validator concepts without selecting one of those senses\. New JCGM VIM3 evidence separates measured and true quantity values\; Prometheus counters\/gauges have defined observation semantics\, including counter resets\, not a correctness guarantee\. An observed value is not automatically true or verified\. The owner decision excludes this polysemous free adjective from the canonical IT\-STE vocabulary\; precise domain terms remain preferable\. Research note\: docs\/it\-ste\-research\/W1\-D\-P351\-001\.md\.
 
 Contextual alternatives:
 
@@ -129600,13 +129599,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: scored; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Provisionally\, having a physical groove caused by damage to an equipment surface\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a polysemous free adjective\; use the named physical\-damage or scoring description required by the applicable procedure\.
 
 Domains: general
 
-Rationale: Authenticated page 368 confirms scored \(adj\)\, SCORE \(TN\)\, and a bearing\-race damage example\, not numeric scoring\. FOA connector\-inspection guidance distinguishes contamination and physical scratches but does not define scored or equate every groove with damage\. Remove unqualified grooved because a groove can be a designed feature\. Keep needs\-review until a named IT hardware surface and applicable manufacturer damage criteria establish the proposed scope\. See docs\/it\-ste\-research\/W1\-D\-P368\.md\.
+Rationale: Authenticated page 368 confirms scored \(adj\)\, SCORE \(TN\)\, and a bearing\-race damage example\, not numeric scoring\. FOA connector\-inspection guidance distinguishes contamination and physical scratches but does not define scored or equate every groove with damage\. Remove unqualified grooved because a groove can be a designed feature\. The owner decision excludes this polysemous free adjective from the canonical IT\-STE vocabulary\; a named physical\-damage or scoring description remains preferable\. See docs\/it\-ste\-research\/W1\-D\-P368\.md\.
 
 Contextual alternatives:
 
@@ -143245,13 +143244,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: strain; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Provisionally\, pass a physical liquid through a filter to remove particles\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free and polysemous verb\; use the named filtration or deformation operation required by the procedure\.
 
 Domains: general
 
-Rationale: Visual verification confirms one strain \(v\) row with two distinct technical\-noun references\, FILTER \(TN\) and STRAIN \(TN\)\: the examples separately show filtering oil and applying strain to bellows\. The layout is resolved\, but no inspected competent IT source establishes whether this draft should cover coolant filtration\, mechanical deformation of IT hardware\, or neither\. Keep this needs\-review sense blocked\; do not generalize it to software load behavior\. See docs\/it\-ste\-research\/W1\-D\-P391\.md for the bounded evidence\.
+Rationale: Visual verification confirms one strain \(v\) row with two distinct technical\-noun references\, FILTER \(TN\) and STRAIN \(TN\)\: the examples separately show filtering oil and applying strain to bellows\. The layout is resolved\, but no inspected competent IT source establishes whether this draft should cover coolant filtration\, mechanical deformation of IT hardware\, or neither\. The owner decision excludes this polysemous free verb from the canonical IT\-STE vocabulary\; do not generalize it to software load behavior\. See docs\/it\-ste\-research\/W1\-D\-P391\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -143390,13 +143389,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: stress; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Provisionally\, apply a specified mechanical force to a physical IT component\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free and polysemous verb\; use the named mechanical load or test operation required by the procedure\.
 
 Domains: general
 
-Rationale: Visual verification confirms a separate stress \(v\) row with FORCE \(TN\) and the physical example Do not put too much force on the ducting\. The row boundary is resolved\, but the force cross\-reference does not establish a bounded IT hardware acceptance test or a software load\-testing sense\. Keep this needs\-review sense blocked rather than infer an operational action or software semantics\. See docs\/it\-ste\-research\/W1\-D\-P391\.md for the bounded evidence\.
+Rationale: Visual verification confirms a separate stress \(v\) row with FORCE \(TN\) and the physical example Do not put too much force on the ducting\. The row boundary is resolved\, but the force cross\-reference does not establish a bounded IT hardware acceptance test or a software load\-testing sense\. The owner decision excludes this polysemous free verb from the canonical IT\-STE vocabulary\; do not infer an operational action or software semantics\. See docs\/it\-ste\-research\/W1\-D\-P391\.md for the bounded evidence\.
 
 Contextual alternatives:
 
@@ -147350,13 +147349,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SYMBOL; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: A visible mark that denotes a specified operation\, object\, or state in an IT representation\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free representation term\; use the named icon\, notation mark\, token\, or protocol field instead\.
 
 Domains: software\-documentation
 
-Rationale: The authenticated page confirms a distinct SYMBOL \(n\) row and its complete written\-sign meaning\, but the intended IT scope still spans notation\, UI marks\, encoded indicators\, and other representations\. W3C WCAG 2\.2 supports treating non\-text controls and information as requiring a purpose\-bearing text alternative\, but it does not settle the controlled vocabulary sense\. Retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
+Rationale: The authenticated page confirms a distinct SYMBOL \(n\) row and its complete written\-sign meaning\, but the intended IT scope spans notation\, UI marks\, encoded indicators\, and other representations\. The owner decision excludes this free representation term from the canonical IT\-STE vocabulary\; W3C WCAG 2\.2 remains source context\, not a vocabulary admission\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
 
 Contextual alternatives:
 
@@ -147423,13 +147422,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SYMMETRICAL; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Having matching shapes or positions on opposite sides of a specified axis in a diagram\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free geometry adjective\; state the named axis\, reference frame\, coordinates\, or transformation instead\.
 
 Domains: user\-interface
 
-Rationale: The authenticated page confirms a distinct SYMMETRICAL \(adj\) row and a physical\-parts example\. The current geometric proposal remains plausible\, but the source wording does not decide whether the IT scope includes UI layout\, data structures\, or other mathematical and cryptographic uses\. W3C WCAG 2\.2 is relevant to accessible non\-text content but does not resolve this scope\. Retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
+Rationale: The authenticated page confirms a distinct SYMMETRICAL \(adj\) row and a physical\-parts example\. The current geometric proposal is not admitted as a canonical IT\-STE sense under the owner decision because the free adjective spans UI layout\, data structures\, mathematical and cryptographic uses\. W3C WCAG 2\.2 remains source context\, not a vocabulary admission\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
 
 Contextual alternatives:
 
@@ -147496,13 +147495,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: SYMMETRICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: In a way that preserves matching positions about a stated layout axis\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free geometry adverb\; state the named axis\, reference frame\, coordinates\, or transformation instead\.
 
 Domains: user\-interface
 
-Rationale: The authenticated page confirms a distinct SYMMETRICALLY \(adv\) row with a wrapped headword\, the meaning In a symmetrical manner\, and a physical elevator example\. Visual verification resolves the row boundary\, but the IT scope still spans UI layout\, diagrams\, data structures\, mathematical uses\, and cryptographic terminology\. W3C WCAG 2\.2 is relevant to accessible non\-text content but does not settle this controlled vocabulary sense\. Retain needs\-review\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
+Rationale: The authenticated page confirms a distinct SYMMETRICALLY \(adv\) row with a wrapped headword\, the meaning In a symmetrical manner\, and a physical elevator example\. The owner decision excludes this free adverb from the canonical IT\-STE vocabulary because the IT scope spans UI layout\, diagrams\, data structures\, mathematical uses\, and cryptographic terminology\. W3C WCAG 2\.2 remains source context\, not a vocabulary admission\. Research note\: docs\/it\-ste\-research\/W1\-D\-P397\-005\-006\.md\.
 
 Contextual alternatives:
 
@@ -157815,13 +157814,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: unobstructed; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Free of a specified physical blockage\; no claim of unrestricted network access is proposed\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free physical\-clearance adjective\; state the named blockage\, path\, or equipment condition instead\.
 
 Domains: networking
 
-Rationale: The authenticated page confirms one unobstructed \(adj\) row with two distinct alternatives\: CLOGGED \(adj\) for drain openings and CLEAR \(adj\) for a line of sight\. The physical source supports a bounded absence\-of\-obstruction description\, but Kubernetes Service documentation describes network endpoints and reachability rather than an unobstructed network path or authorization state\. Keep the draft physical meaning and reject unrestricted connectivity\, authentication\, or security inferences\; direct IT hardware evidence and editorial scope review remain pending\. See docs\/it\-ste\-research\/W1\-D\-P416\-006\.md\.
+Rationale: The authenticated page confirms one unobstructed \(adj\) row with two distinct alternatives\: CLOGGED \(adj\) for drain openings and CLEAR \(adj\) for a line of sight\. The physical source supports a bounded absence\-of\-obstruction description\, but Kubernetes Service documentation describes network endpoints and reachability rather than an unobstructed network path or authorization state\. The owner decision excludes this free physical\-clearance adjective from the canonical IT\-STE vocabulary\; reject unrestricted connectivity\, authentication\, or security inferences and state the named physical condition instead\. See docs\/it\-ste\-research\/W1\-D\-P416\-006\.md\.
 
 Contextual alternatives:
 
@@ -159933,13 +159932,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: UPSTREAM; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Toward the source of a specified data flow or dependency path\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free flow\-direction adverb\; state the named source\, flow\, endpoint\, or dependency relation instead\.
 
 Domains: networking
 
-Rationale: The source meaning is direction opposite to the named flow\; the IT sense must name the flow or endpoint so upstream is not mistaken for authority or priority\. See docs\/it\-ste\-research\/W1\-D\-P419\-006\-007\.md\: RFC 7230 defines upstream\/downstream relative to message flow\, while the operational scope remains an IT\-STE draft editorial constraint\.
+Rationale: The source meaning is direction opposite to the named flow\, but the owner decision excludes this free flow\-direction adverb from the canonical IT\-STE vocabulary\. RFC 7230 defines upstream\/downstream relative to message flow\, but that external terminology remains outside the canonical IT\-STE vocabulary layer\. See docs\/it\-ste\-research\/W1\-D\-P419\-006\-007\.md\.
 
 Contextual alternatives:
 
@@ -160006,13 +160005,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: UPSTREAM OF; POS: prep.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: not\-applicable.
 
-Definition: Located before a named component along an explicitly defined processing flow\.
+Definition: Excluded from the canonical IT\-STE vocabulary as a free flow\-relation phrase\; state the named source\, flow\, endpoint\, or dependency relation instead\.
 
 Domains: networking
 
-Rationale: The source phrase expresses a position opposite to the flow relative to a named component\; the IT sense must identify that component and reference flow\, not authority or priority\. See docs\/it\-ste\-research\/W1\-D\-P419\-006\-007\.md\: RFC 7230 and NGINX document directional flow and upstream server roles\, while the operational scope remains an IT\-STE draft editorial constraint\.
+Rationale: The source phrase expresses a position opposite to the flow relative to a named component\, but the owner decision excludes this free flow\-relation phrase from the canonical IT\-STE vocabulary\. RFC 7230 and NGINX document external directional terminology\; they do not require admission to the canonical IT\-STE vocabulary\. See docs\/it\-ste\-research\/W1\-D\-P419\-006\-007\.md\.
 
 Contextual alternatives:
 
@@ -167562,9 +167561,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-037.json` SHA-256: `273c3b9e683e0f4c73da3ba8f3d0a2cb62cb31ab2d4be25036a7f6524d623d58`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `19fbd5774bf495bac0d9885d6da6df9a0b79ca089020766708734a56744e09ca`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-038.json` SHA-256: `868a28dff534854a7018fb83e09ad1cd73042a84ad95b510f65a81604e3f71b2`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `090b382e55870397708dd45dc43edce857e8603af41935bce9d953c35de4c5ca`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-039.json` SHA-256: `7a02812d0f8b55976b27ec8cdfbc0251412f06c794057e6c6c9e2c32d7c2f4ca`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-040.json` SHA-256: `9725bab3b75cd7b783b5714a46002a448b86746cecaa36b9642865756abdd935`
 
@@ -167572,7 +167571,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `35d70ea0d8d26146448517e182d66c8b639524de7d6784f3de8ed95eabaab515`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `4f4cca9cb3bb512ccb6147aa584ec9b338bf5051a5ac62986c447e9d5bad0dfa`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json` SHA-256: `967b2b8c2c9152f44667627c540866d950b593faed8a1af737cf35ddcf525af0`
 
@@ -167580,19 +167579,19 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-046.json` SHA-256: `cd79512de294312a3f89ec12edc9d331e2f94b2d50e136fb4d12b51eb863a8af`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `4dc500c4780a1d09ed5b4f6805ef58acba42e58ae56d39ed6c561dee9aafb2ce`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-047.json` SHA-256: `e89ddd75d620e24bf91bf9f2a2b5aeee11e9b1a20c395047553d14d8ea519eaf`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-048.json` SHA-256: `d7b67ea6a0609ebb41b18254f455906d95abb9e1f37943e69f8fb451b86e71cf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `d660710f1602cca04a13d08199ea393e400e6a43c4bce80c3617f10e6c884eda`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-049.json` SHA-256: `af6b5a48aa49985122db2372a363af9c5e971fdc2038355c84fe66a608747dd6`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-050.json` SHA-256: `ff2454cb761826ec131cb66085390160c33cb8f96c071b65c29acb470aaa87be`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `d5163d2768df5105a104af7b92d17d857098f77199cea8267bb13281327d8957`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `7fdc5c90e2cf6fa518da18794f248832a5676277d7400168f3b9bee6cc2c8888`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `8f840245c7bc0f27240cc01376d356a2b32f0dd2f353d6097a5b940ef6fd6600`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-054.json` SHA-256: `d59b2d08df87c9fcb1ff97d74bd8fd9db9aade67c4393aef1413d8e02eb90b90`
 

@@ -55,7 +55,7 @@ class VocabularyTests(unittest.TestCase):
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
             "dispositions": {"allowed": 120, "restricted": 1510, "prohibited": 407,
-                             "not-applicable": 148, "needs-review": 11},
+                             "not-applicable": 159},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -95,12 +95,12 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(by_id["D-P344-007"]["evidence"]["extraction_warnings"], ["wrapped-headword"])
         self.assertIn("not an automatic substitute", by_id["D-P344-007"]["rationale"])
         radioactive = by_id["D-P349-003"]
-        self.assertEqual(radioactive["it_disposition"], "needs-review")
+        self.assertEqual(radioactive["it_disposition"], "not-applicable")
         self.assertEqual(radioactive["evidence"]["extraction_warnings"], ["wrapped-headword"])
         self.assertTrue(radioactive["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertIn("without identifying their sensing technology", radioactive["rationale"])
         real = by_id["D-P351-001"]
-        self.assertEqual(real["it_disposition"], "needs-review")
+        self.assertEqual(real["it_disposition"], "not-applicable")
         self.assertTrue(real["evidence"]["mechanical_ambiguities"])
         self.assertTrue(real["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertIn("not automatically true or verified", real["rationale"])
@@ -152,7 +152,7 @@ class VocabularyTests(unittest.TestCase):
         self.assertIn("measured at the gateway", satisfactory["examples"]["positive"]["text"])
         self.assertIn("not project measurements", satisfactory["examples"]["positive"]["explanation"])
         scored = by_id["D-P368-010"]
-        self.assertEqual(scored["it_disposition"], "needs-review")
+        self.assertEqual(scored["it_disposition"], "not-applicable")
         self.assertTrue(scored["evidence"]["mechanical_ambiguities"])
         self.assertTrue(scored["evidence"]["pdf_layout_check"]["visual_verification_performed"])
         self.assertEqual(scored["permitted_contextual_alternatives"], ["damaged by a groove"])

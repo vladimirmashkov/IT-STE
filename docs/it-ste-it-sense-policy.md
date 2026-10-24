@@ -55,7 +55,7 @@ The existing canonical dispositions map to this policy as follows:
 - **Core / portable IT sense → `allowed`**: supported across more than one relevant IT context or by a controlling standard, with low ambiguity and no hidden guarantee.
 - **Domain-restricted sense → `restricted`**: useful with a named domain, object, relation, operation, criterion, condition, or measurement contract.
 - **Split proposal → normally `restricted` plus a documented split proposal**: do not merge distinct senses into one definition merely to avoid a new record.
-- **Out of IT scope → `not-applicable`**: valid source/aviation terminology, but no justified use within the intended IT coverage.
+- **Out of IT scope → `not-applicable`**: valid source/aviation terminology, but no justified use within the intended IT coverage. An explicit owner decision may also exclude a free, polysemous, or context-dependent word from the canonical IT-STE vocabulary layer even when the word remains valid in external technical documentation; this is not a universal English-word ban.
 - **Misleading controlled-writing use → `prohibited`**: the considered IT wording hides a necessary condition, actor, object, evidence boundary, or safety consequence. This is not a universal ban on the English word.
 - **Unresolved → `needs-review`**: evidence or project policy cannot select a safe bounded classification. This is temporary and must include one exact missing decision or evidence requirement.
 
