@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 38,
+    "needs-review": 36,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1483
+    "restricted": 1485
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -35344,13 +35344,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: contaminated; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Affected by an unwanted physical substance or material\; limited to a physical component or medium\, provisionally\.
+Definition: Affected by an unwanted physical substance or material on a named component or medium\, as established by an inspection or maintenance observation\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Authenticated layout resolves the boundary\: CONTAMINATION \(n\) and its definition are a separate row\, while this row contains the DIRTY \(adj\) meaning and a CONTAMINATION \(n\) alternative\. The draft is limited to physical components or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic claim that a database is contaminated\. See \`docs\/it\-ste\-research\/W1\-D\-P201\.md\`\; keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
+Rationale: Authenticated layout resolves the boundary\: CONTAMINATION \(n\) and its definition are a separate row\, while this row contains the DIRTY \(adj\) meaning and a CONTAMINATION \(n\) alternative\. The restricted draft is limited to a named physical component or medium and an inspection or maintenance observation\. ISO 14644\-1\:2015 provides a primary cleanliness context based on airborne\-particle concentration\, while NIST CNSSI 4009\-2022 uses contamination for unauthorized information transfer\; these support the physical restriction and the need to exclude generic data\, configuration\, malware\, and ML senses\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\. See \`docs\/it\-ste\-research\/W1\-D\-P201\.md\`\; this is a bounded draft decision\, not approval or release\.
 
 Contextual alternatives:
 
@@ -35418,13 +35418,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: CONTAMINATION; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: An unwanted physical change to a material caused by a chemical or physical agent or another material\; limited to physical infrastructure or media\, provisionally\.
+Definition: An unwanted physical change to a named material caused by a chemical or physical agent or another material\, as recorded by an inspection or maintenance observation\.
 
 Domains: cloud\-infrastructure
 
-Rationale: Authenticated layout confirms a separate wrapped CONTAMINATION \(n\) row with the physical definition beginning “Unwanted change of the original condition\.\.\.”\; the preceding CONTAMINATION \(n\) reference belongs to the contaminated row\. The draft is limited to physical infrastructure or media\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\; neither supports a generic data or configuration sense\. See \`docs\/it\-ste\-research\/W1\-D\-P201\.md\`\; keep needs\-review pending an editorial decision on this narrow physical cloud\-infrastructure scope\.
+Rationale: Authenticated layout confirms a separate wrapped CONTAMINATION \(n\) row with the physical definition beginning “Unwanted change of the original condition\.\.\.”\; the preceding CONTAMINATION \(n\) reference belongs to the contaminated row\. The restricted draft is limited to a named physical material and an inspection or maintenance observation\. ISO 14644\-1\:2015 provides a primary cleanliness context based on airborne\-particle concentration\, while NIST CNSSI 4009\-2022 uses contamination for unauthorized information transfer\; these support the physical restriction and the need to exclude generic data\, configuration\, malware\, and ML senses\. AWS documents unmanaged configuration changes as drift\, and NIST uses data poisoning for adversarial training\-data changes\. See \`docs\/it\-ste\-research\/W1\-D\-P201\.md\`\; this is a bounded draft decision\, not approval or release\.
 
 Contextual alternatives:
 
@@ -167491,7 +167491,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-010.json` SHA-256: `85c51ce02d18848b0b3f1a2e6b4153766207b38065d304fc15251f60ce5e7d19`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `c0ce8490f692bff1a772ef15d45c2b02a10832f0d5b8cc9df787c97872345183`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `1d43e14e50a92b5c99fd950c80c53c3e23b4f65abb68d2ad2719f7ed61cc23cd`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
 

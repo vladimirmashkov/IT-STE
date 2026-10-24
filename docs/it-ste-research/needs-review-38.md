@@ -51,7 +51,19 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
-No remediation result has been recorded yet. Each subsequent change must add an entry here or in the linked per-slice research note with:
+### Iteration 27 — batch011 / physical PDF page 201
+
+- `D-P201-004` — old disposition: `needs-review`; new disposition: `restricted`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 201 / printed page `2-1-C19`, exact locator `entry D-P201-004`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; visual review confirmed the separate `contaminated (adj)` row, its `DIRTY (adj)` / `CONTAMINATION (n)` alternatives, and the physical connector examples. The extracted cross-row fragment remains a mechanical boundary artifact.
+  External evidence actually inspected: ISO 14644-1:2015 official abstract (`https://www.iso.org/standard/53394.html`, accessed 2026-10-24) supports a measurable physical-cleanliness/airborne-particle context but is limited to cleanroom air; NIST CNSSI 4009-2022 contamination glossary (`https://csrc.nist.gov/glossary/term/contamination`, accessed 2026-10-24) supports a distinct unauthorized-information-transfer security sense, not this physical sense; AWS CloudFormation drift (`https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html`, accessed 2026-10-24) and NIST data poisoning (`https://csrc.nist.gov/glossary/term/data_poisoning`, accessed 2026-10-24) support excluding configuration and ML meanings. Fact versus inference: ASD row/layout and source terminology are facts; restricting the draft to a named physical component/medium and inspection or maintenance observation is editorial inference. Changed wording/rationale: “Affected by an unwanted physical substance or material on a named component or medium, as established by an inspection or maintenance observation”; generic database/malware/configuration/ML uses remain excluded.
+
+- `D-P201-005` — old disposition: `needs-review`; new disposition: `restricted`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 201 / printed page `2-1-C19`, exact locator `entry D-P201-005`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; visual review confirmed the distinct wrapped `CONTAMINATION (n)` row and its physical definition/example. The source interpretation remains mechanically extracted and unreviewed.
+  External evidence, limits, fact/inference, and decision scope are the same bounded sources and limits recorded for `D-P201-004`; `restricted` is supported because the physical sense is relevant but the sources do not support unrestricted cloud-IT portability. Changed wording/rationale: “An unwanted physical change to a named material caused by a chemical or physical agent or another material, as recorded by an inspection or maintenance observation”; generic data, security-incident, configuration, malware, and ML uses remain excluded.
+
+  Validation: affected batch-011 check; adaptation; corpus; all-batch vocabulary; document build/check; 118 unit tests with `ResourceWarning` treated as errors; authenticated source doctor; diagnostics (no errors/warnings); `git diff --check`; and canonical queue/count recomputation passed. Final commit hash is recorded in the completion report after commit.
+
+Each subsequent change must add an entry here or in the linked per-slice research note with:
 
 - canonical ID and previous/new disposition;
 - ASD Issue/revision, physical PDF page, exact source locator and PDF hash;

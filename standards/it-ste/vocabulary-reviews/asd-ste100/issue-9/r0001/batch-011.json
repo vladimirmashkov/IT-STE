@@ -1026,12 +1026,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Affected by an unwanted physical substance or material; limited to a physical component or medium, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "Affected by an unwanted physical substance or material on a named component or medium, as established by an inspection or maintenance observation.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "Authenticated layout resolves the boundary: CONTAMINATION (n) and its definition are a separate row, while this row contains the DIRTY (adj) meaning and a CONTAMINATION (n) alternative. The draft is limited to physical components or media. AWS documents unmanaged configuration changes as drift, and NIST uses data poisoning for adversarial training-data changes; neither supports a generic claim that a database is contaminated. See `docs/it-ste-research/W1-D-P201.md`; keep needs-review pending an editorial decision on this narrow physical cloud-infrastructure scope.",
+      "rationale": "Authenticated layout resolves the boundary: CONTAMINATION (n) and its definition are a separate row, while this row contains the DIRTY (adj) meaning and a CONTAMINATION (n) alternative. The restricted draft is limited to a named physical component or medium and an inspection or maintenance observation. ISO 14644-1:2015 provides a primary cleanliness context based on airborne-particle concentration, while NIST CNSSI 4009-2022 uses contamination for unauthorized information transfer; these support the physical restriction and the need to exclude generic data, configuration, malware, and ML senses. AWS documents unmanaged configuration changes as drift, and NIST uses data poisoning for adversarial training-data changes. See `docs/it-ste-research/W1-D-P201.md`; this is a bounded draft decision, not approval or release.",
       "permitted_contextual_alternatives": [
         "affected by oil residue",
         "with foreign material present"
@@ -1088,12 +1088,12 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "An unwanted physical change to a material caused by a chemical or physical agent or another material; limited to physical infrastructure or media, provisionally.",
+      "it_disposition": "restricted",
+      "it_definition": "An unwanted physical change to a named material caused by a chemical or physical agent or another material, as recorded by an inspection or maintenance observation.",
       "domains": [
         "cloud-infrastructure"
       ],
-      "rationale": "Authenticated layout confirms a separate wrapped CONTAMINATION (n) row with the physical definition beginning “Unwanted change of the original condition...”; the preceding CONTAMINATION (n) reference belongs to the contaminated row. The draft is limited to physical infrastructure or media. AWS documents unmanaged configuration changes as drift, and NIST uses data poisoning for adversarial training-data changes; neither supports a generic data or configuration sense. See `docs/it-ste-research/W1-D-P201.md`; keep needs-review pending an editorial decision on this narrow physical cloud-infrastructure scope.",
+      "rationale": "Authenticated layout confirms a separate wrapped CONTAMINATION (n) row with the physical definition beginning “Unwanted change of the original condition...”; the preceding CONTAMINATION (n) reference belongs to the contaminated row. The restricted draft is limited to a named physical material and an inspection or maintenance observation. ISO 14644-1:2015 provides a primary cleanliness context based on airborne-particle concentration, while NIST CNSSI 4009-2022 uses contamination for unauthorized information transfer; these support the physical restriction and the need to exclude generic data, configuration, malware, and ML senses. AWS documents unmanaged configuration changes as drift, and NIST uses data poisoning for adversarial training-data changes. See `docs/it-ste-research/W1-D-P201.md`; this is a bounded draft decision, not approval or release.",
       "permitted_contextual_alternatives": [
         "foreign material on the component",
         "physical residue"
