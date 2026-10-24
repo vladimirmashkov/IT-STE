@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "workflow": "it-ste-release-readiness",
+  "branch": "remediation/release-readiness",
+  "status": "needs-scope",
+  "phase": "w2",
+  "skill": "it-ste-w2-editorial-slice",
+  "active_run": null,
+  "scope": {
+    "kind": "w2-theme",
+    "theme": null,
+    "ids": [],
+    "paths": [],
+    "excluded": []
+  },
+  "read_set": [
+    {
+      "path": "docs/it-ste-draft-handoff.md",
+      "selector": "#current-checkpoint-read-before-historical-baseline"
+    },
+    {
+      "path": "docs/it-ste-release-readiness-plan.md",
+      "selector": "#current-checkpoint"
+    },
+    {
+      "path": "docs/it-ste-research-method.md",
+      "selector": "#bounded-research-and-decision-loop"
+    }
+  ],
+  "allowed_paths": [
+    "docs/it-ste-research/W2-editorial-review.md",
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md"
+  ],
+  "counts": {
+    "records": 2196,
+    "batches": 55,
+    "allowed": 120,
+    "restricted": 1510,
+    "prohibited": 407,
+    "not_applicable": 159,
+    "needs_review": 0,
+    "queue": "empty",
+    "source": "checkpoint; recompute before use"
+  },
+  "next_action": "Provide one explicit W2 theme or exact IDs, create a run input, and do not infer scope from history.",
+  "authorization": {
+    "auto_commit": "explicit-per-run"
+  },
+  "last_run": null,
+  "last_output": null
+}
