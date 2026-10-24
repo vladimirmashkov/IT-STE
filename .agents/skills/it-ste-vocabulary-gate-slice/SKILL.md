@@ -1,33 +1,19 @@
 ---
 name: it-ste-vocabulary-gate-slice
-description: Review one explicit IT-STE vocabulary batch or thematic group for draft semantic dispositions and provenance, preserving unresolved decisions and making one validated explicit-path commit without claiming vocabulary approval.
+description: Review one exact IT-STE vocabulary group with compact input/output state; never turn a structural review into approval.
 disable-model-invocation: true
 ---
 
 # IT-STE vocabulary gate slice
 
-Use only under `it-ste-release-readiness` or when the user explicitly requests one bounded vocabulary review group. This skill reviews draft dispositions; it is not an approval workflow, release gate, ASD guidance, or SFT authorization.
+Use only under release-readiness or for one explicitly bounded vocabulary review. Accept one canonical batch path or an enumerated group of entry IDs/pages; never all batches.
 
-## Bounded scope
+## Contract
 
-Accept one full canonical batch path or one explicitly enumerated thematic group of entries. Never process all batches in one run. Record exact batch path, entry IDs, physical pages, old dispositions, and the next group. The offset-0 queue is a recomputation input, never a sufficient resume pointer.
+1. Read `current.json` with `python3 tools/it_ste_resume.py show --compact`, then one input whose `scope` contains exact batch/IDs/pages, old dispositions, excluded meanings, and next-group pointer. No exact input means `needs-scope`, not a history scan.
+2. Read only the selected batch projection/entries and active note/register named by `read_set`. Authenticate ASD with `doctor`; retrieve exact entries and the PDF page only when layout matters. Never stage the PDF/rendering.
+3. For each entry inspect competent direct evidence and record source facts, editorial inference, alternatives, limitations, and one of `allowed`, `restricted`, `prohibited`, `not-applicable`, unchanged, or `needs-review`. Preserve raw fields, IDs, order, warnings, fixed locators, rights, draft status, and review status.
+4. Change canonical JSON only when justified by the selected evidence. Do not edit ASD rows, schema, relations, or unrelated term records. Update one compact note, handoff/plan checkpoint, counts, and exact next group.
+5. Run the affected full-path batch check, then the standard checks from the compact protocol, diagnostics, and full Git review. Write `output.json`, run `finish`, and commit only explicit paths when per-run authorization permits.
 
-## Evidence method
-
-1. Read `AGENTS.md`, the Current checkpoint in `docs/it-ste-draft-handoff.md`, the release-readiness plan, `docs/it-ste-research-method.md`, and the active vocabulary note/register only.
-2. Capture and inspect a clean baseline. Stop for unrelated, mixed, staged, deleted, renamed, binary, mode, or submodule changes.
-3. Run ASD `doctor`, then retrieve only selected exact entries and the relevant full canonical batch path. Render the authenticated PDF page only when row boundaries, wrapping, columns, or typography require it; never stage the PDF or rendering.
-4. For each selected entry, inspect competent primary/expert evidence for the proposed IT sense. Record URL, title, publisher, version/status, access date, section, fact, competence, limitation, and source-vs-inference boundary. Search snippets and uninspected pages are not evidence.
-5. Compare `allowed`, `restricted`, `prohibited`, `not-applicable`, unchanged, and `needs-review`. Do not force a disposition to empty the queue. Preserve raw source fields, IDs, sequence, warnings, fixed retrieval commands, rights, `status: draft`, and `review_status: editorial-review-needed`.
-6. Update one active compact vocabulary note/register with exact entry decisions, missing owner/policy questions, validations, and one next group. Do not create duplicate history notes.
-7. Change canonical batch JSON only when evidence justifies it. Do not modify ASD source rows, source extraction, schema, relations, or term records in the same slice unless the plan explicitly names them and the contract supports them.
-8. Run the affected full-path batch check first, then adaptation, corpus, full vocabulary, document build/check, unit tests, doctor, diagnostics, and `git diff --check`.
-9. Recompute all counts/queue, update handoff and release-readiness plan, perform full diff review, and make one explicit-path commit only after all checks pass.
-
-## Gate semantics
-
-Passing this skill's checks means only that the selected draft review is recorded and structurally valid. It never means vocabulary approval. A separate human/editorial gate must record approval for the proposed release scope before release-candidate packaging.
-
-## Commit policy and report
-
-Automatic commits require explicit user authorization. Use one short imperative message such as `Review vocabulary batch 005`. Stage explicit paths only; never use `git add .` or pathless `git add -A`. Report in Russian the selected IDs, old/new dispositions, evidence/limits, counts, queue, all validations, exact commit/hash/paths, ignored artifacts, next group, and the explicit no-approval/no-release status.
+A passing slice is only a recorded draft review. It is not vocabulary approval, release readiness, publication, conformance, or SFT readiness. Stop and preserve `blocked`/`needs-review` for missing evidence, owner/policy decisions, failed checks, or ambiguous ownership.

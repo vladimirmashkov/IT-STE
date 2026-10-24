@@ -1,47 +1,22 @@
 ---
 name: it-ste-release-gates
-description: Execute one bounded IT-STE release-readiness gate for rights/provenance, language coverage, or independent dataset quality, recording blockers and evidence with one logical explicit-path commit; never publish or infer approval.
+description: Execute one bounded rights, language, or dataset gate using compact state; record blockers and never infer approval.
 disable-model-invocation: true
 ---
 
-# IT-STE release-readiness gates
+# IT-STE release-readiness gate
 
-Use only under `it-ste-release-readiness` or for an explicitly requested single gate scope. Valid scopes are `rights`, `language`, and `dataset`. This skill records readiness evidence; it does not publish, approve vocabulary, mutate the release catalog, or authorize SFT.
+Use under `it-ste-release-readiness` or for one explicit scope: `rights`, `language`, or `dataset`. This records readiness evidence; it does not approve vocabulary, publish, mutate the catalog, or authorize SFT.
 
-## Preconditions
+## Compact execution
 
-- Read `AGENTS.md`, the Current checkpoint in `docs/it-ste-draft-handoff.md`, the Current checkpoint in `docs/it-ste-release-readiness-plan.md`, and only the active gate note.
-- Require a clean branch/worktree baseline and explicit user authorization for automatic commits.
-- Run ASD `doctor`, canonical vocabulary check, and the relevant structural checks before making a gate decision.
-- Stop if the gate needs a schema, relation, source-policy, language-policy, or owner decision that the current contract cannot express.
+1. Read `current.json` and one input with exact `phase`, gate scope, question, criteria, read set, allowlist, baseline, and per-run commit authorization. If scope/input is missing, return `needs-scope` without reading the full plan or source registry.
+2. Run `begin`, require branch/clean ownership rules, and inspect only the relevant manifest, source metadata, gate note, generated artifact/hash, and directly fetched competent sources named in the input.
+3. Evaluate exactly one gate:
+   - `rights`: ASD derivative permission/attribution, original IT-STE rights, external URL/version/scope/downstream rights, copied-text exclusion, and manifest/source consistency;
+   - `language`: required release languages, translation inventory/review/equivalence, English authority, and representability of `partial` coverage;
+   - `dataset`: reproducibility/hashes, scope, draft/private leakage, license, generated consistency, evaluation quality, and independent review.
+4. Record facts versus inference, limitations, and `pass`, `blocked`, or `needs-owner-decision` in the active gate note (normally `docs/it-ste-research/release-readiness-gates.md`) and plan checkpoint. Unknown rights, incomplete translation review, unresolved vocabulary approval, or missing independent quality evidence remain blockers.
+5. Run affected and standard checks from the compact protocol, diagnostics, Git review, then write/finish one compact output. Commit only explicit wholly owned state/metadata paths when authorized. Never update `catalog.json` or publish.
 
-## Gate scopes
-
-### Rights and provenance
-
-Audit the manifest, all referenced source metadata, external URL/version/status/scope, downstream rights, ASD derivative permission, project-only rights, copied text, private PDF/rendering exclusion, generated output, and source-reference consistency. Unknown rights are blockers unless an owner records an explicit restriction or replacement decision.
-
-### Language coverage
-
-Record authoritative language, required release languages, translation inventory, review status, equivalence review, and the meaning of `partial` coverage. Do not invent translations or schema fields. If the proposed release is English-only, record that scope explicitly and obtain the required owner decision rather than treating it as implicit approval.
-
-### Dataset/quality
-
-Audit reproducibility, manifest/hash consistency, draft leakage, private material exclusion, license scope, generated-output consistency, evaluation split/quality requirements, and independent review. The correct result may be `not authorized` or `blocked`; never infer SFT readiness from passing tests.
-
-## Execution stages
-
-1. State one gate question, scope, criteria, evidence needed, and stop condition in one active note, normally `docs/it-ste-research/release-readiness-gates.md`.
-2. Inspect only relevant files and directly fetched competent sources. Record facts versus inference and limitations.
-3. Update the gate note and the release-readiness plan checkpoint with `pass`, `blocked`, or `needs-owner-decision`. Do not set an approved release status in canonical data.
-4. Run affected checks, adaptation, corpus, vocabulary, document build/check, tests, ASD doctor, diagnostics, and `git diff --check`.
-5. Review the complete inventory and commit only the gate note/plan/checkpoint and justified metadata/test changes with explicit paths. Do not create a cosmetic commit when no meaningful state changed.
-6. Verify full hash, exact paths, clean worktree/index, counts, and queue before the next gate.
-
-## Stop rules
-
-A missing rights grant, incomplete translation review, unresolved vocabulary approval, failed independent quality criterion, unavailable source, failed validation, or ambiguous ownership stops the gate. Preserve the blocker and exact next action. Do not update `catalog.json`, publish, or create a release candidate from a blocked gate.
-
-## Final report
-
-Report in Russian: gate scope/result, inspected evidence and limitations, blockers/owner decisions, changed files, validations, commit hash/message/paths or safe uncommitted command, ignored artifacts, next gate, and explicit no-release/no-publication/no-SFT statement.
+Report compact evidence refs, blockers/owner decisions, changed paths, validation statuses, commit metadata or safe blocker, ignored artifacts, next gate, and an explicit no-release/no-publication/no-SFT statement.
