@@ -5,10 +5,10 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after the 11-record domain-mapping study
-Requested iterations: 36 (user-authorized); domain-mapping follow-up covers the remaining 11 records as one bounded register update, not 11 forced canonical dispositions
-Completed slices: 22 legacy classification slices + new-policy slices 1–22/36 + one 11-record domain-mapping study
-Processed records: 75 unique records including the 11-record study
+Last checkpoint: 2026-10-24, after the complete 11-record domain-evidence run
+Requested iterations: all 11 records; executed as 9 sequential research groups
+Completed slices: 22 legacy classification slices + new-policy slices 1–22/36 + one domain-mapping study + 9 domain-evidence groups
+Processed records: 75 unique records, with all 11 re-screened across all matrix domains
 Disposition changes: 24 records changed from `needs-review` to `restricted`; the 11-record study made no canonical disposition changes
 Remaining `needs-review`: 11
 
@@ -60,9 +60,20 @@ Fresh canonical counts after the 11-record domain-mapping study:
 - `not-applicable`: `148`;
 - `needs-review`: `11`.
 
-The 11 remaining records are listed in `needs-review-38.md`; this log retains the frozen baseline and records each disposition result. The domain-mapping register `it-domain-11-classification.md` maps every remaining record to plausible IT domains and bounded candidate senses, but intentionally leaves all 11 at `needs-review`. The study is one coherent bounded follow-up because its question was cross-record domain coverage and schema/owner boundaries, not 11 independent disposition decisions. No Reddit or Stack Overflow source was used. The legacy table above remains historical and is not the new-policy sequence.
+The 11 remaining records are listed in `needs-review-38.md`; this log retains the frozen baseline and records each disposition result. The evidence matrix `it-domain-11-evidence-matrix.md` screens all 11 against all domains in `it-ste-it-domain-matrix.md`, records `applicable`/`not-applicable`/`unresolved` for each pair, and intentionally leaves all 11 canonical dispositions at `needs-review`. No Reddit or Stack Overflow source was used. The legacy table above remains historical and is not the new-policy sequence.
 
-Exact next policy question: obtain owner decisions on facility-equipment scope, the `real` contrast, and schema treatment of split senses; then research one fresh bounded page slice only. Do not force any of the 11 records out of `needs-review` merely to reduce the count.
+Exact next policy question: obtain owner decisions on facility-equipment scope, the selected `real` contrast, and schema treatment of split senses; then apply only justified canonical changes. Do not force any of the 11 records out of `needs-review` merely to reduce the count.
+
+### Complete 11-record domain-evidence run — 9 sequential groups — 2026-10-24
+
+- Scope: all 11 target records screened against all 23 domains in `it-ste-it-domain-matrix.md`, executed in nine sequential groups: flow, scoring, stress, representation, symmetry, `real`, mechanical terms, physical clearance, and radioactive facility context.
+- Old/new: all 11 remain `needs-review` → `needs-review`; no canonical JSON, generated vocabulary, IDs, source pins, or draft review states changed.
+- Evidence matrix: `docs/it-ste-research/it-domain-11-evidence-matrix.md` records every target/domain pair as `A` (applicable candidate), `U` (unresolved), or `N` (not-applicable), with aggregate decisions and blockers. `UPSTREAM`/`UPSTREAM OF` have the strongest `NET`/`DIST`/`DEV` evidence; `scored` has `AI`/`TEST` candidate evidence; `stress` has `TEST`/`PERF` candidate evidence. The remaining candidate senses require restricted wording or split treatment.
+- Sources actually inspected: EPA, AWS, JCGM/BIPM VIM, Prometheus, RFC 9110 and RFC 3339, NSK, scikit-learn, NIST AI RMF, Google Cloud, ITU-T, Unicode, W3C SVG/CSS/WCAG, Kubernetes, RFC 1122, RFC 791, Microsoft, NGINX, and Apache Airflow. NRC returned HTTP 403 and was not evidence. No Reddit or Stack Overflow source was used.
+- Decision: no `allowed` result; no universal `prohibited` or `not-applicable` result. `scored`, `strain`, and `stress` remain split proposals; `real`, `SYMBOL`, and symmetry terms may also require splits. Potential `restricted` candidates remain bounded by named objects, flows, representations, or procedures.
+- Files: added `docs/it-ste-research/it-domain-11-evidence-matrix.md`; updated this log, the policy, the handoff, the domain register, and the external-source index. No commit was authorized; changes remain uncommitted.
+- Validation: adaptation, corpus, vocabulary, document build, 118 unit tests with `ResourceWarning` as errors, authenticated source doctor, project diagnostics, and `git diff --check` all passed after the evidence matrix update. These checks validate repository consistency, not vocabulary approval. Final Git inventory review follows.
+- Next action: owner review of the evidence matrix and explicit policy/schema decisions; no further research slice should silently alter the 11 canonical dispositions.
 
 ### IT-domain mapping study — remaining 11 records — 2026-10-24
 

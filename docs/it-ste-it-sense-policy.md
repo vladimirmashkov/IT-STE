@@ -100,6 +100,29 @@ A proposed IT sense may leave `needs-review` only when all applicable conditions
 9. If the term is polysemous, the entry either names the domain or records a split proposal.
 10. The rationale distinguishes source fact from editorial adaptation.
 
+## Eleven-record domain-evidence workflow
+
+The remaining 11 records require a separate evidence matrix because the question is not merely whether each word has an IT use, but which combinations of word, sense, and IT domain are defensible. Use `docs/it-ste-research/it-domain-11-evidence-matrix.md` and the project-local skill `.agents/skills/it-ste-11-domain-evidence/SKILL.md`.
+
+For each `word × domain` pair, record:
+
+1. a concrete candidate sense;
+2. the named IT object or actor;
+3. the operation, state, relation, or property;
+4. the observable condition, measurement, tolerance, procedure, or acceptance boundary;
+5. an authoritative source actually inspected;
+6. source facts, limitations, and editorial inference separately;
+7. excluded aviation, metaphorical, and unrelated IT meanings;
+8. one result: `applicable`, `not-applicable`, or `unresolved`.
+
+A domain is not applicable merely because a sentence can be imagined with the word. An `applicable` result requires a competent source and a bounded sense. An `unresolved` result is correct when the source, owner policy, or schema cannot select a safe sense. The aggregate word disposition must remain `needs-review` when any unresolved split or policy boundary prevents a safe canonical entry.
+
+For polysemous words, investigate the most plausible domains and explicitly close the remaining domains with evidence-based `not-applicable` or `unresolved` findings. Do not claim exhaustive coverage from a synonym search or search snippet. `allowed` is unavailable for a word whose domains or senses remain materially ambiguous. `split proposal` is required when multiple applicable senses cannot be represented independently in the current schema.
+
+Physical IT is admissible only when the object belongs to an IT-operated system or documented facility process and the source establishes the relevant physical condition. Network reachability, authorization, security, logical availability, or software behavior must not be described with physical-clearance words by analogy. ITIL may frame governance, service management, operations, reliability, assets, incidents, changes, and service levels; it does not define meanings for protocols, programming languages, geometry, cryptography, or physical measurement.
+
+Reddit and Stack Overflow may assist discovery of terminology or candidate primary sources only. They are never evidence for `applicable`, `restricted`, `not-applicable`, or any other disposition.
+
 ## Decision workflow for the 36-record register
 
 For each record:
