@@ -3250,13 +3250,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Prefer explicit IT sentences and steps while retaining conditions and action relationships.",
+          "rationale": "Prefer explicit IT sentences and steps while retaining conditions and action relationships; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Punctuation should support readable sentence structure rather than extended clause chains.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Make simplification depend on clarity and the applicable prose profile instead of imposing a universal ban, especially on syntax-controlled content.",
+          "rationale": "Make simplification depend on clarity and the applicable prose profile instead of imposing a universal ban, especially on syntax-controlled content; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source excludes semicolons and replaces them with sentence breaks.",
           "target_field": "exceptions"
         }
@@ -3356,19 +3356,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Retain these useful functions in IT prose when the information is clear and supplemental, while excluding required constraints from asides.",
+          "rationale": "Retain these useful functions in IT prose when the information is clear and supplemental, while excluding required constraints from asides; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Parentheses can supply references, item identifiers, procedure markers, abbreviations, and explanations.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Require explicit cardinality and branch selection instead of ambiguous compressed choices; do not presume regular noun plurals.",
+          "rationale": "Require explicit cardinality and branch selection instead of ambiguous compressed choices; do not presume regular noun plurals; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source permits compact singular-and-plural forms and parenthetical alternatives.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "IT readers and independently retrieved instructions need required limits in the main procedural flow, not merely in an aside.",
+          "rationale": "IT readers and independently retrieved instructions need required limits in the main procedural flow, not merely in an aside; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Source explanations can place operational limits inside parentheses.",
           "target_field": "exceptions"
         }
@@ -168737,9 +168737,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0022.json` SHA-256: `bcb6c6c19ebc9d1a88740d33b2b1d1e90d563880fadaf543eaf5e2be811ce6e6`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0023.json` SHA-256: `747c9c5f18e1b37ba6cdce91102cdc0bc22e31a1e5e7bad1b65c8a9fc0a02c3e`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0023.json` SHA-256: `9a5f998be176ef394db4cf2c65e6ca6a282a3dcd45b274a4132fa1b5930d8b88`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0024.json` SHA-256: `5e8d3230903a278be52e452f7906285ca95db6439368734ef39a7bcd94e92cf5`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0024.json` SHA-256: `15c9879a4a777fe78a28dabbe9a12b2e1cad7dad38bd8eab3a521bbb0ca09a3a`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0025.json` SHA-256: `6313a4313b6ef50a1c0beeeb529da5ea652a44a3967e2e637f7b5e237358cbf2`
 
