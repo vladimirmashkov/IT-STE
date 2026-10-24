@@ -5,9 +5,9 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 12/36
-Requested iterations: 36 (user-authorized); this run executes slice 12/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–12/36
+Last checkpoint: 2026-10-24, after new-policy slice 13/36
+Requested iterations: 36 (user-authorized); this run executes slice 13/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–13/36
 Processed records: 53
 Disposition changes: 13 records changed from `needs-review` to `restricted`
 Remaining `needs-review`: 22
@@ -51,7 +51,7 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 12/36:
+Fresh canonical counts after new-policy slice 13/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
@@ -62,7 +62,7 @@ Fresh canonical counts after new-policy slice 12/36:
 
 The 22 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; slices 11–12 classified `D-P374-005` / `D-P374-006` and `D-P379-002` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P383-001` (batch 046, physical PDF page 383), and do not start slice 13/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P397-005` / `D-P397-006` / `D-P397-007` (batch 049, physical PDF page 397), if all remain `needs-review`, and do not start slice 14/36 here.
 
 ### New-policy classification slice 10/36 — `D-P368-010`
 
@@ -196,3 +196,14 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Decision and canonical changes: changed only `D-P379-002`'s disposition, definition, domains, rationale, contextual alternative, examples and review-required list. The restricted draft definition is unintended sliding of named physical IT equipment across a named support surface during a specified handling or installation procedure. `slide unintentionally` and `lose traction` remain contextual alternatives; `slide` is preferred for controlled rail motion. IDs, sequence, source pins, fixed locator, warnings/ambiguity, raw metadata, rights and draft statuses were preserved.
 - Validation/commit: affected batch-045 check first; adaptation; corpus; all-batch vocabulary check; document build/check; unit tests with `ResourceWarning` as errors; authenticated source doctor before and after validation; diagnostics with no errors or warnings; `git diff --check`; exact ASD entry/page review; and offset-0 queue/count recomputation passed for this run. Automatic commit includes only reviewed slice files.
 - Next action: stop after slice 12/36; after fresh offset-0 recomputation, the next authorized run must inspect only `D-P383-001` (batch `046`, physical PDF page `383`); do not start slice 13 here.
+
+### New-policy classification slice 13/36 — `D-P391-003` / `D-P391-005`
+
+- Run/slice: user-authorized new-policy slice 13/36; batch `047`; physical PDF page `391`; POS `v` for both records. Fresh offset-0 canonical recomputation confirmed `D-P383-001` is already `restricted` and excluded it; the selected related pair is the next requested unresolved page, with no expansion to page 397.
+- Old/new: `D-P391-003` (`strain`) remains `needs-review` → `needs-review`; `D-P391-005` (`stress`) remains `needs-review` → `needs-review`. Both remain `status: draft` / `review_status: editorial-review-needed`; no canonical or generated content changed.
+- ASD evidence: Issue 9, revision `r0001`, exact locators `entry D-P391-003` and `entry D-P391-005`, printed page `2-1-S25`, sequences `1872` and `1874`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; doctor, exact entries, bounded page retrieval, and fresh page-391 render passed. Visual inspection confirms separate `strain (v)` and `stress (v)` rows: `strain` has `FILTER (TN)` / `STRAIN (TN)` with oil-filtering and bellows examples; `stress` has `FORCE (TN)` with a ducting-force example. No row-boundary, spelling, POS, wrapping, or column ambiguity remains; source interpretation remains mechanically extracted and unreviewed.
+- IT question and exclusions: can the physical source senses or software-load language be bounded to a useful IT sense under the all-domain policy? Excluded are unbounded engineering claims, unnamed IT hardware, unqualified coolant filtration, force/deformation acceptance or safety limits, software performance/load testing, outage/performance guarantees, and treating either verb as an operational command.
+- External evidence actually inspected: Engineering ToolBox, “Stress, Strain and Young's Modulus,” `https://www.engineeringtoolbox.com/stress-strain-d_950.html`, accessed 2026-10-24; distinguishes stress as force per unit area from strain as deformation, but is not an IT standard or vocabulary authority. Google Cloud, “Performance optimization,” `https://cloud.google.com/architecture/framework/performance-optimization`, accessed 2026-10-24; discusses workload requirements, resource load, monitoring, and improvement, but does not define these verbs. Google SRE Book, “Load Balancing in the Datacenter,” `https://sre.google/sre-book/load-balancing-datacenter/`, accessed 2026-10-24; uses load, capacity, overload, requests, and performance terminology, but does not establish `strain` or `stress` as controlled IT verbs. Targeted Dell/Cisco/NASA retrievals were inaccessible or not found and were not used as evidence.
+- Decision and limits: retain `needs-review` for both records. The evidence separates physical engineering senses from software operations but provides no named IT object, component procedure, force/deformation limit, liquid-processing context, or independently justified software sense. `restricted` or `allowed` would overstate the evidence; `prohibited` or `not-applicable` would discard plausible physical-IT follow-up without resolving the missing scope. No vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- Validation/commit: affected batch-047 check; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor; project diagnostics; `git diff --check`; exact ASD entry/page retrieval; visual page review; and offset-0 queue/count recomputation passed. Automatic commit includes only the research note, handoff, and classification log.
+- Next action: stop after slice 13/36; after fresh offset-0 recomputation, inspect only `D-P397-005` / `D-P397-006` / `D-P397-007`, batch `049`, physical PDF page `397`, if all remain `needs-review`; do not start slice 14 here.
