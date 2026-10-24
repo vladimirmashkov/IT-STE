@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 21,
+    "needs-review": 19,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1500
+    "restricted": 1502
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -156022,25 +156022,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: uncoil; POS: v.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Straighten a coiled physical cable within its permitted bend and torsion limits\.
+Definition: Straighten a named physical cable by unwinding it\, without exceeding the cable manufacturer\'s specified bend\-radius or torsion limits\.
 
 Domains: procedures\-runbooks
 
-Rationale: The compact source also contains a cleanliness cue apparently associated with the next row\. Page 413 was visually checked against the authenticated PDF\; NASA\-STD\-6016C supports only a physical\-hardware contamination boundary\, not a general IT sense for uncoiling\. See \`docs\/it\-ste\-research\/W1\-D\-P413\-005\-006\.md\`\; retain needs\-review pending competent cabling evidence and editorial review\.
+Rationale: The compact source also contains a cleanliness cue apparently associated with the next row\. The authenticated PDF confirms that row 5 maps uncoil \(v\) to UNWIND \(v\)\, and the adjacent cleanliness cue belongs to the following row\. NASA\-STD\-8739\.4A establishes the competent cable and harness workmanship domain\; Belden\'s current Category 6 manufacturer guidance confirms that cable construction affects allowable installation pulling tension and bend radius\. Restrict this draft sense to a named physical cable and the applicable manufacturer or equipment limits\. Do not use uncoil for data transformation\, and do not imply one universal limit\. See \`docs\/it\-ste\-research\/W1\-D\-P413\-005\-006\.md\`\.
 
 Contextual alternatives:
 
 - unwind the cable
 
+- straighten the cable within the specified bend radius
+
 #### Positive example
 
 ```
-Unwind the patch cable without twisting its connectors.
+Unwind the patch cable without exceeding the manufacturer's minimum bend radius or twisting the connectors.
 ```
 
-Explanation: States a physical operation and a damage constraint\.
+Explanation: Names the physical cable and requires the applicable installation limits\.
 
 #### Problematic example
 
@@ -156048,7 +156050,7 @@ Explanation: States a physical operation and a damage constraint\.
 Uncoil the data stream.
 ```
 
-Explanation: Does not identify decoding\, buffering\, or any executable data operation\.
+Explanation: Does not identify a physical cable or a cable\-handling operation\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -156094,19 +156096,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: uncontaminated; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Free of specified unwanted physical substances under a stated inspection criterion\.
+Definition: Free of the specified physical contamination after passing the stated inspection or acceptance procedure\.
 
 Domains: procedures\-runbooks
 
-Rationale: The wrapped row was visually checked against the authenticated PDF\; NASA\-STD\-6016C supports a physical\-hardware contamination boundary\, while Microsoft Azure distinguishes data states and security threats\. Neither establishes a general IT sense or malware claim\. See \`docs\/it\-ste\-research\/W1\-D\-P413\-005\-006\.md\`\; retain needs\-review pending applicable contamination evidence and editorial review\.
+Rationale: The authenticated PDF confirms that row 6 maps uncontaminated \(adj\) to CLEAN \(adj\)\, with the separate CONTAMINATION \(n\) continuation\/reference\. NASA\-STD\-6016C requires materials and processes for flight hardware and interfacing equipment to be controlled to prevent damage or contamination of flight hardware\; this supports a bounded physical\-hardware sense\, not a general IT or malware claim\. Restrict the draft wording to a named object\, specified contamination\, and stated inspection or acceptance procedure\. See \`docs\/it\-ste\-research\/W1\-D\-P413\-005\-006\.md\`\.
 
 Contextual alternatives:
 
 - free of the specified contamination
 
-- clean under the inspection procedure
+- clean under the stated inspection procedure
 
 #### Positive example
 
@@ -156114,7 +156116,7 @@ Contextual alternatives:
 Use a connector that passes the specified contamination inspection.
 ```
 
-Explanation: Makes the cleanliness claim testable\.
+Explanation: Names a physical object and makes the cleanliness claim testable\.
 
 #### Problematic example
 
@@ -167588,7 +167590,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `d233a6666621b0196429fae339ae476ff2554487f8d7d5953926acdaf0e40b1a`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `f738c1b6f1ec4e5351e1b534e3d179467f5713b83c2783c4fc9e12a8727d0eb2`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 

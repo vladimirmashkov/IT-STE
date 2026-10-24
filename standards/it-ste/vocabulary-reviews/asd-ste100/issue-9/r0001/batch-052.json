@@ -187,23 +187,24 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Straighten a coiled physical cable within its permitted bend and torsion limits.",
+      "it_disposition": "restricted",
+      "it_definition": "Straighten a named physical cable by unwinding it, without exceeding the cable manufacturer's specified bend-radius or torsion limits.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The compact source also contains a cleanliness cue apparently associated with the next row. Page 413 was visually checked against the authenticated PDF; NASA-STD-6016C supports only a physical-hardware contamination boundary, not a general IT sense for uncoiling. See `docs/it-ste-research/W1-D-P413-005-006.md`; retain needs-review pending competent cabling evidence and editorial review.",
+      "rationale": "The compact source also contains a cleanliness cue apparently associated with the next row. The authenticated PDF confirms that row 5 maps uncoil (v) to UNWIND (v), and the adjacent cleanliness cue belongs to the following row. NASA-STD-8739.4A establishes the competent cable and harness workmanship domain; Belden's current Category 6 manufacturer guidance confirms that cable construction affects allowable installation pulling tension and bend radius. Restrict this draft sense to a named physical cable and the applicable manufacturer or equipment limits. Do not use uncoil for data transformation, and do not imply one universal limit. See `docs/it-ste-research/W1-D-P413-005-006.md`.",
       "permitted_contextual_alternatives": [
-        "unwind the cable"
+        "unwind the cable",
+        "straighten the cable within the specified bend radius"
       ],
       "examples": {
         "positive": {
-          "text": "Unwind the patch cable without twisting its connectors.",
-          "explanation": "States a physical operation and a damage constraint."
+          "text": "Unwind the patch cable without exceeding the manufacturer's minimum bend radius or twisting the connectors.",
+          "explanation": "Names the physical cable and requires the applicable installation limits."
         },
         "problematic": {
           "text": "Uncoil the data stream.",
-          "explanation": "Does not identify decoding, buffering, or any executable data operation."
+          "explanation": "Does not identify a physical cable or a cable-handling operation."
         }
       },
       "evidence": {
@@ -248,20 +249,20 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Free of specified unwanted physical substances under a stated inspection criterion.",
+      "it_disposition": "restricted",
+      "it_definition": "Free of the specified physical contamination after passing the stated inspection or acceptance procedure.",
       "domains": [
         "procedures-runbooks"
       ],
-      "rationale": "The wrapped row was visually checked against the authenticated PDF; NASA-STD-6016C supports a physical-hardware contamination boundary, while Microsoft Azure distinguishes data states and security threats. Neither establishes a general IT sense or malware claim. See `docs/it-ste-research/W1-D-P413-005-006.md`; retain needs-review pending applicable contamination evidence and editorial review.",
+      "rationale": "The authenticated PDF confirms that row 6 maps uncontaminated (adj) to CLEAN (adj), with the separate CONTAMINATION (n) continuation/reference. NASA-STD-6016C requires materials and processes for flight hardware and interfacing equipment to be controlled to prevent damage or contamination of flight hardware; this supports a bounded physical-hardware sense, not a general IT or malware claim. Restrict the draft wording to a named object, specified contamination, and stated inspection or acceptance procedure. See `docs/it-ste-research/W1-D-P413-005-006.md`.",
       "permitted_contextual_alternatives": [
         "free of the specified contamination",
-        "clean under the inspection procedure"
+        "clean under the stated inspection procedure"
       ],
       "examples": {
         "positive": {
           "text": "Use a connector that passes the specified contamination inspection.",
-          "explanation": "Makes the cleanliness claim testable."
+          "explanation": "Names a physical object and makes the cleanliness claim testable."
         },
         "problematic": {
           "text": "The backup is uncontaminated because its case is clean.",

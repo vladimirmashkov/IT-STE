@@ -51,18 +51,30 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 15/36:
+Fresh canonical counts after new-policy slice 16/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,500`;
+- `restricted`: `1,502`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `21`.
+- `needs-review`: `19`.
 
-The 21 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001` is now restricted with a documented split proposal, not a vocabulary approval or release decision. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 19 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, and `D-P413-006` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P413-005` / `D-P413-006`, batch 052, physical PDF page 413, as new-policy slice 16/36; do not start slice 16/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P349-003`, batch 038, physical PDF page 349, as new-policy slice 17/36; do not start slice 17/36 here.
+
+### New-policy classification slice 16/36 — `D-P413-005` / `D-P413-006`
+
+- Run/slice: user-authorized new-policy classification slice 16/36; batch `052`; physical PDF page `413`; POS `v` (`uncoil`) and `adj` (`uncontaminated`). Fresh offset-0 canonical recomputation selected exactly these two records; slice 17 was not started.
+- Old/new: `D-P413-005` changed from `needs-review` to `restricted`; `D-P413-006` changed from `needs-review` to `restricted`. Both remain `status: draft` / `review_status: editorial-review-needed`; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, exact locators `entry D-P413-005` and `entry D-P413-006`, sequences `2043` and `2044`, printed page `2-1-U1`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Doctor, exact entries, bounded page retrieval, and visual page-413 review passed. Row 5 is `uncoil (v)` → `UNWIND (v)` with the cable example; row 6 is `uncontaminated (adj)` → `CLEAN (adj)` with a separate contamination continuation/reference. The mechanical warning and ambiguity history remain preserved.
+- IT question and exclusions: can these source senses be bounded for physical IT/maintenance policy? `uncoil` is limited to a named physical cable and applicable manufacturer bend-radius/torsion limits; `uncontaminated` is limited to specified physical contamination and a stated inspection/acceptance procedure. Excluded are data transformation, data integrity, malware, sanitization, and generic cleanliness claims.
+- External evidence actually inspected: NASA-STD-8739.4A w/Change 4 (NASA Technical Standards System, active, change 2022-04-13, https://standards.nasa.gov/standard/NASA/NASA-STD-87394, accessed 2026-10-24) for competent cable/harness-workmanship scope; NASA-STD-6016C w/Change 1 (NASA Technical Standards System, active, change 2023-11-15, https://standards.nasa.gov/standard/NASA/NASA-STD-6016, accessed 2026-10-24) for physical-hardware contamination controls; and Belden, `Category 6 Cable` (current manufacturer guidance, https://www.belden.com/products/cable/ethernet-cable/category-6-cable, accessed 2026-10-24) for cable-construction-dependent pulling tension and bend-radius guidance. Limits: NASA records establish domain/scope rather than IT-STE definitions or universal numeric limits; Belden is product-family-specific. Cisco/CommScope/Panduit targets were inaccessible or 404 and are not evidence.
+- Alternatives and decision: resolve both as `restricted` draft senses. Reject `allowed` because each use needs a named object, applicable limit/criterion, and procedure; reject `prohibited` because legitimate physical maintenance and hardware-quality uses are supported. Do not generalize either word to software or data. The source findings are facts; the restrictions and exact definitions are draft policy/editorial inferences.
+- Canonical changes: updated only the two selected records' disposition, definition, rationale, alternatives, and examples; preserved IDs, sequence, source pins, warnings, raw metadata, rights, fixed retrieval commands, authenticated visual evidence, draft statuses, and no hand-edited generated output. Detailed evidence is in [W1-D-P413-005-006](W1-D-P413-005-006.md).
+- Validation/commit: final results are recorded in the handoff after all affected/full checks, diagnostics, source doctor, diff review, and queue recomputation. Automatic commit includes only the two canonical records' batch, this note, this classification log, the needs-review register, and the handoff.
+- Next action: after this slice, recompute offset 0 and inspect only the next separately authorized live-queue slice; do not start slice 17 in this run.
 
 ### New-policy classification slice 10/36 — `D-P368-010`
 
