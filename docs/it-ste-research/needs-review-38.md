@@ -51,6 +51,17 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 19/38 — batch052 / physical PDF page 416
+
+- `D-P416-006` (`unobstructed`, adj) — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 416 / printed page `2-1-U4`, exact locator `entry D-P416-006`, sequence 2068, row 6, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval identifies `unobstructed (adj)` with `CLOGGED (adj)` for the drain-opening example and `CLEAR (adj)` for the line-of-sight example. Fresh bounded page retrieval confirms the distinct row and both physical contexts.
+
+- External evidence actually inspected: Kubernetes official Service documentation on logical endpoints, routing, reachability, and authorization; IETF RFC 1122 §§1.1.3, 3.3.1, 3.3.1.4 and 3.3.8 on logical paths, physical interfaces, gateway failure, and unreachable indications; IETF RFC 791 §§1.1, 1.4, 2.3 and glossary on routing, interfaces, and paths; and Microsoft's official Windows Server hardware requirements on physical hosts and network adapters. These sources support separating physical obstruction, logical network reachability, delivery evidence, and authorization. Cisco/Dell/Red Hat equipment pages were inaccessible (HTTP 403), and the targeted NASA standards URL was not found (HTTP 404); no claim relies on those pages.
+
+- Fact versus editorial inference: The ASD row, alternatives, examples, authenticated layout, and network specifications are facts from inspected materials. Retaining `Free of a specified physical blockage` and rejecting unrestricted network/authentication inferences are bounded editorial inferences. No inspected source justifies a disposition change or vocabulary approval; the physical hardware example still requires editorial scope review. The record remains `status: draft` / `review_status: editorial-review-needed`.
+
+- Validation for this slice: exact ASD entry/page retrieval and authenticated source doctor passed before the decision; affected and wider repository checks are recorded in the updated handoff. Counts remain 2,196 records / 55 batches: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review. The canonical record remains unresolved. See [W1-D-P416-006](W1-D-P416-006.md).
+
 ### Resolution slice 18/38 — batch052 / physical PDF page 415
 
 - `D-P415-004` (`unintentional`, adj) — old disposition: `needs-review`; new disposition: `needs-review`.
