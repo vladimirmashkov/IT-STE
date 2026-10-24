@@ -5,9 +5,9 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 18/36
-Requested iterations: 36 (user-authorized); this run executes slice 18/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–18/36
+Last checkpoint: 2026-10-24, after new-policy slice 19/36
+Requested iterations: 36 (user-authorized); this run executes slice 19/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–19/36
 Processed records: 60
 Disposition changes: 20 records changed from `needs-review` to `restricted`
 Remaining `needs-review`: 15
@@ -62,7 +62,19 @@ Fresh canonical counts after new-policy slice 18/36:
 
 The 15 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, `D-P413-006`, `D-P413-009`, `D-P413-010`, `D-P415-004`, and `D-P415-005` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P349-003`, batch `038`, physical PDF page `349`; do not start slice 19/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P417-006`, batch `052`, physical PDF page `417`; do not start slice 20/36 here.
+
+### New-policy classification slice 19/36 — `D-P416-006`
+
+- Run/slice: user-authorized new-policy classification slice 19/36; batch `052`; physical PDF page `416`; POS `adj` (`unobstructed`). Fresh offset-0 canonical recomputation selected exactly `D-P416-006` after slice 18; slice 20 was not started.
+- Old/new: `D-P416-006` remains `needs-review` → `needs-review`; it remains `status: draft` / `review_status: editorial-review-needed`. No vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: ASD-STE100 Issue 9 (2025-01-15), revision `r0001`, exact locator `entry D-P416-006`, sequence `2068`, physical PDF page `416` / printed page `2-1-U4`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Doctor, exact entry, bounded page retrieval, and authenticated 150-dpi visual review passed. Row 6 is the distinct `unobstructed (adj)` entry with alternatives `CLOGGED (adj)` and `CLEAR (adj)`; its drain-opening and attendant's-view examples are separate from neighboring rows.
+- IT question and exclusions: can policy admit an unobstructed physical-IT sense while excluding generic network reachability, authorization, authentication, security, and unrestricted UI access? A bounded physical meaning such as `free of a specified physical blockage` remains plausible, but the source examples alone do not establish a general IT hardware/facilities application. Network paths, logical endpoints, routing, and permission are not physical-clearance synonyms.
+- External evidence actually inspected: Kubernetes Authors, “Service,” `https://kubernetes.io/docs/concepts/services-networking/service/` (current official documentation, accessed 2026-10-24), for logical endpoints/reachability and separate authorization constraints; limitation: it does not define `unobstructed` or a physical path. RFC 1122, `https://www.rfc-editor.org/rfc/rfc1122.html` (IETF Host Requirements, 1989, accessed 2026-10-24), §§1.1.3, 3.3.1, 3.3.1.4 and 3.3.8, for physical/logical interfaces, routing, and reachability evidence; limitation: old protocol guidance and not an ASD physical-sense authority. RFC 791, `https://www.rfc-editor.org/rfc/rfc791.html` (IP specification, 1981, accessed 2026-10-24), §§1.1, 1.4, 2.3 and glossary, for interfaces and logical paths; limitation: protocol scope and no physical-clearance or authorization definition. Microsoft, “Hardware requirements for Windows Server,” `https://learn.microsoft.com/en-us/windows-server/get-started/hardware-requirements` (official documentation updated 2025-07-22, rechecked 2026-10-24), for distinct physical-host and network-adapter constraints; limitation: corroborates context but does not define an obstruction criterion or the word.
+- Source limitations: Cisco hardware documentation and a Dell PowerEdge thermal-restrictions page returned HTTP 403; a Red Hat target and NASA target returned HTTP 404. They were not used as evidence, and no access control was bypassed. No directly controlling accessible IT hardware/facilities source was found in this bounded slice.
+- Alternatives and decision: retain `needs-review`; do not move to `restricted`, `allowed`, `prohibited`, or `not-applicable`. Reject `unobstructed` as a general synonym for reachable, authorized, authenticated, secure, or unrestricted. Preserve the provisional physical definition and alternatives only as draft editorial material pending a competent source naming an airflow, cable, optical, or inspection path. No canonical vocabulary fields changed; prior source pins, warnings, raw metadata, rights, fixed retrieval command, layout evidence, and draft review state remain preserved.
+- Validation/commit: affected batch-052 check, adaptation, corpus, all-batch vocabulary check, document build/check, 118 unit tests with `ResourceWarning` as errors, authenticated source doctor, project diagnostics, `git diff --check`, exact ASD entry/page retrieval, and fresh offset-0 queue/count recomputation all passed. Final commit: `Record unobstructed classification`; explicit paths `docs/it-ste-research/W1-D-P416-006.md`, `docs/it-ste-research/it-sense-classification-log.md`, and `docs/it-ste-draft-handoff.md`; final object hash is reported with the completion result.
+- Next action: stop after slice 19/36; after a future fresh offset-0 recomputation, inspect only `D-P417-006` (batch `052`, physical PDF page `417`) as slice 20. Do not start slice 20 in this run.
 
 ### New-policy classification slice 18/36 — `D-P415-004` / `D-P415-005`
 
