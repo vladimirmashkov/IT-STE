@@ -847,19 +847,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Use that default for canonical IT prose and identify the scope of any required alternate variety.",
+          "rationale": "Use that default for canonical IT prose and identify the scope of any required alternate variety; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "American spelling supplies a consistent default, with an exception for governing directives.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Use applicable IT spelling and terminology authority, not ASD dictionary admission.",
+          "rationale": "Use applicable IT spelling and terminology authority, not ASD dictionary admission; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source obtains its default spelling from its own controlled dictionary.",
           "target_field": "exceptions"
         },
         {
           "disposition": "adapt",
-          "rationale": "Extend the externally governed spelling exception to explicit preservation of quotations, names, localized examples, and machine-significant strings in IT content.",
+          "rationale": "Extend the externally governed spelling exception to explicit preservation of quotations, names, localized examples, and machine-significant strings in IT content; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Applicable publication specifications, style guides, contracts, or official directives can require different spellings.",
           "target_field": "text"
         }
@@ -960,13 +960,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Use explicit IT modifier relationships instead of enforcing a fixed word ceiling.",
+          "rationale": "Use explicit IT modifier relationships instead of enforcing a fixed word ceiling; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Long noun and adjective groups can hide how their components relate.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Authoritative IT terms can be longer without becoming invalid.",
+          "rationale": "Authoritative IT terms can be longer without becoming invalid; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source uses a three-word maximum for multi-word nouns.",
           "target_field": "exceptions"
         }
@@ -985,13 +985,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Introduce the full name in every independently consumable unit and permit only a useful unambiguous alias.",
+          "rationale": "Introduce the full name in every independently consumable unit and permit only a useful unambiguous alias; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Long established technical terms need their full form and can benefit from a shorter contextual form.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Allow grammatical hyphens but forbid count-driven respelling and preserve authoritative hyphenation.",
+          "rationale": "Allow grammatical hyphens but forbid count-driven respelling and preserve authoritative hyphenation; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Hyphens can group related modifiers and affect the source word-count convention.",
           "target_field": "text"
         }
@@ -1010,7 +1010,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Apply standard spelling and grammar while distinguishing dashes and preserving syntax-controlled characters.",
+          "rationale": "Apply standard spelling and grammar while distinguishing dashes and preserving syntax-controlled characters; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A hyphen can show that words function together.",
           "target_field": "text"
         }
@@ -168701,9 +168701,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0004.json` SHA-256: `98202a961bd38f6b47c88ec09961d27fee769dedebf7f9caa79348ef87948093`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0005.json` SHA-256: `0626d6944149eeb5592aa04ca7bb41dac293cc1037e352363a0f29ceabe9e60c`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0005.json` SHA-256: `5b18ec6cb4a48972789dbaca77a8e684636a7b20153f65ddb7a96ab74102776f`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0006.json` SHA-256: `5652edf0a413e0b855136e0f50374f7adb7f2d7837eaae9e648ee5462ff860cd`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0006.json` SHA-256: `56c37f94f951034e76598e47c43fe5e2dec1617cee854840bfda50294ad86aee`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0007.json` SHA-256: `721ef4ab44337af9ae4a698f75e8960d29ee1937fae6bb1999b9bfade2e3e1ce`
 
