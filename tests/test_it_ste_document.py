@@ -30,7 +30,8 @@ class RenderingTests(unittest.TestCase):
         for identifier in ("ITSTE-T-0001", "ITSTE-T-0002", "ITSTE-T-0003", "ITSTE-T-0004",
                            "ITSTE-T-0005", "ITSTE-T-0006", "ITSTE-T-0007", "ITSTE-T-0008",
                            "ITSTE-T-0009", "ITSTE-T-0010", "ITSTE-T-0011", "ITSTE-T-0012",
-                           "ITSTE-T-0013", "ITSTE-T-0014", "ITSTE-T-0015", "ITSTE-T-0016"):
+                           "ITSTE-T-0013", "ITSTE-T-0014", "ITSTE-T-0015", "ITSTE-T-0016",
+                           "ITSTE-T-0017", "ITSTE-T-0018"):
             self.assertIn(f"{identifier}", text)
         self.assertIn("Canonical draft terms", text)
         for example in (
@@ -46,6 +47,8 @@ class RenderingTests(unittest.TestCase):
             "The service resilience allows the notification service to continue in degraded mode and recover after the primary region fails.",
             "The continual improvement review uses service results and user feedback to select the next improvement.",
             "The change authority approves the low-risk production change within its delegated scope.",
+            "The release contains the approved service components for the next production deployment.",
+            "The deployment moves the release to the staging environment before production use.",
         ):
             self.assertIn(document.escaped(example), text)
         batches, summary = vocabulary.checked_all()
