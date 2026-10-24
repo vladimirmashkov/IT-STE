@@ -5,9 +5,9 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 6/36
-Requested iterations: 36 (user-authorized); this run executes slice 6/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–6/36
+Last checkpoint: 2026-10-24, after new-policy slice 7/36
+Requested iterations: 36 (user-authorized); this run executes slice 7/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–7/36
 Processed records: 50
 Disposition changes: 10 records changed from `needs-review` to `restricted`
 Remaining `needs-review`: 26
@@ -60,9 +60,9 @@ Fresh canonical counts after new-policy slice 6/36:
 - `not-applicable`: `148`;
 - `needs-review`: `26`.
 
-The 26 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slice 6 resolved only the selected page-280 pair under the explicit all-IT policy; it did not approve vocabulary or release content. Slice 7 was not started in this run.
+The 26 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slice 7 researched only `D-P349-003` under the explicit all-IT policy and intentionally left it unresolved; it did not approve vocabulary or release content. Already-resolved `D-P336-009` was excluded.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P336-009`, the next live record, and do not start slice 7/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P351-001` (batch 039, physical PDF page 351), and do not start slice 8/36 here.
 
 ## Required entry format for future slices
 
@@ -139,4 +139,16 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Canonical changes: bounded definitions, physical/UI-documentation domains, alternatives, examples, rationales, and `restricted` dispositions only. IDs, sequences, source pins, warnings, raw metadata, rights, fixed retrieval commands, `status: draft`, `review_status: editorial-review-needed`, and visual evidence were preserved. Generated Markdown was rebuilt, not edited by hand.
 - Decision and limits: `restricted` is preferred over `allowed` because a named object and explicit longitudinal/diagram axis are required; `prohibited`/`not-applicable` reject evidenced physical IT and technical-diagram uses. The earlier blocked decision is superseded by this bounded evidence-based draft classification. No vocabulary approval, release, publication, canonicalization, or SFT readiness.
 - Validation/commit: full required validation, authenticated source doctor, exact ASD retrieval/page review, diagnostics, diff check, queue/count recomputation, and final worktree/index review are recorded in the handoff and completion report.
-- Next action: stop after slice 6/36; in a future separately authorized run recompute offset 0 and begin only `D-P336-009` (slice 7). Do not start slice 7 here.
+- Next action: stop after slice 7/36; in a future separately authorized run recompute offset 0 and begin only `D-P351-001` (batch 039, physical PDF page 351). Do not start slice 8 here.
+
+### New-policy classification slice 7/36 — `D-P349-003`
+
+- Run/slice: user-authorized new-policy slice 7/36; batch `038`; physical PDF page `349`; POS `adj` (`RADIOACTIVE`). The exact selected ID is `D-P349-003`; `D-P336-009` was excluded because its canonical disposition is already `prohibited`.
+- Old/new: `D-P349-003` remains `needs-review` → `needs-review`; no canonical field changed.
+- ASD evidence: Issue 9, revision `r0001`, exact entry `D-P349-003`, sequence `1514`, printed page `2-1-R1`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; doctor, exact retrieval, and page retrieval passed. Fresh visual inspection of the ignored 150-dpi render confirms `RADIOACTIVE (adj)` is a distinct wrapped-headword row between `RADIALLY (adv)` and `raise (v)`; its meaning, contamination example, and row boundaries are separate. The historical wrapped-headword warning remains preserved.
+- IT question and exclusions: can the physical radioactivity sense be extended to a bounded cloud-facility equipment context? Exclude unsupported software/log-file hazard metaphors and any inference that a cloud smoke sensor is radioactive.
+- Sources actually inspected: U.S. EPA RadTown, “Americium in Ionization Smoke Detectors,” updated 2026-04-08, `https://www.epa.gov/radtown/americium-ionization-smoke-detectors`; and Amazon Web Services, “Data Center Controls,” current provider description, `https://aws.amazon.com/compliance/data-center/controls/`. EPA documents americium-241 in some household ionization smoke detectors and handling limits; AWS documents smoke sensors in networking, mechanical, and infrastructure spaces plus asset maintenance. EPA is household/radiation-education scope; AWS is provider self-description and does not identify sensor construction or supply an independently audited inventory.
+- Canonical changes: none. The record remains `status: draft`, `review_status: editorial-review-needed`, with source pins, wrapped-headword warning, raw metadata, rights, fixed retrieval command, provisional wording, and visual evidence preserved. No generated Markdown or test expectation changed.
+- Decision and limits: retain `needs-review`; the two sources establish separate facts but not a radioactive cloud-facility item or project inclusion boundary. Reject immediate `restricted`/`allowed` because the equipment-specific link is missing; reject `not-applicable` because a physical facility application remains plausible; do not force `prohibited` merely to clear the queue. No vocabulary approval, release, publication, canonicalization, or SFT readiness.
+- Validation/commit: affected batch-038 check first; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated doctor before and after validation; diagnostics; `git diff --check`; exact ASD retrieval/page review; offset-0 queue/count recomputation; and final worktree/index review are recorded in the handoff and completion report.
+- Next action: stop after slice 7/36; next authorized run must recompute offset 0 and inspect only `D-P351-001` (batch `039`, physical PDF page `351`); do not start slice 8 here.
