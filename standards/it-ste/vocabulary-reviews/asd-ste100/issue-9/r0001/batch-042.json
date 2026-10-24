@@ -1786,23 +1786,29 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Flowing continuously, provisionally describing water used in a physical cleaning procedure.",
+      "it_disposition": "restricted",
+      "it_definition": "A bounded use of running for continuously flowing water on a named, detached or removable washable component under an applicable manufacturer procedure; for a named OT asset or component, use only within its applicable procedure; or for a named software platform or API state documented as Running. Do not imply that assembled or energized electronics may be washed, or that Running means operating correctly, healthy, ready, available, or safe.",
       "domains": [
-        "general"
+        "general",
+        "procedures-runbooks",
+        "cloud-infrastructure",
+        "api",
+        "monitoring-alerts"
       ],
-      "rationale": "Authenticated page 365 confirms running (adj) for flowing water, separate from run (v); FLUSH rewrites the cleaning action, not a software state. Kubernetes distinguishes Pod phase Running, container state and readiness; Running is not a readiness or general health guarantee. Remove operating as a cross-sense alternative. Keep needs-review because the physical cleaning sense still lacks a supported IT equipment/procedure scope; any software sense needs separate review. See docs/it-ste-research/W1-D-P365.md.",
+      "rationale": "Authenticated ASD-STE100 Issue 9 page 365 confirms running (adj) as flowing water in the FLUSH cleaning examples and separates it from run (v), whose alternative is OPERATE; this is source fact, not an IT permission. Apple manufacturer guidance limits product cleaning to product-specific procedures, detached or powered-down conditions where applicable, soft slightly damp cloths, and moisture exclusion from openings; it does not establish flowing water for assembled electronics or all IT equipment. NIST SP 800-82 Rev. 3 establishes OT as systems that interact with or control the physical environment, but does not authorize cleaning any OT equipment. Kubernetes official documentation establishes Running as a named Pod phase distinct from container state, readiness, liveness, and health. Under the draft IT-sense policy, these sources support a restricted physical/OT maintenance profile and a separately bounded named software/API state. Reject allowed because the word is unsafe without the named object, procedure, or platform semantics; reject prohibited and not-applicable because the evidenced physical, OT, and software uses are relevant. Reject operating, healthy, ready, available, and safe as unbounded substitutions. See docs/it-ste-research/W1-D-P365.md.",
       "permitted_contextual_alternatives": [
-        "flowing water, in hardware cleaning"
+        "flowing water, in a named manufacturer cleaning procedure",
+        "Running, for a named software platform or API state",
+        "active, only when the referenced platform defines that state"
       ],
       "examples": {
         "positive": {
-          "text": "Use the hardware cleaning procedure for the detached washable filter.",
-          "explanation": "Keeps the provisional physical sense bounded."
+          "text": "The Kubernetes API reports the Pod phase as Running; evaluate readiness separately.",
+          "explanation": "Uses the named platform state without converting it into a general health, availability, or readiness claim. The physical and OT profiles remain limited to the applicable manufacturer procedure and named component."
         },
         "problematic": {
-          "text": "Running means the process is healthy.",
-          "explanation": "Conflates a state label with a health guarantee. Kubernetes Pod phase Running is distinct from container state and readiness; this water-related adjective supplies no software-state definition."
+          "text": "Wash the energized server with running water, or mark the running process healthy and ready.",
+          "explanation": "Combines an unsupported hardware-cleaning instruction with unsupported software guarantees. Manufacturer instructions are product-specific, and Kubernetes distinguishes Running from readiness and health."
         }
       },
       "evidence": {
@@ -1830,7 +1836,7 @@
         "review_required": [
           "editorial sense and scope review",
           "original example review",
-          "Establish a supported physical IT equipment cleaning scope and manufacturer procedure; review any software-state sense separately"
+          "Verify the named washable component, OT asset/procedure, or software/API state before use; review cross-domain wording and safety limits"
         ]
       }
     },

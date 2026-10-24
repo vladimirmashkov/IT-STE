@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 26,
+    "needs-review": 25,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1495
+    "restricted": 1496
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -128266,33 +128266,37 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: running; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Flowing continuously\, provisionally describing water used in a physical cleaning procedure\.
+Definition: A bounded use of running for continuously flowing water on a named\, detached or removable washable component under an applicable manufacturer procedure\; for a named OT asset or component\, use only within its applicable procedure\; or for a named software platform or API state documented as Running\. Do not imply that assembled or energized electronics may be washed\, or that Running means operating correctly\, healthy\, ready\, available\, or safe\.
 
-Domains: general
+Domains: general, procedures\-runbooks, cloud\-infrastructure, api, monitoring\-alerts
 
-Rationale: Authenticated page 365 confirms running \(adj\) for flowing water\, separate from run \(v\)\; FLUSH rewrites the cleaning action\, not a software state\. Kubernetes distinguishes Pod phase Running\, container state and readiness\; Running is not a readiness or general health guarantee\. Remove operating as a cross\-sense alternative\. Keep needs\-review because the physical cleaning sense still lacks a supported IT equipment\/procedure scope\; any software sense needs separate review\. See docs\/it\-ste\-research\/W1\-D\-P365\.md\.
+Rationale: Authenticated ASD\-STE100 Issue 9 page 365 confirms running \(adj\) as flowing water in the FLUSH cleaning examples and separates it from run \(v\)\, whose alternative is OPERATE\; this is source fact\, not an IT permission\. Apple manufacturer guidance limits product cleaning to product\-specific procedures\, detached or powered\-down conditions where applicable\, soft slightly damp cloths\, and moisture exclusion from openings\; it does not establish flowing water for assembled electronics or all IT equipment\. NIST SP 800\-82 Rev\. 3 establishes OT as systems that interact with or control the physical environment\, but does not authorize cleaning any OT equipment\. Kubernetes official documentation establishes Running as a named Pod phase distinct from container state\, readiness\, liveness\, and health\. Under the draft IT\-sense policy\, these sources support a restricted physical\/OT maintenance profile and a separately bounded named software\/API state\. Reject allowed because the word is unsafe without the named object\, procedure\, or platform semantics\; reject prohibited and not\-applicable because the evidenced physical\, OT\, and software uses are relevant\. Reject operating\, healthy\, ready\, available\, and safe as unbounded substitutions\. See docs\/it\-ste\-research\/W1\-D\-P365\.md\.
 
 Contextual alternatives:
 
-- flowing water\, in hardware cleaning
+- flowing water\, in a named manufacturer cleaning procedure
+
+- Running\, for a named software platform or API state
+
+- active\, only when the referenced platform defines that state
 
 #### Positive example
 
 ```
-Use the hardware cleaning procedure for the detached washable filter.
+The Kubernetes API reports the Pod phase as Running; evaluate readiness separately.
 ```
 
-Explanation: Keeps the provisional physical sense bounded\.
+Explanation: Uses the named platform state without converting it into a general health\, availability\, or readiness claim\. The physical and OT profiles remain limited to the applicable manufacturer procedure and named component\.
 
 #### Problematic example
 
 ```
-Running means the process is healthy.
+Wash the energized server with running water, or mark the running process healthy and ready.
 ```
 
-Explanation: Conflates a state label with a health guarantee\. Kubernetes Pod phase Running is distinct from container state and readiness\; this water\-related adjective supplies no software\-state definition\.
+Explanation: Combines an unsupported hardware\-cleaning instruction with unsupported software guarantees\. Manufacturer instructions are product\-specific\, and Kubernetes distinguishes Running from readiness and health\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -128317,7 +128321,7 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
     "review_required": [
       "editorial sense and scope review",
       "original example review",
-      "Establish a supported physical IT equipment cleaning scope and manufacturer procedure; review any software-state sense separately"
+      "Verify the named washable component, OT asset/procedure, or software/API state before use; review cross-domain wording and safety limits"
     ],
     "row_on_page": 11,
     "source_entry_id": "D-P365-011",
@@ -167561,7 +167565,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-041.json` SHA-256: `efd31f9650be53fff471c46e8213340f6369939d2f4e0ae09acde7aeb138985b`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `2560de02efcf95c0ce6285bb8296acc6bf3157909fab8a67e7a3e0b564af447e`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-042.json` SHA-256: `35d70ea0d8d26146448517e182d66c8b639524de7d6784f3de8ed95eabaab515`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-043.json` SHA-256: `039035398a79420d3bb51d2e0685c15c5ebe30c1c43f4b9845db1041a576a57f`
 

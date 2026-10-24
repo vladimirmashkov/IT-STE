@@ -54,8 +54,8 @@ class VocabularyTests(unittest.TestCase):
         self.assertEqual(summary, {
             "total": 2196, "candidates": 2196, "remaining": 0,
             "next_entry_id": None, "batch_count": 55,
-            "dispositions": {"allowed": 120, "restricted": 1495, "prohibited": 407,
-                             "not-applicable": 148, "needs-review": 26},
+            "dispositions": {"allowed": 120, "restricted": 1496, "prohibited": 407,
+                             "not-applicable": 148, "needs-review": 25},
         })
         decisions = [d for batch in batches for d in batch["decisions"]]
         self.assertEqual([d["sequence_number"] for d in decisions], list(range(1, 2197)))
@@ -122,12 +122,16 @@ class VocabularyTests(unittest.TestCase):
         self.assertNotIn("replace the faulty assembly", rework["permitted_contextual_alternatives"])
         self.assertIn("server cable harness", rework["examples"]["positive"]["text"])
         running = by_id["D-P365-011"]
-        self.assertEqual(running["it_disposition"], "needs-review")
+        self.assertEqual(running["it_disposition"], "restricted")
+        self.assertIn("named software platform or API state", running["it_definition"])
+        self.assertIn("manufacturer procedure", running["it_definition"])
         self.assertEqual(running["part_of_speech_as_extracted"], "adj")
         self.assertTrue(running["evidence"]["mechanical_ambiguities"])
         self.assertTrue(running["evidence"]["pdf_layout_check"]["visual_verification_performed"])
-        self.assertEqual(running["permitted_contextual_alternatives"], ["flowing water, in hardware cleaning"])
-        self.assertIn("not a readiness or general health guarantee", running["rationale"])
+        self.assertIn("flowing water, in a named manufacturer cleaning procedure", running["permitted_contextual_alternatives"])
+        self.assertIn("Running, for a named software platform or API state", running["permitted_contextual_alternatives"])
+        self.assertIn("Reject allowed", running["rationale"])
+        self.assertIn("readiness", running["rationale"])
         for identifier in ("D-P368-003", "D-P368-004"):
             decision = by_id[identifier]
             self.assertEqual(decision["it_disposition"], "restricted")

@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 7/36
-Requested iterations: 36 (user-authorized); this run executes slice 7/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–7/36
-Processed records: 50
-Disposition changes: 10 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 26
+Last checkpoint: 2026-10-24, after new-policy slice 9/36
+Requested iterations: 36 (user-authorized); this run executes slice 9/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–9/36
+Processed records: 51
+Disposition changes: 11 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 25
 
 ## Purpose and evidence policy
 
@@ -51,7 +51,7 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 6/36:
+Fresh canonical counts after new-policy slice 9/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
@@ -60,9 +60,9 @@ Fresh canonical counts after new-policy slice 6/36:
 - `not-applicable`: `148`;
 - `needs-review`: `26`.
 
-The 26 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slice 7 researched only `D-P349-003` under the explicit all-IT policy and intentionally left it unresolved; it did not approve vocabulary or release content. Already-resolved `D-P336-009` was excluded.
+The 25 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7 and 8 intentionally left their selected records unresolved; slice 9 changed only `D-P365-011` under the explicit all-IT policy and did not approve vocabulary or release content. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P351-001` (batch 039, physical PDF page 351), and do not start slice 8/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P349-003` (batch 038, physical PDF page 349), and do not start slice 10/36 here.
 
 ## Required entry format for future slices
 
@@ -163,3 +163,14 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Decision and limits: retain `needs-review`; the evidence supports splitting or replacing `real` only after an accountable IT object and comparison contract are named. Do not substitute `actual`, `measured`, `indicated`, `current`, `true`, `verified`, or `non-simulated`, and do not force `restricted`, `allowed`, `prohibited`, or `not-applicable`. Canonical record remains `status: draft` / `review_status: editorial-review-needed`; this is not vocabulary approval, release, publication, canonicalization, or SFT readiness. Detailed evidence is in [W1-D-P351-001](W1-D-P351-001.md).
 - Validation/commit: affected batch-039 check first; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated doctor before and after validation; diagnostics; `git diff --check`; exact ASD retrieval/page review; and offset-0 queue/count recomputation. Automatic commit is recorded after final review.
 - Next action: stop after slice 8/36; next authorized run must recompute offset 0 and inspect only `D-P365-011` (batch `042`, physical PDF page `365`); do not start slice 9 here.
+
+### New-policy classification slice 9/36 — `D-P365-011`
+
+- Run/slice: user-authorized new-policy slice 9/36; batch `042`; physical PDF page `365`; POS `adj` (`running`). Fresh offset-0 canonical recomputation selected only this record after slice 8; slice 10 was not started.
+- Old/new: `D-P365-011` changed from `needs-review` to `restricted`. It remains `status: draft` / `review_status: editorial-review-needed`; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: Issue 9, revision `r0001`, exact locator `entry D-P365-011`, sequence `1670`, printed page `2-1-R17`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9fc4e27a5b07895b05c1a166431`; doctor and exact retrieval passed. Visual inspection of the authenticated page-365 render confirms `running (adj)` row 11 is separated from `run (v)`, that `FLUSH` and the water-cleaning examples belong to the adjective, and that `OPERATE` belongs to the separate verb row. The source remains mechanically extracted and unreviewed.
+- IT question and exclusions: can the flowing-water source sense support useful, safe IT profiles across physical cleaning, OT, and software? Excluded are washing assembled or energized electronics, treating all OT equipment as washable, and equating a software/API `Running` state with operating correctly, health, readiness, availability, or safety.
+- External evidence actually inspected: Apple, “How to clean your Apple products,” official manufacturer guidance, `https://support.apple.com/en-us/103258`, accessed 2026-10-24; it establishes product-specific cleaning and moisture boundaries but not flowing water for electronics or universal IT procedures. NIST SP 800-82 Rev. 3, `https://csrc.nist.gov/pubs/sp/800/82/r3/final`, September 2023; it establishes OT as physical-environment control/monitoring systems but does not authorize cleaning. Kubernetes Authors, “Pod Lifecycle,” `https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/`, accessed 2026-10-24; it distinguishes Pod phase Running from container state/readiness and warns against overinterpretation. Kubernetes Authors, “Configure Liveness, Readiness and Startup Probes,” `https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/`, accessed 2026-10-24; it establishes that running and readiness/liveness are distinct, but is connected documentation rather than independent corroboration.
+- Decision and canonical changes: the restricted definition now covers continuously flowing water only on a named detached/removable washable component under an applicable manufacturer procedure; the corresponding named OT asset/component procedure; or a named software platform/API state documented as `Running`. It rejects `allowed` as unsafe without an object/procedure/platform contract, rejects `prohibited` and `not-applicable` because all three bounded uses are relevant, and rejects `operating`, `healthy`, `ready`, `available`, and `safe` as unbounded alternatives. Updated only the selected record's disposition, definition, domains, rationale, alternatives, examples, and review-required text; preserved IDs, sequence, source pins, fixed locator, warnings/ambiguity, raw metadata, rights, and draft statuses.
+- Validation/commit: affected batch-042 check first; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor before and after validation; diagnostics with no errors or warnings; `git diff --check`; exact ASD entry/page review; and offset-0 queue/count recomputation passed for this run. The automatic commit includes only the reviewed slice files.
+- Next action: stop after slice 9/36; after fresh offset-0 recomputation, the next authorized run must inspect only `D-P349-003` (batch `038`, physical PDF page `349`); do not start slice 10 here.
