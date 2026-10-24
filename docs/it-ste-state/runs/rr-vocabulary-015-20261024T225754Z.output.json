@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-015-20261024T225754Z",
+  "status": "done",
+  "decision": "Validation for vocabulary batch 015 passes and its 40 existing records remain unchanged as draft/editorial-review-needed. No canonical vocabulary or release approval was created.",
+  "evidence_refs": [
+    "docs/it-ste-state/runs/rr-vocabulary-015-20261024T225754Z.input.json",
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json",
+    "docs/it-ste-draft-handoff.md#current-checkpoint",
+    "docs/it-ste-release-readiness-plan.md#current-checkpoint",
+    ".local/it-ste-state/rr-vocabulary-015-20261024T225754Z/validation.log"
+  ],
+  "changed_paths": [
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-vocabulary-015-20261024T225754Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-015-20261024T225754Z.output.json"
+  ],
+  "validations": [
+    {
+      "name": "affected vocabulary batch",
+      "status": "passed",
+      "command": "python3 tools/it_ste_vocabulary.py check --batch standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-015.json --compact-json",
+      "result": "40 candidates; 6 allowed, 20 restricted, 9 prohibited, 5 not-applicable; draft only"
+    },
+    {
+      "name": "exact ASD entry retrievals",
+      "status": "passed",
+      "command": "python3 tools/asd_ste100_local.py entry <ID> --compact-json for each selected ID",
+      "result": "40/40 IDs matched"
+    },
+    {
+      "name": "authenticated ASD source",
+      "status": "passed",
+      "command": "python3 tools/asd_ste100_local.py doctor",
+      "result": "Issue 9/r0001 derivative and PDF hash authenticated; 2196 dictionary rows"
+    },
+    {
+      "name": "adaptation and corpus checks",
+      "status": "passed",
+      "command": "python3 tools/it_ste_adaptation.py check && python3 tools/it_ste_corpus.py check",
+      "result": "53 rules, 8 recommendations, 31 draft pilot rules/canonical draft terms"
+    },
+    {
+      "name": "aggregate vocabulary and document checks",
+      "status": "passed",
+      "command": "python3 tools/it_ste_vocabulary.py check --compact-json && python3 tools/it_ste_document.py build && python3 tools/it_ste_document.py check",
+      "result": "2196 records across 55 batches; draft build/check passed; no approval implied"
+    },
+    {
+      "name": "full test suite",
+      "status": "passed",
+      "command": "python3 -W error::ResourceWarning -m unittest discover -s tests",
+      "result": "119 tests, OK"
+    },
+    {
+      "name": "editor diagnostics",
+      "status": "passed",
+      "result": "No errors or warnings"
+    }
+  ],
+  "next": {
+    "action": "Automatically select vocabulary batch 016 on the next resume; preserve draft status and editorial-review-needed status.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "scope": {
+      "kind": "vocabulary-batch",
+      "batch": "016",
+      "ids": [],
+      "paths": [
+        "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-016.json"
+      ],
+      "excluded": []
+    },
+    "resume_policy": "auto"
+  }
+}
