@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after new-policy slice 17/36
-Requested iterations: 36 (user-authorized); this run executes slice 17/36 only
-Completed slices: 22 legacy classification slices + new-policy slices 1–17/36
-Processed records: 58
-Disposition changes: 18 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 17
+Last checkpoint: 2026-10-24, after new-policy slice 18/36
+Requested iterations: 36 (user-authorized); this run executes slice 18/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–18/36
+Processed records: 60
+Disposition changes: 20 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 15
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,28 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after new-policy slice 17/36:
+Fresh canonical counts after new-policy slice 18/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,504`;
+- `restricted`: `1,506`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `17`.
+- `needs-review`: `15`.
 
-The 17 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, `D-P413-006`, `D-P413-009`, and `D-P413-010` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
+The 15 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slices 7–10 intentionally left `D-P349-003`, `D-P351-001`, and `D-P368-010` unresolved; later slices classify only when the policy evidence supports a bounded draft sense. `D-P398-001`, `D-P413-005`, `D-P413-006`, `D-P413-009`, `D-P413-010`, `D-P415-004`, and `D-P415-005` are now restricted with bounded draft policy wording, not vocabulary approval or release decisions. Already-resolved records were excluded. The legacy table above is historical and is not the new-policy sequence.
 
-Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only the next live-queue record(s); do not start slice 18/36 here.
+Exact next policy question: after fresh offset-0 recomputation in a future authorized run, inspect only `D-P349-003`, batch `038`, physical PDF page `349`; do not start slice 19/36 here.
+
+### New-policy classification slice 18/36 — `D-P415-004` / `D-P415-005`
+
+- Run/slice: user-authorized new-policy classification slice 18/36; batch `052`; physical PDF page `415`; POS `adj` (`unintentional`) and `adv` (`unintentionally`). Fresh offset-0 canonical recomputation selected exactly these two records after slice 17; slice 19 was not started.
+- Old/new: both changed from `needs-review` to `restricted`. They remain `status: draft` / `review_status: editorial-review-needed`; no vocabulary approval, release, publication, canonicalization, or SFT readiness is implied.
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, exact locators `entry D-P415-004` and `entry D-P415-005`, physical PDF page `415` / printed page `2-1-U3`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Exact retrieval and authenticated page-415 visual review confirm row 4 `unintentional (adj)` → `ACCIDENTAL (adj)` and separate wrapped row 5 `unintentionally (adv)` → `ACCIDENTALLY (adv)`; the wrapped-headword warning remains preserved.
+- IT question and decision: classify bounded security/operations intent terms. `unintentional` applies to a named action not intended by a named responsible actor or process only where incident/forensic evidence and attribution support the assessment; `unintentionally` is the corresponding adverbial use. Keep `security` and `support-troubleshooting` domains and `accidental` / `accidentally` alternatives. Reject `allowed` because the terms can falsely imply intent without attribution/evidence; reject `prohibited` and `not-applicable` because bounded incident-response, forensic, and operational uses are evidenced; reject retaining `needs-review` because the policy question is bounded by the inspected sources. Logs, forensic artifacts, observed behavior, malware behavior, and unexplained events do not alone prove intent.
+- External evidence actually inspected: RFC 4949 (Informational, 2007) distinguishes intentional attacks, accidental threats/human error, audit trails, accountability, and threat actions; NIST SP 800-86 (2006) covers forensic evidence sources and investigation of security incidents/IT operational problems; NIST SP 800-61 Rev. 3 (2025) supplies incident-response process context; and CISA's 2026 *Insider Threat Mitigation Guide* distinguishes intentional and unintentional insider incidents and detection/assessment. Limits: these are respectively an old non-Standards-track glossary, practical forensic guidance, process guidance, and insider-threat program guidance; none is a lexical authority or proof of a particular actor's mental state.
+- Canonical changes: updated only the two selected records' disposition, definition, domains, rationale, and contextual alternatives/examples as justified; preserved IDs, sequence, source pins, warnings, raw metadata, rights, fixed retrieval commands, visual evidence, `status: draft`, and `review_status: editorial-review-needed`. Detailed evidence is in [W1-D-P415-004-005](W1-D-P415-004-005.md).
+- Validation/commit: affected/full checks, authenticated source doctor, diagnostics, diff review, and queue recomputation are recorded in the handoff after execution. Automatic commit includes only the reviewed slice files and generated output. Do not start slice 19/36.
 
 ### New-policy classification slice 17/36 — `D-P413-009` / `D-P413-010`
 

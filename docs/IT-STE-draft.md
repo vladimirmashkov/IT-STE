@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 17,
+    "needs-review": 15,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1504
+    "restricted": 1506
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -157170,13 +157170,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: unintentional; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Not intended by the responsible actor\, where evidence supports the intent assessment\.
+Definition: Not intended by a named responsible actor or process\, only where incident or forensic evidence and attribution support the intent assessment\.
 
-Domains: support\-troubleshooting
+Domains: security, support\-troubleshooting
 
-Rationale: The compact adjective row is a separate source entry from the following adverb\; retain a bounded intent claim only when the responsible actor and evidence support it\. See research note W1\-D\-P415\-004\-005\.
+Rationale: Restrict the adjective to a named security or operations action and an evidence\-supported actor\/process intent assessment\. Audit logs and forensic artifacts establish events and accountability but do not alone prove intent\; do not generalize to causality\, negligence\, malware\, or unexplained behavior\. See research note W1\-D\-P415\-004\-005\.
 
 Contextual alternatives:
 
@@ -157244,13 +157244,13 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: unintentionally; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Without intending the resulting action\, with the actor and evidence identified\.
+Definition: Occurring without the named actor or process intending the result\, only where incident or forensic evidence and attribution support that intent assessment\.
 
-Domains: support\-troubleshooting
+Domains: security, support\-troubleshooting
 
-Rationale: The wrapped adverb row is separate from the adjective row\; separate observed behavior from assumptions about intention and retain the bounded actor\/evidence condition\. See research note W1\-D\-P415\-004\-005\.
+Rationale: Restrict the adverb to a named security or operations action and an evidence\-supported actor\/process intent assessment\. Logs and observed behavior establish what occurred\, not mental state\; do not generalize to causality\, negligence\, malware\, or unexplained events\. See research note W1\-D\-P415\-004\-005\.
 
 Contextual alternatives:
 
@@ -167590,7 +167590,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-051.json` SHA-256: `46701ced21079592d08479e6383a1a8ef16d76a126cbb2af9992ab8b99baceaf`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `89e9e64226d907c2b57996f31a8f0a98dc1328971525984d517f656b87412fa3`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-052.json` SHA-256: `4ab5ba67f49347d263e8f2a314e749548deedac54750bad8c88d7c9848c35541`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-053.json` SHA-256: `04d7b08906a9b1e8f491fb059ff68062ff909d32aa48f659da297e4df926f770`
 

@@ -1142,12 +1142,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Not intended by the responsible actor, where evidence supports the intent assessment.",
+      "it_disposition": "restricted",
+      "it_definition": "Not intended by a named responsible actor or process, only where incident or forensic evidence and attribution support the intent assessment.",
       "domains": [
+        "security",
         "support-troubleshooting"
       ],
-      "rationale": "The compact adjective row is a separate source entry from the following adverb; retain a bounded intent claim only when the responsible actor and evidence support it. See research note W1-D-P415-004-005.",
+      "rationale": "Restrict the adjective to a named security or operations action and an evidence-supported actor/process intent assessment. Audit logs and forensic artifacts establish events and accountability but do not alone prove intent; do not generalize to causality, negligence, malware, or unexplained behavior. See research note W1-D-P415-004-005.",
       "permitted_contextual_alternatives": [
         "accidental",
         "not requested by the operator"
@@ -1204,12 +1205,13 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Without intending the resulting action, with the actor and evidence identified.",
+      "it_disposition": "restricted",
+      "it_definition": "Occurring without the named actor or process intending the result, only where incident or forensic evidence and attribution support that intent assessment.",
       "domains": [
+        "security",
         "support-troubleshooting"
       ],
-      "rationale": "The wrapped adverb row is separate from the adjective row; separate observed behavior from assumptions about intention and retain the bounded actor/evidence condition. See research note W1-D-P415-004-005.",
+      "rationale": "Restrict the adverb to a named security or operations action and an evidence-supported actor/process intent assessment. Logs and observed behavior establish what occurred, not mental state; do not generalize to causality, negligence, malware, or unexplained events. See research note W1-D-P415-004-005.",
       "permitted_contextual_alternatives": [
         "accidentally",
         "without intending to delete it"
