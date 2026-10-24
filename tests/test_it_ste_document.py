@@ -27,7 +27,8 @@ class RenderingTests(unittest.TestCase):
             self.assertIn(f"\n## {identifier}\n", text)
             self.assertIn(f"[{identifier}](#{identifier.lower()})", text)
         self.assertEqual(text.count("\n## ITSTE-R-"), 31)
-        for identifier in ("ITSTE-T-0001", "ITSTE-T-0002", "ITSTE-T-0003", "ITSTE-T-0004"):
+        for identifier in ("ITSTE-T-0001", "ITSTE-T-0002", "ITSTE-T-0003", "ITSTE-T-0004",
+                           "ITSTE-T-0005", "ITSTE-T-0006"):
             self.assertIn(f"{identifier}", text)
         self.assertIn("Canonical draft terms", text)
         for example in (
@@ -35,6 +36,8 @@ class RenderingTests(unittest.TestCase):
             "The monitoring alert identifies a queue depth above 500 jobs.",
             "The problem caused repeated timeouts in the payment service.",
             "The incident reduced payment-service response quality for new orders.",
+            "The known error links the recurring timeout to the database configuration.",
+            "The workaround routes new orders to the secondary service while the problem is investigated.",
         ):
             self.assertIn(document.escaped(example), text)
         batches, summary = vocabulary.checked_all()

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.1.0",
+  "id": "ITSTE-T-0005",
+  "kind": "term",
+  "language": "en",
+  "status": "draft",
+  "origin": "original",
+  "term": "known error",
+  "part_of_speech": "phrase",
+  "definition": "A service-management problem that has been analyzed and for which a cause or workaround is recorded.",
+  "domains": ["support-troubleshooting"],
+  "usage": "restricted",
+  "rationale": "Use this noun phrase for an analyzed service-management problem with a recorded cause or workaround. Keep it distinct from an unresolved problem, an incident, and the workaround itself; recording a known error does not perform the root-cause fix.",
+  "alternatives": [],
+  "examples": {
+    "allowed": [
+      {
+        "text": "The known error links the recurring timeout to the database configuration.",
+        "rationale": "Names an analyzed problem and its recorded cause."
+      }
+    ],
+    "not_allowed": [
+      {
+        "text": "The known error removed the database fault.",
+        "rationale": "A known-error record does not itself remove the underlying cause."
+      }
+    ]
+  },
+  "translation_of": null,
+  "source_refs": [
+    {
+      "source_id": "ITIL-SOURCE-PEOPLECERT-PROBLEM-2026",
+      "locator": {
+        "section": "What skills will you acquire? / Problem management"
+      }
+    }
+  ],
+  "review": {
+    "mode": "human",
+    "automation": "structure-only",
+    "criteria": [
+      "Verify that the phrase identifies an analyzed service-management problem for which a cause or workaround is recorded.",
+      "Keep the phrase distinct from an unresolved problem, an incident, and the workaround used to reduce impact.",
+      "Confirm that the inspected Problem Management page supports the relationship to known errors and workarounds but does not establish a complete universal glossary definition."
+    ]
+  },
+  "rights": {
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "adaptation": "allowed",
+    "attribution": [
+      {
+        "name": "IT-STE contributors",
+        "url": "https://github.com/vladimirmashkov/IT-STE"
+      }
+    ],
+    "evidence": ["LICENSE-CONTENT.md"],
+    "scope": "original IT-STE wording and examples only; external source rights remain separate"
+  }
+}

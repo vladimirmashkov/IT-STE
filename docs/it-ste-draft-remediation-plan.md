@@ -5,7 +5,7 @@ This is a bounded-work plan for the IT-STE draft. It records sequencing and stop
 ## Current boundary
 
 - Recovery Block 0 was closed in `b1fe909` (`Add draft IT-only term contract`) after reviewing the interrupted implementation of the first W3 term-contract slice.
-- The current W3 slice adds only the draft-only original IT term records `ITSTE-T-0003` (`problem`, noun) and `ITSTE-T-0004` (`incident`, noun). It must not change the five inspected ASD-derived rows or the fixed 2,196-row source sequence.
+- The current W3 slice adds only the draft-only original IT term records `ITSTE-T-0005` (`known error`, phrase) and `ITSTE-T-0006` (`workaround`, noun). It must not change the six inspected ASD-derived rows or the fixed 2,196-row source sequence.
 - The canonical ASD queue must be recomputed before every slice. At this slice it is empty: 2,196 records / 55 batches, 120 allowed, 1,510 restricted, 407 prohibited, 159 not-applicable, 0 needs-review.
 - If the queue becomes non-empty, W1 takes precedence over W2/W3. A queue offset is never a resume pointer; record exact IDs, pages, evidence notes, and the next action.
 
@@ -25,8 +25,8 @@ Use one related pair per iteration. Each pair is a research scope, not a promise
 
 1. **Completed recovery slice:** `service` noun and `alert` noun — `ITSTE-T-0001` and `ITSTE-T-0002`.
 2. **Completed bounded slice:** `problem` and `incident` — `ITSTE-T-0003` and `ITSTE-T-0004`, retained as restricted draft senses with explicit human-review criteria and no ASD provenance.
-3. **Next slice:** `known error` and `workaround` — use Problem Management evidence; distinguish a recorded cause/workaround from a root-cause fix.
-4. `service request` and `service desk` — use dedicated Service Request Management/Service Desk evidence; do not equate a desk with a queue, team, or escalation authority.
+3. **Completed bounded slice:** `known error` and `workaround` — `ITSTE-T-0005` and `ITSTE-T-0006`, retained as restricted draft senses with a recorded-cause/interim-method boundary and no ASD provenance.
+4. **Next slice:** `service request` and `service desk` — use dedicated Service Request Management/Service Desk evidence; do not equate a desk with a queue, team, or escalation authority.
 5. `configuration item` and `IT asset` — separate configuration relationships and attributes from ownership and financial lifecycle.
 6. `service level agreement` and `service level target` — distinguish documented commitments/responsibilities from measurable targets and indicators.
 7. `availability` and `resilience` — distinguish ability to perform an agreed function from continuation/recovery after disruption.
