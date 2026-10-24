@@ -3758,19 +3758,19 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require explicit IT phrase-level meaning, grammatical pattern, and context checks instead of inferring approval from individual entries.",
+          "rationale": "Require explicit IT phrase-level meaning, grammatical pattern, and context checks instead of inferring approval from individual entries; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A verb combined with particles can acquire a meaning not licensed by its component words.",
           "target_field": "text"
         },
         {
           "disposition": "adopt",
-          "rationale": "Prefer a clearer direct verb only when the technical operation and grammatical relationships remain accurate.",
+          "rationale": "Prefer a clearer direct verb only when the technical operation and grammatical relationships remain accurate; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A direct replacement must have the same meaning and leave the sentence grammatical.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Use reviewed IT expression entries rather than a blanket ban or the source's particular inventory.",
+          "rationale": "Use reviewed IT expression entries rather than a blanket ban or the source's particular inventory; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Despite the broad prohibition in its heading, the source dictionary permits a small restricted set of expressions.",
           "target_field": "exceptions"
         }
@@ -3870,13 +3870,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Reuse reviewed IT terms and sentence patterns only after checking semantic and contextual equivalence.",
+          "rationale": "Reuse reviewed IT terms and sentence patterns only after checking semantic and contextual equivalence; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Repeated procedure types are easier to recognize when equivalent steps reuse terminology and wording.",
           "target_field": "text"
         },
         {
           "disposition": "adopt",
-          "rationale": "Keep description coherent instead of mechanically applying a repeated step template.",
+          "rationale": "Keep description coherent instead of mechanically applying a repeated step template; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Descriptive writing requires logical structure and coherence across the complete explanation.",
           "target_field": "text"
         }
@@ -168745,9 +168745,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0026.json` SHA-256: `9bc5cc481004fb9f156e0ba1f72798c2f6965a5a5cf3c28814782294c8321d3f`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0027.json` SHA-256: `0b93a006045e62b74480a757bf9aa798b960744994932ccad775304e30bd3d05`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0027.json` SHA-256: `f5ce22195bc0dbd259b3d70a687e8edb3a2a4b08ba0ec00f70738bff51fbf5aa`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0028.json` SHA-256: `4727d4de22dac6d90bff971d449c17510947444eab114448423a792e73b54394`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0028.json` SHA-256: `0d368122fda8c9af474b1fd6240d93ed829bd2653619471fea60f7443b510fe7`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0029.json` SHA-256: `eac7a78a7e728c30e53648404dc40611ba57367dd8ee9106faa537ed1fadb1b7`
 
