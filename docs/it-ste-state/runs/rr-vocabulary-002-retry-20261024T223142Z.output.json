@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-002-retry-20261024T223142Z",
+  "status": "done",
+  "decision": "The pre-existing ignored corpus fixture was removed and validation for vocabulary batch 002 now passes. The 40 existing records remain draft/editorial-review-needed with no canonical vocabulary or release approval.",
+  "evidence_refs": [
+    "docs/it-ste-state/runs/rr-vocabulary-002-retry-20261024T223142Z.input.json",
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json",
+    "docs/it-ste-draft-handoff.md#current-checkpoint",
+    "docs/it-ste-release-readiness-plan.md#current-checkpoint",
+    ".local/it-ste-state/rr-vocabulary-002-retry-20261024T223142Z/validation.log"
+  ],
+  "changed_paths": [
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/.DS_Store",
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-vocabulary-002-retry-20261024T223142Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-002-retry-20261024T223142Z.output.json"
+  ],
+  "validations": [
+    {
+      "name": "affected vocabulary batch",
+      "status": "passed",
+      "command": "python3 tools/it_ste_vocabulary.py check --batch standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-002.json --compact-json",
+      "result": "40 candidates; 3 allowed, 19 restricted, 12 prohibited, 6 not-applicable; draft only"
+    },
+    {
+      "name": "authenticated ASD source",
+      "status": "passed",
+      "command": "python3 tools/asd_ste100_local.py doctor",
+      "result": "Issue 9/r0001 derivative and PDF hash authenticated; 2196 dictionary rows"
+    },
+    {
+      "name": "adaptation and corpus checks",
+      "status": "passed",
+      "command": "python3 tools/it_ste_adaptation.py check && python3 tools/it_ste_corpus.py check",
+      "result": "53 rules, 8 recommendations, 31 draft pilot rules/canonical draft terms"
+    },
+    {
+      "name": "aggregate vocabulary and document checks",
+      "status": "passed",
+      "command": "python3 tools/it_ste_vocabulary.py check --compact-json && python3 tools/it_ste_document.py build && python3 tools/it_ste_document.py check",
+      "result": "2196 records across 55 batches; draft build/check passed; no approval implied"
+    },
+    {
+      "name": "full test suite",
+      "status": "passed",
+      "command": "python3 -W error::ResourceWarning -m unittest discover -s tests",
+      "result": "119 tests, OK"
+    },
+    {
+      "name": "editor diagnostics",
+      "status": "passed",
+      "result": "No errors or warnings"
+    }
+  ],
+  "next": {
+    "action": "Automatically select vocabulary batch 003 on the next resume; preserve draft status and editorial-review-needed status.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "scope": {
+      "kind": "vocabulary-batch",
+      "batch": "003",
+      "ids": [],
+      "paths": [
+        "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-003.json"
+      ],
+      "excluded": []
+    },
+    "resume_policy": "auto"
+  }
+}
