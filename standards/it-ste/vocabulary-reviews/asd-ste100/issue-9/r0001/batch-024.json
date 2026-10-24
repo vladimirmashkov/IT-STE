@@ -2323,23 +2323,26 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "Using pressurized liquid to transmit force in physical equipment.",
+      "it_disposition": "restricted",
+      "it_definition": "Using pressurized liquid to transmit force in a named OT or industrial-control hydraulic component.",
       "domains": [
-        "cloud-infrastructure"
+        "ai-automation",
+        "cloud-infrastructure",
+        "procedures-runbooks"
       ],
-      "rationale": "Visual inspection resolves the row boundary, but the proposed cloud-infrastructure scope is blocked: the source meaning is physical hydraulic equipment and no competent IT-specific usage has been verified. See docs/it-ste-research/W1-D-P273.md.",
+      "rationale": "The ASD physical sense has a bounded IT use in operational technology: NIST and CISA identify OT/ICS as programmable systems and devices that interact with the physical environment, and Bosch Rexroth documents software, sensors, digital twins, and predictive analytics for hydraulic systems. Restrict the term to a named hydraulic component in an OT or industrial-control system; do not transfer it to cloud routing or API behavior. See docs/it-ste-research/W1-D-P273.md.",
       "permitted_contextual_alternatives": [
-        "operated by pressurized liquid"
+        "operated by pressurized liquid",
+        "using hydraulic power in the specified actuator"
       ],
       "examples": {
         "positive": {
-          "text": "The facility lift uses a hydraulic actuator.",
-          "explanation": "Offers a provisional physical equipment description."
+          "text": "The OT controller monitors the hydraulic actuator on the forming machine.",
+          "explanation": "Names the industrial-control context and the hydraulic component."
         },
         "problematic": {
           "text": "The cluster uses hydraulic routing.",
-          "explanation": "Has no stated networking meaning."
+          "explanation": "Uses a physical hydraulic term as an unsupported networking metaphor."
         }
       },
       "evidence": {
@@ -2384,24 +2387,26 @@
       },
       "status": "draft",
       "review_status": "editorial-review-needed",
-      "it_disposition": "needs-review",
-      "it_definition": "By power transmitted through pressurized liquid.",
+      "it_disposition": "restricted",
+      "it_definition": "By means of hydraulic power in a named OT or industrial-control component.",
       "domains": [
-        "cloud-infrastructure"
+        "ai-automation",
+        "cloud-infrastructure",
+        "procedures-runbooks"
       ],
-      "rationale": "Visual inspection resolves the wrapped row boundary, but the proposed cloud-infrastructure scope is blocked: the source meaning is hydraulic power in physical equipment and no competent IT-specific usage has been verified. See docs/it-ste-research/W1-D-P273.md.",
+      "rationale": "The ASD physical sense has a bounded IT use in operational technology: NIST and CISA identify OT/ICS as programmable systems and devices that interact with the physical environment, and Bosch Rexroth documents software, sensors, digital twins, and predictive analytics for hydraulic systems. Restrict the adverb to an operation of a named hydraulic component in an OT or industrial-control system; do not use it for software or network behavior. See docs/it-ste-research/W1-D-P273.md.",
       "permitted_contextual_alternatives": [
         "by hydraulic power",
-        "using a hydraulic actuator"
+        "using the specified hydraulic actuator"
       ],
       "examples": {
         "positive": {
-          "text": "The approved lift raises the platform hydraulically.",
-          "explanation": "Illustrates a provisional physical mechanism."
+          "text": "The OT test bench is hydraulically operated.",
+          "explanation": "Names the industrial-control equipment and the physical operating mechanism."
         },
         "problematic": {
           "text": "The API expands hydraulically.",
-          "explanation": "Does not describe a software mechanism."
+          "explanation": "Does not describe a hydraulic component or an OT physical operation."
         }
       },
       "evidence": {

@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after policy slice 1/36
-Requested iterations: 36 (user-authorized); this run executes slice 1/36 only
-Completed slices: 22 legacy classification slices + policy slice 1/36
-Processed records: 40
-Disposition changes: 4 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 34
+Last checkpoint: 2026-10-24, after new-policy slice 5/36
+Requested iterations: 36 (user-authorized); this run executes slice 5/36 only
+Completed slices: 22 legacy classification slices + new-policy slices 1–5/36
+Processed records: 48
+Disposition changes: 8 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 28
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,18 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after policy slice 3/36:
+Fresh canonical counts after new-policy slice 5/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,489`;
+- `restricted`: `1,493`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `32`.
+- `needs-review`: `28`.
 
-The 32 remaining records are listed in `needs-review-38.md`. Slice 3 resolved only the selected page-209 record under the explicit policy; it did not approve vocabulary or release content. The next run must recompute the canonical queue and select the next bounded question; it must not start slice 4 in this run.
+The 28 remaining records are listed in `needs-review-38.md`; this log retains the baseline register and records each disposition change. Slice 5 resolved only the selected page-273 pair under the explicit physical-IT policy; it did not approve vocabulary or release content. The next run must recompute the canonical queue and select the next bounded question; it must not start slice 6 in this run.
 
-Exact next policy question: after fresh offset-0 recomputation, inspect only `D-P230-003`, batch 016, physical PDF page 230. Do not start slice 4/36 here.
+Exact next policy question: after fresh offset-0 recomputation, inspect only the next live record, currently expected to be `D-P280-003` / `D-P280-004`, batch 025, physical PDF page 280. Do not start slice 6/36 here.
 
 ## Required entry format for future slices
 
@@ -116,3 +116,15 @@ No future entry may claim vocabulary approval, release, publication, canonicaliz
 - Decision and limits: `restricted` is preferred over `allowed` because object, procedure, and physical boundary must be named. `prohibited` is rejected because named hardware-cleaning procedures are evidenced; `not-applicable` is rejected because physical IT is in policy scope. Media sanitization, cloud deletion, and malware-remediation profiles are rejected as distinct or unsupported meanings. This remains a draft policy classification, not vocabulary approval, release, publication, canonicalization, or SFT readiness.
 - Validation/commit: affected batch-012 vocabulary check, adaptation, corpus, all-batch vocabulary check, document build/check, 118 unit tests with `ResourceWarning` as errors, source doctor before and after evidence use, project diagnostics with no errors/warnings, `git diff --check`, exact ASD entry/page retrieval, and offset-0 recomputation all passed. Automatic commit: `85fd3be` (`Classify page 209 decontamination`), explicit paths `docs/IT-STE-draft.md`, `docs/it-ste-draft-handoff.md`, `docs/it-ste-research/W1-D-P209.md`, `docs/it-ste-research/it-sense-classification-log.md`, `docs/it-ste-research/needs-review-38.md`, `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json`, and `tests/test_it_ste_vocabulary.py`.
 - Next action: stop after slice 3/36; after fresh offset-0 recomputation, set the next live slice only in the handoff. Do not start slice 4/36.
+
+### New-policy classification slice 5/36 — `D-P273-004` / `D-P273-005`
+
+- Run/slice: user-authorized new-policy slice 5/36; batch `024`; physical PDF page `273`; POS `adj` (`HYDRAULIC`) and `adv` (`HYDRAULICALLY`).
+- Old/new: both records changed `needs-review` → `restricted`.
+- ASD evidence: Issue 9, revision `r0001`, exact entries `D-P273-004` / `D-P273-005`, printed page `2-1-H7`, sequences `959–960`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact retrieval and page retrieval passed. Visual findings confirm separate hydraulic adjective and adverb rows, with `HYDRAULICALLY` wrapped across two lines; mechanical overlap and wrapped-headword warnings remain preserved.
+- IT question and exclusions: with physical IT explicitly in policy, is there a bounded hydraulic sense for a named OT/industrial-control component? Yes, but only for the physical hydraulic component and its documented OT operation; exclude generic machinery, cloud routing, API behavior, software expansion, and safety authorization.
+- Sources actually inspected: NIST SP 800-82 Rev. 3 (final September 2023), `https://csrc.nist.gov/pubs/sp/800/82/r3/final`, defines OT as programmable systems/devices interacting with the physical environment; limitation: OT scope authority, not hydraulic terminology or safety procedure. CISA, “Industrial Control Systems,” `https://www.cisa.gov/topics/industrial-control-systems`, accessed 2026-10-24, describes ICS/OT systems and devices interacting with the physical environment; limitation: scope/guidance page, not a lexical authority. Bosch Rexroth, “Connected Hydraulics,” `https://www.boschrexroth.com/en/us/connected-hydraulics/`, accessed 2026-10-24, documents software, digital twins, sensors, predictive analytics, and service tools around hydraulics; limitation: product-domain manufacturer evidence. CCOHS hydraulic-energy guidance was also inspected for the physical mechanism and safety boundary, but not used as IT-scope authority.
+- Canonical changes: bounded definitions, domain labels, alternatives, examples, rationales, and `restricted` dispositions only. IDs, sequences, source pins, warnings, raw metadata, rights, fixed retrieval commands, `status: draft`, and `review_status: editorial-review-needed` preserved. Generated Markdown was rebuilt, not edited by hand.
+- Decision and limits: `restricted` is preferred over `allowed` because the named OT component and physical boundary are required; `not-applicable` is rejected because policy includes physical IT/OT; `prohibited` is rejected because the evidenced use is reviewable; retaining `needs-review` is no longer necessary under the new policy. No vocabulary approval, release, publication, canonicalization, or SFT readiness.
+- Validation/commit: full required validation, source doctor, exact ASD retrieval/page review, diagnostics, diff check, queue recomputation, and final worktree/index review are recorded in the handoff and completion report.
+- Next action: stop after slice 5/36; recompute offset 0 in the next run and inspect only the next live slice, expected `D-P280-003` / `D-P280-004`. Do not start slice 6/36.

@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 30,
+    "needs-review": 28,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1491
+    "restricted": 1493
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -75535,25 +75535,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: HYDRAULIC; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Using pressurized liquid to transmit force in physical equipment\.
+Definition: Using pressurized liquid to transmit force in a named OT or industrial\-control hydraulic component\.
 
-Domains: cloud\-infrastructure
+Domains: ai\-automation, cloud\-infrastructure, procedures\-runbooks
 
-Rationale: Visual inspection resolves the row boundary\, but the proposed cloud\-infrastructure scope is blocked\: the source meaning is physical hydraulic equipment and no competent IT\-specific usage has been verified\. See docs\/it\-ste\-research\/W1\-D\-P273\.md\.
+Rationale: The ASD physical sense has a bounded IT use in operational technology\: NIST and CISA identify OT\/ICS as programmable systems and devices that interact with the physical environment\, and Bosch Rexroth documents software\, sensors\, digital twins\, and predictive analytics for hydraulic systems\. Restrict the term to a named hydraulic component in an OT or industrial\-control system\; do not transfer it to cloud routing or API behavior\. See docs\/it\-ste\-research\/W1\-D\-P273\.md\.
 
 Contextual alternatives:
 
 - operated by pressurized liquid
 
+- using hydraulic power in the specified actuator
+
 #### Positive example
 
 ```
-The facility lift uses a hydraulic actuator.
+The OT controller monitors the hydraulic actuator on the forming machine.
 ```
 
-Explanation: Offers a provisional physical equipment description\.
+Explanation: Names the industrial\-control context and the hydraulic component\.
 
 #### Problematic example
 
@@ -75561,7 +75563,7 @@ Explanation: Offers a provisional physical equipment description\.
 The cluster uses hydraulic routing.
 ```
 
-Explanation: Has no stated networking meaning\.
+Explanation: Uses a physical hydraulic term as an unsupported networking metaphor\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -75607,27 +75609,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: HYDRAULICALLY; POS: adv.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: By power transmitted through pressurized liquid\.
+Definition: By means of hydraulic power in a named OT or industrial\-control component\.
 
-Domains: cloud\-infrastructure
+Domains: ai\-automation, cloud\-infrastructure, procedures\-runbooks
 
-Rationale: Visual inspection resolves the wrapped row boundary\, but the proposed cloud\-infrastructure scope is blocked\: the source meaning is hydraulic power in physical equipment and no competent IT\-specific usage has been verified\. See docs\/it\-ste\-research\/W1\-D\-P273\.md\.
+Rationale: The ASD physical sense has a bounded IT use in operational technology\: NIST and CISA identify OT\/ICS as programmable systems and devices that interact with the physical environment\, and Bosch Rexroth documents software\, sensors\, digital twins\, and predictive analytics for hydraulic systems\. Restrict the adverb to an operation of a named hydraulic component in an OT or industrial\-control system\; do not use it for software or network behavior\. See docs\/it\-ste\-research\/W1\-D\-P273\.md\.
 
 Contextual alternatives:
 
 - by hydraulic power
 
-- using a hydraulic actuator
+- using the specified hydraulic actuator
 
 #### Positive example
 
 ```
-The approved lift raises the platform hydraulically.
+The OT test bench is hydraulically operated.
 ```
 
-Explanation: Illustrates a provisional physical mechanism\.
+Explanation: Names the industrial\-control equipment and the physical operating mechanism\.
 
 #### Problematic example
 
@@ -75635,7 +75637,7 @@ Explanation: Illustrates a provisional physical mechanism\.
 The API expands hydraulically.
 ```
 
-Explanation: Does not describe a software mechanism\.
+Explanation: Does not describe a hydraulic component or an OT physical operation\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -167519,7 +167521,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-023.json` SHA-256: `9082c656c5e4aef637f5d11c989c5665540634a9b6c92fc68702879dc5c78771`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `7c0531ff669196d818c4c9c791ccfc3638501b230a56beb66f3c94092d0fae50`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-024.json` SHA-256: `1d138d9adbf56d440398c577816ff6746b3778d7cef6ac724b1707dadbaa646b`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-025.json` SHA-256: `e13bd111346d74730cfb77510e2a3d34af42302efbd3d3c7323e2b872880fa5b`
 
