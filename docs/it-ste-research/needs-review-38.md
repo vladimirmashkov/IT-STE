@@ -51,6 +51,18 @@ Canonical source: `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/
 
 ## Remediation result log
 
+### Resolution slice 20/38 — batch052 / physical PDF page 417
+
+- `D-P417-006` (`UNSATISFAC- TORILY`, adv) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `In a manner that does not meet a stated requirement or acceptance criterion.` New draft IT wording: unchanged; retained because the evidence supports a named, observable requirement or acceptance criterion and does not support an unrestricted quality judgment.
+
+- `D-P417-007` (`UNSATISFAC- TORY`, adj) — old disposition: `needs-review`; new disposition: `needs-review`. Old draft IT wording: `Not meeting a stated requirement or acceptance criterion.` New draft IT wording: unchanged; retained for the same bounded reason.
+
+- ASD evidence: ASD-STE100 Issue 9, revision `r0001`, physical PDF page 417 / printed page `2-1-U5`, exact locators `entry D-P417-006` and `entry D-P417-007`, sequences 2076–2077, rows 6–7, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`. Exact retrieval returns `UNSATISFAC- TORILY (adv)` — `In an unsatisfactory manner` and `UNSATISFAC- TORY (adj)` — `Not satisfactory`. Authenticated page rendering inspected on 2026-10-24 confirms two distinct rows, horizontal rules separating rows 6, 7, and 8, and wrapping rather than overlap; the historical `wrapped-headword` warning remains preserved.
+
+- External evidence actually inspected: NIST SP 800-160 Vol. 1 Rev. 1 (November 2022), which treats requirements analysis, specifications, verification, validation, and assessment criteria as systems-engineering activities; and NIST SP 800-115 (September 2008), which describes technical testing and verification of compliance with policy or other requirements. These competent primary sources support naming the requirement or criterion, but neither defines `unsatisfactory` or supplies a universal threshold. The editorial inference is therefore bounded: use the terms only with a stated criterion; do not treat this as vocabulary approval or release authorization.
+
+- Validation for this slice: source doctor, exact ASD entry/page retrieval, affected and wider repository checks, document build/check, unit tests, diagnostics, `git diff --check`, and offset-0 queue/count recomputation are recorded in the updated checkpoint. Counts remain 2,196 records / 55 batches: 120 allowed, 1,485 restricted, 407 prohibited, 148 not-applicable, 36 needs-review. See [W1-D-P417-006-007](W1-D-P417-006-007.md).
+
 ### Resolution slice 19/38 — batch052 / physical PDF page 416
 
 - `D-P416-006` (`unobstructed`, adj) — old disposition: `needs-review`; new disposition: `needs-review`.
