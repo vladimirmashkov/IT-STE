@@ -3471,13 +3471,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require explicit structural boundaries in a versioned local method rather than interpreting IT syntax colons as sentence breaks.",
+          "rationale": "Require explicit structural boundaries in a versioned local method rather than interpreting IT syntax colons as sentence breaks; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source measures a list lead-in and its items separately using the lead-in colon as a boundary.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Those numeric ceilings do not establish general IT-STE limits; any limit belongs to a named local profile.",
+          "rationale": "Those numeric ceilings do not establish general IT-STE limits; any limit belongs to a named local profile; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "List measurements inherit the source's procedural and descriptive word ceilings.",
           "target_field": "exceptions"
         }
@@ -3496,7 +3496,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require an explicit reproducible local treatment without concealing arbitrary parenthetical complexity behind a one-word substitution.",
+          "rationale": "Require an explicit reproducible local treatment without concealing arbitrary parenthetical complexity behind a one-word substitution; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source substitutes one word for a parenthetical group in the containing sentence and counts its interior separately.",
           "target_field": "text"
         }
@@ -3515,13 +3515,13 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Declare each category in the local method and extend coverage to code, URLs, and paths without confusing word conventions with model tokens.",
+          "rationale": "Declare each category in the local method and extend coverage to code, URLs, and paths without confusing word conventions with model tokens; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source gives special single-word treatment to numbers, number-unit groups, abbreviations, identifiers, quoted text, titles, labels, and proper names.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Declare structural-number exclusions and preserve exact literals while requiring separate readability review of excluded content.",
+          "rationale": "Declare structural-number exclusions and preserve exact literals while requiring separate readability review of excluded content; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Document numbering is excluded, and externally fixed wording retains its spelling even when it contains several words.",
           "target_field": "exceptions"
         }
@@ -3540,7 +3540,7 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require the local method to state compound treatment while preserving established spelling and prohibiting hyphenation solely to manipulate the metric.",
+          "rationale": "Require the local method to state compound treatment while preserving established spelling and prohibiting hyphenation solely to manipulate the metric; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source treats hyphenated compounds and linked technical-word groups as single counting units.",
           "target_field": "text"
         }
@@ -3640,25 +3640,25 @@ Source: ASD-STE100 Issue 9; locators below use physical PDF pages. Facet disposi
       "facets": [
         {
           "disposition": "adapt",
-          "rationale": "Require an original IT rewrite based on intended technical meaning and independently checked lexical function.",
+          "rationale": "Require an original IT rewrite based on intended technical meaning and independently checked lexical function; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A lexical alternative may require grammatical restructuring rather than direct substitution.",
           "target_field": "text"
         },
         {
           "disposition": "adopt",
-          "rationale": "Make preservation concrete through actors, modality, negation, conditions, sequence, quantities, and relationships.",
+          "rationale": "Make preservation concrete through actors, modality, negation, conditions, sequence, quantities, and relationships; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "A rewritten sentence must convey the intended message rather than merely use acceptable words.",
           "target_field": "text"
         },
         {
           "disposition": "adapt",
-          "rationale": "Permit restructuring and authoritative clarification, with checks on related references and fragments and no invented facts.",
+          "rationale": "Permit restructuring and authoritative clarification, with checks on related references and fragments and no invented facts; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "Revision can require splitting text, removing unnecessary information, or obtaining more information from an engineer.",
           "target_field": "text"
         },
         {
           "disposition": "not-applicable",
-          "rationale": "Those vocabulary decisions and examples are not IT approvals; this pilot has no controlled vocabulary and retains required context during simplification.",
+          "rationale": "Those vocabulary decisions and examples are not IT approvals; this pilot has no controlled vocabulary and retains required context during simplification; see docs/it-ste-research/W2-editorial-review.md.",
           "source_facet": "The source uses its controlled dictionary and worked domain examples to guide revisions.",
           "target_field": "exceptions"
         }
@@ -168741,9 +168741,9 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0024.json` SHA-256: `15c9879a4a777fe78a28dabbe9a12b2e1cad7dad38bd8eab3a521bbb0ca09a3a`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0025.json` SHA-256: `6313a4313b6ef50a1c0beeeb529da5ea652a44a3967e2e637f7b5e237358cbf2`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0025.json` SHA-256: `3bfe7e4e3dc90fe936858c3886f158d479b46761920bfbd3872e46fdb33adbb2`
 
-- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0026.json` SHA-256: `e924bbd3edd07ad3e4acd64ab754b76798d4a1889c310b583469a5094f5e99e3`
+- `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0026.json` SHA-256: `9bc5cc481004fb9f156e0ba1f72798c2f6965a5a5cf3c28814782294c8321d3f`
 
 - `standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/content/en/rules/ITSTE-R-0027.json` SHA-256: `0b93a006045e62b74480a757bf9aa798b960744994932ccad775304e30bd3d05`
 
