@@ -4257,10 +4257,10 @@ Validated aggregate counts (structure and provenance only; no vocabulary approva
   "candidates": 2196,
   "dispositions": {
     "allowed": 120,
-    "needs-review": 36,
+    "needs-review": 34,
     "not-applicable": 148,
     "prohibited": 407,
-    "restricted": 1485
+    "restricted": 1487
   },
   "next_entry_id": null,
   "remaining": 0,
@@ -37962,19 +37962,19 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: critical; POS: adj.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: Very important to a stated outcome\, provisionally\; no severity taxonomy is approved here\.
+Definition: A named severity classification for a stated IT policy or scoring scheme\, with its criteria defined\; not general importance and not the ASD CAREFUL sense\.
 
 Domains: monitoring\-alerts
 
-Rationale: Authenticated PDF visual inspection confirms that critical \(adj\) is row 1 with two alternatives\, VERY IMPORTANT \(the source meaning used for the first example\) and CAREFUL \(adj\) for the estimate example\. The source boundary is resolved\, but the IT disposition remains needs\-review\: FIRST CVSS v4\.0 uses Critical as a qualitative severity label tied to a 9\.0–10\.0 score\, while the ASD row also contains a non\-severity careful sense\. The current very\-important draft cannot safely cover both ordinary importance and named severity policy\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed pending scope review\.
+Rationale: Authenticated PDF visual inspection confirms that critical \(adj\) is row 1 with two alternatives\, VERY IMPORTANT \(the source meaning used for the first example\) and CAREFUL \(adj\) for the estimate example\. Under \`docs\/it\-ste\-it\-sense\-policy\.md\`\, all IT domains are in scope but polysemous senses must be bounded\; therefore this record is restricted to a named monitoring\/alert severity policy or scoring scheme with explicit criteria\. FIRST CVSS v4\.0 defines Critical as an optional qualitative rating for scores 9\.0–10\.0\, which supports the named\-severity IT use\, but does not make ordinary importance equivalent and does not support importing the ASD CAREFUL sense\. The disposition is a draft policy classification\, not CVSS authority or vocabulary approval\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; retain \`status\: draft\` \/ \`review\_status\: editorial\-review\-needed\`\.
 
 Contextual alternatives:
 
-- essential for the stated function
-
 - severity Critical\, only under a named policy
+
+- highest defined severity\, only when the scheme defines that label
 
 #### Positive example
 
@@ -37982,7 +37982,7 @@ Contextual alternatives:
 Under alert policy OPS-2, severity Critical requires immediate on-call escalation.
 ```
 
-Explanation: Scopes the proposed severity label to an explicit policy\.
+Explanation: Names the policy and scopes the label to its defined severity criteria\.
 
 #### Problematic example
 
@@ -37990,7 +37990,7 @@ Explanation: Scopes the proposed severity label to an explicit policy\.
 Everything is critical.
 ```
 
-Explanation: Provides no prioritization or impact criterion\.
+Explanation: Uses an unbounded importance claim without a severity policy\, criterion\, or impact basis\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -38108,27 +38108,27 @@ Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
 Term: curvature; POS: n.
 
-Status: draft; editorial\-review\-needed; candidate disposition: needs\-review.
+Status: draft; editorial\-review\-needed; candidate disposition: restricted.
 
-Definition: The amount or form of bending in a stated geometric line or surface\, provisionally\.
+Definition: The measured geometric bending of a named line\, path\, or surface in a graphical IT representation\; do not use as a general synonym for curve\, radius\, or physical bend radius\.
 
 Domains: user\-interface
 
-Rationale: Authenticated PDF visual inspection confirms that curvature \(n\) is row 3 with the separate alternatives BEND \(n\)\, CURVE \(n\)\, and RADIUS \(TN\)\, each with its own example\. WHATWG Canvas and W3C SVG document related arc\, curve\, and radius geometry for graphics\, but the inspected sources do not settle the lexical scope of curvature for IT\-STE\. Keep the disposition needs\-review pending scope review\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; keep this as draft\/editorial\-review\-needed\.
+Rationale: Authenticated PDF visual inspection confirms that curvature \(n\) is row 3 with the separate alternatives BEND \(n\)\, CURVE \(n\)\, and RADIUS \(TN\)\, each with its own example\. Under \`docs\/it\-ste\-it\-sense\-policy\.md\`\, the user\-interface domain is in scope and a domain\-restricted sense is preferred when the object and measurement boundary are explicit\. WHATWG Canvas defines path APIs including curves\, arcs\, and radii\, while W3C SVG 2 defines graphical paths with curve and elliptical\-arc geometry and radii\; together they support a bounded graphical geometry sense\, not unrestricted lexical substitution\. The disposition is restricted to a named graphical line\/path\/surface and a stated geometric measurement or comparison\; physical pipe\/cable bend radius\, generic curve shape\, and unrelated connectivity meanings are excluded\. This is a draft policy classification\, not vocabulary approval\. See \`docs\/it\-ste\-research\/W1\-D\-P206\.md\`\; retain \`status\: draft\` \/ \`review\_status\: editorial\-review\-needed\`\.
 
 Contextual alternatives:
 
-- bend radius\, for a physical cable
+- shape of the displayed path\, when shape is intended
 
-- shape of the displayed arc
+- arc radius\, when the implementation specifies a radius
 
 #### Positive example
 
 ```
-Set the arc radius to 20 pixels in the diagram.
+Compare the curvature of the two plotted paths at the marked interval.
 ```
 
-Explanation: Uses a measurable geometric alternative\.
+Explanation: Names graphical paths and a bounded comparison interval\.
 
 #### Problematic example
 
@@ -38136,7 +38136,7 @@ Explanation: Uses a measurable geometric alternative\.
 Increase curvature until the connection works.
 ```
 
-Explanation: Links an undefined geometric adjustment to an unrelated connectivity result\.
+Explanation: Uses an undefined geometric property to promise an unrelated networking outcome\.
 
 Source: ASD-STE100 Issue 9; raw mechanical status is not IT approval.
 
@@ -167493,7 +167493,7 @@ Manifest identity and authenticated plan pins:
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-011.json` SHA-256: `1d43e14e50a92b5c99fd950c80c53c3e23b4f65abb68d2ad2719f7ed61cc23cd`
 
-- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `17ccf116b16e690e9308d73976a57951739b6ba1923989586af1f641e20a9c74`
+- `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json` SHA-256: `d7920fc97979ea745a2fcca7d07bd806bd7517b78195dee3091743cde2316f5f`
 
 - `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-013.json` SHA-256: `b42a3e32923d3092401ec29b77a0fd4b0a2b6287a5c88bd797129ace0161b49e`
 

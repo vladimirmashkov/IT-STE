@@ -5,12 +5,12 @@ Baseline register: `docs/it-ste-research/needs-review-38.md`
 Skill: `.agents/skills/it-ste-it-sense-classification/SKILL.md`
 Policy: `docs/it-ste-it-sense-policy.md`
 Started: 2026-10-24
-Last checkpoint: 2026-10-24, after legacy-import reconciliation
-Requested iterations: not set; use an explicit bounded count for each run
-Completed slices: 22 legacy classification slices
-Processed records: 38
-Disposition changes: 2 records changed from `needs-review` to `restricted`
-Remaining `needs-review`: 36
+Last checkpoint: 2026-10-24, after policy slice 1/36
+Requested iterations: 36 (user-authorized); this run executes slice 1/36 only
+Completed slices: 22 legacy classification slices + policy slice 1/36
+Processed records: 40
+Disposition changes: 4 records changed from `needs-review` to `restricted`
+Remaining `needs-review`: 34
 
 ## Purpose and evidence policy
 
@@ -51,18 +51,18 @@ The legacy slices inspected exact ASD entries and authenticated PDF pages and re
 
 ## Current checkpoint
 
-Fresh canonical counts after the legacy slices:
+Fresh canonical counts after policy slice 1/36:
 
 - total: `2,196` records / `55` batches;
 - `allowed`: `120`;
-- `restricted`: `1,485`;
+- `restricted`: `1,487`;
 - `prohibited`: `407`;
 - `not-applicable`: `148`;
-- `needs-review`: `36`.
+- `needs-review`: `34`.
 
-The 36 remaining records are listed in `needs-review-38.md`. Their evidence is not sufficient to force a new disposition. The next run must recompute the canonical queue and select a genuinely new bounded question; it must not cosmetically repeat a blocked slice.
+The 34 remaining records are listed in `needs-review-38.md`. Slice 1 resolved only the selected page-206 records under the explicit policy; it did not approve vocabulary or release content. The next run must recompute the canonical queue and select the next bounded question; it must not start slice 2 in this run.
 
-Exact next policy question: determine whether the project owner wants an explicit IT-scope policy for aviation-derived physical, hardware, networking, security, and observability senses. Without that policy or new controlling evidence, keeping a record `needs-review` is safer than inventing an IT sense.
+Exact next policy question: after fresh offset-0 recomputation, inspect only `D-P209-004` / `D-P209-005`, batch 012, physical PDF page 209. Do not start slice 2/36 here.
 
 ## Required entry format for future slices
 
@@ -81,3 +81,14 @@ For every future slice append a compact entry containing:
 - one exact next action.
 
 No future entry may claim vocabulary approval, release, publication, canonicalization, or SFT readiness.
+
+## Policy classification slice 1/36 — `D-P206-001` / `D-P206-003`
+
+- Run/slice: user-authorized `--iterations=36`, slice 1/36; batch `012`; physical PDF page `206`; POS `adj` (`critical`) and `n` (`curvature`).
+- Old/new: both records changed `needs-review` → `restricted`.
+- ASD evidence: Issue 9, revision `r0001`, exact entries `D-P206-001` / `D-P206-003`, printed page `2-1-C24`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact entries and page retrieval passed. Visual findings: row 1 `critical` has separate `VERY IMPORTANT` and `CAREFUL (adj)` alternatives; row 3 `curvature` has separate `BEND (n)`, `CURVE (n)`, and `RADIUS (TN)` alternatives/examples. Mechanical ambiguity arrays remain preserved.
+- IT question and exclusions: can policy admit bounded cross-domain IT senses without treating ordinary importance, ASD `CAREFUL`, generic curve/radius, physical bend radius, or connectivity outcomes as equivalent? Yes, as restricted domain profiles only.
+- Sources actually inspected: FIRST CVSS v4.0 Specification v1.2 (`https://www.first.org/cvss/v4.0/specification-document`, accessed 2026-10-24) for named `Critical` severity, with CVSS-specific limitation; WHATWG HTML Living Standard Canvas 2D (`https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-arc-dev`, current snapshot 2026-10-22) for curve/arc/radius path APIs, with Canvas-only limitation; W3C SVG 2 Paths (`https://www.w3.org/TR/SVG2/paths.html`, accessed 2026-10-24) for graphical path/curve/arc/radius geometry, with no universal lexical or physical bend-radius authority. ITIL was not applicable because these are monitoring/security and UI/graphics claims, not service-management concepts.
+- Canonical changes: bounded definitions, domain-specific alternatives/examples/rationales, and dispositions only; IDs, sequence, source pins, warnings, raw metadata, rights, fixed retrieval commands, `status: draft`, and `review_status: editorial-review-needed` preserved. The prior historical W1 slice remains recorded as superseded, not deleted.
+- Decision and limits: `restricted` is preferred by policy over `allowed` due to domain/polysemy boundaries; `prohibited`/`not-applicable` would reject evidenced IT uses; unresolved split proposals remain possible if future schema/editorial review requires separate profiles. No vocabulary approval, release, publication, canonicalization, or SFT readiness.
+- Validation/commit: affected batch-012 check; adaptation; corpus; all-batch vocabulary check; document build/check; 118 unit tests with `ResourceWarning` as errors; authenticated source doctor before evidence use and after validation; diagnostics with no errors/warnings; `git diff --check`; exact ASD entries/page retrieval; and offset-0 recomputation all passed. Automatic commit: `584e0a5` (`Classify page 206 IT senses`), explicit paths `docs/IT-STE-draft.md`, `docs/it-ste-draft-handoff.md`, `docs/it-ste-research/W1-D-P206.md`, `docs/it-ste-research/it-sense-classification-log.md`, `docs/it-ste-research/needs-review-38.md`, `standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-012.json`, and `tests/test_it_ste_vocabulary.py`. Next action is recompute offset 0 and stop before slice 2/36.
