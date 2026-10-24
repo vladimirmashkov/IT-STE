@@ -87,6 +87,16 @@ Validation for this slice: batch-012 check; adaptation; corpus; all-batch vocabu
 
   Validation: affected batch-011 check; adaptation; corpus; all-batch vocabulary; document build/check; 118 unit tests with `ResourceWarning` treated as errors; authenticated source doctor; diagnostics (no errors/warnings); `git diff --check`; and canonical queue/count recomputation passed. Final commit hash is recorded in the completion report after commit.
 
+### Resolution slice — batch016 / physical PDF page 230
+
+- `D-P230-003` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 230 / printed page `2-1-E4`, exact locator `entry D-P230-003`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact entry and visual review confirm the separate `ELECTRICAL (adj)` row and physical hardware/electricity meaning. External evidence actually inspected: HSE Electrical safety (`https://www.hse.gov.uk/electricity/`), NIST Electronics (`https://www.nist.gov/electronics`), NIST Information technology (`https://www.nist.gov/information-technology`), and NIST Engineering Laboratory (`https://www.nist.gov/el`), accessed 2026-10-24. These sources support physical electrical/electronic contexts but do not establish the project's safety boundary or a disposition for general IT usage. Fact versus inference: source row/layout and source-domain facts are facts; retaining `needs-review` is an editorial safety decision because the required boundary remains unresolved. No canonical wording or disposition changed.
+
+- `D-P230-004` — old disposition: `needs-review`; new disposition: `needs-review`.
+  ASD evidence: Issue 9, revision `r0001`, physical PDF page 230 / printed page `2-1-E4`, exact locator `entry D-P230-004`, authenticated PDF SHA-256 `d1f4ea9e7cd6e46b47aa9057209f99e78c0e9cfc4e27a5b07895b05c1a166431`; exact entry and visual review confirm the separate `ELECTRICALLY (adv)` row. The same HSE/NIST sources and limits apply: they corroborate an electrical/electronic hardware domain but do not resolve the project's scope or safety boundary. Fact versus inference: source findings are facts; retaining `needs-review` is the evidence-based editorial result. No canonical wording or disposition changed.
+
+  Validation: affected batch-016 check; adaptation; corpus; all-batch vocabulary; document build/check; 118 unit tests with `ResourceWarning` treated as errors; authenticated source doctor; diagnostics (no errors/warnings); `git diff --check`; and canonical queue/count recomputation passed. Commit: `159b4ea`.
+
 Each subsequent change must add an entry here or in the linked per-slice research note with:
 
 - canonical ID and previous/new disposition;
