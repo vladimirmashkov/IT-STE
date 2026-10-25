@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "run_id": "rr-gates-001-20261025T004346Z",
+  "status": "blocked",
+  "decision": "BLOCKED / needs-owner-decision: the ASD derivative permission and IT-STE original-content license are recorded, but broader downstream rights remain unknown for ASD-owned material and all PeopleCert metadata is reference-only with license, redistribution, and adaptation rights unset. The rights gate cannot pass without competent permission and scope evidence; no language/dataset gate, candidate packaging, release, publication, or SFT authorization is implied.",
+  "evidence_refs": [
+    "docs/it-ste-research/release-readiness-gates.md",
+    "docs/permissions/asd-ste100-issue-9-derivatives.md",
+    "LICENSE-CONTENT.md",
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/manifest.json",
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/sources/ASDSTE-SOURCE-ISSUE9-R0001.json",
+    "standards/it-ste/versions/0.1.0-draft.1/revisions/r0001/sources/ITIL-SOURCE-PEOPLECERT-*.json",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/asd-doctor.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/source-rights-audit.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/adaptation-check.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/corpus-check.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/vocabulary-check.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/document-build.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/document-check.log",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/tests.log"
+  ],
+  "changed_paths": [
+    "docs/it-ste-research/release-readiness-gates.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.input.json",
+    "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.output.json",
+    ".local/it-ste-state/rr-gates-001-20261025T004346Z/"
+  ],
+  "validations": [
+    {
+      "name": "rights gate evaluation",
+      "status": "blocked",
+      "result": "ASD derivative permission is limited to authorized derivatives; source PDF redistribution is forbidden; ASD downstream license is unknown; PeopleCert downstream license/redistribution/adaptation rights are unknown",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/source-rights-audit.log"
+    },
+    {
+      "name": "ASD source doctor",
+      "status": "passed",
+      "result": "Authenticated derivative index and manifest; source PDF hash verified; source PDF not published",
+      "command": "python3 tools/asd_ste100_local.py doctor",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/asd-doctor.log"
+    },
+    {
+      "name": "adaptation check",
+      "status": "passed",
+      "result": "61 reviewed assessments; 31 planned IT-STE targets",
+      "command": "python3 tools/it_ste_adaptation.py check",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/adaptation-check.log"
+    },
+    {
+      "name": "corpus check",
+      "status": "passed",
+      "result": "31 draft pilot rules and canonical draft terms; structure and provenance only",
+      "command": "python3 tools/it_ste_corpus.py check",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/corpus-check.log"
+    },
+    {
+      "name": "aggregate vocabulary check",
+      "status": "passed",
+      "result": "2196 records across 55 batches; 55 batches; empty offset-0 queue; no vocabulary approval implied",
+      "command": "python3 tools/it_ste_vocabulary.py check --compact-json",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/vocabulary-check.log"
+    },
+    {
+      "name": "document build",
+      "status": "passed",
+      "result": "Draft build completed; no release or vocabulary approval implied",
+      "command": "python3 tools/it_ste_document.py build",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/document-build.log"
+    },
+    {
+      "name": "document check",
+      "status": "passed",
+      "result": "Draft document check completed; no release or vocabulary approval implied",
+      "command": "python3 tools/it_ste_document.py check",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/document-check.log"
+    },
+    {
+      "name": "full test suite",
+      "status": "passed",
+      "result": "119 tests, OK",
+      "command": "python3 -W error::ResourceWarning -m unittest discover -s tests",
+      "log": ".local/it-ste-state/rr-gates-001-20261025T004346Z/tests.log"
+    },
+    {
+      "name": "editor diagnostics",
+      "status": "passed",
+      "result": "No errors or warnings"
+    }
+  ],
+  "next": {
+    "action": "Owner decision required: record competent downstream permission and scope for third-party artifacts or constrain/remove them, then retry the rights gate. Do not advance to language or dataset gates or package a candidate.",
+    "phase": "gates",
+    "skill": "it-ste-release-gates",
+    "scope": {
+      "kind": "release-gate",
+      "gate": "rights"
+    },
+    "read_set": [
+      {
+        "path": "docs/it-ste-draft-handoff.md",
+        "selector": "#current-checkpoint-read-before-historical-baseline"
+      },
+      {
+        "path": "docs/it-ste-release-readiness-plan.md",
+        "selector": "#current-checkpoint"
+      },
+      {
+        "path": "docs/it-ste-research-method.md",
+        "selector": "#bounded-research-and-decision-loop"
+      }
+    ],
+    "allowed_paths": [
+      "docs/it-ste-state/current.json",
+      "docs/it-ste-state/selector.json",
+      "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.input.json",
+      "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.output.json",
+      "docs/it-ste-research/release-readiness-gates.md",
+      "docs/it-ste-release-readiness-plan.md"
+    ],
+    "resume_policy": "await-owner"
+  }
+}

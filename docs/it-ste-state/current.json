@@ -2,16 +2,15 @@
   "schema": 1,
   "workflow": "it-ste-release-readiness",
   "branch": "remediation/release-readiness",
-  "status": "ready",
+  "status": "blocked",
   "phase": "gates",
   "skill": "it-ste-release-gates",
   "selector": "docs/it-ste-state/selector.json",
-  "resume_policy": "auto",
+  "resume_policy": "await-owner",
   "active_run": null,
   "scope": {
-    "kind": "automatic-selector",
-    "phase": "gates",
-    "cursor": 0
+    "kind": "release-gate",
+    "gate": "rights"
   },
   "read_set": [
     {
@@ -29,7 +28,11 @@
   ],
   "allowed_paths": [
     "docs/it-ste-state/current.json",
-    "docs/it-ste-state/selector.json"
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.input.json",
+    "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.output.json",
+    "docs/it-ste-research/release-readiness-gates.md",
+    "docs/it-ste-release-readiness-plan.md"
   ],
   "counts": {
     "records": 2196,
@@ -42,14 +45,14 @@
     "queue": "empty",
     "source": "checkpoint; recompute before use"
   },
-  "next_action": "Automatically select the next gates slice from selector.json.",
+  "next_action": "Owner decision required: record competent downstream permission and scope for third-party artifacts or constrain/remove them, then retry the rights gate. Do not advance to language or dataset gates or package a candidate.",
   "authorization": {
     "auto_commit": "per-resume-invocation"
   },
   "last_run": {
-    "id": "rr-vocabulary-055-20261025T003937Z",
-    "input": "docs/it-ste-state/runs/rr-vocabulary-055-20261025T003937Z.input.json",
-    "output": "docs/it-ste-state/runs/rr-vocabulary-055-20261025T003937Z.output.json"
+    "id": "rr-gates-001-20261025T004346Z",
+    "input": "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.input.json",
+    "output": "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.output.json"
   },
-  "last_output": "docs/it-ste-state/runs/rr-vocabulary-055-20261025T003937Z.output.json"
+  "last_output": "docs/it-ste-state/runs/rr-gates-001-20261025T004346Z.output.json"
 }
