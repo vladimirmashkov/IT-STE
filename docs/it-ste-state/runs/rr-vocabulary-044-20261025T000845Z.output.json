@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-044-20261025T000845Z",
+  "workflow": "it-ste-release-readiness",
+  "phase": "vocabulary",
+  "batch": "044",
+  "status": "done",
+  "decision": "draft-only",
+  "review_status": "editorial-review-needed",
+  "evidence_refs": [
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-044.json",
+    ".local/it-ste-state/rr-vocabulary-044-20261025T000845Z/exact-entry-retrievals.json",
+    "docs/it-ste-draft-handoff.md#current-checkpoint-read-before-historical-baseline",
+    "docs/it-ste-release-readiness-plan.md#current-checkpoint"
+  ],
+  "validations": [
+    {
+      "name": "asd_doctor",
+      "status": "PASS"
+    },
+    {
+      "name": "exact_entry_retrievals",
+      "status": "PASS",
+      "verified": 40,
+      "expected": 40
+    },
+    {
+      "name": "affected_batch_check",
+      "status": "PASS",
+      "candidates": 40,
+      "remaining": 436,
+      "dispositions": {
+        "allowed": 2,
+        "restricted": 25,
+        "prohibited": 13,
+        "not-applicable": 0,
+        "needs-review": 0
+      }
+    },
+    {
+      "name": "adaptation_check",
+      "status": "PASS"
+    },
+    {
+      "name": "corpus_check",
+      "status": "PASS"
+    },
+    {
+      "name": "aggregate_vocabulary_check",
+      "status": "PASS",
+      "records": 2196,
+      "batches": 55,
+      "remaining": 0
+    },
+    {
+      "name": "document_build",
+      "status": "PASS"
+    },
+    {
+      "name": "document_check",
+      "status": "PASS"
+    },
+    {
+      "name": "full_test_suite",
+      "status": "PASS",
+      "tests": 119
+    },
+    {
+      "name": "diagnostics",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "changed_paths": [
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-vocabulary-044-20261025T000845Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-044-20261025T000845Z.output.json"
+  ],
+  "canonical_batch_changed": false,
+  "next_batch": {
+    "batch": "045",
+    "selector_cursor": 44,
+    "action": "Select vocabulary batch 045"
+  },
+  "next": {
+    "action": "Automatically select the next vocabulary slice from selector.json.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "resume_policy": "auto"
+  }
+}
