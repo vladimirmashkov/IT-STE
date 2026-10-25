@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "run_id": "rr-vocabulary-055-20261025T003937Z",
+  "workflow": "it-ste-release-readiness",
+  "phase": "vocabulary",
+  "batch": "055",
+  "status": "done",
+  "decision": "draft-only",
+  "review_status": "editorial-review-needed",
+  "evidence_refs": [
+    "standards/it-ste/vocabulary-reviews/asd-ste100/issue-9/r0001/batch-055.json",
+    ".local/it-ste-state/rr-vocabulary-055-20261025T003937Z/exact-entry-retrievals.json",
+    "docs/it-ste-draft-handoff.md#current-checkpoint-read-before-historical-baseline",
+    "docs/it-ste-release-readiness-plan.md#current-checkpoint"
+  ],
+  "validations": [
+    {
+      "name": "asd_doctor",
+      "status": "PASS"
+    },
+    {
+      "name": "exact_entry_retrievals",
+      "status": "PASS",
+      "verified": 36,
+      "expected": 36
+    },
+    {
+      "name": "affected_batch_check",
+      "status": "PASS",
+      "candidates": 36,
+      "remaining": 0,
+      "dispositions": {
+        "allowed": 3,
+        "restricted": 21,
+        "prohibited": 11,
+        "not-applicable": 1,
+        "needs-review": 0
+      }
+    },
+    {
+      "name": "adaptation_check",
+      "status": "PASS"
+    },
+    {
+      "name": "corpus_check",
+      "status": "PASS"
+    },
+    {
+      "name": "aggregate_vocabulary_check",
+      "status": "PASS",
+      "records": 2196,
+      "batches": 55,
+      "remaining": 0
+    },
+    {
+      "name": "document_build",
+      "status": "PASS"
+    },
+    {
+      "name": "document_check",
+      "status": "PASS"
+    },
+    {
+      "name": "full_test_suite",
+      "status": "PASS",
+      "tests": 119
+    },
+    {
+      "name": "diagnostics",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "changed_paths": [
+    "docs/it-ste-draft-handoff.md",
+    "docs/it-ste-release-readiness-plan.md",
+    "docs/it-ste-state/current.json",
+    "docs/it-ste-state/selector.json",
+    "docs/it-ste-state/runs/rr-vocabulary-055-20261025T003937Z.input.json",
+    "docs/it-ste-state/runs/rr-vocabulary-055-20261025T003937Z.output.json"
+  ],
+  "canonical_batch_changed": false,
+  "next_batch": {
+    "phase_boundary": "vocabulary-complete",
+    "selector_cursor": 55,
+    "action": "Stop at the vocabulary phase boundary; do not invoke gates or candidate packaging"
+  },
+  "next": {
+    "action": "Stop at the vocabulary phase boundary; do not invoke gates or candidate packaging.",
+    "phase": "vocabulary",
+    "skill": "it-ste-vocabulary-gate-slice",
+    "resume_policy": "await-owner"
+  }
+}
